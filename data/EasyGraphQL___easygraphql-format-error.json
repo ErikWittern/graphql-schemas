@@ -1,0 +1,42 @@
+{
+  "repo_name": "easygraphql-format-error",
+  "repo_full_name": "easygraphql/easygraphql-format-error",
+  "repo_owner": "EasyGraphQL",
+  "repo_description": "Return custom errors with statusCode",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "example/src/schema/schema.gql",
+      "sha": "443a92af03276cb025ccd7d0a081f1664f708b80",
+      "url": "https://api.github.com/repositories/142509011/contents/example/src/schema/schema.gql?ref=80ae0479938f6991d54bb57bd0b4f3623b68f56f",
+      "git_url": "https://api.github.com/repositories/142509011/git/blobs/443a92af03276cb025ccd7d0a081f1664f708b80",
+      "html_url": "https://github.com/EasyGraphQL/easygraphql-format-error/blob/80ae0479938f6991d54bb57bd0b4f3623b68f56f/example/src/schema/schema.gql",
+      "content": "type Query {\n  userInformation(isLoggedIn: Boolean!): String!\n  findUserByEmail(email: String!): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-27T00:41:52Z",
+    "updated_at": "2019-07-15T17:30:34Z",
+    "pushed_at": "2018-11-22T21:48:28Z",
+    "issues": 1,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 15
+  }
+}

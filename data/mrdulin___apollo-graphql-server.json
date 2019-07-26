@@ -1,0 +1,54 @@
+{
+  "repo_name": "apollo-graphql-server",
+  "repo_full_name": "mrdulin/apollo-graphql-server",
+  "repo_owner": "mrdulin",
+  "repo_description": "apollo v1 graphql server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "upload.graphql",
+      "path": "src/graphql/modules/upload/upload.graphql",
+      "sha": "239de64e69ee2a3ea0ba49274a93b1749624ba5d",
+      "url": "https://api.github.com/repositories/148446900/contents/src/graphql/modules/upload/upload.graphql?ref=331f350a608a781262ab4ee7fca017190af96f38",
+      "git_url": "https://api.github.com/repositories/148446900/git/blobs/239de64e69ee2a3ea0ba49274a93b1749624ba5d",
+      "html_url": "https://github.com/mrdulin/apollo-graphql-server/blob/331f350a608a781262ab4ee7fca017190af96f38/src/graphql/modules/upload/upload.graphql",
+      "content": "scalar Upload\n\ntype File {\n  id: ID!\n  filename: String\n}\n\ntype Query {\n  uploads: [File!]!\n}\n\ntype Mutation {\n  singleUpload(file: Upload!): File!\n  multipleUpload(files: [Upload!]!): [File!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "typeDefs.graphql",
+      "path": "src/graphql/modules/cnode/typeDefs.graphql",
+      "sha": "98cd2eb7c8a47028dfeef05247e282fb8539a3a8",
+      "url": "https://api.github.com/repositories/148446900/contents/src/graphql/modules/cnode/typeDefs.graphql?ref=331f350a608a781262ab4ee7fca017190af96f38",
+      "git_url": "https://api.github.com/repositories/148446900/git/blobs/98cd2eb7c8a47028dfeef05247e282fb8539a3a8",
+      "html_url": "https://github.com/mrdulin/apollo-graphql-server/blob/331f350a608a781262ab4ee7fca017190af96f38/src/graphql/modules/cnode/typeDefs.graphql",
+      "content": "type Author {\n  id: ID!\n  loginname: String!\n  avatar_url: String\n  topic_collect: [Topic]\n}\n\ntype Reply {\n  id: ID!\n  author: Author!\n  content: String!\n  create_at: String\n  reply_id: ID\n  ups: [ID]\n}\n\ntype Topic {\n  id: ID!\n  author_id: ID!\n  tab: String\n  content: String\n  title: String\n  reply_count: Int\n  visit_count: Int\n  create_at: String\n  author: Author\n  replies: [Reply]\n}\n\ninput TopicsInput {\n  page: Int\n  tab: String\n  limit: Int\n  mdrender: String\n}\n\ntype Query {\n  topics(qs: TopicsInput): [Topic]\n  topic(id: ID!): Topic\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-12T08:24:48Z",
+    "updated_at": "2019-01-24T11:51:13Z",
+    "pushed_at": "2019-01-24T11:51:12Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

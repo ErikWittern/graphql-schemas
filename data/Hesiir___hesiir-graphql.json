@@ -1,0 +1,41 @@
+{
+  "repo_name": "hesiir-graphql",
+  "repo_full_name": "hesiir/hesiir-graphql",
+  "repo_owner": "Hesiir",
+  "repo_description": "hesiir graphql server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "dist/schema.graphql",
+      "sha": "a1513f03e028e5a01b1611cf0e85fb03366914e3",
+      "url": "https://api.github.com/repositories/71323429/contents/dist/schema.graphql?ref=3531ebf32410ce0f4376c6371d775b4c71e90abb",
+      "git_url": "https://api.github.com/repositories/71323429/git/blobs/a1513f03e028e5a01b1611cf0e85fb03366914e3",
+      "html_url": "https://github.com/Hesiir/hesiir-graphql/blob/3531ebf32410ce0f4376c6371d775b4c71e90abb/dist/schema.graphql",
+      "content": "# 来自canaan商城的数据集合\ntype Canaan {\n  # Everyone, everywhere\n  allPeople: [Person]\n  person(id: ID!): Person\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Somebody that you used to know\ntype Person implements Node {\n  # The ID of an object\n  id: ID!\n\n  # What you yell at me\n  firstName: String\n\n  # What you yell at me when I've been bad\n  lastName: String\n\n  # A name sandwich\n  fullName: String\n\n  # Where to send junk mail\n  email: String\n\n  # Log in as this\n  username: String\n\n  # People who lent you money\n  friends: [Person]\n}\n\n# 所有数据的根查询\ntype Query {\n  canaan: Canaan\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-19T05:51:29Z",
+    "updated_at": "2016-11-03T12:45:21Z",
+    "pushed_at": "2016-12-12T03:23:38Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-node-reactjs",
+  "repo_full_name": "cosmelorim/graphql-node-reactjs",
+  "repo_owner": "CosmeLorim",
+  "repo_description": "Boilerplate de aplicação Web (Front-end e Back-end) com API GraphQL sobre NodeJS e com ReactJS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "18bc4a4f771390659de40910f63f08bfc4014e87",
+      "url": "https://api.github.com/repositories/172575679/contents/server/schema.graphql?ref=dc93d688dc14467b06d4755254fe6f1ae6b9acdb",
+      "git_url": "https://api.github.com/repositories/172575679/git/blobs/18bc4a4f771390659de40910f63f08bfc4014e87",
+      "html_url": "https://github.com/CosmeLorim/graphql-node-reactjs/blob/dc93d688dc14467b06d4755254fe6f1ae6b9acdb/server/schema.graphql",
+      "content": "\n# Comments in GraphQL are defined with the hash (#) symbol.\n\n# This \"Book\" type can be used in other type declarations.\ntype Book {\n  id: ID!\n  title: String!\n  author: String!\n}\n\ntype Mutation {\n  createBook(data: CreateBookInput): Book!\n  addFavoriteBook(pessoaId: ID, bookId: ID): Pessoa!\n}\n\ninput CreateBookInput {\n  title: String!\n  author: String!\n}\n\ntype Pessoa {\n  id: ID!\n  nome: String!\n  livrosFavoritos(id: ID): [Book!]!\n}\n\n# The \"Query\" type is the root of all GraphQL queries.\n# (A \"Mutation\" type will be covered later on.)\ntype Query {\n  books(id: ID): [Book]\n  pessoas(id: ID): [Pessoa]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-25T20:02:31Z",
+    "updated_at": "2019-02-27T03:08:09Z",
+    "pushed_at": "2019-02-27T03:08:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

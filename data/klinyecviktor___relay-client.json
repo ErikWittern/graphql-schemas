@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-client",
+  "repo_full_name": "klinyecviktor/relay-client",
+  "repo_owner": "klinyecviktor",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "configs/schema.graphql",
+      "sha": "4c260814d315d6babb809b594082f4c056a41538",
+      "url": "https://api.github.com/repositories/92495252/contents/configs/schema.graphql?ref=8e55fb27a8aff24868bd70c2205634180da2881d",
+      "git_url": "https://api.github.com/repositories/92495252/git/blobs/4c260814d315d6babb809b594082f4c056a41538",
+      "html_url": "https://github.com/klinyecviktor/relay-client/blob/8e55fb27a8aff24868bd70c2205634180da2881d/configs/schema.graphql",
+      "content": "schema {\n    query: RootQuery\n    mutation: RootMutation\n}\n\ntype RootMutation {\n    # Signup functionality for users\n    signupWithEmailAndPassword(input: SignUpInput): signupResult\n\n    # Login functionality for users\n    loginWithEmailAndPassword(\n        # Email\n        email: String!\n\n        # Password\n        password: String!\n    ): loginResult\n}\n\ntype RootQuery {\n    users(\n        limit: Int\n        order: String\n\n        # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n        where: SequelizeJSON\n        offset: Int\n    ): [user]\n    skins(\n        limit: Int\n        order: String\n\n        # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n        where: SequelizeJSON\n        offset: Int\n    ): [skin]\n}\n\n# The `JSON` scalar type represents raw JSON as values.\nscalar SequelizeJSON\n\ninput SignUpInput {\n    # Email\n    email: String!\n\n    # Password\n    password: String!\n\n    # Password Confirmation\n    passwordConfirmation: String!\n}\n\ntype loginResult {\n    success: Boolean\n    token: String\n    message: String\n}\n\ntype signupResult {\n    success: Boolean\n    token: String\n    message: String\n}\n\ntype skin {\n    id: Int!\n    market_name: String\n    avg_price_7_days: String\n    avg_price_7_days_raw: Float\n    avg_price_30_days: String\n    avg_price_30_days_raw: Float\n    img: String\n    rarity: String\n    createdAt: String!\n    updatedAt: String!\n}\n\ntype user {\n    username: String\n    about: String\n    email: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-26T09:31:55Z",
+    "updated_at": "2017-06-02T16:13:10Z",
+    "pushed_at": "2017-06-06T09:36:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

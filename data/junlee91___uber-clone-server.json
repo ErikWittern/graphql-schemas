@@ -1,0 +1,293 @@
+{
+  "repo_name": "uber-clone-server",
+  "repo_full_name": "junlee91/uber-clone-server",
+  "repo_owner": "junlee91",
+  "repo_description": "Nomad Coders",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "GetMyProfile.graphql",
+      "path": "src/api/User/GetMyProfile/GetMyProfile.graphql",
+      "sha": "def2cee719462567bbbeb786f1fb344efd6c277d",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/User/GetMyProfile/GetMyProfile.graphql?ref=cc1d9bc9d12f5ef34ebfbbea8c3e15708a79b12a",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/def2cee719462567bbbeb786f1fb344efd6c277d",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/cc1d9bc9d12f5ef34ebfbbea8c3e15708a79b12a/src/api/User/GetMyProfile/GetMyProfile.graphql",
+      "content": "type GetMyProfileResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n\ntype Query {\n  GetMyProfile: GetMyProfileResponse!\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/junlee91/uber-clone-server/blob/cc1d9bc9d12f5ef34ebfbbea8c3e15708a79b12a/src/api/User/GetMyProfile/GetMyProfile.graphql:\ntype GetMyProfileResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n\ntype Query {\n  GetMyProfile: GetMyProfileResponse!\n}\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  chatsAsDriver: [Chat]\n  chatsAsPassenger: [Chat]\n  places: [Place]\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/928fe293e84388555d147394cc9bf69ec370cdb6/src/api/Chat/shared/Message.graphql:\ntype Message {\n  id: Int!\n  text: String!\n  chatId: Int!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/ec0ad133dd797efa0041423df15eeea87485cb84/src/api/Ride/shared/Ride.graphql:\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUpLat: Float!\n  pickUpLng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driverId: Int\n  driver: User\n  passengerId: Int!\n  passenger: User!\n  chatId: Int\n  chat: Chat\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/shared/Chat.graphql:\ntype Chat {\n  id: Int!\n  messages: [Message]\n  passengerId: Int!\n  passenger: User!\n  driverId: Int!\n  driver: User!\n  rideId: Int!\n  ride: Ride!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/shared/Place.graphql:\ntype Place {\n    id: Int!\n    name: String!\n    lat: Float!\n    lng: Float!\n    address: String!\n    isFav: Boolean!\n    user: User!\n    userId: Int!\n    createdAt: String!\n    updatedAt: String\n}",
+        "mergedPaths": [
+          "src/api/User/shared/User.graphql",
+          "src/api/Chat/shared/Message.graphql",
+          "src/api/Ride/shared/Ride.graphql",
+          "src/api/Chat/shared/Chat.graphql",
+          "src/api/Place/shared/Place.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Message",
+          "Ride",
+          "Chat",
+          "Place"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Message.graphql",
+      "path": "src/api/Chat/shared/Message.graphql",
+      "sha": "b808a48b85d8cd0781d6d556db5f654d24217fe3",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/Chat/shared/Message.graphql?ref=928fe293e84388555d147394cc9bf69ec370cdb6",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/b808a48b85d8cd0781d6d556db5f654d24217fe3",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/928fe293e84388555d147394cc9bf69ec370cdb6/src/api/Chat/shared/Message.graphql",
+      "content": "type Message {\n  id: Int!\n  text: String!\n  chatId: Int!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Chat.graphql",
+      "path": "src/api/Chat/shared/Chat.graphql",
+      "sha": "e23e02c2fd533b7a7bb7571c58837ab47fbf6f33",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/Chat/shared/Chat.graphql?ref=6fb9cac9d110cc33ed2aa636d6e4c443f7d40350",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/e23e02c2fd533b7a7bb7571c58837ab47fbf6f33",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/shared/Chat.graphql",
+      "content": "type Chat {\n  id: Int!\n  messages: [Message]\n  passengerId: Int!\n  passenger: User!\n  driverId: Int!\n  driver: User!\n  rideId: Int!\n  ride: Ride!\n  createdAt: String!\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Place.graphql",
+      "path": "src/api/Place/shared/Place.graphql",
+      "sha": "8bafdef0d95efacdaa65ad80d0f10a55d71fd0d5",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/Place/shared/Place.graphql?ref=e391f661992eaafd4a6a6e7c074f9aecf7433ba9",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/8bafdef0d95efacdaa65ad80d0f10a55d71fd0d5",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/shared/Place.graphql",
+      "content": "type Place {\n    id: Int!\n    name: String!\n    lat: Float!\n    lng: Float!\n    address: String!\n    isFav: Boolean!\n    user: User!\n    userId: Int!\n    createdAt: String!\n    updatedAt: String\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Ride.graphql",
+      "path": "src/api/Ride/shared/Ride.graphql",
+      "sha": "28c4e47facd38db44a8b23a30f79cccf277430db",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/Ride/shared/Ride.graphql?ref=ec0ad133dd797efa0041423df15eeea87485cb84",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/28c4e47facd38db44a8b23a30f79cccf277430db",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/ec0ad133dd797efa0041423df15eeea87485cb84/src/api/Ride/shared/Ride.graphql",
+      "content": "type Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUpLat: Float!\n  pickUpLng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driverId: Int\n  driver: User\n  passengerId: Int!\n  passenger: User!\n  chatId: Int\n  chat: Chat\n  createdAt: String!\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "User.graphql",
+      "path": "src/api/User/shared/User.graphql",
+      "sha": "dd0b47d9b4a1b6955cb05c3b38dd8354612bca93",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/User/shared/User.graphql?ref=6fb9cac9d110cc33ed2aa636d6e4c443f7d40350",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/dd0b47d9b4a1b6955cb05c3b38dd8354612bca93",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/User/shared/User.graphql",
+      "content": "type User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  chatsAsDriver: [Chat]\n  chatsAsPassenger: [Chat]\n  places: [Place]\n  createdAt: String!\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "GeyMyPlaces.graphql",
+      "path": "src/api/Place/GeyMyPlaces/GeyMyPlaces.graphql",
+      "sha": "66872aaa3797d8357b884c1dfd59796da9b45606",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/Place/GeyMyPlaces/GeyMyPlaces.graphql?ref=e391f661992eaafd4a6a6e7c074f9aecf7433ba9",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/66872aaa3797d8357b884c1dfd59796da9b45606",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/GeyMyPlaces/GeyMyPlaces.graphql",
+      "content": "type GetMyPlacesResponse {\n  ok: Boolean!\n  error: String\n  places: [Place]\n}\n\ntype Query {\n  GetMyPlaces: GetMyPlacesResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/GeyMyPlaces/GeyMyPlaces.graphql:\ntype GetMyPlacesResponse {\n  ok: Boolean!\n  error: String\n  places: [Place]\n}\n\ntype Query {\n  GetMyPlaces: GetMyPlacesResponse!\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/shared/Place.graphql:\ntype Place {\n    id: Int!\n    name: String!\n    lat: Float!\n    lng: Float!\n    address: String!\n    isFav: Boolean!\n    user: User!\n    userId: Int!\n    createdAt: String!\n    updatedAt: String\n}\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  chatsAsDriver: [Chat]\n  chatsAsPassenger: [Chat]\n  places: [Place]\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/928fe293e84388555d147394cc9bf69ec370cdb6/src/api/Chat/shared/Message.graphql:\ntype Message {\n  id: Int!\n  text: String!\n  chatId: Int!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/ec0ad133dd797efa0041423df15eeea87485cb84/src/api/Ride/shared/Ride.graphql:\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUpLat: Float!\n  pickUpLng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driverId: Int\n  driver: User\n  passengerId: Int!\n  passenger: User!\n  chatId: Int\n  chat: Chat\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/shared/Chat.graphql:\ntype Chat {\n  id: Int!\n  messages: [Message]\n  passengerId: Int!\n  passenger: User!\n  driverId: Int!\n  driver: User!\n  rideId: Int!\n  ride: Ride!\n  createdAt: String!\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "src/api/Place/shared/Place.graphql",
+          "src/api/User/shared/User.graphql",
+          "src/api/Chat/shared/Message.graphql",
+          "src/api/Ride/shared/Ride.graphql",
+          "src/api/Chat/shared/Chat.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Place",
+          "User",
+          "Message",
+          "Ride",
+          "Chat"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "GetNearbyRide.graphql",
+      "path": "src/api/Ride/GetNearbyRide/GetNearbyRide.graphql",
+      "sha": "b5c6d9fa62d7bcbe1f2e36c92fc8fe2ab2e2eec5",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/Ride/GetNearbyRide/GetNearbyRide.graphql?ref=c43b32873220ae97a3de5d7ecd4a84922f3e22fe",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/b5c6d9fa62d7bcbe1f2e36c92fc8fe2ab2e2eec5",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/c43b32873220ae97a3de5d7ecd4a84922f3e22fe/src/api/Ride/GetNearbyRide/GetNearbyRide.graphql",
+      "content": "type GetNearbyRideResponse {\n  ok: Boolean!\n  error: String\n  ride: Ride\n}\n\ntype Query {\n  GetNearbyRide: GetNearbyRideResponse\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/junlee91/uber-clone-server/blob/c43b32873220ae97a3de5d7ecd4a84922f3e22fe/src/api/Ride/GetNearbyRide/GetNearbyRide.graphql:\ntype GetNearbyRideResponse {\n  ok: Boolean!\n  error: String\n  ride: Ride\n}\n\ntype Query {\n  GetNearbyRide: GetNearbyRideResponse\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/ec0ad133dd797efa0041423df15eeea87485cb84/src/api/Ride/shared/Ride.graphql:\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUpLat: Float!\n  pickUpLng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driverId: Int\n  driver: User\n  passengerId: Int!\n  passenger: User!\n  chatId: Int\n  chat: Chat\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  chatsAsDriver: [Chat]\n  chatsAsPassenger: [Chat]\n  places: [Place]\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/shared/Chat.graphql:\ntype Chat {\n  id: Int!\n  messages: [Message]\n  passengerId: Int!\n  passenger: User!\n  driverId: Int!\n  driver: User!\n  rideId: Int!\n  ride: Ride!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/928fe293e84388555d147394cc9bf69ec370cdb6/src/api/Chat/shared/Message.graphql:\ntype Message {\n  id: Int!\n  text: String!\n  chatId: Int!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/shared/Place.graphql:\ntype Place {\n    id: Int!\n    name: String!\n    lat: Float!\n    lng: Float!\n    address: String!\n    isFav: Boolean!\n    user: User!\n    userId: Int!\n    createdAt: String!\n    updatedAt: String\n}",
+        "mergedPaths": [
+          "src/api/Ride/shared/Ride.graphql",
+          "src/api/User/shared/User.graphql",
+          "src/api/Chat/shared/Chat.graphql",
+          "src/api/Chat/shared/Message.graphql",
+          "src/api/Place/shared/Place.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Ride",
+          "User",
+          "Chat",
+          "Message",
+          "Place"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "GetRide.graphql",
+      "path": "src/api/Ride/GetRide/GetRide.graphql",
+      "sha": "29cf25aa8738b3d42e7bced34f9fd6e00704ffd8",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/Ride/GetRide/GetRide.graphql?ref=c43b32873220ae97a3de5d7ecd4a84922f3e22fe",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/29cf25aa8738b3d42e7bced34f9fd6e00704ffd8",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/c43b32873220ae97a3de5d7ecd4a84922f3e22fe/src/api/Ride/GetRide/GetRide.graphql",
+      "content": "type GetRideResponse {\n  ok: Boolean!\n  error: String\n  ride: Ride\n}\n\ntype Query {\n  GetRide(rideId: Int!): GetRideResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/junlee91/uber-clone-server/blob/c43b32873220ae97a3de5d7ecd4a84922f3e22fe/src/api/Ride/GetRide/GetRide.graphql:\ntype GetRideResponse {\n  ok: Boolean!\n  error: String\n  ride: Ride\n}\n\ntype Query {\n  GetRide(rideId: Int!): GetRideResponse!\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/ec0ad133dd797efa0041423df15eeea87485cb84/src/api/Ride/shared/Ride.graphql:\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUpLat: Float!\n  pickUpLng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driverId: Int\n  driver: User\n  passengerId: Int!\n  passenger: User!\n  chatId: Int\n  chat: Chat\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  chatsAsDriver: [Chat]\n  chatsAsPassenger: [Chat]\n  places: [Place]\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/shared/Chat.graphql:\ntype Chat {\n  id: Int!\n  messages: [Message]\n  passengerId: Int!\n  passenger: User!\n  driverId: Int!\n  driver: User!\n  rideId: Int!\n  ride: Ride!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/928fe293e84388555d147394cc9bf69ec370cdb6/src/api/Chat/shared/Message.graphql:\ntype Message {\n  id: Int!\n  text: String!\n  chatId: Int!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/shared/Place.graphql:\ntype Place {\n    id: Int!\n    name: String!\n    lat: Float!\n    lng: Float!\n    address: String!\n    isFav: Boolean!\n    user: User!\n    userId: Int!\n    createdAt: String!\n    updatedAt: String\n}",
+        "mergedPaths": [
+          "src/api/Ride/shared/Ride.graphql",
+          "src/api/User/shared/User.graphql",
+          "src/api/Chat/shared/Chat.graphql",
+          "src/api/Chat/shared/Message.graphql",
+          "src/api/Place/shared/Place.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Ride",
+          "User",
+          "Chat",
+          "Message",
+          "Place"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "GetChat.graphql",
+      "path": "src/api/Chat/GetChat/GetChat.graphql",
+      "sha": "3f087c3719dd5f8b628db062e4e674a3bfcefb5b",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/Chat/GetChat/GetChat.graphql?ref=6fb9cac9d110cc33ed2aa636d6e4c443f7d40350",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/3f087c3719dd5f8b628db062e4e674a3bfcefb5b",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/GetChat/GetChat.graphql",
+      "content": "type GetChatResponse {\n  ok: Boolean!\n  error: String\n  chat: Chat\n}\n\ntype Query {\n  GetChat(chatId: Int!): GetChatResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/GetChat/GetChat.graphql:\ntype GetChatResponse {\n  ok: Boolean!\n  error: String\n  chat: Chat\n}\n\ntype Query {\n  GetChat(chatId: Int!): GetChatResponse!\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/shared/Chat.graphql:\ntype Chat {\n  id: Int!\n  messages: [Message]\n  passengerId: Int!\n  passenger: User!\n  driverId: Int!\n  driver: User!\n  rideId: Int!\n  ride: Ride!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/928fe293e84388555d147394cc9bf69ec370cdb6/src/api/Chat/shared/Message.graphql:\ntype Message {\n  id: Int!\n  text: String!\n  chatId: Int!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  chatsAsDriver: [Chat]\n  chatsAsPassenger: [Chat]\n  places: [Place]\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/ec0ad133dd797efa0041423df15eeea87485cb84/src/api/Ride/shared/Ride.graphql:\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUpLat: Float!\n  pickUpLng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driverId: Int\n  driver: User\n  passengerId: Int!\n  passenger: User!\n  chatId: Int\n  chat: Chat\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/shared/Place.graphql:\ntype Place {\n    id: Int!\n    name: String!\n    lat: Float!\n    lng: Float!\n    address: String!\n    isFav: Boolean!\n    user: User!\n    userId: Int!\n    createdAt: String!\n    updatedAt: String\n}",
+        "mergedPaths": [
+          "src/api/Chat/shared/Chat.graphql",
+          "src/api/Chat/shared/Message.graphql",
+          "src/api/User/shared/User.graphql",
+          "src/api/Ride/shared/Ride.graphql",
+          "src/api/Place/shared/Place.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Chat",
+          "Message",
+          "User",
+          "Ride",
+          "Place"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "GetNearbyDrivers.graphql",
+      "path": "src/api/User/GetNearbyDrivers/GetNearbyDrivers.graphql",
+      "sha": "ac5bf40e406472fdd592d782293da91530174090",
+      "url": "https://api.github.com/repositories/144524446/contents/src/api/User/GetNearbyDrivers/GetNearbyDrivers.graphql?ref=843a159bd1b2455265cbe3db5ea63b35a6c262ce",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/ac5bf40e406472fdd592d782293da91530174090",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/843a159bd1b2455265cbe3db5ea63b35a6c262ce/src/api/User/GetNearbyDrivers/GetNearbyDrivers.graphql",
+      "content": "type GetNearbyDriversResponse {\n  ok: Boolean!\n  error: String\n  drivers: [User]\n}\n\ntype Query {\n  GetNearbyDrivers: GetNearbyDriversResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/junlee91/uber-clone-server/blob/843a159bd1b2455265cbe3db5ea63b35a6c262ce/src/api/User/GetNearbyDrivers/GetNearbyDrivers.graphql:\ntype GetNearbyDriversResponse {\n  ok: Boolean!\n  error: String\n  drivers: [User]\n}\n\ntype Query {\n  GetNearbyDrivers: GetNearbyDriversResponse!\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  chatsAsDriver: [Chat]\n  chatsAsPassenger: [Chat]\n  places: [Place]\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/928fe293e84388555d147394cc9bf69ec370cdb6/src/api/Chat/shared/Message.graphql:\ntype Message {\n  id: Int!\n  text: String!\n  chatId: Int!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/ec0ad133dd797efa0041423df15eeea87485cb84/src/api/Ride/shared/Ride.graphql:\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUpLat: Float!\n  pickUpLng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driverId: Int\n  driver: User\n  passengerId: Int!\n  passenger: User!\n  chatId: Int\n  chat: Chat\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/6fb9cac9d110cc33ed2aa636d6e4c443f7d40350/src/api/Chat/shared/Chat.graphql:\ntype Chat {\n  id: Int!\n  messages: [Message]\n  passengerId: Int!\n  passenger: User!\n  driverId: Int!\n  driver: User!\n  rideId: Int!\n  ride: Ride!\n  createdAt: String!\n  updatedAt: String\n}\n\n# https://github.com/junlee91/uber-clone-server/blob/e391f661992eaafd4a6a6e7c074f9aecf7433ba9/src/api/Place/shared/Place.graphql:\ntype Place {\n    id: Int!\n    name: String!\n    lat: Float!\n    lng: Float!\n    address: String!\n    isFav: Boolean!\n    user: User!\n    userId: Int!\n    createdAt: String!\n    updatedAt: String\n}",
+        "mergedPaths": [
+          "src/api/User/shared/User.graphql",
+          "src/api/Chat/shared/Message.graphql",
+          "src/api/Ride/shared/Ride.graphql",
+          "src/api/Chat/shared/Chat.graphql",
+          "src/api/Place/shared/Place.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Message",
+          "Ride",
+          "Chat",
+          "Place"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "262ae028df966126532c54d32a14cca020a0706a",
+      "url": "https://api.github.com/repositories/144524446/contents/src/schema.graphql?ref=ec0ad133dd797efa0041423df15eeea87485cb84",
+      "git_url": "https://api.github.com/repositories/144524446/git/blobs/262ae028df966126532c54d32a14cca020a0706a",
+      "html_url": "https://github.com/junlee91/uber-clone-server/blob/ec0ad133dd797efa0041423df15eeea87485cb84/src/schema.graphql",
+      "content": "type GetChatResponse {\n  ok: Boolean!\n  error: String\n  chat: Chat\n}\n\ntype Query {\n  GetChat(chatId: Int!): GetChatResponse!\n  GetMyPlaces: GetMyPlacesResponse!\n  GetNearbyRide: GetNearbyRideResponse\n  GetRide(rideId: Int!): GetRideResponse!\n  GetMyProfile: GetMyProfileResponse!\n  GetNearbyDrivers: GetNearbyDriversResponse!\n}\n\ntype Subscription {\n  MessageSubscription: Message\n  NearbyRideSubscription: Ride\n  RideStatusSubscription: Ride\n  DriversSubscription: User\n}\n\ntype SendChatMessageReponse {\n  ok: Boolean!\n  error: String\n  message: Message\n}\n\ntype Mutation {\n  SendChatMessage(text: String!, chatId: Int!): SendChatMessageReponse!\n  AddPlace(name: String!, lat: Float!, lng: Float!, address: String!, isFav: Boolean!): AddPlaceResponse!\n  DeletePlace(placeId: Int!): DeletePlaceResponse!\n  EditPlace(placeId: Int!, name: String, isFav: Boolean): EditPlaceResponse!\n  RequestRide(pickUpAddress: String!, pickUpLat: Float!, pickUpLng: Float!, dropOffAddress: String!, dropOffLat: Float!, dropOffLng: Float!, price: Float!, distance: String!, duration: String!): RequestRideResponse!\n  UpdateRideStatus(rideId: Int!, status: StatusOptions!): UpdateRideStatusResponse!\n  CompleteEmailVerification(key: String!): CompleteEmailVerificationResponse!\n  CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!\n  EmailSignIn(email: String!, password: String!): EmailSignInResponse!\n  EmailSignUp(firstName: String!, lastName: String!, email: String!, password: String!, profilePhoto: String!, age: Int!, phoneNumber: String!): EmailSignUpResponse!\n  FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!\n  ReportMovement(orientation: Float, lastLat: Float, lastLng: Float): ReportMovementResponse!\n  RequestEmailVerification: RequestEmailVerificationResponse!\n  StartPhoneVerfification(phoneNumber: String!): StartPhoneVerfificationResponse!\n  ToggleDrivingMode: ToggleDrivingModeResoponse!\n  UpdateMyProfile(firstName: String, lastName: String, email: String, password: String, profilePhoto: String, age: Int): UpdateMyProfileResponse!\n}\n\ntype Chat {\n  id: Int!\n  messages: [Message]\n  passengerId: Int!\n  passenger: User!\n  driverId: Int!\n  driver: User!\n  rideId: Int!\n  ride: Ride!\n  createdAt: String!\n  updatedAt: String\n}\n\ntype Message {\n  id: Int!\n  text: String!\n  chatId: Int!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String\n}\n\ntype AddPlaceResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype DeletePlaceResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype EditPlaceResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype GetMyPlacesResponse {\n  ok: Boolean!\n  error: String\n  places: [Place]\n}\n\ntype Place {\n  id: Int!\n  name: String!\n  lat: Float!\n  lng: Float!\n  address: String!\n  isFav: Boolean!\n  user: User!\n  userId: Int!\n  createdAt: String!\n  updatedAt: String\n}\n\ntype GetNearbyRideResponse {\n  ok: Boolean!\n  error: String\n  ride: Ride\n}\n\ntype GetRideResponse {\n  ok: Boolean!\n  error: String\n  ride: Ride\n}\n\ntype RequestRideResponse {\n  ok: Boolean!\n  error: String\n  ride: Ride\n}\n\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUpLat: Float!\n  pickUpLng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driverId: Int\n  driver: User\n  passengerId: Int!\n  passenger: User!\n  chatId: Int\n  chat: Chat\n  createdAt: String!\n  updatedAt: String\n}\n\ntype UpdateRideStatusResponse {\n  ok: Boolean!\n  error: String\n  rideId: Int\n}\n\nenum StatusOptions {\n  ACCEPTED\n  FINISHED\n  CANCELED\n  REQUESTING\n  ONROUTE\n}\n\ntype CompleteEmailVerificationResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype CompletePhoneVerificationResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype EmailSignInResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype EmailSignUpResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype FacebookConnectResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype GetMyProfileResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n\ntype GetNearbyDriversResponse {\n  ok: Boolean!\n  error: String\n  drivers: [User]\n}\n\ntype ReportMovementResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype RequestEmailVerificationResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  chatsAsDriver: [Chat]\n  chatsAsPassenger: [Chat]\n  places: [Place]\n  createdAt: String!\n  updatedAt: String\n}\n\ntype StartPhoneVerfificationResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype ToggleDrivingModeResoponse {\n  ok: Boolean!\n  error: String\n}\n\ntype UpdateMyProfileResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype Verification {\n  id: Int!\n  target: String!\n  payload: String!\n  key: String!\n  verified: Boolean!\n  createdAt: String!\n  updatedAt: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 31,
+      "containsCycle": true,
+      "numDefinitions": 32
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-13T03:22:46Z",
+    "updated_at": "2019-01-07T05:01:19Z",
+    "pushed_at": "2019-01-07T05:01:17Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

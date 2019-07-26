@@ -1,0 +1,39 @@
+{
+  "repo_name": "hackernews-backend",
+  "repo_full_name": "stevenpersia/hackernews-backend",
+  "repo_owner": "stevenpersia",
+  "repo_description": "Hackernews Clone - Backend with Node + GraphQL + Prisma",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "403b69ca0dcf4308155fa0c1c6140bb7020c7c83",
+      "url": "https://api.github.com/repositories/165292754/contents/src/schema.graphql?ref=c4ba74cde3a17cdf9a001647eddbf9c27e705ba2",
+      "git_url": "https://api.github.com/repositories/165292754/git/blobs/403b69ca0dcf4308155fa0c1c6140bb7020c7c83",
+      "html_url": "https://github.com/stevenpersia/hackernews-backend/blob/c4ba74cde3a17cdf9a001647eddbf9c27e705ba2/src/schema.graphql",
+      "content": "type Query {\n\tinfo: String!\n\tfeed: [Link!]!\n\tfeed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): Feed!\n}\n\ntype Link {\n\tid: ID!\n\tdescription: String!\n\turl: String!\n\tpostedBy: User\n\tvotes: [Vote!]!\n}\n\ntype Feed {\n\tlinks: [Link!]!\n\tcount: Int!\n}\n\ntype Mutation {\n\tpost(url: String!, description: String!): Link!\n\tsignup(email: String!, password: String!, name: String!): AuthPayLoad\n\tlogin(email: String!, password: String!): AuthPayLoad\n\tvote(linkId: ID!): Vote\n}\n\ntype AuthPayLoad {\n\ttoken: String\n\tuser: User\n}\n\ntype User {\n\tid: ID!\n\tname: String!\n\temail: String!\n\tlinks: [Link!]!\n}\n\ntype Subscription {\n\tnewLink: Link\n\tnewVote: Vote\n}\n\ntype Vote {\n\tid: ID!\n\tlink: Link!\n\tuser: User!\n}\n\nenum LinkOrderByInput {\n\tdescription_ASC\n\tdescription_DESC\n\turl_ASC\n\turl_DESC\n\tcreatedAt_ASC\n\tcreatedAt_DESC\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-11T18:44:40Z",
+    "updated_at": "2019-07-15T13:38:23Z",
+    "pushed_at": "2019-07-15T13:38:25Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

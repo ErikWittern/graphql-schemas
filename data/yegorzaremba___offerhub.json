@@ -1,0 +1,189 @@
+{
+  "repo_name": "offerhub",
+  "repo_full_name": "yegorzaremba/offerhub",
+  "repo_owner": "yegorzaremba",
+  "repo_description": "Marketplace for summer work abroad (first failed startup try)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/listing/getListing/schema.graphql",
+      "sha": "be9144843cd3b3823db487befed214d573ce6063",
+      "url": "https://api.github.com/repositories/153333184/contents/packages/server/src/modules/listing/getListing/schema.graphql?ref=3d5c45831914503dc3b37d781e50244cf467c173",
+      "git_url": "https://api.github.com/repositories/153333184/git/blobs/be9144843cd3b3823db487befed214d573ce6063",
+      "html_url": "https://github.com/yegorzaremba/offerhub/blob/3d5c45831914503dc3b37d781e50244cf467c173/packages/server/src/modules/listing/getListing/schema.graphql",
+      "content": "input GetListingByIdInput {\n  id: Int!\n}\n\ntype Query {\n  getListingById(input: GetListingByIdInput!): Listing\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/yegorzaremba/offerhub/blob/3d5c45831914503dc3b37d781e50244cf467c173/packages/server/src/modules/listing/getListing/schema.graphql:\ninput GetListingByIdInput {\n  id: Int!\n}\n\ntype Query {\n  getListingById(input: GetListingByIdInput!): Listing\n}\n\n# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/listing/shared/Listing.graphql:\ntype Offer {\n  price: Int!\n  wage: Int!\n  hoursOfWeek: Int!\n  positionId: Int!\n}\n\ntype Listing {\n  id: Int! # ID! if use uuid\n  title: String!\n  city: String!\n  latitude: Float!\n  longitude: Float!\n  description: String\n  telegram: String\n  whatsapp: String\n\n  pictureUrlList: [String]!\n  userId: Int!\n  placeTypeId: Int!\n\n  offerList: [Offer]!\n  user: User! # @hotfix check db loading and security\n}\n\n# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: Int! # ID! if use uuid\n  username: String!\n  email: String!\n  information: String\n  pictureUrl: String\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/listing/shared/Listing.graphql",
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Listing",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "packages/server/src/modules/user/shared/User.graphql",
+      "sha": "a57e5ac7829794f7538530e90e2d2f1a194026bc",
+      "url": "https://api.github.com/repositories/153333184/contents/packages/server/src/modules/user/shared/User.graphql?ref=5f84f06af28180a43a42ecccf003e7e882d72725",
+      "git_url": "https://api.github.com/repositories/153333184/git/blobs/a57e5ac7829794f7538530e90e2d2f1a194026bc",
+      "html_url": "https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/user/shared/User.graphql",
+      "content": "type User {\n  id: Int! # ID! if use uuid\n  username: String!\n  email: String!\n  information: String\n  pictureUrl: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Listing.graphql",
+      "path": "packages/server/src/modules/listing/shared/Listing.graphql",
+      "sha": "8719796039587c0d9a1b76909c589d6469aa2497",
+      "url": "https://api.github.com/repositories/153333184/contents/packages/server/src/modules/listing/shared/Listing.graphql?ref=5f84f06af28180a43a42ecccf003e7e882d72725",
+      "git_url": "https://api.github.com/repositories/153333184/git/blobs/8719796039587c0d9a1b76909c589d6469aa2497",
+      "html_url": "https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/listing/shared/Listing.graphql",
+      "content": "type Offer {\n  price: Int!\n  wage: Int!\n  hoursOfWeek: Int!\n  positionId: Int!\n}\n\ntype Listing {\n  id: Int! # ID! if use uuid\n  title: String!\n  city: String!\n  latitude: Float!\n  longitude: Float!\n  description: String\n  telegram: String\n  whatsapp: String\n\n  pictureUrlList: [String]!\n  userId: Int!\n  placeTypeId: Int!\n\n  offerList: [Offer]!\n  user: User! # @hotfix check db loading and security\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/user/getUser/schema.graphql",
+      "sha": "a31a692092caf1a1f2355b8790f20f2ff94e35f3",
+      "url": "https://api.github.com/repositories/153333184/contents/packages/server/src/modules/user/getUser/schema.graphql?ref=251dca8ad74b9bf6f7c93be9ced9fd7a8b51b833",
+      "git_url": "https://api.github.com/repositories/153333184/git/blobs/a31a692092caf1a1f2355b8790f20f2ff94e35f3",
+      "html_url": "https://github.com/yegorzaremba/offerhub/blob/251dca8ad74b9bf6f7c93be9ced9fd7a8b51b833/packages/server/src/modules/user/getUser/schema.graphql",
+      "content": "input GetUserByUsernameInput {\n  username: String!\n}\n\ntype Query {\n  getUserByUsername(input: GetUserByUsernameInput!): User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/yegorzaremba/offerhub/blob/251dca8ad74b9bf6f7c93be9ced9fd7a8b51b833/packages/server/src/modules/user/getUser/schema.graphql:\ninput GetUserByUsernameInput {\n  username: String!\n}\n\ntype Query {\n  getUserByUsername(input: GetUserByUsernameInput!): User\n}\n\n# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: Int! # ID! if use uuid\n  username: String!\n  email: String!\n  information: String\n  pictureUrl: String\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/listing/search/schema.graphql",
+      "sha": "2fef18a4ad5848f061f114ec88299e13b571a5d2",
+      "url": "https://api.github.com/repositories/153333184/contents/packages/server/src/modules/listing/search/schema.graphql?ref=3c5cd3a847e4266a0c05417374768f9d85e1d402",
+      "git_url": "https://api.github.com/repositories/153333184/git/blobs/2fef18a4ad5848f061f114ec88299e13b571a5d2",
+      "html_url": "https://github.com/yegorzaremba/offerhub/blob/3c5cd3a847e4266a0c05417374768f9d85e1d402/packages/server/src/modules/listing/search/schema.graphql",
+      "content": "input SearchListingsInput {\n  city: String\n  wage: Int\n  title: String\n}\n\ntype Query {\n  searchListings(\n    input: SearchListingsInput!\n    offset: Int!\n    limit: Int!\n  ): [Listing]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/yegorzaremba/offerhub/blob/3c5cd3a847e4266a0c05417374768f9d85e1d402/packages/server/src/modules/listing/search/schema.graphql:\ninput SearchListingsInput {\n  city: String\n  wage: Int\n  title: String\n}\n\ntype Query {\n  searchListings(\n    input: SearchListingsInput!\n    offset: Int!\n    limit: Int!\n  ): [Listing]!\n}\n\n# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/listing/shared/Listing.graphql:\ntype Offer {\n  price: Int!\n  wage: Int!\n  hoursOfWeek: Int!\n  positionId: Int!\n}\n\ntype Listing {\n  id: Int! # ID! if use uuid\n  title: String!\n  city: String!\n  latitude: Float!\n  longitude: Float!\n  description: String\n  telegram: String\n  whatsapp: String\n\n  pictureUrlList: [String]!\n  userId: Int!\n  placeTypeId: Int!\n\n  offerList: [Offer]!\n  user: User! # @hotfix check db loading and security\n}\n\n# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: Int! # ID! if use uuid\n  username: String!\n  email: String!\n  information: String\n  pictureUrl: String\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/listing/shared/Listing.graphql",
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Listing",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/user/me/schema.graphql",
+      "sha": "34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "url": "https://api.github.com/repositories/153333184/contents/packages/server/src/modules/user/me/schema.graphql?ref=0dda187136d478c3ea6669838b5a87fc062bd9a0",
+      "git_url": "https://api.github.com/repositories/153333184/git/blobs/34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "html_url": "https://github.com/yegorzaremba/offerhub/blob/0dda187136d478c3ea6669838b5a87fc062bd9a0/packages/server/src/modules/user/me/schema.graphql",
+      "content": "type Query {\n  me: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/yegorzaremba/offerhub/blob/0dda187136d478c3ea6669838b5a87fc062bd9a0/packages/server/src/modules/user/me/schema.graphql:\ntype Query {\n  me: User\n}\n\n# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: Int! # ID! if use uuid\n  username: String!\n  email: String!\n  information: String\n  pictureUrl: String\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/listing/find/schema.graphql",
+      "sha": "24631be3a725beaa1330f9cd0f677948470b2cd9",
+      "url": "https://api.github.com/repositories/153333184/contents/packages/server/src/modules/listing/find/schema.graphql?ref=5f84f06af28180a43a42ecccf003e7e882d72725",
+      "git_url": "https://api.github.com/repositories/153333184/git/blobs/24631be3a725beaa1330f9cd0f677948470b2cd9",
+      "html_url": "https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/listing/find/schema.graphql",
+      "content": "type Query {\n  findListingList: [Listing]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/listing/find/schema.graphql:\ntype Query {\n  findListingList: [Listing]!\n}\n\n# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/listing/shared/Listing.graphql:\ntype Offer {\n  price: Int!\n  wage: Int!\n  hoursOfWeek: Int!\n  positionId: Int!\n}\n\ntype Listing {\n  id: Int! # ID! if use uuid\n  title: String!\n  city: String!\n  latitude: Float!\n  longitude: Float!\n  description: String\n  telegram: String\n  whatsapp: String\n\n  pictureUrlList: [String]!\n  userId: Int!\n  placeTypeId: Int!\n\n  offerList: [Offer]!\n  user: User! # @hotfix check db loading and security\n}\n\n# https://github.com/yegorzaremba/offerhub/blob/5f84f06af28180a43a42ecccf003e7e882d72725/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: Int! # ID! if use uuid\n  username: String!\n  email: String!\n  information: String\n  pictureUrl: String\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/listing/shared/Listing.graphql",
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Listing",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-16T18:18:37Z",
+    "updated_at": "2019-03-18T18:29:36Z",
+    "pushed_at": "2019-02-04T01:54:40Z",
+    "issues": 47,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 23,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 22,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

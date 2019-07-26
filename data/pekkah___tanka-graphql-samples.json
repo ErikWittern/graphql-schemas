@@ -1,0 +1,58 @@
+{
+  "repo_name": "tanka-graphql-samples",
+  "repo_full_name": "pekkah/tanka-graphql-samples",
+  "repo_owner": "pekkah",
+  "repo_description": "Example of using tanka-graphql with Apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Schema.graphql",
+      "path": "src/Channels.Host/logic/Schema.graphql",
+      "sha": "3db321bc06cd45ad371a3be844b1bf16657d744c",
+      "url": "https://api.github.com/repositories/157059443/contents/src/Channels.Host/logic/Schema.graphql?ref=dd32bbe531b5a9215b2437b1fdc5554d07d6af90",
+      "git_url": "https://api.github.com/repositories/157059443/git/blobs/3db321bc06cd45ad371a3be844b1bf16657d744c",
+      "html_url": "https://github.com/pekkah/tanka-graphql-samples/blob/dd32bbe531b5a9215b2437b1fdc5554d07d6af90/src/Channels.Host/logic/Schema.graphql",
+      "content": "﻿type Channel {\n    id: ID!\n\tname: String!\n}\n\ntype Query {\n\tchannels: [Channel!]!\n\tchannel(channelId: Int!): Channel\n}\n\nschema {\n    query: Query\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    },
+    {
+      "name": "Schema.graphql",
+      "path": "src/Messages.Host/logic/Schema.graphql",
+      "sha": "1e2c4ad19a04d6b05db92a35f5881feebebca5e9",
+      "url": "https://api.github.com/repositories/157059443/contents/src/Messages.Host/logic/Schema.graphql?ref=32820ed9a31d733fed045845b4f39454ac220bda",
+      "git_url": "https://api.github.com/repositories/157059443/git/blobs/1e2c4ad19a04d6b05db92a35f5881feebebca5e9",
+      "html_url": "https://github.com/pekkah/tanka-graphql-samples/blob/32820ed9a31d733fed045845b4f39454ac220bda/src/Messages.Host/logic/Schema.graphql",
+      "content": "﻿type Message {\n\tid: ID!\n\tchannelId: ID!\n\tcontent: String!\n\ttimestamp: String!\n\tfrom: String!\n}\n\ninput InputMessage {\n    content: String!\n}\n\ntype Query {\n\tmessages(channelId: Int!): [Message!]!\n}\n\ntype Mutation {\n    postMessage(channelId: Int!,message: InputMessage!): Message!\n}\n\ntype Subscription {\n\tmessageAdded(channelId: Int!): Message!\n}\n\nschema {\n    query: Query\n\tmutation: Mutation\n\tsubscription: Subscription\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-11T08:04:35Z",
+    "updated_at": "2019-07-13T08:19:50Z",
+    "pushed_at": "2019-07-15T07:52:25Z",
+    "issues": 19,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 72,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 42,
+    "pull_requests_merged": 29,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

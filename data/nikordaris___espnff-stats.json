@@ -1,0 +1,41 @@
+{
+  "repo_name": "espnff-stats",
+  "repo_full_name": "nikordaris/espnff-stats",
+  "repo_owner": "nikordaris",
+  "repo_description": "ESPN Fantasy Football Stats",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "lib/graphql/schema.graphql",
+      "sha": "96783a1ea032dafbe12917d07d26596a1a6569ff",
+      "url": "https://api.github.com/repositories/148247498/contents/lib/graphql/schema.graphql?ref=47600b29c6646dff48e686a12637a6148562545d",
+      "git_url": "https://api.github.com/repositories/148247498/git/blobs/96783a1ea032dafbe12917d07d26596a1a6569ff",
+      "html_url": "https://github.com/nikordaris/espnff-stats/blob/47600b29c6646dff48e686a12637a6148562545d/lib/graphql/schema.graphql",
+      "content": "type Player {\r\n  playerId: Int!\r\n  playerName: String!\r\n  playerPosition: String\r\n  lineupPosition: String\r\n  nflTeam: String\r\n  nflTeamAbbrev: String\r\n  nflTeamOpp: String\r\n  nflTeamOppAbbrev: String\r\n  projectedPoints: Float\r\n  realPoints: Float\r\n}\r\n\r\ntype TeamStats {\r\n  prevTeamStats: [TeamStats]\r\n  scoringPeriodId: Int!\r\n  id: ID!\r\n  teamId: Int!\r\n  teamName: String\r\n  teamAbbrev: String\r\n  logoUrl: String\r\n  pointsFor: Float\r\n  pointsAgainst: Float\r\n  projectedPointsFor: Float\r\n  projectedPointsAgainst: Float\r\n  benchPointsFor: Float\r\n  benchPointAgainst: Float\r\n  projectedBenchPointsFor: Float\r\n  projectedBenchPointsAgainst: Float\r\n  optimalPoints: Float\r\n  scoringDifferential: Float\r\n  last3AvgFor: Float\r\n  last3AvgOptimal: Float\r\n  seasonAvgFor: Float\r\n  seasonHighFor: Float\r\n  seasonLowFor: Float\r\n  seasonAvgOptimal: Float\r\n  seasonHighOptimal: Float\r\n  seasonLowOptimal: Float\r\n  totalFor: Float\r\n  totalAgainst: Float\r\n  totalBench: Float\r\n  totalOptimal: Float\r\n  totalDifferential: Float\r\n  seasonStdDevPF: Float\r\n  efficiency: Float\r\n  totalEfficiency: Float\r\n  totalCoachRating: Float,\r\n}\r\n\r\ntype LeagueStats {\r\n  id: ID\r\n  teamName: String\r\n  teamId: Int\r\n  teamAbbrev: String\r\n  logoUrl: String\r\n  teamStats: [TeamStats!]\r\n}\r\n\r\ntype TeamOwner {\r\n  firstName: String\r\n  lastName: String\r\n  id: ID!\r\n}\r\n\r\ntype TeamStanding {\r\n  id: Int\r\n  teamName: String\r\n  teamAbbrev: String\r\n  owners: [TeamOwner]\r\n  divisionName: String\r\n  wins: Int\r\n  losses: Int\r\n  streakLength: Int\r\n  streakType: String\r\n  pointsFor: Float\r\n  pointsAgainst: Float\r\n  divisionStanding: Int\r\n  overallStanding: Int\r\n}\r\n\r\ntype Query {\r\n  standings: [TeamStanding]\r\n  teamStats(id: ID!): [TeamStats!]\r\n  leagueStats: [LeagueStats!]\r\n}\r\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-11T02:17:47Z",
+    "updated_at": "2019-01-13T22:54:10Z",
+    "pushed_at": "2019-01-13T22:54:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 2,
+    "stargazers": 0
+  }
+}

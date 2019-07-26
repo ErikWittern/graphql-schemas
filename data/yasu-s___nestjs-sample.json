@@ -1,0 +1,39 @@
+{
+  "repo_name": "nestjs-sample",
+  "repo_full_name": "yasu-s/nestjs-sample",
+  "repo_owner": "yasu-s",
+  "repo_description": "NestJS Sample",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "author.graphql",
+      "path": "src/author/author.graphql",
+      "sha": "cf979828144d4ea814e11afd04b82848d79101f0",
+      "url": "https://api.github.com/repositories/183733359/contents/src/author/author.graphql?ref=e16ff1380ff3ced1db2d77e12bbff2fbe7193bc9",
+      "git_url": "https://api.github.com/repositories/183733359/git/blobs/cf979828144d4ea814e11afd04b82848d79101f0",
+      "html_url": "https://github.com/yasu-s/nestjs-sample/blob/e16ff1380ff3ced1db2d77e12bbff2fbe7193bc9/src/author/author.graphql",
+      "content": "type Author {\n  id: Int!\n  firstName: String\n  lastName: String\n  posts: [Post]\n}\n\ntype Post {\n  id: Int!\n  title: String!\n  votes: Int\n}\n\ntype Query {\n  author(id: Int!): Author\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-27T05:43:04Z",
+    "updated_at": "2019-05-20T12:00:29Z",
+    "pushed_at": "2019-05-20T12:00:28Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

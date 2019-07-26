@@ -1,0 +1,39 @@
+{
+  "repo_name": "express-graphql-api",
+  "repo_full_name": "danzawadzki/express-graphql-api",
+  "repo_owner": "danzawadzki",
+  "repo_description": "The first attempt to create an API using Express.js, graphQL and mongoDB.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.graphql",
+      "path": "src/api/resources/user/user.graphql",
+      "sha": "ac8bd3a0f0fb1757d5905ce4ae573033e1982781",
+      "url": "https://api.github.com/repositories/131035585/contents/src/api/resources/user/user.graphql?ref=1f60d563fc2179a80e1a9ffbfc5eafc71d164920",
+      "git_url": "https://api.github.com/repositories/131035585/git/blobs/ac8bd3a0f0fb1757d5905ce4ae573033e1982781",
+      "html_url": "https://github.com/danzawadzki/express-graphql-api/blob/1f60d563fc2179a80e1a9ffbfc5eafc71d164920/src/api/resources/user/user.graphql",
+      "content": "type User {\n\tusername: String!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ninput UpdatedUser {\n\tusername: String!\n}\n\ntype Query {\n\tgetMe: User!\n}\n\ntype Mutation {\n\tupdateMe(input: UpdatedUser!): User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-25T16:36:19Z",
+    "updated_at": "2018-05-01T14:30:49Z",
+    "pushed_at": "2018-05-01T14:30:48Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

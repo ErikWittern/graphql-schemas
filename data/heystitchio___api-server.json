@@ -1,0 +1,39 @@
+{
+  "repo_name": "api-server",
+  "repo_full_name": "heystitchio/api-server",
+  "repo_owner": "heystitchio",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "f7fc1002b4feed16a7ab403d440d9f67c3fe5573",
+      "url": "https://api.github.com/repositories/80714127/contents/data/schema.graphql?ref=47e40be4901a43c71e12936b5661d3ed7030a7df",
+      "git_url": "https://api.github.com/repositories/80714127/git/blobs/f7fc1002b4feed16a7ab403d440d9f67c3fe5573",
+      "html_url": "https://github.com/heystitchio/api-server/blob/47e40be4901a43c71e12936b5661d3ed7030a7df/data/schema.graphql",
+      "content": "type Query {\n  testString: String\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-02T10:19:33Z",
+    "updated_at": "2017-02-02T10:28:26Z",
+    "pushed_at": "2017-02-02T10:55:52Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

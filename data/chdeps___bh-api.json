@@ -1,0 +1,42 @@
+{
+  "repo_name": "bh-api",
+  "repo_full_name": "chdeps/bh-api",
+  "repo_owner": "chdeps",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "types.graphql",
+      "path": "src/types.graphql",
+      "sha": "2d028dd9e1162e9fc06a45d5f65fdc98da5d9ae8",
+      "url": "https://api.github.com/repositories/116559695/contents/src/types.graphql?ref=71b49fdaccb469eda1330cab1662b66310831463",
+      "git_url": "https://api.github.com/repositories/116559695/git/blobs/2d028dd9e1162e9fc06a45d5f65fdc98da5d9ae8",
+      "html_url": "https://github.com/chdeps/bh-api/blob/71b49fdaccb469eda1330cab1662b66310831463/src/types.graphql",
+      "content": "type Schema {\n    query: Query\n    mutation: Mutation\n}\n\ntype Query{\n    _:Boolean\n}\ntype Mutation{\n    _:Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-07T11:26:15Z",
+    "updated_at": "2018-04-29T09:01:20Z",
+    "pushed_at": "2018-06-16T16:23:42Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 6,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

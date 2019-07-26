@@ -1,0 +1,42 @@
+{
+  "repo_name": "rocketboard",
+  "repo_full_name": "arachnys/rocketboard",
+  "repo_owner": "arachnys",
+  "repo_description": " Experience Rocket Growth™ in your Retrospectives",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "cmd/rocketboard/graph/schema.graphql",
+      "sha": "c81995b04128936601aa061c4fb3a84e81a7b192",
+      "url": "https://api.github.com/repositories/144293917/contents/cmd/rocketboard/graph/schema.graphql?ref=2887649d065f1b04f8f227c1db544f501009ac42",
+      "git_url": "https://api.github.com/repositories/144293917/git/blobs/c81995b04128936601aa061c4fb3a84e81a7b192",
+      "html_url": "https://github.com/arachnys/rocketboard/blob/2887649d065f1b04f8f227c1db544f501009ac42/cmd/rocketboard/graph/schema.graphql",
+      "content": "schema {\n    query: RootQuery\n    mutation: RootMutation\n}\n\ntype RootQuery {\n    retrospectiveById(id: ID!): Retrospective\n    retrospectiveByPetName(petName: String!): Retrospective\n}\n\ntype RootMutation {\n    startRetrospective(name: String): String!\n    addCardToRetrospective(id: ID!, column: String, message: String): String!\n    moveCard(id: ID!, column: String!, index: Int!): Int!\n    updateMessage(id: ID!, message: String!): String!\n    newVote(cardId: ID!, emoji: String!): Vote!\n    updateStatus(id: ID!, status: StatusType!): Status!\n    sendHeartbeat(rId: ID!, state: String!): String!\n}\n\ntype Subscription {\n  cardChanged(rId: String!): Card!\n  retroChanged(rId: String!): Retrospective!\n}\n\nenum StatusType {\n    InProgress\n    Discussed\n    Archived\n}\n\nenum UserStateType {\n    Unknown\n    Hidden\n    Visible\n}\n\ntype UserState {\n    user: String\n    state: UserStateType\n}\n\ntype Retrospective {\n    id: ID!\n    created: Time\n    updated: Time\n    name: String\n    petName: String\n\n    cards: [Card]\n\n    onlineUsers: [UserState!]\n}\n\ntype Card {\n    id: ID!\n    created: Time\n    updated: Time\n    message: String\n    creator: String\n    column: String\n\n    statuses: [Status]\n    votes: [Vote]\n\n    position: Int\n}\n\ntype Vote {\n    id: ID!\n    created: Time\n    updated: Time\n    cardId: String\n    voter: String\n    emoji: String\n    count: Int\n}\n\ntype Status {\n    id: ID!\n    created: Time\n    cardId: String\n    type: StatusType\n}\n\nscalar Time\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-10T14:08:01Z",
+    "updated_at": "2019-03-17T17:57:25Z",
+    "pushed_at": "2019-02-06T17:01:17Z",
+    "issues": 4,
+    "watchers": 20,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 28,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 4,
+    "pull_requests_merged": 24,
+    "releases": 0,
+    "stargazers": 8
+  }
+}

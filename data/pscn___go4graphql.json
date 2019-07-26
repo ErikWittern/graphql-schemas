@@ -1,0 +1,42 @@
+{
+  "repo_name": "go4graphql",
+  "repo_full_name": "pscn/go4graphql",
+  "repo_owner": "pscn",
+  "repo_description": "Sample graphql server for https://github.com/gusta-project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "b5422dcc6e54899c9b37bf683ac1b462f9bb1097",
+      "url": "https://api.github.com/repositories/186761179/contents/schema/schema.graphql?ref=bc662c3fbad2ec3db40cba2367ad582b783955b1",
+      "git_url": "https://api.github.com/repositories/186761179/git/blobs/b5422dcc6e54899c9b37bf683ac1b462f9bb1097",
+      "html_url": "https://github.com/pscn/go4graphql/blob/bc662c3fbad2ec3db40cba2367ad582b783955b1/schema/schema.graphql",
+      "content": "type URL {\n  id: ID!\n  description: String!\n  url: String!\n}\n\ntype Vendor {\n  id: ID!\n  name: String!\n  code: String!\n  urls: [URL]\n}\n\ninput NewVendor {\n  name: String!\n  code: String!\n}\n\ninput NewVendorURL {\n  vendorId: ID!\n  description: String!\n  url: String!\n}\n\ntype Concentrate {\n  id: ID!\n  name: String!\n  vendor: Vendor!\n  gravity: Float\n  urls: [URL]\n}\n\ninput NewConcentrate {\n  name: String!\n  vendorId: String!\n}\n\ninput NewConcentrateURL {\n  concentrateId: ID!\n  description: String!\n  url: String!\n}\n\ntype Query {\n  vendors: [Vendor!]!\n  concentrates: [Concentrate!]!\n}\n\ntype Mutation {\n  createVendor(input: NewVendor!): Vendor!\n  addVendorURL(input: NewVendorURL!): URL!\n  createConcentrate(input: NewConcentrate!): Concentrate!\n  addConcentrateURL(input: NewConcentrateURL!): URL!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-15T06:16:38Z",
+    "updated_at": "2019-05-16T05:35:11Z",
+    "pushed_at": "2019-05-16T05:35:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

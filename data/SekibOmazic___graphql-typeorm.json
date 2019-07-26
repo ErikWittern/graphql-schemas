@@ -1,0 +1,76 @@
+{
+  "repo_name": "graphql-typeorm",
+  "repo_full_name": "sekibomazic/graphql-typeorm",
+  "repo_owner": "SekibOmazic",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/register/schema.graphql",
+      "sha": "50c8b84b8ec708b74bbe8d46c74df5a7d6d8b069",
+      "url": "https://api.github.com/repositories/161498195/contents/src/modules/register/schema.graphql?ref=4ce047789655dce94a060a71c974e9fdef88b64d",
+      "git_url": "https://api.github.com/repositories/161498195/git/blobs/50c8b84b8ec708b74bbe8d46c74df5a7d6d8b069",
+      "html_url": "https://github.com/SekibOmazic/graphql-typeorm/blob/4ce047789655dce94a060a71c974e9fdef88b64d/src/modules/register/schema.graphql",
+      "content": "type Mutation {\n  register(email: String!, password: String!): [Error!]\n}\n\ntype Query {\n  bye: String\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/SekibOmazic/graphql-typeorm/blob/4ce047789655dce94a060a71c974e9fdef88b64d/src/modules/register/schema.graphql:\ntype Mutation {\n  register(email: String!, password: String!): [Error!]\n}\n\ntype Query {\n  bye: String\n}\n\n# https://github.com/SekibOmazic/graphql-typeorm/blob/4ce047789655dce94a060a71c974e9fdef88b64d/src/modules/shared/shared.graphql:\ntype Error {\n  path: String!\n  message: String!\n}\n",
+        "mergedPaths": [
+          "src/modules/shared/shared.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Error"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "shared.graphql",
+      "path": "src/modules/shared/shared.graphql",
+      "sha": "9d721ef801079dc0094bea7cfecc9a000e9c043e",
+      "url": "https://api.github.com/repositories/161498195/contents/src/modules/shared/shared.graphql?ref=4ce047789655dce94a060a71c974e9fdef88b64d",
+      "git_url": "https://api.github.com/repositories/161498195/git/blobs/9d721ef801079dc0094bea7cfecc9a000e9c043e",
+      "html_url": "https://github.com/SekibOmazic/graphql-typeorm/blob/4ce047789655dce94a060a71c974e9fdef88b64d/src/modules/shared/shared.graphql",
+      "content": "type Error {\n  path: String!\n  message: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/tmp/schema.graphql",
+      "sha": "11fede5d6401d46c5a4341888a921626dbd47829",
+      "url": "https://api.github.com/repositories/161498195/contents/src/modules/tmp/schema.graphql?ref=4ce047789655dce94a060a71c974e9fdef88b64d",
+      "git_url": "https://api.github.com/repositories/161498195/git/blobs/11fede5d6401d46c5a4341888a921626dbd47829",
+      "html_url": "https://github.com/SekibOmazic/graphql-typeorm/blob/4ce047789655dce94a060a71c974e9fdef88b64d/src/modules/tmp/schema.graphql",
+      "content": "type Query {\n  hello(name: String): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-12T14:13:58Z",
+    "updated_at": "2018-12-12T14:26:10Z",
+    "pushed_at": "2018-12-12T14:26:08Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

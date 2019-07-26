@@ -1,0 +1,42 @@
+{
+  "repo_name": "grpc-graphql-schema",
+  "repo_full_name": "xanthous-tech/grpc-graphql-schema",
+  "repo_owner": "xanthous-tech",
+  "repo_description": "Convert gRPC proto definition into GraphQL Schema",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "example/schema.graphql",
+      "sha": "367cca5c28a422f3b19057225b5375af73b9fa94",
+      "url": "https://api.github.com/repositories/165340639/contents/example/schema.graphql?ref=975f8da5e88249ecc2a81af201f2b8822aed2381",
+      "git_url": "https://api.github.com/repositories/165340639/git/blobs/367cca5c28a422f3b19057225b5375af73b9fa94",
+      "html_url": "https://github.com/xanthous-tech/grpc-graphql-schema/blob/975f8da5e88249ecc2a81af201f2b8822aed2381/example/schema.graphql",
+      "content": "type Movie {\n  name: String\n  year: Int\n  rating: Float\n  cast: [String]\n}\n\ntype MoviesResult {\n  result: [Movie]\n}\n\ntype Query {\n  ping: ServerStatus\n  ExampleGetMovies: MoviesResult\n}\n\ninput SearchByCastInput {\n  castName: String\n}\n\ntype ServerStatus {\n  status: String\n}\n\ntype Subscription {\n  ExampleSearchMoviesByCast(SearchByCastInput: SearchByCastInput): Movie\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-12T03:14:15Z",
+    "updated_at": "2019-05-27T01:29:02Z",
+    "pushed_at": "2019-04-14T16:24:25Z",
+    "issues": 4,
+    "watchers": 6,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 13
+  }
+}

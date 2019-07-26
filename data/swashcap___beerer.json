@@ -1,0 +1,42 @@
+{
+  "repo_name": "beerer",
+  "repo_full_name": "swashcap/beerer",
+  "repo_owner": "swashcap",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/schema/src/schema.graphql",
+      "sha": "8fe6a6d0597f6afe04bd5efe4e21e2dc9ec1a8e6",
+      "url": "https://api.github.com/repositories/138430712/contents/packages/schema/src/schema.graphql?ref=ebb347baf3802ba5b9f08ecd99754719facfd285",
+      "git_url": "https://api.github.com/repositories/138430712/git/blobs/8fe6a6d0597f6afe04bd5efe4e21e2dc9ec1a8e6",
+      "html_url": "https://github.com/swashcap/beerer/blob/ebb347baf3802ba5b9f08ecd99754719facfd285/packages/schema/src/schema.graphql",
+      "content": "type Beer {\n  # Alcohol by volume\n  abv: String\n  # Beer's creating brewery or breweries\n  brewery: [Brewery]!\n  description: String\n  ibu: String\n  id: ID!\n  name: String!\n  style: String!\n}\n\ntype Brewery {\n  id: ID!\n  location: String!\n  name: String!\n  url: String\n}\n\ntype Query {\n  beers: [Beer]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-23T20:16:33Z",
+    "updated_at": "2018-07-01T23:34:01Z",
+    "pushed_at": "2018-07-01T23:34:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

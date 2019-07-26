@@ -1,0 +1,103 @@
+{
+  "repo_name": "nub-api",
+  "repo_full_name": "fwoelffel/nub-api",
+  "repo_owner": "fwoelffel",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.type.graphql",
+      "path": "src/app/modules/snippet/types/query.type.graphql",
+      "sha": "f9de40acef5a5bd1716e9d15bf830b5ef8f3b6a3",
+      "url": "https://api.github.com/repositories/103821857/contents/src/app/modules/snippet/types/query.type.graphql?ref=38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac",
+      "git_url": "https://api.github.com/repositories/103821857/git/blobs/f9de40acef5a5bd1716e9d15bf830b5ef8f3b6a3",
+      "html_url": "https://github.com/fwoelffel/nub-api/blob/38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac/src/app/modules/snippet/types/query.type.graphql",
+      "content": "type Query {\n\n  # This query returns the Snippet matching the given id\n  getSnippetById(id: ID!): Snippet\n\n  # This query returns all stored Snippets\n  getSnippets: [Snippet],\n\n  # This query return the last (count) Snippets ordered by descending creation date\n  getLastSnippets(count: Int): [Snippet]\n\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/fwoelffel/nub-api/blob/38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac/src/app/modules/snippet/types/query.type.graphql:\ntype Query {\n\n  # This query returns the Snippet matching the given id\n  getSnippetById(id: ID!): Snippet\n\n  # This query returns all stored Snippets\n  getSnippets: [Snippet],\n\n  # This query return the last (count) Snippets ordered by descending creation date\n  getLastSnippets(count: Int): [Snippet]\n\n}\n# https://github.com/fwoelffel/nub-api/blob/38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac/src/app/modules/snippet/types/snippet.type.graphql:\ntype Snippet {\n\n  # The Snippet name\n  name: String!\n\n  # The Snippet description\n  description: String\n\n  # The Snippet content\n  content: String!\n\n  # The Snippet creation date\n  createdDate: String\n\n  # The Snippet last update date\n  updatedDate: String\n\n  # The Snippet id\n  id: ID!\n\n  # The Snippet mime type\n  mime: String\n\n}",
+        "mergedPaths": [
+          "src/app/modules/snippet/types/snippet.type.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Snippet"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "snippet.type.graphql",
+      "path": "src/app/modules/snippet/types/snippet.type.graphql",
+      "sha": "dcf1baf2fb5c255705425707b265f82d390b45b4",
+      "url": "https://api.github.com/repositories/103821857/contents/src/app/modules/snippet/types/snippet.type.graphql?ref=38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac",
+      "git_url": "https://api.github.com/repositories/103821857/git/blobs/dcf1baf2fb5c255705425707b265f82d390b45b4",
+      "html_url": "https://github.com/fwoelffel/nub-api/blob/38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac/src/app/modules/snippet/types/snippet.type.graphql",
+      "content": "type Snippet {\n\n  # The Snippet name\n  name: String!\n\n  # The Snippet description\n  description: String\n\n  # The Snippet content\n  content: String!\n\n  # The Snippet creation date\n  createdDate: String\n\n  # The Snippet last update date\n  updatedDate: String\n\n  # The Snippet id\n  id: ID!\n\n  # The Snippet mime type\n  mime: String\n\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "query.type.graphql",
+      "path": "src/app/modules/user/types/query.type.graphql",
+      "sha": "ad38661f0621296b5b03f93349c7dcbcdba81916",
+      "url": "https://api.github.com/repositories/103821857/contents/src/app/modules/user/types/query.type.graphql?ref=38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac",
+      "git_url": "https://api.github.com/repositories/103821857/git/blobs/ad38661f0621296b5b03f93349c7dcbcdba81916",
+      "html_url": "https://github.com/fwoelffel/nub-api/blob/38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac/src/app/modules/user/types/query.type.graphql",
+      "content": "type Query {\n\n    # This query returns all stored Users\n    getUsers: [User]\n\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/fwoelffel/nub-api/blob/38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac/src/app/modules/user/types/query.type.graphql:\ntype Query {\n\n    # This query returns all stored Users\n    getUsers: [User]\n\n}\n# https://github.com/fwoelffel/nub-api/blob/38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac/src/app/modules/user/types/user.type.graphql:\n# This type defines an User resource\ntype User {\n\n    # The User id (may be null if the User is deleted)\n    id: ID\n\n    # The User email address\n    email: String\n\n    # The User username\n    username: String\n\n    # The User creation date\n    createdDate: String\n\n    # The User last update date\n    updatedDate: String\n\n}",
+        "mergedPaths": [
+          "src/app/modules/user/types/user.type.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "user.type.graphql",
+      "path": "src/app/modules/user/types/user.type.graphql",
+      "sha": "b9a561fab33016fee4e9a5c7227b688de3b0735a",
+      "url": "https://api.github.com/repositories/103821857/contents/src/app/modules/user/types/user.type.graphql?ref=38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac",
+      "git_url": "https://api.github.com/repositories/103821857/git/blobs/b9a561fab33016fee4e9a5c7227b688de3b0735a",
+      "html_url": "https://github.com/fwoelffel/nub-api/blob/38ecaf4fc30cd0883a9d6c5289e400c5fa4148ac/src/app/modules/user/types/user.type.graphql",
+      "content": "# This type defines an User resource\ntype User {\n\n    # The User id (may be null if the User is deleted)\n    id: ID\n\n    # The User email address\n    email: String\n\n    # The User username\n    username: String\n\n    # The User creation date\n    createdDate: String\n\n    # The User last update date\n    updatedDate: String\n\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-17T10:52:13Z",
+    "updated_at": "2019-03-16T15:21:57Z",
+    "pushed_at": "2018-01-05T20:07:54Z",
+    "issues": 2,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

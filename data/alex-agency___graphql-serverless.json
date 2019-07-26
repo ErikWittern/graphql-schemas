@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-serverless",
+  "repo_full_name": "alex-agency/graphql-serverless",
+  "repo_owner": "alex-agency",
+  "repo_description": "Serverless container with GraphQL api build on top of Apollo Server 2.3",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/api/schema/schema.graphql",
+      "sha": "241efad3f6153f076f529cdb6db11d7a7a9414ad",
+      "url": "https://api.github.com/repositories/169696182/contents/src/api/schema/schema.graphql?ref=47ced8cade00531faa5c1e2735721d9ec201d985",
+      "git_url": "https://api.github.com/repositories/169696182/git/blobs/241efad3f6153f076f529cdb6db11d7a7a9414ad",
+      "html_url": "https://github.com/alex-agency/graphql-serverless/blob/47ced8cade00531faa5c1e2735721d9ec201d985/src/api/schema/schema.graphql",
+      "content": "type Event {\n    id: ID!\n    title: String\n    description: String\n    location: String\n    createdAt: String!\n    members: [User]\n    organizers: [User]\n}\n\ntype User {\n    id: ID!\n    authToken: String\n    createdAt: String!\n    firstName: String\n    lastName: String\n    middleName: String\n    email: String\n    isEmailVerified: Boolean\n    mobile: String\n    dateOfBirth: String\n    companyName: String\n}\n\ntype Query {\n    events: [Event]\n    event(id: ID!): Event\n    users: [User]\n    user(id: ID!): User\n}\n\ntype Mutation {\n    createEvent(title: String!): Event!\n    deleteEvent(id: ID!): Boolean\n    createUser(email: String!): User!\n    deleteUser(id: ID!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-08T06:53:27Z",
+    "updated_at": "2019-02-08T07:09:51Z",
+    "pushed_at": "2019-02-08T07:11:40Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 1,
+    "stargazers": 0
+  }
+}

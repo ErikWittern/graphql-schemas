@@ -1,0 +1,42 @@
+{
+  "repo_name": "plugg-admin",
+  "repo_full_name": "seanyu4296/plugg-admin",
+  "repo_owner": "seanyu4296",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "5dde4e2f955b10420bcf82b19f8997a28d078437",
+      "url": "https://api.github.com/repositories/85073835/contents/src/graphql/schema.graphql?ref=73d6e76cec37f77dbe29eb349a8c39a8a7ee9745",
+      "git_url": "https://api.github.com/repositories/85073835/git/blobs/5dde4e2f955b10420bcf82b19f8997a28d078437",
+      "html_url": "https://github.com/seanyu4296/plugg-admin/blob/73d6e76cec37f77dbe29eb349a8c39a8a7ee9745/src/graphql/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n}\n\ntype Listing {\n  id: ID\n  muvr: User\n  shoppr: User\n  invoiceUrl: String\n  stepperCount: Int\n  tags: [String]\n  status: String\n  parcelSize: String\n  receivingDate: [String]\n  localShippingDate: String\n  intlCity: String\n  intllPostalCode: String\n  intlRoomNumber: String\n  intlState: String\n  intlStreetAddress: String\n  intlCountry: String\n  intlAddress: String\n  timeCreated: String\n  timePaid: String\n  timeCompleted: String\n}\n\ntype RootQuery {\n  store: Store\n}\n\ntype Store {\n  # Plugg Users\n  users: [User]\n\n  # Plugg Single User\n  user(id: String!): User\n\n  # Plugg Users\n  listings: [Listing]\n\n  # Plugg Single Listing\n  listing(id: String!): Listing\n}\n\ntype User {\n  id: ID\n  firstName: String\n  lastName: String\n  rating: Int\n  email: String\n  paypalEmail: String\n  phStreetAddress: String\n  phStreetAddress2: String\n  phCity: String\n  phProvince: String\n  phPostalCode: String\n  timeCreated: String\n  phFullAddress: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-15T13:11:23Z",
+    "updated_at": "2017-03-15T13:12:37Z",
+    "pushed_at": "2017-03-15T13:13:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

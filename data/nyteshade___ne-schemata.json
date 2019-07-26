@@ -1,0 +1,42 @@
+{
+  "repo_name": "ne-schemata",
+  "repo_full_name": "nyteshade/ne-schemata",
+  "repo_owner": "nyteshade",
+  "repo_description": "A utility that makes working with GraphQL Schema Definition Language far easier",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "person.graphql",
+      "path": "test/gql/person.graphql",
+      "sha": "3a661db04729c4bb7b89b4e483d0c9275afd34b3",
+      "url": "https://api.github.com/repositories/128836407/contents/test/gql/person.graphql?ref=cf1c74761c91e901838dd3a84735c935065cb329",
+      "git_url": "https://api.github.com/repositories/128836407/git/blobs/3a661db04729c4bb7b89b4e483d0c9275afd34b3",
+      "html_url": "https://github.com/nyteshade/ne-schemata/blob/cf1c74761c91e901838dd3a84735c935065cb329/test/gql/person.graphql",
+      "content": "enum Gender {\n  Male,\n  Female,\n  TransFemale,\n  TransMale,\n  NonBinary\n}\n\ntype Person {\n  name: String\n  gender: Gender\n}\n\ntype Query {\n  peeps: [Person]\n}\n\ntype Mutation {\n  setPeep(name: String!, gender: Gender!): Person\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-09T21:33:00Z",
+    "updated_at": "2019-06-27T01:39:41Z",
+    "pushed_at": "2019-07-19T22:29:37Z",
+    "issues": 4,
+    "watchers": 1,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 35,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 7,
+    "pull_requests_merged": 25,
+    "releases": 2,
+    "stargazers": 7
+  }
+}

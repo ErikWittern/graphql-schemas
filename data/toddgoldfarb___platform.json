@@ -1,0 +1,41 @@
+{
+  "repo_name": "platform",
+  "repo_full_name": "toddgoldfarb/platform",
+  "repo_owner": "toddgoldfarb",
+  "repo_description": "OpenSource Amplifield Platform",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/imports/api/apollo/schema.graphql",
+      "sha": "f43ccd4f72c06d9e2bc752904d5d4f164803af79",
+      "url": "https://api.github.com/repositories/117778085/contents/app/imports/api/apollo/schema.graphql?ref=22e2d8d262b7aea2765ae70e2964b2e24df6bea2",
+      "git_url": "https://api.github.com/repositories/117778085/git/blobs/f43ccd4f72c06d9e2bc752904d5d4f164803af79",
+      "html_url": "https://github.com/toddgoldfarb/platform/blob/22e2d8d262b7aea2765ae70e2964b2e24df6bea2/app/imports/api/apollo/schema.graphql",
+      "content": "scalar Date\n\ntype Event {\n  _id: ID!\n  title: String\n  slug: String\n  description: String\n  userId: String\n  username: String\n  hostName: String\n  imageUrl: String\n  contentType: String\n  trackUrl: String\n  youtubeUrl: String\n  youtubeVideoId: String\n  published: Boolean\n  startAt: Date\n  endAt: Date\n  live: Boolean\n  past: Boolean\n  host: User\n  library: Boolean\n  authorized: Boolean\n  rebroadcast: Boolean\n  isPublic: Boolean\n  joined: Boolean\n  intentions: [Intention]\n  isOwner: Boolean\n  name: String\n  path: String\n  managePath: String\n  editPath: String\n  liveStream: Boolean\n  attendees(filter: AttendeesFilter): [Attendee]\n  onlineCount: Int\n}\n\ntype Package {\n  _id: ID!\n\n  users: [User]!\n\n  name: String!\n  description: String\n\n  # the user role assigned after purchase/subscription\n  role: String!\n\n  # one or the other must be defined\n  stripeSkuId: ID\n  stripePlanId: ID\n\n  # billed amount/interval unless its oneTime\n  amount: Int!\n  oneTime: Boolean!\n  interval: String\n}\n\ntype Attendee {\n  _id: ID!\n  eventId: ID!\n  userId: ID!\n  firstSeenAt: Date!\n  lastSeenAt: Date!\n  active: Boolean!\n  duration: Int\n  # computed fields\n  user: User\n  event: Event\n}\n\ntype Intention {\n  _id: ID!\n  userId: String\n  userName: String\n  userAvatar: String\n  userLocation: String\n  userLatlng: String\n  eventId: String\n  text: String\n  ampCount: Int\n  pinned: Boolean\n  createdAt: Date\n  userAmplified: Boolean\n}\n\ntype Like {\n  _id: ID!\n  userId: ID!\n  objectId: ID!\n  createdAt: Date!\n  startLatlng: [String]\n  endLatlng: [String]\n}\n\ntype Email {\n  address: String\n  verified: Boolean\n},\n\ntype User {\n  _id: ID!\n  name: String\n  username: String\n  self: Boolean\n  emails: [Email]\n  email: String\n  avatar: String\n  location: String\n  latlng: [String]\n  description: String\n  shortDescription: String\n  location: String\n  upcomingEvents: [Event]\n  pastEvents: [Event]\n  libraryEvents: [Event]\n  draftEvents: [Event]\n  roles: [String]\n  admin: Boolean\n  packageId: ID\n  package: Package\n},\n\ninput EventFilter {\n  live: Boolean\n  past: Boolean\n  rebroadcast: Boolean\n  library: Boolean\n  published: Boolean\n  isPublic: Boolean\n  published: Boolean\n}\n\ninput AttendeesFilter {\n  eventId: ID\n  active: Boolean\n  userId: ID\n}\n\ninput Sort {\n  field: String\n  direction: Int\n}\n\ntype Query {\n  teachers: [User]\n  admins: [User]\n  providers: [User]\n\n  packages: [Package]\n\n  user(username: String): User\n  event(_id: String, username: String, slug: String): Event\n\n  libraryEvents: [Event]\n\n  events(filter: EventFilter, sort: Sort): [Event]\n\n  liveEvents: [Event]\n  nonLiveEvents(past: Boolean!): [Event]\n\n  intentions(eventId: ID!, limit: Int): [Intention]\n\n  attendees(filter: AttendeesFilter): [Attendee]\n}\n\ntype Mutation {\n  joinEvent(input: JoinEventInput!): Boolean\n  partEvent(input: PartEventInput!): Boolean\n  postIntention(input: PostIntentionInput!): PostIntentionPayload\n  amplifyIntention(input: AmplifyIntentionInput!): AmplifyIntentionPayload\n  pinIntention(input: PinIntentionInput!): PinIntentionPayload\n}\n\ninput JoinEventInput {\n  eventId: ID\n  username: String\n  slug: String\n}\n\ninput PartEventInput {\n  eventId: ID\n  username: String\n  slug: String\n}\n\ninput PostIntentionInput {\n  eventId: ID!\n  text: String!\n}\ntype PostIntentionPayload {\n  intention: Intention\n}\n\ninput AmplifyIntentionInput {\n  intentionId: ID!\n}\ntype AmplifyIntentionPayload {\n  intention: Intention\n}\n\ninput PinIntentionInput {\n  intentionId: ID!\n}\ntype PinIntentionPayload {\n  intention: Intention\n}\n\ntype Subscription {\n  intentionAdded(eventId: ID!): Intention\n  likeAdded(eventId: ID!): Like\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": true,
+      "numDefinitions": 22
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-17T03:24:43Z",
+    "updated_at": "2019-03-18T23:55:32Z",
+    "pushed_at": "2018-01-17T03:30:17Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "Expreact",
+  "repo_full_name": "chezhe/expreact",
+  "repo_owner": "chezhe",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "bbb9d2b2cf6a50a66ee74411e22c064030e938c7",
+      "url": "https://api.github.com/repositories/62105601/contents/server/data/schema.graphql?ref=43e6016d0902610aa3ada4c7febc6c725bfa21f6",
+      "git_url": "https://api.github.com/repositories/62105601/git/blobs/bbb9d2b2cf6a50a66ee74411e22c064030e938c7",
+      "html_url": "https://github.com/chezhe/Expreact/blob/43e6016d0902610aa3ada4c7febc6c725bfa21f6/server/data/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Book implements Node {\n  id: ID!\n  author: String\n  title: String\n}\n\ntype Feature implements Node {\n  id: ID!\n  name: String\n  description: String\n  url: String\n}\n\ntype FeatureConnection {\n  pageInfo: PageInfo!\n  edges: [FeatureEdge]\n}\n\ntype FeatureEdge {\n  node: Feature\n  cursor: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n  book: Book\n}\n\ntype User implements Node {\n  id: ID!\n  features(after: String, first: Int, before: String, last: Int): FeatureConnection\n  username: String\n  website: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-06-28T03:04:15Z",
+    "updated_at": "2016-06-28T04:00:17Z",
+    "pushed_at": "2016-08-18T09:43:17Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

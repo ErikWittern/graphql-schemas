@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-playground",
+  "repo_full_name": "shawnkoon/graphql-playground",
+  "repo_owner": "shawnkoon",
+  "repo_description": "Production ready GraphQL playground using TypeScript.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e156af051d9a66e677ece3b2c17cf7861f63827a",
+      "url": "https://api.github.com/repositories/174016386/contents/src/schema.graphql?ref=3f8d77098759b82db230bdffe32cabd906063247",
+      "git_url": "https://api.github.com/repositories/174016386/git/blobs/e156af051d9a66e677ece3b2c17cf7861f63827a",
+      "html_url": "https://github.com/shawnkoon/graphql-playground/blob/3f8d77098759b82db230bdffe32cabd906063247/src/schema.graphql",
+      "content": "type Query {\n  users(query: String): [User!]!\n  posts(query: String): [Post!]!\n  me: User!\n  post: Post!\n  comments: [Comment!]!\n}\n\ntype Mutation {\n  createUser(data: CreateUserInput!): User!\n  deleteUser(id: ID!): User!\n  updateUser(id: ID!, data: UpdateUserInput!): User!\n  createPost(data: CreatePostInput!): Post!\n  deletePost(id: ID!): Post!\n  updatePost(id: ID!, data: UpdatePostInput!): Post!\n  createComment(data: CreateCommentInput!): Comment!\n  deleteComment(id: ID!): Comment!\n  updateComment(id: ID!, data: UpdateCommentInput!): Comment!\n}\n\ntype Subscription {\n  comment(postId: ID!): Comment!\n  post: PostSubscriptionPayload!\n}\n\ninput CreateUserInput {\n  name: String!\n  email: String!\n  age: Int\n}\n\ninput UpdateUserInput {\n  name: String\n  email: String\n  age: Int\n}\n\ninput CreatePostInput {\n  title: String!\n  body: String!\n  published: Boolean!\n  author: ID!\n}\n\ninput UpdatePostInput {\n  title: String\n  body: String\n  published: Boolean\n}\n\ninput CreateCommentInput {\n  text: String!\n  author: ID!\n  post: ID!\n}\n\ninput UpdateCommentInput {\n  text: String\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  author: User!\n  post: Post!\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  age: Int\n  posts: [Post!]!\n  comments: [Comment!]!\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  body: String!\n  published: Boolean!\n  author: User!\n  comments: [Comment!]!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ntype PostSubscriptionPayload {\n  mutation: MutationType!\n  data: Post!\n}\n\ntype CommentSubscriptionPayload {\n  mutation: MutationType!\n  data: Comment!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-05T20:31:58Z",
+    "updated_at": "2019-05-23T05:32:40Z",
+    "pushed_at": "2019-07-17T19:32:24Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 6,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

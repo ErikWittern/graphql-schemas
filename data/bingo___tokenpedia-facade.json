@@ -1,0 +1,42 @@
+{
+  "repo_name": "tokenpedia-facade",
+  "repo_full_name": "bingo/tokenpedia-facade",
+  "repo_owner": "bingo",
+  "repo_description": "Tokenpedia facade server, driven by Graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schemas/schema.graphql",
+      "sha": "f191777c25c19551fccafca195e7123fd0d32c0d",
+      "url": "https://api.github.com/repositories/136013105/contents/src/schemas/schema.graphql?ref=5ac9e3fa6ff16cd66ab5705cf8a4925140d4dab7",
+      "git_url": "https://api.github.com/repositories/136013105/git/blobs/f191777c25c19551fccafca195e7123fd0d32c0d",
+      "html_url": "https://github.com/bingo/tokenpedia-facade/blob/5ac9e3fa6ff16cd66ab5705cf8a4925140d4dab7/src/schemas/schema.graphql",
+      "content": "type Query {\n  hotTokens: [Token!]\n  tokensTopN(sort: SORTABLE_FIELDS = price, order: ORDER = desc, limit: Int = 20): [Token!]\n  tokensToMarket: [TokenToMarket!]\n  tokenList(sort: SORTABLE_FIELDS = price, order: ORDER = desc, limit: Int = 20, start: Int = 0): TokenPage\n  token(id: String): Token \n}\n\ntype Date {\n  elapsed: Float #unix time elapsed after 1970-01-01\n  tz: String #timezone\n}\n\nenum SORTABLE_FIELDS {\n  market_cap\n  volume_24h\n  price\n  percent_change_24h\n}\n\nenum ORDER {\n  desc #descend\n  asc #ascend\n}\n\nenum CurrencyUnit {\n  USD\n  RMB\n}\n\ntype ETHAddress {\n  address: String! #TODO: add constraints to address format\n}\n\ntype Holder {\n  position: Int\n  address: String\n  share: Float\n  percentage: Float\n}\n\ntype DistributionItem {\n  owner: String!\n  percentage: Float!\n}\n\ntype ICOInfo {\n  startDate: Date\n  endDate: Date\n  initPrice(unit: CurrencyUnit = USD): Float\n  totalRaised(unit: CurrencyUnit = USD): Float\n  country: String\n  lockPlan: String\n  isDestroyable: Boolean\n  distribution: [DistributionItem]\n}\n\ntype ExchangeInfo {\n  coinName: String!\n  exchangeAddress: String\n  exchangeIcon: String\n  launchDate: Date\n  dayOnePercentage: Float  #first day price +/- percentage\n  isBroken: Boolean #ever broken below init price\n}\n\ntype TransactionInfo {\n  price(unit: CurrencyUnit = USD): Float\n  amount: Float\n}\n\nenum SOCIALMEDIA {\n  LINKEDIN\n  FACEBOOK\n  TWITTER\n  TELEGRAM\n  WEIBO\n}\n\ntype SocialLink {\n  mediaType: SOCIALMEDIA\n  url: String!\n}\n\ntype TeamMember {\n  isFounder: Boolean!\n  photo: String\n  name: String!\n  position: String!\n  experience: String\n  socialLinks: [SocialLink!]\n}\n\n\ntype TeamInfo {\n  members: [TeamMember]!\n  address: String\n  totalMembers: Int\n  developers: Int\n  developerPercent: Float\n  marketingMembers: Int\n  marketingMemberPercent: Float\n}\n\ntype Advisor {\n  isVIP: Boolean\n  photo: String #url link to photo\n  name: String!\n  title: String\n  socialLinks: [SocialLink!]\n}\n\ntype AdvisorAllocation {\n  district: String!\n  number: Int\n}\n\ntype AdvisorStatistic {\n  number: Int\n  VIPNumber: Int\n  experiencedNumber: Int\n  allocation: [AdvisorAllocation!]\n}\n\ntype AdvisorInfo {\n  advisors: [Advisor!]!\n  statiscs: AdvisorStatistic\n}\n\ntype Investor {\n  name: String!\n  icon: String\n  url: String\n  isVIP: Boolean\n\n}\n\ntype InvestorInfo {\n  investors: [Investor!]!\n  investorNum: Int\n  bigInvestorNum: Int\n}\n\ntype SociaMedia {\n  name: String!\n  subscribers: Int!\n  activities: Int\n}\n\ntype SearchIndex {\n  indexer: String!\n  last7Days: Float\n  last30Days: Float\n  trendSnapShot: String #trends snapshot image url\n}\n\ntype ProjectInfo {\n  url: String\n  whitePaper: String\n  name: String #company/funds name\n  registration: String\n  address: String\n  contact: String\n}\n\nenum PLATFORM {\n  IOS,\n  ANDROID,\n  GENERIC\n}\n\ntype DApp {\n  platform: PLATFORM\n  downloadAddress: String\n  updatedAt: Date\n}\n\ntype GithubInfo { #github \n  link: String! #github address\n  hasPublicRepos: Boolean!\n  hasOfficialDevDoc: Boolean\n  urlOfDevDoc: String\n  publicRepos: Int\n  #below information retrieved from Github Service\n  last7DaysCommit: Int\n  last30DaysCommit: Int\n  contributors: Int\n  fork:Int\n  star:Int\n  watch:Int\n}\n\n#Token\n# Basic entity in tokenpedia\ntype Token {\n  id: ID!\n  name: String! #cms\n  abbrev: String #cms\n  chineseName: String #cms\n  icon: String #url string of icon, optional #cms\n  description: String #cms\n  category: String\n  totalSupply: Float\n  circulateSupply: Float\n  contractAddress: ETHAddress!\n  holders: Float #Holder account number  #bigdata\n  transactions: Float #bigdata\n  isListed: Boolean! #Listed in public exchange  \n  marketCap(unit: CurrencyUnit = USD): Float#!may overfloat, bignumber needed, also UNIT needed\n  currentPrice(unit: CurrencyUnit = USD): Float #price\n  currentPercentage: Float\n  maxPrice(unit: CurrencyUnit = USD): Float #?\n  minPrice(unit: CurrencyUnit = USD): Float #?\n  topHolders: [Holder!] \n  icoInfo: [ICOInfo] #cms\n  exchangeInfo: [ExchangeInfo] \n  transactionInfo: [TransactionInfo]\n  teamInfo: TeamInfo #cms\n  advisorInfo: AdvisorInfo  #cms\n  investorInfo: InvestorInfo #cms\n  socialMedias: [SociaMedia] #cms\n  searchIndex: [SearchIndex] #???\n  projectInfo: ProjectInfo  #cms\n  dappInfo: [DApp] #cms\n  githubInfo: GithubInfo\n}\n\n#token not go to market yet\ntype TokenToMarket {\n  id: ID!\n  name: String!\n  icon: String\n  estToMarket: Date\n}\n\ntype TokenPage {\n  tokens: [Token]!\n  currentPage: Int!\n  pageSize: Int!\n  totalPage: Int!\n  totalTokens: Int!\n  currentTokens: Int!\n}\n\n\n\n\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 25,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 30
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-04T11:07:52Z",
+    "updated_at": "2018-06-07T04:31:56Z",
+    "pushed_at": "2018-06-07T04:31:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

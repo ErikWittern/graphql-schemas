@@ -1,0 +1,39 @@
+{
+  "repo_name": "spa-starter-kit",
+  "repo_full_name": "dbpiper/spa-starter-kit",
+  "repo_owner": "dbpiper",
+  "repo_description": "My personal starter kit for SPA sites. Uses: React, Redux, Prisma, Apollo, Cypress, Jest, and Gulp.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/schema.graphql",
+      "sha": "291b903d3f9508f4859c608183b038f154639e43",
+      "url": "https://api.github.com/repositories/183462581/contents/src/server/schema.graphql?ref=e98f10d2b03c7ebe4d0d4d831f52e089e018ffba",
+      "git_url": "https://api.github.com/repositories/183462581/git/blobs/291b903d3f9508f4859c608183b038f154639e43",
+      "html_url": "https://github.com/dbpiper/spa-starter-kit/blob/e98f10d2b03c7ebe4d0d4d831f52e089e018ffba/src/server/schema.graphql",
+      "content": "type Query {\n  stock(id: ID!): Stock\n  stocks(ticker: String!, earliestDate: Int!): [Stock!]!\n  allStocks: [Stock!]!\n  tickers: [String!]!\n}\n\ntype Stock {\n  id: ID!\n  price: Float!\n  date: Int!\n  ticker: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-25T15:33:55Z",
+    "updated_at": "2019-04-26T19:33:15Z",
+    "pushed_at": "2019-04-26T19:33:14Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

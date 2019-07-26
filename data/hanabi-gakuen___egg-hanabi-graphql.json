@@ -1,0 +1,107 @@
+{
+  "repo_name": "egg-hanabi-graphql",
+  "repo_full_name": "hanabi-gakuen/egg-hanabi-graphql",
+  "repo_owner": "hanabi-gakuen",
+  "repo_description": "graphql plugin for hanabi",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/plugins/token/graphql/query/schema.graphql",
+      "sha": "9db0527ab025c06d0946d10780a8b6eeec3d621f",
+      "url": "https://api.github.com/repositories/118229248/contents/test/fixtures/plugins/token/graphql/query/schema.graphql?ref=4cdf25352321b5af9dfcc29334fc005c0e3feb93",
+      "git_url": "https://api.github.com/repositories/118229248/git/blobs/9db0527ab025c06d0946d10780a8b6eeec3d621f",
+      "html_url": "https://github.com/hanabi-gakuen/egg-hanabi-graphql/blob/4cdf25352321b5af9dfcc29334fc005c0e3feb93/test/fixtures/plugins/token/graphql/query/schema.graphql",
+      "content": "type Query {\n  # Token表\n  getTokenById(input: GetTokenByIdReq): GetTokenByIdRes\n  getTokenList(input: GetTokenListReq): GetTokenListRes\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/hanabi-gakuen/egg-hanabi-graphql/blob/4cdf25352321b5af9dfcc29334fc005c0e3feb93/test/fixtures/plugins/token/graphql/query/schema.graphql:\ntype Query {\n  # Token表\n  getTokenById(input: GetTokenByIdReq): GetTokenByIdRes\n  getTokenList(input: GetTokenListReq): GetTokenListRes\n}\n# https://github.com/hanabi-gakuen/egg-hanabi-graphql/blob/4cdf25352321b5af9dfcc29334fc005c0e3feb93/test/fixtures/plugins/token/graphql/token/schema.graphql:\n\ntype Token {\n  id: Int # 主键\n  gmtCreate: String # 创建时间\n  gmtModified: String # 修改时间\n  token: String # 插件token\n  userId: Int # 用户id\n}\n\ninput GetTokenByIdReq {\n  id: String\n}\ntype GetTokenByIdRes {\n  success: Boolean\n  message: String\n  data: Token\n}\n\ninput GetTokenListReq {\n  pageSize: Int # (选填)每页条数\n  currentPage: Int # (选填)当前页数\n  id: Int # 主键\n  gmtCreate: String # 创建时间\n  gmtModified: String # 修改时间\n  token: String # 插件token\n  userId: Int # 用户id\n}\ntype GetTokenListRes {\n  success: Boolean\n  message: String\n  data: [Token]\n}\n\ninput CreateTokenReq {\n  id: Int # 主键\n  gmtCreate: String # 创建时间\n  gmtModified: String # 修改时间\n  token: String # 插件token\n  userId: Int # 用户id\n}\n\ninput UpdateTokenReq {\n  id: Int # 主键\n  gmtCreate: String # 创建时间\n  gmtModified: String # 修改时间\n  token: String # 插件token\n  userId: Int # 用户id\n}\n\ninput DeleteTokenReq {\n  id: String!\n}\n",
+        "mergedPaths": [
+          "test/fixtures/plugins/token/graphql/token/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "GetTokenByIdRes",
+          "GetTokenListRes"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/plugins/token/graphql/token/schema.graphql",
+      "sha": "d5eba07fbb63b3d0d53ed635eb0bc4b3c89fab70",
+      "url": "https://api.github.com/repositories/118229248/contents/test/fixtures/plugins/token/graphql/token/schema.graphql?ref=4cdf25352321b5af9dfcc29334fc005c0e3feb93",
+      "git_url": "https://api.github.com/repositories/118229248/git/blobs/d5eba07fbb63b3d0d53ed635eb0bc4b3c89fab70",
+      "html_url": "https://github.com/hanabi-gakuen/egg-hanabi-graphql/blob/4cdf25352321b5af9dfcc29334fc005c0e3feb93/test/fixtures/plugins/token/graphql/token/schema.graphql",
+      "content": "\ntype Token {\n  id: Int # 主键\n  gmtCreate: String # 创建时间\n  gmtModified: String # 修改时间\n  token: String # 插件token\n  userId: Int # 用户id\n}\n\ninput GetTokenByIdReq {\n  id: String\n}\ntype GetTokenByIdRes {\n  success: Boolean\n  message: String\n  data: Token\n}\n\ninput GetTokenListReq {\n  pageSize: Int # (选填)每页条数\n  currentPage: Int # (选填)当前页数\n  id: Int # 主键\n  gmtCreate: String # 创建时间\n  gmtModified: String # 修改时间\n  token: String # 插件token\n  userId: Int # 用户id\n}\ntype GetTokenListRes {\n  success: Boolean\n  message: String\n  data: [Token]\n}\n\ninput CreateTokenReq {\n  id: Int # 主键\n  gmtCreate: String # 创建时间\n  gmtModified: String # 修改时间\n  token: String # 插件token\n  userId: Int # 用户id\n}\n\ninput UpdateTokenReq {\n  id: Int # 主键\n  gmtCreate: String # 创建时间\n  gmtModified: String # 修改时间\n  token: String # 插件token\n  userId: Int # 用户id\n}\n\ninput DeleteTokenReq {\n  id: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 8
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/plugins/user/graphql/user/schema.graphql",
+      "sha": "991945f116b5212b957cbec557979631019387f8",
+      "url": "https://api.github.com/repositories/118229248/contents/test/fixtures/plugins/user/graphql/user/schema.graphql?ref=4cdf25352321b5af9dfcc29334fc005c0e3feb93",
+      "git_url": "https://api.github.com/repositories/118229248/git/blobs/991945f116b5212b957cbec557979631019387f8",
+      "html_url": "https://github.com/hanabi-gakuen/egg-hanabi-graphql/blob/4cdf25352321b5af9dfcc29334fc005c0e3feb93/test/fixtures/plugins/user/graphql/user/schema.graphql",
+      "content": "type Query {\n  user(id: Int): User\n  projects: [Project!]\n}\n\ntype User {\n  id: String!\n  password: String!\n  name: String!\n  projects: [Project!]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/hanabi-gakuen/egg-hanabi-graphql/blob/4cdf25352321b5af9dfcc29334fc005c0e3feb93/test/fixtures/plugins/user/graphql/user/schema.graphql:\ntype Query {\n  user(id: Int): User\n  projects: [Project!]\n}\n\ntype User {\n  id: String!\n  password: String!\n  name: String!\n  projects: [Project!]\n}\n\n# https://github.com/hanabi-gakuen/egg-hanabi-graphql/blob/4cdf25352321b5af9dfcc29334fc005c0e3feb93/test/fixtures/plugins/user/graphql/project/schema.graphql:\n\ntype Project {\n  name: String!\n}\n",
+        "mergedPaths": [
+          "test/fixtures/plugins/user/graphql/project/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Project"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/plugins/user/graphql/project/schema.graphql",
+      "sha": "2249d1c992fc645bd3299e72ce44d8eb247f2f80",
+      "url": "https://api.github.com/repositories/118229248/contents/test/fixtures/plugins/user/graphql/project/schema.graphql?ref=4cdf25352321b5af9dfcc29334fc005c0e3feb93",
+      "git_url": "https://api.github.com/repositories/118229248/git/blobs/2249d1c992fc645bd3299e72ce44d8eb247f2f80",
+      "html_url": "https://github.com/hanabi-gakuen/egg-hanabi-graphql/blob/4cdf25352321b5af9dfcc29334fc005c0e3feb93/test/fixtures/plugins/user/graphql/project/schema.graphql",
+      "content": "\ntype Project {\n  name: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-20T09:34:50Z",
+    "updated_at": "2018-01-20T09:35:36Z",
+    "pushed_at": "2018-01-29T12:10:39Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

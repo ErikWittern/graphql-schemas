@@ -1,0 +1,41 @@
+{
+  "repo_name": "desafio-front-end-onovolab",
+  "repo_full_name": "mathenls/desafio-front-end-onovolab",
+  "repo_owner": "mathenls",
+  "repo_description": "Onovolab's Junior Front-End Developer Challenge",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "36ba5c9fd6f2bda17245b3704ae4bd4fc0ade2ee",
+      "url": "https://api.github.com/repositories/157632058/contents/schema.graphql?ref=dde7d63dbb84d701ed21e6c8faf4f98afa593694",
+      "git_url": "https://api.github.com/repositories/157632058/git/blobs/36ba5c9fd6f2bda17245b3704ae4bd4fc0ade2ee",
+      "html_url": "https://github.com/mathenls/desafio-front-end-onovolab/blob/dde7d63dbb84d701ed21e6c8faf4f98afa593694/schema.graphql",
+      "content": "type ListMetadata {\n  count: Int\n}\n\ntype Mutation {\n  createSegment(id: ID!, code: String!, name: String!): Segment\n  updateSegment(id: ID!, code: String, name: String): Segment\n  removeSegment(id: ID!): Boolean\n  createStartup(name: String!, imageUrl: String!, segment_id: ID!, teamCount: Int!, annualReceipt: Int!, description: String!): Startup\n  updateStartup(name: String, imageUrl: String, segment_id: ID, teamCount: Int, annualReceipt: Int, description: String): Startup\n  removeStartup(id: ID!): Boolean\n}\n\ntype Query {\n  Segment(id: ID!): Segment\n  allSegments(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: SegmentFilter): [Segment]\n  _allSegmentsMeta(page: Int, perPage: Int, filter: SegmentFilter): ListMetadata\n  Startup(id: ID!): Startup\n  allStartups(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: StartupFilter): [Startup]\n  _allStartupsMeta(page: Int, perPage: Int, filter: StartupFilter): ListMetadata\n}\n\ntype Segment {\n  id: ID!\n  code: String!\n  name: String!\n  Startups: [Startup]\n}\n\ninput SegmentFilter {\n  q: String\n  ids: [ID]\n  id: ID\n  code: String\n  name: String\n}\n\ntype Startup {\n  name: String!\n  imageUrl: String!\n  segment_id: ID!\n  teamCount: Int!\n  annualReceipt: Int!\n  description: String!\n  Segment: Segment\n}\n\ninput StartupFilter {\n  q: String\n  ids: [ID]\n  name: String\n  imageUrl: String\n  segment_id: ID\n  teamCount: Int\n  annualReceipt: Int\n  description: String\n  teamCount_lt: Int\n  teamCount_lte: Int\n  teamCount_gt: Int\n  teamCount_gte: Int\n  annualReceipt_lt: Int\n  annualReceipt_lte: Int\n  annualReceipt_gt: Int\n  annualReceipt_gte: Int\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-15T01:04:16Z",
+    "updated_at": "2018-11-20T04:02:23Z",
+    "pushed_at": "2018-11-20T04:02:21Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

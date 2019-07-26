@@ -1,0 +1,39 @@
+{
+  "repo_name": "sample-go-graphql-server",
+  "repo_full_name": "nywleswoey/sample-go-graphql-server",
+  "repo_owner": "nywleswoey",
+  "repo_description": "Sample GraphQL server using GO. Implementation includes GraphQL playground.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "297e9534f903f3b2e2a9824f66096e1a798f445a",
+      "url": "https://api.github.com/repositories/105768027/contents/schema.graphql?ref=0b7ca1e84419f4b605309f5cb198263464231b42",
+      "git_url": "https://api.github.com/repositories/105768027/git/blobs/297e9534f903f3b2e2a9824f66096e1a798f445a",
+      "html_url": "https://github.com/nywleswoey/sample-go-graphql-server/blob/0b7ca1e84419f4b605309f5cb198263464231b42/schema.graphql",
+      "content": "type User {\n  id: ID\n  email: String!\n  post(id: ID!): Post\n  posts: [Post!]!\n  follower(id: ID!): User\n  followers: [User!]!\n  followee(id: ID!): User\n  followees: [User!]!\n}\n\ntype Post {\n  id: ID\n  user: User!\n  title: String!\n  body: String!\n  comment(id: ID!): Comment\n  comments: [Comment!]!\n}\n\ntype Comment {\n  id: ID\n  user: User!\n  post: Post!\n  title: String\n  body: String!\n}\n\ntype Query {\n  user(id: ID!): User\n}\n\ntype Mutation {\n  createUser(email: String!): User\n  removeUser(id: ID!): Boolean\n  follow(follower: ID!, followee: ID!): Boolean\n  unfollow(follower: ID!, followee: ID!): Boolean\n  createPost(user: ID!, title: String!, body: String!): Post\n  removePost(id: ID!): Boolean\n  createComment(user: ID!, post: ID!, title: String!, body: String!): Comment\n  removeComment(id: ID!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-04T12:52:39Z",
+    "updated_at": "2017-10-04T14:25:47Z",
+    "pushed_at": "2017-10-07T10:32:43Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

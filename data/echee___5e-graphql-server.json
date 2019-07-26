@@ -1,0 +1,41 @@
+{
+  "repo_name": "5e-graphql-server",
+  "repo_full_name": "echee/5e-graphql-server",
+  "repo_owner": "echee",
+  "repo_description": "A GraphQL server hooked up to a DnD 5e REST API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "13beb92a2389497c6e4af7e91317da2923cd9afb",
+      "url": "https://api.github.com/repositories/119379284/contents/data/schema.graphql?ref=d0519c3a9c1cf4755b3656ec12c8adb888f74175",
+      "git_url": "https://api.github.com/repositories/119379284/git/blobs/13beb92a2389497c6e4af7e91317da2923cd9afb",
+      "html_url": "https://github.com/echee/5e-graphql-server/blob/d0519c3a9c1cf4755b3656ec12c8adb888f74175/data/schema.graphql",
+      "content": "type Class {\n  id: String!\n  name: String!\n  hitDie: Int!\n  subclasses: [Subclass]\n}\n\ntype Query {\n  classes: [Class]!\n  class(id: ID!): Class\n}\n\ntype Subclass {\n  index: Int!\n  name: String!\n  subclassFlavor: String!\n  desc: [String!]\n  features: [Feature]\n}\n\ntype Feature {\n  name: String!\n  level: Int!\n  desc: [String!]\n  class: [Class]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-29T12:25:20Z",
+    "updated_at": "2018-03-18T08:15:21Z",
+    "pushed_at": "2018-03-18T08:15:20Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

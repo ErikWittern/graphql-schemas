@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql-apollo-resource-manager",
+  "repo_full_name": "nnnoel/graphql-apollo-resource-manager",
+  "repo_owner": "nnnoel",
+  "repo_description": "🚀 A full-stack MERN app demo using GraphQL + Apollo 2.0 + Grommet",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "programTypes.gql",
+      "path": "server/src/data/models/Program/programTypes.gql",
+      "sha": "cfba807ebbade7708ebcdfdb0c514352c92ca722",
+      "url": "https://api.github.com/repositories/108154707/contents/server/src/data/models/Program/programTypes.gql?ref=c3de00b4fb628da87e1f2c9230011dd14b17e689",
+      "git_url": "https://api.github.com/repositories/108154707/git/blobs/cfba807ebbade7708ebcdfdb0c514352c92ca722",
+      "html_url": "https://github.com/nnnoel/graphql-apollo-resource-manager/blob/c3de00b4fb628da87e1f2c9230011dd14b17e689/server/src/data/models/Program/programTypes.gql",
+      "content": "scalar Datetime\n\ntype Program {\n  id: ID!\n  name: String!\n  description: String!\n  website: String\n  cost: String\n  contactName: String!\n  email: String!\n  phoneNumber: String\n  size: String\n  location: String\n  county: String\n  ageRange: String\n  affiliations: String\n  timeOfDay: String\n  timeLength: String\n  certification: String\n  partners: String\n  scholarships: String\n  takesPlace: String\n  measuredSuccess: String\n  pastSuccess: String\n  pending: Boolean\n  createdAt: Datetime!\n}\n\ninput CreateProgramInput {\n  name: String!\n  description: String!\n  website: String\n  cost: String\n  contactName: String!\n  email: String!\n  phoneNumber: String\n  size: String\n  location: String\n  county: String\n  ageRange: String\n  affiliations: String\n  timeOfDay: String\n  timeLength: String\n  certification: String\n  partners: String\n  scholarships: String\n  takesPlace: String\n  measuredSuccess: String\n  pastSuccess: String\n  pending: Boolean\n}\n\ninput UpdateProgramInput {\n  id: ID!\n  name: String\n  description: String\n  website: String\n  cost: String\n  contactName: String\n  email: String\n  phoneNumber: String\n  size: String\n  location: String\n  county: String\n  ageRange: String\n  affiliations: String\n  timeOfDay: String\n  timeLength: String\n  certification: String\n  partners: String\n  scholarships: String\n  takesPlace: String\n  measuredSuccess: String\n  pastSuccess: String\n  pending: Boolean\n}\n\ninput GetProgramsInput {\n  searchText: String\n  filters: Filters\n}\n\ninput Filters {\n  takesPlace: String\n  timeOfDay: String\n  timeLength: String\n  cost: String\n  ageRange: String\n  pending: Boolean\n}\n\ntype Meta {\n  totalCount: Int!\n}\n\ntype Query {\n  test: String!\n  programs(\n    input: GetProgramsInput = {}\n    first: Int! = 10\n    skip: Int! = 0\n  ): [Program]\n  program(id: ID!): Program\n  _programsMeta(input: GetProgramsInput): Meta!\n}\n\ntype Mutation {\n  createProgram(input: CreateProgramInput = {}): Program\n  updateProgram(input: UpdateProgramInput = {}): Program\n  deleteProgram(id: ID!): Program\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    },
+    {
+      "name": "adminTypes.gql",
+      "path": "server/src/data/models/Admin/adminTypes.gql",
+      "sha": "2d1f8c667816eaba7f94ea8b3dc022895d480fa5",
+      "url": "https://api.github.com/repositories/108154707/contents/server/src/data/models/Admin/adminTypes.gql?ref=c3de00b4fb628da87e1f2c9230011dd14b17e689",
+      "git_url": "https://api.github.com/repositories/108154707/git/blobs/2d1f8c667816eaba7f94ea8b3dc022895d480fa5",
+      "html_url": "https://github.com/nnnoel/graphql-apollo-resource-manager/blob/c3de00b4fb628da87e1f2c9230011dd14b17e689/server/src/data/models/Admin/adminTypes.gql",
+      "content": "type Admin {\n  id: ID!\n  username: String!\n  password: String!\n}\n\ntype AdminPayload {\n  token: String\n  isAuthenticated: Boolean\n}\n\ntype Query {\n  admins: [Admin!]!\n  admin(id: ID!): Admin!\n  verifyAuthToken(token: String): AdminPayload!\n}\n\ntype Mutation {\n  createAdmin(username: String!, password: String!): Admin\n  updateAdmin(id: ID!, username: String, password: String): Admin\n  deleteAdmin(id: ID!): Admin\n  signInAdmin(username: String!, password: String!): AdminPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-24T16:34:34Z",
+    "updated_at": "2017-12-20T05:45:45Z",
+    "pushed_at": "2017-10-31T03:18:38Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

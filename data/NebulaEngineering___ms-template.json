@@ -1,0 +1,42 @@
+{
+  "repo_name": "ms-template",
+  "repo_full_name": "nebulaengineering/ms-template",
+  "repo_owner": "NebulaEngineering",
+  "repo_description": "MicroService Template",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "api/apiid/graphql/msname/schema.gql",
+      "sha": "9c80800f3de273bfa081a0f9b3c91f74384f44bc",
+      "url": "https://api.github.com/repositories/141304011/contents/api/apiid/graphql/msname/schema.gql?ref=d989515dc9184d23d6b7802d5a71f0941428f664",
+      "git_url": "https://api.github.com/repositories/141304011/git/blobs/9c80800f3de273bfa081a0f9b3c91f74384f44bc",
+      "html_url": "https://github.com/NebulaEngineering/ms-template/blob/d989515dc9184d23d6b7802d5a71f0941428f664/api/apiid/graphql/msname/schema.gql",
+      "content": "\"Hello world sample, please remove\"\ntype HelloWorldmsnamepascal{\n  \"text\"\n  sn: String!  \n}\n\ntype Query {\n  \"Hello world sample, please remove\"\n  getHelloWorldFrommsnamepascal: HelloWorldmsnamepascal\n}\n\ntype Subscription {\n  \"Hello world sample, please remove\"\n  msnamepascalHelloWorldSubscription: HelloWorldmsnamepascal  \n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-17T14:50:00Z",
+    "updated_at": "2019-01-16T16:39:37Z",
+    "pushed_at": "2019-01-16T16:39:35Z",
+    "issues": 2,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

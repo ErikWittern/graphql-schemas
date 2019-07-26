@@ -1,0 +1,39 @@
+{
+  "repo_name": "todo-in-react-apollo",
+  "repo_full_name": "rohitghatol/todo-in-react-apollo",
+  "repo_owner": "rohitghatol",
+  "repo_description": "Minimal Todo App in React Apollo (with and without react-adopt)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "6442b18d6dd006627c083c886d5053a166caa255",
+      "url": "https://api.github.com/repositories/180226407/contents/server/src/schema.graphql?ref=c20573533a2fae9d5d559d58a3e53c7dd46829b6",
+      "git_url": "https://api.github.com/repositories/180226407/git/blobs/6442b18d6dd006627c083c886d5053a166caa255",
+      "html_url": "https://github.com/rohitghatol/todo-in-react-apollo/blob/c20573533a2fae9d5d559d58a3e53c7dd46829b6/server/src/schema.graphql",
+      "content": "type Query {\n  feed: [Post!]!\n  drafts: [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String): Post\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n}\n\ntype Post {\n  id: ID!\n  published: Boolean!\n  title: String!\n  content: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-08T20:19:30Z",
+    "updated_at": "2019-04-08T20:52:12Z",
+    "pushed_at": "2019-04-08T20:52:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

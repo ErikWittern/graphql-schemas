@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql-authentication",
+  "repo_full_name": "anirvann/graphql-authentication",
+  "repo_owner": "anirvann",
+  "repo_description": "Different ways of authenticating graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "league.graphql",
+      "path": "api/graphql/typedefs/league.graphql",
+      "sha": "1785677a5821a0f43a494c6b5e0650f76d088b53",
+      "url": "https://api.github.com/repositories/163657502/contents/api/graphql/typedefs/league.graphql?ref=ac1493c55c77ca5933431b69ee9b23862df1daf8",
+      "git_url": "https://api.github.com/repositories/163657502/git/blobs/1785677a5821a0f43a494c6b5e0650f76d088b53",
+      "html_url": "https://github.com/anirvann/graphql-authentication/blob/ac1493c55c77ca5933431b69ee9b23862df1daf8/api/graphql/typedefs/league.graphql",
+      "content": "type League {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  leagues: [League]!\n  league(id: ID!): League!\n}\n\ntype Mutation {\n  createLeague(name: String!): League!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    },
+    {
+      "name": "team.graphql",
+      "path": "api/graphql/typedefs/team.graphql",
+      "sha": "df1c575ac70d658d8c7bb87c275921406502096e",
+      "url": "https://api.github.com/repositories/163657502/contents/api/graphql/typedefs/team.graphql?ref=c74ef0f18dfeb8cdf8d79c6210b79cae8598b508",
+      "git_url": "https://api.github.com/repositories/163657502/git/blobs/df1c575ac70d658d8c7bb87c275921406502096e",
+      "html_url": "https://github.com/anirvann/graphql-authentication/blob/c74ef0f18dfeb8cdf8d79c6210b79cae8598b508/api/graphql/typedefs/team.graphql",
+      "content": "type Team {\n  id: ID!\n  name: String!,\n  players: [String]!\n}\n\ntype Query {\n  teams: [Team]!\n  team(id: ID!): Team!\n}\n\ntype Mutation {\n  createTeam(name: String!, players: [String]!): Team!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-31T09:47:54Z",
+    "updated_at": "2019-01-10T17:36:15Z",
+    "pushed_at": "2019-01-10T17:36:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

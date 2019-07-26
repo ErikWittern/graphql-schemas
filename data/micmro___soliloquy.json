@@ -1,0 +1,42 @@
+{
+  "repo_name": "soliloquy",
+  "repo_full_name": "micmro/soliloquy",
+  "repo_owner": "micmro",
+  "repo_description": "React Frontend for Soliloquy single-user chat app.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "37dc7724cdc47f221aa39a17d236d7914c2f0f64",
+      "url": "https://api.github.com/repositories/97559332/contents/schema.graphql?ref=6868bdb9af45c0d803da1f4bf8a1f400ae30dcab",
+      "git_url": "https://api.github.com/repositories/97559332/git/blobs/37dc7724cdc47f221aa39a17d236d7914c2f0f64",
+      "html_url": "https://github.com/micmro/soliloquy/blob/6868bdb9af45c0d803da1f4bf8a1f400ae30dcab/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n  mutation: Mutation\n}\n\n# an entry in the chat\ntype Entry {\n  # ID of the Entry\n  id: ID!\n\n  # Chat Message\n  message: String!\n\n  # ID of the User that has created the entry\n  userId: ID!\n\n  # Creation time (as Unix timestamp)\n  created: Float!\n\n  # Edited time (as Unix timestamp), 'null' if not edited\n  edited: Float\n}\n\n# Entry type for creation\ninput EntryInput {\n  # Chat Message\n  message: String!\n}\n\ntype Mutation {\n  # Creates a new chat Entry\n  createEntry(newEntry: EntryInput): Entry\n\n  # updates an existing chat Entry\n  updateEntry(\n    # ID of Entry to update\n    id: ID!\n\n    # Object with changed keys\n    changes: EntryInput\n  ): Entry\n\n  # updates an existing chat Entry\n  deleteEntry(\n    # ID of Entry to delete\n    id: ID\n  ): Entry\n}\n\ntype RootQuery {\n  # Gets a User and all their Entries\n  user(id: ID!): User\n\n  # Get all Entries\n  entries: [Entry]\n}\n\n# A User in the chat app\ntype User {\n  # ID of the User\n  id: ID!\n\n  # Name of the User\n  name: String!\n\n  # Surname of the User\n  surname: String!\n\n  # Entries the User has created\n  entries: [Entry]\n\n  # Initials of the user\n  initials: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-18T06:10:58Z",
+    "updated_at": "2017-07-18T09:26:42Z",
+    "pushed_at": "2017-07-19T14:32:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

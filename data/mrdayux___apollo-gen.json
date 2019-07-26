@@ -1,0 +1,66 @@
+{
+  "repo_name": "apollo-gen",
+  "repo_full_name": "mrdayux/apollo-gen",
+  "repo_owner": "mrdayux",
+  "repo_description": "Generator and boilerplate for GraphQL apps",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gen.gql",
+      "path": "src/project-template/src/graphql/schema.gen.gql",
+      "sha": "ca6887d978246784dab0b765ce34045db4a8c9ba",
+      "url": "https://api.github.com/repositories/147587229/contents/src/project-template/src/graphql/schema.gen.gql?ref=60854aeda98f5aae42d7a49609bbb4c409feeac1",
+      "git_url": "https://api.github.com/repositories/147587229/git/blobs/ca6887d978246784dab0b765ce34045db4a8c9ba",
+      "html_url": "https://github.com/mrdayux/apollo-gen/blob/60854aeda98f5aae42d7a49609bbb4c409feeac1/src/project-template/src/graphql/schema.gen.gql",
+      "content": "## DON'T TOUCH - GENERATED CODE ##\n\ninterface Node {\n    id: Int\n}\n\ninput AuthRole {\n    role: Role!\n    conditions: String\n}\n\ntype Query {\n    _: Int\n}\n\ntype Mutation {\n    _: Int\n}\n\ntype Subscription {\n    _: Int\n}\n\nschema {\n    query: Query\n    mutation: Mutation\n    subscription: Subscription\n}\n\n#\n## DIRECTIVES ##\n# Table\ndirective @entity(table: String, singular: String, plural: String) on OBJECT\n\n# Field\ndirective @column on FIELD_DEFINITION\n\ndirective @id on FIELD_DEFINITION\n\ndirective @unique on FIELD_DEFINITION\n\ndirective @relation(relationType: RelationType, column: String, fkTable: String, fkColumn: String) on FIELD_DEFINITION\n\ndirective @auth(\n    getOneRoles: [AuthRole!]\n    getAllRoles: [AuthRole!]\n    createRoles: [AuthRole!]\n    updateRoles: [AuthRole!]\n    deleteRoles: [AuthRole!]\n) on OBJECT | FIELD | FIELD_DEFINITION\n\ndirective @notGenerated on FIELD_DEFINITION\n\ndirective @generate(\n    getOne: Boolean\n    getAll: Boolean\n    create: Boolean\n    update: Boolean\n    delete: Boolean\n) on OBJECT | FIELD | FIELD_DEFINITION\n\n# directive @stringManipulation(lowercase: Boolean, trim: Boolean, uppercase: Boolean) on FIELD_DEFINITION\n\n# directive @validation(min: Int, max: Int) on FIELD_DEFINITION\n\n# directive @match(regex: String, error: String) on FIELD_DEFINITION\n\n# Union\n# directive @discrimination on UNION\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/mrdayux/apollo-gen/blob/60854aeda98f5aae42d7a49609bbb4c409feeac1/src/project-template/src/graphql/schema.gen.gql:\n## DON'T TOUCH - GENERATED CODE ##\n\ninterface Node {\n    id: Int\n}\n\ninput AuthRole {\n    role: Role!\n    conditions: String\n}\n\ntype Query {\n    _: Int\n}\n\ntype Mutation {\n    _: Int\n}\n\ntype Subscription {\n    _: Int\n}\n\nschema {\n    query: Query\n    mutation: Mutation\n    subscription: Subscription\n}\n\n#\n## DIRECTIVES ##\n# Table\ndirective @entity(table: String, singular: String, plural: String) on OBJECT\n\n# Field\ndirective @column on FIELD_DEFINITION\n\ndirective @id on FIELD_DEFINITION\n\ndirective @unique on FIELD_DEFINITION\n\ndirective @relation(relationType: RelationType, column: String, fkTable: String, fkColumn: String) on FIELD_DEFINITION\n\ndirective @auth(\n    getOneRoles: [AuthRole!]\n    getAllRoles: [AuthRole!]\n    createRoles: [AuthRole!]\n    updateRoles: [AuthRole!]\n    deleteRoles: [AuthRole!]\n) on OBJECT | FIELD | FIELD_DEFINITION\n\ndirective @notGenerated on FIELD_DEFINITION\n\ndirective @generate(\n    getOne: Boolean\n    getAll: Boolean\n    create: Boolean\n    update: Boolean\n    delete: Boolean\n) on OBJECT | FIELD | FIELD_DEFINITION\n\n# directive @stringManipulation(lowercase: Boolean, trim: Boolean, uppercase: Boolean) on FIELD_DEFINITION\n\n# directive @validation(min: Int, max: Int) on FIELD_DEFINITION\n\n# directive @match(regex: String, error: String) on FIELD_DEFINITION\n\n# Union\n# directive @discrimination on UNION\n\n# https://github.com/mrdayux/apollo-gen/blob/dfd747119ede1e6b36ecaa442d8657ef63bd353f/src/project-template/src/graphql/enum/schema.gql:\nenum RelationType {\n    ONE_TO_ONE\n    ONE_TO_MANY\n    MANY_TO_ONE\n    MANY_TO_MANY\n}\n\nenum SortDirection {\n    ASC\n    DESC\n}\n\nenum Role {\n    ADMIN\n    USER\n    NONE\n}\n",
+        "mergedPaths": [
+          "src/project-template/src/graphql/enum/schema.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Role"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 17
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.gql",
+      "path": "src/project-template/src/graphql/enum/schema.gql",
+      "sha": "1e7e1f4f0cb8d29d90798037b461248fab1cb6b7",
+      "url": "https://api.github.com/repositories/147587229/contents/src/project-template/src/graphql/enum/schema.gql?ref=dfd747119ede1e6b36ecaa442d8657ef63bd353f",
+      "git_url": "https://api.github.com/repositories/147587229/git/blobs/1e7e1f4f0cb8d29d90798037b461248fab1cb6b7",
+      "html_url": "https://github.com/mrdayux/apollo-gen/blob/dfd747119ede1e6b36ecaa442d8657ef63bd353f/src/project-template/src/graphql/enum/schema.gql",
+      "content": "enum RelationType {\n    ONE_TO_ONE\n    ONE_TO_MANY\n    MANY_TO_ONE\n    MANY_TO_MANY\n}\n\nenum SortDirection {\n    ASC\n    DESC\n}\n\nenum Role {\n    ADMIN\n    USER\n    NONE\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-05T22:36:30Z",
+    "updated_at": "2019-06-13T14:39:31Z",
+    "pushed_at": "2019-06-13T14:39:30Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 2,
+    "stargazers": 2
+  }
+}

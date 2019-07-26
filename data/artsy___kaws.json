@@ -1,0 +1,42 @@
+{
+  "repo_name": "kaws",
+  "repo_full_name": "artsy/kaws",
+  "repo_owner": "artsy",
+  "repo_description": "API for collections, our SEO optimized marketing landing pages",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "_schema.graphql",
+      "path": "_schema.graphql",
+      "sha": "5673637b1ed6bcd40617e7224cfa6d20793c7108",
+      "url": "https://api.github.com/repositories/151622971/contents/_schema.graphql?ref=179e600cf792e0984682af56c006130237973947",
+      "git_url": "https://api.github.com/repositories/151622971/git/blobs/5673637b1ed6bcd40617e7224cfa6d20793c7108",
+      "html_url": "https://github.com/artsy/kaws/blob/179e600cf792e0984682af56c006130237973947/_schema.graphql",
+      "content": "# Object representing a collection page\ntype Collection {\n  id: ID!\n\n  # slug version of title, used for pretty URLs (e.g. `kaws-prints` for Kaws Prints\n  slug: String!\n\n  # Name of the collection\n  title: String!\n\n  # Description of the collection which can include links to other collections\n  description: String\n\n  # Background image for the header of the collection page\n  headerImage: String\n\n  # Set of keywords used for SEO purposes\n  keywords: String!\n\n  # Image credit for the header image\n  credit: String\n\n  # Category of the collection\n  category: String!\n\n  # Structured object used to build filtered artworks query\n  query: CollectionQuery!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n\n  # Suggested average price for included works\n  price_guidance: Float\n\n  # Collection can be surfaced on editorial pages\n  show_on_editorial: Boolean!\n\n  # Collection has prioritized connection to artist\n  is_featured_artist_content: Boolean!\n}\n\ntype CollectionCategory {\n  name: String!\n  collections: [Collection!]!\n}\n\ntype CollectionQuery {\n  id: ID\n  acquireable: Boolean\n  aggregations: [String!]\n  artist_ids: [String!]\n  artist_id: String\n  at_auction: Boolean\n  color: String\n  dimension_range: String\n  extra_aggregation_gene_ids: [String!]\n  include_artworks_by_followed_artists: Boolean\n  include_medium_filter_in_aggregation: Boolean\n  inquireable_only: Boolean\n  for_sale: Boolean\n  gene_id: String\n  gene_ids: [String!]\n  height: String\n  width: String\n  medium: String\n  period: String\n  periods: [String!]\n  major_periods: [String!]\n  partner_id: ID\n  partner_cities: [String!]\n  price_range: String\n  page: Int\n  sale_id: ID\n  size: Int\n  sort: String\n  tag_id: String\n  keyword: String\n}\n\n# The javascript `Date` as string. Type represents date and time as the ISO Date string.\nscalar DateTime\n\ntype Query {\n  collections(\n    randomizationSeed: String\n    size: Int\n    isFeaturedArtistContent: Boolean\n    showOnEditorial: Boolean\n    artistID: String\n  ): [Collection!]!\n  categories: [CollectionCategory!]!\n  collection(slug: String!): Collection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-04T19:10:09Z",
+    "updated_at": "2019-07-18T20:09:02Z",
+    "pushed_at": "2019-07-18T20:20:58Z",
+    "issues": 7,
+    "watchers": 24,
+    "fork_count": 14,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 115,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 7,
+    "pull_requests_merged": 108,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

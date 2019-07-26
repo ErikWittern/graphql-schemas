@@ -1,0 +1,41 @@
+{
+  "repo_name": "blaze-apollo-example",
+  "repo_full_name": "swydo/blaze-apollo-example",
+  "repo_owner": "Swydo",
+  "repo_description": "An example using the blaze-apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "imports/api/schema.graphql",
+      "sha": "2127618e98e2d4b8a4b8b39527ee71029fdf1c7d",
+      "url": "https://api.github.com/repositories/69970262/contents/imports/api/schema.graphql?ref=e2f9c85d2a0e6c2e94d8503d488ea19d6dd1916c",
+      "git_url": "https://api.github.com/repositories/69970262/git/blobs/2127618e98e2d4b8a4b8b39527ee71029fdf1c7d",
+      "html_url": "https://github.com/Swydo/blaze-apollo-example/blob/e2f9c85d2a0e6c2e94d8503d488ea19d6dd1916c/imports/api/schema.graphql",
+      "content": "type Person {\n  id: ID!\n  name: String!\n  films: [Film]\n  likes: Int\n}\n\ntype Film {\n  id: ID!\n  title: String!\n  people: [Person]\n}\n\ntype Query {\n  person(id: ID!): Person\n  people: [Person]\n}\n\ntype Mutation {\n  likePerson(id: ID!): Person\n}\n\ntype Subscription {\n  likePerson: Person\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-04T13:59:58Z",
+    "updated_at": "2017-12-01T16:51:47Z",
+    "pushed_at": "2017-07-19T11:40:21Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

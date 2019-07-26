@@ -1,0 +1,42 @@
+{
+  "repo_name": "plex-api-graphql",
+  "repo_full_name": "markbrouch/plex-api-graphql",
+  "repo_owner": "markbrouch",
+  "repo_description": "Unofficial GraphQL Server for Plex API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "e91f34cc1e454233484168a0b287da78506d5c73",
+      "url": "https://api.github.com/repositories/137814504/contents/graphql/schema.graphql?ref=17e2e3d3bf0ba21988faef5af65552b527521002",
+      "git_url": "https://api.github.com/repositories/137814504/git/blobs/e91f34cc1e454233484168a0b287da78506d5c73",
+      "html_url": "https://github.com/markbrouch/plex-api-graphql/blob/17e2e3d3bf0ba21988faef5af65552b527521002/graphql/schema.graphql",
+      "content": "type Query {\n  authenticate(username: String!, password: String!): AuthPayload!\n  resources: [Device!]!\n  sections(uri: String!): [Section!]!\n  section(uri: String!, index: Int!): [Directory!]!\n  directory(uri: String!): DirectoryContents!\n}\n\ntype AuthPayload {\n  user: User!\n  token: String!\n}\n\ntype User {\n  id: Int!\n  uuid: String!\n  email: String!\n  joinedAt: String!\n  username: String!\n  title: String!\n  thumb: String!\n  hasPassword: Boolean!\n  authToken: String!\n}\n\ntype Device {\n  name: String!\n  product: String\n  productVersion: String\n  platform: String\n  platformVersion: String\n  device: String\n  clientIdentifier: String\n  createdAt: String\n  lastSeenAt: String\n  provides: String\n  owned: Boolean\n  accessToken: String\n  publicAddress: String\n  httpsRequired: Boolean\n  synced: Boolean\n  relay: Boolean\n  publicAddressMatches: Boolean\n  presence: Boolean\n  connections: [Connection!]!\n}\n\ntype Connection {\n  protocol: String\n  address: String\n  port: Int\n  uri: String\n  local: Boolean\n}\n\ntype Section {\n  allowSync: Boolean\n  art: String\n  composite: String\n  filters: Boolean\n  refreshing: Boolean\n  thumb: String\n  key: String!\n  secondary: Boolean\n  prompt: String\n  type: String\n  title: String!\n  agent: String\n  scanner: String\n  language: String\n  uuid: String\n  updatedAt: String\n  createdAt: String\n  scannedAt: String\n  locations: [Location!]!\n}\n\ntype Location {\n  id: Int\n  path: String\n}\n\ntype Directory {\n  key: String!\n  title: String!\n  uri: String!\n  secondary: Boolean\n  prompt: String\n}\n\ntype DirectoryContents {\n  directories: [Directory!]!\n  videos: [Video!]!\n}\n\ntype Video {\n  ratingKey: Int\n  key: String\n  parentRatingKey: Int\n  grandparentRatingKey: Int\n  studio: String\n  grandparentKey: String\n  parentKey: String\n  grandparentTitle: String\n  parentTitle: String\n  index: Int\n  parentIndex: Int\n  type: String\n  title: String\n  contentRating: String\n  summary: String\n  rating: Float\n  audienceRating: Float\n  viewCount: Int\n  lastViewedAt: String\n  year: Int\n  tagline: String\n  thumb: String\n  parentThumb: String\n  grandparentThumb: String\n  grandparentArt: String\n  art: String\n  grandparentTheme: String\n  duration: Int\n  originallyAvailableAt: String\n  addedAt: String\n  updatedAt: String\n  audienceRatingImage: String\n  chapterSource: String\n  primaryExtraKey: String\n  ratingImage: String\n  media: [Media!]!\n  genres: [String!]\n  directors: [String!]\n  writers: [String!]\n  countries: [String!]\n  roles: [String!]\n}\n\ntype Media {\n  videoResolution: String\n  id: Int\n  duration: Int\n  bitrate: Int\n  width: Int\n  height: Int\n  aspectRatio: Float\n  audioChannels: Int\n  audioCodec: String\n  videoCodec: String\n  container: String\n  videoFrameRate: String\n  audioProfile: String\n  videoProfile: String\n  parts: [MediaPart!]!\n}\n\ntype MediaPart {\n  id: Int\n  key: String\n  duration: Int\n  file: String\n  size: Float\n  audioProfile: String\n  container: String\n  has64bitOffsets: Boolean\n  optimizedForStreaming: Boolean\n  videoProfile: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-18T22:47:28Z",
+    "updated_at": "2019-05-06T09:11:17Z",
+    "pushed_at": "2018-06-21T16:31:00Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

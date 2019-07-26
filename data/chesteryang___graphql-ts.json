@@ -1,0 +1,91 @@
+{
+  "repo_name": "graphql-ts",
+  "repo_full_name": "chesteryang/graphql-ts",
+  "repo_owner": "chesteryang",
+  "repo_description": "GraphQL, Typeorm, Typescript, Sqlite",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/register/schema.graphql",
+      "sha": "e98bcfda26a16b8cb6d0da12320e83c8d6f73b3c",
+      "url": "https://api.github.com/repositories/148211172/contents/src/modules/register/schema.graphql?ref=8f324dcebe7dc5d1a898ac32ca0889d4cd901ff3",
+      "git_url": "https://api.github.com/repositories/148211172/git/blobs/e98bcfda26a16b8cb6d0da12320e83c8d6f73b3c",
+      "html_url": "https://github.com/chesteryang/graphql-ts/blob/8f324dcebe7dc5d1a898ac32ca0889d4cd901ff3/src/modules/register/schema.graphql",
+      "content": "# import Error from \"../../shared.graphql\"\n\ntype Query {\n  bye: String\n}\n\ntype Mutation {\n  register(email: String!, password: String!): [Error!]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/chesteryang/graphql-ts/blob/8f324dcebe7dc5d1a898ac32ca0889d4cd901ff3/src/modules/register/schema.graphql:\n# import Error from \"../../shared.graphql\"\n\ntype Query {\n  bye: String\n}\n\ntype Mutation {\n  register(email: String!, password: String!): [Error!]\n}\n# https://github.com/chesteryang/graphql-ts/blob/8f324dcebe7dc5d1a898ac32ca0889d4cd901ff3/src/shared.graphql:\ntype Error {\n  path: String!\n  message: String!\n}",
+        "mergedPaths": [
+          "src/shared.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Error"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "shared.graphql",
+      "path": "src/shared.graphql",
+      "sha": "dc6721519bc29b53b087ec4687627a1b28cef4b3",
+      "url": "https://api.github.com/repositories/148211172/contents/src/shared.graphql?ref=8f324dcebe7dc5d1a898ac32ca0889d4cd901ff3",
+      "git_url": "https://api.github.com/repositories/148211172/git/blobs/dc6721519bc29b53b087ec4687627a1b28cef4b3",
+      "html_url": "https://github.com/chesteryang/graphql-ts/blob/8f324dcebe7dc5d1a898ac32ca0889d4cd901ff3/src/shared.graphql",
+      "content": "type Error {\n  path: String!\n  message: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/chinook/schema.graphql",
+      "sha": "108a6d5da82704f43acf2b9425af573a7272c060",
+      "url": "https://api.github.com/repositories/148211172/contents/src/modules/chinook/schema.graphql?ref=74264f6efb11b39b096400f3b38ff8df5ca8078c",
+      "git_url": "https://api.github.com/repositories/148211172/git/blobs/108a6d5da82704f43acf2b9425af573a7272c060",
+      "html_url": "https://github.com/chesteryang/graphql-ts/blob/74264f6efb11b39b096400f3b38ff8df5ca8078c/src/modules/chinook/schema.graphql",
+      "content": "type Query {\n  employee(id: Int!): Employee\n  customer(id: Int!): Customer\n  album(id: Int!): Album\n  artist(id: Int!): Artist\n}\n\ntype Employee{\n    id: Int!\n    firstName: String!\n    lastName: String!\n    title: String!\n    email: String!\n}\n\ntype Customer{\n    id: Int!\n    firstName: String!\n    lastName: String!\n    email: String! \n    address: String\n    city: String\n    country: String\n    postalCode: String\n    phone: String\n    company: String \n}\n\ntype Album{\n  id: Int!\n  title: String!\n  artist: Artist\n  tracks: [Track]\n}\n\ntype Artist{\n  id: Int!\n  name: String!\n  albums: [Album]\n}\n\ntype Track{\n  id: Int!\n  name: String!\n  unitPrice: Float!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 6
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/hello/schema.graphql",
+      "sha": "2a0c74f58b57b4b5cc5bacaa810faefdea6a6b64",
+      "url": "https://api.github.com/repositories/148211172/contents/src/modules/hello/schema.graphql?ref=8f324dcebe7dc5d1a898ac32ca0889d4cd901ff3",
+      "git_url": "https://api.github.com/repositories/148211172/git/blobs/2a0c74f58b57b4b5cc5bacaa810faefdea6a6b64",
+      "html_url": "https://github.com/chesteryang/graphql-ts/blob/8f324dcebe7dc5d1a898ac32ca0889d4cd901ff3/src/modules/hello/schema.graphql",
+      "content": "# import Error from \"../../shared.graphql\"\n\ntype Query {\n  hello(name: String): String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-10T19:56:12Z",
+    "updated_at": "2018-09-24T15:39:58Z",
+    "pushed_at": "2018-09-24T15:39:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

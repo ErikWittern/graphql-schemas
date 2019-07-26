@@ -1,0 +1,42 @@
+{
+  "repo_name": "compcard",
+  "repo_full_name": "joeyr84/compcard",
+  "repo_owner": "JoeyR84",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/src/schema.graphql",
+      "sha": "90ddb9472121a0935e84b10462c89b3abfc5da22",
+      "url": "https://api.github.com/repositories/173354379/contents/api/src/schema.graphql?ref=763f07da2e85d0481ac97c56a853368d72a61a5d",
+      "git_url": "https://api.github.com/repositories/173354379/git/blobs/90ddb9472121a0935e84b10462c89b3abfc5da22",
+      "html_url": "https://github.com/JoeyR84/compcard/blob/763f07da2e85d0481ac97c56a853368d72a61a5d/api/src/schema.graphql",
+      "content": "# The schema defines the STRUCTURE of the server\ntype Query {\n  info: String!\n  routeList: [Route!]!\n  route(id: ID!): Route!\n}\ntype Route {\n  id: ID!\n  title: String!\n  points: Int!\n  attempts: Int!\n}\ntype Mutation {\n  route(attempts: Int!, title: String!, points: Int!): Route\n  updateRoute(id: ID!, attempts: Int!): Route\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-01T19:06:02Z",
+    "updated_at": "2019-05-12T21:19:12Z",
+    "pushed_at": "2019-05-12T21:19:10Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

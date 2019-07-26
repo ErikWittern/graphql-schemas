@@ -1,0 +1,39 @@
+{
+  "repo_name": "Node-GraphQL-tutorial",
+  "repo_full_name": "tomsshow/node-graphql-tutorial",
+  "repo_owner": "tomsshow",
+  "repo_description": "sample code from a Node.JS GraphQL Tutorial: https://www.howtographql.com/graphql-js/4-adding-a-database/",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "Node GraphQL/hackernews-node/src/schema.graphql",
+      "sha": "65c4bbf9fa8cf0e2b344db945e4fb66593e4b5db",
+      "url": "https://api.github.com/repositories/132808584/contents/Node%20GraphQL/hackernews-node/src/schema.graphql?ref=e1d37df0e37e298f229e84a0ea5cea468288a404",
+      "git_url": "https://api.github.com/repositories/132808584/git/blobs/65c4bbf9fa8cf0e2b344db945e4fb66593e4b5db",
+      "html_url": "https://github.com/tomsshow/Node-GraphQL-tutorial/blob/e1d37df0e37e298f229e84a0ea5cea468288a404/Node%20GraphQL/hackernews-node/src/schema.graphql",
+      "content": "type Query {\r\n    info: String!\r\n    feed: [Link!]!\r\n}\r\n\r\n\r\ntype Mutation {\r\n    post(url: String!, description: String!): Link!\r\n}\r\n\r\ntype Link {\r\n    id: ID!\r\n    description: String!\r\n    url: String!\r\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-09T20:19:19Z",
+    "updated_at": "2018-05-10T15:57:33Z",
+    "pushed_at": "2018-05-10T15:57:26Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

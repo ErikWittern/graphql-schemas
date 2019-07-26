@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-native-redux-boilerplate",
+  "repo_full_name": "igorlimansky/react-native-redux-boilerplate",
+  "repo_owner": "igorlimansky",
+  "repo_description": "redux/saga/mocha/react-native sample",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "f9f2298b0c7697f3615ddaac3f31beb8ea4a2762",
+      "url": "https://api.github.com/repositories/68514894/contents/data/schema.graphql?ref=3fc3733627f5829d118592822e112f9abb15a2b3",
+      "git_url": "https://api.github.com/repositories/68514894/git/blobs/f9f2298b0c7697f3615ddaac3f31beb8ea4a2762",
+      "html_url": "https://github.com/igorlimansky/react-native-redux-boilerplate/blob/3fc3733627f5829d118592822e112f9abb15a2b3/data/schema.graphql",
+      "content": "schema {\n  query: Root\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype Root {\n  viewer: User\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  username: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-18T10:40:48Z",
+    "updated_at": "2019-07-16T08:08:37Z",
+    "pushed_at": "2017-03-03T16:58:41Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

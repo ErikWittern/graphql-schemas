@@ -1,0 +1,42 @@
+{
+  "repo_name": "svc",
+  "repo_full_name": "loguetown/svc",
+  "repo_owner": "loguetown",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "gateway.graphql",
+      "path": "src/gateway/gateway.graphql",
+      "sha": "2db977e814b1d8a3ba225cdd2c529eb07ddbe782",
+      "url": "https://api.github.com/repositories/162673143/contents/src/gateway/gateway.graphql?ref=2aa1fcd985a3e25e1271e178059bfe49d95f9184",
+      "git_url": "https://api.github.com/repositories/162673143/git/blobs/2db977e814b1d8a3ba225cdd2c529eb07ddbe782",
+      "html_url": "https://github.com/loguetown/svc/blob/2aa1fcd985a3e25e1271e178059bfe49d95f9184/src/gateway/gateway.graphql",
+      "content": "type Payload {\n  message: String!\n}\n\ntype Account {\n  accountId: String!\n  username: String!  \n}\n\ntype LoginPayload {\n  message: String!\n  token: String\n}\n\ntype MePayload {\n  message: String!\n  account: Account\n}\n\ntype Query {\n  dummy: Int\n  me: MePayload\n}\n\ntype Mutation {\n  dummy: Int\n  login(username: String!, password: String!): LoginPayload\n  register(username: String!, password: String!): Payload\n  changePassword(username: String!, password: String!, newPassword: String!): Payload\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-21T06:06:43Z",
+    "updated_at": "2019-01-10T18:30:19Z",
+    "pushed_at": "2019-01-10T18:30:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

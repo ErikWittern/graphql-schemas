@@ -1,0 +1,52 @@
+{
+  "repo_name": "front-end-practice",
+  "repo_full_name": "garbages-can/front-end-practice",
+  "repo_owner": "Garbages-Can",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "hello-prisma.js/schema.graphql",
+      "sha": "edecfa4e52388ce322be21d1ee3ee22e089da16c",
+      "url": "https://api.github.com/repositories/142383995/contents/hello-prisma.js/schema.graphql?ref=3c74b0681c61e4bcf9a2a77530397e07769ac993",
+      "git_url": "https://api.github.com/repositories/142383995/git/blobs/edecfa4e52388ce322be21d1ee3ee22e089da16c",
+      "html_url": "https://github.com/Garbages-Can/front-end-practice/blob/3c74b0681c61e4bcf9a2a77530397e07769ac993/hello-prisma.js/schema.graphql",
+      "content": "type Query {\n  publishedPosts: [Post!]!\n  post(postId: ID!): Post\n  postsByUser(userId: ID!): [Post!]!\n}\n\ntype Mutation {\n  createUser(name: String!): User\n  createDraft(title: String!, userId: ID!): Post\n  publish(postId: ID!): Post\n}\n\ntype User {\n  id: ID!\n  email: String\n  name: String!\n  posts: [Post!]!\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  published: Boolean!\n  author: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "schema.graphql",
+      "path": "hello-prisma/schema.graphql",
+      "sha": "edecfa4e52388ce322be21d1ee3ee22e089da16c",
+      "url": "https://api.github.com/repositories/142383995/contents/hello-prisma/schema.graphql?ref=fc08636554ad08c933c0cfb9ec38eb4154cf1a1c",
+      "git_url": "https://api.github.com/repositories/142383995/git/blobs/edecfa4e52388ce322be21d1ee3ee22e089da16c",
+      "html_url": "https://github.com/Garbages-Can/front-end-practice/blob/fc08636554ad08c933c0cfb9ec38eb4154cf1a1c/hello-prisma/schema.graphql",
+      "content": "type Query {\n  publishedPosts: [Post!]!\n  post(postId: ID!): Post\n  postsByUser(userId: ID!): [Post!]!\n}\n\ntype Mutation {\n  createUser(name: String!): User\n  createDraft(title: String!, userId: ID!): Post\n  publish(postId: ID!): Post\n}\n\ntype User {\n  id: ID!\n  email: String\n  name: String!\n  posts: [Post!]!\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  published: Boolean!\n  author: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-26T03:30:01Z",
+    "updated_at": "2018-12-16T07:18:06Z",
+    "pushed_at": "2018-12-16T07:18:08Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

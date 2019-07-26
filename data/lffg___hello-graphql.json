@@ -1,0 +1,42 @@
+{
+  "repo_name": "hello-graphql",
+  "repo_full_name": "lffg/hello-graphql",
+  "repo_owner": "lffg",
+  "repo_description": "My first GraphQL project.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "b0366b5def101f382a73a349d996acdf5b50b929",
+      "url": "https://api.github.com/repositories/163624527/contents/src/graphql/schema.graphql?ref=4be4983d2ed96b57042baa40010ba330588483cd",
+      "git_url": "https://api.github.com/repositories/163624527/git/blobs/b0366b5def101f382a73a349d996acdf5b50b929",
+      "html_url": "https://github.com/lffg/hello-graphql/blob/4be4983d2ed96b57042baa40010ba330588483cd/src/graphql/schema.graphql",
+      "content": "type Query {\n  users: [User]!\n  user(id: ID!): User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  lastName: String!\n  username: String!\n  age: Int\n  gender: String\n  email: String!\n  isActive: Boolean!\n  notificationCount: Int!\n  availableToHire: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-30T23:24:42Z",
+    "updated_at": "2019-07-03T00:17:10Z",
+    "pushed_at": "2019-01-01T11:26:56Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 1,
+    "stargazers": 0
+  }
+}

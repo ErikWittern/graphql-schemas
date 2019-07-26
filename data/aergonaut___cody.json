@@ -1,0 +1,42 @@
+{
+  "repo_name": "cody",
+  "repo_full_name": "aergonaut/cody",
+  "repo_owner": "aergonaut",
+  "repo_description": "Your friendly neighborhood code review bot",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "52565b257c644ede9bbda01bfa876fdf6670da08",
+      "url": "https://api.github.com/repositories/48143718/contents/schema.graphql?ref=697ee095d84e0d89acbe5863403a39b5ece2ecad",
+      "git_url": "https://api.github.com/repositories/48143718/git/blobs/52565b257c644ede9bbda01bfa876fdf6670da08",
+      "html_url": "https://github.com/aergonaut/cody/blob/697ee095d84e0d89acbe5863403a39b5ece2ecad/schema.graphql",
+      "content": "# The mutation root\ntype Mutation {\n  # Update the currently authenticated user\n  updateUser(input: UpdateUserInput!): UpdateUserPayload\n}\n\n# An object with an ID.\ninterface Node {\n  # ID of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n}\n\ntype PullRequest implements Node {\n  id: ID!\n  number: String!\n  repository: String!\n  reviewers(\n    # Returns the elements in the list that come after the specified global ID.\n    after: String\n\n    # Returns the elements in the list that come before the specified global ID.\n    before: String\n\n    # Returns the first _n_ elements from the list.\n    first: Int\n\n    # Returns the last _n_ elements from the list.\n    last: Int\n    status: String\n  ): ReviewerConnection\n  status: String!\n}\n\n# The connection type for PullRequest.\ntype PullRequestConnection {\n  # A list of edges.\n  edges: [PullRequestEdge]\n\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n}\n\n# An edge in a connection.\ntype PullRequestEdge {\n  # A cursor for use in pagination.\n  cursor: String!\n\n  # The item at the end of the edge.\n  node: PullRequest\n}\n\n# The query root\ntype Query {\n  # Fetches an object given its ID.\n  node(\n    # ID of the object.\n    id: ID!\n  ): Node\n\n  # Fetches a list of objects given a list of IDs.\n  nodes(\n    # IDs of the objects.\n    ids: [ID!]!\n  ): [Node]!\n\n  # The currently authenticated user\n  viewer: User\n}\n\ntype Repository implements Node {\n  id: ID!\n  name: String!\n  owner: String!\n\n  # Find a PullRequest by number\n  pullRequest(number: String!): PullRequest\n\n  # This reapository's Pull Requests\n  pullRequests(\n    # Returns the elements in the list that come after the specified global ID.\n    after: String\n\n    # Returns the elements in the list that come before the specified global ID.\n    before: String\n\n    # Returns the first _n_ elements from the list.\n    first: Int\n\n    # Returns the last _n_ elements from the list.\n    last: Int\n    status: String\n  ): PullRequestConnection\n\n  # Find a Review Rule by code\n  reviewRule(shortCode: String!): ReviewRule\n\n  # This repository's review rules\n  reviewRules(\n    # Returns the elements in the list that come after the specified global ID.\n    after: String\n\n    # Returns the elements in the list that come before the specified global ID.\n    before: String\n\n    # Returns the first _n_ elements from the list.\n    first: Int\n\n    # Returns the last _n_ elements from the list.\n    last: Int\n  ): ReviewRuleConnection\n}\n\n# The connection type for Repository.\ntype RepositoryConnection {\n  # A list of edges.\n  edges: [RepositoryEdge]\n\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n}\n\n# An edge in a connection.\ntype RepositoryEdge {\n  # A cursor for use in pagination.\n  cursor: String!\n\n  # The item at the end of the edge.\n  node: Repository\n}\n\ntype ReviewRule implements Node {\n  id: ID!\n\n  # The criteria used to match this rule\n  match: String!\n\n  # The rule's name\n  name: String!\n\n  # The repository that owns this rule\n  repository: String!\n\n  # The reviewer assigned to this rule\n  reviewer: String!\n\n  # Short code identifying the rule in commands\n  shortCode: String!\n\n  # The rule's type\n  type: String!\n}\n\n# The connection type for ReviewRule.\ntype ReviewRuleConnection {\n  # A list of edges.\n  edges: [ReviewRuleEdge]\n\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n}\n\n# An edge in a connection.\ntype ReviewRuleEdge {\n  # A cursor for use in pagination.\n  cursor: String!\n\n  # The item at the end of the edge.\n  node: ReviewRule\n}\n\ntype Reviewer implements Node {\n  id: ID!\n  login: String!\n\n  # The Review Rule that added this Reviewer\n  reviewRule: ReviewRule\n  status: ReviewerStatus!\n  versions: [ReviewerVersion]\n}\n\n# The connection type for Reviewer.\ntype ReviewerConnection {\n  # A list of edges.\n  edges: [ReviewerEdge]\n\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n}\n\n# An edge in a connection.\ntype ReviewerEdge {\n  # A cursor for use in pagination.\n  cursor: String!\n\n  # The item at the end of the edge.\n  node: Reviewer\n}\n\n# The review status of a Reviewer\nenum ReviewerStatus {\n  # Approved\n  APPROVED\n\n  # Pending Approval\n  PENDING_APPROVAL\n}\n\ntype ReviewerVersion {\n  login: [String]\n  status: [String]\n}\n\n# Autogenerated input type of UpdateUser\ninput UpdateUserInput {\n  # A unique identifier for the client performing the mutation.\n  clientMutationId: String\n  email: String!\n  paused: Boolean!\n  sendNewReviewsSummary: Boolean!\n  timezone: String!\n}\n\n# Autogenerated return type of UpdateUser\ntype UpdateUserPayload {\n  # A unique identifier for the client performing the mutation.\n  clientMutationId: String\n  user: User\n}\n\ntype User implements Node {\n  # Find the user's assigned reviews\n  assignedReviews(\n    # Returns the elements in the list that come after the specified global ID.\n    after: String\n\n    # Returns the elements in the list that come before the specified global ID.\n    before: String\n\n    # Returns the first _n_ elements from the list.\n    first: Int\n\n    # Returns the last _n_ elements from the list.\n    last: Int\n\n    # Filter assigned reviews by status\n    status: ReviewerStatus\n  ): ReviewerConnection\n\n  # The user's email\n  email: String\n  id: ID!\n\n  # The user's login\n  login: String!\n\n  # The user's name\n  name: String!\n\n  # Opt-in choice to temporarily pause assignment of new reviews\n  paused: Boolean!\n  repositories(\n    # Returns the elements in the list that come after the specified global ID.\n    after: String\n\n    # Returns the elements in the list that come before the specified global ID.\n    before: String\n\n    # Returns the first _n_ elements from the list.\n    first: Int\n\n    # Returns the last _n_ elements from the list.\n    last: Int\n  ): RepositoryConnection\n\n  # Find a given repository by the owner and name\n  repository(name: String!, owner: String!): Repository\n\n  # Opt-in choice for daily code review summary email\n  sendNewReviewsSummary: Boolean!\n\n  # The user's configured timezone\n  timezone: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": false,
+      "polynomialLevel": 4,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-12-17T00:53:40Z",
+    "updated_at": "2019-07-01T18:53:57Z",
+    "pushed_at": "2019-07-17T21:32:57Z",
+    "issues": 93,
+    "watchers": 4,
+    "fork_count": 22,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 253,
+    "pull_requests_open": 41,
+    "pull_requests_closed": 79,
+    "pull_requests_merged": 133,
+    "releases": 0,
+    "stargazers": 23
+  }
+}

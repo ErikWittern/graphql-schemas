@@ -1,0 +1,70 @@
+{
+  "repo_name": "marsha",
+  "repo_full_name": "dutradda/marsha",
+  "repo_owner": "dutradda",
+  "repo_description": "Media Server HTTP API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "marsha/graphql/schema.graphql",
+      "sha": "5fa3fb4b418e66ee25456d11d12572dc2d9240d1",
+      "url": "https://api.github.com/repositories/143057556/contents/marsha/graphql/schema.graphql?ref=2214ea7d0eacd0cdbd4d0d6a0042f32cfe9e1148",
+      "git_url": "https://api.github.com/repositories/143057556/git/blobs/5fa3fb4b418e66ee25456d11d12572dc2d9240d1",
+      "html_url": "https://github.com/dutradda/marsha/blob/2214ea7d0eacd0cdbd4d0d6a0042f32cfe9e1148/marsha/graphql/schema.graphql",
+      "content": "# include ../media/schema.graphql\n\nschema {\n    query: RootQuery\n    mutation: RootMutation\n}\n\ntype RootQuery implements MediaQueries {\n    search(query: String, sorting: Sorting, filters: SearchFilters): [Searchable]!\n    suggests(query: String): [Searchable]!\n    getMedia(id: ID): Media!\n    getCollection(collectionId: ID): [Media]!\n    getMediaStream(mediaId: ID): MediaStream!\n}\n\ntype RootMutation implements MediaMutations {\n    bulkInsertMedia: BulkInsertMediaOutput!\n    bulkDeleteMedia(ids: [ID]): [Boolean]!\n    bulkEditMedia(edits: [EditMedia]): [EditMediaOutput]!\n    runMediaStream(id: ID): RunMediaStreamOutput!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/dutradda/marsha/blob/2214ea7d0eacd0cdbd4d0d6a0042f32cfe9e1148/marsha/graphql/schema.graphql:\n# include ../media/schema.graphql\n\nschema {\n    query: RootQuery\n    mutation: RootMutation\n}\n\ntype RootQuery implements MediaQueries {\n    search(query: String, sorting: Sorting, filters: SearchFilters): [Searchable]!\n    suggests(query: String): [Searchable]!\n    getMedia(id: ID): Media!\n    getCollection(collectionId: ID): [Media]!\n    getMediaStream(mediaId: ID): MediaStream!\n}\n\ntype RootMutation implements MediaMutations {\n    bulkInsertMedia: BulkInsertMediaOutput!\n    bulkDeleteMedia(ids: [ID]): [Boolean]!\n    bulkEditMedia(edits: [EditMedia]): [EditMediaOutput]!\n    runMediaStream(id: ID): RunMediaStreamOutput!\n}\n\n# https://github.com/dutradda/marsha/blob/d58b5d3ca1577c04f656b8f13917a7a2697ee6f5/marsha/media/schema.graphql:\ntype Media {\n    id: ID!\n    title: String!\n    type: MediaType!\n    artists: [Person]!\n    authors: [Person]!\n    addedDate: String!\n    releaseDate: String!\n    groups: [GroupOfPeople]\n    collections: [Collection]\n    content: String\n}\n\ntype MediaType {\n    id: ID!\n    name: String!\n}\n\ntype Person {\n    id: ID!\n    name: String!\n    location: Location!\n    organizations: [Organization]\n    groups: [GroupOfPeople]\n}\n\ntype Location {\n    country: String!\n    province: String!\n    city: String!\n    neighborhood: String\n}\n\ntype Organization {\n    name: String!\n    location: Location!\n    parent: Organization\n    children: [Organization]\n}\n\ntype GroupOfPeople {\n    id: ID!\n    name: String!\n    people: [Person]\n    collections: [Collection]\n}\n\ntype Collection {\n    id: ID!\n    name: String!\n    medias: [Media]\n    type: CollectionType\n}\n\ntype CollectionType {\n    id: ID!\n    name: String!\n}\n\ntype MediaStream {\n    id: ID!\n    uri: String!\n    isRunning: Boolean!\n}\n\ninterface MediaQueries {\n    search(query: String, sorting: Sorting, filters: SearchFilters): [Searchable]!\n    suggests(query: String): [Searchable]!\n    getMedia(id: ID): Media!\n    getCollection(collectionId: ID): [Media]!\n    getMediaStream(mediaId: ID): MediaStream!\n}\n\nenum Sorting {\n    byRelevance\n    byNovelty\n    byRecentAdded\n    byOrganization\n    byLocation\n}\n\ninput SearchFilters {\n    location: ID\n    organization: ID\n    artist: ID\n    author: ID\n    group: ID\n    collection: ID\n    novelty: Boolean\n    recentAdded: Boolean\n    searchableKind: SearchableKinds\n}\n\nenum SearchableKinds {\n    media\n    collection\n    artist\n    author\n    group\n    organization\n}\n\nunion Searchable = Media | Person | Collection | GroupOfPeople | Organization\n\ninterface MediaMutations {\n    bulkInsertMedia: BulkInsertMediaOutput!\n    bulkDeleteMedia(ids: [ID]): [Boolean]!\n    bulkEditMedia(edits: [EditMedia]): [EditMediaOutput]!\n    runMediaStream(id: ID): RunMediaStreamOutput!\n}\n\ntype BulkInsertMediaOutput {\n    status: String!\n    currentCount: Int!\n    totalCount: Int!\n    error: Error\n}\n\ntype Error {\n    name: String!\n    message: String!\n    status: String\n    extraInfo: String\n}\n\ninput EditMedia {\n    id: ID!\n    add: [EditMediaItems]\n    remove: [EditMediaItems]\n}\n\ninput EditMediaItems {\n    artistIds: [ID]\n    authorIds: [ID]\n    groupIds: [ID]\n    collectionIds: [ID]\n}\n\ntype EditMediaOutput {\n    id: ID!\n    addSuccess: [EditMediaOutputItems]\n    addFails: [EditMediaOutputItems]\n    removeSuccess: [EditMediaOutputItems]\n    removeFails: [EditMediaOutputItems]\n}\n\ntype EditMediaOutputItems {\n    artists: [ID]\n    authors: [ID]\n    groups: [ID]\n    collections: [ID]\n}\n\nunion RunMediaStreamOutput = MediaStream | Error\n",
+        "mergedPaths": [
+          "marsha/media/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Media",
+          "MediaStream",
+          "Searchable",
+          "BulkInsertMediaOutput",
+          "EditMediaOutput",
+          "RunMediaStreamOutput"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 15,
+        "containsCycle": true,
+        "numDefinitions": 25
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "marsha/media/schema.graphql",
+      "sha": "d8cf3873d50d513bd8d9ab97f7bc6ef08b5db364",
+      "url": "https://api.github.com/repositories/143057556/contents/marsha/media/schema.graphql?ref=d58b5d3ca1577c04f656b8f13917a7a2697ee6f5",
+      "git_url": "https://api.github.com/repositories/143057556/git/blobs/d8cf3873d50d513bd8d9ab97f7bc6ef08b5db364",
+      "html_url": "https://github.com/dutradda/marsha/blob/d58b5d3ca1577c04f656b8f13917a7a2697ee6f5/marsha/media/schema.graphql",
+      "content": "type Media {\n    id: ID!\n    title: String!\n    type: MediaType!\n    artists: [Person]!\n    authors: [Person]!\n    addedDate: String!\n    releaseDate: String!\n    groups: [GroupOfPeople]\n    collections: [Collection]\n    content: String\n}\n\ntype MediaType {\n    id: ID!\n    name: String!\n}\n\ntype Person {\n    id: ID!\n    name: String!\n    location: Location!\n    organizations: [Organization]\n    groups: [GroupOfPeople]\n}\n\ntype Location {\n    country: String!\n    province: String!\n    city: String!\n    neighborhood: String\n}\n\ntype Organization {\n    name: String!\n    location: Location!\n    parent: Organization\n    children: [Organization]\n}\n\ntype GroupOfPeople {\n    id: ID!\n    name: String!\n    people: [Person]\n    collections: [Collection]\n}\n\ntype Collection {\n    id: ID!\n    name: String!\n    medias: [Media]\n    type: CollectionType\n}\n\ntype CollectionType {\n    id: ID!\n    name: String!\n}\n\ntype MediaStream {\n    id: ID!\n    uri: String!\n    isRunning: Boolean!\n}\n\ninterface MediaQueries {\n    search(query: String, sorting: Sorting, filters: SearchFilters): [Searchable]!\n    suggests(query: String): [Searchable]!\n    getMedia(id: ID): Media!\n    getCollection(collectionId: ID): [Media]!\n    getMediaStream(mediaId: ID): MediaStream!\n}\n\nenum Sorting {\n    byRelevance\n    byNovelty\n    byRecentAdded\n    byOrganization\n    byLocation\n}\n\ninput SearchFilters {\n    location: ID\n    organization: ID\n    artist: ID\n    author: ID\n    group: ID\n    collection: ID\n    novelty: Boolean\n    recentAdded: Boolean\n    searchableKind: SearchableKinds\n}\n\nenum SearchableKinds {\n    media\n    collection\n    artist\n    author\n    group\n    organization\n}\n\nunion Searchable = Media | Person | Collection | GroupOfPeople | Organization\n\ninterface MediaMutations {\n    bulkInsertMedia: BulkInsertMediaOutput!\n    bulkDeleteMedia(ids: [ID]): [Boolean]!\n    bulkEditMedia(edits: [EditMedia]): [EditMediaOutput]!\n    runMediaStream(id: ID): RunMediaStreamOutput!\n}\n\ntype BulkInsertMediaOutput {\n    status: String!\n    currentCount: Int!\n    totalCount: Int!\n    error: Error\n}\n\ntype Error {\n    name: String!\n    message: String!\n    status: String\n    extraInfo: String\n}\n\ninput EditMedia {\n    id: ID!\n    add: [EditMediaItems]\n    remove: [EditMediaItems]\n}\n\ninput EditMediaItems {\n    artistIds: [ID]\n    authorIds: [ID]\n    groupIds: [ID]\n    collectionIds: [ID]\n}\n\ntype EditMediaOutput {\n    id: ID!\n    addSuccess: [EditMediaOutputItems]\n    addFails: [EditMediaOutputItems]\n    removeSuccess: [EditMediaOutputItems]\n    removeFails: [EditMediaOutputItems]\n}\n\ntype EditMediaOutputItems {\n    artists: [ID]\n    authors: [ID]\n    groups: [ID]\n    collections: [ID]\n}\n\nunion RunMediaStreamOutput = MediaStream | Error\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 22
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-31T19:21:41Z",
+    "updated_at": "2018-08-14T01:31:52Z",
+    "pushed_at": "2018-08-14T01:31:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

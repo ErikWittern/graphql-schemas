@@ -1,0 +1,42 @@
+{
+  "repo_name": "monodemo",
+  "repo_full_name": "balazsconf/monodemo",
+  "repo_owner": "balazsconf",
+  "repo_description": "Monorepo example code",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "types.graphql",
+      "path": "apps/monodemo-server/src/app/types.graphql",
+      "sha": "c35508a16be3a58bcdd1fde879a9eaa2f33787aa",
+      "url": "https://api.github.com/repositories/185806985/contents/apps/monodemo-server/src/app/types.graphql?ref=fef1218c5fa4db3f1374f9114ac0fb6011635c13",
+      "git_url": "https://api.github.com/repositories/185806985/git/blobs/c35508a16be3a58bcdd1fde879a9eaa2f33787aa",
+      "html_url": "https://github.com/balazsconf/monodemo/blob/fef1218c5fa4db3f1374f9114ac0fb6011635c13/apps/monodemo-server/src/app/types.graphql",
+      "content": "type Query {\n  launches: [Launch]!\n  launch(id: ID!): Launch\n}\n\ntype Launch {\n  id: ID!\n  site: String\n  date: String\n  success: Boolean\n  upcoming: Boolean\n  mission: Mission\n  rocket: Rocket\n}\n\ntype Rocket {\n  id: ID!\n  name: String\n  type: String\n  reused: String\n  flight: String\n  payload: Payload\n}\n\ntype Payload {\n  id: ID!\n  customers: String\n  nationality: String\n  manufacturer: String\n  payloadType: String\n}\n\ntype Mission {\n  name: String\n  details: String\n  missionPatchSmall: String\n  missionPatchLarge: String\n  video: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-09T13:42:57Z",
+    "updated_at": "2019-05-20T10:20:04Z",
+    "pushed_at": "2019-05-13T10:37:06Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

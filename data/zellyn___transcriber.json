@@ -1,0 +1,42 @@
+{
+  "repo_name": "transcriber",
+  "repo_full_name": "zellyn/transcriber",
+  "repo_owner": "zellyn",
+  "repo_description": "An app for crowdsourcing hand-transcriptions of (probably mostly Apple II) books",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graph/schema.graphql",
+      "sha": "8b1347876d4e54b24d13ccae82a8ca55c22c2b01",
+      "url": "https://api.github.com/repositories/81685338/contents/graph/schema.graphql?ref=5f7363c9816547dbfdcec95e36e16bcd6e15eee6",
+      "git_url": "https://api.github.com/repositories/81685338/git/blobs/8b1347876d4e54b24d13ccae82a8ca55c22c2b01",
+      "html_url": "https://github.com/zellyn/transcriber/blob/5f7363c9816547dbfdcec95e36e16bcd6e15eee6/graph/schema.graphql",
+      "content": "type Book {\n  slug: ID!\n  title: String!\n  authors: [String!]!\n  chapters: [Chapter!]!\n  url: String\n  isbn: String!\n  imageUrlTemplate: String!\n}\n\ntype Chapter {\n  id: ID!\n  number: String\n  title: String\n  subtitle: String\n  firstPage: Int\n  lastPage: Int\n  pages: [Page!]!\n}\n\ntype Page {\n  id: ID!\n  visibleNumber: String!\n  actualNumber: Int!\n}\n\n# Main Query object.\ntype Query {\n  books: [Book!]!\n  book(slug: ID!): Book\n}\n\ntype Mutation {\n  createBook(slug:ID!, book:BookInput!): Book!\n  updateBook(slug:ID!, book:BookInput!): Book!\n}\n\ninput BookInput {\n  title: String\n  authors: [String!]\n  url: String\n  isbn: String\n  imageUrlTemplate: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-11T22:02:13Z",
+    "updated_at": "2019-02-04T00:25:02Z",
+    "pushed_at": "2019-02-04T00:25:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

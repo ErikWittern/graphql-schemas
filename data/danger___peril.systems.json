@@ -1,0 +1,42 @@
+{
+  "repo_name": "peril.systems",
+  "repo_full_name": "danger/peril.systems",
+  "repo_owner": "danger",
+  "repo_description": "Migrated into the main peril repo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "34b86898811bbd5bf03f515b83e5d4fd8950cbe9",
+      "url": "https://api.github.com/repositories/122108133/contents/data/schema.graphql?ref=1c0b0a9334a2a9a5842fa31b0c9d73367d550ed6",
+      "git_url": "https://api.github.com/repositories/122108133/git/blobs/34b86898811bbd5bf03f515b83e5d4fd8950cbe9",
+      "html_url": "https://github.com/danger/peril.systems/blob/1c0b0a9334a2a9a5842fa31b0c9d73367d550ed6/data/schema.graphql",
+      "content": "# source: http://localhost:5000/api/graphql\n# timestamp: Sun May 06 2018 21:44:44 GMT-0400 (EDT)\n\nscalar Date\n\n\"\"\"An installation of Peril, ideally not too tightly tied to GH\"\"\"\ntype Installation implements Node {\n  \"\"\"The MongoDB ID\"\"\"\n  id: ID!\n\n  \"\"\"The installation ID, in the real sense\"\"\"\n  iID: Int!\n\n  \"\"\"The path to the Dangerfile\"\"\"\n  perilSettingsJSONURL: String!\n\n  \"\"\"The name of a user/org which the installation is attached to\"\"\"\n  login: String!\n\n  \"\"\"The URL for an image representing the installation owner\"\"\"\n  avatarURL: String!\n\n  \"\"\"A set of per repo rules\"\"\"\n  repos: JSON!\n\n  \"\"\"Rules that are for all repos\"\"\"\n  rules: JSON!\n\n  \"\"\"Scheduled tasks to run repeatedly\"\"\"\n  scheduler: JSON!\n\n  \"\"\"Installation settings, for example ignored repos\"\"\"\n  settings: JSON!\n\n  \"\"\"Tasks which you can schedule to run in the future\"\"\"\n  tasks: JSON!\n\n  \"\"\"Tasks which you can schedule to run in the future\"\"\"\n  webhooks(\n    \"\"\"Returns the first n elements from the list.\"\"\"\n    first: Int\n\n    \"\"\"\n    Returns the elements in the list that come after the specified cursor.\n    \"\"\"\n    after: String\n\n    \"\"\"Returns the last n elements from the list.\"\"\"\n    last: Int\n\n    \"\"\"\n    Returns the elements in the list that come before the specified cursor.\n    \"\"\"\n    before: String\n  ): RecordedWebhookConnection\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype InstallationConnection {\n  \"\"\"A list of edges.\"\"\"\n  edges: [InstallationEdge]\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype InstallationEdge {\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Installation\n}\n\n\"\"\"\nBasically a way to say this is going to be untyped data (it's normally user input)\n\"\"\"\nscalar JSON\n\ntype Mutation {\n  \"\"\"\n  Building this out incrementally, but basically this provides\n  the ability to set the URL that Peril should grab data from\n  \"\"\"\n  editInstallation(iID: Int!, perilSettingsJSONURL: String!): Installation\n\n  \"\"\"Sets the installation to record webhooks for the next 5m\"\"\"\n  makeInstallationRecord(iID: Int!): Installation\n\n  \"\"\"Send webhook\"\"\"\n  sendWebhookForInstallation(iID: Int!, eventID: String!): RecordedWebhook\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.'\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n}\n\n\"\"\"An installation of Peril which isn't set up yet\"\"\"\ntype PartialInstallation implements Node {\n  \"\"\"The MongoDB ID\"\"\"\n  id: ID!\n\n  \"\"\"The installation ID, in the real sense\"\"\"\n  iID: Int!\n\n  \"\"\"The name of the installation owner\"\"\"\n  login: String!\n\n  \"\"\"The URL for an image representing the installation owner\"\"\"\n  avatarURL: String!\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype PartialInstallationConnection {\n  \"\"\"A list of edges.\"\"\"\n  edges: [PartialInstallationEdge]\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype PartialInstallationEdge {\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n\n  \"\"\"The item at the end of the edge\"\"\"\n  node: PartialInstallation\n}\n\n\"\"\"Root\"\"\"\ntype Query {\n  \"\"\"The logged in user\"\"\"\n  me: User\n\n  \"\"\"Get information about an installation\"\"\"\n  installation(iID: Int!): Installation\n\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n}\n\n\"\"\"A stored webhook from GitHub so we can re-send it in the future\"\"\"\ntype RecordedWebhook {\n  \"\"\"Installation ID\"\"\"\n  iID: Int!\n\n  \"\"\"A string like 'pull_request.closed' to show the preview\"\"\"\n  event: String!\n\n  \"\"\"The webhook JSON, it will not be included in collections of webhooks\"\"\"\n  json: JSON\n\n  \"\"\"The UUID from GitHub for the webhook\"\"\"\n  eventID: String!\n\n  \"\"\"The time when the recording was made\"\"\"\n  createdAt: Date!\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype RecordedWebhookConnection {\n  \"\"\"A list of edges.\"\"\"\n  edges: [RecordedWebhookEdge]\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype RecordedWebhookEdge {\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n\n  \"\"\"The item at the end of the edge\"\"\"\n  node: RecordedWebhook\n}\n\n\"\"\"Someone logged in to the API, all user data is stored inside the JWT\"\"\"\ntype User {\n  \"\"\"Display name\"\"\"\n  name: String!\n\n  \"\"\"Use this to show an avatar\"\"\"\n  avatarURL: String!\n\n  \"\"\"The installations that a user has access to\"\"\"\n  installations(\n    \"\"\"Returns the first n elements from the list.\"\"\"\n    first: Int\n\n    \"\"\"\n    Returns the elements in the list that come after the specified cursor.\n    \"\"\"\n    after: String\n\n    \"\"\"Returns the last n elements from the list.\"\"\"\n    last: Int\n\n    \"\"\"\n    Returns the elements in the list that come before the specified cursor.\n    \"\"\"\n    before: String\n  ): InstallationConnection\n\n  \"\"\"\n  The installations that a user has access to, but hasn't been set up yet\n  \"\"\"\n  installationsToSetUp(\n    \"\"\"Returns the first n elements from the list.\"\"\"\n    first: Int\n\n    \"\"\"\n    Returns the elements in the list that come after the specified cursor.\n    \"\"\"\n    after: String\n\n    \"\"\"Returns the last n elements from the list.\"\"\"\n    last: Int\n\n    \"\"\"\n    Returns the elements in the list that come before the specified cursor.\n    \"\"\"\n    before: String\n  ): PartialInstallationConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-19T19:10:40Z",
+    "updated_at": "2019-02-09T18:55:29Z",
+    "pushed_at": "2018-09-13T01:58:35Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

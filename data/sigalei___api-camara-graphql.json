@@ -1,0 +1,95 @@
+{
+  "repo_name": "api-camara-graphql",
+  "repo_full_name": "sigalei/api-camara-graphql",
+  "repo_owner": "sigalei",
+  "repo_description": "Uma implementação da API do portal de dados abertos utilizando GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "legislatorType.graphql",
+      "path": "src/graphql/types/legislatorType.graphql",
+      "sha": "bdead22dab83c7ee589a9900aba0f4d7a8561168",
+      "url": "https://api.github.com/repositories/130277780/contents/src/graphql/types/legislatorType.graphql?ref=8e42703daa26ade12c4a6c6b75d53044007fc3dd",
+      "git_url": "https://api.github.com/repositories/130277780/git/blobs/bdead22dab83c7ee589a9900aba0f4d7a8561168",
+      "html_url": "https://github.com/sigalei/api-camara-graphql/blob/8e42703daa26ade12c4a6c6b75d53044007fc3dd/src/graphql/types/legislatorType.graphql",
+      "content": "type Legislator {\n  cpf: String!\n  dataFalecimento: String\n  dataNascimento: String!\n  escolaridade: String!\n  id: Int!\n  idLegislatura: Int!\n  municipioNascimento: String!\n  nome: String!\n  nomeCivil: String!\n  partido: [Party]\n  redeSocial: String!\n  sexo: String!\n  siglaPartido: String!\n  siglaUf: String!\n  ufNascimento: String!\n  ultimoStatus: LastStatus!\n  uri: String!\n  uriPartido: String!\n  urlFoto: String!\n  urlWebsite: String!\n}\n\ntype Query {\n  legislators(\n    id: String\n    nome: String\n    idLegislatura: Int\n    siglaUf: String\n    siglaPartido: String\n    siglaSexo: String\n    pagina: Int\n    itens: Int\n    ordenarPor: String\n\n  ): [Legislator]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/sigalei/api-camara-graphql/blob/8e42703daa26ade12c4a6c6b75d53044007fc3dd/src/graphql/types/legislatorType.graphql:\ntype Legislator {\n  cpf: String!\n  dataFalecimento: String\n  dataNascimento: String!\n  escolaridade: String!\n  id: Int!\n  idLegislatura: Int!\n  municipioNascimento: String!\n  nome: String!\n  nomeCivil: String!\n  partido: [Party]\n  redeSocial: String!\n  sexo: String!\n  siglaPartido: String!\n  siglaUf: String!\n  ufNascimento: String!\n  ultimoStatus: LastStatus!\n  uri: String!\n  uriPartido: String!\n  urlFoto: String!\n  urlWebsite: String!\n}\n\ntype Query {\n  legislators(\n    id: String\n    nome: String\n    idLegislatura: Int\n    siglaUf: String\n    siglaPartido: String\n    siglaSexo: String\n    pagina: Int\n    itens: Int\n    ordenarPor: String\n\n  ): [Legislator]\n}\n# https://github.com/sigalei/api-camara-graphql/blob/8e42703daa26ade12c4a6c6b75d53044007fc3dd/src/graphql/types/partyType.graphql:\ntype Party {\n  id: Int!\n  sigla: String!\n  nome: String!\n  uri: String!\n}\n# https://github.com/sigalei/api-camara-graphql/blob/8e42703daa26ade12c4a6c6b75d53044007fc3dd/src/graphql/types/lastStatusType.graphql:\ntype LastStatus {\n  condicaoEleitoral: String!\n  data: String!\n  descricao: String!\n  gabinete: [Chamber]\n  id: Int!\n  idLegislatura: Int!\n  nome: String!\n  nomeEleitoral: String!\n  siglaPartido: String!\n  siglaUf: String!\n  situacao: String!\n  uri: String!\n  uriPartido: String!\n  urlFoto: String!\n}\n# https://github.com/sigalei/api-camara-graphql/blob/8e42703daa26ade12c4a6c6b75d53044007fc3dd/src/graphql/types/chamberType.graphql:\ntype Chamber {\n  andar: String!\n  email: String!\n  nome: String!\n  predio: String!\n  sala: String!\n  telefone: String!\n}",
+        "mergedPaths": [
+          "src/graphql/types/partyType.graphql",
+          "src/graphql/types/lastStatusType.graphql",
+          "src/graphql/types/chamberType.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Party",
+          "LastStatus",
+          "Chamber"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "chamberType.graphql",
+      "path": "src/graphql/types/chamberType.graphql",
+      "sha": "d9f138ed508df68c1f1f4aa8fefa7d88ff61d0c3",
+      "url": "https://api.github.com/repositories/130277780/contents/src/graphql/types/chamberType.graphql?ref=8e42703daa26ade12c4a6c6b75d53044007fc3dd",
+      "git_url": "https://api.github.com/repositories/130277780/git/blobs/d9f138ed508df68c1f1f4aa8fefa7d88ff61d0c3",
+      "html_url": "https://github.com/sigalei/api-camara-graphql/blob/8e42703daa26ade12c4a6c6b75d53044007fc3dd/src/graphql/types/chamberType.graphql",
+      "content": "type Chamber {\n  andar: String!\n  email: String!\n  nome: String!\n  predio: String!\n  sala: String!\n  telefone: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "lastStatusType.graphql",
+      "path": "src/graphql/types/lastStatusType.graphql",
+      "sha": "5e8008ff88f828386a6ee8690dbef0978a349d31",
+      "url": "https://api.github.com/repositories/130277780/contents/src/graphql/types/lastStatusType.graphql?ref=8e42703daa26ade12c4a6c6b75d53044007fc3dd",
+      "git_url": "https://api.github.com/repositories/130277780/git/blobs/5e8008ff88f828386a6ee8690dbef0978a349d31",
+      "html_url": "https://github.com/sigalei/api-camara-graphql/blob/8e42703daa26ade12c4a6c6b75d53044007fc3dd/src/graphql/types/lastStatusType.graphql",
+      "content": "type LastStatus {\n  condicaoEleitoral: String!\n  data: String!\n  descricao: String!\n  gabinete: [Chamber]\n  id: Int!\n  idLegislatura: Int!\n  nome: String!\n  nomeEleitoral: String!\n  siglaPartido: String!\n  siglaUf: String!\n  situacao: String!\n  uri: String!\n  uriPartido: String!\n  urlFoto: String!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "partyType.graphql",
+      "path": "src/graphql/types/partyType.graphql",
+      "sha": "79547bcf7f9b802af800f8730a3e7960069ff086",
+      "url": "https://api.github.com/repositories/130277780/contents/src/graphql/types/partyType.graphql?ref=8e42703daa26ade12c4a6c6b75d53044007fc3dd",
+      "git_url": "https://api.github.com/repositories/130277780/git/blobs/79547bcf7f9b802af800f8730a3e7960069ff086",
+      "html_url": "https://github.com/sigalei/api-camara-graphql/blob/8e42703daa26ade12c4a6c6b75d53044007fc3dd/src/graphql/types/partyType.graphql",
+      "content": "type Party {\n  id: Int!\n  sigla: String!\n  nome: String!\n  uri: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-19T22:09:36Z",
+    "updated_at": "2019-04-20T08:48:14Z",
+    "pushed_at": "2018-04-20T00:37:51Z",
+    "issues": 10,
+    "watchers": 2,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 14
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "repo_name": "notification",
+  "repo_full_name": "smoketurner/notification",
+  "repo_owner": "smoketurner",
+  "repo_description": "Notification Service",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Notification.graphql",
+      "path": "notification-application/src/main/resources/Notification.graphql",
+      "sha": "58fea614c62c68ef58aaa210099d502f16d20aca",
+      "url": "https://api.github.com/repositories/38443555/contents/notification-application/src/main/resources/Notification.graphql?ref=a400533bf5fdc1e5dd111f3ea6dd5e2f3217d181",
+      "git_url": "https://api.github.com/repositories/38443555/git/blobs/58fea614c62c68ef58aaa210099d502f16d20aca",
+      "html_url": "https://github.com/smoketurner/notification/blob/a400533bf5fdc1e5dd111f3ea6dd5e2f3217d181/notification-application/src/main/resources/Notification.graphql",
+      "content": "scalar Map\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  notifications(username: String!): [Notification!]\n  rules: [RuleCategory!]\n}\n\ntype Mutation {\n  createNotification(username: String!, notification: NotificationInput!): Notification\n  createRule(category: String!, rule: RuleInput!): Boolean!\n  removeAllNotifications(username: String!): Boolean!\n  removeAllRules: Boolean!\n  removeNotification(username: String!, ids: [ID!]!): Boolean!\n  removeRule(category: String!): Boolean!\n}\n\ntype Notification {\n  id: ID!\n  category: String!\n  message: String!\n  unseen: Boolean!\n  createdAt: String!\n  properties: Map!\n  notifications: [Notification!]\n}\n\ntype RuleCategory {\n  category: String!\n  rule: Rule!\n}\n\ntype Rule {\n  maxSize: Int\n  maxDuration: String\n  matchOn: String\n}\n\ninput NotificationInput {\n  category: String!\n  message: String!\n  properties: Map\n}\n\ninput RuleInput {\n  maxSize: Int\n  maxDuration: String\n  matchOn: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 9
+    },
+    {
+      "name": "Notification.graphql",
+      "path": "notification-application/src/test/resources/Notification.graphql",
+      "sha": "58fea614c62c68ef58aaa210099d502f16d20aca",
+      "url": "https://api.github.com/repositories/38443555/contents/notification-application/src/test/resources/Notification.graphql?ref=a400533bf5fdc1e5dd111f3ea6dd5e2f3217d181",
+      "git_url": "https://api.github.com/repositories/38443555/git/blobs/58fea614c62c68ef58aaa210099d502f16d20aca",
+      "html_url": "https://github.com/smoketurner/notification/blob/a400533bf5fdc1e5dd111f3ea6dd5e2f3217d181/notification-application/src/test/resources/Notification.graphql",
+      "content": "scalar Map\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  notifications(username: String!): [Notification!]\n  rules: [RuleCategory!]\n}\n\ntype Mutation {\n  createNotification(username: String!, notification: NotificationInput!): Notification\n  createRule(category: String!, rule: RuleInput!): Boolean!\n  removeAllNotifications(username: String!): Boolean!\n  removeAllRules: Boolean!\n  removeNotification(username: String!, ids: [ID!]!): Boolean!\n  removeRule(category: String!): Boolean!\n}\n\ntype Notification {\n  id: ID!\n  category: String!\n  message: String!\n  unseen: Boolean!\n  createdAt: String!\n  properties: Map!\n  notifications: [Notification!]\n}\n\ntype RuleCategory {\n  category: String!\n  rule: Rule!\n}\n\ntype Rule {\n  maxSize: Int\n  maxDuration: String\n  matchOn: String\n}\n\ninput NotificationInput {\n  category: String!\n  message: String!\n  properties: Map\n}\n\ninput RuleInput {\n  maxSize: Int\n  maxDuration: String\n  matchOn: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-07-02T16:21:48Z",
+    "updated_at": "2019-05-21T15:52:40Z",
+    "pushed_at": "2019-05-06T11:42:41Z",
+    "issues": 3,
+    "watchers": 4,
+    "fork_count": 9,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 26,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 25,
+    "releases": 0,
+    "stargazers": 40
+  }
+}

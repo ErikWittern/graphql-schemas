@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-schema_comparator",
+  "repo_full_name": "xuorig/graphql-schema_comparator",
+  "repo_owner": "xuorig",
+  "repo_description": "Get changes between two GraphQL schemas 🤖",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "cc1a5a5eda2e6878d3bba27d4513db497de5498b",
+      "url": "https://api.github.com/repositories/98058558/contents/schema.graphql?ref=66f4e311854da71abee2dab1d1eec448c7f4b39e",
+      "git_url": "https://api.github.com/repositories/98058558/git/blobs/cc1a5a5eda2e6878d3bba27d4513db497de5498b",
+      "html_url": "https://github.com/xuorig/graphql-schema_comparator/blob/66f4e311854da71abee2dab1d1eec448c7f4b39e/schema.graphql",
+      "content": "schema { query: Query } type Query { a: String }\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-22T21:22:42Z",
+    "updated_at": "2019-07-19T10:48:09Z",
+    "pushed_at": "2019-05-23T16:53:44Z",
+    "issues": 10,
+    "watchers": 6,
+    "fork_count": 15,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 16,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 15,
+    "releases": 0,
+    "stargazers": 130
+  }
+}

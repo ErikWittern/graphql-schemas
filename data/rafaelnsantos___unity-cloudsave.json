@@ -1,0 +1,68 @@
+{
+  "repo_name": "unity-cloudsave",
+  "repo_full_name": "rafaelnsantos/unity-cloudsave",
+  "repo_owner": "rafaelnsantos",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/birbs/schema.graphql",
+      "sha": "d2c8143be14ceb945690d9ed98f48eac1429dde6",
+      "url": "https://api.github.com/repositories/119353286/contents/src/graphql/birbs/schema.graphql?ref=2fc86cf6f2327552b376eae6b77299b0c4fb38b7",
+      "git_url": "https://api.github.com/repositories/119353286/git/blobs/d2c8143be14ceb945690d9ed98f48eac1429dde6",
+      "html_url": "https://github.com/rafaelnsantos/unity-cloudsave/blob/2fc86cf6f2327552b376eae6b77299b0c4fb38b7/src/graphql/birbs/schema.graphql",
+      "content": "type ScoreBirb {\n    seed: Float\n    multiplier: Int\n    id: String\n}\n\ntype LeaderboardBirb {\n    leaderboard: [ScoreBirb]\n    position: Int\n}\n\ntype Query {\n    GetLeaderboardBirb(appid: String = \"1610374462351349\" top: Int = 100): LeaderboardBirb\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/leaderboard/schema.graphql",
+      "sha": "bc1aad6bc53d38492942b241b1bc716a960bd7ba",
+      "url": "https://api.github.com/repositories/119353286/contents/src/graphql/leaderboard/schema.graphql?ref=2fc86cf6f2327552b376eae6b77299b0c4fb38b7",
+      "git_url": "https://api.github.com/repositories/119353286/git/blobs/bc1aad6bc53d38492942b241b1bc716a960bd7ba",
+      "html_url": "https://github.com/rafaelnsantos/unity-cloudsave/blob/2fc86cf6f2327552b376eae6b77299b0c4fb38b7/src/graphql/leaderboard/schema.graphql",
+      "content": "type Score {\n    score: Int\n    id: String\n}\n\ntype Leaderboard {\n    leaderboard: [Score]\n    position: Int\n    score: Int\n}\n\ntype Query {\n    Leaderboard(top: Int = 100, key: String = \"score\"): Leaderboard\n    PublicLeaderboard(appid: String!, key: String!, top: Int = 100): [Score]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/cloudsave/schema.graphql",
+      "sha": "28d6e353a073e1af9bb17fe748e38501990e7868",
+      "url": "https://api.github.com/repositories/119353286/contents/src/graphql/cloudsave/schema.graphql?ref=2fc86cf6f2327552b376eae6b77299b0c4fb38b7",
+      "git_url": "https://api.github.com/repositories/119353286/git/blobs/28d6e353a073e1af9bb17fe748e38501990e7868",
+      "html_url": "https://github.com/rafaelnsantos/unity-cloudsave/blob/2fc86cf6f2327552b376eae6b77299b0c4fb38b7/src/graphql/cloudsave/schema.graphql",
+      "content": "type State {\n    integers: [IntegerDict]\n    floats: [FloatDict]\n    booleans: [BooleanDict]\n    strings: [StringDict]\n}\n\ninput StateInput {\n    integers: [IntegerDictInput]\n    floats: [FloatDictInput]\n    booleans: [BooleanDictInput]\n    strings: [StringDictInput]\n}\n\ntype StringDict {\n    _id: String\n    value: String\n}\n\ntype IntegerDict {\n    _id: String\n    value: Int\n}\n\ntype FloatDict {\n    _id: String\n    value: Float\n}\n\ntype BooleanDict {\n    _id: String\n    value: Boolean\n}\n\ninput StringDictInput {\n    _id: String!\n    value: String!\n}\n\ninput IntegerDictInput {\n    _id: String!\n    value: Int!\n}\n\ninput FloatDictInput {\n    _id: String!\n    value: Float!\n}\n\ninput BooleanDictInput {\n    _id: String!\n    value: Boolean!\n}\n\ntype Query {\n    Load : State\n}\n\ntype Mutation {\n    Save(integers: [IntegerDictInput], floats: [FloatDictInput], strings: [StringDictInput], booleans: [BooleanDictInput]) : Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-29T08:20:27Z",
+    "updated_at": "2018-05-15T21:31:48Z",
+    "pushed_at": "2018-05-22T21:23:25Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

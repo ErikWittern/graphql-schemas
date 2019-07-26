@@ -1,0 +1,42 @@
+{
+  "repo_name": "Open-Data-Plateform",
+  "repo_full_name": "benfarhat/open-data-plateform",
+  "repo_owner": "Benfarhat",
+  "repo_description": "Open Data Plateform based on React/Redux, MongoDB, Node/Express, Apollo GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "dcat.graphql",
+      "path": "dcat.graphql",
+      "sha": "7082c6ab068fb20b02c62638c81a9218a0271da7",
+      "url": "https://api.github.com/repositories/121073816/contents/dcat.graphql?ref=6029fcc826e0d37e9a626d7b97b3b95797b6510d",
+      "git_url": "https://api.github.com/repositories/121073816/git/blobs/7082c6ab068fb20b02c62638c81a9218a0271da7",
+      "html_url": "https://github.com/Benfarhat/Open-Data-Plateform/blob/6029fcc826e0d37e9a626d7b97b3b95797b6510d/dcat.graphql",
+      "content": "# SCHEMA\n# DCAT Schema\n# ________________________________________________________________________________________\n#\n# We should also see the possibility of integrating the new schema\n# In Tunisia as in Algeria, two languages are used to know Arabic and French\n# In Libya and Egypt, it's more like Arabic and English.\n# In both cases, using Arabic with a second language is not supported \n# by DCAT, OPS or DCAT-AP\n#\n# ________________________________________________________________________________________\n\n#####################\n#   entry points    #\n#####################\n\n## Read entry point\n\n# Equivalent to GET in REST\n\n# Note that \"!\" mean that the element must be provided (required)\n# and [Element] return an array of elements\n\ntype Query {\n    \"\"\"\n    Catalog lvl\n    \"\"\"\n    Catalog(id: ID!): Catalog\n    Catalogs(limit: Int = 10, sortField: String, sortOrder: String): [Catalog]\n\n    \"\"\"\n    Dataset lvl\n    \"\"\"\n    Dataset(id: ID!): Dataset\n    Datasets(catalogId: ID, limit: Int = 10, sortField: String, sortOrder: String): [Dataset]\n\n    \"\"\"\n    Distribution lvl\n    \"\"\"\n    Distribution(id: ID!): Distribution\n    Distributions(datasetId:ID = null, limit: Int = 10, sortField: String, sortOrder: String): [Distribution]\n}\n\n# Equivalent to POST, UPDATE ans DELETE in REST\ntype Mutation {\n    \n    addCatalog(title: String!, description:String!): Catalog\n    addDataset(title: String!, description:String!, catalogId: Int!): Dataset\n    addDistribution(title: String!, description:String!, datasetId: Int!): Distribution\n\n    updateCatalog(id: ID!, title: String!, description:String!): Catalog\n    updateDataset(id: ID!, title: String!, description:String!, catalogId: Int!): Dataset\n    updateDistribution(id: ID!, title: String!, description:String!, datasetId: Int!): Distribution\n\n    removeCatalog(id: ID!): Boolean\n    removeDataset(id: ID!): Boolean\n    removeDistribution(id: ID!): Boolean\n\n\n    addLanguage(name: String): Language\n    addFormat(name: String): Format\n    addAgent(name: String, mbox:String): Agent\n    \n    updateLanguage(id: ID!, name: String): Language\n    updateFormat(id: ID!, name: String): Format\n    updateAgent(id: ID!, name: String, mbox:String): Agent\n\n    removeLanguage(id: ID!): Language\n    removeFormat(id: ID!): Format\n    removeAgent(id: ID!): Agent\n}\n\ntype Subscription {\n    CatalogPublished(userId: ID!): Catalog\n    DatasetPublished(userId: ID!): Dataset\n    DistributionPublished(userId: ID!): Distribution\n}\n\n##################\n#  custom types  #\n##################\n\n## Write entry points\n\ntype Language {\n    id: ID!\n    name: String!\n}\n\ntype Format {\n    id: ID!\n    name: String! # text/csv\n}\n\ntype Catalog {\n    id: ID!\n# <<Mandatory>>    \n    title: String!\n    description: String!\n# <<Recommended>>\n    issued: Date\n    modified: Date\n    language: Language\n    license: String\n    rights: String\n    spatial: String\n    homepage: String\n    dataset: [Dataset]\n    record: [Record]\n}\n\ntype Record {\n    id: ID!\n# <<Mandatory>>    \n    title: String!\n    description: String!\n# <<Recommended>>\n    issued: Date \n    modified: Date\n}\n\ntype Dataset {\n    id: ID!\n# <<Mandatory>>    \n    title: String!\n    description: String!\n    catalogId: Int!\n    #catalog: Catalog!\n# <<Recommended>>\n    issued: Date \n    modified: Date \n    identifier: Url \n    keyword: [String]\n    language: [Language]\n    contactPoint: Agent\n    temporal: String\n    spatial: String\n    accrualPeriodicity: String\n    publisher: Agent\n    landingPage: String\n    theme : [String]\n    distribution: [Distribution] \n}\n\ntype Agent {\n    id: ID!\n    name: String\n    mbox: String\n}\n\n## Pub/Sub entry points\n\ntype Distribution {\n    id: ID!\n# <<Mandatory>>    \n    title: String!\n    description: String!\n    datasetId: Int!\n    #dataset: Dataset!\n# <<Recommended>>\n    issued: Date \n    modified: Date \n    license:  String\n    rights:  String\n    accessURL: Url\n    downloadURL:  Url \n    mediaType:  String \n    format: Format\n    byteSize: Int \n}\n\n#######################\n# custom scalar types #\n#######################\n\nscalar Url\nscalar Date\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-11T02:06:09Z",
+    "updated_at": "2018-02-12T09:34:20Z",
+    "pushed_at": "2018-02-12T19:54:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

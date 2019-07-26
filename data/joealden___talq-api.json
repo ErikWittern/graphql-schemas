@@ -1,0 +1,42 @@
+{
+  "repo_name": "talq-api",
+  "repo_full_name": "joealden/talq-api",
+  "repo_owner": "joealden",
+  "repo_description": "The API for Talq built with Prisma and graphql-yoga.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "c85be01a7db322ddb7fad66ebe1ed7d70057433f",
+      "url": "https://api.github.com/repositories/141120944/contents/src/schema.graphql?ref=939a3f4e935ca9eb35b776074f72eb3605dad69f",
+      "git_url": "https://api.github.com/repositories/141120944/git/blobs/c85be01a7db322ddb7fad66ebe1ed7d70057433f",
+      "html_url": "https://github.com/joealden/talq-api/blob/939a3f4e935ca9eb35b776074f72eb3605dad69f/src/schema.graphql",
+      "content": "# Restrict what client can see about the User type\ntype User {\n  email: String!\n  username: String!\n  firstName: String!\n  lastName: String!\n  friends: [PublicUser!]!\n}\n\n# Type that will be shown to users other than the type owner\ntype PublicUser {\n  username: String!\n  firstName: String!\n  lastName: String!\n}\n\ntype Chat {\n  id: ID!\n  title: String\n  members: [PublicUser!]!\n  messages(last: Int): [Message!]!\n}\n\n# Needed otherwise graphql-yoga complains about missing type\n# TODO: Change from DateTime to just String?\nscalar DateTime\n\ntype Message {\n  id: ID!\n  author: PublicUser!\n  createdAt: DateTime!\n  content: String!\n}\n\ntype SuccessMessage {\n  message: String\n}\n\ntype Query {\n  user: User!\n  users: [PublicUser!]!\n  # Add Prisma args on messages (last, skip etc.)\n  chat(chatId: ID!): Chat!\n  # Add more Prisma args (skip etc.)\n  chats(first: Int): [Chat!]!\n}\n\ntype Subscription {\n  updatedChat: Chat\n}\n\ntype Mutation {\n  signup(\n    email: String!\n    username: String!\n    firstName: String!\n    lastName: String!\n    password: String!\n  ): User!\n  signin(username: String!, password: String!): User!\n  signout: SuccessMessage\n  addFriend(username: String!): User!\n  removeFriend(username: String!): User!\n  changeNames(firstName: String!, lastName: String!): User!\n  # Think about verification, maybe add pass arg / email verification?\n  changeEmail(email: String!): User!\n  changeUsername(username: String!): User!\n  # members = Array of user (friend) IDs\n  # members should not contain the current user's ID\n  # title = Optional chat title\n  startChat(\n    title: String\n    usernames: [String!]!\n    initialMessage: String!\n  ): Chat!\n  updateChatTitle(chatId: ID!, title: String!): Chat!\n  addMemberToChat(chatId: ID!, username: String!): Chat!\n  sendMessageToChat(chatId: ID!, content: String!): Message!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-16T10:01:57Z",
+    "updated_at": "2019-01-31T11:49:51Z",
+    "pushed_at": "2019-01-31T11:49:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

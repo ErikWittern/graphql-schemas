@@ -1,0 +1,57 @@
+{
+  "repo_name": "php-graphql",
+  "repo_full_name": "austp/php-graphql",
+  "repo_owner": "AustP",
+  "repo_description": "Because building a PHP GraphQL server should be easy.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "pets.graphql",
+      "path": "features/schemas/pets.graphql",
+      "sha": "118882d0bdbc5aef7ca6d1a24ddcca2043c4c1b9",
+      "url": "https://api.github.com/repositories/162496236/contents/features/schemas/pets.graphql?ref=3c67bd0c3a5ea049bbf33526c17a50c9c34fe8f5",
+      "git_url": "https://api.github.com/repositories/162496236/git/blobs/118882d0bdbc5aef7ca6d1a24ddcca2043c4c1b9",
+      "html_url": "https://github.com/AustP/php-graphql/blob/3c67bd0c3a5ea049bbf33526c17a50c9c34fe8f5/features/schemas/pets.graphql",
+      "content": "type Query {\n    dog: Dog\n}\n\ntype Mutation {\n    mutateDog: Dog\n}\n\ntype Subscription {\n    disallowedSecondRootField: Boolean\n    newMessage: Message\n}\n\ntype Message {\n    body: String!\n    sender: String!\n}\n\nenum DogCommand { SIT, DOWN, HEEL }\n\ntype Dog implements Pet {\n    name: String!\n    nickname: String\n    barkVolume: Int\n    doesKnowCommand(dogCommand: DogCommand!): Boolean!\n    isHousetrained(atOtherHomes: Boolean): Boolean!\n    owner: Human\n}\n\ninterface Sentient {\n    name: String!\n}\n\ninterface Pet {\n    name: String!\n}\n\ntype Alien implements Sentient {\n    name: String!\n    homePlanet: String\n}\n\ntype Human implements Sentient {\n    name: String!\n}\n\nenum CatCommand { JUMP }\n\ntype Cat implements Pet {\n    name: String!\n    nickname: String\n    doesKnowCommand(catCommand: CatCommand!): Boolean!\n    meowVolume: Int\n}\n\nunion CatOrDog = Cat | Dog\nunion DogOrHuman = Dog | Human\nunion HumanOrAlien = Human | Alien\n\nextend type Query {\n    human: Human\n    pet: Pet\n    catOrDog: CatOrDog\n}\n\ntype Arguments {\n    multipleReqs(x: Int!, y: Int!): Int!\n    booleanArgField(booleanArg: Boolean): Boolean\n    floatArgField(floatArg: Float): Float\n    intArgField(intArg: Int): Int\n    nonNullBooleanArgField(nonNullBooleanArg: Boolean!): Boolean!\n    booleanListArgField(booleanListArg: [Boolean]!): [Boolean]\n    optionalNonNullBooleanArgField(optionalBooleanArg: Boolean! = false): Boolean!\n}\n\nextend type Query {\n    arguments: Arguments\n}\n\nextend type Human {\n    pets: [Pet]!\n}\n\ninput ComplexInput { name: String, owner: String }\n\nextend type Query {\n  findDog(complex: ComplexInput): Dog\n  booleanList(booleanListArg: [Boolean!]): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 21
+    },
+    {
+      "name": "starwars.graphql",
+      "path": "features/schemas/starwars.graphql",
+      "sha": "8d9a5439df94339b7881c35c738c2c667c16de7b",
+      "url": "https://api.github.com/repositories/162496236/contents/features/schemas/starwars.graphql?ref=3c67bd0c3a5ea049bbf33526c17a50c9c34fe8f5",
+      "git_url": "https://api.github.com/repositories/162496236/git/blobs/8d9a5439df94339b7881c35c738c2c667c16de7b",
+      "html_url": "https://github.com/AustP/php-graphql/blob/3c67bd0c3a5ea049bbf33526c17a50c9c34fe8f5/features/schemas/starwars.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n    subscription: Subscription\n}\n# The query type, represents all of the entry points into our object graph\ntype Query {\n    hero(episode: Episode): Character\n    reviews(episode: Episode!): [Review]\n    search(text: String): [SearchResult]\n    character(id: ID!): Character\n    droid(id: ID!): Droid\n    human(id: ID!): Human\n    starship(id: ID!): Starship\n}\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n    createReview(episode: Episode!, review: ReviewInput!): Review\n}\n# The subscription type, represents all subscriptions we can make to our data\ntype Subscription {\n    reviewAdded(episode: Episode!): Review\n}\n# The episodes in the Star Wars trilogy\nenum Episode {\n    # Star Wars Episode IV: A New Hope, released in 1977.\n    NEWHOPE\n    # Star Wars Episode V: The Empire Strikes Back, released in 1980.\n    EMPIRE\n    # Star Wars Episode VI: Return of the Jedi, released in 1983.\n    JEDI\n}\n# A character from the Star Wars universe\ninterface Character {\n    # The ID of the character\n    id: ID!\n    # The name of the character\n    name: String!\n    # The friends of the character, or an empty list if they have none\n    friends: [Character]\n    # The movies this character appears in\n    appearsIn: [Episode]!\n}\n# Units of height\nenum LengthUnit {\n    # The standard unit around the world\n    METER\n    # Primarily used in the United States\n    FOOT\n}\n# A humanoid creature from the Star Wars universe\ntype Human implements Character {\n    # The ID of the human\n    id: ID!\n    # What this human calls themselves\n    name: String!\n    # Height in the preferred unit, default is meters\n    height(unit: LengthUnit = METER): Float\n    # Mass in kilograms, or null if unknown\n    mass: Float\n    # This human's friends, or an empty list if they have none\n    friends: [Character]\n    # The movies this human appears in\n    appearsIn: [Episode]!\n    # A list of starships this person has piloted, or an empty list if none\n    starships: [Starship]\n}\n# An autonomous mechanical character in the Star Wars universe\ntype Droid implements Character {\n    # The ID of the droid\n    id: ID!\n    # What others call this droid\n    name: String!\n    # This droid's friends, or an empty list if they have none\n    friends: [Character]\n    # The movies this droid appears in\n    appearsIn: [Episode]!\n    # This droid's primary function\n    primaryFunction: String\n}\n# Represents a review for a movie\ntype Review {\n    # The episode the review is for\n    episode: Episode\n    # The number of stars this review gave, 1-5\n    stars: Int!\n    # Comment about the movie\n    commentary: String\n}\n# The input object sent when someone is creating a new review\ninput ReviewInput {\n    # 0-5 stars\n    stars: Int!\n    # Comment about the movie, optional\n    commentary: String\n}\ntype Starship {\n    # The ID of the starship\n    id: ID!\n    # The name of the starship\n    name: String!\n    # Length of the starship, along the longest axis\n    length(unit: LengthUnit = METER): Float\n}\nunion SearchResult = Human | Droid | Starship\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": true,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-19T22:11:47Z",
+    "updated_at": "2018-12-19T22:12:02Z",
+    "pushed_at": "2018-12-19T22:12:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

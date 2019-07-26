@@ -1,0 +1,389 @@
+{
+  "repo_name": "schemaglue",
+  "repo_full_name": "nicolasdao/schemaglue",
+  "repo_owner": "nicolasdao",
+  "repo_description": "Naturally breaks down your monolithic graphql schema into bits and pieces and then glue them back together.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "productquery.graphql",
+      "path": "test/graphql/mock_02/product/productquery.graphql",
+      "sha": "e51bb757262b99d341317d358b8712174386a978",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_02/product/productquery.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/e51bb757262b99d341317d358b8712174386a978",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/product/productquery.graphql",
+      "content": "type Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/product/productquery.graphql:\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/product/schema.graphql:\ntype Product {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype ProductNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Mutation {\n  # ### Update a product's name\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  # - **name**: New product's name\n  productUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for product's name changes\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  productNameChanged(id: Int): ProductNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/core/schema.graphql:\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_02/product/schema.graphql",
+          "test/graphql/mock_02/core/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Product",
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 6,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_02/core/schema.graphql",
+      "sha": "635fdcc703e9263d9751bd940d6de022c656455c",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_02/core/schema.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/635fdcc703e9263d9751bd940d6de022c656455c",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/core/schema.graphql",
+      "content": "type UpdateMessage {\n\tmessage: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_02/product/schema.graphql",
+      "sha": "433cb9a6b159f9c745f561216f5a9969381d3fea",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_02/product/schema.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/433cb9a6b159f9c745f561216f5a9969381d3fea",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/product/schema.graphql",
+      "content": "type Product {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype ProductNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Mutation {\n  # ### Update a product's name\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  # - **name**: New product's name\n  productUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for product's name changes\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  productNameChanged(id: Int): ProductNameChangedMsg\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 4
+    },
+    {
+      "name": "productquery.graphql",
+      "path": "test/graphql/mock_03/product/productquery.graphql",
+      "sha": "e51bb757262b99d341317d358b8712174386a978",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_03/product/productquery.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/e51bb757262b99d341317d358b8712174386a978",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_03/product/productquery.graphql",
+      "content": "type Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_03/product/productquery.graphql:\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/product/schema.graphql:\ntype Product {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype ProductNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Mutation {\n  # ### Update a product's name\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  # - **name**: New product's name\n  productUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for product's name changes\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  productNameChanged(id: Int): ProductNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_03/core/schema.graphql:\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_02/product/schema.graphql",
+          "test/graphql/mock_03/core/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Product",
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_03/core/schema.graphql",
+      "sha": "635fdcc703e9263d9751bd940d6de022c656455c",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_03/core/schema.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/635fdcc703e9263d9751bd940d6de022c656455c",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_03/core/schema.graphql",
+      "content": "type UpdateMessage {\n\tmessage: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "productquery.graphql",
+      "path": "test/graphql/mock_04/product/productquery.graphql",
+      "sha": "e51bb757262b99d341317d358b8712174386a978",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_04/product/productquery.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/e51bb757262b99d341317d358b8712174386a978",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_04/product/productquery.graphql",
+      "content": "type Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_04/product/productquery.graphql:\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/product/schema.graphql:\ntype Product {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype ProductNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Mutation {\n  # ### Update a product's name\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  # - **name**: New product's name\n  productUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for product's name changes\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  productNameChanged(id: Int): ProductNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_04/core/schema.graphql:\n# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_02/product/schema.graphql",
+          "test/graphql/mock_04/core/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Product",
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_04/core/schema.graphql",
+      "sha": "a8eeb0b1a71d0da080fc184af562b4995b0594a6",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_04/core/schema.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/a8eeb0b1a71d0da080fc184af562b4995b0594a6",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_04/core/schema.graphql",
+      "content": "# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "variantquery.graphql",
+      "path": "test/graphql/mock_02/variant/variantquery.graphql",
+      "sha": "e1baaa6c30d48adbc660520874948fb5e5441f67",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_02/variant/variantquery.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/e1baaa6c30d48adbc660520874948fb5e5441f67",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/variant/variantquery.graphql",
+      "content": "type Query {\n  # ### GET variants\n  #\n  # _Arguments_\n  # - **id**: Variant's id (optional)\n  variants(id: Int): [Variant]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/variant/variantquery.graphql:\ntype Query {\n  # ### GET variants\n  #\n  # _Arguments_\n  # - **id**: Variant's id (optional)\n  variants(id: Int): [Variant]\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/variant/schema.graphql:\ntype Variant {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype VariantNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Mutation {\n  # ### Update a variant's name\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  # - **name**: New variant's name\n  variantUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for variant's name changes\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  variantNameChanged(id: Int): VariantNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/core/schema.graphql:\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_02/variant/schema.graphql",
+          "test/graphql/mock_02/core/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Variant",
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 6,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_02/variant/schema.graphql",
+      "sha": "eebd96ba161b68e604c23c1900c8f6d60096e160",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_02/variant/schema.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/eebd96ba161b68e604c23c1900c8f6d60096e160",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/variant/schema.graphql",
+      "content": "type Variant {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype VariantNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Mutation {\n  # ### Update a variant's name\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  # - **name**: New variant's name\n  variantUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for variant's name changes\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  variantNameChanged(id: Int): VariantNameChangedMsg\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 4
+    },
+    {
+      "name": "productquery.graphql",
+      "path": "test/graphql/mock_05/product/productquery.graphql",
+      "sha": "e51bb757262b99d341317d358b8712174386a978",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_05/product/productquery.graphql?ref=f1fe6efc13a030fb21b455ad1460cd05aa38479a",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/e51bb757262b99d341317d358b8712174386a978",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/f1fe6efc13a030fb21b455ad1460cd05aa38479a/test/graphql/mock_05/product/productquery.graphql",
+      "content": "type Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/f1fe6efc13a030fb21b455ad1460cd05aa38479a/test/graphql/mock_05/product/productquery.graphql:\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}\n# https://github.com/nicolasdao/schemaglue/blob/f1fe6efc13a030fb21b455ad1460cd05aa38479a/test/graphql/mock_05/product/schema.graphql:\ntype Product {\n  id: ID!\n  name: String!\n  shortDescription: String\n}",
+        "mergedPaths": [
+          "test/graphql/mock_05/product/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Product"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_05/product/schema.graphql",
+      "sha": "67885d2bd6df219e7728b19cf3d50b25fe619df6",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_05/product/schema.graphql?ref=f1fe6efc13a030fb21b455ad1460cd05aa38479a",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/67885d2bd6df219e7728b19cf3d50b25fe619df6",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/f1fe6efc13a030fb21b455ad1460cd05aa38479a/test/graphql/mock_05/product/schema.graphql",
+      "content": "type Product {\n  id: ID!\n  name: String!\n  shortDescription: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "productquery.graphql",
+      "path": "test/graphql/mock_06/product/productquery.graphql",
+      "sha": "e51bb757262b99d341317d358b8712174386a978",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_06/product/productquery.graphql?ref=054c645f6cd67a19db8a0d46abc2e4d4e151125c",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/e51bb757262b99d341317d358b8712174386a978",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/054c645f6cd67a19db8a0d46abc2e4d4e151125c/test/graphql/mock_06/product/productquery.graphql",
+      "content": "type Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/054c645f6cd67a19db8a0d46abc2e4d4e151125c/test/graphql/mock_06/product/productquery.graphql:\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/product/schema.graphql:\ntype Product {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype ProductNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Mutation {\n  # ### Update a product's name\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  # - **name**: New product's name\n  productUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for product's name changes\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  productNameChanged(id: Int): ProductNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/054c645f6cd67a19db8a0d46abc2e4d4e151125c/test/graphql/mock_06/core/schema.graphql:\n# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_02/product/schema.graphql",
+          "test/graphql/mock_06/core/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Product",
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_06/core/schema.graphql",
+      "sha": "a8eeb0b1a71d0da080fc184af562b4995b0594a6",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_06/core/schema.graphql?ref=054c645f6cd67a19db8a0d46abc2e4d4e151125c",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/a8eeb0b1a71d0da080fc184af562b4995b0594a6",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/054c645f6cd67a19db8a0d46abc2e4d4e151125c/test/graphql/mock_06/core/schema.graphql",
+      "content": "# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "productquery.gql",
+      "path": "test/graphql/mock_07/product/productquery.gql",
+      "sha": "e51bb757262b99d341317d358b8712174386a978",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_07/product/productquery.gql?ref=0c6604453062f4cab33a520296c231ebfeab9e4c",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/e51bb757262b99d341317d358b8712174386a978",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/0c6604453062f4cab33a520296c231ebfeab9e4c/test/graphql/mock_07/product/productquery.gql",
+      "content": "type Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/0c6604453062f4cab33a520296c231ebfeab9e4c/test/graphql/mock_07/product/productquery.gql:\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  products(id: Int): [Product]\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_02/product/schema.graphql:\ntype Product {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype ProductNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Mutation {\n  # ### Update a product's name\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  # - **name**: New product's name\n  productUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for product's name changes\n  #\n  # _Arguments_\n  # - **id**: Product's id\n  productNameChanged(id: Int): ProductNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/0c6604453062f4cab33a520296c231ebfeab9e4c/test/graphql/mock_07/core/schema.gql:\n# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_02/product/schema.graphql",
+          "test/graphql/mock_07/core/schema.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Product",
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.gql",
+      "path": "test/graphql/mock_07/core/schema.gql",
+      "sha": "a8eeb0b1a71d0da080fc184af562b4995b0594a6",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_07/core/schema.gql?ref=0c6604453062f4cab33a520296c231ebfeab9e4c",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/a8eeb0b1a71d0da080fc184af562b4995b0594a6",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/0c6604453062f4cab33a520296c231ebfeab9e4c/test/graphql/mock_07/core/schema.gql",
+      "content": "# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_04/variant/schema.graphql",
+      "sha": "06ddc28c42e8e0a2b0e43d996b8467f989c2f242",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_04/variant/schema.graphql?ref=b9db79fe82529e747bf028104f754c2e94eef2f7",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/06ddc28c42e8e0a2b0e43d996b8467f989c2f242",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_04/variant/schema.graphql",
+      "content": "# This is \n# a\n# Variant\ntype Variant {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype VariantNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  variants(id: Int): [Variant]\n}\n\ntype Mutation {\n  # ### Update a variant's name\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  # - **name**: New variant's name\n  variantUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for variant's name changes\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  variantNameChanged(id: Int): VariantNameChangedMsg\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_04/variant/schema.graphql:\n# This is \n# a\n# Variant\ntype Variant {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype VariantNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  variants(id: Int): [Variant]\n}\n\ntype Mutation {\n  # ### Update a variant's name\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  # - **name**: New variant's name\n  variantUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for variant's name changes\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  variantNameChanged(id: Int): VariantNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/b9db79fe82529e747bf028104f754c2e94eef2f7/test/graphql/mock_04/core/schema.graphql:\n# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_04/core/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/graphql/mock_06/variant/schema.graphql",
+      "sha": "06ddc28c42e8e0a2b0e43d996b8467f989c2f242",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_06/variant/schema.graphql?ref=054c645f6cd67a19db8a0d46abc2e4d4e151125c",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/06ddc28c42e8e0a2b0e43d996b8467f989c2f242",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/054c645f6cd67a19db8a0d46abc2e4d4e151125c/test/graphql/mock_06/variant/schema.graphql",
+      "content": "# This is \n# a\n# Variant\ntype Variant {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype VariantNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  variants(id: Int): [Variant]\n}\n\ntype Mutation {\n  # ### Update a variant's name\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  # - **name**: New variant's name\n  variantUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for variant's name changes\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  variantNameChanged(id: Int): VariantNameChangedMsg\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/054c645f6cd67a19db8a0d46abc2e4d4e151125c/test/graphql/mock_06/variant/schema.graphql:\n# This is \n# a\n# Variant\ntype Variant {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype VariantNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  variants(id: Int): [Variant]\n}\n\ntype Mutation {\n  # ### Update a variant's name\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  # - **name**: New variant's name\n  variantUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for variant's name changes\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  variantNameChanged(id: Int): VariantNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/054c645f6cd67a19db8a0d46abc2e4d4e151125c/test/graphql/mock_06/core/schema.graphql:\n# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_06/core/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.gql",
+      "path": "test/graphql/mock_07/variant/schema.gql",
+      "sha": "06ddc28c42e8e0a2b0e43d996b8467f989c2f242",
+      "url": "https://api.github.com/repositories/97605781/contents/test/graphql/mock_07/variant/schema.gql?ref=0c6604453062f4cab33a520296c231ebfeab9e4c",
+      "git_url": "https://api.github.com/repositories/97605781/git/blobs/06ddc28c42e8e0a2b0e43d996b8467f989c2f242",
+      "html_url": "https://github.com/nicolasdao/schemaglue/blob/0c6604453062f4cab33a520296c231ebfeab9e4c/test/graphql/mock_07/variant/schema.gql",
+      "content": "# This is \n# a\n# Variant\ntype Variant {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype VariantNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  variants(id: Int): [Variant]\n}\n\ntype Mutation {\n  # ### Update a variant's name\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  # - **name**: New variant's name\n  variantUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for variant's name changes\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  variantNameChanged(id: Int): VariantNameChangedMsg\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nicolasdao/schemaglue/blob/0c6604453062f4cab33a520296c231ebfeab9e4c/test/graphql/mock_07/variant/schema.gql:\n# This is \n# a\n# Variant\ntype Variant {\n  id: ID!\n  name: String!\n  shortDescription: String\n}\n\ntype VariantNameChangedMsg {\n\tid: ID!\n\tname: String\n}\n\ntype Query {\n  # ### GET products\n  #\n  # _Arguments_\n  # - **id**: Product's id (optional)\n  variants(id: Int): [Variant]\n}\n\ntype Mutation {\n  # ### Update a variant's name\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  # - **name**: New variant's name\n  variantUpdateName(id: Int, name: String): UpdateMessage\n}\n\ntype Subscription {\n  # ### Listen for variant's name changes\n  #\n  # _Arguments_\n  # - **id**: Variant's id\n  variantNameChanged(id: Int): VariantNameChangedMsg\n}\n# https://github.com/nicolasdao/schemaglue/blob/0c6604453062f4cab33a520296c231ebfeab9e4c/test/graphql/mock_07/core/schema.gql:\n# This is a message\ntype UpdateMessage {\n\tmessage: String!\n}\n",
+        "mergedPaths": [
+          "test/graphql/mock_07/core/schema.gql"
+        ],
+        "typesDefinedByMerge": [
+          "UpdateMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-18T14:07:23Z",
+    "updated_at": "2019-07-15T13:13:11Z",
+    "pushed_at": "2019-05-02T23:50:15Z",
+    "issues": 13,
+    "watchers": 3,
+    "fork_count": 12,
+    "has_wiki_enabled": true,
+    "license": "bsd-3-clause",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 95
+  }
+}

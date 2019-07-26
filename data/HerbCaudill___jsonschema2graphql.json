@@ -1,0 +1,42 @@
+{
+  "repo_name": "jsonschema2graphql",
+  "repo_full_name": "herbcaudill/jsonschema2graphql",
+  "repo_owner": "HerbCaudill",
+  "repo_description": "Convert JSON schema to GraphQL types",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "family.graphql",
+      "path": "test/assets/graphql/family.graphql",
+      "sha": "0cde1f1ed7093fe1c00bb1d48a71efa3c293c188",
+      "url": "https://api.github.com/repositories/151149459/contents/test/assets/graphql/family.graphql?ref=5191eada4c953e7088bc7532dfbb86722577d846",
+      "git_url": "https://api.github.com/repositories/151149459/git/blobs/0cde1f1ed7093fe1c00bb1d48a71efa3c293c188",
+      "html_url": "https://github.com/HerbCaudill/jsonschema2graphql/blob/5191eada4c953e7088bc7532dfbb86722577d846/test/assets/graphql/family.graphql",
+      "content": "\"\"\"\nApproval: If this field element and the `approved` value is `true`, the log entry was reviewed and approved by a parent.\n\"\"\"\ntype Approval {\n  \"User ID: Reference to the User making the approval\"\n  user_id: String!\n\n  \"Timestamp: Date and time that the approval was made\"\n  timeStamp: String!\n\n  \"Approved: If an existing approval entry has a value of `approved=false`, then the log item was rejected.\"\n  approved: Boolean!\n}\n\n\"\"\"\nFamily: Represents a single family account and all its data.\n\"\"\"\ntype Family {\n  _id: String!\n\n  \"Name: Name of the family. Typically one or two last names.\"\n  name: String!\n\n  \"Users: All users (parents and children) associated with the family.\"\n  users: [User!]!\n\n  \"Items: The tasks and rewards defined by this family.\"\n  items: [Item!]!\n}\n\n\"\"\"\nItem: Represents a task (something that earns coins, e.g. walking the dog) or a\nreward (something that spends coins, e.g. screen time).\n\"\"\"\ntype Item {\n  _id: String!\n\n  \"Name: Name of the task (for earning coins) or reward (for spending coins).\"\n  name: String!\n\n  \"Icon\"\n  icon: String!\n\n  \"Description: Description of the task or reward.\"\n  description: String!\n\n  \"\"\"\n  Timed?: If true, the number of coins generated or consumed by this item\n  depends of the number of minutes that it lasted. For example, screen time or reading time.\n  \"\"\"\n  isTimed: Boolean\n\n  \"Coin value: Value in coins of the given task or activity. If the activity is timed, this is the value of 10 minutes.\"\n  coinValue: Int!\n\n  \"Range of coin values: Minimum and maximum coin values that can be earned or spent for this item.\"\n  coinValueRange: ValueRange\n}\n\n\"\"\"\nLog: Records an activity that takes place on a specific date, along with the coins earned or spent.\n\"\"\"\ntype Log {\n  _id: String!\n\n  \"Item ID: Reference to the Item being earned or spent in this log entry\"\n  item_id: String!\n\n  \"Coins: Actual number of coins earned or spent. Might be determined automatically or entered manually.\"\n  coins: Float!\n\n  \"Date: The date on which the activity took place.\"\n  date: String!\n\n  \"Time: (Non-timed items only.) The time at which the activity took place.\"\n  time: String\n\n  \"Time range: (Timed items only.) The times at which the activity started and ended.\"\n  timeRange: TimeRange\n\n  \"Minutes: (Timed items only.) The number of minutes between the start and end time.\"\n  minutes: Int\n\n  \"\"\"\n  Manual entry?: If true, the time(s) for this log were entered or edited\n  manually (as opposed to being the moment that the item was logged, or the\n  moments that Start and Stop were pressed.\n  \"\"\"\n  isManualEntry: Boolean\n\n  \"Approval: A record of the activity having been reviewed by a parent and either approved or rejected.\"\n  approval: Approval\n}\n\ntype Query {\n  objectIds: [String]\n  emails: [String]\n  valueRanges: [ValueRange]\n  timeRanges: [TimeRange]\n  items: [Item]\n  approvals: [Approval]\n  logs: [Log]\n  users: [User]\n  families: [Family]\n}\n\n\"\"\"\nTime range: Start and end times for an activity.\n\"\"\"\ntype TimeRange {\n  \"Start time\"\n  start: String\n\n  \"End time\"\n  end: String\n}\n\n\"\"\"\nUser: Represents a single user (parent or child) and, in the case of a child, their full history.\n\"\"\"\ntype User {\n  _id: String!\n  email: String!\n\n  \"Name: This is the name that will be displayed to the user themselves.\"\n  name: String!\n\n  \"Nickname: This is the name that will be displayed to children using the app.\"\n  nickname: String\n\n  \"Parent?: If true, this user has elevated privileges in this family.\"\n  isParent: Boolean\n\n  \"Users: (Child only.) All of the historical activity (tasks performed, rewards earned) associated with this child.\"\n  logs: [Log!]\n}\n\n\"\"\"\nValue Range\n\"\"\"\ntype ValueRange {\n  min: Float\n  max: Float\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-01T19:49:54Z",
+    "updated_at": "2019-06-01T21:19:54Z",
+    "pushed_at": "2019-01-23T22:58:52Z",
+    "issues": 1,
+    "watchers": 3,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

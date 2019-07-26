@@ -1,0 +1,66 @@
+{
+  "repo_name": "clients-server-frame",
+  "repo_full_name": "109km/clients-server-frame",
+  "repo_owner": "109km",
+  "repo_description": "A website created by eggjs and react",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/app/graphql/query/schema.graphql",
+      "sha": "95e0879cd29bedb6c6d0589bc382f824ff373da5",
+      "url": "https://api.github.com/repositories/145433270/contents/server/app/graphql/query/schema.graphql?ref=aecaed7da3ab7a6d579966713094b07c774db211",
+      "git_url": "https://api.github.com/repositories/145433270/git/blobs/95e0879cd29bedb6c6d0589bc382f824ff373da5",
+      "html_url": "https://github.com/109km/clients-server-frame/blob/aecaed7da3ab7a6d579966713094b07c774db211/server/app/graphql/query/schema.graphql",
+      "content": "type Query {\n  user(id: ID!): User\n  users:[User]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/109km/clients-server-frame/blob/aecaed7da3ab7a6d579966713094b07c774db211/server/app/graphql/query/schema.graphql:\ntype Query {\n  user(id: ID!): User\n  users:[User]\n}\n# https://github.com/109km/clients-server-frame/blob/46191714554944f53f91f3a3b3eade186ee416c6/server/app/graphql/user/schema.graphql:\ntype User {\n  id: ID!\n  username: String\n}",
+        "mergedPaths": [
+          "server/app/graphql/user/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "server/app/graphql/user/schema.graphql",
+      "sha": "a202b2a8fa49d90640d32ab79454f009dc4e5f7f",
+      "url": "https://api.github.com/repositories/145433270/contents/server/app/graphql/user/schema.graphql?ref=46191714554944f53f91f3a3b3eade186ee416c6",
+      "git_url": "https://api.github.com/repositories/145433270/git/blobs/a202b2a8fa49d90640d32ab79454f009dc4e5f7f",
+      "html_url": "https://github.com/109km/clients-server-frame/blob/46191714554944f53f91f3a3b3eade186ee416c6/server/app/graphql/user/schema.graphql",
+      "content": "type User {\n  id: ID!\n  username: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-20T15:07:35Z",
+    "updated_at": "2019-02-10T06:18:35Z",
+    "pushed_at": "2019-02-10T06:18:34Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "react-feature-flag-example",
+  "repo_full_name": "wessouza/react-feature-flag-example",
+  "repo_owner": "WesSouza",
+  "repo_description": "A sample project that showcases the usage of feature flags (or feature toggles) using React",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "queries.gql",
+      "path": "src/graphql/schema/queries.gql",
+      "sha": "2bee13dbf9311aa91fa103000f11621168f7b5c7",
+      "url": "https://api.github.com/repositories/123980879/contents/src/graphql/schema/queries.gql?ref=1ec7860b9a6b844e14984639154c5c07113c9af4",
+      "git_url": "https://api.github.com/repositories/123980879/git/blobs/2bee13dbf9311aa91fa103000f11621168f7b5c7",
+      "html_url": "https://github.com/WesSouza/react-feature-flag-example/blob/1ec7860b9a6b844e14984639154c5c07113c9af4/src/graphql/schema/queries.gql",
+      "content": "type Query {\n  # List of enabled system features\n  systemFeatures: [String!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-05T21:26:04Z",
+    "updated_at": "2018-03-05T21:26:16Z",
+    "pushed_at": "2018-03-08T04:51:00Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

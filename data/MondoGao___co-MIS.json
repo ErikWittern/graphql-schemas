@@ -1,0 +1,42 @@
+{
+  "repo_name": "co-MIS",
+  "repo_full_name": "mondogao/co-mis",
+  "repo_owner": "MondoGao",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "server/graphql/schema.gql",
+      "sha": "f98c6b63c0fece6dea28a103f7f661159d3a58e4",
+      "url": "https://api.github.com/repositories/135226626/contents/server/graphql/schema.gql?ref=3b99c30c2a91d0cd4809fa5bf2f32636fcf0a4cf",
+      "git_url": "https://api.github.com/repositories/135226626/git/blobs/f98c6b63c0fece6dea28a103f7f661159d3a58e4",
+      "html_url": "https://github.com/MondoGao/co-MIS/blob/3b99c30c2a91d0cd4809fa5bf2f32636fcf0a4cf/server/graphql/schema.gql",
+      "content": "scalar Date\n\ntype User {\n  id: ID!\n  rfid: String!\n  name: String!\n  type: Int!\n}\n\ninput UserQuery {\n  id: ID\n  rfid: String\n  name: String\n  type: Int\n}\n\ntype Tracker {\n  id: ID!\n  rfid: String!\n  channel: String!\n}\n\ninput TrackerQuery {\n  id: ID\n  rfid: String\n  channel: String\n}\n\ntype Coordinate {\n  x: Float!\n  y: Float!\n}\n\n\ntype SportRecord {\n  id: ID!\n  user: User!\n  tracker: Tracker!\n  startTime: Date!\n  endTime: Date\n  path: [Coordinate]!\n}\n\ninput SportRecordQuery {\n  id: ID\n  user: ID\n  tracker: ID\n  startTime: Date\n  endTime: Date\n}\n\ninterface ResourceType {\n  id: ID!\n  name: String!\n}\n\ninput ResourceTypeQuery {\n  id: ID\n  name: String\n}\n\ntype SpaceType implements ResourceType {\n  id: ID!\n  name: String!\n}\n\ntype EquipmentType implements ResourceType {\n  id: ID!\n  name: String!\n}\n\ntype Time {\n  hour: Int!\n  minute: Int!\n}\n\ntype Duration {\n  start: Time!\n  end: Time!\n}\n\ninterface Resource {\n  id: ID!\n  name: String!\n  type: ResourceType!\n  isAvaliable: Boolean!\n  avaliableDuration: Duration!\n  createAt: Date!\n  rfid: String\n}\n\ninput ResourceQuery {\n  id: ID\n  name: String\n  type: ResourceTypeQuery\n  isAvaliable: Boolean\n  rfid: String\n  createAt: Date\n}\n\ntype Space implements Resource {\n  id: ID!\n  name: String!\n  type: ResourceType!\n  isAvaliable: Boolean!\n  avaliableDuration: Duration!\n  createAt: Date!\n  rfid: String\n}\n\ntype Equipment implements Resource {\n  id: ID!\n  name: String!\n  type: ResourceType!\n  isAvaliable: Boolean!\n  avaliableDuration: Duration!\n  rfid: String\n  createAt: Date!\n}\n\ntype Reservation {\n  id: ID!\n  startTime: Date!\n  endTime: Date!\n  isActived: Boolean!\n  isClosed: Boolean!\n  user: User!\n  resource: Resource!\n}\n\ninput ReservationQuery {\n  id: ID\n  startTime: Date\n  endTime: Date\n  isActived: Boolean\n  isClosed: Boolean\n  user: UserQuery\n  resource: ResourceQuery\n}\n\ntype Query {\n  users(query: UserQuery): [User]\n  trackers(query: TrackerQuery): [Tracker]\n  sportRecords(query: SportRecordQuery): [SportRecord]\n  spaceTypes(query: ResourceTypeQuery): [SpaceType]\n  equipmentTypes(query: ResourceTypeQuery): [EquipmentType]\n  spaces(query: ResourceQuery): [Space]\n  equipments(query: ResourceQuery): [Equipment]\n  reservations(query: ReservationQuery): [Reservation]\n}\n\ninput CoordinateMutation {\n  x: Float!\n  y: Float!\n}\n\ninput SportRecordMutation {\n  id: ID\n  user: ID!\n  tracker: ID!\n  startTime: Date!\n  endTime: Date\n  path: [CoordinateMutation]!\n}\n\ninput TimeMutation {\n  hour: Int\n  minute: Int\n}\n\ninput DurationMutation {\n  start: TimeMutation\n  end: TimeMutation\n}\n\ninput ResourceMutation {\n  id: ID\n  name: String!\n  type: ID!\n  isAvaliable: Boolean!\n  avaliableDuration: DurationMutation!\n  rfid: String\n}\n\ninput ReservationMutation {\n  id: ID\n  startTime: Date!\n  endTime: Date!\n  isActived: Boolean!\n  isClosed: Boolean!\n  user: ID!\n  resource: ID!\n}\n\ntype Mutation {\n  updateSportRecord(data: SportRecordMutation): SportRecord\n  updateUser(data: UserQuery): User\n  updateTracker(data: TrackerQuery): Tracker\n  updateSpaceType(data: ResourceTypeQuery): SpaceType\n  updateEquipmentType(data: ResourceQuery): EquipmentType\n  updateSpace(data: ResourceMutation): Space\n  updateEquipment(data: ResourceMutation): Equipment\n  updateReservation(data: ReservationMutation): Reservation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 28
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-29T01:38:11Z",
+    "updated_at": "2018-07-06T09:08:51Z",
+    "pushed_at": "2018-07-06T09:08:49Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

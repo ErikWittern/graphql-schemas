@@ -1,0 +1,39 @@
+{
+  "repo_name": "react-graphql-todo",
+  "repo_full_name": "yaelsprikut/react-graphql-todo",
+  "repo_owner": "yaelsprikut",
+  "repo_description": "TODO App written in React and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "2a5e6170fdfff0ab76d3ad250d7d6e3d2d622675",
+      "url": "https://api.github.com/repositories/171422547/contents/server/src/schema.graphql?ref=5f12c96d954051a0ce6f859cc1019d65572d0d3d",
+      "git_url": "https://api.github.com/repositories/171422547/git/blobs/2a5e6170fdfff0ab76d3ad250d7d6e3d2d622675",
+      "html_url": "https://github.com/yaelsprikut/react-graphql-todo/blob/5f12c96d954051a0ce6f859cc1019d65572d0d3d/server/src/schema.graphql",
+      "content": "type Query {\n  feed: [Post!]!\n  drafts: [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String!, category: String, due_date: String): Post\n  deletePost(id: ID!): Post\n  update(id: ID!, title: String, content: String, category: String, due_date: String): Post\n  publish(id: ID!): Post\n}\n\ntype Post {\n  id: ID!\n  published: Boolean!\n  title: String!\n  content: String!\n  category: String\n  due_date: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-19T07:00:19Z",
+    "updated_at": "2019-02-22T19:41:11Z",
+    "pushed_at": "2019-02-22T19:41:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

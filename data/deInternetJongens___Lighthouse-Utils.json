@@ -1,0 +1,39 @@
+{
+  "repo_name": "Lighthouse-Utils",
+  "repo_full_name": "deinternetjongens/lighthouse-utils",
+  "repo_owner": "deInternetJongens",
+  "repo_description": "An add-on to Lighthouse to auto-generate CRUD actions from types https://github.com/nuwave/lighthouse",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "tests/Unit/Generators/files/schema.graphql",
+      "sha": "89376f08aa0bd433328b50805a3a5293ce48275d",
+      "url": "https://api.github.com/repositories/145712525/contents/tests/Unit/Generators/files/schema.graphql?ref=31cd7ffe225f4639f3ecf2fd40c4e6835a145dda",
+      "git_url": "https://api.github.com/repositories/145712525/git/blobs/89376f08aa0bd433328b50805a3a5293ce48275d",
+      "html_url": "https://github.com/deInternetJongens/Lighthouse-Utils/blob/31cd7ffe225f4639f3ecf2fd40c4e6835a145dda/tests/Unit/Generators/files/schema.graphql",
+      "content": "type Query{placeholder:String}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-22T13:25:08Z",
+    "updated_at": "2019-06-29T08:50:17Z",
+    "pushed_at": "2019-01-24T08:40:48Z",
+    "issues": 5,
+    "watchers": 7,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 16,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 14,
+    "releases": 5,
+    "stargazers": 25
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-subscription-server",
+  "repo_full_name": "4catalyzer/graphql-subscription-server",
+  "repo_owner": "4Catalyzer",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/todo/data/schema.graphql",
+      "sha": "fc33f45695c727874eec3bd30f4fbd069db4c5a7",
+      "url": "https://api.github.com/repositories/119903515/contents/examples/todo/data/schema.graphql?ref=ed688613af72933898c1a0e84d753d65b862d976",
+      "git_url": "https://api.github.com/repositories/119903515/git/blobs/fc33f45695c727874eec3bd30f4fbd069db4c5a7",
+      "html_url": "https://github.com/4Catalyzer/graphql-subscription-server/blob/ed688613af72933898c1a0e84d753d65b862d976/examples/todo/data/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutation\n  subscription: Subscription\n}\n\ninput AddTodoInput {\n  text: String!\n  clientMutationId: String\n}\n\ntype AddTodoPayload {\n  todoEdge: TodoEdge\n  viewer: User\n  clientMutationId: String\n}\n\ninput AddTodoSubscriptionInput {\n  clientSubscriptionId: String\n}\n\ntype AddTodoSubscriptionPayload {\n  todo: Todo\n  todoEdge: TodoEdge\n  viewer: User\n  clientSubscriptionId: String\n}\n\ninput ChangeTodoStatusInput {\n  complete: Boolean!\n  id: ID!\n  clientMutationId: String\n}\n\ntype ChangeTodoStatusPayload {\n  todo: Todo\n  viewer: User\n  clientMutationId: String\n}\n\ninput MarkAllTodosInput {\n  complete: Boolean!\n  clientMutationId: String\n}\n\ntype MarkAllTodosPayload {\n  changedTodos: [Todo]\n  viewer: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  changeTodoStatus(input: ChangeTodoStatusInput!): ChangeTodoStatusPayload\n  markAllTodos(input: MarkAllTodosInput!): MarkAllTodosPayload\n  removeCompletedTodos(input: RemoveCompletedTodosInput!): RemoveCompletedTodosPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n  renameTodo(input: RenameTodoInput!): RenameTodoPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ninput RemoveCompletedTodosInput {\n  clientMutationId: String\n}\n\ntype RemoveCompletedTodosPayload {\n  deletedTodoIds: [String]\n  viewer: User\n  clientMutationId: String\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype RemoveTodoPayload {\n  deletedTodoId: ID\n  viewer: User\n  clientMutationId: String\n}\n\ninput RemoveTodoSubscriptionInput {\n  clientSubscriptionId: String\n}\n\ntype RemoveTodoSubscriptionPayload {\n  deletedTodoId: ID\n  viewer: User\n  clientSubscriptionId: String\n}\n\ninput RenameTodoInput {\n  id: ID!\n  text: String!\n  clientMutationId: String\n}\n\ntype RenameTodoPayload {\n  todo: Todo\n  clientMutationId: String\n}\n\ntype Root {\n  viewer: User\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ntype Subscription {\n  addTodoSubscription(input: AddTodoSubscriptionInput!): AddTodoSubscriptionPayload\n  removeTodoSubscription(input: RemoveTodoSubscriptionInput!): RemoveTodoSubscriptionPayload\n  updateTodoSubscription(input: UpdateTodoSubscriptionInput!): UpdateTodoSubscriptionPayload\n}\n\ntype Todo implements Node {\n  # The ID of an object\n  id: ID!\n  text: String\n  complete: Boolean\n}\n\n# A connection to a list of items.\ntype TodoConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TodoEdge]\n}\n\n# An edge in a connection.\ntype TodoEdge {\n  # The item at the end of the edge\n  node: Todo\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput UpdateTodoSubscriptionInput {\n  id: ID!\n  clientSubscriptionId: String\n}\n\ntype UpdateTodoSubscriptionPayload {\n  todo: Todo\n  viewer: User\n  clientSubscriptionId: String\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  todos(status: String = \"any\", after: String, first: Int, before: String, last: Int): TodoConnection\n  totalCount: Int\n  completedCount: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 17,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 28
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-01T22:52:42Z",
+    "updated_at": "2019-07-19T13:16:41Z",
+    "pushed_at": "2019-07-19T13:16:40Z",
+    "issues": 2,
+    "watchers": 5,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 146,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 12,
+    "pull_requests_merged": 134,
+    "releases": 9,
+    "stargazers": 2
+  }
+}

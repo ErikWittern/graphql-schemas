@@ -1,0 +1,42 @@
+{
+  "repo_name": "studentlife",
+  "repo_full_name": "arvigeus/studentlife",
+  "repo_owner": "arvigeus",
+  "repo_description": "Студентски Живот - Да надскочим себе си заедно",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema/schema.graphql",
+      "sha": "20b0627b1b8e03d1c36cddf085ec48728c3128d2",
+      "url": "https://api.github.com/repositories/84120769/contents/src/data/schema/schema.graphql?ref=05bcb8cd9c5dd3eac6402a43b617b07d49655dcd",
+      "git_url": "https://api.github.com/repositories/84120769/git/blobs/20b0627b1b8e03d1c36cddf085ec48728c3128d2",
+      "html_url": "https://github.com/arvigeus/studentlife/blob/05bcb8cd9c5dd3eac6402a43b617b07d49655dcd/src/data/schema/schema.graphql",
+      "content": "schema {\n  query: RootQueryType\n}\n\ntype City implements Node {\n  # The ID of an object\n  id: ID!\n  name: String!\n}\n\ntype Joke implements Node {\n  # The ID of an object\n  id: ID!\n\n  # A good joke is succinct, containing no more detail than is needed to set the scene for the punchline at the end\n  text: String!\n  createdAt: String!\n  updatedAt: String!\n  createdBy: User!\n  updatedBy: User!\n}\n\n# The `JSON` scalar type represents raw JSON as values.\nscalar JSON\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Picture {\n  original: String!\n  width: Int!\n  rng: Float\n  sources: [PictureSource]\n}\n\ntype PictureSource {\n  srcSet: String!\n  media: String\n  sizes: String\n  type: String\n  width: Int!\n}\n\ntype ProfileView {\n  cities(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [City]\n  universities(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [University]\n}\n\ntype Publication implements Node {\n  # The ID of an object\n  id: ID!\n  slug: String!\n  title: String!\n  picture: Picture!\n  excerpt: String\n  content: String!\n  script: String\n  tags: [String]\n  meta: [JSON]\n  restricted: Boolean!\n  published: Boolean!\n  commentsEnabled: Boolean!\n  createdAt: String!\n  updatedAt: String!\n  createdBy: User!\n  updatedBy: User!\n}\n\ntype PublicationsView {\n  publications(after: String, first: Int, before: String, last: Int, orderBy: [viewerPublicationsConnectionOrder]): viewerPublicationsConnection\n}\n\ntype Quote implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Inspirational words from people around the world\n  text: String!\n  author: String\n  sourceUrl: String\n  createdAt: String!\n  updatedAt: String!\n  createdBy: User!\n  updatedBy: User!\n}\n\ntype RootQueryType {\n  city(\n    id: Int\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    name: String!\n  ): City\n  cities(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [City]\n  joke(\n    id: Int\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n  ): Joke\n  jokes(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [Joke]\n  publication(\n    id: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    slug: String!\n  ): Publication\n  publications(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [Publication]\n  quote(\n    id: Int\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n  ): Quote\n  quotes(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [Quote]\n  randomJoke: Joke\n  randomQuote: Quote\n  university(\n    id: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n  ): University\n  universities(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [University]\n  profileView: ProfileView\n  publicationsView: PublicationsView\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ntype University {\n  id: ID\n  picture: String\n  name: String!\n  address: String!\n  phone: String\n  email: String\n  url: String\n  latitude: Float!\n  longitude: Float!\n  googleCID: String\n  city: City!\n  parent: UniversityParent\n}\n\ntype UniversityParent {\n  id: ID\n  picture: String\n  name: String!\n  address: String!\n  phone: String\n  email: String\n  url: String\n  latitude: Float!\n  longitude: Float!\n  googleCID: String\n  city: City!\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  email: String!\n  emailConfirmed: Boolean!\n  password: String!\n  phoneNumber: String!\n  phoneConfirmed: Boolean!\n  twoFactorEnabled: Boolean!\n  lockoutEnd: String\n  accessFailedCount: Int!\n  profile: UserProfile!\n}\n\ntype UserProfile {\n  givenName: String!\n  familyName: String!\n  picture: Picture!\n  birthdate: String!\n  gender: String!\n  universityEntranceYear: Int!\n  universityStudyingType: String!\n  additionalInfo: String\n  city: City!\n}\n\n# A connection to a list of items.\ntype viewerPublicationsConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [viewerPublicationsEdge]\n  total: Int\n}\n\nenum viewerPublicationsConnectionOrder {\n  ID\n}\n\n# An edge in a connection.\ntype viewerPublicationsEdge {\n  # The item at the end of the edge\n  node: Publication\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-06T21:05:43Z",
+    "updated_at": "2019-05-08T12:11:29Z",
+    "pushed_at": "2017-03-06T21:13:42Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

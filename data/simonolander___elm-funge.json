@@ -1,0 +1,41 @@
+{
+  "repo_name": "elm-funge",
+  "repo_full_name": "simonolander/elm-funge",
+  "repo_owner": "simonolander",
+  "repo_description": "A cool programming puzzle game ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "appsync/schema.graphql",
+      "sha": "8a3a3423e44cb6e13992f5e1dd8cfc04447c95a8",
+      "url": "https://api.github.com/repositories/161893892/contents/appsync/schema.graphql?ref=eaa9ca08869e4a29ed4c00cb041e88ac4d446da9",
+      "git_url": "https://api.github.com/repositories/161893892/git/blobs/8a3a3423e44cb6e13992f5e1dd8cfc04447c95a8",
+      "html_url": "https://github.com/simonolander/elm-funge/blob/eaa9ca08869e4a29ed4c00cb041e88ac4d446da9/appsync/schema.graphql",
+      "content": "enum InstructionTag {\n    NoOp\n    ChangeDirection\n    PushToStack\n    PopFromStack\n    JumpForward\n    Duplicate\n    Swap\n    Negate\n    Abs\n    Not\n    Increment\n    Decrement\n    Add\n    Subtract\n    Multiply\n    Divide\n    Equals\n    CompareLessThan\n    And\n    Or\n    XOr\n    Read\n    Print\n    Branch\n    Terminate\n    SendToBottom\n    Exception\n}\n\nenum Direction {\n    Left\n    Up\n    Right\n    Down\n}\n\ninterface Instruction {\n    id: Int!\n    tag: InstructionTag!\n}\n\ntype GeneralInstruction implements Instruction {\n    id: Int!\n    tag: InstructionTag!\n}\n\ntype ChangeDirectionInstruction implements Instruction {\n    id: Int!\n    tag: InstructionTag!\n    direction: Direction!\n}\n\ntype PushToStackInstruction implements Instruction {\n    id: Int!\n    tag: InstructionTag!\n    value: Int!\n}\n\ntype BranchInstruction implements Instruction {\n    id: Int!\n    tag: InstructionTag!\n    trueDirection: Direction!\n    falseDirection: Direction!\n}\n\ntype ExceptionInstruction implements Instruction {\n    id: Int!\n    tag: InstructionTag!\n    exceptionMessage: String!\n}\n\ntype IO {\n    input: [Int!]!\n    output: [Int!]!\n}\n\nenum InstructionToolTag {\n    JustInstruction\n    ChangeAnyDirection\n    BranchAnyDirection\n    PushValueToStack\n}\n\ninterface InstructionTool {\n    id: Int!\n    tag: InstructionToolTag! \n}\n\ntype GeneralInstructionTool implements InstructionTool {\n    id: Int!\n    tag: InstructionToolTag! \n}\n\ntype JustInstructionInstructionTool implements InstructionTool {\n    id: Int!\n    tag: InstructionToolTag!\n    instruction: Instruction!\n}\n\ntype BoardInstruction {\n    x: Int!\n    y: Int!\n    instruction: Instruction!\n}\n\ntype Board {\n    version: Int!\n    id: Int!\n    width: Int!\n    height: Int!\n    instructions: [BoardInstruction!]!\n}\n\ntype Level {\n    id: String!\n    external_id: String!\n    name: String!\n    description: [String!]!\n    io: IO!\n    initialBoard: Board!\n    instructionTools: [InstructionTool!]!\n}\n\ntype LevelSolution {\n    id: String!\n    level: Level!\n    board: Board!\n    solver: User!\n    number_of_steps: Int!\n    number_of_instructions: Int!\n    area: Int!\n    created_time: Int!\n}\n\ntype User {\n    id: Int! \n    username: String!\n    levelSolutions: [LevelSolution!]!\n    authoredLevels: [Level!]!\n}\n\ntype Query {\n    listLevels: [Level!]!\n    getLevel(id: ID!): Level\n    getUserByUsername(username: String!): User\n}\n\ntype Mutation {\n    createUser(username: String!): User!\n    createLevelSolution(input: CreateLevelSolutionInput!): LevelSolution!\n}\n\ninput CreateLevelSolutionInput {\n    username: String!\n    levelId: Int!\n    board: String!\n}\n\nschema {\n    query: Query\n    mutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": true,
+      "numDefinitions": 22
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-15T10:25:49Z",
+    "updated_at": "2019-07-19T21:10:05Z",
+    "pushed_at": "2019-07-19T21:10:03Z",
+    "issues": 3,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

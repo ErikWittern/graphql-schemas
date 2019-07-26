@@ -1,0 +1,42 @@
+{
+  "repo_name": "leaning-graphql",
+  "repo_full_name": "electrobite/leaning-graphql",
+  "repo_owner": "Electrobite",
+  "repo_description": "Learning GraphQL & Apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "135ec179b27a16464fc17cf3afe233c0eb5f8e88",
+      "url": "https://api.github.com/repositories/186790805/contents/server/data/schema.graphql?ref=6261a473a39e899aa5b25e3d85bb09ec478e09f3",
+      "git_url": "https://api.github.com/repositories/186790805/git/blobs/135ec179b27a16464fc17cf3afe233c0eb5f8e88",
+      "html_url": "https://github.com/Electrobite/leaning-graphql/blob/6261a473a39e899aa5b25e3d85bb09ec478e09f3/server/data/schema.graphql",
+      "content": "type Client {\n    id: ID\n    name: String\n    surname: String \n    age: Int\n    company: String\n    emails: [Email]\n    type: ClientType\n    orders: [Order]\n}\n\ntype Order {\n    product: String\n    price: Float\n}\n\ntype Email {\n    email: String\n}\n\ntype Token {\n    token: String!\n}\n\n\"\"\" Assign a category to a client. \"\"\"\nenum ClientType {\n    BASIC\n    PREMIUM\n}\n\ntype Query {\n    getClients(limit: Int): [Client]\n    getClient(id : ID): Client\n} \n\ninput OrderInput {\n    product: String\n    price: Float\n}\n\ninput EmailInput {\n    email: String\n}\n\n\"\"\" New clients inputs. \"\"\"\ninput ClientInput {\n    id: ID\n    name: String!\n    surname: String!\n    age: Int!\n    company: String!\n    type: ClientType!\n    orders: [OrderInput]\n    emails: [EmailInput]\n}\n\n\"\"\" Mutation to create new clients. \"\"\"\ntype Mutation {\n\n    # Resolver's name, Input with data, value that returns\n\n    \"\"\" Allow to create new clients. \"\"\"\n    newClient (input: ClientInput) : Client\n\n    \"\"\" Allow to update clients. \"\"\"\n    updateClient (input: ClientInput) : Client\n\n    \"\"\" Allow to delete clients. \"\"\"\n    removeClient (id:ID) : String\n\n    \"\"\"Users\"\"\"\n    newUser (user: String!, password: String!) : String\n\n    \"\"\"Auth User\"\"\"\n    authUser (user: String!, password: String!) : Token\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-15T09:09:49Z",
+    "updated_at": "2019-07-08T11:11:38Z",
+    "pushed_at": "2019-07-08T11:11:37Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

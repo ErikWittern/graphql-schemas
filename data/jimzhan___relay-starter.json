@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-starter",
+  "repo_full_name": "jimzhan/relay-starter",
+  "repo_owner": "jimzhan",
+  "repo_description": "React -> Relay starter kit",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "sample.graphql",
+      "path": "sample.graphql",
+      "sha": "e44618556e074088f44f54db7b892e9ee88dd8c9",
+      "url": "https://api.github.com/repositories/140907819/contents/sample.graphql?ref=8716d2282b0b557634a04081a677497b0c3d45a2",
+      "git_url": "https://api.github.com/repositories/140907819/git/blobs/e44618556e074088f44f54db7b892e9ee88dd8c9",
+      "html_url": "https://github.com/jimzhan/relay-starter/blob/8716d2282b0b557634a04081a677497b0c3d45a2/sample.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype User implements Node {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  User(id: ID): User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-14T01:55:18Z",
+    "updated_at": "2018-07-16T02:10:21Z",
+    "pushed_at": "2018-07-15T03:16:29Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

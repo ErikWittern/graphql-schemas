@@ -1,0 +1,42 @@
+{
+  "repo_name": "microservice-users",
+  "repo_full_name": "the-bid/microservice-users",
+  "repo_owner": "the-bid",
+  "repo_description": "the users microservice",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schemas/schema.graphql",
+      "sha": "785521d95f9bc75c225b92a087bc8e93c8ab35d6",
+      "url": "https://api.github.com/repositories/133432094/contents/src/schemas/schema.graphql?ref=4fd16ecddc2c65137738ab7545b9044fdd7eb7e8",
+      "git_url": "https://api.github.com/repositories/133432094/git/blobs/785521d95f9bc75c225b92a087bc8e93c8ab35d6",
+      "html_url": "https://github.com/the-bid/microservice-users/blob/4fd16ecddc2c65137738ab7545b9044fdd7eb7e8/src/schemas/schema.graphql",
+      "content": "type Query{\n  users(filter: String): [User!]!\n  user(id:ID!): User!\n  getJWT: Token!\n}\n\ntype User {\n  id: ID!\n  username: String!\n  createdAt: DateTime!\n}\n\ntype Token @cacheControl(maxAge:3600, scope:PRIVATE){\n  token: String!\n  expiresIn: Int!\n}\n\ndirective @cacheControl(\n  maxAge: Int,\n  scope: CacheControlScope\n) on OBJECT | FIELD_DEFINITION\n\nenum CacheControlScope {\n  PUBLIC\n  PRIVATE\n}\n\n\nscalar DateTime\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-14T23:15:27Z",
+    "updated_at": "2019-04-26T16:04:29Z",
+    "pushed_at": "2019-04-26T16:04:27Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

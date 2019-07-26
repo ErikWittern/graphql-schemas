@@ -1,0 +1,39 @@
+{
+  "repo_name": "monaco-apollo",
+  "repo_full_name": "devfromthefuture/monaco-apollo",
+  "repo_owner": "devFromTheFuture",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "modules/core/server-ts/api/rootSchema.graphql",
+      "sha": "71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "url": "https://api.github.com/repositories/186383292/contents/modules/core/server-ts/api/rootSchema.graphql?ref=1e727798910d1763a83650612eebcce61064e738",
+      "git_url": "https://api.github.com/repositories/186383292/git/blobs/71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "html_url": "https://github.com/devFromTheFuture/monaco-apollo/blob/1e727798910d1763a83650612eebcce61064e738/modules/core/server-ts/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-13T08:59:38Z",
+    "updated_at": "2019-05-19T08:50:49Z",
+    "pushed_at": "2019-05-19T08:50:47Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-auth-api",
+  "repo_full_name": "atmys/graphql-auth-api",
+  "repo_owner": "atmys",
+  "repo_description": "Node.js GraphQL API Starter",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "users.graphql",
+      "path": "app/users/users.graphql",
+      "sha": "22e481fc9fd632a5351c214baa936bedcded8d4d",
+      "url": "https://api.github.com/repositories/165854648/contents/app/users/users.graphql?ref=96043c67b40077c7159134c497fae6a370cc4c8b",
+      "git_url": "https://api.github.com/repositories/165854648/git/blobs/22e481fc9fd632a5351c214baa936bedcded8d4d",
+      "html_url": "https://github.com/atmys/graphql-auth-api/blob/96043c67b40077c7159134c497fae6a370cc4c8b/app/users/users.graphql",
+      "content": "type User {\n  id: ID,\n  email: String,\n  password: String,\n  token: String\n}\ntype SignedUser {\n  id: ID,\n  email: String,\n  token: String\n}\ntype Query {\n  user(id: ID!): User\n  users: [User]\n  login(email: String!, password: String!): SignedUser\n}\ntype Mutation {\n  signup(email: String!, password: String!): SignedUser\n  changeEmail(email: String!): SignedUser\n  changePassword(oldPassword: String!, newPassword: String!): SignedUser\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-15T13:21:09Z",
+    "updated_at": "2019-01-28T12:54:37Z",
+    "pushed_at": "2019-07-04T05:31:39Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "Icecrown",
+  "repo_full_name": "islands-wars/icecrown",
+  "repo_owner": "islands-wars",
+  "repo_description": "What a citadel",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "0bffb79226307473bf803bf192735a4d9149dfc5",
+      "url": "https://api.github.com/repositories/144461485/contents/src/schema.graphql?ref=210a83c89c8c177d84acbe58f7c40e1a123da2f9",
+      "git_url": "https://api.github.com/repositories/144461485/git/blobs/0bffb79226307473bf803bf192735a4d9149dfc5",
+      "html_url": "https://github.com/islands-wars/Icecrown/blob/210a83c89c8c177d84acbe58f7c40e1a123da2f9/src/schema.graphql",
+      "content": "type Query {\n\tgreeting(target: String): String!\n\tadd(a: Int!, b: Int!): Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-12T11:34:43Z",
+    "updated_at": "2018-08-24T17:39:20Z",
+    "pushed_at": "2018-08-12T16:16:30Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

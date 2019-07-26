@@ -1,0 +1,42 @@
+{
+  "repo_name": "INT20H-2019",
+  "repo_full_name": "101gram/int20h-2019",
+  "repo_owner": "101gram",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/common/schema.graphql",
+      "sha": "e31cbca392aab96505745ae4757e5d65c6fd6d0d",
+      "url": "https://api.github.com/repositories/169094271/contents/src/common/schema.graphql?ref=dc13d836c4b1acaf15af8a467f2fb62f66f5d700",
+      "git_url": "https://api.github.com/repositories/169094271/git/blobs/e31cbca392aab96505745ae4757e5d65c6fd6d0d",
+      "html_url": "https://github.com/101gram/INT20H-2019/blob/dc13d836c4b1acaf15af8a467f2fb62f66f5d700/src/common/schema.graphql",
+      "content": "# Implementation detail\nscalar TypeMatchedScalar\n# ISO-8601 format compliant date-time string.\nscalar Date\n\n# Requires an integer within the range [1, +Infinity)\ndirective @positiveInt          on INPUT_FIELD_DEFINITION | FIELD_DEFINITION\n# Requires an integer within the range [0, +Infinity)\ndirective @zeroOrPositiveInt    on INPUT_FIELD_DEFINITION | FIELD_DEFINITION\n\n# Root queries endpoint.\ntype Query {\n    # Search for photos with different filters.\n    getPhotos(req: GetPhotosRequest!): GetPhotosResponse!\n}\n\ntype GetPhotosResponse {\n    # Page of photos that satisfy input search limitations.\n    data: [Photo!]!\n    # Total amount of photos that may be queried for the given search limitations.\n    total: Int! @zeroOrPositiveInt\n}\ninput GetPhotosRequest {\n    # Amount of photos per page.\n    limit:  Int! @positiveInt\n    # 0-based offset\n    offset: Int! @zeroOrPositiveInt\n    # Search query.\n    search: GetPhotosSearch\n    filter: GetPhotosFilter\n    sort:   GetPhotosSort\n}\ninput GetPhotosSort {\n    datetaken: SortingOrder!\n}\ninput GetPhotosFilter {\n    # prevails over `exclude`\n    include: GetPhotosFilterData\n    # inferior to `include`\n    exclude: GetPhotosFilterData\n}\ninput GetPhotosFilterData {\n    title:     [String!]\n    tag:       Boolean\n    photoset:  Boolean\n    emotions:  [Emotion!]\n}\ninput GetPhotosSearch {\n    title: String\n}\n\ntype Photo {\n    title:     String!\n    id:        String!\n    secret:    String!\n    server:    String!\n    farm:      Int!\n    tag:       Boolean!\n    photoset:  Boolean!\n    emotions:  [Emotion!]!\n    datetaken: Date!\n    # @TODO: last_update\n}\n\n# Possible emotions that detects face++ API.\nenum Emotion { \n    sadness\n    neutral\n    disgust\n    anger\n    surprise\n    fear\n    happiness\n}\n\nenum SortingOrder {\n    asc\n    desc\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-04T14:53:08Z",
+    "updated_at": "2019-06-07T22:45:02Z",
+    "pushed_at": "2019-06-07T22:45:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

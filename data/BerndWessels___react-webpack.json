@@ -1,0 +1,41 @@
+{
+  "repo_name": "react-webpack",
+  "repo_full_name": "berndwessels/react-webpack",
+  "repo_owner": "BerndWessels",
+  "repo_description": "React Relay MySQL Webpack Example",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "8b43f187a7754c95eace35b692fa542bbf224587",
+      "url": "https://api.github.com/repositories/46900458/contents/data/schema.graphql?ref=fc7787d84c73233902e443857f4bc0f9adae26e9",
+      "git_url": "https://api.github.com/repositories/46900458/git/blobs/8b43f187a7754c95eace35b692fa542bbf224587",
+      "html_url": "https://github.com/BerndWessels/react-webpack/blob/fc7787d84c73233902e443857f4bc0f9adae26e9/data/schema.graphql",
+      "content": "type Comment implements Node {\n  id: ID!\n  content: String\n  post: Post\n}\n\ntype commentConnection {\n  pageInfo: PageInfo!\n  edges: [commentEdge]\n  totalCount: Int\n}\n\ntype commentEdge {\n  node: Comment\n  cursor: String!\n}\n\ninput DeletePostInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype DeletePostPayload {\n  viewer: Person\n  deletedId: ID\n  clientMutationId: String!\n}\n\ntype Mutation {\n  updatePerson(input: UpdatePersonInput!): UpdatePersonPayload\n  deletePost(input: DeletePostInput!): DeletePostPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype paginationInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: Int\n  endCursor: Int\n}\n\ntype Person implements Node {\n  id: ID!\n  firstName: String\n  lastName: String\n  email: String\n  language: String\n  posts(offset: Int, limit: Int): postConnection\n}\n\ntype Post implements Node {\n  id: ID!\n  title: String\n  content: String\n  person: Person\n  comments(after: String, first: Int, before: String, last: Int): commentConnection\n}\n\ntype postConnection {\n  pageInfo: paginationInfo!\n  edges: [postEdge]\n  totalCount: Int\n}\n\ntype postEdge {\n  node: Post\n  cursor: Int!\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: Person\n}\n\ninput UpdatePersonInput {\n  id: ID!\n  firstName: String\n  lastName: String\n  email: String\n  language: String\n  clientMutationId: String!\n}\n\ntype UpdatePersonPayload {\n  person: Person\n  clientMutationId: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": true,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-11-26T02:55:49Z",
+    "updated_at": "2018-10-03T15:17:06Z",
+    "pushed_at": "2016-01-27T03:09:24Z",
+    "issues": 2,
+    "watchers": 4,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 5,
+    "stargazers": 29
+  }
+}

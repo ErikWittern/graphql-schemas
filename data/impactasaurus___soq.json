@@ -1,0 +1,42 @@
+{
+  "repo_name": "soq",
+  "repo_full_name": "impactasaurus/soq",
+  "repo_owner": "impactasaurus",
+  "repo_description": "Soft Outcome Questionnaire API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "a9398fa87826b91eb032b6921ed572cdfb692ded",
+      "url": "https://api.github.com/repositories/152767358/contents/schema.graphql?ref=1d9955352e68965aa9855771da21dd35ab5140f8",
+      "git_url": "https://api.github.com/repositories/152767358/git/blobs/a9398fa87826b91eb032b6921ed572cdfb692ded",
+      "html_url": "https://github.com/impactasaurus/soq/blob/1d9955352e68965aa9855771da21dd35ab5140f8/schema.graphql",
+      "content": "\"\"\"Aggregation details the mathematical function used to aggregate questions\"\"\"\nenum Aggregation {\n    \"\"\"Mean takes the average of the question values\"\"\"\n    MEAN\n    \"\"\"Sum totals all the questions values\"\"\"\n    SUM\n}\n\n\"\"\"Link captures a URL with some textual context\"\"\"\ntype Link {\n    \"\"\"Name is the name of the link\"\"\"\n    name: String!\n    \"\"\"Description is an optional longer text about the link\"\"\"\n    description: String\n    \"\"\"URL is the link\"\"\"\n    url: String!\n}\n\n\"\"\"Point is a value and a label, used for scale questions\"\"\"\ntype Point {\n    \"\"\"Value is the number associated with the point\"\"\"\n    value: Float!\n    \"\"\"Label is the text describing the point\"\"\"\n    label: String\n}\n\n\"\"\"Band provides context to scores within a certain band of values\"\"\"\ntype Band {\n    \"\"\"Min is the value which describes the lower bound of the band (>=)\"\"\"\n    min: Float\n    \"\"\"Max is the value which describes the upper bound of the band (<=)\"\"\"\n    max: Float\n    \"\"\"Label is a short description of the band\"\"\"\n    label: String!\n    \"\"\"Description is a longer description of the band\"\"\"\n    description: String\n}\n\n\"\"\"Question is the basic fields required by questions\"\"\"\ninterface Question {\n    \"\"\"ID is the GUID of the question\"\"\"\n    id: String!\n    \"\"\"Question is the question which is asked to beneficiaries\"\"\"\n    question: String!\n    \"\"\"Description gives more information to the beneficiary\"\"\"\n    description: String\n    \"\"\"Short is a short identifier of the question, commonly used on visualisations\"\"\"\n    short: String\n}\n\n\"\"\"LikertQuestion is a likert scale question\"\"\"\ntype LikertQuestion implements Question {\n    id: String!\n    question: String!\n    description: String\n    short: String\n    \"\"\"Scale details the likert scale's values and labels. The order of the points matter, the start of the array is on the left, the end of the array is on the right.\"\"\"\n    scale: [Point]!\n}\n\n\"\"\"Scoring is an aggregation of questions into a score which can be tracked and evaluated\"\"\"\ntype Scoring {\n    \"\"\"ID is the GUID of the score\"\"\"\n    id: String!\n    \"\"\"Name is the name of the scoring\"\"\"\n    name: String!\n    \"\"\"Description provides more detail about the score\"\"\"\n    description: String\n    \"\"\"Questions are the GUIDs of the questions which are included in this score\"\"\"\n    questions: [String]!\n    \"\"\"Aggregation details how the questions are combined to form the score\"\"\"\n    aggregation: Aggregation!\n    \"\"\"Bands put the score's value into context\"\"\"\n    bands: [Band]\n}\n\n\"\"\"Changes details the changes made in a given version\"\"\"\ntype Changes {\n    \"\"\"Version details what version of the questionnaire this relates to\"\"\"\n    version: String!\n    \"\"\"Changes is a list of the changes made\"\"\"\n    changes: [String!]!\n    \"\"\"Timestamp is the RFC3339 date and time of the change\"\"\"\n    timestamp: String!\n}\n\n\"\"\"Questionnaire is a collection of questions and scorings\"\"\"\ntype Questionnaire {\n    \"\"\"ID is the GUID of the questionnaire\"\"\"\n    id: String!\n    \"\"\"Logo is a URL of the questionnaire's logo\"\"\"\n    logo: String\n    \"\"\"Name is the name of the questionnaire\"\"\"\n    name: String!\n    \"\"\"Short is a short form of the questionnaire's name\"\"\"\n    short: String\n    \"\"\"Version details the version of the questionnaire, it uses semver versioning\"\"\"\n    version: String!\n    \"\"\"Changelog details the differences between versions\"\"\"\n    changelog: [Changes!]!\n    \"\"\"Description provides more information about the questionnaire\"\"\"\n    description: String\n    \"\"\"License provides information about how the questionnaire can be used\"\"\"\n    license: String!\n    \"\"\"Attribution must be shown when using this questionnaire\"\"\"\n    attribution: String\n    \"\"\"Instructions are shown to users before they complete the questionnaire\"\"\"\n    instructions: String\n    \"\"\"Links are a collection of links which detail more information about the questionnaire\"\"\"\n    links: [Link]\n    \"\"\"Questions are the questions which are given to the beneficiary\"\"\"\n    questions: [Question]!\n    \"\"\"Scorings are the scores which can be evaluated\"\"\"\n    scorings: [Scoring]\n}\n\n\"\"\"PageInfo details the current page and whether pages are available either side\"\"\"\ntype PageInfo {\n    \"\"\"hasNextPage is true when there are more records to fetch\"\"\"\n    hasNextPage: Boolean!\n    \"\"\"page is the current page index\"\"\"\n    page: Int!\n    \"\"\"limit is the max records on a page\"\"\"\n    limit: Int!\n}\n\n\"\"\"QuestionnaireList is a list of questionnaires along with page information\"\"\"\ntype QuestionnaireList {\n    \"\"\"questionnaires is the list of questionnaires\"\"\"\n    questionnaires: [Questionnaire]!\n    \"\"\"pageInfo details the current page and whether there is more data\"\"\"\n    pageInfo: PageInfo!\n}\n\n\"\"\"Query details the methods used to gather data\"\"\"\ntype Query {\n    \"\"\"questionnaires gathers all the questionnaires in the system\"\"\"\n    questionnaires(page: Int, limit: Int): QuestionnaireList!\n    \"\"\"questionnaire gathers a single questionnaire by ID\"\"\"\n    questionnaire(id: String!): Questionnaire!\n    \"\"\"search returns an ordered list of questionnaires based on a search term\"\"\"\n    search(query: String!, page: Int, limit: Int): QuestionnaireList!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-12T15:01:21Z",
+    "updated_at": "2019-05-02T15:55:05Z",
+    "pushed_at": "2019-05-02T15:55:06Z",
+    "issues": 25,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 19,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 19,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "repo_name": "nest-sandbox",
+  "repo_full_name": "rmvermeulen/nest-sandbox",
+  "repo_owner": "rmvermeulen",
+  "repo_description": "Playing around",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/app/schema.graphql",
+      "sha": "8dd1c272694767e9add3a4d2ab2352848480d7e1",
+      "url": "https://api.github.com/repositories/125647929/contents/src/app/schema.graphql?ref=5a2e7165ac51bdebb005e6835321daf7f6280782",
+      "git_url": "https://api.github.com/repositories/125647929/git/blobs/8dd1c272694767e9add3a4d2ab2352848480d7e1",
+      "html_url": "https://github.com/rmvermeulen/nest-sandbox/blob/5a2e7165ac51bdebb005e6835321daf7f6280782/src/app/schema.graphql",
+      "content": "# the schema allows the following query:\ntype Query {\n  authors: [Author]\n  posts: [Post]\n}\n\n# this schema allows the following mutation:\n# type Mutation { }\n\n# we need to tell the server which types represent the root query\n# and root mutation types. We call them RootQuery and RootMutation by convention.\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/rmvermeulen/nest-sandbox/blob/5a2e7165ac51bdebb005e6835321daf7f6280782/src/app/schema.graphql:\n# the schema allows the following query:\ntype Query {\n  authors: [Author]\n  posts: [Post]\n}\n\n# this schema allows the following mutation:\n# type Mutation { }\n\n# we need to tell the server which types represent the root query\n# and root mutation types. We call them RootQuery and RootMutation by convention.\nschema {\n  query: Query\n  mutation: Mutation\n}\n\n# https://github.com/rmvermeulen/nest-sandbox/blob/5a2e7165ac51bdebb005e6835321daf7f6280782/src/app/modules/author/author.graphql:\ntype Author {\n  id: ID! # the ! means that every author object _must_ have an id\n  firstName: String\n  lastName: String\n  name: String\n  \"\"\"\n  the list of Posts by this author\n  \"\"\"\n  posts: [Post]\n  votes: Int\n}\n\n# https://github.com/rmvermeulen/nest-sandbox/blob/5a2e7165ac51bdebb005e6835321daf7f6280782/src/app/modules/post/post.graphql:\ntype Post {\n  id: ID!\n  title: String\n  author: Author\n  votes: Int\n}\n\ntype Mutation {\n  upvotePost(postId: ID!): Post\n}\n",
+        "mergedPaths": [
+          "src/app/modules/author/author.graphql",
+          "src/app/modules/post/post.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Author",
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "post.graphql",
+      "path": "src/app/modules/post/post.graphql",
+      "sha": "f680c401a1a613801f7987a61dce0cc1edc9f4cd",
+      "url": "https://api.github.com/repositories/125647929/contents/src/app/modules/post/post.graphql?ref=5a2e7165ac51bdebb005e6835321daf7f6280782",
+      "git_url": "https://api.github.com/repositories/125647929/git/blobs/f680c401a1a613801f7987a61dce0cc1edc9f4cd",
+      "html_url": "https://github.com/rmvermeulen/nest-sandbox/blob/5a2e7165ac51bdebb005e6835321daf7f6280782/src/app/modules/post/post.graphql",
+      "content": "type Post {\n  id: ID!\n  title: String\n  author: Author\n  votes: Int\n}\n\ntype Mutation {\n  upvotePost(postId: ID!): Post\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "author.graphql",
+      "path": "src/app/modules/author/author.graphql",
+      "sha": "c70366d39d45bf6cac0a0ba09f7232c5a5db39e5",
+      "url": "https://api.github.com/repositories/125647929/contents/src/app/modules/author/author.graphql?ref=5a2e7165ac51bdebb005e6835321daf7f6280782",
+      "git_url": "https://api.github.com/repositories/125647929/git/blobs/c70366d39d45bf6cac0a0ba09f7232c5a5db39e5",
+      "html_url": "https://github.com/rmvermeulen/nest-sandbox/blob/5a2e7165ac51bdebb005e6835321daf7f6280782/src/app/modules/author/author.graphql",
+      "content": "type Author {\n  id: ID! # the ! means that every author object _must_ have an id\n  firstName: String\n  lastName: String\n  name: String\n  \"\"\"\n  the list of Posts by this author\n  \"\"\"\n  posts: [Post]\n  votes: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-17T16:23:24Z",
+    "updated_at": "2018-03-26T19:17:16Z",
+    "pushed_at": "2018-03-26T19:17:15Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-prefetch",
+  "repo_full_name": "golmansax/relay-prefetch",
+  "repo_owner": "golmansax",
+  "repo_description": "Prefetch Relay queries",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/schema.graphql",
+      "sha": "1c00365ffe18c9a0d799473f98d941c2b0ffdf5b",
+      "url": "https://api.github.com/repositories/105470128/contents/test/schema.graphql?ref=e80fcaae872d463662de8f5dd5ffb45cacecb5fc",
+      "git_url": "https://api.github.com/repositories/105470128/git/blobs/1c00365ffe18c9a0d799473f98d941c2b0ffdf5b",
+      "html_url": "https://github.com/golmansax/relay-prefetch/blob/e80fcaae872d463662de8f5dd5ffb45cacecb5fc/test/schema.graphql",
+      "content": "type Starship {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  starship(id: ID!): Starship\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-01T19:56:57Z",
+    "updated_at": "2018-06-17T19:18:19Z",
+    "pushed_at": "2018-06-17T19:21:06Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

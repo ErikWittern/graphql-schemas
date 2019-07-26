@@ -1,0 +1,150 @@
+{
+  "repo_name": "got-auth-service",
+  "repo_full_name": "codetrial/got-auth-service",
+  "repo_owner": "codetrial",
+  "repo_description": "A professional role-based-authorization service(also supports resource and group) for enterprise applications.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/query/schema.graphql",
+      "sha": "d591f9356c4ca0adfdbdc28f61daf639fd55b37b",
+      "url": "https://api.github.com/repositories/154459839/contents/app/graphql/query/schema.graphql?ref=2faba0ea942aa77a01287130f4ababab0113dc45",
+      "git_url": "https://api.github.com/repositories/154459839/git/blobs/d591f9356c4ca0adfdbdc28f61daf639fd55b37b",
+      "html_url": "https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/query/schema.graphql",
+      "content": "type Query {\n  app(id: ID!): App\n  apps(param: SearchParam): [App]!\n\n  group(id: ID!): Group\n  groups(param: SearchParam): [Group]!\n\n  role(id: ID!): Role\n  roles(param: SearchParam): [Role]!\n\n  resourceType(id: ID!): ResourceType\n  resourceTypes(param: SearchParam): [ResourceType]!\n\n  resource(id: ID!): Resource\n  resources(param: SearchParam): [Resource]!\n\n  user(id: ID!): User\n  users(param: SearchParam): [User]!\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/query/schema.graphql:\ntype Query {\n  app(id: ID!): App\n  apps(param: SearchParam): [App]!\n\n  group(id: ID!): Group\n  groups(param: SearchParam): [Group]!\n\n  role(id: ID!): Role\n  roles(param: SearchParam): [Role]!\n\n  resourceType(id: ID!): ResourceType\n  resourceTypes(param: SearchParam): [ResourceType]!\n\n  resource(id: ID!): Resource\n  resources(param: SearchParam): [Resource]!\n\n  user(id: ID!): User\n  users(param: SearchParam): [User]!\n}\n# https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/app/schema.graphql:\ntype App implements Datable {\n  id: ID!\n  code: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n\n  groups(param: SearchParam): [Group]!\n  roles(param: SearchParam): [Role]!\n  resources(param: SearchParam): [Resource]!\n}\n\ninput AppEntity {\n  code: String!\n  name: String!\n}\n# https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/group/schema.graphql:\ntype Group implements Datable {\n  id: ID!\n  app_id: Int!\n  code: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n  \n  roles(param: SearchParam): [Role]!\n}\n\ninput GroupEntity {\n  app_id: Int!\n  code: String!\n  name: String!\n}\n# https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/role/schema.graphql:\ntype Role implements Datable {\n  id: ID!\n  app_id: Int!\n  code: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n\n  resources(param: SearchParam): [Resource]!\n}\n\ninput RoleEntity {\n  app_id: Int!\n  code: String!\n  name: String!\n}\n# https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/resourcetype/schema.graphql:\ntype ResourceType implements Datable {\n  id: ID!\n  code: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n\n  resources(param: SearchParam): [Resource]!\n}\n\ninput ResourceTypeEntity {\n  code: String!\n  name: String!\n}\n# https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/resource/schema.graphql:\ntype Resource implements Datable {\n  id: ID!\n  app_id: Int!\n  code: String!\n  resource_type_id: Int!\n  detail: String!\n  create_time: Date!\n  update_time: Date\n}\n\ninput ResourceEntity {\n  app_id: Int!\n  code: String!\n  resource_type_id: Int!\n  detail: String!\n}\n# https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/user/schema.graphql:\ntype User implements Datable {\n  id: ID!\n  email: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n\n  groups(param: SearchParam): [Group]!\n  roles(param: SearchParam): [Role]!\n  resources: [Resource]!\n}\n\ninput UserEntity {\n  email: String!\n  name: String!\n}\n# https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/common/schema.graphql:\nscalar Date\n\ninterface Datable {\n  create_time: Date!\n  update_time: Date\n}\n\ninput SearchParam {\n  page: String\n  filter: String\n}\n\ntype MutationResponse {\n  status: Int\n  message: String\n}",
+        "mergedPaths": [
+          "app/graphql/app/schema.graphql",
+          "app/graphql/group/schema.graphql",
+          "app/graphql/role/schema.graphql",
+          "app/graphql/resourcetype/schema.graphql",
+          "app/graphql/resource/schema.graphql",
+          "app/graphql/user/schema.graphql",
+          "app/graphql/common/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "App",
+          "Group",
+          "Role",
+          "ResourceType",
+          "Resource",
+          "User",
+          "Date"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 8,
+        "containsCycle": false,
+        "polynomialLevel": 4,
+        "numDefinitions": 17
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/common/schema.graphql",
+      "sha": "f55b8190aee8aa209e673fe55195c59f2059ce7c",
+      "url": "https://api.github.com/repositories/154459839/contents/app/graphql/common/schema.graphql?ref=2faba0ea942aa77a01287130f4ababab0113dc45",
+      "git_url": "https://api.github.com/repositories/154459839/git/blobs/f55b8190aee8aa209e673fe55195c59f2059ce7c",
+      "html_url": "https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/common/schema.graphql",
+      "content": "scalar Date\n\ninterface Datable {\n  create_time: Date!\n  update_time: Date\n}\n\ninput SearchParam {\n  page: String\n  filter: String\n}\n\ntype MutationResponse {\n  status: Int\n  message: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 4
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/resourcetype/schema.graphql",
+      "sha": "93bffcfc45758a48bca663c4821fc359fc2f4295",
+      "url": "https://api.github.com/repositories/154459839/contents/app/graphql/resourcetype/schema.graphql?ref=2faba0ea942aa77a01287130f4ababab0113dc45",
+      "git_url": "https://api.github.com/repositories/154459839/git/blobs/93bffcfc45758a48bca663c4821fc359fc2f4295",
+      "html_url": "https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/resourcetype/schema.graphql",
+      "content": "type ResourceType implements Datable {\n  id: ID!\n  code: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n\n  resources(param: SearchParam): [Resource]!\n}\n\ninput ResourceTypeEntity {\n  code: String!\n  name: String!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/group/schema.graphql",
+      "sha": "88659e2e8a62d510ff47762688599b0c94bf8888",
+      "url": "https://api.github.com/repositories/154459839/contents/app/graphql/group/schema.graphql?ref=2faba0ea942aa77a01287130f4ababab0113dc45",
+      "git_url": "https://api.github.com/repositories/154459839/git/blobs/88659e2e8a62d510ff47762688599b0c94bf8888",
+      "html_url": "https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/group/schema.graphql",
+      "content": "type Group implements Datable {\n  id: ID!\n  app_id: Int!\n  code: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n  \n  roles(param: SearchParam): [Role]!\n}\n\ninput GroupEntity {\n  app_id: Int!\n  code: String!\n  name: String!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/role/schema.graphql",
+      "sha": "4610ae8cab0115194dccecf6f49f160976e1755f",
+      "url": "https://api.github.com/repositories/154459839/contents/app/graphql/role/schema.graphql?ref=2faba0ea942aa77a01287130f4ababab0113dc45",
+      "git_url": "https://api.github.com/repositories/154459839/git/blobs/4610ae8cab0115194dccecf6f49f160976e1755f",
+      "html_url": "https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/role/schema.graphql",
+      "content": "type Role implements Datable {\n  id: ID!\n  app_id: Int!\n  code: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n\n  resources(param: SearchParam): [Resource]!\n}\n\ninput RoleEntity {\n  app_id: Int!\n  code: String!\n  name: String!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/resource/schema.graphql",
+      "sha": "f7285fa23d3167c0f21a30dfebe548e7b59c461b",
+      "url": "https://api.github.com/repositories/154459839/contents/app/graphql/resource/schema.graphql?ref=2faba0ea942aa77a01287130f4ababab0113dc45",
+      "git_url": "https://api.github.com/repositories/154459839/git/blobs/f7285fa23d3167c0f21a30dfebe548e7b59c461b",
+      "html_url": "https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/resource/schema.graphql",
+      "content": "type Resource implements Datable {\n  id: ID!\n  app_id: Int!\n  code: String!\n  resource_type_id: Int!\n  detail: String!\n  create_time: Date!\n  update_time: Date\n}\n\ninput ResourceEntity {\n  app_id: Int!\n  code: String!\n  resource_type_id: Int!\n  detail: String!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/user/schema.graphql",
+      "sha": "966ccaa7609922cb3d4786d55ae4b6bd234c535e",
+      "url": "https://api.github.com/repositories/154459839/contents/app/graphql/user/schema.graphql?ref=2faba0ea942aa77a01287130f4ababab0113dc45",
+      "git_url": "https://api.github.com/repositories/154459839/git/blobs/966ccaa7609922cb3d4786d55ae4b6bd234c535e",
+      "html_url": "https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/user/schema.graphql",
+      "content": "type User implements Datable {\n  id: ID!\n  email: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n\n  groups(param: SearchParam): [Group]!\n  roles(param: SearchParam): [Role]!\n  resources: [Resource]!\n}\n\ninput UserEntity {\n  email: String!\n  name: String!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/app/schema.graphql",
+      "sha": "911cf815e83f5d2b0e70f4c2084c7528a304e39e",
+      "url": "https://api.github.com/repositories/154459839/contents/app/graphql/app/schema.graphql?ref=2faba0ea942aa77a01287130f4ababab0113dc45",
+      "git_url": "https://api.github.com/repositories/154459839/git/blobs/911cf815e83f5d2b0e70f4c2084c7528a304e39e",
+      "html_url": "https://github.com/codetrial/got-auth-service/blob/2faba0ea942aa77a01287130f4ababab0113dc45/app/graphql/app/schema.graphql",
+      "content": "type App implements Datable {\n  id: ID!\n  code: String!\n  name: String!\n  create_time: Date!\n  update_time: Date\n\n  groups(param: SearchParam): [Group]!\n  roles(param: SearchParam): [Role]!\n  resources(param: SearchParam): [Resource]!\n}\n\ninput AppEntity {\n  code: String!\n  name: String!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-24T07:45:45Z",
+    "updated_at": "2019-06-29T15:46:35Z",
+    "pushed_at": "2019-04-28T13:20:07Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 10
+  }
+}

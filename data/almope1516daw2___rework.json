@@ -1,0 +1,42 @@
+{
+  "repo_name": "rework",
+  "repo_full_name": "almope1516daw2/rework",
+  "repo_owner": "almope1516daw2",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "31202fa278f79e73284bcb67485af82a9fdb9fd3",
+      "url": "https://api.github.com/repositories/93155120/contents/graphql/schema.graphql?ref=418586e7f8946925e8ea42a37528721a3228be88",
+      "git_url": "https://api.github.com/repositories/93155120/git/blobs/31202fa278f79e73284bcb67485af82a9fdb9fd3",
+      "html_url": "https://github.com/almope1516daw2/rework/blob/418586e7f8946925e8ea42a37528721a3228be88/graphql/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutation\n}\n\ninput CreatePostInput {\n  creatorId: String!\n  title: String!\n  description: String!\n  image: String!\n  clientMutationId: String!\n}\n\ntype CreatePostPayload {\n  postEdge: PostEdge\n  user: User\n  clientMutationId: String!\n}\n\ninput LoginInput {\n  email: String!\n  password: String!\n  id: String!\n  clientMutationId: String!\n}\n\ntype LoginPayload {\n  user: User\n  clientMutationId: String!\n}\n\ninput LogoutInput {\n  id: String\n  clientMutationId: String!\n}\n\ntype LogoutPayload {\n  user: User\n  clientMutationId: String!\n}\n\ntype Mutation {\n  register(input: RegisterInput!): RegisterPayload\n  login(input: LoginInput!): LoginPayload\n  logout(input: LogoutInput!): LogoutPayload\n  createPost(input: CreatePostInput!): CreatePostPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Post implements Node {\n  id: ID!\n  creatorId: String\n  title: String\n  image: String\n  description: String\n}\n\ntype PostConnection {\n  pageInfo: PageInfo!\n  edges: [PostEdge]\n}\n\ntype PostEdge {\n  node: Post\n  cursor: String!\n}\n\ninput RegisterInput {\n  email: String!\n  password: String!\n  firstName: String!\n  lastName: String!\n  role: String!\n  clientMutationId: String!\n}\n\ntype RegisterPayload {\n  user: User\n  clientMutationId: String!\n}\n\ntype Root {\n  node(id: ID!): Node\n  viewer: Viewer\n}\n\ntype User implements Node {\n  id: ID!\n  userId: String\n  email: String\n  firstName: String\n  lastName: String\n  role: String\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n}\n\ntype Viewer {\n  user: User\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n  post(postId: String): Post\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-02T10:29:34Z",
+    "updated_at": "2017-06-02T10:30:34Z",
+    "pushed_at": "2017-06-02T10:30:32Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

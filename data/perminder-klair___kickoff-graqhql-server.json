@@ -1,0 +1,39 @@
+{
+  "repo_name": "kickoff-graqhql-server",
+  "repo_full_name": "perminder-klair/kickoff-graqhql-server",
+  "repo_owner": "perminder-klair",
+  "repo_description": "A very lean boilerplate for setting up GraphQL server.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "1e7eee8af9d54d6ee83aab3b0c40617605bd83cb",
+      "url": "https://api.github.com/repositories/121714225/contents/src/schema.graphql?ref=3e346a04f9a1e568baa64f329eab879196692c5f",
+      "git_url": "https://api.github.com/repositories/121714225/git/blobs/1e7eee8af9d54d6ee83aab3b0c40617605bd83cb",
+      "html_url": "https://github.com/perminder-klair/kickoff-graqhql-server/blob/3e346a04f9a1e568baa64f329eab879196692c5f/src/schema.graphql",
+      "content": "type Query {\n  posts: [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String): Post\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  content: String!\n  published: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-16T04:20:30Z",
+    "updated_at": "2018-02-18T23:42:49Z",
+    "pushed_at": "2018-02-16T07:00:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

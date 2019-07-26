@@ -1,0 +1,42 @@
+{
+  "repo_name": "TypeGraphQl",
+  "repo_full_name": "dando1996/typegraphql",
+  "repo_owner": "Dando1996",
+  "repo_description": "MERN stack with GraphQl + Apollo + Prisma all in TypeScript!!",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/graphql/Products/schema.graphql",
+      "sha": "c5ef6cfbfa9dfbc2cb280e1262fb717f88e12d86",
+      "url": "https://api.github.com/repositories/179539113/contents/src/server/graphql/Products/schema.graphql?ref=b6b257a51aaf9a837829d9eca1bf9e25dbe75425",
+      "git_url": "https://api.github.com/repositories/179539113/git/blobs/c5ef6cfbfa9dfbc2cb280e1262fb717f88e12d86",
+      "html_url": "https://github.com/Dando1996/TypeGraphQl/blob/b6b257a51aaf9a837829d9eca1bf9e25dbe75425/src/server/graphql/Products/schema.graphql",
+      "content": "type Query {\n  info: String!,\n  allProducts: [Product],\n  getProductById(id: String!): Product\n}\ntype Mutation {\n  createProduct(title: String!, description: String!, price: Float!): Product!\n  modifyProduct(id: ID!, title: String, description: String, price: Float!): Product!\n  deleteProduct(id: ID!): Product\n}\ntype Product {\n  id: ID!\n  title: String!\n  description: String!\n  price: Float!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-04T16:51:03Z",
+    "updated_at": "2019-04-11T15:33:04Z",
+    "pushed_at": "2019-04-11T15:33:02Z",
+    "issues": 3,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

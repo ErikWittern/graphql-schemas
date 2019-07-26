@@ -1,0 +1,42 @@
+{
+  "repo_name": "budget-manager",
+  "repo_full_name": "papasmurf17/budget-manager",
+  "repo_owner": "papasmurf17",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "apollo/src/graphql/schema.graphql",
+      "sha": "465a960db7860ad4a40b18ceda719dade396a0db",
+      "url": "https://api.github.com/repositories/167796472/contents/apollo/src/graphql/schema.graphql?ref=caeb9c4003767245bd77b65b78d36b439584f757",
+      "git_url": "https://api.github.com/repositories/167796472/git/blobs/465a960db7860ad4a40b18ceda719dade396a0db",
+      "html_url": "https://github.com/papasmurf17/budget-manager/blob/caeb9c4003767245bd77b65b78d36b439584f757/apollo/src/graphql/schema.graphql",
+      "content": "scalar Date\n\n## Input\ninput Transactioninput {\n    amount: Float!,\n    currencyCode: String!,\n    description: String!,\n    expenseType: String,\n    invoiceDate: Date,\n    user: String!\n}\n\ntype Transaction {\n    _id: ID!,\n    amount: Float,\n    currencyCode: String,\n    description: String,\n    expenseType: String,\n    invoiceDate: Date,\n    user: String,\n    reporter: String\n}\n\ntype Query {\n    Transactions(limit: Int): [Transaction]\n    Transaction(id: ID!): Transaction\n}\n\ntype Mutation {\n    addTransaction(transaction: Transactioninput): Transaction\n    removeTransaction(transactionId: ID!): Transaction\n    updateTransaction(transactionId: ID!): Transaction\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-27T10:31:41Z",
+    "updated_at": "2019-06-12T05:18:02Z",
+    "pushed_at": "2019-06-12T05:18:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

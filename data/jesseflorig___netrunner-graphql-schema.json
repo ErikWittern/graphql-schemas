@@ -1,0 +1,42 @@
+{
+  "repo_name": "netrunner-graphql-schema",
+  "repo_full_name": "jesseflorig/netrunner-graphql-schema",
+  "repo_owner": "jesseflorig",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/defs/schema.gql",
+      "sha": "fd2846318312e9faf726732620f0d80194521ccb",
+      "url": "https://api.github.com/repositories/158030619/contents/src/defs/schema.gql?ref=766a9872e4001236a054b62c926236264fe2e248",
+      "git_url": "https://api.github.com/repositories/158030619/git/blobs/fd2846318312e9faf726732620f0d80194521ccb",
+      "html_url": "https://github.com/jesseflorig/netrunner-graphql-schema/blob/766a9872e4001236a054b62c926236264fe2e248/src/defs/schema.gql",
+      "content": "# TODO: Generate IDs pack-cardnumber\n# TODO: Rename keywords to subtypes\n# TODO: Rename factionCost to influenceCost\n# TODO: Rename cost to playCost (Operation/Event)\n# TODO: Rename cost to rezCost (Asset/Ice)\n# TODO: Rename cost to installCost (Program/Hardware)\n# TODO: Rename position to cardNumber\n# TODO: Rename quantity to packQty\n# TODO: Resolve pack to Pack\n# TODO: Resolve cycle to Cycle\n# TODO: Add Formats\n\n\"\"\"A Netrunner card\"\"\"\ninterface Card {\n  cycle: String\n  faction: Faction!\n  flavor: String\n  id: String!\n  illustrator: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String\n  title: String!\n  type: Type!\n  uniqueness: Boolean!\n}\n\n\"\"\"A Corporation Agenda card\"\"\"\ntype Agenda implements Card {\n  advancementCost: Int!\n  agendaPoints: Int!\n  cost: Int\n  cycle: String!\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  illustrator: String!\n  id: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String\n  title: String!\n  type: Type!\n  uniqueness: Boolean! \n}\n\n\"\"\"A Corporation Asset card\"\"\"\ntype Asset implements Card {\n  cost: Int\n  cycle: String!\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  illustrator: String!\n  id: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String!\n  trashCost: Int!\n  title: String!\n  type: Type!\n  uniqueness: Boolean! \n}\n\n\"\"\"A Corporation Identity card\"\"\"\ntype CorpIdentity implements Card {\n  cycle: String!\n  faction: Faction!\n  flavor: String\n  illustrator: String!\n  id: String!\n  influenceLimit: Int\n  keywords: String\n  minDeckSize: Int!\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String!\n  title: String!\n  type: Type!\n  uniqueness: Boolean!\n}\n\n\"\"\"A Corporation Ice card\"\"\"\ntype Ice implements Card {\n  cost: Int\n  cycle: String!\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  illustrator: String!\n  id: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  strength: Int\n  text: String!\n  title: String!\n  type: Type!\n  uniqueness: Boolean! \n}\n\n\"\"\"A Corporation Operation card\"\"\"\ntype Operation implements Card {\n  cost: Int\n  cycle: String!\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  illustrator: String!\n  id: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String!\n  title: String!\n  type: Type!\n  uniqueness: Boolean! \n}\n\n\"\"\"A Corporation Upgrade card\"\"\"\ntype Upgrade implements Card {\n  cost: Int\n  cycle: String!\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  illustrator: String!\n  id: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String!\n  title: String!\n  type: Type!\n  uniqueness: Boolean! \n}\n\n\"\"\"A Runner Event card\"\"\"\ntype Event implements Card {\n  cost: Int\n  cycle: String\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  id: String!\n  illustrator: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String\n  title: String!\n  type: Type!\n  uniqueness: Boolean!\n}\n\n\"\"\"A Runner Hardware card\"\"\"\ntype Hardware implements Card {\n  cost: Int\n  cycle: String\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  id: String!\n  illustrator: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String\n  title: String!\n  type: Type!\n  uniqueness: Boolean!\n}\n\n\"\"\"A Runner Program card\"\"\"\ntype Program implements Card {\n  cost: Int\n  cycle: String\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  id: String!\n  illustrator: String!\n  keywords: String\n  memoryCost: Int!\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  strength: Int\n  text: String\n  title: String!\n  type: Type!\n  uniqueness: Boolean!\n}\n\n\"\"\"A Runner Resource card\"\"\"\ntype Resource implements Card {\n  cost: Int\n  cycle: String\n  faction: Faction!\n  factionCost: Int\n  flavor: String\n  id: String!\n  illustrator: String!\n  keywords: String\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String\n  title: String!\n  type: Type!\n  uniqueness: Boolean!\n}\n\n\"\"\"A Runner Identity card\"\"\"\ntype RunnerIdentity implements Card {\n  baseLink: Int!\n  cycle: String\n  faction: Faction!\n  flavor: String\n  id: String!\n  illustrator: String!\n  keywords: String\n  minDeckSize: Int!\n  influenceLimit: Int\n  pack: String!\n  position: Int!\n  quantity: Int!\n  side: Side!\n  text: String\n  title: String!\n  type: Type!\n  uniqueness: Boolean!\n}\n\n\"\"\"The faction a card belongs to\"\"\"\nenum Faction {\n  ADAM\n  APEX\n  ANARCH\n  CRIMINAL\n  HAASBIOROID\n  JINTEKI\n  NBN\n  NEUTRALCORP\n  NEUTRALRUNNER\n  SHAPER\n  SUNNYLEBEAU\n  WEYLANDCONSORTIUM\n}\n\n\"\"\"The player side a card belongs to\"\"\"\nenum Side {\n  CORP\n  RUNNER\n}\n\n\"\"\"The main card type\"\"\"\nenum Type {\n  AGENDA\n  ASSET\n  EVENT\n  HARDWARE\n  ICE\n  IDENTITY\n  OPERATION\n  PROGRAM\n  RESOURCE\n  UPGRADE\n}\n\nenum ExpansionType {\n  CORE\n  CYCLE\n  DELUXE\n  SPECIAL\n}\n\ninterface Expansion {\n  id: String!\n  name: String!\n  type: ExpansionType!\n}\n\ntype Cycle implements Expansion {\n  id: String!\n  name: String!\n  type: ExpansionType!\n  packs: [Pack]!\n}\n\ntype NonCycle implements Expansion {\n  id: String!\n  name: String!\n  releaseDate: String!\n  type: ExpansionType!\n}\n\ntype Pack {\n  id: String!\n  name: String!\n  releaseDate: String!\n}\n\ntype Deck {\n  cards: [Card]\n  id: String!\n  name: String!\n}\n\n\"\"\"The card properties available to advanced search\"\"\"\ninput Filter {\n  field: String!\n  comparator: String!\n  value: String!\n}\n\ntype Query {\n  \"\"\"Get a card based on card id\"\"\"\n  getCardById(id: String!): Card\n  \"\"\"Return a list of unique values for a field\"\"\"\n  getDistinctByField(field: String!): [Card]\n  \"\"\"Search for cards\"\"\"\n  searchCards(\n    \"\"\"Includes only cards that match all fields specified\"\"\"\n    filters: [Filter],\n    \"\"\"Fields to use in fuzzy search (default: title)\"\"\"\n    fuzzyFields: [String],\n    \"\"\"Returns cards that fuzzy match on fuzzyFields\"\"\"\n    fuzzySearch: String,\n    \"\"\"Excludes cards that match all fields specified\"\"\"\n    sortFields: [String],\n  ): [Card]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 23
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-17T22:35:28Z",
+    "updated_at": "2019-02-15T17:27:56Z",
+    "pushed_at": "2019-02-15T17:27:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

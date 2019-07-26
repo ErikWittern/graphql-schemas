@@ -1,0 +1,42 @@
+{
+  "repo_name": "bundleserverless",
+  "repo_full_name": "rhdeck/bundleserverless",
+  "repo_owner": "rhdeck",
+  "repo_description": "Tests for distributing RN bundles over serverless",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "8eb8577c4bb788969bf97c6947b38329e7803e29",
+      "url": "https://api.github.com/repositories/166585352/contents/schema.graphql?ref=84d173deffc76e0d240efab1649dd1ea5176da64",
+      "git_url": "https://api.github.com/repositories/166585352/git/blobs/8eb8577c4bb788969bf97c6947b38329e7803e29",
+      "html_url": "https://github.com/rhdeck/bundleserverless/blob/84d173deffc76e0d240efab1649dd1ea5176da64/schema.graphql",
+      "content": "type BundleInfo {\n  downloadUrl: String\n  ttl: Float\n}\ntype Query {\n  getBundle(\n    version: String\n    platform: String\n    hash: String\n    info: String\n  ): BundleInfo\n  getBundles: [BundleInfo]\n}\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-19T19:33:16Z",
+    "updated_at": "2019-01-19T19:33:21Z",
+    "pushed_at": "2019-01-19T19:33:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

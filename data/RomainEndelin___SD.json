@@ -1,0 +1,42 @@
+{
+  "repo_name": "SD",
+  "repo_full_name": "romainendelin/sd",
+  "repo_owner": "RomainEndelin",
+  "repo_description": "A modest blogging engine in Rails5+Webpacker+React+GraphQL+Typescript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "94dfc858cda992957c586d5ee0b0933177f9f74f",
+      "url": "https://api.github.com/repositories/130660358/contents/schema.graphql?ref=a7f477c02e60c60ed3009e0f4c9c07d866e41042",
+      "git_url": "https://api.github.com/repositories/130660358/git/blobs/94dfc858cda992957c586d5ee0b0933177f9f74f",
+      "html_url": "https://github.com/RomainEndelin/SD/blob/a7f477c02e60c60ed3009e0f4c9c07d866e41042/schema.graphql",
+      "content": "input AUTH_PROVIDER_EMAIL {\n  email: String!\n  password: String!\n}\n\ntype Article {\n  author: User!\n  city: String\n  country: String!\n  id: ID!\n  picture: String!\n  title: String!\n}\n\ntype Mutation {\n  signinUser(credentials: AUTH_PROVIDER_EMAIL!): SigninPayload\n}\n\ntype Query {\n  articles: [Article]!\n\n  # A dummy field, useful for smoke-testing GraphQL\n  hello: String!\n}\n\ntype SigninPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  email: String!\n  id: ID!\n  name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-23T07:54:02Z",
+    "updated_at": "2018-04-23T08:17:27Z",
+    "pushed_at": "2018-04-23T08:17:26Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

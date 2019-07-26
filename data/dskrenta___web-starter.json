@@ -1,0 +1,39 @@
+{
+  "repo_name": "web-starter",
+  "repo_full_name": "dskrenta/web-starter",
+  "repo_owner": "dskrenta",
+  "repo_description": "Web application boilerplate",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "78cafe4acb4678f03d1d643ff9b51e844189aa66",
+      "url": "https://api.github.com/repositories/89772250/contents/schema.graphql?ref=d6bbbf3f6b43c41b4c1360770c31ff92ce1a1cc6",
+      "git_url": "https://api.github.com/repositories/89772250/git/blobs/78cafe4acb4678f03d1d643ff9b51e844189aa66",
+      "html_url": "https://github.com/dskrenta/web-starter/blob/d6bbbf3f6b43c41b4c1360770c31ff92ce1a1cc6/schema.graphql",
+      "content": "type Mutation {\n  addTodoItem(content: String!): TodoItem!\n  updateTodoItem(id: ID!, content: String!): TodoItem!\n  removeTodoItem(id: ID!): ID!\n}\n\ntype Query {\n  getTodoItems: [TodoItem]!\n}\n\ntype TodoItem {\n  id: ID!\n  content: String!\n  created: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-29T08:08:35Z",
+    "updated_at": "2017-05-03T08:08:42Z",
+    "pushed_at": "2017-05-08T05:53:43Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

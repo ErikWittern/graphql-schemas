@@ -1,0 +1,80 @@
+{
+  "repo_name": "toDoTaskRunner",
+  "repo_full_name": "thomasxmartinez/todotaskrunner",
+  "repo_owner": "thomasxmartinez",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.graphql",
+      "path": "src/api/resources/user/user.graphql",
+      "sha": "37dabb9fb815500823f0050e4fc77f9f6d307438",
+      "url": "https://api.github.com/repositories/117908854/contents/src/api/resources/user/user.graphql?ref=c7a9a36b76638389531ad0970e6bc2e947ec7698",
+      "git_url": "https://api.github.com/repositories/117908854/git/blobs/37dabb9fb815500823f0050e4fc77f9f6d307438",
+      "html_url": "https://github.com/thomasxmartinez/toDoTaskRunner/blob/c7a9a36b76638389531ad0970e6bc2e947ec7698/src/api/resources/user/user.graphql",
+      "content": "type User {\n  id: ID!\n  username: String!\n  tasklists: [Tasklist]!\n  createdAt: String!\n  updatedAt: String!\n}\n\ninput UpdatedUser {\n  id: ID!\n  username: String!\n}\n\ntype Query {\n  getMe: User!\n}\n\ntype Mutation {\n  updateMe(input: UpdatedUser!): User!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/thomasxmartinez/toDoTaskRunner/blob/c7a9a36b76638389531ad0970e6bc2e947ec7698/src/api/resources/user/user.graphql:\ntype User {\n  id: ID!\n  username: String!\n  tasklists: [Tasklist]!\n  createdAt: String!\n  updatedAt: String!\n}\n\ninput UpdatedUser {\n  id: ID!\n  username: String!\n}\n\ntype Query {\n  getMe: User!\n}\n\ntype Mutation {\n  updateMe(input: UpdatedUser!): User!\n}\n\n# https://github.com/thomasxmartinez/toDoTaskRunner/blob/c7a9a36b76638389531ad0970e6bc2e947ec7698/src/api/resources/tasklist/tasklist.graphql:\ntype Tasklist {\n  id: ID!\n  title: String!\n  tasks: [Task]!\n  complete: Boolean!\n}\n\ninput UpdatedTasklist {\n  id: ID!\n  title: String\n  tasks: [ID!]\n  complete: Boolean\n}\n\ninput NewTasklist {\n  title: String\n  tasks: [ID!]\n  complete: Boolean\n}\n\nextend type Query {\n  Tasklist(id: ID!): Tasklist!\n  allTasklists: [Tasklist]!\n}\n\nextend type Mutation {\n  newTasklist(input: NewTasklist!): Tasklist!\n  removeTasklist(id: ID!): Tasklist!\n  updateTasklist(input: UpdatedTasklist!): Tasklist!\n}\n\n# https://github.com/thomasxmartinez/toDoTaskRunner/blob/c7a9a36b76638389531ad0970e6bc2e947ec7698/src/api/resources/task/task.graphql:\ntype Task {\n  id: ID!\n  title: String!\n  complete: Boolean!\n}\n\ninput UpdatedTask {\n  id: ID!\n  title: String\n  complete: Boolean\n}\n\ninput NewTask {\n  title: String\n  complete: Boolean\n}\n\nextend type Query {\n  Task(id: ID!): Task!\n  allTasks: [Task]!\n}\n\nextend type Mutation {\n  newTask(input: NewTask!): Task!\n  removeTask(id: ID!): Task!\n  updateTask(input: UpdatedTask!): Task!\n}\n",
+        "mergedPaths": [
+          "src/api/resources/tasklist/tasklist.graphql",
+          "src/api/resources/task/task.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Tasklist",
+          "Task"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 14
+      },
+      "validSchema": false
+    },
+    {
+      "name": "task.graphql",
+      "path": "src/api/resources/task/task.graphql",
+      "sha": "0c585722c1f92581a5bed4bf976247736f5cd100",
+      "url": "https://api.github.com/repositories/117908854/contents/src/api/resources/task/task.graphql?ref=c7a9a36b76638389531ad0970e6bc2e947ec7698",
+      "git_url": "https://api.github.com/repositories/117908854/git/blobs/0c585722c1f92581a5bed4bf976247736f5cd100",
+      "html_url": "https://github.com/thomasxmartinez/toDoTaskRunner/blob/c7a9a36b76638389531ad0970e6bc2e947ec7698/src/api/resources/task/task.graphql",
+      "content": "type Task {\n  id: ID!\n  title: String!\n  complete: Boolean!\n}\n\ninput UpdatedTask {\n  id: ID!\n  title: String\n  complete: Boolean\n}\n\ninput NewTask {\n  title: String\n  complete: Boolean\n}\n\nextend type Query {\n  Task(id: ID!): Task!\n  allTasks: [Task]!\n}\n\nextend type Mutation {\n  newTask(input: NewTask!): Task!\n  removeTask(id: ID!): Task!\n  updateTask(input: UpdatedTask!): Task!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 5
+    },
+    {
+      "name": "tasklist.graphql",
+      "path": "src/api/resources/tasklist/tasklist.graphql",
+      "sha": "1abfd9a92124ba875676ae0248e607725f9d41c5",
+      "url": "https://api.github.com/repositories/117908854/contents/src/api/resources/tasklist/tasklist.graphql?ref=c7a9a36b76638389531ad0970e6bc2e947ec7698",
+      "git_url": "https://api.github.com/repositories/117908854/git/blobs/1abfd9a92124ba875676ae0248e607725f9d41c5",
+      "html_url": "https://github.com/thomasxmartinez/toDoTaskRunner/blob/c7a9a36b76638389531ad0970e6bc2e947ec7698/src/api/resources/tasklist/tasklist.graphql",
+      "content": "type Tasklist {\n  id: ID!\n  title: String!\n  tasks: [Task]!\n  complete: Boolean!\n}\n\ninput UpdatedTasklist {\n  id: ID!\n  title: String\n  tasks: [ID!]\n  complete: Boolean\n}\n\ninput NewTasklist {\n  title: String\n  tasks: [ID!]\n  complete: Boolean\n}\n\nextend type Query {\n  Tasklist(id: ID!): Tasklist!\n  allTasklists: [Tasklist]!\n}\n\nextend type Mutation {\n  newTasklist(input: NewTasklist!): Tasklist!\n  removeTasklist(id: ID!): Tasklist!\n  updateTasklist(input: UpdatedTasklist!): Tasklist!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-18T00:18:38Z",
+    "updated_at": "2018-01-18T00:36:23Z",
+    "pushed_at": "2018-01-20T00:33:50Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

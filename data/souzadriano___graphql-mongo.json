@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-mongo",
+  "repo_full_name": "souzadriano/graphql-mongo",
+  "repo_owner": "souzadriano",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "0fb37b9213c8d3a278b77ceaee44f028671bc59a",
+      "url": "https://api.github.com/repositories/169003057/contents/src/graphql/schema.graphql?ref=45242bba5e086bb3dd967b9a565f42dd29408137",
+      "git_url": "https://api.github.com/repositories/169003057/git/blobs/0fb37b9213c8d3a278b77ceaee44f028671bc59a",
+      "html_url": "https://github.com/souzadriano/graphql-mongo/blob/45242bba5e086bb3dd967b9a565f42dd29408137/src/graphql/schema.graphql",
+      "content": "type Query {\n    authors: [Author!]!\n    books: [Book!]!\n}\n\ntype Mutation {\n    createAuthor(name: String!): Author!\n    updateAuthor(id: ID!, name: String!): Author!\n    createBook(title: String!, desc: String, year: Int! authorId: ID!): Boolean!\n}\n\n# Schema Types\ntype Author {\n    id: ID!\n    name: String!\n    books: [Book!]!\n}\n\ntype Book {\n    id: ID!\n    title: String!\n    desc: String\n    year: Int!\n    author: Author!\n    createdOn: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-03T22:54:10Z",
+    "updated_at": "2019-02-04T16:18:47Z",
+    "pushed_at": "2019-02-03T23:05:24Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

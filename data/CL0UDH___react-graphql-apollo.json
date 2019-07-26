@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-graphql-apollo",
+  "repo_full_name": "cl0udh/react-graphql-apollo",
+  "repo_owner": "CL0UDH",
+  "repo_description": "curso de reactjs, graphql y apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "servidor/data/schema.graphql",
+      "sha": "8561f01de42c4ce65c622804cbbe3f3eacb39d56",
+      "url": "https://api.github.com/repositories/165171150/contents/servidor/data/schema.graphql?ref=08b40f0e70f9998b687be297aa68cc620c701a23",
+      "git_url": "https://api.github.com/repositories/165171150/git/blobs/8561f01de42c4ce65c622804cbbe3f3eacb39d56",
+      "html_url": "https://github.com/CL0UDH/react-graphql-apollo/blob/08b40f0e70f9998b687be297aa68cc620c701a23/servidor/data/schema.graphql",
+      "content": "type Cliente {\n    id: ID\n    nombre: String\n    apellido: String\n    empresa: String\n    emails: [Email]\n    edad: Int\n    tipo: TipoCliente\n    pedidos: [Pedido]\n}\ntype Email {\n    email: String\n}\ntype Pedido {\n    producto: String\n    precio: Int\n}\nenum TipoCliente {\n    BASICO\n    PREMIUM\n}\ntype Query {\n    getClientes(limite: Int, offset: Int): [Cliente]\n    getCliente(id: ID): Cliente\n    totalClientes: String\n}\ninput EmailInput {\n    email: String\n}\ninput PedidoInput {\n    producto: String\n    precio: Int\n}\n\"\"\" Campos para clientes nuevos \"\"\"\ninput ClienteInput {\n    id: ID\n    nombre: String!\n    apellido: String!\n    empresa: String!\n    emails: [EmailInput]\n    edad: Int!\n    tipo: TipoCliente!\n    pedidos: [PedidoInput]\n}\n\"\"\" Mutations para crear nuevos clientes \"\"\"\ntype Mutation {\n    # Nombre del Resolver, Input con datos y valor que retorna\n    \"\"\" Te permite crear nuevos clientes \"\"\"\n    crearCliente(input: ClienteInput): Cliente\n\n    \"\"\" Te permite actualizar clientes \"\"\"\n    actualizarCliente(input: ClienteInput): Cliente\n\n    \"\"\" Te permite eliminar un cliente \"\"\"\n    eliminarCliente(id: ID!): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-11T03:14:25Z",
+    "updated_at": "2019-06-30T20:18:36Z",
+    "pushed_at": "2019-06-30T20:18:34Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

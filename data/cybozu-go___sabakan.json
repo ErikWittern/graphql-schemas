@@ -1,0 +1,42 @@
+{
+  "repo_name": "sabakan",
+  "repo_full_name": "cybozu-go/sabakan",
+  "repo_owner": "cybozu-go",
+  "repo_description": "A versatile network boot server for large data centers",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gql/schema.graphql",
+      "sha": "f31fcbde6b5ab5f485ba8fe47bd0ddc3a39abe54",
+      "url": "https://api.github.com/repositories/128171148/contents/gql/schema.graphql?ref=0a158242b470453eedad7494d086c49a5b92a12a",
+      "git_url": "https://api.github.com/repositories/128171148/git/blobs/f31fcbde6b5ab5f485ba8fe47bd0ddc3a39abe54",
+      "html_url": "https://github.com/cybozu-go/sabakan/blob/0a158242b470453eedad7494d086c49a5b92a12a/gql/schema.graphql",
+      "content": "type Query {\n    machine(serial: ID!): Machine!\n    searchMachines(having: MachineParams, notHaving: MachineParams): [Machine!]!\n}\n\ntype Mutation {\n    setMachineState(serial: ID!, state: MachineState!): MachineStatus!\n}\n\n\"\"\"\nMachineParams is a set of input parameters to search machines.\n\"\"\"\ninput MachineParams {\n    labels: [LabelInput!] = null\n    racks: [Int!] = null\n    roles: [String!] = null\n    states: [MachineState!] = null\n    minDaysBeforeRetire: Int = null\n}\n\n\"\"\"\nLabelInput represents a label to search machines.\n\"\"\"\ninput LabelInput {\n    name: String!\n    value: String!\n}\n\n\"\"\"\nMachine represents a physical server in a datacenter rack.\n\"\"\"\ntype Machine {\n    spec: MachineSpec!\n    status: MachineStatus!\n    info: MachineInfo!\n}\n\n\"\"\"\nMachineSpec represents specifications of a machine.\n\"\"\"\ntype MachineSpec {\n    serial: ID!\n    labels: [Label!]\n    rack: Int!\n    indexInRack: Int!\n    role: String!\n    ipv4: [IPAddress!]!\n    registerDate: DateTime!\n    retireDate: DateTime!\n    bmc: BMC!\n}\n\n\"\"\"\nLabel represents an arbitrary key-value pairs.\n\"\"\"\ntype Label {\n    name: String!\n    value: String!\n}\n\n\"\"\"\nIPAddress represents an IPv4 or IPv6 address.\n\"\"\"\nscalar IPAddress\n\n\"\"\"\nDateTime represents a date and time value.\n\"\"\"\nscalar DateTime\n\n\"\"\"\nBMC represents a Baseboard Management Controller.\n\"\"\"\ntype BMC {\n    bmcType: String!\n    ipv4: IPAddress!\n}\n\n\"\"\"\nMachineStatus represents status of a Machine.\n\"\"\"\ntype MachineStatus {\n    state: MachineState!\n    timestamp: DateTime!\n    duration: Float!\n}\n\n\"\"\"\nMachineState enumerates machine states.\n\"\"\"\nenum MachineState {\n    UNINITIALIZED\n    HEALTHY\n    UNHEALTHY\n    UNREACHABLE\n    UPDATING\n    RETIRING\n    RETIRED\n}\n\n\"\"\"\nMachineInfo represents miscellaneous information for Machine.\n\"\"\"\ntype MachineInfo {\n    network: NetworkInfo!\n    bmc: BMCInfo!\n}\n\n\"\"\"\nNetworkInfo represents NIC configuration information.\n\"\"\"\ntype NetworkInfo {\n    ipv4: [NICConfig!]!\n}\n\n\"\"\"\nBMCInfo represents BMC NIC configuration information.\n\"\"\"\ntype BMCInfo {\n    ipv4: NICConfig!\n}\n\n\"\"\"\nNICConfig represents NIC configuration.\n\"\"\"\ntype NICConfig {\n    address: IPAddress!\n    netmask: IPAddress!\n    maskbits: Int!\n    gateway: IPAddress!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-05T07:10:02Z",
+    "updated_at": "2019-07-11T09:43:51Z",
+    "pushed_at": "2019-07-11T09:43:49Z",
+    "issues": 3,
+    "watchers": 13,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 160,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 158,
+    "releases": 30,
+    "stargazers": 36
+  }
+}

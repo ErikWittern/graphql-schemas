@@ -1,0 +1,63 @@
+{
+  "repo_name": "chat-wedevelop-training",
+  "repo_full_name": "nahudalla/chat-wedevelop-training",
+  "repo_owner": "nahudalla",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "src/schema/types/query.graphql",
+      "sha": "a0ed444da898877fdd68a8faa4a6fdd10607f605",
+      "url": "https://api.github.com/repositories/184572130/contents/src/schema/types/query.graphql?ref=dc7c2026ea081a4c03e0c9f5794dd9bb9d6c7937",
+      "git_url": "https://api.github.com/repositories/184572130/git/blobs/a0ed444da898877fdd68a8faa4a6fdd10607f605",
+      "html_url": "https://github.com/nahudalla/chat-wedevelop-training/blob/dc7c2026ea081a4c03e0c9f5794dd9bb9d6c7937/src/schema/types/query.graphql",
+      "content": "type Query {\n  users:[User]\n  user(id:ID!):User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nahudalla/chat-wedevelop-training/blob/dc7c2026ea081a4c03e0c9f5794dd9bb9d6c7937/src/schema/types/query.graphql:\ntype Query {\n  users:[User]\n  user(id:ID!):User\n}\n\n# https://github.com/nahudalla/chat-wedevelop-training/blob/dc7c2026ea081a4c03e0c9f5794dd9bb9d6c7937/src/schema/types/user.graphql:\ntype User {\n  id:ID!\n  username:String\n  firstName:String\n  lastName:String\n}\n",
+        "mergedPaths": [
+          "src/schema/types/user.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/schema/types/user.graphql",
+      "sha": "aebe463789d2b294a471ae2b1ed1516afb23c582",
+      "url": "https://api.github.com/repositories/184572130/contents/src/schema/types/user.graphql?ref=dc7c2026ea081a4c03e0c9f5794dd9bb9d6c7937",
+      "git_url": "https://api.github.com/repositories/184572130/git/blobs/aebe463789d2b294a471ae2b1ed1516afb23c582",
+      "html_url": "https://github.com/nahudalla/chat-wedevelop-training/blob/dc7c2026ea081a4c03e0c9f5794dd9bb9d6c7937/src/schema/types/user.graphql",
+      "content": "type User {\n  id:ID!\n  username:String\n  firstName:String\n  lastName:String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-02T11:52:16Z",
+    "updated_at": "2019-06-03T12:42:40Z",
+    "pushed_at": "2019-06-03T12:42:41Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "repo_name": "api-hub",
+  "repo_full_name": "zhicwu/api-hub",
+  "repo_owner": "zhicwu",
+  "repo_description": "GraphQL-based API server to encapsulate all kinds of REST APIs.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.graphql",
+      "path": "schema/root.graphql",
+      "sha": "3f492578c9ccb761ecb42a0e60eb327b4b0e9d4a",
+      "url": "https://api.github.com/repositories/91278046/contents/schema/root.graphql?ref=21f256ab55f86193d90c5b172cde92e27c9c27a5",
+      "git_url": "https://api.github.com/repositories/91278046/git/blobs/3f492578c9ccb761ecb42a0e60eb327b4b0e9d4a",
+      "html_url": "https://github.com/zhicwu/api-hub/blob/21f256ab55f86193d90c5b172cde92e27c9c27a5/schema/root.graphql",
+      "content": "type Query {\n  jobs: [PentahoJob]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/zhicwu/api-hub/blob/21f256ab55f86193d90c5b172cde92e27c9c27a5/schema/root.graphql:\ntype Query {\n  jobs: [PentahoJob]\n}\n# https://github.com/zhicwu/api-hub/blob/21f256ab55f86193d90c5b172cde92e27c9c27a5/schema/pentaho.graphql:\n# A type that describes a scheduled job on Pentaho BI server(now Pentaho Server)\ntype PentahoJob {\n    # group name\n    group: String!,\n    # job id\n    id: String!,\n    # job name\n    name: String!,\n    # last run\n    lastRun: String,\n    # next run\n    nextRun: String,\n    # job state\n    state: String!,\n    # user name\n    user: String!,\n    server: String!,\n    duration: Int!,\n    parameters: [PentahoJobParameter]!,\n    trigger: PentahoJobTrigger\n}\n\ntype PentahoJobParameter {\n    name: String!,\n    value: String\n}\n\ntype PentahoJobTrigger {\n    type: String!,\n    startTime: String\n}",
+        "mergedPaths": [
+          "schema/pentaho.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "PentahoJob"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "pentaho.graphql",
+      "path": "schema/pentaho.graphql",
+      "sha": "daa34f4707fdbdb44ee6da5e5f0b5d9c736daf56",
+      "url": "https://api.github.com/repositories/91278046/contents/schema/pentaho.graphql?ref=21f256ab55f86193d90c5b172cde92e27c9c27a5",
+      "git_url": "https://api.github.com/repositories/91278046/git/blobs/daa34f4707fdbdb44ee6da5e5f0b5d9c736daf56",
+      "html_url": "https://github.com/zhicwu/api-hub/blob/21f256ab55f86193d90c5b172cde92e27c9c27a5/schema/pentaho.graphql",
+      "content": "# A type that describes a scheduled job on Pentaho BI server(now Pentaho Server)\ntype PentahoJob {\n    # group name\n    group: String!,\n    # job id\n    id: String!,\n    # job name\n    name: String!,\n    # last run\n    lastRun: String,\n    # next run\n    nextRun: String,\n    # job state\n    state: String!,\n    # user name\n    user: String!,\n    server: String!,\n    duration: Int!,\n    parameters: [PentahoJobParameter]!,\n    trigger: PentahoJobTrigger\n}\n\ntype PentahoJobParameter {\n    name: String!,\n    value: String\n}\n\ntype PentahoJobTrigger {\n    type: String!,\n    startTime: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-14T23:39:20Z",
+    "updated_at": "2017-05-14T23:53:45Z",
+    "pushed_at": "2017-05-14T23:55:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

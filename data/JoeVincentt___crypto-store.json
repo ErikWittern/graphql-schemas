@@ -1,0 +1,41 @@
+{
+  "repo_name": "crypto-store",
+  "repo_full_name": "joevincentt/crypto-store",
+  "repo_owner": "JoeVincentt",
+  "repo_description": "Crypto-store, Client-side: ReactJS+GraphQL+Apollo Client 2.0+MaterializeCSS && Server-side: NodeJS+Apollo Server 2.0+MongoDB",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "c7977f6fc30ebdea9a1ff5af7508ca9d3bd6fa69",
+      "url": "https://api.github.com/repositories/171743918/contents/schema.graphql?ref=bee90b2d0344177cd406636af6e8520d9c1e2cca",
+      "git_url": "https://api.github.com/repositories/171743918/git/blobs/c7977f6fc30ebdea9a1ff5af7508ca9d3bd6fa69",
+      "html_url": "https://github.com/JoeVincentt/crypto-store/blob/bee90b2d0344177cd406636af6e8520d9c1e2cca/schema.graphql",
+      "content": "type Product {\n  _id: ID!\n  name: String!\n  imageUrl: String!\n  category: String!\n  description: String!\n  createdDate: String\n  likes: Int\n  username: String!\n  price: Int!\n}\n\ntype User {\n  _id: ID!\n  username: String!\n  password: String!\n  email: String!\n  joinDate: String\n  favorites: [Product]\n  cart: [Order]\n  cartTotal: Float!\n  wallet: Float!\n}\n\ntype Order {\n  _id: ID!\n  product: [Product]\n  quantity: Int!\n  user: [User]\n  status: String\n  createdAt: String\n  updatedAt: String\n}\n\ntype Query {\n  getAllProducts: [Product]\n  getProductsByCategory(category: String!): [Product]\n  getProductsByPrice(minPrice: Float, maxPrice: Float): [Product]\n  getProduct(_id: ID!): Product\n  searchProduct(searchTerm: String): [Product]\n\n  getCurrentUser: User\n  getUserProducts(username: String!): [Product]\n  getUser(_id: ID!): User\n\n  getAllOrders: [Order]\n  getOrder(_id: ID!): Order\n  getUserOrders(userId: ID!): [Order]\n  getSellerProductsOrders(prodId: ID!): [Order]\n}\n\ntype Token {\n  token: String!\n}\n\ntype Mutation {\n  # User Wallet Mutations\n  getCoins(userId: ID!, amount: Float!): User\n\n  # Checkout Mutations\n  wholeCartCheckout(userId: ID!): User\n\n  # Order Mutations\n  createOrder(prodId: ID!, userId: ID!, quantity: Int!): Order\n  deleteOrder(userId: ID!, orderId: ID!): Order\n  updateOrderQuantity(orderId: ID!, quantity: Int!): Order\n\n  # Product Mutations\n  addProduct(\n    name: String!\n    imageUrl: String!\n    description: String!\n    category: String!\n    username: String!\n    price: Int!\n  ): Product\n\n  deleteUserProduct(_id: ID): Product\n\n  updateUserProduct(\n    _id: ID!\n    name: String!\n    imageUrl: String!\n    description: String!\n    category: String!\n    price: Int!\n  ): Product\n\n  likeProduct(_id: ID!, username: String!): Product\n\n  unlikeProduct(_id: ID!, username: String!): Product\n\n  # User Mutations\n  signinUser(email: String!, password: String!): Token\n\n  signupUser(\n    username: String!\n    email: String!\n    password: String!\n    passwordConfirmation: String!\n  ): Token\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-20T20:26:37Z",
+    "updated_at": "2019-02-20T20:26:46Z",
+    "pushed_at": "2019-02-20T20:26:41Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

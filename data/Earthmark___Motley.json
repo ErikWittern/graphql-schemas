@@ -1,0 +1,42 @@
+{
+  "repo_name": "Motley",
+  "repo_full_name": "earthmark/motley",
+  "repo_owner": "Earthmark",
+  "repo_description": "Atlas Management Service",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "820197336e6573e81d3cfe52d2c4cbe06113fd28",
+      "url": "https://api.github.com/repositories/165780202/contents/server/schema.graphql?ref=2b5c64ca8efdb5b08ab6a4bfae7ec38eeab82ea2",
+      "git_url": "https://api.github.com/repositories/165780202/git/blobs/820197336e6573e81d3cfe52d2c4cbe06113fd28",
+      "html_url": "https://github.com/Earthmark/Motley/blob/2b5c64ca8efdb5b08ab6a4bfae7ec38eeab82ea2/server/schema.graphql",
+      "content": "type Query {\n  status: Status!\n}\n\ntype Subscription {\n  status: Status!\n}\n\ntype Status {\n  system: SystemStatus!\n  manager: ManagerStatus!\n  servers: [Server!]!\n}\n\ntype SystemStatus {\n  cpuLoad: Float!\n  usedMemory: Int!\n  totalMemory: Int!\n}\n\ntype ManagerStatus {\n  pid: Int!\n  cpuLoad: Float!\n  usedMemory: Int!\n}\n\ntype Server {\n  id: ID!\n  name: String!\n  runError: String\n  status: ServerStatus\n  options: ServerOptions!\n}\n\ntype ServerStatus {\n  players: Int!\n  maxPlayers: Int!\n  pid: Int!\n  cpuLoad: Float!\n  usedMemory: Int!\n}\n\ntype ServerOptions {\n  serverX: Int!\n  serverY: Int!\n  port: Int!\n  queryPort: Int!\n  altSaveDirectoryName: String!\n  maxPlayers: Int!\n  reservedPlayerSlots: Int!\n  seamlessIp: String!\n  rconPort: Int\n  battleEye: Boolean!\n  preExecArgs: String!\n  postExecArgs: [String!]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-15T03:38:34Z",
+    "updated_at": "2019-01-20T06:42:33Z",
+    "pushed_at": "2019-01-20T07:04:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

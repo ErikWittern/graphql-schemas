@@ -1,0 +1,42 @@
+{
+  "repo_name": "ms-user-management",
+  "repo_full_name": "nebulae-pyxis/ms-user-management",
+  "repo_owner": "nebulae-pyxis",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "api/sales-gateway/graphql/user-management/schema.gql",
+      "sha": "6659e1fe554b029156fd2556cdf095d21312a075",
+      "url": "https://api.github.com/repositories/144635382/contents/api/sales-gateway/graphql/user-management/schema.gql?ref=f4337c244825dea0ff708ecb48f70441bd3857da",
+      "git_url": "https://api.github.com/repositories/144635382/git/blobs/6659e1fe554b029156fd2556cdf095d21312a075",
+      "html_url": "https://github.com/nebulae-pyxis/ms-user-management/blob/f4337c244825dea0ff708ecb48f70441bd3857da/api/sales-gateway/graphql/user-management/schema.gql",
+      "content": "type TokenResponse {\n  \"Access token.\"\n  accessToken: String\n  \"Refresh token\"\n  refreshToken: String\n  \"Expiration time in seconds of the access token.\"\n  expiresIn: Int\n  \"Expiration time in seconds of the refresh token.\"\n  refreshExpiresIn: Int  \n}\n\ntype Query {\n  \"Gets token to make operations that require authentication. If the refresh token is passed as a parameter, we'll try to refresh the access token; otherwise, we will generate a new access token with the user and password.\"\n  getToken(username: String, password: String, refreshToken: String): TokenResponse\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-13T21:24:51Z",
+    "updated_at": "2019-04-12T18:15:26Z",
+    "pushed_at": "2019-04-12T18:15:25Z",
+    "issues": 4,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

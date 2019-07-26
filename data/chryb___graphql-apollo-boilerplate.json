@@ -1,0 +1,66 @@
+{
+  "repo_name": "graphql-apollo-boilerplate",
+  "repo_full_name": "chryb/graphql-apollo-boilerplate",
+  "repo_owner": "chryb",
+  "repo_description": "Simple GraphQL, Apollo Backend w/ Webpack, ES6, ESLint, Hot-Reload, GraphQL Schema Language Template",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "src/graphql/schema/types/query.graphql",
+      "sha": "3755f24f7f6381e27015ba6d0095e6519b14e86e",
+      "url": "https://api.github.com/repositories/104328563/contents/src/graphql/schema/types/query.graphql?ref=d7072c478290ed20687622dd259defa731999a0a",
+      "git_url": "https://api.github.com/repositories/104328563/git/blobs/3755f24f7f6381e27015ba6d0095e6519b14e86e",
+      "html_url": "https://github.com/chryb/graphql-apollo-boilerplate/blob/d7072c478290ed20687622dd259defa731999a0a/src/graphql/schema/types/query.graphql",
+      "content": "type Query {\n  counter: Counter\n}\n\nschema {\n  query: Query\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/chryb/graphql-apollo-boilerplate/blob/d7072c478290ed20687622dd259defa731999a0a/src/graphql/schema/types/query.graphql:\ntype Query {\n  counter: Counter\n}\n\nschema {\n  query: Query\n}\n# https://github.com/chryb/graphql-apollo-boilerplate/blob/d7072c478290ed20687622dd259defa731999a0a/src/graphql/schema/types/counter.graphql:\ntype Counter {\n  count: Int\n}",
+        "mergedPaths": [
+          "src/graphql/schema/types/counter.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Counter"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "counter.graphql",
+      "path": "src/graphql/schema/types/counter.graphql",
+      "sha": "15a6ec604773e441bc9d206dea90a49dd0379096",
+      "url": "https://api.github.com/repositories/104328563/contents/src/graphql/schema/types/counter.graphql?ref=d7072c478290ed20687622dd259defa731999a0a",
+      "git_url": "https://api.github.com/repositories/104328563/git/blobs/15a6ec604773e441bc9d206dea90a49dd0379096",
+      "html_url": "https://github.com/chryb/graphql-apollo-boilerplate/blob/d7072c478290ed20687622dd259defa731999a0a/src/graphql/schema/types/counter.graphql",
+      "content": "type Counter {\n  count: Int\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-21T09:30:42Z",
+    "updated_at": "2019-01-17T10:15:39Z",
+    "pushed_at": "2017-09-22T07:41:42Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

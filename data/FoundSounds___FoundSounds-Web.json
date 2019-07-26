@@ -1,0 +1,41 @@
+{
+  "repo_name": "FoundSounds-Web",
+  "repo_full_name": "foundsounds/foundsounds-web",
+  "repo_owner": "FoundSounds",
+  "repo_description": "Website for FoundSounds (WIP)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "256bc98b256a8954d50773e25552b74f65448dee",
+      "url": "https://api.github.com/repositories/157274430/contents/schema.graphql?ref=89d98a3bdec9a4539b7a84d41b2b9e764df44584",
+      "git_url": "https://api.github.com/repositories/157274430/git/blobs/256bc98b256a8954d50773e25552b74f65448dee",
+      "html_url": "https://github.com/FoundSounds/FoundSounds-Web/blob/89d98a3bdec9a4539b7a84d41b2b9e764df44584/schema.graphql",
+      "content": "# The mutation root\ntype Mutation {\n  create_sound(user_id: ID!, description: String!): SoundType\n  delete_sound(id: ID!): SoundType\n  edit_sound_description(id: ID!): SoundType\n}\n\n# Photo associated with sound\ntype PhotoType {\n  id: ID!\n  sound: SoundType!\n  user: UserType!\n  file_name: String!\n}\n\n# The query root\ntype Query {\n  # returns the queried sound\n  sound(id: ID!): SoundType\n\n  # returns all sounds\n  sounds: [SoundType]\n\n  # returns the queried user\n  user(id: ID!): UserType\n\n  # returns all users lists\n  users: [UserType]\n}\n\n# A sound\ntype SoundType {\n  abuse: Boolean!\n  commons: Boolean!\n  description: String\n  device_localized_model: String\n  device_model: String\n  device_name: String\n  device_screen_bounds: String\n  device_system_name: String\n  device_version: String\n  file_name: String!\n  id: ID!\n  latitude: Float!\n  longitude: Float!\n  photos: [PhotoType]\n  placement_address_dictionary: String\n  placement_administrative_area: String\n  placement_areas_of_interest: String\n  placement_country: String\n  placement_inland_water: String\n  placement_iso_country_code: String\n  placement_locality: String\n  placement_location: String\n  placement_name: String\n  placement_ocean: String\n  placement_postal_code: String\n  placement_region: String\n  placement_sub_thoroughfare: String\n  placement_thoroughfare: String\n  plays: Int!\n  public: Boolean!\n  user: UserType!\n}\n\n# A user\ntype UserType {\n  bio: String\n  created_at: String\n  email: String\n  id: ID!\n  name: String\n  photos: [PhotoType]\n  portrait: String\n  sounds: [SoundType]\n  twitter: String\n  url: String\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-12T20:44:47Z",
+    "updated_at": "2018-12-11T21:08:40Z",
+    "pushed_at": "2019-01-05T23:32:01Z",
+    "issues": 7,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 17,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 16,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

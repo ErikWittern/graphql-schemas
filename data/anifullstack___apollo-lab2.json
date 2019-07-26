@@ -1,0 +1,39 @@
+{
+  "repo_name": "apollo-lab2",
+  "repo_full_name": "anifullstack/apollo-lab2",
+  "repo_owner": "anifullstack",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "packages/server/src/api/rootSchema.graphql",
+      "sha": "71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "url": "https://api.github.com/repositories/121807846/contents/packages/server/src/api/rootSchema.graphql?ref=841f5b492924d9b449b7b5cdb6daf37b7618eb17",
+      "git_url": "https://api.github.com/repositories/121807846/git/blobs/71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "html_url": "https://github.com/anifullstack/apollo-lab2/blob/841f5b492924d9b449b7b5cdb6daf37b7618eb17/packages/server/src/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-16T22:31:38Z",
+    "updated_at": "2018-02-16T22:35:18Z",
+    "pushed_at": "2018-02-27T22:58:54Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

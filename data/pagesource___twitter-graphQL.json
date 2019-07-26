@@ -1,0 +1,41 @@
+{
+  "repo_name": "twitter-graphQL",
+  "repo_full_name": "pagesource/twitter-graphql",
+  "repo_owner": "pagesource",
+  "repo_description": "a GrapQL wrapper for the twitter API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gql-schema/schema.graphql",
+      "sha": "d37d36fe9c5f485284c9b6c249a0b7406d732e05",
+      "url": "https://api.github.com/repositories/74781154/contents/gql-schema/schema.graphql?ref=881234e2b5d975b079bd630069272d3ed23c0295",
+      "git_url": "https://api.github.com/repositories/74781154/git/blobs/d37d36fe9c5f485284c9b6c249a0b7406d732e05",
+      "html_url": "https://github.com/pagesource/twitter-graphQL/blob/881234e2b5d975b079bd630069272d3ed23c0295/gql-schema/schema.graphql",
+      "content": "schema {\n  query: TwitterAPI\n}\n\n# Retweet of a tweet\ntype Retweet {\n  id: ID\n  created_at: String\n  in_reply_to_tweet_id: String\n  in_reply_to_user_id: Int\n  in_reply_to_screen_name: String\n  retweeted_status: Tweet\n  user: TwitterUser\n}\n\n# A tweet object\ntype Tweet {\n  id: ID\n  created_at: String\n  text: String\n  retweet_count: Int\n  user: TwitterUser\n\n  # Get a list of retweets\n  retweets(limit: Int = 5): [Retweet]\n}\n\n# The Twitter API\ntype TwitterAPI {\n  tweet(\n    # Unique ID of tweet\n    id: String!\n  ): Tweet\n\n  # Returns a collection of relevant Tweets matching a specified query.\n  search(\n    # A UTF-8, URL-encoded search query of 500 characters maximum, including\n    # operators. Queries may additionally be limited by complexity.\n    q: String!\n\n    # The number of tweets to return per page, up to a maximum of 100. This was\n    # formerly the “rpp” parameter in the old Search API.\n    count: Int\n  ): Viewer\n}\n\n# Twitter user\ntype TwitterUser {\n  created_at: String\n  description: String\n  id: ID\n  screen_name: String\n  name: String\n  profile_image_url: String\n  url: String\n\n  # Get location of user\n  location: String\n  tweets_count: Int\n\n  # Get location of user\n  weather: String\n  followers_count: Int\n\n  # Get a list of tweets for current user\n  tweets(limit: Int = 10): [Tweet]\n}\n\ntype Viewer {\n  tweet: [Tweet]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-11-25T18:46:12Z",
+    "updated_at": "2018-04-20T15:11:07Z",
+    "pushed_at": "2017-04-14T11:18:59Z",
+    "issues": 2,
+    "watchers": 7,
+    "fork_count": 11,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 13
+  }
+}

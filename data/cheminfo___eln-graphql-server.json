@@ -1,0 +1,42 @@
+{
+  "repo_name": "eln-graphql-server",
+  "repo_full_name": "cheminfo/eln-graphql-server",
+  "repo_owner": "cheminfo",
+  "repo_description": "GraphQL server for ELN data",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "schema.gql",
+      "sha": "1e3fe2f1c91775445f98d2f484da69836330af5a",
+      "url": "https://api.github.com/repositories/156873517/contents/schema.gql?ref=e782873fe24c33fc62177af8be1417900279d6e8",
+      "git_url": "https://api.github.com/repositories/156873517/git/blobs/1e3fe2f1c91775445f98d2f484da69836330af5a",
+      "html_url": "https://github.com/cheminfo/eln-graphql-server/blob/e782873fe24c33fc62177af8be1417900279d6e8/schema.gql",
+      "content": "type User {\n  id: ID!\n  email: String!\n}\n\ntype StockPlate {\n  rows: Int!\n  cols: Int!\n  format: String!\n}\n\ntype StockLocation {\n  location: String!\n  plate: StockPlate\n  # todo: use an enum?\n  # possible values: https://github.com/cheminfo-js/visualizer-helper/blob/master/eln/StockHelper.js\n  status: Int!\n  date: String!\n  user: User!\n}\n\ntype Stock {\n  supplier: String\n  description: String\n  catalogNumber: String\n  qty: String\n  currentLocation: StockLocation\n  history: [StockLocation]!\n}\n\ntype Sample {\n  id: ID\n  creationDate: String!\n  modificationDate: String!\n  stock: Stock\n}\n\ninput StockPlateInput {\n  rows: Int!\n  cols: Int!\n  format: String!\n}\n\ninput ChangeStockLocationInput {\n  location: String!\n  plate: StockPlateInput\n  status: Int!\n}\n\ntype ChangeStockLocationPayload {\n  location: StockLocation!\n}\n\ntype Query {\n  sample(id: ID!): Sample\n}\n\ntype Mutation {\n  changeStockLocation(\n    id: ID!\n    input: ChangeStockLocationInput\n  ): ChangeStockLocationPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-09T14:31:00Z",
+    "updated_at": "2019-01-17T22:37:48Z",
+    "pushed_at": "2019-01-17T22:37:47Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

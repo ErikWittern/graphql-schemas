@@ -1,0 +1,42 @@
+{
+  "repo_name": "apollo-graphql-api",
+  "repo_full_name": "lou-parslow/apollo-graphql-api",
+  "repo_owner": "lou-parslow",
+  "repo_description": "cookie cutter for apollo graphql api",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "example-api/typeDefs.graphql",
+      "sha": "c505bcc0a2fb72bc0e8222361138920aa5f65a3f",
+      "url": "https://api.github.com/repositories/162617145/contents/example-api/typeDefs.graphql?ref=48c41c8c073ac7059eccc7ec89149df6d30b317a",
+      "git_url": "https://api.github.com/repositories/162617145/git/blobs/c505bcc0a2fb72bc0e8222361138920aa5f65a3f",
+      "html_url": "https://github.com/lou-parslow/apollo-graphql-api/blob/48c41c8c073ac7059eccc7ec89149df6d30b317a/example-api/typeDefs.graphql",
+      "content": "scalar DateTime\n\ntype Comment {\n    id: ID!\n    message: String!\n    created: DateTime!\n}\n\ntype Query{\n    totalComments: Int!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-20T18:35:04Z",
+    "updated_at": "2018-12-20T20:33:47Z",
+    "pushed_at": "2018-12-20T20:33:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

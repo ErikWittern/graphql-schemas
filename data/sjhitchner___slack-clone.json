@@ -1,0 +1,41 @@
+{
+  "repo_name": "slack-clone",
+  "repo_full_name": "sjhitchner/slack-clone",
+  "repo_owner": "sjhitchner",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "backend/schema.gql",
+      "sha": "8a4f0322e58f2654992ba52f5b3b20b56705f73f",
+      "url": "https://api.github.com/repositories/146028985/contents/backend/schema.gql?ref=d94dc670055fc736b3297b6ea0d5ff7bdd6d2c67",
+      "git_url": "https://api.github.com/repositories/146028985/git/blobs/8a4f0322e58f2654992ba52f5b3b20b56705f73f",
+      "html_url": "https://github.com/sjhitchner/slack-clone/blob/d94dc670055fc736b3297b6ea0d5ff7bdd6d2c67/backend/schema.gql",
+      "content": "type Team {\n    id: ID!\n    owner: User!\n\tname: String!\n    members: [User!]!\n    channels: [Channel!]!\n}\n\ntype Channel {\n    id: ID!\n    name: String!\n    isPublic: Boolean!\n\towner: User!\n\tteam: Team!\n    messages: [Message!]!\n    members: [User!]!\n}\n\ntype Message {\n    id: ID!\n    text: String!\n    user: User!\n\ttimestamp: String!\n    channel: Channel!\n}\n\ntype User {\n\tid: ID!\n    username: String!\n    email: String!\n    teams: [Team!]!\n}\n\ntype Query {\n\tping: String!\n\n\tuserList: [User!]!\n\n\tuserTeamList(userId: ID!): [Team!]!\n\tchannelMessageList(channelId: ID!): [Message!]!\n\tteamChannelList(teamId: ID!): [Channel!]!\n\n\tteam(id: ID!): Team!\n\tchannel(id: ID!): Channel!\n\tuser(id: ID!): User!\n}\n\ninput CreateUserInput {\n\tusername: String!\n\temail: String!\n\tpassword: String!\n}\n\ninput SendMessageInput {\n\tuserId: ID!\n\tchannelId: ID!\n\ttext: String!\n}\n\ninput CreateTeamInput {\n\tname: String!\n\townerId: ID!\n}\n\ninput CreateChannelInput {\n\tteamId: ID!\n\townerId: ID!\n\tname: String!\n\tisPublic: Boolean!\n}\n\ninput TeamMemberInput {\n\tteamId: ID!\n\tuserId: ID!\n}\n\ninput ChannelMemberInput {\n\tchannelId: ID!\n\tuserId: ID!\n}\n\ntype CreateUserOutput {\n\tuser: User!\n}\n\ntype CreateTeamOutput {\n\tteam: Team!\n}\n\ntype CreateChannelOutput {\n\tchannel: Channel!\n}\n\ntype SendMessageOutput {\n\tok: Boolean!\n}\n\ntype TeamMemberOutput {\n\tok: Boolean!\n}\n\ntype ChannelMemberOutput {\n\tok: Boolean!\n}\n\ntype Mutation {\n\tcreateUser(input: CreateUserInput!): CreateUserOutput!\n\tcreateTeam(input: CreateTeamInput!): CreateTeamOutput!\n\tcreateChannel(input: CreateChannelInput!): CreateChannelOutput!\n\n\taddTeamMember(input: TeamMemberInput!): TeamMemberOutput!\n\tdeleteTeamMember(input: TeamMemberInput!): TeamMemberOutput!\n\n\taddChannelMember(input: ChannelMemberInput!): ChannelMemberOutput!\n\tdeleteChannelMember(input: ChannelMemberInput!): ChannelMemberOutput!\n\n\tsendMessage(input: SendMessageInput!): SendMessageOutput!\n}\n\nschema {\n\tquery: Query\n\tmutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": true,
+      "numDefinitions": 19
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-24T18:55:08Z",
+    "updated_at": "2018-08-28T00:06:38Z",
+    "pushed_at": "2018-09-30T08:01:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

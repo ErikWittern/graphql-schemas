@@ -1,0 +1,42 @@
+{
+  "repo_name": "CollaborativeWeightTracker",
+  "repo_full_name": "bytepassion/collaborativeweighttracker",
+  "repo_owner": "bytePassion",
+  "repo_description": "A Weighttracker to track and compare weight loss to stay motivated",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "weight-entries.graphql",
+      "path": "src/schemas/weight-entries.graphql",
+      "sha": "e83200940bf3f99bbda31b1b17005fdeb984be3d",
+      "url": "https://api.github.com/repositories/149101441/contents/src/schemas/weight-entries.graphql?ref=007aa649404fade0f1b93ea14f4e0a55f940b226",
+      "git_url": "https://api.github.com/repositories/149101441/git/blobs/e83200940bf3f99bbda31b1b17005fdeb984be3d",
+      "html_url": "https://github.com/bytePassion/CollaborativeWeightTracker/blob/007aa649404fade0f1b93ea14f4e0a55f940b226/src/schemas/weight-entries.graphql",
+      "content": "\ntype Query {\n    getWeightEntries: [WeightEntry]\n    weightEntry(id: ID!): WeightEntry\n    getWeightEntriesByUser: [WeightEntry]\n}\n\ntype Mutation {\n    createWeightEntry(createWeightEntryInput: WeightEntryInput): WeightEntry\n}\n\ntype WeightEntry {\n    id: Int\n    weight: Float\n    timestamp: Int\n}\n\n\ninput WeightEntryInput {\n    weight: Float\n    timestamp: Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-17T09:30:12Z",
+    "updated_at": "2018-10-30T21:00:17Z",
+    "pushed_at": "2018-12-02T22:01:10Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

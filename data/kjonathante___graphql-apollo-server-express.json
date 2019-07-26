@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-apollo-server-express",
+  "repo_full_name": "kjonathante/graphql-apollo-server-express",
+  "repo_owner": "kjonathante",
+  "repo_description": "GraphQL Server implementation using apollo-server-express (Apollo Server 2)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "0dad7e9e4934b73890e9f761ccc16257e5a66a26",
+      "url": "https://api.github.com/repositories/152947861/contents/src/schema.graphql?ref=8ffd4966a4cafbaa0f0c45f1f825623ec9e5681b",
+      "git_url": "https://api.github.com/repositories/152947861/git/blobs/0dad7e9e4934b73890e9f761ccc16257e5a66a26",
+      "html_url": "https://github.com/kjonathante/graphql-apollo-server-express/blob/8ffd4966a4cafbaa0f0c45f1f825623ec9e5681b/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-14T06:57:51Z",
+    "updated_at": "2018-10-22T17:36:05Z",
+    "pushed_at": "2018-10-22T17:36:03Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

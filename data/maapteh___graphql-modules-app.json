@@ -1,0 +1,107 @@
+{
+  "repo_name": "graphql-modules-app",
+  "repo_full_name": "maapteh/graphql-modules-app",
+  "repo_owner": "maapteh",
+  "repo_description": "TypeScripted NodeJS Apollo GraphQL server in modules, with React SSR/client side application. Clean in building tools.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "packages/graphql-server/src/modules/content/schema/query.graphql",
+      "sha": "8a25de90a5813248fd7eda94ed8a83ef3fba616c",
+      "url": "https://api.github.com/repositories/159690133/contents/packages/graphql-server/src/modules/content/schema/query.graphql?ref=227206e79168f52eea63c5045e02e0e961f5c5e3",
+      "git_url": "https://api.github.com/repositories/159690133/git/blobs/8a25de90a5813248fd7eda94ed8a83ef3fba616c",
+      "html_url": "https://github.com/maapteh/graphql-modules-app/blob/227206e79168f52eea63c5045e02e0e961f5c5e3/packages/graphql-server/src/modules/content/schema/query.graphql",
+      "content": "type Query {\n    \"\"\"\n    Content Facade for retrieving a page by it's ID\n    \"\"\"\n    getContentPage(id: String!): Content\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/maapteh/graphql-modules-app/blob/227206e79168f52eea63c5045e02e0e961f5c5e3/packages/graphql-server/src/modules/content/schema/query.graphql:\ntype Query {\n    \"\"\"\n    Content Facade for retrieving a page by it's ID\n    \"\"\"\n    getContentPage(id: String!): Content\n}\n\n# https://github.com/maapteh/graphql-modules-app/blob/227206e79168f52eea63c5045e02e0e961f5c5e3/packages/graphql-server/src/modules/content/schema/content.graphql:\n# TODO: PUT IN GENERIC PLACE\ndirective @cacheControl(\n    maxAge: Int\n    scope: CacheControlScope\n) on OBJECT | FIELD_DEFINITION | INTERFACE\n\nenum CacheControlScope {\n    PUBLIC\n    PRIVATE\n}\n\ntype Content @cacheControl(maxAge: 240) {\n    meta: ContentMeta\n    components: [ContentComponent]\n}\n\n\"\"\"\nMeta information about the page\n\"\"\"\ntype ContentMeta {\n    title: String\n    description: String\n    canonical: String!\n}\n\n\"\"\"\nOur Lanes with components\n\"\"\"\ninterface ContentComponent {\n    id: String!\n    type: String!\n}\n\n# TODO: what type of products do we have and how does their interface look like?\n\n# UNKNOWN COMPONENT DEFAULT\ntype ContentComponentUnknown implements ContentComponent {\n    id: String!\n    type: String!\n}\n\n# GENERIC STUFF FOR CONTENT OVERHERE\n# TODO: IMAGES SETUP\ntype ContentImageSetSmallLarge {\n    description: String\n    small: String\n    large: String\n}\n",
+        "mergedPaths": [
+          "packages/graphql-server/src/modules/content/schema/content.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Content"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 8
+      },
+      "validSchema": false
+    },
+    {
+      "name": "content.graphql",
+      "path": "packages/graphql-server/src/modules/content/schema/content.graphql",
+      "sha": "3059311916353e0f6eb03e2b9a5adf6f81fb2e2d",
+      "url": "https://api.github.com/repositories/159690133/contents/packages/graphql-server/src/modules/content/schema/content.graphql?ref=227206e79168f52eea63c5045e02e0e961f5c5e3",
+      "git_url": "https://api.github.com/repositories/159690133/git/blobs/3059311916353e0f6eb03e2b9a5adf6f81fb2e2d",
+      "html_url": "https://github.com/maapteh/graphql-modules-app/blob/227206e79168f52eea63c5045e02e0e961f5c5e3/packages/graphql-server/src/modules/content/schema/content.graphql",
+      "content": "# TODO: PUT IN GENERIC PLACE\ndirective @cacheControl(\n    maxAge: Int\n    scope: CacheControlScope\n) on OBJECT | FIELD_DEFINITION | INTERFACE\n\nenum CacheControlScope {\n    PUBLIC\n    PRIVATE\n}\n\ntype Content @cacheControl(maxAge: 240) {\n    meta: ContentMeta\n    components: [ContentComponent]\n}\n\n\"\"\"\nMeta information about the page\n\"\"\"\ntype ContentMeta {\n    title: String\n    description: String\n    canonical: String!\n}\n\n\"\"\"\nOur Lanes with components\n\"\"\"\ninterface ContentComponent {\n    id: String!\n    type: String!\n}\n\n# TODO: what type of products do we have and how does their interface look like?\n\n# UNKNOWN COMPONENT DEFAULT\ntype ContentComponentUnknown implements ContentComponent {\n    id: String!\n    type: String!\n}\n\n# GENERIC STUFF FOR CONTENT OVERHERE\n# TODO: IMAGES SETUP\ntype ContentImageSetSmallLarge {\n    description: String\n    small: String\n    large: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 7
+    },
+    {
+      "name": "query.graphql",
+      "path": "packages/graphql-server/src/modules/product/schema/query.graphql",
+      "sha": "859dd91143011c69076f7a7dcd3265fe9e5e882b",
+      "url": "https://api.github.com/repositories/159690133/contents/packages/graphql-server/src/modules/product/schema/query.graphql?ref=227206e79168f52eea63c5045e02e0e961f5c5e3",
+      "git_url": "https://api.github.com/repositories/159690133/git/blobs/859dd91143011c69076f7a7dcd3265fe9e5e882b",
+      "html_url": "https://github.com/maapteh/graphql-modules-app/blob/227206e79168f52eea63c5045e02e0e961f5c5e3/packages/graphql-server/src/modules/product/schema/query.graphql",
+      "content": "type Query {\n    \"\"\"\n    Get all products for a specific list\n    \"\"\"\n    getProducts(id: String!): Products\n\n    \"\"\"\n    Get single product\n    \"\"\"\n    getProduct(id: String!): Product\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/maapteh/graphql-modules-app/blob/227206e79168f52eea63c5045e02e0e961f5c5e3/packages/graphql-server/src/modules/product/schema/query.graphql:\ntype Query {\n    \"\"\"\n    Get all products for a specific list\n    \"\"\"\n    getProducts(id: String!): Products\n\n    \"\"\"\n    Get single product\n    \"\"\"\n    getProduct(id: String!): Product\n}\n\n# https://github.com/maapteh/graphql-modules-app/blob/5e67580735bca54eb63b49d55133db010d96082d/packages/graphql-server/src/modules/product/schema/product.graphql:\ndirective @cacheControl(\n    maxAge: Int\n    scope: CacheControlScope\n) on OBJECT | FIELD_DEFINITION | INTERFACE\n\nenum CacheControlScope {\n    PUBLIC\n    PRIVATE\n}\n\n\"\"\"\nProducts for a specific category, model is taken as is from bol.com\n\"\"\"\ntype Products @cacheControl(maxAge: 2400) {\n    products: [Product]\n    schemaVersion: String\n    totalResultSize: Int\n    originalRequest: ProductsOriginalRequest\n}\n\ntype Product @cacheControl(maxAge: 2400) {\n    id: String\n    ean: String\n    title: String\n    specsTag: String\n    summary: String\n    rating: Int\n    shortDescription: String\n    urls: [ProductUrls]\n    images: [ProductImages]\n    \"\"\"\n    \"\n    weird, media is same as images\n    \"\"\"\n    media: [ProductImages]\n    offerData: ProductOfferData\n    parentCategoryPaths: ProductParentCategoryPaths\n}\n\ntype ProductUrls @cacheControl(maxAge: 2400) {\n    key: String\n    value: String\n}\n\ntype ProductImages @cacheControl(maxAge: 2400) {\n    type: String\n    key: String\n    url: String\n}\n\ntype ProductOfferData {\n    bolCom: Int\n    nonProfessionalSellers: Int\n    professionalSellers: Int\n    offers: ProductOfferDataOffers\n}\n\ntype ProductOfferDataOffers {\n    id: String\n    condition: String\n    price: Int\n    listPrice: Float\n    availabilityCode: String\n    availabilityDescription: String\n    comment: String\n    seller: ProductSeller\n    bestOffer: Boolean\n    releaseDate: String\n}\n\ntype ProductSeller {\n    id: String\n    sellerType: String\n    displayName: String\n    url: String\n    topSeller: Boolean\n    useWarrantyRepairConditions: Boolean\n}\n\ntype ProductParentCategoryPaths {\n    parentCategories: ProductParentCategory\n}\n\ntype ProductParentCategory {\n    id: String\n    name: String\n}\n\ntype ProductsOriginalRequest {\n    category: [ProductsOriginalRequestCategory]\n}\n\ntype ProductsOriginalRequestCategory {\n    id: Int\n    name: String\n    productCount: Int\n}\n",
+        "mergedPaths": [
+          "packages/graphql-server/src/modules/product/schema/product.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Products",
+          "Product"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 12,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 14
+      },
+      "validSchema": false
+    },
+    {
+      "name": "product.graphql",
+      "path": "packages/graphql-server/src/modules/product/schema/product.graphql",
+      "sha": "520c04ba97e7470a94927be2023d5e67bcc64555",
+      "url": "https://api.github.com/repositories/159690133/contents/packages/graphql-server/src/modules/product/schema/product.graphql?ref=5e67580735bca54eb63b49d55133db010d96082d",
+      "git_url": "https://api.github.com/repositories/159690133/git/blobs/520c04ba97e7470a94927be2023d5e67bcc64555",
+      "html_url": "https://github.com/maapteh/graphql-modules-app/blob/5e67580735bca54eb63b49d55133db010d96082d/packages/graphql-server/src/modules/product/schema/product.graphql",
+      "content": "directive @cacheControl(\n    maxAge: Int\n    scope: CacheControlScope\n) on OBJECT | FIELD_DEFINITION | INTERFACE\n\nenum CacheControlScope {\n    PUBLIC\n    PRIVATE\n}\n\n\"\"\"\nProducts for a specific category, model is taken as is from bol.com\n\"\"\"\ntype Products @cacheControl(maxAge: 2400) {\n    products: [Product]\n    schemaVersion: String\n    totalResultSize: Int\n    originalRequest: ProductsOriginalRequest\n}\n\ntype Product @cacheControl(maxAge: 2400) {\n    id: String\n    ean: String\n    title: String\n    specsTag: String\n    summary: String\n    rating: Int\n    shortDescription: String\n    urls: [ProductUrls]\n    images: [ProductImages]\n    \"\"\"\n    \"\n    weird, media is same as images\n    \"\"\"\n    media: [ProductImages]\n    offerData: ProductOfferData\n    parentCategoryPaths: ProductParentCategoryPaths\n}\n\ntype ProductUrls @cacheControl(maxAge: 2400) {\n    key: String\n    value: String\n}\n\ntype ProductImages @cacheControl(maxAge: 2400) {\n    type: String\n    key: String\n    url: String\n}\n\ntype ProductOfferData {\n    bolCom: Int\n    nonProfessionalSellers: Int\n    professionalSellers: Int\n    offers: ProductOfferDataOffers\n}\n\ntype ProductOfferDataOffers {\n    id: String\n    condition: String\n    price: Int\n    listPrice: Float\n    availabilityCode: String\n    availabilityDescription: String\n    comment: String\n    seller: ProductSeller\n    bestOffer: Boolean\n    releaseDate: String\n}\n\ntype ProductSeller {\n    id: String\n    sellerType: String\n    displayName: String\n    url: String\n    topSeller: Boolean\n    useWarrantyRepairConditions: Boolean\n}\n\ntype ProductParentCategoryPaths {\n    parentCategories: ProductParentCategory\n}\n\ntype ProductParentCategory {\n    id: String\n    name: String\n}\n\ntype ProductsOriginalRequest {\n    category: [ProductsOriginalRequestCategory]\n}\n\ntype ProductsOriginalRequestCategory {\n    id: Int\n    name: String\n    productCount: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-29T15:47:36Z",
+    "updated_at": "2019-06-03T23:45:05Z",
+    "pushed_at": "2019-03-05T19:48:12Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 3,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

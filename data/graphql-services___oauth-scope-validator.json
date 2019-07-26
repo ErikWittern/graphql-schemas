@@ -1,0 +1,42 @@
+{
+  "repo_name": "oauth-scope-validator",
+  "repo_full_name": "graphql-services/oauth-scope-validator",
+  "repo_owner": "graphql-services",
+  "repo_description": "GraphQL service for validating oauth user scopes based on user's graphql/iam permissions",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "1ea298bceba051316fc0b22d3a3c56c69588e4cc",
+      "url": "https://api.github.com/repositories/181713134/contents/schema.graphql?ref=f01926f1f3049b2da6a7286793c63625fff3e063",
+      "git_url": "https://api.github.com/repositories/181713134/git/blobs/1ea298bceba051316fc0b22d3a3c56c69588e4cc",
+      "html_url": "https://github.com/graphql-services/oauth-scope-validator/blob/f01926f1f3049b2da6a7286793c63625fff3e063/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype UserScopeValidationResponse {\n  valid: Boolean!\n}\n\ntype Query {\n  validateUserScope(user: ID!, scope: String!): UserScopeValidationResponse!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-16T15:06:05Z",
+    "updated_at": "2019-05-28T12:02:51Z",
+    "pushed_at": "2019-05-28T12:02:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

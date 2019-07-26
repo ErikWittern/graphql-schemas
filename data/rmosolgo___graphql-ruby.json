@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-ruby",
+  "repo_full_name": "rmosolgo/graphql-ruby",
+  "repo_owner": "rmosolgo",
+  "repo_description": "Ruby implementation of GraphQL ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "spec/support/magic_cards/schema.graphql",
+      "sha": "006294e70a5878e9579093a578da76749f514fd2",
+      "url": "https://api.github.com/repositories/30337170/contents/spec/support/magic_cards/schema.graphql?ref=73ac09cb95a0b03b3f00c09921b65534f66d0ae6",
+      "git_url": "https://api.github.com/repositories/30337170/git/blobs/006294e70a5878e9579093a578da76749f514fd2",
+      "html_url": "https://github.com/rmosolgo/graphql-ruby/blob/73ac09cb95a0b03b3f00c09921b65534f66d0ae6/spec/support/magic_cards/schema.graphql",
+      "content": "type Card {\n  name: String!\n  printings: [Printing!]!\n  expansions: [Expansion!]!\n  colors: [Color!]!\n  convertedManaCost: Int!\n}\n\ntype Expansion {\n  name: String!\n  symbol: String!\n  printings: [Printing!]!\n  cards: [Card!]!\n}\n\ntype Printing {\n  card: Card!\n  expansion: Expansion!\n}\n\nenum Color {\n  RED\n  GREEN\n  BLACK\n  BLUE\n  WHITE\n  COLORLESS\n}\n\ntype Query {\n  card(name: String!): Card\n  expansion(symbol: String!): Expansion\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-02-05T04:11:22Z",
+    "updated_at": "2019-07-19T21:24:40Z",
+    "pushed_at": "2019-07-19T19:55:57Z",
+    "issues": 1097,
+    "watchers": 83,
+    "fork_count": 692,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1291,
+    "pull_requests_open": 26,
+    "pull_requests_closed": 173,
+    "pull_requests_merged": 1092,
+    "releases": 2,
+    "stargazers": 3805
+  }
+}

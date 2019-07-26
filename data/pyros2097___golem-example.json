@@ -1,0 +1,42 @@
+{
+  "repo_name": "golem-example",
+  "repo_full_name": "pyros2097/golem-example",
+  "repo_owner": "pyros2097",
+  "repo_description": "A web app demonstrating golem's capabilities",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "core.gql",
+      "path": "schemas/core.gql",
+      "sha": "8f365b30988990bdb160d95c5095caaf19976f47",
+      "url": "https://api.github.com/repositories/117565900/contents/schemas/core.gql?ref=e5ba1b3f7d9aa0ef2d2b6e1229a2cecc551c5cbe",
+      "git_url": "https://api.github.com/repositories/117565900/git/blobs/8f365b30988990bdb160d95c5095caaf19976f47",
+      "html_url": "https://github.com/pyros2097/golem-example/blob/e5ba1b3f7d9aa0ef2d2b6e1229a2cecc551c5cbe/schemas/core.gql",
+      "content": "interface Node {\n  ID: String\n}\nscalar Name\nscalar URL\nscalar Time\nscalar Timezone\nscalar Image\nscalar Password\nscalar Email\nscalar Title\nscalar Description\nscalar ID\nscalar UUID\ntype PageInfo {\n  HasNextPage: Boolean!\n  HasPreviousPage: Boolean!\n  StartCursor: String\n  EndCursor: String\n}\nenum UserRole {\n  Admin\n  Manager\n  Player\n}\ntype User implements Node  {\n  ID: String\n  Name: String\n  Email: String\n  Enabled: Boolean!\n  Role: UserRole\n  CreatedAt: Time\n  UpdatedAt: Time\n}\ntype Company implements Node  {\n  ID: String\n  UserID: String\n  Name: String\n  Description: String\n  Image: String\n  Logo: String\n  Favicon: String\n  Timezone: String\n  Locale: String\n  Config: CompanyConfig\n  CreatedAt: Time\n  UpdatedAt: Time\n}\ntype CompanyConfig {\n  Color: String\n  Logo: String\n}\ntype CompanyEdge {\n  Cursor: String\n  Node: Company\n}\ntype CompanyConnection {\n  Edges: [CompanyEdge]\n}\ntype Viewer {\n  ID: String\n  LoggedIn: Boolean!\n  Me: User\n}\ntype Query {\n  Node(ID: String): Node\n  Nodes(IDs: [String]): [Node]\n  Viewer: Viewer\n}\ninput UserActivateParams {\n  TokenID: UUID\n  ClientMutationId: String!\n}\ntype UserActivateOutput {\n  ClientMutationId: String!\n}\ninput UserCreateParams {\n  Name: Name\n  Email: Email\n  Password: Password\n  ClientMutationId: String!\n}\ntype UserCreateOutput {\n  ClientMutationId: String!\n}\ninput UserLoginParams {\n  Email: Email\n  Password: Password\n  ClientMutationId: String!\n}\ntype UserLoginOutput {\n  ClientMutationId: String!\n}\ninput UserLogoutParams {\n  ClientMutationId: String!\n}\ntype UserLogoutOutput {\n  ClientMutationId: String!\n  Message: String\n}\ninput UserPasswordResetParams {\n  Token: UUID\n  Password: Password\n  ClientMutationId: String!\n}\ntype UserPasswordResetParamsOutput {\n  ClientMutationId: String!\n}\ninput UserPasswordResetRequestParams {\n  Email: Email\n  ClientMutationId: String!\n}\ntype UserPasswordResetRequestOutput {\n  ClientMutationId: String!\n}\ninput UserPasswordUpdateParams {\n  ClientMutationId: String!\n  OldPassword: Password\n  NewPassword: Password\n}\ntype UserPasswordUpdateOutput {\n  ClientMutationId: String!\n}\ninput UserProfileUpdateParams {\n  ClientMutationId: String!\n  Name: Name\n}\ntype UserProfileUpdateOutput {\n  ClientMutationId: String!\n}\ntype Mutation {\n  UserActivate(input: UserActivateParams!): UserActivateOutput\n  UserCreate(input: UserCreateParams!): UserCreateOutput\n  UserLogin(input: UserLoginParams!): UserLoginOutput\n  UserLogout(input: UserLogoutParams!): UserLogoutOutput\n  UserPasswordReset(input: UserPasswordResetParams!): UserPasswordResetParamsOutput\n  UserPasswordResetRequest(input: UserPasswordResetRequestParams!): UserPasswordResetRequestOutput\n  UserPasswordUpdate(input: UserPasswordUpdateParams!): UserPasswordUpdateOutput\n  UserProfileUpdate(input: UserProfileUpdateParams!): UserProfileUpdateOutput\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 17,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 38
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-15T16:00:39Z",
+    "updated_at": "2018-01-15T16:15:15Z",
+    "pushed_at": "2018-01-15T16:15:21Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

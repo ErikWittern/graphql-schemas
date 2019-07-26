@@ -1,0 +1,39 @@
+{
+  "repo_name": "FEM-api-design-graphql",
+  "repo_full_name": "perfettiful/fem-api-design-graphql",
+  "repo_owner": "perfettiful",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.gql",
+      "path": "src/types/user/user.gql",
+      "sha": "3b6b39894e0e525c23e1cca683337def5f72253e",
+      "url": "https://api.github.com/repositories/160373976/contents/src/types/user/user.gql?ref=ec4a73a86487c84da599ee57ee9f74858e45c88b",
+      "git_url": "https://api.github.com/repositories/160373976/git/blobs/3b6b39894e0e525c23e1cca683337def5f72253e",
+      "html_url": "https://github.com/perfettiful/FEM-api-design-graphql/blob/ec4a73a86487c84da599ee57ee9f74858e45c88b/src/types/user/user.gql",
+      "content": "type User {\n  _id: ID!\n  email: String!\n  apiKey: String!\n  role: String!\n}\n\ntype Query {\n  me: User!\n}\n\ninput NewUserInput {\n  email: String!\n  password: String!\n  role: String\n}\n\ninput UpdateUserInput {\n  email: String\n}\n\ntype Mutation {\n  signup(input: NewUserInput!): User!\n  updateMe(input: UpdateUserInput!): User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-04T14:55:59Z",
+    "updated_at": "2018-12-04T21:36:15Z",
+    "pushed_at": "2018-12-04T21:36:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

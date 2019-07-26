@@ -1,0 +1,39 @@
+{
+  "repo_name": "netlify-dev-graphql-gateway",
+  "repo_full_name": "sw-yx/netlify-dev-graphql-gateway",
+  "repo_owner": "sw-yx",
+  "repo_description": "netlify-dev-graphql-gateway",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "functions/fauna-graphql/schema.graphql",
+      "sha": "c90dad504ccc3d9f87c41301d9f41e5f34db480d",
+      "url": "https://api.github.com/repositories/180646505/contents/functions/fauna-graphql/schema.graphql?ref=f070f681f165404dfc9c31e465cc978ba6bb9014",
+      "git_url": "https://api.github.com/repositories/180646505/git/blobs/c90dad504ccc3d9f87c41301d9f41e5f34db480d",
+      "html_url": "https://github.com/sw-yx/netlify-dev-graphql-gateway/blob/f070f681f165404dfc9c31e465cc978ba6bb9014/functions/fauna-graphql/schema.graphql",
+      "content": "type Todo {\n  title: String!\n  completed: Boolean!\n}\ntype Query {\n  allTodos: [Todo!]\n  todosByCompletedFlag(completed: Boolean!): [Todo!]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-10T19:05:15Z",
+    "updated_at": "2019-04-10T20:29:58Z",
+    "pushed_at": "2019-04-10T19:07:08Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "how-to-graphql",
+  "repo_full_name": "moonkaman/how-to-graphql",
+  "repo_owner": "Moonkaman",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e6f38580e2d88f2055a8b5a0c74011c1efa60da2",
+      "url": "https://api.github.com/repositories/176976584/contents/src/schema.graphql?ref=41cd588386e0e1285ad6c1c2e2a46d659275ebc4",
+      "git_url": "https://api.github.com/repositories/176976584/git/blobs/e6f38580e2d88f2055a8b5a0c74011c1efa60da2",
+      "html_url": "https://github.com/Moonkaman/how-to-graphql/blob/41cd588386e0e1285ad6c1c2e2a46d659275ebc4/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  feed: [Link!]!\n  link(id: ID!): Link\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n  updateLink(id: ID!, url: String, description: String): Link\n  deleteLink(id: ID!): Link\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n  postedBy: User\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-21T15:44:44Z",
+    "updated_at": "2019-03-25T20:20:15Z",
+    "pushed_at": "2019-03-25T20:20:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

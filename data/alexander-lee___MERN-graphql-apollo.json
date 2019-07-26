@@ -1,0 +1,78 @@
+{
+  "repo_name": "MERN-graphql-apollo",
+  "repo_full_name": "alexander-lee/mern-graphql-apollo",
+  "repo_owner": "alexander-lee",
+  "repo_description": "A boilerplate featuring MySQL, Express, React, Node, GraphQL, and Apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "server/models/Query.graphql",
+      "sha": "eb902762ecb7a53d4e0857619e7e165e5a263f4d",
+      "url": "https://api.github.com/repositories/97427319/contents/server/models/Query.graphql?ref=77e253887219d2912037ed0e398d6828432238e3",
+      "git_url": "https://api.github.com/repositories/97427319/git/blobs/eb902762ecb7a53d4e0857619e7e165e5a263f4d",
+      "html_url": "https://github.com/alexander-lee/MERN-graphql-apollo/blob/77e253887219d2912037ed0e398d6828432238e3/server/models/Query.graphql",
+      "content": "type Query {\n  posts: [Post]\n  post(id: ID!): Post\n  user(id: ID!): User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/alexander-lee/MERN-graphql-apollo/blob/77e253887219d2912037ed0e398d6828432238e3/server/models/Query.graphql:\ntype Query {\n  posts: [Post]\n  post(id: ID!): Post\n  user(id: ID!): User\n}\n\n# https://github.com/alexander-lee/MERN-graphql-apollo/blob/77e253887219d2912037ed0e398d6828432238e3/server/models/Post.graphql:\ntype Post {\n  id: ID!\n  title: String\n  author: User\n  votes: Int\n}\n\n# https://github.com/alexander-lee/MERN-graphql-apollo/blob/77e253887219d2912037ed0e398d6828432238e3/server/models/User.graphql:\ntype User {\n  id: ID!\n  username: String\n  passwordHash: String\n  posts: [Post]\n}\n",
+        "mergedPaths": [
+          "server/models/Post.graphql",
+          "server/models/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Post.graphql",
+      "path": "server/models/Post.graphql",
+      "sha": "bbf270a479c1561865e0c3d7c0f32c969521bc79",
+      "url": "https://api.github.com/repositories/97427319/contents/server/models/Post.graphql?ref=77e253887219d2912037ed0e398d6828432238e3",
+      "git_url": "https://api.github.com/repositories/97427319/git/blobs/bbf270a479c1561865e0c3d7c0f32c969521bc79",
+      "html_url": "https://github.com/alexander-lee/MERN-graphql-apollo/blob/77e253887219d2912037ed0e398d6828432238e3/server/models/Post.graphql",
+      "content": "type Post {\n  id: ID!\n  title: String\n  author: User\n  votes: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "User.graphql",
+      "path": "server/models/User.graphql",
+      "sha": "30fc92302b2d871fe2f6fa8632e6bf5de111277e",
+      "url": "https://api.github.com/repositories/97427319/contents/server/models/User.graphql?ref=77e253887219d2912037ed0e398d6828432238e3",
+      "git_url": "https://api.github.com/repositories/97427319/git/blobs/30fc92302b2d871fe2f6fa8632e6bf5de111277e",
+      "html_url": "https://github.com/alexander-lee/MERN-graphql-apollo/blob/77e253887219d2912037ed0e398d6828432238e3/server/models/User.graphql",
+      "content": "type User {\n  id: ID!\n  username: String\n  passwordHash: String\n  posts: [Post]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-17T02:32:30Z",
+    "updated_at": "2017-07-23T23:51:18Z",
+    "pushed_at": "2017-08-08T21:02:46Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

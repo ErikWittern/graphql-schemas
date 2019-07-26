@@ -1,0 +1,42 @@
+{
+  "repo_name": "gorengan",
+  "repo_full_name": "musobarlab/gorengan",
+  "repo_owner": "musobarlab",
+  "repo_description": "Golang's GraphQL Server Starter Kit",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "graphql_schema.graphql",
+      "path": "schema/graphql_schema.graphql",
+      "sha": "b61f8bb51ad95a0e53878ee3f31296d70e616454",
+      "url": "https://api.github.com/repositories/177685802/contents/schema/graphql_schema.graphql?ref=07ca4a346cf99ecfb4efd1ccc2817c0d45a435b0",
+      "git_url": "https://api.github.com/repositories/177685802/git/blobs/b61f8bb51ad95a0e53878ee3f31296d70e616454",
+      "html_url": "https://github.com/musobarlab/gorengan/blob/07ca4a346cf99ecfb4efd1ccc2817c0d45a435b0/schema/graphql_schema.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n}\n\ntype Query {\n    product(id: ID!): Product\n    products(productsArgs: ProductsArgs): Products\n}\n\ntype Mutation {\n    createCategory(category: CategoryInput!): Category\n    createProduct(product: ProductInput!): Product\n    deleteProduct(id: ID!): Product\n}\n\nscalar Time\n\ninput ProductsArgs {\n    query: String\n    limit: Int\n    page: Int\n    sort: String\n    orderBy: String\n}\n\ninput ProductInput {\n    id: ID!\n    name: String!\n    quantity: Int!\n    category: ID!\n    creatorId: String!\n    creatorIp: String!\n    created: Time\n    editorId: String!\n    editorIp: String!\n    lastModified: Time\n    isDeleted: Boolean\n    deleted: Time\n}\n\ninput CategoryInput {\n    id: ID!\n    name: String!\n    creatorId: String!\n    creatorIp: String!\n    created: Time\n    editorId: String!\n    editorIp: String!\n    lastModified: Time\n    isDeleted: Boolean\n    deleted: Time\n}\n\ntype Products {\n    products: [Product]!\n    meta: Meta\n}\n\ntype Product {\n    id: ID!\n    name: String!\n    quantity: Int!\n    category: Category\n    creatorId: String!\n    creatorIp: String!\n    created: Time\n    editorId: String!\n    editorIp: String!\n    lastModified: Time\n    isDeleted: Boolean\n    deleted: Time\n}\n\ntype Category {\n    id: ID!\n    name: String!\n    creatorId: String!\n    creatorIp: String!\n    created: Time\n    editorId: String!\n    editorIp: String!\n    lastModified: Time\n    isDeleted: Boolean\n    deleted: Time\n}\n\ntype Meta {\n    page: Int\n    limit: Int\n    totalRecords: Int\n    totalPages: Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-26T00:29:08Z",
+    "updated_at": "2019-04-30T06:25:29Z",
+    "pushed_at": "2019-04-01T04:40:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 8
+  }
+}

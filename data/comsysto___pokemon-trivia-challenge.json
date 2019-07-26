@@ -1,0 +1,41 @@
+{
+  "repo_name": "pokemon-trivia-challenge",
+  "repo_full_name": "comsysto/pokemon-trivia-challenge",
+  "repo_owner": "comsysto",
+  "repo_description": "A small showcase on how to write a Node.js-based GraphQL server in TypeScript with a React client.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Schema.graphql",
+      "path": "packages/server/src/api/Schema.graphql",
+      "sha": "e2e61ad79264e20141286536a6b3048c9a079c94",
+      "url": "https://api.github.com/repositories/161650151/contents/packages/server/src/api/Schema.graphql?ref=fb67f74a43fbe9b2c5347a1aca26170a6d705af5",
+      "git_url": "https://api.github.com/repositories/161650151/git/blobs/e2e61ad79264e20141286536a6b3048c9a079c94",
+      "html_url": "https://github.com/comsysto/pokemon-trivia-challenge/blob/fb67f74a43fbe9b2c5347a1aca26170a6d705af5/packages/server/src/api/Schema.graphql",
+      "content": "# pokemon-trivia-challenge Schema\n\nschema {\n    query: Query\n}\n\ntype Query {\n    # Open Trivia DB API\n    triviaQuestion(difficulty: QuestionDifficulty, type: QuestionType): Question!\n\n    # PokeAPI\n    location(name: ID!): Location!\n    locations: [Location!]!\n\n    region(name: ID!): Region!\n    regions: [Region!]!\n}\n\n# Open Trivia DB API\n\nenum QuestionDifficulty {\n    EASY\n    MEDIUM\n    HARD\n}\n\nenum QuestionType {\n    MULTIPLE\n    BOOLEAN\n}\n\ntype Question {\n    category: String!\n    type: String!\n    difficulty: String!\n    question: String!\n    correctAnswer: String!\n    incorrectAnswers: [String!]!\n}\n\n# PokeAPI\n\nenum LanguageEnum {\n    JA_HRKT\n    ROOMAJI\n    KO\n    ZH_HANT\n    FR\n    DE\n    ES\n    IT\n    EN\n    CS\n    JA\n    ZH_HANS\n}\n\ntype Name {\n    name: String!\n    language: Language!\n}\n\ntype Language {\n    id: ID!\n    name: String!\n    names(languages: [LanguageEnum!]!): [Name!]!\n    iso3166: String!\n}\n\ntype Region {\n    id: ID!\n    name: String!\n    names(languages: [LanguageEnum!]!): [Name!]!\n    locations: [Location!]!\n}\n\ntype Location {\n    id: ID!\n    name: String!\n    names(languages: [LanguageEnum!]!): [Name!]!\n    region: Region!\n    areas: [LocationArea!]!\n}\n\ntype LocationArea {\n    id: ID!\n    name: String!\n    names(languages: [LanguageEnum!]!): [Name!]!\n    location: Location!\n    pokemonEncounters: [PokemonEncounter!]!\n}\n\ntype PokemonEncounter {\n    pokemon: Pokemon!\n    versionDetails: [VersionEncounterDetail!]!\n}\n\ntype VersionEncounterDetail {\n    version: Version!\n    maxChance: Int!\n    encounterDetails: [Encounter!]!\n}\n\ntype Encounter {\n    chance: Int!\n}\n\ntype Version {\n    id: ID!\n    name: String!\n    names(languages: [LanguageEnum!]!): [Name!]!\n}\n\ntype Pokemon {\n    id: ID!\n    name: String!\n    sprites: PokemonSprites!\n    species: PokemonSpecies!\n}\n\ntype PokemonSprites {\n    frontDefault: String!\n}\n\ntype PokemonSpecies {\n    id: ID!\n    name: String!\n    names(languages: [LanguageEnum!]!): [Name!]!\n    captureRate: Int!\n    flavorTextEntries: [FlavorText!]!\n}\n\ntype FlavorText {\n    flavorText: String!\n    language: Language!\n    version: Version!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": true,
+      "numDefinitions": 19
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-13T14:24:37Z",
+    "updated_at": "2019-03-08T08:35:31Z",
+    "pushed_at": "2019-01-07T12:55:17Z",
+    "issues": 0,
+    "watchers": 41,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

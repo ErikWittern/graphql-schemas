@@ -1,0 +1,39 @@
+{
+  "repo_name": "NotificationsModule",
+  "repo_full_name": "superalgos/notificationsmodule",
+  "repo_owner": "Superalgos",
+  "repo_description": "Responsible for providing various notification services.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/graphql/schema.graphql",
+      "sha": "54d6291454358dcdc60960942b453cb578daf99a",
+      "url": "https://api.github.com/repositories/160384157/contents/server/src/graphql/schema.graphql?ref=301aa8c46b1480f4912dd79dd252dae6eed86d74",
+      "git_url": "https://api.github.com/repositories/160384157/git/blobs/54d6291454358dcdc60960942b453cb578daf99a",
+      "html_url": "https://github.com/Superalgos/NotificationsModule/blob/301aa8c46b1480f4912dd79dd252dae6eed86d74/server/src/graphql/schema.graphql",
+      "content": "type Query {\n  _blank: String\n}\n\ntype Mutation {\n  Corporate_NewsletterSignup(email: String!): String\n  Corporate_NewsletterSignupVerify(token: String!): String\n  Corporate_Contact(email: String!, name: String, message: String!, recaptcha: String!): String\n  Master_NewsletterSignup(email: String!): String\n  Master_NewsletterSignupVerify(token: String!): String\n  Master_Feedback(email: String!, subject: String!, message: String!, recaptcha: String!): String\n  Teams_SendTeamMemberInvite(email: String!, teamName: String!): String\n  Teams_SendTeamCreateConfirmation(email: String!, teamName: String!, botName: String!): String\n  Teams_VerifyTeamMemberInviteToken(token: String!): String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-04T16:07:50Z",
+    "updated_at": "2019-07-04T22:14:39Z",
+    "pushed_at": "2019-07-04T22:14:37Z",
+    "issues": 4,
+    "watchers": 3,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

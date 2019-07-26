@@ -1,0 +1,42 @@
+{
+  "repo_name": "phoenix-react-starter",
+  "repo_full_name": "jeantsai/phoenix-react-starter",
+  "repo_owner": "jeantsai",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "assets/schema.graphql",
+      "sha": "ce3a416c69733dfd1bcf0813d69f8dff36eea9ea",
+      "url": "https://api.github.com/repositories/147445441/contents/assets/schema.graphql?ref=dd0e048285134492dad160f1f2a8d942648acba9",
+      "git_url": "https://api.github.com/repositories/147445441/git/blobs/ce3a416c69733dfd1bcf0813d69f8dff36eea9ea",
+      "html_url": "https://github.com/jeantsai/phoenix-react-starter/blob/dd0e048285134492dad160f1f2a8d942648acba9/assets/schema.graphql",
+      "content": "schema {\n  query: RootQueryType\n  mutation: RootMutationType\n}\n\ninput CreateTaskInput {\n  aborted: Boolean\n  description: String\n  end: DateTime!\n  progress: Int\n  start: DateTime!\n  title: String!\n}\n\ninput CreateTaskObjectInput {\n  task: TaskInputObject!\n}\n\ntype CreateTaskObjectPayload {\n  task: Task\n}\n\ntype CreateTaskPayload {\n  success: Boolean!\n}\n\nscalar DateTime\n\ntype DeleteTaskPayload {\n  task: Task\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype RootMutationType {\n  createTask(input: CreateTaskInput!): CreateTaskPayload\n  createTaskObject(input: CreateTaskObjectInput!): CreateTaskObjectPayload\n  createTaskSimple(aborted: Boolean, description: String, end: DateTime, progress: Int, start: DateTime, title: String): Task\n  deleteTask(id: String!): DeleteTaskPayload\n  updateTask(input: UpdateTaskInput!): UpdateTaskPayload\n}\n\ntype RootQueryType {\n  # Fetches an object given its ID\n  node(\n    # The id of an object.\n    id: ID!\n  ): Node\n  taskList: TaskList\n}\n\ntype Task implements Node {\n  aborted: Boolean\n  description: String\n  end: DateTime!\n\n  # The ID of an object\n  id: ID!\n  progress: Int\n  start: DateTime!\n  title: String!\n}\n\ninput TaskInputObject {\n  aborted: Boolean\n  description: String\n  end: DateTime!\n  progress: Int\n  start: DateTime!\n  title: String!\n}\n\ntype TaskList {\n  tasks: [Task!]\n}\n\ninput UpdateTaskInput {\n  id: String!\n  task: TaskInputObject!\n}\n\ntype UpdateTaskPayload {\n  task: Task\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-05T02:03:10Z",
+    "updated_at": "2018-09-27T10:06:02Z",
+    "pushed_at": "2018-09-27T10:06:02Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

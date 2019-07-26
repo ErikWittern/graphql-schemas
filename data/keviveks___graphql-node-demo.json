@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-node-demo",
+  "repo_full_name": "keviveks/graphql-node-demo",
+  "repo_owner": "keviveks",
+  "repo_description": "GraphQL server implementation in NodeJS, a clone of Hackernews app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "816614025df03df2d87a6882150e1722f57e189d",
+      "url": "https://api.github.com/repositories/132888413/contents/src/schema.graphql?ref=542ca8091be7a06b4477a2679e0247a680541a78",
+      "git_url": "https://api.github.com/repositories/132888413/git/blobs/816614025df03df2d87a6882150e1722f57e189d",
+      "html_url": "https://github.com/keviveks/graphql-node-demo/blob/542ca8091be7a06b4477a2679e0247a680541a78/src/schema.graphql",
+      "content": "##\n# typeDefs: defines GraphQL Schema, \n# with fields and datatype\n# ! make says the field can never be null\n##\n\ntype Query {\n  info: String!\n  feed: [Link!]!\n  link(id: ID!): Link\n}\n\ntype Mutation {\n  # create new link\n  createLink(description: String!, url: String!): Link!\n  # update link\n  updateLink(id: ID!, description: String, url: String): Link!\n  # delete link\n  deleteLink(id: ID!): [Link]\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-10T11:01:37Z",
+    "updated_at": "2018-05-11T07:12:24Z",
+    "pushed_at": "2018-05-11T07:12:23Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

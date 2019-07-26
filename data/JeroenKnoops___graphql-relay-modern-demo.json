@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-relay-modern-demo",
+  "repo_full_name": "jeroenknoops/graphql-relay-modern-demo",
+  "repo_owner": "JeroenKnoops",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "3e6197cd8e0347ea4390e7bd7be480d4e5fddd9f",
+      "url": "https://api.github.com/repositories/105070547/contents/schema.graphql?ref=fda1ea108e5c35d24c1a43576add991669057d99",
+      "git_url": "https://api.github.com/repositories/105070547/git/blobs/3e6197cd8e0347ea4390e7bd7be480d4e5fddd9f",
+      "html_url": "https://github.com/JeroenKnoops/graphql-relay-modern-demo/blob/fda1ea108e5c35d24c1a43576add991669057d99/schema.graphql",
+      "content": "schema {\n    query: Query\n}\n\ntype Query {\n    persons: [Person!]\n    person(name: String!): Person\n    talks: [Talk!]\n    talk(title: String!): Talk\n}\n\ntype Mutation {\n    addPerson(name: String!): Person\n}\n\ntype Person {\n  id: String!,\n  name: String,\n  blog: String,\n  githubAccount: String,\n  talks: [Talk],\n}\n\ntype Talk {\n  id: String!,\n  title: String,\n  summary: String,\n  speakers: [Person],\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-27T21:19:27Z",
+    "updated_at": "2017-10-03T07:46:35Z",
+    "pushed_at": "2017-09-27T21:24:48Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

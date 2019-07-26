@@ -1,0 +1,93 @@
+{
+  "repo_name": "react-express",
+  "repo_full_name": "bakhaa/react-express",
+  "repo_owner": "bakhaa",
+  "repo_description": "Isomorphic application written in ReactJS with ExpressJS server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.gql",
+      "path": "api/schema/user.gql",
+      "sha": "0b6d46a62e1bd37857ff761e6457a6043f8cfdd0",
+      "url": "https://api.github.com/repositories/150676452/contents/api/schema/user.gql?ref=cf09928802f6a35c515fa6defb5afa064546d62c",
+      "git_url": "https://api.github.com/repositories/150676452/git/blobs/0b6d46a62e1bd37857ff761e6457a6043f8cfdd0",
+      "html_url": "https://github.com/bakhaa/react-express/blob/cf09928802f6a35c515fa6defb5afa064546d62c/api/schema/user.gql",
+      "content": "type User {\n  _id: String!\n  email: String!\n  username: String\n  password: String\n  created: String\n  updated: String\n}\n\ntype logoutResponse {\n  ok: Boolean\n}\n\ntype userResponse {\n  ok: Boolean!\n  user: User\n  errors: [Error!]\n}\n\ntype Query {\n  getUsers: [User!]\n  getUser(_id: String!): User\n  me: User!\n}\n\ntype Mutation {\n  login(email: String!, password: String!): userResponse!\n  logout: logoutResponse\n  register(email: String!, password: String!): userResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/bakhaa/react-express/blob/cf09928802f6a35c515fa6defb5afa064546d62c/api/schema/user.gql:\ntype User {\n  _id: String!\n  email: String!\n  username: String\n  password: String\n  created: String\n  updated: String\n}\n\ntype logoutResponse {\n  ok: Boolean\n}\n\ntype userResponse {\n  ok: Boolean!\n  user: User\n  errors: [Error!]\n}\n\ntype Query {\n  getUsers: [User!]\n  getUser(_id: String!): User\n  me: User!\n}\n\ntype Mutation {\n  login(email: String!, password: String!): userResponse!\n  logout: logoutResponse\n  register(email: String!, password: String!): userResponse!\n}\n\n# https://github.com/bakhaa/react-express/blob/7a4e9d612d2a15169ecc14064fd867aa53152c11/api/schema/error.gql:\ntype Error {\n  message: String!\n  path: String!\n}\n",
+        "mergedPaths": [
+          "api/schema/error.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Error"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 6,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "error.gql",
+      "path": "api/schema/error.gql",
+      "sha": "3ef32942082d0bb313aaf3d7a6816713e5089619",
+      "url": "https://api.github.com/repositories/150676452/contents/api/schema/error.gql?ref=7a4e9d612d2a15169ecc14064fd867aa53152c11",
+      "git_url": "https://api.github.com/repositories/150676452/git/blobs/3ef32942082d0bb313aaf3d7a6816713e5089619",
+      "html_url": "https://github.com/bakhaa/react-express/blob/7a4e9d612d2a15169ecc14064fd867aa53152c11/api/schema/error.gql",
+      "content": "type Error {\n  message: String!\n  path: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "todo.gql",
+      "path": "api/schema/todo.gql",
+      "sha": "c22462453443f50aba8537bc65887bd756500e7a",
+      "url": "https://api.github.com/repositories/150676452/contents/api/schema/todo.gql?ref=ad343a4b3ec9128b845a98b0056598c293eba397",
+      "git_url": "https://api.github.com/repositories/150676452/git/blobs/c22462453443f50aba8537bc65887bd756500e7a",
+      "html_url": "https://github.com/bakhaa/react-express/blob/ad343a4b3ec9128b845a98b0056598c293eba397/api/schema/todo.gql",
+      "content": "type Todo {\n  _id: String!\n  text: String\n  description: String\n  completed: Boolean\n  created: String\n  updated: String\n}\n\ntype todoResponse {\n  ok: Boolean!\n  todo: Todo\n  errors: [Error!]\n}\n\ntype Query {\n  getTodos: [Todo!]!\n  getTodo(_id: String!): Todo!\n}\n\ntype Mutation {\n  addTodo(description: String, text: String!): todoResponse!\n  updateTodo(_id: String!, text: String, description: String, completed: Boolean): todoResponse!\n  deleteTodo(_id: String!): todoResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/bakhaa/react-express/blob/ad343a4b3ec9128b845a98b0056598c293eba397/api/schema/todo.gql:\ntype Todo {\n  _id: String!\n  text: String\n  description: String\n  completed: Boolean\n  created: String\n  updated: String\n}\n\ntype todoResponse {\n  ok: Boolean!\n  todo: Todo\n  errors: [Error!]\n}\n\ntype Query {\n  getTodos: [Todo!]!\n  getTodo(_id: String!): Todo!\n}\n\ntype Mutation {\n  addTodo(description: String, text: String!): todoResponse!\n  updateTodo(_id: String!, text: String, description: String, completed: Boolean): todoResponse!\n  deleteTodo(_id: String!): todoResponse!\n}\n\n# https://github.com/bakhaa/react-express/blob/7a4e9d612d2a15169ecc14064fd867aa53152c11/api/schema/error.gql:\ntype Error {\n  message: String!\n  path: String!\n}\n",
+        "mergedPaths": [
+          "api/schema/error.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Error"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-28T02:45:25Z",
+    "updated_at": "2018-12-13T05:48:51Z",
+    "pushed_at": "2018-12-13T05:48:50Z",
+    "issues": 23,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

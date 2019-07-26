@@ -1,0 +1,41 @@
+{
+  "repo_name": "game-of-graphql",
+  "repo_full_name": "kensho-technologies/game-of-graphql",
+  "repo_owner": "kensho-technologies",
+  "repo_description": "Demo project for the GraphQL compiler using Game of Thrones data",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "game_of_graphql.graphql",
+      "path": "game_of_graphql/game_of_graphql.graphql",
+      "sha": "4ccc67a5f8b54915ae9cf3608f3e56d52c69e8eb",
+      "url": "https://api.github.com/repositories/123185421/contents/game_of_graphql/game_of_graphql.graphql?ref=5ac1485338a51cc68229d0752b692e52b02a09da",
+      "git_url": "https://api.github.com/repositories/123185421/git/blobs/4ccc67a5f8b54915ae9cf3608f3e56d52c69e8eb",
+      "html_url": "https://github.com/kensho-technologies/game-of-graphql/blob/5ac1485338a51cc68229d0752b692e52b02a09da/game_of_graphql/game_of_graphql.graphql",
+      "content": "# Copyright 2017 Kensho Technologies, Inc.\nschema {\n    query: RootSchemaQuery\n}\n\nscalar Date\n\nscalar DateTime\n\ndirective @filter(op_name: String!, value: [String!]!) on FIELD | INLINE_FRAGMENT\n\ndirective @tag(tag_name: String!) on FIELD\n\ndirective @output(out_name: String!) on FIELD\n\ndirective @output_source on FIELD\n\ndirective @optional on FIELD\n\ndirective @fold on FIELD\n\ndirective @recurse(depth: Int!) on FIELD\n\ninterface CharacterOrHouse {\n    _x_count: Int\n    name: String\n    alias: [String]\n    uuid: ID\n\n    in_Owes_Allegiance_To: [CharacterOrHouse]\n    out_Owes_Allegiance_To: [CharacterOrHouse]\n}\n\ntype Character implements CharacterOrHouse {\n    _x_count: Int\n    name: String\n    alias: [String]\n    uuid: ID\n\n    in_Owes_Allegiance_To: [CharacterOrHouse]\n    out_Owes_Allegiance_To: [CharacterOrHouse]\n    out_Lives_In: [Region]\n}\n\ntype NobleHouse implements CharacterOrHouse {\n    _x_count: Int\n    name: String\n    alias: [String]\n    motto: [String]\n    uuid: ID\n\n    in_Owes_Allegiance_To: [CharacterOrHouse]\n    out_Owes_Allegiance_To: [CharacterOrHouse]\n    out_Has_Seat: [Region]\n}\n\ntype Region {\n    _x_count: Int\n    name: String\n    alias: [String]\n    uuid: ID\n\n    out_Has_Parent_Region: [Region]\n    in_Has_Parent_Region: [Region]\n    in_Has_Seat: [NobleHouse]\n    in_Lives_In: [Character]\n}\n\ntype RootSchemaQuery {\n    CharacterOrHouse: CharacterOrHouse\n    Character: Character\n    NobleHouse: NobleHouse\n    Region: Region\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-27T20:37:15Z",
+    "updated_at": "2019-07-10T17:06:54Z",
+    "pushed_at": "2019-07-10T17:06:52Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

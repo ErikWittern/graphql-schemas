@@ -1,0 +1,42 @@
+{
+  "repo_name": "axi-engine",
+  "repo_full_name": "axi-platform/axi-engine",
+  "repo_owner": "axi-platform",
+  "repo_description": "Computational Engine for the Axi Platform.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/graphql/schema.gql",
+      "sha": "9ae3a9da9f1e3c0cfcd11052c7989be34c7b4ad2",
+      "url": "https://api.github.com/repositories/124679886/contents/src/graphql/schema.gql?ref=c78677240f9d39751248bb86a3a7457234c25c42",
+      "git_url": "https://api.github.com/repositories/124679886/git/blobs/9ae3a9da9f1e3c0cfcd11052c7989be34c7b4ad2",
+      "html_url": "https://github.com/axi-platform/axi-engine/blob/c78677240f9d39751248bb86a3a7457234c25c42/src/graphql/schema.gql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n\n# The queries that can be requested\ntype Query {\n  # List every projects\n  projects: [Project]\n\n  # Retrieves a Project corresponding with the seat\n  project(id: ID!): Project\n}\n\n# The mutations that can be performed\ntype Mutation {\n  # Creates project\n  createProject: Project\n}\n\n# The subscriptions that can be listened to\ntype Subscription {\n  projectCreated: Project\n}\n\n# Project contains the seat number and the buyer's name\ntype Project {\n  # ID\n  id: ID!\n\n  name: String!\n  displayName: String!\n\n  description: String\n  color: String\n  icon: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-10T17:28:05Z",
+    "updated_at": "2019-04-11T19:38:59Z",
+    "pushed_at": "2018-07-08T16:39:19Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 13,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "printer",
+  "repo_full_name": "hyped-text/printer",
+  "repo_owner": "hyped-text",
+  "repo_description": "Prints all the stuff on the pages, converts various e-book formats, structurize the book via parts and chapters and all other typographer work  ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema/schema.graphql",
+      "sha": "9d704493a000f6d98b67e956b43500fa3628ec97",
+      "url": "https://api.github.com/repositories/175848552/contents/src/schema/schema.graphql?ref=9867671e56e5347649625e5e958870504af52ce7",
+      "git_url": "https://api.github.com/repositories/175848552/git/blobs/9d704493a000f6d98b67e956b43500fa3628ec97",
+      "html_url": "https://github.com/hyped-text/printer/blob/9867671e56e5347649625e5e958870504af52ce7/src/schema/schema.graphql",
+      "content": "scalar Upload\n\nenum ElementType {\n  # Front elements\n  HALF_TITLE\n  FRONTISPIECE\n  TITLE_PAGE\n  DEDICATION\n  EPIGRAPH\n  TABLE_OF_CONTENTS\n  FOREWORD\n  PREFACE\n  ACKNOWLEDGMENTS\n  INTRODUCTION\n  PROLOGUE\n\n  # Body elements\n  VOLUME\n  BOOK\n  PART\n  SECTION\n  CHAPTER\n\n  # Back elements\n  EPILOGUE\n  AFTERWORD\n  CONCLUSION\n  POSTSCRIPT\n  APPENDIX\n  GLOSSARY\n  BIBLIOGRAPHY\n  INDEX\n  COLOPHON\n  POSTFACE\n}\n\ninterface Element {\n  id: ID!\n  type: ElementType!\n  index: Int!\n  text: String!\n  title: String\n  parent: Element\n}\n\ntype TableOfContentsElement {\n  title: String!\n  id: ID!\n}\n\ntype TableOfContents implements Element {\n  id: ID!\n  type: ElementType!\n  index: Int!\n  text: String!\n  title: String\n  parent: Element\n  contents: [TableOfContentsElement]\n}\n\ntype Chapter implements Element {\n  id: ID!\n  type: ElementType!\n  index: Int!\n  text: String!\n  title: String\n  parent: Element\n}\n\ntype Book {\n  elements: [Element]\n}\n\ntype Query {\n  print(file: Upload, url: String): Book\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-15T15:44:50Z",
+    "updated_at": "2019-04-10T17:30:22Z",
+    "pushed_at": "2019-04-10T17:30:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

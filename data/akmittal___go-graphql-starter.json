@@ -1,0 +1,42 @@
+{
+  "repo_name": "go-graphql-starter",
+  "repo_full_name": "akmittal/go-graphql-starter",
+  "repo_owner": "akmittal",
+  "repo_description": "Graphql web api build with Golang, Postgres",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "6a1f602eed4bb1db0c225aaf3fb1c0beb5078650",
+      "url": "https://api.github.com/repositories/123154526/contents/schema/schema.graphql?ref=8ff28bad326b407aad99d93f8c735938e6e79432",
+      "git_url": "https://api.github.com/repositories/123154526/git/blobs/6a1f602eed4bb1db0c225aaf3fb1c0beb5078650",
+      "html_url": "https://github.com/akmittal/go-graphql-starter/blob/8ff28bad326b407aad99d93f8c735938e6e79432/schema/schema.graphql",
+      "content": "schema {\r\n  query: Query\r\n  mutation: Mutation\r\n}\r\n\r\ntype Query {\r\n  viewer(token: String!): Viewer\r\n  login(username: String!, password: String!): String!\r\n}\r\n\r\ntype Viewer {\r\n  user(id: ID!): Person!\r\n}\r\n\r\ntype Mutation {\r\n  signup(person:PersonInput!): Person!\r\n}\r\n\r\ntype Person {\r\n  FirstName: String!\r\n  LastName: String!\r\n  EmailID: String!\r\n  Username: String!\r\n}\r\n\r\ninput PersonInput {\r\n  FirstName: String!\r\n  LastName: String!\r\n  EmailID: String!\r\n  Username: String!\r\n  Password: String!\r\n}\r\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-27T16:11:20Z",
+    "updated_at": "2018-10-20T17:54:50Z",
+    "pushed_at": "2018-10-20T17:54:49Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 10
+  }
+}

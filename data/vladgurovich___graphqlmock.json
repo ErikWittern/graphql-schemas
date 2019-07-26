@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphqlmock",
+  "repo_full_name": "vladgurovich/graphqlmock",
+  "repo_owner": "vladgurovich",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "test.gql",
+      "path": "data/test.gql",
+      "sha": "f93ecbd2f47c45b49e83296efe5431e0889f67c1",
+      "url": "https://api.github.com/repositories/83093335/contents/data/test.gql?ref=612e97cb2e248f90b93b6e43f4191867e3503935",
+      "git_url": "https://api.github.com/repositories/83093335/git/blobs/f93ecbd2f47c45b49e83296efe5431e0889f67c1",
+      "html_url": "https://github.com/vladgurovich/graphqlmock/blob/612e97cb2e248f90b93b6e43f4191867e3503935/data/test.gql",
+      "content": "type Author {\n  id: Int! # the ! means that every author object _must_ have an id\n  firstName: String\n  lastName: String\n  posts: [Post] # the list of Posts by this author\n}\n\ntype Post {\n  id: Int!\n  title: String\n  author: Author\n  votes: Int\n}\n\n# the schema allows the following query:\ntype Query {\n  posts: [Post]\n  author(id: Int!): Author\n}\n\n# this schema allows the following mutation:\ntype Mutation {\n  upvotePost (\n    postId: Int!\n  ): Post\n}\n\ntype Subscription {\n  postUpvoted: Post\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-25T00:06:22Z",
+    "updated_at": "2017-02-25T00:07:28Z",
+    "pushed_at": "2017-02-25T00:07:26Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

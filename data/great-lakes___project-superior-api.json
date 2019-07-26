@@ -1,0 +1,41 @@
+{
+  "repo_name": "project-superior-api",
+  "repo_full_name": "great-lakes/project-superior-api",
+  "repo_owner": "great-lakes",
+  "repo_description": "Student Hackathon GraphQL and Websocket server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/graphql/schema.gql",
+      "sha": "460ddb6824119d58148b007d90b6a1212a84b570",
+      "url": "https://api.github.com/repositories/119109269/contents/src/graphql/schema.gql?ref=ba573c98ea119c3768e4e2f43e5ea36d2351c75a",
+      "git_url": "https://api.github.com/repositories/119109269/git/blobs/460ddb6824119d58148b007d90b6a1212a84b570",
+      "html_url": "https://github.com/great-lakes/project-superior-api/blob/ba573c98ea119c3768e4e2f43e5ea36d2351c75a/src/graphql/schema.gql",
+      "content": "scalar Date\n\nenum InquiryStatus {\n  UNRESOLVED\n  RESOLVED  \n}\n\n\"\"\"\nObject Type Definition\n\"\"\"\n\ntype Technology {\n  id: ID!\n  name: String\n  doc_link: String\n  help_text: String\n  projects: [Project]\n  hackathons: [Hackathon]\n}\n\ntype Project {\n  id: ID!\n  name: String!\n  description: String\n  tech_name: String\n  students: [Student]\n  hackathon: Hackathon\n  technologies: [Technology]\n}\n\ntype Session {\n  id: ID!\n  name: String!\n  description: String\n  time: String\n  day: String\n  place: String\n  attendance: Int\n  hackathon: Hackathon\n}\n\ntype Student {\n  id: ID!\n  name: String\n  email: String\n  phone: String\n  azurecode: Azurecode\n  project: Project\n  inquiries: [Inquiry]\n}\n\ntype Azurecode {\n  id: ID!\n  code: String!\n  expires_on: Date\n  is_taken: Boolean\n  student: Student\n  hackathon: Hackathon\n}\n\ntype Hackathon {\n  id: ID!\n  name: String\n  slug: String\n  description: String\n  start_date: Date\n  end_date: Date\n  bot_deployed: String\n  bot_directline_key: String\n  survey_link: String\n  survey_promo: String\n  survey_prize: String\n  technologies: [Technology]\n  azurecodes: [Azurecode]\n  mentors: [Mentor]\n  projects: [Project]\n  sessions: [Session]\n  findStudent(email: String): Student\n  students: [Student]\n  inquiries: [Inquiry]\n}\n\ntype Mentor {\n  id: ID!\n  first_name: String\n  last_name: String\n  email: String\n  phone: String\n  bio: String\n  is_available: Boolean\n  skills: [Skill]\n  hackathons: [Hackathon]\n}\n\ntype Inquiry {\n  id: ID!\n  question: String\n  mentor_notes: String\n  is_resolved: Boolean\n  created_at: String\n  updated_at: String\n  student: Student\n  mentor: Mentor\n  skill: Skill\n}\n\ntype Skill {\n  id: ID!\n  name: String\n  mentors: [Mentor],\n  inquiries: [Inquiry]\n}\n\n\"\"\"\nQuery Type Definition\n\"\"\"\n\ntype Query {\n  project(id: ID!): Project\n  hackathons: [Hackathon]\n  hackathon(id: ID!): Hackathon\n  mentor(id: ID!): Mentor\n  inquiry(id: ID!): Inquiry\n  skill(id: ID!): Skill\n  technology(id: ID!): Technology\n  azurecode(id: ID!): Azurecode\n  student(id: ID!): Student\n}\n\ntype Mutation {\n  setInquiryStatus(id: ID!, status: InquiryStatus!): Inquiry\n  setInquiryNotes(id: ID!, notes: String): Inquiry\n  setInquiryMentor(inquiryId: ID!, mentorId: ID!): Inquiry\n  issueAzurecodeById(id: ID!): Azurecode\n  issueUnclaimedAzurecode(hackathonId: ID!, studentName:String!, studentEmail: String!, projectName: String!, projectDescription: String, projectTechText: String): Azurecode\n  newInquiry(hackathonId: ID!, studentName: String!, studentEmail: String!, question: String!): Inquiry\n  newStudentProject(hackathonId: ID!, projectName:String!, projectDescription: String, studentName: String!, studentEmail: String!, studentPhone: String): Project\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": true,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-26T22:16:28Z",
+    "updated_at": "2018-01-27T17:31:19Z",
+    "pushed_at": "2018-04-02T17:25:08Z",
+    "issues": 20,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

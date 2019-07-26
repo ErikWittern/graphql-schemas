@@ -1,0 +1,42 @@
+{
+  "repo_name": "forum-backend",
+  "repo_full_name": "henriktre/forum-backend",
+  "repo_owner": "henriktre",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "RootQuery.graphql",
+      "path": "app/middlewares/graphql/types/RootQuery.graphql",
+      "sha": "94525716659cf7e72ebb9a85405612e1a9e6db82",
+      "url": "https://api.github.com/repositories/152326558/contents/app/middlewares/graphql/types/RootQuery.graphql?ref=e4894b8349275f12c79098257a60d38c0fa8d65e",
+      "git_url": "https://api.github.com/repositories/152326558/git/blobs/94525716659cf7e72ebb9a85405612e1a9e6db82",
+      "html_url": "https://github.com/henriktre/forum-backend/blob/e4894b8349275f12c79098257a60d38c0fa8d65e/app/middlewares/graphql/types/RootQuery.graphql",
+      "content": "type Query {\n  \"Hello is just a test\"\n  hello: String\n}\n\ntype Error {\n  error: String\n  message: String\n  statusCode: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-09T21:55:56Z",
+    "updated_at": "2018-10-09T22:16:02Z",
+    "pushed_at": "2018-10-09T22:16:01Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

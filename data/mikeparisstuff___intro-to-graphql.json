@@ -1,0 +1,54 @@
+{
+  "repo_name": "intro-to-graphql",
+  "repo_full_name": "mikeparisstuff/intro-to-graphql",
+  "repo_owner": "mikeparisstuff",
+  "repo_description": "Multiple projects that help to show why GraphQL is helpful and how it is used in practice.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "GraphQL/build/schema.graphql",
+      "sha": "c7f9268281c884aae5795da5eb36c7c61f1d5184",
+      "url": "https://api.github.com/repositories/97698254/contents/GraphQL/build/schema.graphql?ref=303688d199cb019444f02856277a9e8bbf4728a2",
+      "git_url": "https://api.github.com/repositories/97698254/git/blobs/c7f9268281c884aae5795da5eb36c7c61f1d5184",
+      "html_url": "https://github.com/mikeparisstuff/intro-to-graphql/blob/303688d199cb019444f02856277a9e8bbf4728a2/GraphQL/build/schema.graphql",
+      "content": "type Movie {\n  id: ID!\n  title: String!\n  image: String!\n  release_year: Int\n  tags: [String]\n  rating: Float\n  actors: [Actor]\n}\n\ntype Actor {\n  id: ID!\n  name: String!\n  image: String!\n  dob: String\n  num_credits: Int\n  movies: [Movie]\n}\n\n# the schema allows the following query:\ntype Query {\n  movie(id: ID!): Movie\n  movies: [Movie]\n  searchMovies(term: String): [Movie]\n  actor(id: ID!): Actor\n  actors: [Actor]\n  searchActors(term: String): [Actor]\n}\n\n# this schema allows the following mutation:\ntype Mutation {\n  upvoteMovie (\n    movieId: ID!\n  ): Movie\n  downvoteMovie (\n    movieId: ID!\n  ): Movie\n}\n\n# we need to tell the server which types represent the root query\n# and root mutation types. We call them RootQuery and RootMutation by convention.\nschema {\n  query: Query\n  mutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "GraphQL/src/schema.graphql",
+      "sha": "c7f9268281c884aae5795da5eb36c7c61f1d5184",
+      "url": "https://api.github.com/repositories/97698254/contents/GraphQL/src/schema.graphql?ref=303688d199cb019444f02856277a9e8bbf4728a2",
+      "git_url": "https://api.github.com/repositories/97698254/git/blobs/c7f9268281c884aae5795da5eb36c7c61f1d5184",
+      "html_url": "https://github.com/mikeparisstuff/intro-to-graphql/blob/303688d199cb019444f02856277a9e8bbf4728a2/GraphQL/src/schema.graphql",
+      "content": "type Movie {\n  id: ID!\n  title: String!\n  image: String!\n  release_year: Int\n  tags: [String]\n  rating: Float\n  actors: [Actor]\n}\n\ntype Actor {\n  id: ID!\n  name: String!\n  image: String!\n  dob: String\n  num_credits: Int\n  movies: [Movie]\n}\n\n# the schema allows the following query:\ntype Query {\n  movie(id: ID!): Movie\n  movies: [Movie]\n  searchMovies(term: String): [Movie]\n  actor(id: ID!): Actor\n  actors: [Actor]\n  searchActors(term: String): [Actor]\n}\n\n# this schema allows the following mutation:\ntype Mutation {\n  upvoteMovie (\n    movieId: ID!\n  ): Movie\n  downvoteMovie (\n    movieId: ID!\n  ): Movie\n}\n\n# we need to tell the server which types represent the root query\n# and root mutation types. We call them RootQuery and RootMutation by convention.\nschema {\n  query: Query\n  mutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-19T09:26:05Z",
+    "updated_at": "2017-07-19T09:26:31Z",
+    "pushed_at": "2017-07-19T09:27:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "gqli-starter-project",
+  "repo_full_name": "tyler-churchill/gqli-starter-project",
+  "repo_owner": "Tyler-Churchill",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "source/modules/main/schema.graphql",
+      "sha": "0b3ba741206f5326c4cf2fbd96b7132c1ffee985",
+      "url": "https://api.github.com/repositories/136931860/contents/source/modules/main/schema.graphql?ref=90ed43574e5561bcb22d49742d8af86104bfffaa",
+      "git_url": "https://api.github.com/repositories/136931860/git/blobs/0b3ba741206f5326c4cf2fbd96b7132c1ffee985",
+      "html_url": "https://github.com/Tyler-Churchill/gqli-starter-project/blob/90ed43574e5561bcb22d49742d8af86104bfffaa/source/modules/main/schema.graphql",
+      "content": "type Query {\n  hello(name: String): String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-11T13:41:51Z",
+    "updated_at": "2018-06-11T13:45:24Z",
+    "pushed_at": "2018-06-11T13:45:22Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

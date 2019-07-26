@@ -1,0 +1,42 @@
+{
+  "repo_name": "Nitro-Embed",
+  "repo_full_name": "human-connection/nitro-embed",
+  "repo_owner": "Human-Connection",
+  "repo_description": "API Service for fetching URL Information like images, icons, descriptions etc. thourgh OpenGraph, oEmbed and other standards.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e7108d3ef8798bc2aa84ba4dca7142a9cc0bd409",
+      "url": "https://api.github.com/repositories/163305928/contents/src/schema.graphql?ref=f8f0ff3d06a51a9b1fba54d169894f734054c2d3",
+      "git_url": "https://api.github.com/repositories/163305928/git/blobs/e7108d3ef8798bc2aa84ba4dca7142a9cc0bd409",
+      "html_url": "https://github.com/Human-Connection/Nitro-Embed/blob/f8f0ff3d06a51a9b1fba54d169894f734054c2d3/src/schema.graphql",
+      "content": "type Embed {\n  type: String\n  title: String\n  author: String\n  publisher: String\n  date: String\n  description: String\n  url: String\n  image: String\n  audio: String\n  video: String\n  lang: String\n  logo: String\n  embed: String\n  sources: [String]\n}\n\ntype Query {\n  embed(url: String!): Embed\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-27T14:54:13Z",
+    "updated_at": "2019-07-02T20:00:09Z",
+    "pushed_at": "2019-07-15T04:33:06Z",
+    "issues": 2,
+    "watchers": 10,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 107,
+    "pull_requests_open": 11,
+    "pull_requests_closed": 86,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

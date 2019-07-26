@@ -1,0 +1,42 @@
+{
+  "repo_name": "blossom",
+  "repo_full_name": "spsoto/blossom",
+  "repo_owner": "spsoto",
+  "repo_description": "The joy of writing GraphQL backends 🌺",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "base.gql",
+      "path": "packages/toolbelt/templates/koa/blossom/components/base.gql",
+      "sha": "040619f12d45df69eb625be67bdd6454abba79d4",
+      "url": "https://api.github.com/repositories/158611723/contents/packages/toolbelt/templates/koa/blossom/components/base.gql?ref=45a2fe5b13b4faaad60ce77e98f5b44c0dfe10ff",
+      "git_url": "https://api.github.com/repositories/158611723/git/blobs/040619f12d45df69eb625be67bdd6454abba79d4",
+      "html_url": "https://github.com/spsoto/blossom/blob/45a2fe5b13b4faaad60ce77e98f5b44c0dfe10ff/packages/toolbelt/templates/koa/blossom/components/base.gql",
+      "content": "# This file will automatically be imported by index.ts along all the .gql or\n# .graphql file inside this directory.\n#\n# This is a good place to place any type that should be extended across multiple\n# files. The most common example is extending the root query and root mutation\n# types, which will happen here.\n\ntype Query\n\ntype Mutation\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-21T22:07:42Z",
+    "updated_at": "2019-07-16T04:24:47Z",
+    "pushed_at": "2019-07-16T04:24:46Z",
+    "issues": 13,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

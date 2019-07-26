@@ -1,0 +1,42 @@
+{
+  "repo_name": "cerebrum",
+  "repo_full_name": "johncoleman83/cerebrum",
+  "repo_owner": "johncoleman83",
+  "repo_description": "🧠 go server with user model & roles",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "pkg/api/graphql/schema.graphql",
+      "sha": "f3673980123c2fd88479bb59aa539fe4ebd7c282",
+      "url": "https://api.github.com/repositories/162792141/contents/pkg/api/graphql/schema.graphql?ref=f984654f1e05c2ad06ddab2fa5f59b874a3ecf81",
+      "git_url": "https://api.github.com/repositories/162792141/git/blobs/f3673980123c2fd88479bb59aa539fe4ebd7c282",
+      "html_url": "https://github.com/johncoleman83/cerebrum/blob/f984654f1e05c2ad06ddab2fa5f59b874a3ecf81/pkg/api/graphql/schema.graphql",
+      "content": "type User {\n  firstName: String!\n  lastName: String!\n  username: String!\n  password: String!\n  passwordConfirm: String!\n  email: String!\n  mobile: String!\n  phone: String!\n  address: String!\n  accountId: Int!\n  primaryTeamId: Int!\n  role: Role!\n  updatedAt: String!\n  createdAt: String!\n  deletedAt: String!\n  lastPasswordChange: String!\n  lastLogin: String!\n}\n\ntype NewUser {\n  firstName: String!\n  lastName: String!\n  username: String!\n  password: String!\n  passwordConfirm: String!\n  email: String!\n  accountId: Int!\n  primaryTeamId: Int!\n  roleId: Int!\n}\n\ntype UpdateUser {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  address: String!\n  mobile: String!\n  phone: String!\n}\n\ntype Role {\n  id: ID!\n  accessLevel: Int!\n  name: String!\n}\n\ntype PasswordChange {\n  oldPassword: String!\n  newPassword: String!\n  newPasswordConfirm: String!\n}\n\ntype Credentials {\n  password: String!\n  username: String!\n}\n\ntype Query {\n  me: User!\n  user(id: ID!): User!\n  users: [User!]!\n}\n\ntype Mutation {\n  login(email: String!, password: String!): String!\n  refresh(token: String!): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-22T07:45:25Z",
+    "updated_at": "2019-06-19T12:41:45Z",
+    "pushed_at": "2019-02-02T06:26:46Z",
+    "issues": 10,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 26,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 26,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

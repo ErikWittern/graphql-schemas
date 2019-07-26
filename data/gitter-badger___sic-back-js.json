@@ -1,0 +1,42 @@
+{
+  "repo_name": "sic-back-js",
+  "repo_full_name": "gitter-badger/sic-back-js",
+  "repo_owner": "gitter-badger",
+  "repo_description": "Sfeir Innovation Challenge - Server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "1e14d01bf7b41ecb8699324c20b8e08c19e29277",
+      "url": "https://api.github.com/repositories/48858616/contents/data/schema.graphql?ref=6286c73e6cf4b5f534541740403bd0366c8958c1",
+      "git_url": "https://api.github.com/repositories/48858616/git/blobs/1e14d01bf7b41ecb8699324c20b8e08c19e29277",
+      "html_url": "https://github.com/gitter-badger/sic-back-js/blob/6286c73e6cf4b5f534541740403bd0366c8958c1/data/schema.graphql",
+      "content": "input addTransferInput {\n  from: String\n  to: String\n  toAka: String\n  amount: Float\n  currency: String\n  status: String\n  communication: String\n  dueDate: String\n  clientMutationId: String!\n}\n\ntype addTransferPayload {\n  viewer: Viewer\n  changedTransferEdge: changedTransferEdge\n  clientMutationId: String!\n}\n\ninput addUserInput {\n  firstName: String\n  lastName: String\n  accounts: [String]\n  clientMutationId: String!\n}\n\ntype addUserPayload {\n  viewer: Viewer\n  changedUserEdge: changedUserEdge\n  clientMutationId: String!\n}\n\ntype changedTransferEdge {\n  node: changedTransferNode\n  cursor: String!\n}\n\ntype changedTransferNode {\n  from: String\n  to: String\n  toAka: String\n  amount: Float\n  currency: String\n  status: String\n  communication: String\n  dueDate: String\n  _id: ID\n  id: ID!\n}\n\ntype changedUserEdge {\n  node: changedUserNode\n  cursor: String!\n}\n\ntype changedUserNode {\n  firstName: String\n  lastName: String\n  accounts: [String]\n  _id: ID\n  id: ID!\n}\n\ninput deleteTransferInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype deleteTransferPayload {\n  viewer: Viewer\n  ok: Boolean\n  id: ID!\n  clientMutationId: String!\n}\n\ninput deleteUserInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype deleteUserPayload {\n  viewer: Viewer\n  ok: Boolean\n  id: ID!\n  clientMutationId: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\nenum orderByTransfer {\n  FROM_ASC\n  FROM_DESC\n  TO_ASC\n  TO_DESC\n  TOAKA_ASC\n  TOAKA_DESC\n  AMOUNT_ASC\n  AMOUNT_DESC\n  CURRENCY_ASC\n  CURRENCY_DESC\n  STATUS_ASC\n  STATUS_DESC\n  COMMUNICATION_ASC\n  COMMUNICATION_DESC\n  DUEDATE_ASC\n  DUEDATE_DESC\n  _ID_ASC\n  _ID_DESC\n}\n\nenum orderByUser {\n  FIRSTNAME_ASC\n  FIRSTNAME_DESC\n  LASTNAME_ASC\n  LASTNAME_DESC\n  _ID_ASC\n  _ID_DESC\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype RootMutation {\n  addUser(input: addUserInput!): addUserPayload\n  updateUser(input: updateUserInput!): updateUserPayload\n  deleteUser(input: deleteUserInput!): deleteUserPayload\n  addTransfer(input: addTransferInput!): addTransferPayload\n  updateTransfer(input: updateTransferInput!): updateTransferPayload\n  deleteTransfer(input: deleteTransferInput!): deleteTransferPayload\n}\n\ntype RootQuery {\n  viewer: Viewer\n  node(id: ID!): Node\n  user(id: ID!): User\n  users(id: [ID], ids: [ID], orderBy: orderByUser, firstName: String, lastName: String, _id: ID): [User]\n  transfer(id: ID!): Transfer\n  transfers(id: [ID], ids: [ID], orderBy: orderByTransfer, from: String, to: String, toAka: String, amount: Float, currency: String, status: String, communication: String, dueDate: String, _id: ID): [Transfer]\n}\n\ntype Transfer implements Node {\n  from: String\n  to: String\n  toAka: String\n  amount: Float\n  currency: String\n  status: String\n  communication: String\n  dueDate: String\n  _id: ID\n  id: ID!\n}\n\ntype TransferConnection {\n  pageInfo: PageInfo!\n  edges: [TransferEdge]\n  count: Float\n}\n\ntype TransferEdge {\n  node: Transfer\n  cursor: String!\n}\n\ninput updateTransferInput {\n  from: String\n  to: String\n  toAka: String\n  amount: Float\n  currency: String\n  status: String\n  communication: String\n  dueDate: String\n  id: ID!\n  clientMutationId: String!\n}\n\ntype updateTransferPayload {\n  changedTransfer: Transfer\n  clientMutationId: String!\n}\n\ninput updateUserInput {\n  firstName: String\n  lastName: String\n  accounts: [String]\n  id: ID!\n  clientMutationId: String!\n}\n\ntype updateUserPayload {\n  changedUser: User\n  clientMutationId: String!\n}\n\ntype User implements Node {\n  firstName: String\n  lastName: String\n  accounts: [String]\n  _id: ID\n  id: ID!\n}\n\ntype UserConnection {\n  pageInfo: PageInfo!\n  edges: [UserEdge]\n  count: Float\n}\n\ntype UserEdge {\n  node: User\n  cursor: String!\n}\n\ntype Viewer implements Node {\n  id: ID!\n  users(after: String, first: Int, before: String, last: Int, orderBy: orderByUser, firstName: String, lastName: String, _id: ID): UserConnection\n  user(id: ID!): User\n  transfers(after: String, first: Int, before: String, last: Int, orderBy: orderByTransfer, from: String, to: String, toAka: String, amount: Float, currency: String, status: String, communication: String, dueDate: String, _id: ID): TransferConnection\n  transfer(id: ID!): Transfer\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 20,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 29
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-12-31T18:25:01Z",
+    "updated_at": "2016-02-29T15:39:52Z",
+    "pushed_at": "2015-12-31T18:25:03Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

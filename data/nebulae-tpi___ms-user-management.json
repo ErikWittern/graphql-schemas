@@ -1,0 +1,55 @@
+{
+  "repo_name": "ms-user-management",
+  "repo_full_name": "nebulae-tpi/ms-user-management",
+  "repo_owner": "nebulae-tpi",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "api/emi-gateway/graphql/user-management/schema.gql",
+      "sha": "542dbdd79a05d1900dc1b10f895700a309fdc868",
+      "url": "https://api.github.com/repositories/168004154/contents/api/emi-gateway/graphql/user-management/schema.gql?ref=b375700cf52850f6608f9454ebcfd0971fdaf93a",
+      "git_url": "https://api.github.com/repositories/168004154/git/blobs/542dbdd79a05d1900dc1b10f895700a309fdc868",
+      "html_url": "https://github.com/nebulae-tpi/ms-user-management/blob/b375700cf52850f6608f9454ebcfd0971fdaf93a/api/emi-gateway/graphql/user-management/schema.gql",
+      "content": "enum DocumentType {\n  CITIZENSHIP_CARD\n  PASSPORT\n  FOREIGNER_ID\n}\n\n\"User type\"\ntype User {\n  \"User ID\"\n  _id: ID!\n  \"User general info\"\n  generalInfo: UserGeneralInfo\n  \"User state\"\n  state: Boolean\n  \"Data about auth\"\n  auth: UserAuth\n  \"Roles assigned to the user\"\n  roles: [String]\n  \"business id of the user\"\n  businessId: String!\n}\n\ntype UserAuth {\n  \"username\"\n  username: String!\n  \"User keycloak ID\"\n  userKeycloakId: String!\n}\n\n\"User general info\"\ntype UserGeneralInfo {\n  \"Name\"\n  name: String\n  \"Lastname\"\n  lastname: String\n  \"Document type\"\n  documentType: DocumentType\n  \"Document ID\"\n  documentId: String\n  \"Email\"\n  email: String\n  \"Phone\"\n  phone: String\n}\n\ntype UserRole {\n  id: String!\n  name: String!  \n}\n\ninput UserInput {\n  generalInfo: UserGeneralInfoInput!\n  \"User state\"\n  state: Boolean\n}\n\ninput UserGeneralInfoInput {\n  \"Name\"\n  name: String!\n  \"Lastname\"\n  lastname: String!\n  \"Document type\"\n  documentType: String\n  \"Document ID\"\n  documentId: String\n  \"Email\"\n  email: String!\n  \"Phone\"\n  phone: String!\n}\n\ninput AuthInput {\n  \"username\"\n  username: String!\n  \"User password\"\n  password: String!\n  \"User temporary\"\n  temporary: Boolean!\n}\n\ninput UserPasswordInput {\n  \"User password\"\n  password: String!\n  \"User temporary\"\n  temporary: Boolean!\n}\n\ninput RoleInput {\n  \"Role Name\"\n  name: String!\n}\n\ninput RolesInput {\n  roles: [String]\n}\n\ntype CommandResponse {\n  \"Response code\"\n  code: Int\n  \"Response message\"\n  message: String\n}\n\ntype Query {\n  \"Gets the users.\"\n  getUsers(page: Int!, count: Int!, searchFilter: String, businessId: String): [User]\n  \"Gets a user by its username.\"\n  getUser(id: String!, businessId: String): User\n  \"Gets roles that the petitioner can assign to another users according to its role\"\n  getRoles: [String]\n}\n\ntype Mutation {\n  \"Create a new user\"\n  createUser(businessId: String!, input: UserInput!): CommandResponse\n  \"Updates the user according to the ID\"\n  updateUserGeneralInfo(userId: ID!, input: UserInput!): CommandResponse\n  \"Updates the user state\"\n  updateUserState(userId: ID!, username: String!, state: Boolean!): CommandResponse\n  \"Creates auth for the user\"\n  createUserAuth(userId: ID!, username: String!, input: AuthInput): CommandResponse\n  \"Removes auth of the user (The user will be deleted from Keycloak)\"\n  removeUserAuth(userId: ID!): CommandResponse\n  \"Changes user password\"\n  resetUserPassword(userId: ID!, input: UserPasswordInput): CommandResponse  \n  \"Adds the roles to the user\"\n  addRolesToTheUser(userId: ID!, input: RolesInput): CommandResponse\n  \"Removes the roles from the user\"\n  removeRolesFromUser(userId: ID!, input: RolesInput): CommandResponse\n}\n\ntype Subscription {\n  \"This events is triggered when a user is created, updated or deleted\"\n  UserUpdatedSubscription: User\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 15
+    },
+    {
+      "name": "schema.gql",
+      "path": "api/sales-gateway/graphql/user-management/schema.gql",
+      "sha": "6659e1fe554b029156fd2556cdf095d21312a075",
+      "url": "https://api.github.com/repositories/168004154/contents/api/sales-gateway/graphql/user-management/schema.gql?ref=e17fb8cb4d3bb50c66c35a0214edfbd6f63e7482",
+      "git_url": "https://api.github.com/repositories/168004154/git/blobs/6659e1fe554b029156fd2556cdf095d21312a075",
+      "html_url": "https://github.com/nebulae-tpi/ms-user-management/blob/e17fb8cb4d3bb50c66c35a0214edfbd6f63e7482/api/sales-gateway/graphql/user-management/schema.gql",
+      "content": "type TokenResponse {\n  \"Access token.\"\n  accessToken: String\n  \"Refresh token\"\n  refreshToken: String\n  \"Expiration time in seconds of the access token.\"\n  expiresIn: Int\n  \"Expiration time in seconds of the refresh token.\"\n  refreshExpiresIn: Int  \n}\n\ntype Query {\n  \"Gets token to make operations that require authentication. If the refresh token is passed as a parameter, we'll try to refresh the access token; otherwise, we will generate a new access token with the user and password.\"\n  getToken(username: String, password: String, refreshToken: String): TokenResponse\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-28T17:24:13Z",
+    "updated_at": "2019-04-12T16:19:18Z",
+    "pushed_at": "2019-04-12T16:19:16Z",
+    "issues": 7,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-ruby",
+  "repo_full_name": "iamwhil/graphql-ruby",
+  "repo_owner": "iamwhil",
+  "repo_description": "minor fix to graphql-ruby ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "spec/support/magic_cards/schema.graphql",
+      "sha": "006294e70a5878e9579093a578da76749f514fd2",
+      "url": "https://api.github.com/repositories/179342860/contents/spec/support/magic_cards/schema.graphql?ref=c7765864a9dcfc42dfc97512ad2972e3aa4841c8",
+      "git_url": "https://api.github.com/repositories/179342860/git/blobs/006294e70a5878e9579093a578da76749f514fd2",
+      "html_url": "https://github.com/iamwhil/graphql-ruby/blob/c7765864a9dcfc42dfc97512ad2972e3aa4841c8/spec/support/magic_cards/schema.graphql",
+      "content": "type Card {\n  name: String!\n  printings: [Printing!]!\n  expansions: [Expansion!]!\n  colors: [Color!]!\n  convertedManaCost: Int!\n}\n\ntype Expansion {\n  name: String!\n  symbol: String!\n  printings: [Printing!]!\n  cards: [Card!]!\n}\n\ntype Printing {\n  card: Card!\n  expansion: Expansion!\n}\n\nenum Color {\n  RED\n  GREEN\n  BLACK\n  BLUE\n  WHITE\n  COLORLESS\n}\n\ntype Query {\n  card(name: String!): Card\n  expansion(symbol: String!): Expansion\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-03T17:59:07Z",
+    "updated_at": "2019-04-03T17:59:27Z",
+    "pushed_at": "2019-04-03T17:59:22Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

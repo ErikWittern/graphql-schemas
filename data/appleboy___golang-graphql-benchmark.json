@@ -1,0 +1,39 @@
+{
+  "repo_name": "golang-graphql-benchmark",
+  "repo_full_name": "appleboy/golang-graphql-benchmark",
+  "repo_owner": "appleboy",
+  "repo_description": "benchmark of golang GraphQL framework.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "golang/gqlgen/schema.graphql",
+      "sha": "0061a32d3d90308255c717f7ddc18975c24b256d",
+      "url": "https://api.github.com/repositories/137641689/contents/golang/gqlgen/schema.graphql?ref=2b11dc32e6e4bc1307c7e76e1e75c07d47d770fd",
+      "git_url": "https://api.github.com/repositories/137641689/git/blobs/0061a32d3d90308255c717f7ddc18975c24b256d",
+      "html_url": "https://github.com/appleboy/golang-graphql-benchmark/blob/2b11dc32e6e4bc1307c7e76e1e75c07d47d770fd/golang/gqlgen/schema.graphql",
+      "content": "type Query {\n  hello: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-17T09:03:23Z",
+    "updated_at": "2019-07-19T00:44:42Z",
+    "pushed_at": "2019-05-29T07:41:44Z",
+    "issues": 2,
+    "watchers": 5,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 62
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "react-graphql-apollo-projects",
+  "repo_full_name": "ejolie/react-graphql-apollo-projects",
+  "repo_owner": "ejolie",
+  "repo_description": "🧘🏻‍♀️ Study React, GraphQL, Apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "movieql/graphql/schema.graphql",
+      "sha": "86568b4e25924f9734d0856cee7008b6136410f9",
+      "url": "https://api.github.com/repositories/162113465/contents/movieql/graphql/schema.graphql?ref=24d5105c51eb4efa534658503af263fbc2634444",
+      "git_url": "https://api.github.com/repositories/162113465/git/blobs/86568b4e25924f9734d0856cee7008b6136410f9",
+      "html_url": "https://github.com/ejolie/react-graphql-apollo-projects/blob/24d5105c51eb4efa534658503af263fbc2634444/movieql/graphql/schema.graphql",
+      "content": "type Movie {\n  id: Int!\n  title: String!\n  rating: Float\n  description_intro: String\n  language: String\n  medium_cover_image: String\n  genres: [String]\n}\n\ntype Query {\n  movies(limit: Int, rating: Float): [Movie]!\n  movie(id: Int!): Movie\n  suggestions(id: Int!): [Movie]!\n}\n\n# type Mutation {\n#   addMovie(name: String!, score: Int!): Movie!\n#   deleteMovie(id: Int!): Boolean!\n# }\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-17T10:27:41Z",
+    "updated_at": "2019-06-07T04:33:59Z",
+    "pushed_at": "2019-07-14T12:04:28Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 30,
+    "pull_requests_open": 30,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

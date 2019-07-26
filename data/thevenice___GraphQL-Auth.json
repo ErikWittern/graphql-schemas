@@ -1,0 +1,42 @@
+{
+  "repo_name": "GraphQL-Auth",
+  "repo_full_name": "thevenice/graphql-auth",
+  "repo_owner": "thevenice",
+  "repo_description": "Authentication using GraphQL API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "8673eb30c7fe12a890fb36f696105eaa02e3a79b",
+      "url": "https://api.github.com/repositories/174923807/contents/server/src/schema.graphql?ref=2e64c39af4acc9d3459a9ed299ba220422331df7",
+      "git_url": "https://api.github.com/repositories/174923807/git/blobs/8673eb30c7fe12a890fb36f696105eaa02e3a79b",
+      "html_url": "https://github.com/thevenice/GraphQL-Auth/blob/2e64c39af4acc9d3459a9ed299ba220422331df7/server/src/schema.graphql",
+      "content": "type Query {\n  test(name: String): String!\n  feed: [Title!]!\n}\n\ntype Mutation {\n  post(createdBy: String!, title: String!, location: String): Title!\n}\n\ntype Title {\n  id: ID!\n  title: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-11T04:08:36Z",
+    "updated_at": "2019-03-11T08:18:44Z",
+    "pushed_at": "2019-03-11T08:18:43Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

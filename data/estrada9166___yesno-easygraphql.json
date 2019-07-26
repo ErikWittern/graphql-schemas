@@ -1,0 +1,39 @@
+{
+  "repo_name": "yesno-easygraphql",
+  "repo_full_name": "estrada9166/yesno-easygraphql",
+  "repo_owner": "estrada9166",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema.gql",
+      "sha": "bfd0fb8250dfcf3dd84fb26812f073a253cd2190",
+      "url": "https://api.github.com/repositories/159561812/contents/src/schema.gql?ref=a0063329fb99e1853f5548ebeeda21feec42605e",
+      "git_url": "https://api.github.com/repositories/159561812/git/blobs/bfd0fb8250dfcf3dd84fb26812f073a253cd2190",
+      "html_url": "https://github.com/estrada9166/yesno-easygraphql/blob/a0063329fb99e1853f5548ebeeda21feec42605e/src/schema.gql",
+      "content": "type Me {\n  email: String!\n  username: String!\n  fullName: String!\n  apiKey: String!\n}\n\ntype User {\n  fullName: String!\n  age: Int!\n}\n\ntype Query {\n  getMe: Me!\n  getUsers: [User]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-28T20:39:04Z",
+    "updated_at": "2018-11-28T20:44:55Z",
+    "pushed_at": "2018-11-28T20:44:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

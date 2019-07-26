@@ -1,0 +1,42 @@
+{
+  "repo_name": "daydayup",
+  "repo_full_name": "lisiur/daydayup",
+  "repo_owner": "lisiur",
+  "repo_description": "daydayup website",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "a74cfd49529605f947f6848b5c86ee8aa9db5411",
+      "url": "https://api.github.com/repositories/155824874/contents/schema/schema.graphql?ref=9d26212eb7eb15f8c5ef01f6173dae3796f9e6fd",
+      "git_url": "https://api.github.com/repositories/155824874/git/blobs/a74cfd49529605f947f6848b5c86ee8aa9db5411",
+      "html_url": "https://github.com/lisiur/daydayup/blob/9d26212eb7eb15f8c5ef01f6173dae3796f9e6fd/schema/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  users: [User!]!\n}\n\ntype Mutation {\n  createUser(input: Register!): User!\n  login(input: Login): LoginUser!\n}\n\ninput Register {\n  name: String!\n  email: String!\n  password: String!\n}\n\ninput Login {\n  name: String!\n  password: String!\n}\n\ntype User {\n  name: String!\n  email: String!\n  createdAt: DateTime\n  updatedAt: DateTime\n  deletedAt: DateTime\n}\n\ntype LoginUser {\n  token: String!\n  user: User!\n  createdAt: DateTime\n  updatedAt: DateTime\n  deletedAt: DateTime\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-02T06:42:06Z",
+    "updated_at": "2018-11-29T01:11:50Z",
+    "pushed_at": "2018-11-29T01:11:49Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

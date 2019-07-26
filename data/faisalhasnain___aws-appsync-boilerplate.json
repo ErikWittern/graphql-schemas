@@ -1,0 +1,42 @@
+{
+  "repo_name": "aws-appsync-boilerplate",
+  "repo_full_name": "faisalhasnain/aws-appsync-boilerplate",
+  "repo_owner": "faisalhasnain",
+  "repo_description": "Develop AWS AppSync GraphQL API using CloudFormation",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "22ee191e4448c68123d0801ff49419bc346e7ecd",
+      "url": "https://api.github.com/repositories/164665734/contents/schema.graphql?ref=41cffb25c64553ebc700632be0746f6f27998443",
+      "git_url": "https://api.github.com/repositories/164665734/git/blobs/22ee191e4448c68123d0801ff49419bc346e7ecd",
+      "html_url": "https://github.com/faisalhasnain/aws-appsync-boilerplate/blob/41cffb25c64553ebc700632be0746f6f27998443/schema.graphql",
+      "content": "type Contact {\n  username: String!\n  fullName: String!\n  email: String!\n  phone: String\n}\n\ninput ContactInput {\n  fullName: String!\n  email: String!\n  phone: String\n}\n\ntype Query {\n  getContacts: [Contact!]!\n}\n\ntype Mutation {\n  addContact(username: String! contact: ContactInput!): Contact\n}\n\ntype Schema {\n  query: Query\n  mutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-08T14:25:53Z",
+    "updated_at": "2019-07-05T04:36:55Z",
+    "pushed_at": "2019-01-15T00:00:08Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

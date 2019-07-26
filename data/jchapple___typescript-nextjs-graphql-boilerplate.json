@@ -1,0 +1,42 @@
+{
+  "repo_name": "typescript-nextjs-graphql-boilerplate",
+  "repo_full_name": "jchapple/typescript-nextjs-graphql-boilerplate",
+  "repo_owner": "jchapple",
+  "repo_description": "A Typescript Next.js implementation with a heavy focus on Apollo GraphQL integration.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "states/TableViews/schema.graphql",
+      "sha": "1f90e488d5913ce97664fedc5b9b775647fb651e",
+      "url": "https://api.github.com/repositories/187112999/contents/states/TableViews/schema.graphql?ref=2ee3d2cf5f26892fca543b9bf5cc9b6506ddc996",
+      "git_url": "https://api.github.com/repositories/187112999/git/blobs/1f90e488d5913ce97664fedc5b9b775647fb651e",
+      "html_url": "https://github.com/jchapple/typescript-nextjs-graphql-boilerplate/blob/2ee3d2cf5f26892fca543b9bf5cc9b6506ddc996/states/TableViews/schema.graphql",
+      "content": "type TablePaginationLimit {\n  id: String!\n  limit: Int!\n}\n\ntype UsersFilterPanel {\n  name: String\n  roleType: String\n}\n\ntype FilterPanels {\n  users: UsersFilterPanel!\n}\n\ntype Query {\n  usersFilterPanel: UsersFilterPanel!\n  tablePaginationLimits(id: String!): TablePaginationLimit!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-16T23:10:33Z",
+    "updated_at": "2019-05-18T12:18:35Z",
+    "pushed_at": "2019-05-16T23:15:43Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

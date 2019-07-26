@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-app",
+  "repo_full_name": "striderarun/graphql-app",
+  "repo_owner": "striderarun",
+  "repo_description": "A Spring Boot and graphql-java app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/main/resources/schema.graphql",
+      "sha": "6e4e0d0b8ce950bbcf657466cc37149703c0ca2e",
+      "url": "https://api.github.com/repositories/92998777/contents/src/main/resources/schema.graphql?ref=75c7fa4d6e863c99c21905c9e5edb18bc998f3dc",
+      "git_url": "https://api.github.com/repositories/92998777/git/blobs/6e4e0d0b8ce950bbcf657466cc37149703c0ca2e",
+      "html_url": "https://github.com/striderarun/graphql-app/blob/75c7fa4d6e863c99c21905c9e5edb18bc998f3dc/src/main/resources/schema.graphql",
+      "content": "schema {\n    query: QueryType\n}\n\ntype QueryType {\n    character(firstName: String): Character\n    characters: [Character]\n}\n\ntype Character {\n    firstName: String\n    lastName: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-31T23:56:38Z",
+    "updated_at": "2017-08-02T23:39:19Z",
+    "pushed_at": "2017-11-06T05:59:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "prisma-go-todo",
+  "repo_full_name": "sach97/prisma-go-todo",
+  "repo_owner": "Sach97",
+  "repo_description": "Prisma example with a todo graphql server illustrating new prisma client feature",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "f23a8aa8c832e06644a962002df80573ca963bb6",
+      "url": "https://api.github.com/repositories/149267084/contents/server/schema.graphql?ref=ea93660f3a7b9a3fc971779fe4baf1c3935a6bae",
+      "git_url": "https://api.github.com/repositories/149267084/git/blobs/f23a8aa8c832e06644a962002df80573ca963bb6",
+      "html_url": "https://github.com/Sach97/prisma-go-todo/blob/ea93660f3a7b9a3fc971779fe4baf1c3935a6bae/server/schema.graphql",
+      "content": "type Query {\n  todo(id: ID!): Todo\n  #lastTodo: Todo\n  todos: [Todo!]!\n}\n\ntype Mutation {\n  createTodo(text: String!, done: Boolean): Todo!\n}\n\ntype Todo {\n  id: ID!\n  text: String!\n  done: Boolean! #@hasRole(role: OWNER) # only the owner can see if a todo is done\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-18T10:02:39Z",
+    "updated_at": "2019-03-06T10:50:51Z",
+    "pushed_at": "2019-03-06T10:50:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

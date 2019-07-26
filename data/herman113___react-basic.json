@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-basic",
+  "repo_full_name": "herman113/react-basic",
+  "repo_owner": "herman113",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "0da66844553bdc3c5e25f998dc6605080d02e347",
+      "url": "https://api.github.com/repositories/161972171/contents/server/src/schema.graphql?ref=af27a0060656910eabcc8a91784e6c024ca3b901",
+      "git_url": "https://api.github.com/repositories/161972171/git/blobs/0da66844553bdc3c5e25f998dc6605080d02e347",
+      "html_url": "https://github.com/herman113/react-basic/blob/af27a0060656910eabcc8a91784e6c024ca3b901/server/src/schema.graphql",
+      "content": "type Query {\n  feed: [Post!]!\n  drafts: [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String): Post\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n}\n\ntype Post {\n  id: ID!\n  published: Boolean!\n  title: String!\n  content: String!\n}\n# type User {\n#   firstName: String\n# }\ntype Workout {\n  id: ID!\n  name: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-16T05:51:30Z",
+    "updated_at": "2018-12-16T05:51:41Z",
+    "pushed_at": "2018-12-16T05:58:17Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

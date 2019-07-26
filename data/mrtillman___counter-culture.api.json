@@ -1,0 +1,42 @@
+{
+  "repo_name": "counter-culture.api",
+  "repo_full_name": "mrtillman/counter-culture.api",
+  "repo_owner": "mrtillman",
+  "repo_description": "rest api",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "bbd2e680b336fbac84f554e63a0ff92d1545b0fb",
+      "url": "https://api.github.com/repositories/172303963/contents/graphql/schema.graphql?ref=e25012fb05375d5de3d393b0ad6b9ecb242d584c",
+      "git_url": "https://api.github.com/repositories/172303963/git/blobs/bbd2e680b336fbac84f554e63a0ff92d1545b0fb",
+      "html_url": "https://github.com/mrtillman/counter-culture.api/blob/e25012fb05375d5de3d393b0ad6b9ecb242d584c/graphql/schema.graphql",
+      "content": "type Counter {\n  id: Int!\n  name: String!\n  value: Int!\n  skip: Int!\n}\n\ntype Query {\n  counter(id: Int): [Counter]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-24T06:23:17Z",
+    "updated_at": "2019-07-14T00:15:38Z",
+    "pushed_at": "2019-07-14T00:15:36Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-moltin-server",
+  "repo_full_name": "moltin-examples/graphql-moltin-server",
+  "repo_owner": "moltin-examples",
+  "repo_description": "⚛️ GraphQL + Moltin + GraphQL Yoga 🧘",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "f43a4acaf5c787734ce12f477e61d37b43e3d0b9",
+      "url": "https://api.github.com/repositories/94341021/contents/src/schema.graphql?ref=3bf12613276db21b26d3e156b0d69ce0f12b5d31",
+      "git_url": "https://api.github.com/repositories/94341021/git/blobs/f43a4acaf5c787734ce12f477e61d37b43e3d0b9",
+      "html_url": "https://github.com/moltin-examples/graphql-moltin-server/blob/3bf12613276db21b26d3e156b0d69ce0f12b5d31/src/schema.graphql",
+      "content": "type Product {\n  id: ID!\n  name: String!\n  slug: String!\n  description: String!\n  status: ActiveStatus!\n  price: [ProductPrice]\n  brands: [Brand]\n  main_image: MainImage\n}\n\ntype ProductPrice {\n  amount: Int!\n  currency: String\n  includes_tax: Boolean!\n}\n\ntype MainImage {\n  file_name: String\n  href: String\n}\n\nenum ActiveStatus {\n  draft\n  live\n}\n\ntype Brand {\n  id: ID!\n  type: String!\n  name: String!\n  slug: String!\n  description: String\n  status: ActiveStatus!\n  products: [Product]\n}\n\ntype Collection {\n  id: ID!\n  type: String!\n  status: ActiveStatus\n  name: String\n  slug: String\n  description: String\n}\n\ntype Category {\n  id: ID!\n  type: String!\n  status: ActiveStatus\n  name: String\n  slug: String\n  description: String\n}\n\ntype CartItem {\n  id: ID!\n  type: String!\n  name: String!\n  description: String\n  quantity: Int!\n}\n\ntype Cart {\n  id: ID!\n  items: [CartItem]\n}\n\ntype Order {\n  id: ID!\n  items: [OrderItem]\n  status: String!\n  payment: String!\n  shipping: String!\n}\n\ntype OrderItem {\n  id: ID!\n  name: String!\n  product_id: ID!\n  quantity: Int!\n}\n\nenum AuthGrantType {\n  client_credentials\n  implicit\n  refresh_token\n}\n\ntype AuthenticatePayload {\n  expires: Int!\n  identifier: String!\n  expires_in: Int!\n  access_token: String!\n  token_type: String!\n}\n\ntype Checkout {\n  id: ID!\n}\n\ntype Payment {\n  id: ID!\n}\n\ntype Query {\n  products: [Product]\n  product(id: ID!): Product\n  brands: [Brand]\n  brand(id: ID!): Brand\n  collections: [Collection]\n  collection(id: ID!): Collection\n  categories: [Category]\n  category(id: ID!): Category\n  cart(id: ID!): Cart\n}\n\ninput BillingAddress {\n  first_name: String!\n  last_name: String!\n  company_name: String\n  line_1: String!\n  line_2: String\n  city: String\n  postcode: String!\n  county: String!\n  country: String\n}\n\ninput ShippingAddress {\n  first_name: String!\n  last_name: String!\n  phone_number: String\n  company_name: String\n  line_1: String!\n  line_2: String\n  city: String\n  postcode: String!\n  county: String!\n  country: String\n  instructions: String\n}\n\ninput Customer {\n  id: ID\n  name: String\n  email: String\n}\n\ntype Mutation {\n  authenticate(\n    clientId: String!\n    clientSecret: String\n    grantType: AuthGrantType\n  ): AuthenticatePayload\n  addToCart(productId: ID!, cartId: ID!): Cart\n  checkoutCart(\n    cartId: ID!\n    customer: Customer!\n    billing: BillingAddress!\n    shipping: ShippingAddress\n  ): Order\n  stripeTokenPayment(orderId: ID!, token: String!): Order\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-14T14:38:53Z",
+    "updated_at": "2019-06-08T18:35:01Z",
+    "pushed_at": "2019-02-13T15:30:12Z",
+    "issues": 5,
+    "watchers": 1,
+    "fork_count": 4,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 18
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "supermamas-react",
+  "repo_full_name": "oasalonen/supermamas-react",
+  "repo_owner": "oasalonen",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "api.graphql",
+      "path": "server/api/api.graphql",
+      "sha": "6022a7dc402e12ee71447545688b733f6e26f892",
+      "url": "https://api.github.com/repositories/172373356/contents/server/api/api.graphql?ref=fa706e0638eabad33c7836afdbc60c3c64cff069",
+      "git_url": "https://api.github.com/repositories/172373356/git/blobs/6022a7dc402e12ee71447545688b733f6e26f892",
+      "html_url": "https://github.com/oasalonen/supermamas-react/blob/fa706e0638eabad33c7836afdbc60c3c64cff069/server/api/api.graphql",
+      "content": "\nscalar Date\n\ntype Query {\n    \"A simple type for getting started!\"\n    hello: String,\n    secure_hello: String,\n    cities: [City]!,\n    city(id: String!): City,\n    districts(cityId: String): [District]!,\n    passwordRules: PasswordRules!,\n    bubbleMamas(cityId: String, districtId: String): [BubbleMama]!,\n    bubbleMama(id: ID!): BubbleMama,\n    pampering(id: ID!): Pampering,\n    pamperingForSignup(id: ID!): PublicPampering\n}\n\ntype Mutation {\n    registerBubbleMama(\n        userRegistration: UserRegistration!,\n        bubbleMamaRegistration: BubbleMamaRegistration!\n    ): ID!,\n    registerHelpingMama(\n        userRegistration: UserRegistration!,\n        helpingMamaRegistration: HelpingMamaRegistration!\n    ): ID!,\n    createPampering(pamperingInfo: PamperingCreation!): ID!,\n        sendPamperingInvitation(invitation: PamperingInvitation!): String\n}\n\nenum Role {\n    BUBBLE_MAMA,\n    HELPING_MAMA,\n    ADMIN,\n}\n\ntype UserReference {\n    id: ID!,\n    firstName: String!,\n    lastName: String!\n}\n\ninterface User {\n    id: ID!,\n    firstName: String!,\n    lastName: String!\n    contactDetails: ContactDetails!,\n    roles: [Role]!,\n}\n\ntype ContactDetails {\n    email: String!,\n    phoneNumber: String!,\n    address: Address!\n}\n\ntype Address {\n    addressLine1: String!,\n    addressLine2: String,\n    postalCode: String!,\n    district: District!,\n    city: City!\n}\n\ntype District {\n    id: ID!,\n    name: String!,\n    siblings: [District]!\n}\n\ntype City {\n    id: ID!,\n    name: String!,\n    districts: [District]\n}\n\ntype BubbleMama implements User {\n    id: ID!,\n    firstName: String!,\n    lastName: String!\n    contactDetails: ContactDetails!,\n    roles: [Role]!,\n\n    bubbleMamaProfile: BubbleMamaProfile,\n    pamperings: [Pampering]!\n}\n\ntype BubbleMamaProfile {\n    pamperingType: PamperingType!,\n    dueDate: Date,\n    pamperingStartDate: Date,\n    familySituation: String,\n    foodAllergies: String,\n    dietRestrictions: String,\n    languages: [String],\n    personalMessage: String,\n    nearbyPoi: String\n}\n\ntype PamperingBubbleMamaInfo {\n    name: String,\n    familySituation: String,\n    foodAllergies: String,\n    dietRestrictions: String,\n    languages: String,\n    personalMessage: String,\n    nearbyPoi: String\n}\n\ntype Pampering {\n    id: ID!,\n    bubbleMama: UserReference!,\n    district: District!,\n    availableDates: [Date]!,\n    bubbleMamaInfo: PamperingBubbleMamaInfo!,\n    signups: [PamperingSignup]!\n}\n\ntype PamperingSignup {\n    helpingMama: UserReference!,\n    availabilities: [Date]!,\n    maxVisits: Int\n}\n\ntype PublicPampering {\n    id: ID!,\n    district: District!,\n    availableDates: [Date]!,\n    bubbleMamaInfo: PamperingBubbleMamaInfo!,\n    signups: [PublicPamperingSignup]!\n}\n\ntype PublicPamperingSignup {\n    helpingMama: String!,\n    availabilities: [Date]!\n}\n\nenum PamperingType {\n    PRE_PAMPERING,\n    STANDARD_PAMPERING,\n    BELATED_PAMPERING,\n    EMERGENCY_PAMPERING,\n    SUPPORT_PAMPERING\n}\n\nenum SuitablePamperingDays {\n    ALL_DAYS,\n    WEEKDAYS,\n    OTHER\n}\n\ninput UserRegistration {\n    email: String!,\n    password: String!,\n    firstName: String!,\n    lastName: String!,\n    phoneNumber: String!,\n    addressLine1: String!,\n    addressLine2: String,\n    postalCode: String!,\n    district: String!,\n    city: String!,\n    recaptcha: String!,\n    referrer: String!\n}\n\ninput BubbleMamaRegistration {\n    pamperingType: PamperingType!,\n    pamperingStartDate: String!,\n    pamperingDays: SuitablePamperingDays!,\n    pamperingDaysOther: String,\n    maxPamperingsPerWeek: Int!,\n    familySituation: String!,\n    foodAllergies: String!,\n    dietRestrictions: String!,\n    languages: [String]!,\n    personalMessage: String!,\n    acceptContactDetailSharing: Boolean!,\n    acceptWelcomeHelpingMamas: Boolean!,\n    acceptNotifyHelpingMamas: Boolean!,\n    acceptThankHelpingMamas: Boolean!,\n    acceptDiversity: Boolean!,\n    allowHelpingDads: Boolean!,\n    dueDate: String!,\n    babyName: String!,\n    babyBirthDate: String!\n}\n\nenum HelpingMamaExperience {\n    POSTPARTUM_DEPRESSION,\n    TRAUMATIC_BIRTH,\n    PREMATURE_BIRTH\n}\n\ninput HelpingMamaRegistration {\n    goodToKnow: String,\n    speciality: String,\n    personalExperience: [HelpingMamaExperience],\n    personalExperienceOther: String,\n    personalMessage: String,\n    acceptContactDetailSharing: Boolean!,\n    acceptDiversity: Boolean!\n}\n\ntype PasswordRules {\n    rule: String!,\n    components: [RuleComponent]!\n}\n\ntype RuleComponent {\n    id: String!,\n    rule: String!,\n}\n\ninput PamperingCreation {\n    bubbleMama: ID!,\n    availableDates: [Date]!,\n    name: String!,\n    nearbyPoi: String!,\n    familySituation: String,\n    foodAllergies: String,\n    dietRestrictions: String,\n    languages: String,\n    personalMessage: String,\n}\n\ninput PamperingInvitation {\n    pampering: ID!,\n    from: String,\n    districts: [ID]!,\n    additionalRecipients: [String],\n    subject: String!,\n    message: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": true,
+      "numDefinitions": 27
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-24T18:20:05Z",
+    "updated_at": "2019-03-13T21:12:34Z",
+    "pushed_at": "2019-03-13T21:12:33Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

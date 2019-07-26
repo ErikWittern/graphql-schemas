@@ -1,0 +1,80 @@
+{
+  "repo_name": "tibia-graphql-api",
+  "repo_full_name": "giubatt/tibia-graphql-api",
+  "repo_owner": "giubatt",
+  "repo_description": "A GraphQL API utlizing data from the Tibia Wiki, extracted using https://github.com/Galarzaa90/tibiawiki-sql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rashidPosition.graphql",
+      "path": "src/graphql/typeDefs/rashidPosition.graphql",
+      "sha": "063a820e6cdfb03dba9d72f9385a6adb81e71374",
+      "url": "https://api.github.com/repositories/156790112/contents/src/graphql/typeDefs/rashidPosition.graphql?ref=1ee2fabf8b3001bf6bc90a145b0c3061eb30f357",
+      "git_url": "https://api.github.com/repositories/156790112/git/blobs/063a820e6cdfb03dba9d72f9385a6adb81e71374",
+      "html_url": "https://github.com/giubatt/tibia-graphql-api/blob/1ee2fabf8b3001bf6bc90a145b0c3061eb30f357/src/graphql/typeDefs/rashidPosition.graphql",
+      "content": "type RashidPosition {\n  day: ID!\n  day_name: String\n  city: String\n  x: Int\n  y: Int\n  z: Int\n}\n\ntype Query {\n  rashidPosition(day: ID!): RashidPosition\n  rashidPositions: [RashidPosition]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    },
+    {
+      "name": "item.graphql",
+      "path": "src/graphql/typeDefs/item.graphql",
+      "sha": "466d48a8847cbff538dfbf856381c47b7af7dcf9",
+      "url": "https://api.github.com/repositories/156790112/contents/src/graphql/typeDefs/item.graphql?ref=1ee2fabf8b3001bf6bc90a145b0c3061eb30f357",
+      "git_url": "https://api.github.com/repositories/156790112/git/blobs/466d48a8847cbff538dfbf856381c47b7af7dcf9",
+      "html_url": "https://github.com/giubatt/tibia-graphql-api/blob/1ee2fabf8b3001bf6bc90a145b0c3061eb30f357/src/graphql/typeDefs/item.graphql",
+      "content": "type Item {\n  article_id: ID!\n  title: String\n  name: String\n  article: String\n  stackable: Int\n  value_sell: Int\n  value_buy: Int\n  weight: Float\n  class: String\n  type: String\n  flavor_text: String\n  client_id: Int\n  image: String\n  attributes: [ItemAttribute]\n}\n\ntype Query {\n  item(article_id: ID!): Item\n  itemSearch(name: String): [Item]\n  itemByClientId(client_id: Int!): Item\n  items: [Item]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/giubatt/tibia-graphql-api/blob/1ee2fabf8b3001bf6bc90a145b0c3061eb30f357/src/graphql/typeDefs/item.graphql:\ntype Item {\n  article_id: ID!\n  title: String\n  name: String\n  article: String\n  stackable: Int\n  value_sell: Int\n  value_buy: Int\n  weight: Float\n  class: String\n  type: String\n  flavor_text: String\n  client_id: Int\n  image: String\n  attributes: [ItemAttribute]\n}\n\ntype Query {\n  item(article_id: ID!): Item\n  itemSearch(name: String): [Item]\n  itemByClientId(client_id: Int!): Item\n  items: [Item]\n}\n\n# https://github.com/giubatt/tibia-graphql-api/blob/1ee2fabf8b3001bf6bc90a145b0c3061eb30f357/src/graphql/typeDefs/itemAttribute.graphql:\ntype ItemAttribute {\n  item_id: ID!\n  item: Item\n  attribute: String\n  value: String\n}\n",
+        "mergedPaths": [
+          "src/graphql/typeDefs/itemAttribute.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "ItemAttribute"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "itemAttribute.graphql",
+      "path": "src/graphql/typeDefs/itemAttribute.graphql",
+      "sha": "02014b5682dec00e6cf99b7b41dabd76073c1b06",
+      "url": "https://api.github.com/repositories/156790112/contents/src/graphql/typeDefs/itemAttribute.graphql?ref=1ee2fabf8b3001bf6bc90a145b0c3061eb30f357",
+      "git_url": "https://api.github.com/repositories/156790112/git/blobs/02014b5682dec00e6cf99b7b41dabd76073c1b06",
+      "html_url": "https://github.com/giubatt/tibia-graphql-api/blob/1ee2fabf8b3001bf6bc90a145b0c3061eb30f357/src/graphql/typeDefs/itemAttribute.graphql",
+      "content": "type ItemAttribute {\n  item_id: ID!\n  item: Item\n  attribute: String\n  value: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-09T01:05:07Z",
+    "updated_at": "2019-03-20T03:21:50Z",
+    "pushed_at": "2019-01-07T03:14:30Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

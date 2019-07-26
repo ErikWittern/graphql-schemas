@@ -1,0 +1,81 @@
+{
+  "repo_name": "cosmos-api",
+  "repo_full_name": "cityofsurrey/cosmos-api",
+  "repo_owner": "cityofsurrey",
+  "repo_description": "GraphQL wrapper for COSMOS related ArcGIS REST APIs",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "4f49f2f3c77d8a308ed0c12210032e42f9eb0e88",
+      "url": "https://api.github.com/repositories/107154979/contents/src/schema.graphql?ref=89c3e2e2d7c38496f766c2ec1ad151677f5f0681",
+      "git_url": "https://api.github.com/repositories/107154979/git/blobs/4f49f2f3c77d8a308ed0c12210032e42f9eb0e88",
+      "html_url": "https://github.com/cityofsurrey/cosmos-api/blob/89c3e2e2d7c38496f766c2ec1ad151677f5f0681/src/schema.graphql",
+      "content": "type Query {\n  location(coordinates: Coordinates!): Location\n  searchBySearchPhrase(searchPhrase: String!): [Feature]\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/cityofsurrey/cosmos-api/blob/89c3e2e2d7c38496f766c2ec1ad151677f5f0681/src/schema.graphql:\ntype Query {\n  location(coordinates: Coordinates!): Location\n  searchBySearchPhrase(searchPhrase: String!): [Feature]\n}\n\nschema {\n  query: Query\n}\n\n# https://github.com/cityofsurrey/cosmos-api/blob/89c3e2e2d7c38496f766c2ec1ad151677f5f0681/src/locations/schema.graphql:\ntype Location {\n  name: String!\n}\n\ninput Coordinates {\n  x: Float!\n  y: Float!\n}\n\n# https://github.com/cityofsurrey/cosmos-api/blob/89c3e2e2d7c38496f766c2ec1ad151677f5f0681/src/feature-search/schema.graphql:\ntype Feature {\n  fieldName: String!\n  fieldValue: String!\n  layerName: String!\n  display: String!\n}\n",
+        "mergedPaths": [
+          "src/locations/schema.graphql",
+          "src/feature-search/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Location",
+          "Feature"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/locations/schema.graphql",
+      "sha": "4bfe05b078a400986ee2c15d2bd5d69ea37ea899",
+      "url": "https://api.github.com/repositories/107154979/contents/src/locations/schema.graphql?ref=89c3e2e2d7c38496f766c2ec1ad151677f5f0681",
+      "git_url": "https://api.github.com/repositories/107154979/git/blobs/4bfe05b078a400986ee2c15d2bd5d69ea37ea899",
+      "html_url": "https://github.com/cityofsurrey/cosmos-api/blob/89c3e2e2d7c38496f766c2ec1ad151677f5f0681/src/locations/schema.graphql",
+      "content": "type Location {\n  name: String!\n}\n\ninput Coordinates {\n  x: Float!\n  y: Float!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/feature-search/schema.graphql",
+      "sha": "75e769e393603434c2c94b7a3ed4884f6880d0b2",
+      "url": "https://api.github.com/repositories/107154979/contents/src/feature-search/schema.graphql?ref=89c3e2e2d7c38496f766c2ec1ad151677f5f0681",
+      "git_url": "https://api.github.com/repositories/107154979/git/blobs/75e769e393603434c2c94b7a3ed4884f6880d0b2",
+      "html_url": "https://github.com/cityofsurrey/cosmos-api/blob/89c3e2e2d7c38496f766c2ec1ad151677f5f0681/src/feature-search/schema.graphql",
+      "content": "type Feature {\n  fieldName: String!\n  fieldValue: String!\n  layerName: String!\n  display: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-16T16:38:14Z",
+    "updated_at": "2017-10-20T02:55:09Z",
+    "pushed_at": "2019-07-11T08:15:48Z",
+    "issues": 4,
+    "watchers": 8,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 2,
+    "stargazers": 1
+  }
+}

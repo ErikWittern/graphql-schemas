@@ -1,0 +1,42 @@
+{
+  "repo_name": "pizzaql",
+  "repo_full_name": "pizzaql/pizzaql",
+  "repo_owner": "pizzaql",
+  "repo_description": ":pizza: [WIP] Modern OSS Order Management System for Pizza Restaurants",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/schema.graphql",
+      "sha": "84c14d812599709fdea49d6b248e4603b18b4a13",
+      "url": "https://api.github.com/repositories/163206447/contents/backend/schema.graphql?ref=ae8929761ae4c37fb376bf139898caaea0286878",
+      "git_url": "https://api.github.com/repositories/163206447/git/blobs/84c14d812599709fdea49d6b248e4603b18b4a13",
+      "html_url": "https://github.com/pizzaql/pizzaql/blob/ae8929761ae4c37fb376bf139898caaea0286878/backend/schema.graphql",
+      "content": "type AggregateOrder {\n  count: Int!\n}\n\ntype BatchPayload {\n  count: Long!\n}\n\nscalar Long\n\ntype Mutation {\n  createOrder(data: OrderCreateInput!): Order!\n  updateOrder(data: OrderUpdateInput!, where: OrderWhereUniqueInput!): Order\n  deleteOrder(where: OrderWhereUniqueInput!): Order\n  upsertOrder(\n    where: OrderWhereUniqueInput!\n    create: OrderCreateInput!\n    update: OrderUpdateInput!\n  ): Order!\n  updateManyOrders(\n    data: OrderUpdateManyMutationInput!\n    where: OrderWhereInput\n  ): BatchPayload!\n  deleteManyOrders(where: OrderWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype Order implements Node {\n  id: ID!\n  status: String!\n  size: String!\n  dough: String!\n  type: String!\n  name: String!\n  phone: String!\n  time: String!\n  city: String!\n  street: String!\n}\n\ntype OrderConnection {\n  pageInfo: PageInfo!\n  edges: [OrderEdge]!\n  aggregate: AggregateOrder!\n}\n\ninput OrderCreateInput {\n  status: String!\n  size: String!\n  dough: String!\n  type: String!\n  name: String!\n  phone: String!\n  time: String!\n  city: String!\n  street: String!\n}\n\ntype OrderEdge {\n  node: Order!\n  cursor: String!\n}\n\nenum OrderOrderByInput {\n  id_ASC\n  id_DESC\n  status_ASC\n  status_DESC\n  size_ASC\n  size_DESC\n  dough_ASC\n  dough_DESC\n  type_ASC\n  type_DESC\n  name_ASC\n  name_DESC\n  phone_ASC\n  phone_DESC\n  time_ASC\n  time_DESC\n  city_ASC\n  city_DESC\n  street_ASC\n  street_DESC\n}\n\ntype OrderPreviousValues {\n  id: ID!\n  status: String!\n  size: String!\n  dough: String!\n  type: String!\n  name: String!\n  phone: String!\n  time: String!\n  city: String!\n  street: String!\n}\n\ntype OrderSubscriptionPayload {\n  mutation: MutationType!\n  node: Order\n  updatedFields: [String!]\n  previousValues: OrderPreviousValues\n}\n\ninput OrderSubscriptionWhereInput {\n  AND: [OrderSubscriptionWhereInput!]\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: OrderWhereInput\n}\n\ninput OrderUpdateInput {\n  status: String\n  size: String\n  dough: String\n  type: String\n  name: String\n  phone: String\n  time: String\n  city: String\n  street: String\n}\n\ninput OrderUpdateManyMutationInput {\n  status: String\n  size: String\n  dough: String\n  type: String\n  name: String\n  phone: String\n  time: String\n  city: String\n  street: String\n}\n\ninput OrderWhereInput {\n  AND: [OrderWhereInput!]\n  id: ID\n  id_not: ID\n  id_in: [ID!]\n  id_not_in: [ID!]\n  id_lt: ID\n  id_lte: ID\n  id_gt: ID\n  id_gte: ID\n  id_contains: ID\n  id_not_contains: ID\n  id_starts_with: ID\n  id_not_starts_with: ID\n  id_ends_with: ID\n  id_not_ends_with: ID\n  status: String\n  status_not: String\n  status_in: [String!]\n  status_not_in: [String!]\n  status_lt: String\n  status_lte: String\n  status_gt: String\n  status_gte: String\n  status_contains: String\n  status_not_contains: String\n  status_starts_with: String\n  status_not_starts_with: String\n  status_ends_with: String\n  status_not_ends_with: String\n  size: String\n  size_not: String\n  size_in: [String!]\n  size_not_in: [String!]\n  size_lt: String\n  size_lte: String\n  size_gt: String\n  size_gte: String\n  size_contains: String\n  size_not_contains: String\n  size_starts_with: String\n  size_not_starts_with: String\n  size_ends_with: String\n  size_not_ends_with: String\n  dough: String\n  dough_not: String\n  dough_in: [String!]\n  dough_not_in: [String!]\n  dough_lt: String\n  dough_lte: String\n  dough_gt: String\n  dough_gte: String\n  dough_contains: String\n  dough_not_contains: String\n  dough_starts_with: String\n  dough_not_starts_with: String\n  dough_ends_with: String\n  dough_not_ends_with: String\n  type: String\n  type_not: String\n  type_in: [String!]\n  type_not_in: [String!]\n  type_lt: String\n  type_lte: String\n  type_gt: String\n  type_gte: String\n  type_contains: String\n  type_not_contains: String\n  type_starts_with: String\n  type_not_starts_with: String\n  type_ends_with: String\n  type_not_ends_with: String\n  name: String\n  name_not: String\n  name_in: [String!]\n  name_not_in: [String!]\n  name_lt: String\n  name_lte: String\n  name_gt: String\n  name_gte: String\n  name_contains: String\n  name_not_contains: String\n  name_starts_with: String\n  name_not_starts_with: String\n  name_ends_with: String\n  name_not_ends_with: String\n  phone: String\n  phone_not: String\n  phone_in: [String!]\n  phone_not_in: [String!]\n  phone_lt: String\n  phone_lte: String\n  phone_gt: String\n  phone_gte: String\n  phone_contains: String\n  phone_not_contains: String\n  phone_starts_with: String\n  phone_not_starts_with: String\n  phone_ends_with: String\n  phone_not_ends_with: String\n  time: String\n  time_not: String\n  time_in: [String!]\n  time_not_in: [String!]\n  time_lt: String\n  time_lte: String\n  time_gt: String\n  time_gte: String\n  time_contains: String\n  time_not_contains: String\n  time_starts_with: String\n  time_not_starts_with: String\n  time_ends_with: String\n  time_not_ends_with: String\n  city: String\n  city_not: String\n  city_in: [String!]\n  city_not_in: [String!]\n  city_lt: String\n  city_lte: String\n  city_gt: String\n  city_gte: String\n  city_contains: String\n  city_not_contains: String\n  city_starts_with: String\n  city_not_starts_with: String\n  city_ends_with: String\n  city_not_ends_with: String\n  street: String\n  street_not: String\n  street_in: [String!]\n  street_not_in: [String!]\n  street_lt: String\n  street_lte: String\n  street_gt: String\n  street_gte: String\n  street_contains: String\n  street_not_contains: String\n  street_starts_with: String\n  street_not_starts_with: String\n  street_ends_with: String\n  street_not_ends_with: String\n}\n\ninput OrderWhereUniqueInput {\n  id: ID\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  orders(\n    where: OrderWhereInput\n    orderBy: OrderOrderByInput\n    skip: Int\n    after: String\n    before: String\n    first: Int\n    last: Int\n  ): [Order]!\n  order(where: OrderWhereUniqueInput!): Order\n  ordersConnection(\n    where: OrderWhereInput\n    orderBy: OrderOrderByInput\n    skip: Int\n    after: String\n    before: String\n    first: Int\n    last: Int\n  ): OrderConnection!\n  node(id: ID!): Node\n}\n\ntype Subscription {\n  order(where: OrderSubscriptionWhereInput): OrderSubscriptionPayload\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-26T18:22:54Z",
+    "updated_at": "2019-07-19T13:31:40Z",
+    "pushed_at": "2019-07-19T13:31:38Z",
+    "issues": 10,
+    "watchers": 20,
+    "fork_count": 20,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 1,
+    "releases": 2,
+    "stargazers": 428
+  }
+}

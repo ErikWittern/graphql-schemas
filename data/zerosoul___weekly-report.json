@@ -1,0 +1,41 @@
+{
+  "repo_name": "weekly-report",
+  "repo_full_name": "zerosoul/weekly-report",
+  "repo_owner": "zerosoul",
+  "repo_description": "weekly report",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "a52f07713ef2f96521fc3aa2fc8bbae8d1d2125d",
+      "url": "https://api.github.com/repositories/172346258/contents/server/src/schema.graphql?ref=df3b71dafdd2ce27b20c0ec2180758f4052d5523",
+      "git_url": "https://api.github.com/repositories/172346258/git/blobs/a52f07713ef2f96521fc3aa2fc8bbae8d1d2125d",
+      "html_url": "https://github.com/zerosoul/weekly-report/blob/df3b71dafdd2ce27b20c0ec2180758f4052d5523/server/src/schema.graphql",
+      "content": "# 分组\ntype Group {\n  id: ID!\n  createAt: String!\n  email: String\n  name: String!\n  parent: Group\n  intro: String\n  users: [User!]!\n}\ntype Query {\n  group(id: ID, name: String, email: String): Group!\n  report(id: ID): Report!\n  userList(skip: Int, first: Int, filter: UserFilterInput, orderBy: String): UserList!\n  reportList(skip: Int, first: Int, filter: ReportFilterInput, orderBy: String): ReportList!\n  groupList(skip: Int, first: Int, filter: GroupFilterInput, orderBy: String): GroupList!\n}\n# 带分页的用户列表\ntype UserList {\n  users: [User!]!\n  pageSize: Int!\n  current: Int!\n  total: Int!\n}\n# 带分页的周报列表\ntype ReportList {\n  reports: [Report!]!\n  pageSize: Int!\n  current: Int!\n  total: Int!\n}\n# 带分页的组列表\ntype GroupList {\n  groups: [Group!]!\n  pageSize: Int!\n  current: Int!\n  total: Int!\n}\ntype Mutation {\n  upsertUser(data: UserInput!): User!\n  upsertReport(data: ReportInput!): Report!\n  upsertReportItem(data: ReportItemInput!): ReportItem!\n  upsertGroup(data: GroupInput!): Group!\n  removeGroup(id: ID!): Boolean!\n  removeUser(id: ID!): Boolean!\n  removeReport(id: ID!): Boolean!\n  removeReportItem(id: ID!): Boolean!\n}\n# 周报输入项\ninput ReportFilterInput {\n  id: ID\n  title: String\n}\n# 用户输入项\ninput UserInput {\n  id: ID\n  email: String!\n  name: String!\n  createAt: String\n  role: UserRole\n  nickname: String\n  avatar: String\n  intro: String\n  birthday: String\n  sex: Int\n  group: ID\n}\n# 周报输入项\ninput ReportInput {\n  id: ID\n  title: String\n  items: [ID!]!\n}\n# 周报项输入项\ninput ReportItemInput {\n  id: ID\n  content: String\n  progress: String\n  remark: String\n}\n# 组输入项\ninput GroupInput {\n  id: ID\n  name: String\n  email: String\n  intro: String\n  # users: [User!]\n}\n# 用户过滤项\ninput UserFilterInput {\n  name_contains: String\n  nickname_contains: String\n  email_contains: String\n}\n# 组过滤项\ninput GroupFilterInput {\n  name_contains: String\n}\n\n# 用户\ntype User {\n  id: ID!\n  createAt: String!\n  email: String!\n  name: String!\n  nickname: String\n  avatar: String\n  intro: String\n  birthday: String\n  sex: Int!\n  role: UserRole!\n  group: Group\n}\n# 周报\ntype Report {\n  id: ID!\n  title: String!\n  status: ReportStatus!\n  startTime: String!\n  endTime: String!\n  reportBy: User!\n  items: [ReportItem!]!\n}\n# 周报每一项\ntype ReportItem {\n  id: ID!\n  type: ItemType!\n  content: String!\n  progress: String!\n  remark: String\n}\n#周报状态\nenum ReportStatus {\n  UNSEND\n  SEND\n  SEND_FAIL\n}\n#每一项类型：已完成、下周要做的\nenum ItemType {\n  DONE\n  TODO\n}\n#角色\nenum UserRole {\n  \"管理员\"\n  ADMIN\n  \"领导\"\n  LEADER\n  \"经理\"\n  MANAGER\n  \"员工\"\n  STAFF\n}\n# 发送记录\ntype SendRecord {\n  id: ID!\n  sendReport: Report!\n  sendBy: User!\n  createAt: String!\n  success: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-24T14:15:58Z",
+    "updated_at": "2019-03-02T14:28:40Z",
+    "pushed_at": "2019-07-11T07:17:56Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

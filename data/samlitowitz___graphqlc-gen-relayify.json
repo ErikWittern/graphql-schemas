@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphqlc-gen-relayify",
+  "repo_full_name": "samlitowitz/graphqlc-gen-relayify",
+  "repo_owner": "samlitowitz",
+  "repo_description": "A graphqlc code generator which adds the Relay Node interface and Connection definitions to specified types",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.echo.graphql",
+      "path": "examples/todo/schema.echo.graphql",
+      "sha": "3f70c2169c5d39250288241dea842c765ba69846",
+      "url": "https://api.github.com/repositories/187673143/contents/examples/todo/schema.echo.graphql?ref=d688823fd8c58b3b2b71302b185fe66f26c88355",
+      "git_url": "https://api.github.com/repositories/187673143/git/blobs/3f70c2169c5d39250288241dea842c765ba69846",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-relayify/blob/d688823fd8c58b3b2b71302b185fe66f26c88355/examples/todo/schema.echo.graphql",
+      "content": "schema {\n  query: MyQuery\n  mutation: MyMutation\n}\n\ndirective @hasRole(role: Role!) on FIELD_DEFINITION\n\nscalar Map\n\ntype MyQuery {\n  todo(id: ID!): Todo\n  lastTodo: Todo\n  todos: [Todo!]!\n  node(id: ID!): Node!\n}\n\ntype MyMutation {\n  createTodo(todo: TodoInput!): Todo!\n  updateTodo(id: ID!, changes: Map!): Todo\n}\n\ntype Todo implements Node {\n  id: ID!\n  owner: User!\n  text: String!\n  done: Boolean! @hasRole(role: OWNER)\n}\n\ntype User implements Node {\n  login: String!\n  id: ID!\n}\n\ninterface Node {\n  id: ID!\n}\n\nenum Role {\n  ADMIN\n  OWNER\n}\n\ninput TodoInput {\n  text: String!\n  done: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 10
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/todo/schema.graphql",
+      "sha": "8a41ed961e9a5a2a80f1664ee5d819b88c039505",
+      "url": "https://api.github.com/repositories/187673143/contents/examples/todo/schema.graphql?ref=d688823fd8c58b3b2b71302b185fe66f26c88355",
+      "git_url": "https://api.github.com/repositories/187673143/git/blobs/8a41ed961e9a5a2a80f1664ee5d819b88c039505",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-relayify/blob/d688823fd8c58b3b2b71302b185fe66f26c88355/examples/todo/schema.graphql",
+      "content": "schema {\n    query: MyQuery\n    mutation: MyMutation\n}\n\ntype MyQuery {\n    todo(id: ID!): Todo\n    lastTodo: Todo\n    todos: [Todo!]!\n}\n\ntype MyMutation {\n    createTodo(todo: TodoInput!): Todo!\n    updateTodo(id: ID!, changes: Map!): Todo\n}\n\ntype Todo {\n    id: ID!\n    owner: User!\n    text: String!\n    done: Boolean! @hasRole(role: OWNER) # only the owner can see if a todo is done\n}\n\ntype User {\n    login: String!\n}\n\n\"Passed to createTodo to create a new todo\"\ninput TodoInput {\n    \"The body text\"\n    text: String!\n    \"Is it done already?\"\n    done: Boolean\n}\n\nscalar Map\n\n\"Prevents access to a field if the user doesnt have the matching role\"\ndirective @hasRole(role: Role!) on FIELD_DEFINITION\n\nenum Role {\n    ADMIN\n    OWNER\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-20T16:03:37Z",
+    "updated_at": "2019-05-26T13:35:40Z",
+    "pushed_at": "2019-05-26T13:35:39Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "fcl-blogshop",
+  "repo_full_name": "occitech/fcl-blogshop",
+  "repo_owner": "occitech",
+  "repo_description": "Prototype of a « blog shop » theme based on Front-Commerce Lite",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/server/modules/store-information/schema.gql",
+      "sha": "f2e33123d183f61150fdca72b38f3fe2f8ba5183",
+      "url": "https://api.github.com/repositories/130658059/contents/src/server/modules/store-information/schema.gql?ref=8edc6e0435d4909aa9858dbc24a9fb2601cc2e6a",
+      "git_url": "https://api.github.com/repositories/130658059/git/blobs/f2e33123d183f61150fdca72b38f3fe2f8ba5183",
+      "html_url": "https://github.com/occitech/fcl-blogshop/blob/8edc6e0435d4909aa9858dbc24a9fb2601cc2e6a/src/server/modules/store-information/schema.gql",
+      "content": "type Query {\n  \"General information about this store\"\n  store: StoreInformation\n}\n\n\"General information about a store\"\ntype StoreInformation {\n  \"Store name\"\n  name: String!\n  \"Support phone number\"\n  phone: String\n  \"Store owner\"\n  owner: StoreOwner\n}\n\n\"\"\"\nThe Owner of a store, with contact and personal\ninformation to make the store more human\n\"\"\"\ntype StoreOwner {\n  gender: Gender\n  displayName: String!\n  email: String!\n  picture(size: ImageSize = medium): String!\n}\n\nenum Gender {\n  FEMALE\n  MALE\n  NONBINARY\n}\n\nenum ImageSize {\n  large\n  medium\n  thumbnail\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-23T07:36:34Z",
+    "updated_at": "2018-06-27T08:12:21Z",
+    "pushed_at": "2018-07-25T12:15:53Z",
+    "issues": 0,
+    "watchers": 7,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 13,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

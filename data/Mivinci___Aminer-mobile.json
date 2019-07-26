@@ -1,0 +1,42 @@
+{
+  "repo_name": "Aminer-mobile",
+  "repo_full_name": "mivinci/aminer-mobile",
+  "repo_owner": "Mivinci",
+  "repo_description": "A work for CQUPTHub.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gql/schema.graphql",
+      "sha": "473737d1f4ebd0e945e1bfcc89e6517f06cbea0f",
+      "url": "https://api.github.com/repositories/171411442/contents/gql/schema.graphql?ref=390bcb4771bcbc3108a584b98e28af3c26b884d8",
+      "git_url": "https://api.github.com/repositories/171411442/git/blobs/473737d1f4ebd0e945e1bfcc89e6517f06cbea0f",
+      "html_url": "https://github.com/Mivinci/Aminer-mobile/blob/390bcb4771bcbc3108a584b98e28af3c26b884d8/gql/schema.graphql",
+      "content": "# source: https://ludius.serveo.net/graphql\n# timestamp: Sat Mar 02 2019 17:24:13 GMT+0800 (GMT+08:00)\n\n\"\"\"作者信息集合\"\"\"\ntype Author {\n  \"\"\"名称\"\"\"\n  name: String\n\n  \"\"\"附属机构\"\"\"\n  org: String\n\n  \"\"\"发表的 Paper\"\"\"\n  papers: [AuthorsPaper]!\n}\n\ntype AuthorsInfo {\n  data: [Author]\n  info: [QueryInfoType]!\n}\n\n\"\"\"作者发表的文章id\"\"\"\ntype AuthorsPaper {\n  \"\"\"Paper Id\"\"\"\n  id: String\n}\n\nenum Lang {\n  GREEK\n  CHINESE\n  INDIAN\n  JAPANESE\n  ENGLISH\n  FRENCH\n  KOREAN\n  GERMAN\n}\n\n\"\"\"语言统计类型。每个列表只有一个值，及使用该语言的 paper 数量。\"\"\"\ntype LangCountType {\n  deu: [LangInfo]!\n  ell: [LangInfo]!\n  en: [LangInfo]!\n  fra: [LangInfo]!\n  jp: [LangInfo]!\n  jq: [LangInfo]!\n  ko: [LangInfo]!\n  zh: [LangInfo]!\n}\n\ntype LangInfo {\n  num: Int!\n}\n\nenum OrderField {\n  \"\"\"发表年份\"\"\"\n  year\n\n  \"\"\"被引数量\"\"\"\n  n_citation\n}\n\n\"\"\"Paper 信息集合\"\"\"\ntype Paper {\n  \"\"\"摘要\"\"\"\n  abstract: String\n\n  \"\"\"作者\"\"\"\n  authors: [Author]!\n\n  \"\"\"文档类型\"\"\"\n  doc_type: String\n\n  \"\"\"Digital Object Identifier\"\"\"\n  doi: String\n\n  \"\"\"研究领域\"\"\"\n  fos: [String]\n\n  \"\"\"Paper Id\"\"\"\n  id: String\n\n  \"\"\"ISBN\"\"\"\n  isbn: String\n\n  \"\"\"ISSN\"\"\"\n  issn: String\n\n  \"\"\"期号\"\"\"\n  issue: String\n\n  \"\"\"关键词\"\"\"\n  keywords: [String]\n\n  \"\"\"语言\"\"\"\n  lang: String\n\n  \"\"\"被引数量\"\"\"\n  n_citation: Int\n\n  \"\"\"结束页\"\"\"\n  page_end: String\n\n  \"\"\"开始页\"\"\"\n  paper_start: String\n\n  \"\"\"PDF地址\"\"\"\n  pdf: String\n\n  \"\"\"出版商\"\"\"\n  publisher: String\n\n  \"\"\"引用资源\"\"\"\n  references: [String]\n\n  \"\"\"标题\"\"\"\n  title: String\n\n  \"\"\"URL\"\"\"\n  url: [String]\n\n  \"\"\"发表地址\"\"\"\n  venue: String\n\n  \"\"\"容量\"\"\"\n  volume: String\n\n  \"\"\"发表年份\"\"\"\n  year: Int\n}\n\ntype PapersInfo {\n  data: [Paper]\n  info: [QueryInfoType]!\n}\n\ntype Query {\n  \"\"\"获取指定的 Authors 列表\"\"\"\n  authors(\n    \"\"\"待搜索的 Authors 名称\"\"\"\n    name: String!\n\n    \"\"\"从何处开始查询\"\"\"\n    offset: Int = 0\n\n    \"\"\"查询数目\"\"\"\n    first: Int = 10\n  ): AuthorsInfo\n\n  \"\"\"获取指定的 Paper 信息\"\"\"\n  paper(\n    \"\"\"要获取的 Paper id\"\"\"\n    id: String!\n  ): Paper\n\n  \"\"\"获取指定的 Paper 列表\"\"\"\n  papers(\n    \"\"\"从何处开始查询\"\"\"\n    offset: Int = 0\n\n    \"\"\"查询数目\"\"\"\n    first: Int = 10\n\n    \"\"\"按某一字段降序排序\"\"\"\n    orderdesc: OrderField\n\n    \"\"\"按某一字段升序排序\"\"\"\n    orderasc: OrderField\n\n    \"\"\"搜索条件\"\"\"\n    SearchCondtion: SearchCondtion!\n  ): PapersInfo\n}\n\n\"\"\"此次 query 相关信息\"\"\"\ntype QueryInfoType {\n  \"\"\"各语言数量。只有查 paper 才有此字段。\"\"\"\n  lang: LangCountType\n\n  \"\"\"结果总数\"\"\"\n  num: Int\n}\n\n\"\"\"搜索条件\"\"\"\ninput SearchCondtion {\n  \"\"\"Paper 语言\"\"\"\n  lang: Lang\n\n  \"\"\"Paper 关键词\"\"\"\n  keywords: String\n\n  \"\"\"Paper fos\"\"\"\n  fos: String\n\n  \"\"\"Paper 出版机构\"\"\"\n  publisher: String\n\n  \"\"\"Paper 引用数量，返回大于等于此数的 paper\"\"\"\n  nCitationGe: Int\n\n  \"\"\"Paper 引用数量，返回小于等于此数的 paper\"\"\"\n  nCitationLe: Int\n\n  \"\"\"Paper 题目\"\"\"\n  title: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-19T05:32:59Z",
+    "updated_at": "2019-03-10T04:40:22Z",
+    "pushed_at": "2019-03-10T04:40:20Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

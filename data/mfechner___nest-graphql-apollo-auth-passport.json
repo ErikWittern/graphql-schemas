@@ -1,0 +1,39 @@
+{
+  "repo_name": "nest-graphql-apollo-auth-passport",
+  "repo_full_name": "mfechner/nest-graphql-apollo-auth-passport",
+  "repo_owner": "mfechner",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "cats.graphql",
+      "path": "src/cats/cats.graphql",
+      "sha": "8b01551e5749201944280984acdbffa4f119f8f5",
+      "url": "https://api.github.com/repositories/159798033/contents/src/cats/cats.graphql?ref=067d39fd3fc83d5aa46f4d65db811d5a96f47d95",
+      "git_url": "https://api.github.com/repositories/159798033/git/blobs/8b01551e5749201944280984acdbffa4f119f8f5",
+      "html_url": "https://github.com/mfechner/nest-graphql-apollo-auth-passport/blob/067d39fd3fc83d5aa46f4d65db811d5a96f47d95/src/cats/cats.graphql",
+      "content": "type Query {\n  getCats: [Cat]\n  cat(id: ID!): Cat\n}\n\ntype Mutation {\n  createCat(createCatInput: CreateCatInput): Cat\n}\n\ntype Subscription {\n  catCreated: Cat\n}\n\ntype Cat {\n  id: Int\n  name: String\n  age: Int\n}\n\ninput CreateCatInput {\n  name: String\n  age: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-30T09:13:24Z",
+    "updated_at": "2019-05-07T05:52:36Z",
+    "pushed_at": "2018-12-05T16:50:52Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

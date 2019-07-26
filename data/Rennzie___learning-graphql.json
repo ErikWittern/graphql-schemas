@@ -1,0 +1,46 @@
+{
+  "repo_name": "learning-graphql",
+  "repo_full_name": "rennzie/learning-graphql",
+  "repo_owner": "Rennzie",
+  "repo_description": "My own learnings with react and graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "client/schema.graphql",
+      "sha": "f4ec7f1c02cad37cff41529ce2053410efc29a62",
+      "url": "https://api.github.com/repositories/160313658/contents/client/schema.graphql?ref=1820e6a2f7f60cb00cec48f86ddc1a87681e8935",
+      "git_url": "https://api.github.com/repositories/160313658/git/blobs/f4ec7f1c02cad37cff41529ce2053410efc29a62",
+      "html_url": "https://github.com/Rennzie/learning-graphql/blob/1820e6a2f7f60cb00cec48f86ddc1a87681e8935/client/schema.graphql",
+      "content": "# source: http://localhost:4000/graphql\n# timestamp: Thu Dec 06 2018 08:49:37 GMT+0000 (GMT)\n\ntype Category {\n  _id: ID!\n  id: ID\n  Farmer: User\n  name: String\n  category: String\n  currentMonthDetail: MonthDetail\n  currentMonthChanges: [ChangeTracker]\n}\n\ntype ChangeTracker {\n  createdAt: Date\n  reasonForChange: String\n  animalsMoved: Int\n  notes: String\n}\n\n\"\"\"Date type\"\"\"\nscalar Date\n\ntype DetailSummary {\n  add: Int\n  purchase: Int\n  death: Int\n  theft: Int\n  sale: Int\n  other: Int\n}\n\ntype Meta {\n  count: Int\n}\n\ntype MonthDetail {\n  openingTotal: Int\n  closingTotal: Int\n  period: String\n  changes: DetailSummary\n}\n\ntype Mutation {\n  dummy: Boolean\n  createCategory(farmer_id: ID, name: String, category: String): Category\n  createNewChange(id: ID, createdAt: Date, reasonForChange: String, animalsMoved: Int): Category\n  createTweet(author_id: ID, body: String): Tweet\n  deleteTweet(id: ID!): Tweet\n  markTweetRead(id: ID!): Boolean\n}\n\ntype Query {\n  dummy: Boolean\n  Category(_id: ID!): Category\n  Categories: [Category]\n  User(_id: ID!): User\n  Users: [User]\n  Tweet(_id: ID!): Tweet\n  Tweets(limit: Int, skip: Int, sort_field: String, sort_order: String): [Tweet]\n  TweetsMeta: Meta\n}\n\ntype Tweet {\n  _id: ID!\n  id: ID\n\n  \"\"\"The tweet text. No more than 140 characters!\"\"\"\n  body: String\n\n  \"\"\"When the tweet was published\"\"\"\n  date: Date\n\n  \"\"\"Who published the tweet\"\"\"\n  Author: User\n}\n\nscalar Url\n\ntype User {\n  _id: ID!\n  id: ID\n  username: String\n  first_name: String\n  last_name: String\n  full_name: String\n  name: String @deprecated\n  avatar_url: String\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-04T07:01:52Z",
+    "updated_at": "2018-12-11T08:31:09Z",
+    "pushed_at": "2018-12-11T08:31:07Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

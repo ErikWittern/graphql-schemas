@@ -1,0 +1,41 @@
+{
+  "repo_name": "date_book",
+  "repo_full_name": "gemvein/date_book",
+  "repo_owner": "gemvein",
+  "repo_description": "Date Book, still in alpha development, is a Rails 5 Engine for managing and publishing a calendar of events.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "date_book_schema.graphql",
+      "path": "spec/dummy/public/date_book_schema.graphql",
+      "sha": "eb63e074de1867dd3d691ae919938a744f72eadd",
+      "url": "https://api.github.com/repositories/98660973/contents/spec/dummy/public/date_book_schema.graphql?ref=de3d81cf1dabb89872bce6d89b63d4b134d1b9bb",
+      "git_url": "https://api.github.com/repositories/98660973/git/blobs/eb63e074de1867dd3d691ae919938a744f72eadd",
+      "html_url": "https://github.com/gemvein/date_book/blob/de3d81cf1dabb89872bce6d89b63d4b134d1b9bb/spec/dummy/public/date_book_schema.graphql",
+      "content": "# DateBook Calendars\ntype Calendar {\n  created_at: DateTime\n  css_class: String\n  description: String\n  event_occurrences: [EventOccurrences]\n  events: [Event]\n  id: ID\n  name: String\n  slug: String!\n  updated_at: DateTime\n}\n\n# Date with Time\nscalar DateTime\n\n# DateBook Events\ntype Event {\n  all_day: Boolean\n  background_color: String\n  border_color: String\n  calendar: Calendar\n  created_at: DateTime\n  css_class: String\n  description: String\n  duration: String\n  end: String\n  id: ID!\n  name: String\n  slug: String\n  start: String\n  text_color: String\n  updated_at: DateTime\n  url: String\n}\n\n# DateBook Event Occurrences\ntype EventOccurrences {\n  end: String\n  event: Event\n  id: ID!\n  popover_url: String\n  start: String\n  url: String\n}\n\ntype Query {\n  # Find a calendar by slug\n  calendar(slug: String): Calendar\n\n  # Find all event occurrences in range\n  event_occurrences(ending_after: String, starting_before: String): [EventOccurrences]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-28T15:07:04Z",
+    "updated_at": "2017-08-08T14:21:59Z",
+    "pushed_at": "2017-09-21T01:54:06Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

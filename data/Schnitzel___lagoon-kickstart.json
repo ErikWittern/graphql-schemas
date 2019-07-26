@@ -1,0 +1,39 @@
+{
+  "repo_name": "lagoon-kickstart",
+  "repo_full_name": "schnitzel/lagoon-kickstart",
+  "repo_owner": "Schnitzel",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "cli/data/schema.graphql",
+      "sha": "7eb92e27f4aa7e09ca1a141688e66b23a860d61a",
+      "url": "https://api.github.com/repositories/103814838/contents/cli/data/schema.graphql?ref=30f1c85438f4a19a0841bf87e11faf30cc519fb8",
+      "git_url": "https://api.github.com/repositories/103814838/git/blobs/7eb92e27f4aa7e09ca1a141688e66b23a860d61a",
+      "html_url": "https://github.com/Schnitzel/lagoon-kickstart/blob/30f1c85438f4a19a0841bf87e11faf30cc519fb8/cli/data/schema.graphql",
+      "content": "schema {\n  query: QueryRoot\n  mutation: MutationRoot\n}\n\ntype BasicAuth {\n  username: String\n  password: String\n}\n\ntype Client implements Node {\n  id: ID!\n  clientName: String\n  fullJson: Json\n}\n\ntype ClientsConnection {\n  pageInfo: PageInfo!\n  edges: [ClientsEdge]\n}\n\ntype ClientsEdge {\n  node: Client\n  cursor: String!\n}\n\ninput CreateSiteGroupInput {\n  siteGroupName: String!\n  fullJson: Json!\n  clientMutationId: String!\n}\n\ntype CreateSiteGroupPayload {\n  siteGroup: SiteGroup\n  clientMutationId: String!\n}\n\ninput CreateSiteInput {\n  siteName: String!\n  siteHost: String!\n  fullJson: Json!\n  clientMutationId: String!\n}\n\ntype CreateSitePayload {\n  site: Site\n  clientMutationId: String!\n}\n\ntype Cron {\n  type: String\n  minute: String\n}\n\nscalar Json\n\ntype MutationRoot {\n  createSite(input: CreateSiteInput!): CreateSitePayload\n  updateSite(input: UpdateSiteInput!): UpdateSitePayload\n  createSiteGroup(input: CreateSiteGroupInput!): CreateSiteGroupPayload\n  updateSiteGroup(input: UpdateSiteGroupInput!): UpdateSiteGroupPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype QueryRoot {\n  node(id: ID!): Node\n  viewer: Viewer\n  siteById(id: String!): Site\n  siteGroupById(id: String!): SiteGroup\n  siteGroupByName(name: String!): SiteGroup\n  siteGroupByGitUrl(giturl: String!): SiteGroup\n  clientById(id: String!): Client\n}\n\ntype Site implements Node {\n  id: ID!\n  siteHost: String\n  siteName: String\n  siteGroup: SiteGroup\n  siteBranch: String\n  siteEnvironment: String\n  serverInfrastructure: String\n  serverIdentifier: String\n  serverNames: [String]\n  webRoot: String\n  drupalVersion: String\n  SSLCertificateType: String\n  FPMProfile: String\n  domains: [String]\n  redirectDomains: [String]\n  redirects: Json\n  uid: Int\n  dbPassword: String\n  dbUser: String\n  cron: Cron\n  customCron: Json\n  envVariables: Json\n  noPrefixenvVariables: Json\n  phpValues: Json\n  phpAdminValues: Json\n  phpFlags: Json\n  phpAdminFlags: Json\n  xdebug: String\n  nginxSitespecific: Boolean\n  nginxSiteconfig: String\n  solrEnabled: Boolean\n  redisEnabled: Boolean\n  sshKeys: Json\n  phpVersion: String\n  redirectToHttps: String\n  ensure: Json\n  upstreamURL: String\n  deployStrategy: String\n  apc: String\n  jumpHost: String\n  basicAuth: BasicAuth\n  fullJson: Json\n}\n\ntype SiteGroup implements Node {\n  id: ID!\n  siteGroupName: String\n  client: Client\n  fullJson: Json\n  slack: Json\n  gitUrl: String\n  sites(after: String, first: Int, before: String, last: Int, branch: String): SitesConnection\n}\n\ntype SiteGroupsConnection {\n  pageInfo: PageInfo!\n  edges: [SiteGroupsEdge]\n}\n\ntype SiteGroupsEdge {\n  node: SiteGroup\n  cursor: String!\n}\n\ntype SitesConnection {\n  pageInfo: PageInfo!\n  edges: [SitesEdge]\n}\n\ntype SitesEdge {\n  node: Site\n  cursor: String!\n}\n\ninput UpdateSiteGroupInput {\n  siteGroupName: String!\n  fullJson: Json!\n  clientMutationId: String!\n}\n\ntype UpdateSiteGroupPayload {\n  siteGroup: SiteGroup\n  clientMutationId: String!\n}\n\ninput UpdateSiteInput {\n  siteName: String!\n  siteHost: String!\n  fullJson: Json!\n  clientMutationId: String!\n}\n\ntype UpdateSitePayload {\n  site: Site\n  clientMutationId: String!\n}\n\ntype Viewer {\n  allSites(after: String, first: Int, before: String, last: Int, environmentType: String): SitesConnection\n  allSiteGroups(after: String, first: Int, before: String, last: Int): SiteGroupsConnection\n  allClients(after: String, first: Int, before: String, last: Int): ClientsConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 26
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-17T08:41:25Z",
+    "updated_at": "2017-09-17T08:54:29Z",
+    "pushed_at": "2017-09-17T08:53:08Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

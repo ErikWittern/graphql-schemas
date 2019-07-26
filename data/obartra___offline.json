@@ -1,0 +1,39 @@
+{
+  "repo_name": "offline",
+  "repo_full_name": "obartra/offline",
+  "repo_owner": "obartra",
+  "repo_description": "Webpack + Offline + Dynamic Router demo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/mockServer/schema.gql",
+      "sha": "e76e28966e845221d4107274f714a26a0b250ddf",
+      "url": "https://api.github.com/repositories/139759236/contents/src/mockServer/schema.gql?ref=297cbd151fe632908fa0092f1dcdfaa4f9e63bb7",
+      "git_url": "https://api.github.com/repositories/139759236/git/blobs/e76e28966e845221d4107274f714a26a0b250ddf",
+      "html_url": "https://github.com/obartra/offline/blob/297cbd151fe632908fa0092f1dcdfaa4f9e63bb7/src/mockServer/schema.gql",
+      "content": "type Author {\n  id: Int!\n  firstName: String\n  lastName: String\n  \"\"\"\n  the list of Posts by this author\n  \"\"\"\n  posts: [Post]\n}\n\ntype Post {\n  id: Int!\n  title: String\n  author: Author\n  votes: Int\n}\n\n# the schema allows the following query:\ntype Query {\n  posts: [Post]\n  author(id: Int!): Author\n}\n\n# this schema allows the following mutation:\ntype Mutation {\n  upvotePost (\n    postId: Int!\n  ): Post\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-04T19:26:13Z",
+    "updated_at": "2018-07-09T04:30:06Z",
+    "pushed_at": "2018-07-09T04:30:04Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

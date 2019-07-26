@@ -1,0 +1,42 @@
+{
+  "repo_name": "tic-tac-toe",
+  "repo_full_name": "mattcroberts/tic-tac-toe",
+  "repo_owner": "mattcroberts",
+  "repo_description": "Play now!",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/tic-tac-toe-server/src/graphql/schema.graphql",
+      "sha": "05cacb2aa09064aafbb2d7d1338894766f4af625",
+      "url": "https://api.github.com/repositories/134572693/contents/packages/tic-tac-toe-server/src/graphql/schema.graphql?ref=b502684f857c8dd484f0b2fa6a99ca55b460c2ed",
+      "git_url": "https://api.github.com/repositories/134572693/git/blobs/05cacb2aa09064aafbb2d7d1338894766f4af625",
+      "html_url": "https://github.com/mattcroberts/tic-tac-toe/blob/b502684f857c8dd484f0b2fa6a99ca55b460c2ed/packages/tic-tac-toe-server/src/graphql/schema.graphql",
+      "content": "enum Symbol {\n    NAUGHT\n    CROSS\n}\n\ntype Query {\n    grid(id: ID!): Grid!\n    tictactoe: TicTacToe\n}\n\ntype Mutation {\n    executeTurn(id: ID!, playerId: ID!, x: Int!, y: Int!): Grid!\n    newGame: Grid!\n}\n\ntype Subscription {\n    gridUpdated(id: ID!): Grid!\n}\n\ntype GridItem {\n    id: ID!\n    player: Player\n}\n\ntype Player {\n    id: ID!\n    symbol: Symbol!\n}\n\ntype GameUrls {\n    NAUGHT: String\n    CROSS: String\n}\n\ntype Grid {\n    id: ID!\n    gridItems: [[GridItem!]!]!\n    currentPlayer: Player!\n    players: [Player]\n    winner: Player\n    isFinished: Boolean!\n    size: Int!\n    gameUrls: GameUrls!\n}\n\ntype TicTacToe {\n    gamesInProgress: Int!\n    gamesFinished: Int!\n    crossWins: Int!\n    naughtWins: Int!\n    gamesDrawn: Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-23T13:20:18Z",
+    "updated_at": "2019-07-03T18:21:31Z",
+    "pushed_at": "2019-05-05T13:19:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

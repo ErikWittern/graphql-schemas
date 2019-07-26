@@ -1,0 +1,58 @@
+{
+  "repo_name": "apiops-2018-graphql-is-for-backend-too",
+  "repo_full_name": "freiksenet/apiops-2018-graphql-is-for-backend-too",
+  "repo_owner": "freiksenet",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "node.graphql",
+      "path": "code/node.graphql",
+      "sha": "0b611b0d4a970b2aeeb2f2ef4fa7bd483c1d3960",
+      "url": "https://api.github.com/repositories/145564771/contents/code/node.graphql?ref=176df844cc38ad009e8319fc3d53460d3ccf780c",
+      "git_url": "https://api.github.com/repositories/145564771/git/blobs/0b611b0d4a970b2aeeb2f2ef4fa7bd483c1d3960",
+      "html_url": "https://github.com/freiksenet/apiops-2018-graphql-is-for-backend-too/blob/176df844cc38ad009e8319fc3d53460d3ccf780c/code/node.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype User implements Node {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  node(id: ID!): Node\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "nodeNew.graphql",
+      "path": "code/nodeNew.graphql",
+      "sha": "eb237f0aa1c695c31dd14153bda1970607010817",
+      "url": "https://api.github.com/repositories/145564771/contents/code/nodeNew.graphql?ref=176df844cc38ad009e8319fc3d53460d3ccf780c",
+      "git_url": "https://api.github.com/repositories/145564771/git/blobs/eb237f0aa1c695c31dd14153bda1970607010817",
+      "html_url": "https://github.com/freiksenet/apiops-2018-graphql-is-for-backend-too/blob/176df844cc38ad009e8319fc3d53460d3ccf780c/code/nodeNew.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype User implements Node {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  node(typename: String!, id: ID!): Node\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-21T13:01:38Z",
+    "updated_at": "2018-08-22T06:42:10Z",
+    "pushed_at": "2018-08-22T06:42:09Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

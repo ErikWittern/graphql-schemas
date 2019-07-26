@@ -1,0 +1,171 @@
+{
+  "repo_name": "grial",
+  "repo_full_name": "sergiodxa/grial",
+  "repo_owner": "sergiodxa",
+  "repo_description": "A Node.js framework for creating GraphQL API servers easily and without a lot of boilerplate.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "examples/basic/schema.gql",
+      "sha": "45f5fe2680298d64dd0a1c4f01824cd4d59e1c21",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/basic/schema.gql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/45f5fe2680298d64dd0a1c4f01824cd4d59e1c21",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/basic/schema.gql",
+      "content": "type User {\n  id: Int!\n  username: String!\n  firstName: String!\n  lastName: String!\n  fullName: String!\n  bio: String!\n}\n\ntype Query {\n  me: User\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.gql",
+      "path": "examples/with-custom-config/schema.gql",
+      "sha": "45f5fe2680298d64dd0a1c4f01824cd4d59e1c21",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/with-custom-config/schema.gql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/45f5fe2680298d64dd0a1c4f01824cd4d59e1c21",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/with-custom-config/schema.gql",
+      "content": "type User {\n  id: Int!\n  username: String!\n  firstName: String!\n  lastName: String!\n  fullName: String!\n  bio: String!\n}\n\ntype Query {\n  me: User\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.gql",
+      "path": "examples/mongo-redis/schema.gql",
+      "sha": "cf8b7a2998743e991dcf6c30f79e1a6e437d4403",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/mongo-redis/schema.gql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/cf8b7a2998743e991dcf6c30f79e1a6e437d4403",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/mongo-redis/schema.gql",
+      "content": "type User {\n  id: Int!\n  username: String!\n  todos: [Todo]!\n}\n\ntype Todo {\n  id: Int!\n  content: String!\n  author: User!\n}\n\ntype Query {\n  me: User!\n  user(id: Int!): User\n  todo(id: Int!): Todo\n}\n\ninput WriteUserInput {\n  id: Int\n  username: String!\n}\n\ninput CreateTodoInput {\n  id: Int!\n  content: String!\n  userId: Int!\n}\n\ntype Mutation {\n  writeUser(input: WriteUserInput): User\n  createTodo(input: CreateTodoInput): Todo\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    },
+    {
+      "name": "query.graphql",
+      "path": "examples/jsonplaceholder-wrapper/schemas/query.graphql",
+      "sha": "42341e2e9bcf38f7ab6e679b52b278b23933c633",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/jsonplaceholder-wrapper/schemas/query.graphql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/42341e2e9bcf38f7ab6e679b52b278b23933c633",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/query.graphql",
+      "content": "type Query {\n  users(page: Int): [User]!\n  user(id: Int!): User!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/query.graphql:\ntype Query {\n  users(page: Int): [User]!\n  user(id: Int!): User!\n}\n\n# https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/user.graphql:\ntype Geo {\n  lat: String!\n  lng: String!\n}\n\ntype Address {\n  street: String!\n  suite: String!\n  city: String!\n  zipcode: String!\n  geo: Geo!\n}\n\ntype Company {\n  name: String!\n  catchPhrase: String!\n  bs: String!\n}\n\ntype User {\n  id: Int!\n  name: String!\n  username: String!\n  email: String!\n  address: Address!\n  phone: String!\n  website: String!\n  company: Company!\n  posts: [Post]!\n  todos: [Todo]!\n  albums: [Album]!\n}\n\n# https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/post.graphql:\ntype Post {\n  user: User!\n  id: Int!\n  title: String!\n  body: String!\n  comments: [Comment]!\n}\n\n# https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/todo.graphql:\ntype Todo {\n  user: User!\n  id: Int!\n  title: String!\n  completed: Boolean!\n}\n\n# https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/album.graphql:\ntype Album {\n  user: User!\n  id: Int!\n  title: String!\n  photos: [Photo]!\n}\n\n# https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/comment.graphql:\ntype Comment {\n  post: Post!\n  id: Int!\n  name: String!\n  email: String!\n  body: String!\n}\n\n# https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/photo.graphql:\ntype Photo {\n  album: Album!\n  id: Int!\n  title: String!\n  url: String!\n  thumbnailUrl: String!\n}\n",
+        "mergedPaths": [
+          "examples/jsonplaceholder-wrapper/schemas/user.graphql",
+          "examples/jsonplaceholder-wrapper/schemas/post.graphql",
+          "examples/jsonplaceholder-wrapper/schemas/todo.graphql",
+          "examples/jsonplaceholder-wrapper/schemas/album.graphql",
+          "examples/jsonplaceholder-wrapper/schemas/comment.graphql",
+          "examples/jsonplaceholder-wrapper/schemas/photo.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Post",
+          "Todo",
+          "Album",
+          "Comment",
+          "Photo"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "user.graphql",
+      "path": "examples/jsonplaceholder-wrapper/schemas/user.graphql",
+      "sha": "691f5bb92f05282b96c70220af1e27b479757e13",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/jsonplaceholder-wrapper/schemas/user.graphql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/691f5bb92f05282b96c70220af1e27b479757e13",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/user.graphql",
+      "content": "type Geo {\n  lat: String!\n  lng: String!\n}\n\ntype Address {\n  street: String!\n  suite: String!\n  city: String!\n  zipcode: String!\n  geo: Geo!\n}\n\ntype Company {\n  name: String!\n  catchPhrase: String!\n  bs: String!\n}\n\ntype User {\n  id: Int!\n  name: String!\n  username: String!\n  email: String!\n  address: Address!\n  phone: String!\n  website: String!\n  company: Company!\n  posts: [Post]!\n  todos: [Todo]!\n  albums: [Album]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 4
+    },
+    {
+      "name": "album.graphql",
+      "path": "examples/jsonplaceholder-wrapper/schemas/album.graphql",
+      "sha": "8a33ec601bba212636e0a34573e5ae5963287bc2",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/jsonplaceholder-wrapper/schemas/album.graphql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/8a33ec601bba212636e0a34573e5ae5963287bc2",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/album.graphql",
+      "content": "type Album {\n  user: User!\n  id: Int!\n  title: String!\n  photos: [Photo]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "todo.graphql",
+      "path": "examples/jsonplaceholder-wrapper/schemas/todo.graphql",
+      "sha": "9563e147deb7fb51cd7d7955c9305f265d806b0d",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/jsonplaceholder-wrapper/schemas/todo.graphql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/9563e147deb7fb51cd7d7955c9305f265d806b0d",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/todo.graphql",
+      "content": "type Todo {\n  user: User!\n  id: Int!\n  title: String!\n  completed: Boolean!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "comment.graphql",
+      "path": "examples/jsonplaceholder-wrapper/schemas/comment.graphql",
+      "sha": "bb2a776b2df3776a9dd01462a1eca626dbff9296",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/jsonplaceholder-wrapper/schemas/comment.graphql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/bb2a776b2df3776a9dd01462a1eca626dbff9296",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/comment.graphql",
+      "content": "type Comment {\n  post: Post!\n  id: Int!\n  name: String!\n  email: String!\n  body: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "post.graphql",
+      "path": "examples/jsonplaceholder-wrapper/schemas/post.graphql",
+      "sha": "cb465ecd6909a00e1363c400991bc1006d1726a6",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/jsonplaceholder-wrapper/schemas/post.graphql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/cb465ecd6909a00e1363c400991bc1006d1726a6",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/post.graphql",
+      "content": "type Post {\n  user: User!\n  id: Int!\n  title: String!\n  body: String!\n  comments: [Comment]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "photo.graphql",
+      "path": "examples/jsonplaceholder-wrapper/schemas/photo.graphql",
+      "sha": "3dae22085a4e06bcd0a72236f851375e4effc938",
+      "url": "https://api.github.com/repositories/96158906/contents/examples/jsonplaceholder-wrapper/schemas/photo.graphql?ref=b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9",
+      "git_url": "https://api.github.com/repositories/96158906/git/blobs/3dae22085a4e06bcd0a72236f851375e4effc938",
+      "html_url": "https://github.com/sergiodxa/grial/blob/b4529f75ff1ba483d231dd2e8a8a9cf8aff043b9/examples/jsonplaceholder-wrapper/schemas/photo.graphql",
+      "content": "type Photo {\n  album: Album!\n  id: Int!\n  title: String!\n  url: String!\n  thumbnailUrl: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-03T23:59:02Z",
+    "updated_at": "2019-07-15T13:13:40Z",
+    "pushed_at": "2017-12-02T07:03:06Z",
+    "issues": 15,
+    "watchers": 8,
+    "fork_count": 8,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 201
+  }
+}

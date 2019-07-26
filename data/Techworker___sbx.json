@@ -1,0 +1,41 @@
+{
+  "repo_name": "sbx",
+  "repo_full_name": "techworker/sbx",
+  "repo_owner": "Techworker",
+  "repo_description": "PascalCoin BlockChain Javascript monorepo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "applications/graphql-server/schema.graphql",
+      "sha": "766554cffde26afab9e4a3a83b9a98755d498896",
+      "url": "https://api.github.com/repositories/179778040/contents/applications/graphql-server/schema.graphql?ref=301c6e86db8f8e2ebd25323f857900fb7d61545e",
+      "git_url": "https://api.github.com/repositories/179778040/git/blobs/766554cffde26afab9e4a3a83b9a98755d498896",
+      "html_url": "https://github.com/Techworker/sbx/blob/301c6e86db8f8e2ebd25323f857900fb7d61545e/applications/graphql-server/schema.graphql",
+      "content": "scalar AccountNumber\nscalar AccountName\nscalar HexaString\nscalar Currency\nscalar OperationHash\nscalar PublicKey\n\ntype Query {\n    fetchAccount(account: AccountNumber!): Account\n    fetchOperation(opHash: OperationHash!): Operation\n    fetchBlock(block: Int!): Block\n}\n\nenum OpType {\n    ALL\n    BLOCKCHAIN_REWARD\n    TRANSACTION\n    CHANGE_KEY\n    RECOVER_FUNDS\n    LIST_FOR_SALE\n    DELIST\n    BUY\n    CHANGE_KEY_ACCOUNT\n    CHANGE_ACCOUNT_INFO\n    MULTI_OPERATION\n    DATA\n}\n\nenum SubType {\n    ALL\n    MINER\n    DEVELOPER\n    TX_SENDER\n    TX_RECEIVER\n    TX_BUY_BUYER\n    TX_BUY_TARGET\n    TX_BUY_SELLER\n    CHANGE_KEY\n    RECOVER\n    LIST_PUBLIC\n    LIST_PRIVATE\n    DELIST\n    BUY_BUYER\n    BUY_TARGET\n    BUY_SELLER\n    CHANGE_KEY_SIGNED\n    CHANGE_ACCOUNT_INFO\n    MULTI_GLOBAL\n    MULTI_ACCOUNT_INFO\n    DATA_GLOBAL\n    DATA_SENDER\n    DATA_SIGNER\n    DATA_RECEIVER\n}\n\nenum AccountState {\n    normal\n    listed\n}\n\ntype Account {\n    account: AccountNumber\n    name: AccountName\n    type: Int\n    balance: Currency\n    nOperation: Int\n    updatedB: Int\n    state: AccountState\n    lockedUntilBlock: Int\n    fetchLockedUntilBlock: Block\n    price: Currency\n    sellerAccount: Account\n    privateSale: Boolean\n    publicKey: PublicKey\n    fetchOperations(page: Int = 1, amount: Int = 100, opType: OpType = ALL, subType: SubType = ALL) : [Operation]\n}\n\ntype Block {\n    block: Int\n    publicKey: PublicKey\n    reward: Currency\n    fee: Currency\n    ver: Int\n    verA: Int\n    timestamp: Int\n    target: Int\n    nonce: Int\n    payload: String\n    sbh: HexaString\n    oph: HexaString\n    pow: HexaString\n    hashratekhs: Int\n    maturation: Int\n    operations: Int\n    fetchOperations(page: Int = 1, amount: Int = 100, opType: OpType = IGNORE, subType: SubType = ALL) : [Operation]\n}\n\ntype Operation {\n    valid: Boolean\n    errors: String\n    payload: HexaString\n    payloadAsString: String\n    block: Int\n    fetchBlock: Block\n    time: Int\n    opBlock: Int\n    maturation: Int\n    opType: Int\n    account: AccountNumber\n    fetchAccount: Account\n    opTxt: String\n    amount: Currency\n    fee: Currency\n    balance: Currency\n    opHash: OperationHash\n    subType: Int\n    signerAccount: AccountNumber\n    fetchSignerAccount: Account\n    changers: [Changer],\n    receivers: [Receiver],\n    senders: [Sender]\n}\n\ntype Changer {\n    account: AccountNumber\n    fetchAccount: Account\n    nOperation: Int\n    newPublicKey: PublicKey\n    newName: AccountName\n    newType: Int\n    sellerAccount: AccountNumber\n    fetchSellerAccount: Account\n    accountPrice: Currency\n    lockedUntilBlock: Int\n    fetchLockedUntilBlock: Block\n    fee: Currency\n}\n\ntype Receiver {\n    account: AccountNumber\n    fetchAccount: Account\n    amount: Currency\n    payload: HexaString\n    payloadAsString: String\n}\n\ntype Sender {\n    account: AccountNumber\n    fetchAccount: Account\n    nOperation: Int\n    amount: Currency\n    payload: HexaString\n    payloadAsString: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": true,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-06T02:00:39Z",
+    "updated_at": "2019-07-06T12:49:26Z",
+    "pushed_at": "2019-07-16T20:11:00Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphflix",
+  "repo_full_name": "nowshad-sust/graphflix",
+  "repo_owner": "nowshad-sust",
+  "repo_description": "A graphql movie browser",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "1539bbd7d2f48770bede143c94d61d575e190ed8",
+      "url": "https://api.github.com/repositories/178548607/contents/server/src/schema.graphql?ref=e256b66bd6d1c326d4916da4f8d88ea14069cdd5",
+      "git_url": "https://api.github.com/repositories/178548607/git/blobs/1539bbd7d2f48770bede143c94d61d575e190ed8",
+      "html_url": "https://github.com/nowshad-sust/graphflix/blob/e256b66bd6d1c326d4916da4f8d88ea14069cdd5/server/src/schema.graphql",
+      "content": "type Query {\n  movie(id: ID!): Movie!\n  movies:[Movie]\n  actor(id: ID!): Actor!\n  actors: [Actor]\n}\n\ntype Actor {\n  id: ID!\n  name: String\n  movies: [Movie]\n}\n\ntype Movie {\n  id: ID!\n  title: String\n  genre: String\n  year: String\n  trailer: String\n  images: [String]\n  details: String\n  actors: [Actor]\n}\n\ntype Mutation {\n  createActor(name: String!): Actor!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-30T11:16:03Z",
+    "updated_at": "2019-05-03T20:54:50Z",
+    "pushed_at": "2019-05-03T14:23:17Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

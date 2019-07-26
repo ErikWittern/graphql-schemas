@@ -1,0 +1,41 @@
+{
+  "repo_name": "ow2",
+  "repo_full_name": "messa/ow2",
+  "repo_owner": "messa",
+  "repo_description": "WIP",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "web/schema.graphql",
+      "sha": "ac89848c77de9db1def01ce97249e4b46d6f8805",
+      "url": "https://api.github.com/repositories/173628122/contents/web/schema.graphql?ref=0bac38a0227376466d3967b89d3b79cc59be75f8",
+      "git_url": "https://api.github.com/repositories/173628122/git/blobs/ac89848c77de9db1def01ce97249e4b46d6f8805",
+      "html_url": "https://github.com/messa/ow2/blob/0bac38a0227376466d3967b89d3b79cc59be75f8/web/schema.graphql",
+      "content": "type Alert implements Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  alertId: String\n  streamId: String\n  stream: Stream\n  alertType: String\n  itemPath: [String]\n  firstSnapshotId: String\n  firstSnapshotDate: DateTime\n  lastSnapshotId: String\n  lastSnapshotDate: DateTime\n  firstItemValueJSON: JSONString\n  lastItemValueJSON: JSONString\n  firstItemUnit: String\n  lastItemUnit: String\n}\n\ntype AlertConnection {\n  pageInfo: PageInfo!\n  edges: [AlertEdge]!\n}\n\ntype AlertEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Alert\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\n\"\"\"\nThe `DateTime` scalar type represents a DateTime\nvalue as specified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).\n\"\"\"\nscalar DateTime\n\n\"\"\"JSON String\"\"\"\nscalar JSONString\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n}\n\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Query {\n  \"\"\"The ID of the object\"\"\"\n  node(id: ID!): Node\n  stream(streamId: String!): Stream\n  streams(before: String, after: String, first: Int, last: Int): StreamConnection\n  streamSnapshot(snapshotId: String!): StreamSnapshot\n  lastStreamSnapshot(streamId: String!): StreamSnapshot\n  searchCurrentSnapshotItems(pathQuery: String!, before: String, after: String, first: Int, last: Int): SnapshotItemConnection\n  activeAlerts(before: String, after: String, first: Int, last: Int): AlertConnection\n  activeUnacknowledgedAlerts(before: String, after: String, first: Int, last: Int): AlertConnection\n  activeAcknowledgedAlerts(before: String, after: String, first: Int, last: Int): AlertConnection\n  inactiveAlerts(before: String, after: String, first: Int, last: Int): AlertConnection\n  alert(alertId: String!): Alert\n}\n\ntype SnapshotItem implements Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  path: [String]\n  pathStr: String\n  key: String\n  valueJSON: JSONString\n  checkJSON: JSONString\n  checkState: String\n  watchdogJSON: JSONString\n  watchdogExpired: Boolean\n  isCounter: Boolean\n  unit: String\n  streamId: String\n  stream: Stream\n  snapshotId: String\n  snapshotDate: DateTime\n  snapshot: StreamSnapshot\n}\n\ntype SnapshotItemConnection {\n  pageInfo: PageInfo!\n  edges: [SnapshotItemEdge]!\n}\n\ntype SnapshotItemEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: SnapshotItem\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype Stream implements Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  labelJSON: String\n  streamId: String\n  lastSnapshot: StreamSnapshot\n  lastSnapshotDate: DateTime\n  snapshots(before: String, after: String, first: Int, last: Int): StreamSnapshotMetadataConnection\n  itemHistory(path: [String]!, before: String, after: String, first: Int, last: Int): SnapshotItemConnection\n}\n\ntype StreamConnection {\n  pageInfo: PageInfo!\n  edges: [StreamEdge]!\n}\n\ntype StreamEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Stream\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype StreamSnapshot implements Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  snapshotId: String\n  streamId: String\n  stream: Stream\n  date: DateTime\n  stateJSON: String\n  stateItems: [SnapshotItem]\n  greenCheckItems: [SnapshotItem]\n  redCheckItems: [SnapshotItem]\n  greenCheckCount: Int\n  redCheckCount: Int\n}\n\ntype StreamSnapshotMetadata implements Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  snapshotId: String\n  streamId: String\n  date: DateTime\n  stream: Stream\n}\n\ntype StreamSnapshotMetadataConnection {\n  pageInfo: PageInfo!\n  edges: [StreamSnapshotMetadataEdge]!\n}\n\ntype StreamSnapshotMetadataEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: StreamSnapshotMetadata\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": true,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-03T20:49:02Z",
+    "updated_at": "2019-07-10T12:18:13Z",
+    "pushed_at": "2019-07-10T12:18:11Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "repo_name": "open_voter_reg",
+  "repo_full_name": "gpsimpact/open_voter_reg",
+  "repo_owner": "gpsimpact",
+  "repo_description": "The goal of this project is to provide an open api to facilitate voter registration through use of the federal form.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.type.gql",
+      "path": "src/graphql/Query/Query.type.gql",
+      "sha": "93045164d5f62e11c6ac6acdf4bb77a12d75b8ad",
+      "url": "https://api.github.com/repositories/120368119/contents/src/graphql/Query/Query.type.gql?ref=d624eda55a4ae9890c68cb0d309318d58d194d04",
+      "git_url": "https://api.github.com/repositories/120368119/git/blobs/93045164d5f62e11c6ac6acdf4bb77a12d75b8ad",
+      "html_url": "https://github.com/gpsimpact/open_voter_reg/blob/d624eda55a4ae9890c68cb0d309318d58d194d04/src/graphql/Query/Query.type.gql",
+      "content": "type Query {\n  status: status\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/gpsimpact/open_voter_reg/blob/d624eda55a4ae9890c68cb0d309318d58d194d04/src/graphql/Query/Query.type.gql:\ntype Query {\n  status: status\n}\n# https://github.com/gpsimpact/open_voter_reg/blob/d624eda55a4ae9890c68cb0d309318d58d194d04/src/graphql/Status/Status.type.gql:\ntype status {\n  message: String    \n}",
+        "mergedPaths": [
+          "src/graphql/Status/Status.type.gql"
+        ],
+        "typesDefinedByMerge": [
+          "status"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Status.type.gql",
+      "path": "src/graphql/Status/Status.type.gql",
+      "sha": "54271d16d07d53c322ff47b43159be9b5e18027b",
+      "url": "https://api.github.com/repositories/120368119/contents/src/graphql/Status/Status.type.gql?ref=d624eda55a4ae9890c68cb0d309318d58d194d04",
+      "git_url": "https://api.github.com/repositories/120368119/git/blobs/54271d16d07d53c322ff47b43159be9b5e18027b",
+      "html_url": "https://github.com/gpsimpact/open_voter_reg/blob/d624eda55a4ae9890c68cb0d309318d58d194d04/src/graphql/Status/Status.type.gql",
+      "content": "type status {\n  message: String    \n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-05T22:08:13Z",
+    "updated_at": "2019-06-18T15:21:57Z",
+    "pushed_at": "2018-02-17T03:20:42Z",
+    "issues": 21,
+    "watchers": 6,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

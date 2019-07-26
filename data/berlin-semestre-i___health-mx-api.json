@@ -1,0 +1,55 @@
+{
+  "repo_name": "health-mx-api",
+  "repo_full_name": "berlin-semestre-i/health-mx-api",
+  "repo_owner": "berlin-semestre-i",
+  "repo_description": "API for the Health MX project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "global.schema.test.graphql",
+      "path": "app/lib/appSyncBuilder/test/__testFiles__/global.schema.test.graphql",
+      "sha": "1a3e09eb0ffe1f830e158ecaec747e32e1690d20",
+      "url": "https://api.github.com/repositories/150297261/contents/app/lib/appSyncBuilder/test/__testFiles__/global.schema.test.graphql?ref=9a407188cb20229752d9541df04d9e21c6b25371",
+      "git_url": "https://api.github.com/repositories/150297261/git/blobs/1a3e09eb0ffe1f830e158ecaec747e32e1690d20",
+      "html_url": "https://github.com/berlin-semestre-i/health-mx-api/blob/9a407188cb20229752d9541df04d9e21c6b25371/app/lib/appSyncBuilder/test/__testFiles__/global.schema.test.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Query {\n  testGetEnumDefinition(contentID: ID!): ContentDefinition\n  # &authorize\n  getContentDefinition(contentID: ID!): ContentDefinition\n}\n\nenum PropertyDefinitionType {\n  STRING\n  ARRAY\n  BOOL\n}\n\ntype PropertyDefinition {\n  name: String!\n  value: PropertyDefinitionType!\n}\n\ntype ContentDefinition {\n  id: ID\n  type: ContentType\n  config: [PropertyDefinition]\n  valueFormat: [PropertyDefinition]\n}\n\nenum ContentType {\n  TEXT\n  IMAGE\n  COMPOUND\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    },
+    {
+      "name": "user.query.graphql",
+      "path": "app/API/user/schemas/user.query.graphql",
+      "sha": "828ec4347bb8cac2087b23b85ffc119724907e9b",
+      "url": "https://api.github.com/repositories/150297261/contents/app/API/user/schemas/user.query.graphql?ref=6182d60aa1d0c256aeb61106f1b4b41a883d4726",
+      "git_url": "https://api.github.com/repositories/150297261/git/blobs/828ec4347bb8cac2087b23b85ffc119724907e9b",
+      "html_url": "https://github.com/berlin-semestre-i/health-mx-api/blob/6182d60aa1d0c256aeb61106f1b4b41a883d4726/app/API/user/schemas/user.query.graphql",
+      "content": "type Query {\n  user(id: ID!): User!\n}\n\ntype User {\n  id: ID!\n  name: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-25T16:35:59Z",
+    "updated_at": "2018-11-30T05:50:45Z",
+    "pushed_at": "2018-11-30T05:50:51Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 13,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

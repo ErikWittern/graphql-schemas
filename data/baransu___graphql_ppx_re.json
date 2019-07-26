@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql_ppx_re",
+  "repo_full_name": "baransu/graphql_ppx_re",
+  "repo_owner": "baransu",
+  "repo_description": "Experiments with graphql_ppx and Reason",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "tests/schema.graphql",
+      "sha": "cd3e9ae0fdfe2201584602efbc27e97203483ffe",
+      "url": "https://api.github.com/repositories/179522522/contents/tests/schema.graphql?ref=fd9494e55fa1773b2955bfbbdce3edddafeea922",
+      "git_url": "https://api.github.com/repositories/179522522/git/blobs/cd3e9ae0fdfe2201584602efbc27e97203483ffe",
+      "html_url": "https://github.com/baransu/graphql_ppx_re/blob/fd9494e55fa1773b2955bfbbdce3edddafeea922/tests/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n\ninterface User {\n  id: ID!\n}\n\ninterface Name {\n  name: String!\n}\n\ninterface Anonymous {\n  anonymousId: Int!\n}\n\ntype AdminUser implements User & Name {\n  id: ID!\n  name: String!\n}\n\ntype AnonymousUser implements User & Anonymous {\n  id: ID!\n  anonymousId: Int!\n}\n\ntype OtherUser implements User {\n  id: ID!\n}\n\ntype Query {\n  stringField: String!\n  variousScalars: VariousScalars!\n  lists: Lists!\n  users: [User!]!\n\n  scalarsInput(arg: VariousScalarsInput!): String!\n  listsInput(arg: ListsInput!): String!\n  recursiveInput(arg: RecursiveInput!): String!\n  nonrecursiveInput(arg: NonrecursiveInput!): String!\n  enumInput(arg: SampleField!): String!\n  argNamedQuery(query: Int!): Int!\n  customScalarField(\n    argOptional: CustomScalar\n    argRequired: CustomScalar!\n  ): CustomScalarObject!\n\n  dogOrHuman: DogOrHuman!\n\n  nestedObject: NestedObject!\n}\n\ntype Mutation {\n  mutationWithError: MutationWithErrorResult!\n}\n\ntype Subscription {\n  simpleSubscription: DogOrHuman!\n}\n\ntype MutationWithErrorResult {\n  value: SampleResult\n  errors: [SampleError!]\n}\n\ntype SampleResult {\n  stringField: String!\n}\n\ntype SampleError {\n  field: SampleField!\n  message: String!\n}\n\nenum SampleField {\n  FIRST\n  SECOND\n  THIRD\n}\n\ntype VariousScalars {\n  nullableString: String\n  string: String!\n  nullableInt: Int\n  int: Int!\n  nullableFloat: Float\n  float: Float!\n  nullableBoolean: Boolean\n  boolean: Boolean!\n  nullableID: ID\n  id: ID!\n}\n\ntype Lists {\n  nullableOfNullable: [String]\n  nullableOfNonNullable: [String!]\n  nonNullableOfNullable: [String]!\n  nonNullableOfNonNullable: [String!]!\n}\n\ninput VariousScalarsInput {\n  nullableString: String\n  string: String!\n  nullableInt: Int\n  int: Int!\n  nullableFloat: Float\n  float: Float!\n  nullableBoolean: Boolean\n  boolean: Boolean!\n  nullableID: ID\n  id: ID!\n}\n\ninput ListsInput {\n  nullableOfNullable: [String]\n  nullableOfNonNullable: [String!]\n  nonNullableOfNullable: [String]!\n  nonNullableOfNonNullable: [String!]!\n}\n\ninput NonrecursiveInput {\n  field: String\n  enum: SampleField\n}\n\ninput RecursiveInput {\n  otherField: String\n  inner: RecursiveInput\n  enum: SampleField\n}\n\ntype Dog {\n  name: String!\n  barkVolume: Float!\n}\n\ntype Human {\n  name: String!\n}\n\nunion DogOrHuman = Dog | Human\n\ntype NestedObject {\n  inner: NestedObject\n\n  field: String!\n}\n\ntype WithArgField {\n  argField(arg1: String, arg2: Int): NestedObject\n}\n\nscalar CustomScalar\n\ntype CustomScalarObject {\n  nullable: CustomScalar\n  nonNullable: CustomScalar!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 27
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-04T15:10:15Z",
+    "updated_at": "2019-04-06T21:49:25Z",
+    "pushed_at": "2019-06-03T21:03:41Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

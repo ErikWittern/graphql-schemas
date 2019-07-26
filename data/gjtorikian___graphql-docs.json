@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql-docs",
+  "repo_full_name": "gjtorikian/graphql-docs",
+  "repo_owner": "gjtorikian",
+  "repo_description": "Easily generate beautiful documentation from your GraphQL schema.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "tiny-schema.graphql",
+      "path": "test/graphql-docs/fixtures/tiny-schema.graphql",
+      "sha": "586d514f0d73fc7cf4f4e2d5b088ec9c16fe0296",
+      "url": "https://api.github.com/repositories/81388642/contents/test/graphql-docs/fixtures/tiny-schema.graphql?ref=3741b0f2798bbeae8f430069c363834853d936c4",
+      "git_url": "https://api.github.com/repositories/81388642/git/blobs/586d514f0d73fc7cf4f4e2d5b088ec9c16fe0296",
+      "html_url": "https://github.com/gjtorikian/graphql-docs/blob/3741b0f2798bbeae8f430069c363834853d936c4/test/graphql-docs/fixtures/tiny-schema.graphql",
+      "content": "# The Code of Conduct for a repository\ntype CodeOfConduct {\n  # The body of the CoC\n  body: String\n\n  # The key for the CoC\n  key: String!\n\n  # The formal name of the CoC\n  name: String!\n\n  # The path to the CoC\n  url: URI\n}\n\n# An RFC 3986, RFC 3987, and RFC 6570 (level 4) compliant URI string.\nscalar URI\n\n# The query root of GitHub's GraphQL interface.\ntype Query {\n  # Look up a code of conduct by its key\n  codeOfConduct(\n    # The code of conduct's key\n    key: String!\n  ): CodeOfConduct\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "named-root-schema.graphql",
+      "path": "test/graphql-docs/fixtures/named-root-schema.graphql",
+      "sha": "15f6e584e23107db1a2cb3ab46723521c342c413",
+      "url": "https://api.github.com/repositories/81388642/contents/test/graphql-docs/fixtures/named-root-schema.graphql?ref=32a434f8b6baceb4b1b9be1667429aa52df51381",
+      "git_url": "https://api.github.com/repositories/81388642/git/blobs/15f6e584e23107db1a2cb3ab46723521c342c413",
+      "html_url": "https://github.com/gjtorikian/graphql-docs/blob/32a434f8b6baceb4b1b9be1667429aa52df51381/test/graphql-docs/fixtures/named-root-schema.graphql",
+      "content": "schema {\n  query: RootQuery\n}\ntype RootQuery {\n  #Do a thing\n  thing: [String!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-08T23:53:11Z",
+    "updated_at": "2019-07-17T18:33:34Z",
+    "pushed_at": "2019-06-14T19:51:13Z",
+    "issues": 28,
+    "watchers": 8,
+    "fork_count": 35,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 44,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 42,
+    "releases": 11,
+    "stargazers": 262
+  }
+}

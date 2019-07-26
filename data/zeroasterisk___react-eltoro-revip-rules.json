@@ -1,0 +1,41 @@
+{
+  "repo_name": "react-eltoro-revip-rules",
+  "repo_full_name": "zeroasterisk/react-eltoro-revip-rules",
+  "repo_owner": "zeroasterisk",
+  "repo_description": "UI ElToro Revip Rules Component",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/stories/schema.graphql",
+      "sha": "4903e98e463a51370638bfbdecc19074e01494f3",
+      "url": "https://api.github.com/repositories/97853834/contents/src/stories/schema.graphql?ref=2982d3e8394b987cc27020ddae6495d644ef6b00",
+      "git_url": "https://api.github.com/repositories/97853834/git/blobs/4903e98e463a51370638bfbdecc19074e01494f3",
+      "html_url": "https://github.com/zeroasterisk/react-eltoro-revip-rules/blob/2982d3e8394b987cc27020ddae6495d644ef6b00/src/stories/schema.graphql",
+      "content": "type RuleNode {\n    term:   String\n    regex:  String\n    max:    Int\n    min:    Int\n    and:    [RuleNode]\n    or:     [RuleNode]\n    none:   [RuleNode]\n}\ntype BucketConfRev {\n    ruleSetAnd: [RuleNode]\n}\ntype BucketConf {\n    revIpRules: BucketConfRev\n}\ntype Bucket {\n    name: String\n    conf: BucketConf\n}\n\n# This is required by buildASTSchema\ntype Query { anything: ID }\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-20T15:55:48Z",
+    "updated_at": "2017-07-20T15:57:55Z",
+    "pushed_at": "2017-11-09T14:29:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

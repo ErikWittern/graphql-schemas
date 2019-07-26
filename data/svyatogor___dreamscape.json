@@ -1,0 +1,42 @@
+{
+  "repo_name": "dreamscape",
+  "repo_full_name": "svyatogor/dreamscape",
+  "repo_owner": "svyatogor",
+  "repo_description": "CMS made by developers for developers.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "backend/schema.gql",
+      "sha": "ee6bd2e8b5b072f65bcddd27327496079f2e7eea",
+      "url": "https://api.github.com/repositories/99098180/contents/backend/schema.gql?ref=0d0656eff1501f1979c7cc829d8d7dc12aeb43fa",
+      "git_url": "https://api.github.com/repositories/99098180/git/blobs/ee6bd2e8b5b072f65bcddd27327496079f2e7eea",
+      "html_url": "https://github.com/svyatogor/dreamscape/blob/0d0656eff1501f1979c7cc829d8d7dc12aeb43fa/backend/schema.gql",
+      "content": "scalar JSON\nscalar Date\n\nenum OrderStatus {\n  draft\n  new\n  canceled\n  shipped\n  completed\n}\n\ninterface Block {\n  _type: String!\n  ref: ID\n}\n\ntype StaticText implements Block {\n  id: ID!\n  ref: ID\n  _type: String!\n  content: JSON\n  key: String\n  type: String\n  global: Boolean\n}\n\ninput StaticTextInput {\n  id: ID\n  content: String!\n  locale: String!\n  key: String\n  global: Boolean\n}\n\ntype Page {\n  id: ID!\n  slug: String\n  published: Boolean\n  layout: String\n  parent: Page\n  title: JSON\n  sections: JSON\n  properties: JSON\n  position: Int\n}\n\ntype Site {\n  id: ID!\n  key: String!\n  domains: [String!]\n  allowedModules: [String!]!\n  supportedLanguages: [String!]!\n  layouts: JSON\n  documentTypes: JSON\n  features: [String!]\n}\n\ntype Folder {\n  id: ID!\n  slug: String\n  parent: ID\n  name: JSON\n  position: Int\n  hidden: Boolean\n}\n\ntype File {\n  originalName: String\n  displayName: JSON\n  size: Int\n  type: String\n  url: String\n}\n\ntype FileList {\n  id: ID!\n  files: [File!]\n  template: String\n  site: ID!\n}\n\ntype Item {\n  id: ID!\n  _name: String\n  position: Int\n  folder: ID\n  data: JSON\n}\n\ninput PageInput {\n  id: ID\n  slug: String\n  published: Boolean\n  layout: String\n  parent: ID\n  title: String\n  properties: JSON\n  position: Int\n}\n\ninput BlockInput {\n  page: ID!\n  section: String!\n  _type: String!\n}\n\ninput BlockRefInput {\n  page: ID!\n  ref: ID!\n}\n\ninput FolderInput {\n  id: ID\n  parent: ID\n  catalog: String\n  name: String!\n  locale: String\n  hidden: Boolean\n}\n\ninput FileListInput {\n  id: ID\n  template: String\n  files: [FileInput!]!\n}\n\ninput FileInput {\n  originalName: String!\n  displayName: JSON\n  size: Int\n  type: String\n  url: String\n}\n\ntype OrderLine {\n  product: Item\n  name: String\n  count: Int!\n  price: Float\n  total: Float\n}\n\ntype Address {\n  country: String\n  city: String\n  postalCode: String\n  streetAddress: String\n  name: String\n  email: String\n  phone: String\n}\n\ntype DeliveryDescription {\n  cost: Float\n  label: String\n}\n\ntype Order {\n  id: ID!\n  number: Int\n  lines: [OrderLine!]!\n  billingAddress: Address!\n  shippingAddress: Address\n  status: String!\n  paymentMethod: String\n  paymentStatus: String\n  total: Float\n  createdAt: Date\n  receipt: JSON\n  delivery: DeliveryDescription\n}\n\ntype Query {\n  pages: [Page]\n  page(id: ID!): Page\n  staticText(id: ID!): StaticText\n  fileList(id: ID!): FileList\n  site: Site\n  snippets: [StaticText]\n  folders(catalog: String!): [Folder!]\n  folder(id: ID!): Folder\n  items(folder: ID, search: String, catalog: String): [Item!]!\n  item(id: ID!): Item\n  eshopOrders(search: String, limit: Int, offset: Int): [Order]\n}\n\ntype Mutation {\n  upsertPage(page: PageInput!, locale: String): Page\n  deletePage(id: ID!): Boolean\n  orderPages(pages: [ID!]!, parent: ID): [Page]\n  addBlock(block: BlockInput!): ID\n  removeBlock(block: BlockRefInput!): Boolean\n  saveStaticText(input: StaticTextInput!): StaticText\n  upsertFileList(input: FileListInput!, locale: String!): FileList\n  attachImage(type: String!, id: ID!, url: String!): Boolean\n  upsertItem(id: ID, folder: ID, data: JSON!, locale: String): Item\n  moveItem(id: ID!, newPosition: Int!): Boolean\n  deleteItem(id: ID!): Boolean\n  upsertFolder(folder: FolderInput!): Folder\n  deleteFolder(id: ID!): Boolean\n  orderFolders(folders: [ID!]!, parent: ID): [Folder]\n  updateOrderStatus(order: ID!, status: OrderStatus!): Order\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 24
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-02T09:27:19Z",
+    "updated_at": "2019-07-09T08:23:13Z",
+    "pushed_at": "2019-07-10T07:15:15Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

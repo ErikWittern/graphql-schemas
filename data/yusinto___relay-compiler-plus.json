@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-compiler-plus",
+  "repo_full_name": "yusinto/relay-compiler-plus",
+  "repo_owner": "yusinto",
+  "repo_description": "Custom relay compiler which supports persisted queries",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "example/schema.graphql",
+      "sha": "a697b16a290d16f68ff34e585e18bb66de104300",
+      "url": "https://api.github.com/repositories/109664293/contents/example/schema.graphql?ref=48cad41970001186738f159c843f53b3e1729a21",
+      "git_url": "https://api.github.com/repositories/109664293/git/blobs/a697b16a290d16f68ff34e585e18bb66de104300",
+      "html_url": "https://github.com/yusinto/relay-compiler-plus/blob/48cad41970001186738f159c843f53b3e1729a21/example/schema.graphql",
+      "content": "type Query {\n  root: Root\n}\n\ntype Root {\n  id: ID\n  animal: String\n  human: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-06T07:55:36Z",
+    "updated_at": "2019-06-20T22:24:43Z",
+    "pushed_at": "2018-07-26T02:54:34Z",
+    "issues": 7,
+    "watchers": 3,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 7,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 7,
+    "releases": 1,
+    "stargazers": 61
+  }
+}

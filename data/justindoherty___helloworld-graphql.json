@@ -1,0 +1,42 @@
+{
+  "repo_name": "helloworld-graphql",
+  "repo_full_name": "justindoherty/helloworld-graphql",
+  "repo_owner": "justindoherty",
+  "repo_description": "Try out graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.graphql",
+      "path": "express-server/schema/root.graphql",
+      "sha": "4792896e0d7eb09eda763cf4a96699c3b63efabc",
+      "url": "https://api.github.com/repositories/81674290/contents/express-server/schema/root.graphql?ref=4d48a5fdfc846ac74ac559be5a7c3d839e0324c4",
+      "git_url": "https://api.github.com/repositories/81674290/git/blobs/4792896e0d7eb09eda763cf4a96699c3b63efabc",
+      "html_url": "https://github.com/justindoherty/helloworld-graphql/blob/4d48a5fdfc846ac74ac559be5a7c3d839e0324c4/express-server/schema/root.graphql",
+      "content": "# Root Query\ntype Query {\n    # The hello\n    hello: String\n    human: Person\n}\n\ntype Person {\n    name: String!\n    age: Int\n    dog: Dog\n}\n\ntype Dog {\n    name: String!\n}\n\ntype Mutation {\n    tickle (\n        val: String!\n    ): String\n}\n\ntype Subscription {\n    thing: String\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-11T18:49:27Z",
+    "updated_at": "2017-02-18T22:38:00Z",
+    "pushed_at": "2017-03-12T21:57:58Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-server-typescript-starter",
+  "repo_full_name": "bitworkers-official/graphql-server-typescript-starter",
+  "repo_owner": "bitworkers-official",
+  "repo_description": "Starter Template for a GraphQL & TypeScript server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "1e991dbe597b279a8db7ddaf9e247a8be1882c5e",
+      "url": "https://api.github.com/repositories/166435698/contents/src/schema.graphql?ref=d7ac778d17ffb4179cbbd68bfa2d4c216b481cd6",
+      "git_url": "https://api.github.com/repositories/166435698/git/blobs/1e991dbe597b279a8db7ddaf9e247a8be1882c5e",
+      "html_url": "https://github.com/bitworkers-official/graphql-server-typescript-starter/blob/d7ac778d17ffb4179cbbd68bfa2d4c216b481cd6/src/schema.graphql",
+      "content": "type Query {\n  hello(name: String): String!\n  isGraphQLAwesome: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-18T16:17:48Z",
+    "updated_at": "2019-03-29T18:12:03Z",
+    "pushed_at": "2019-03-29T14:05:21Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 43,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 40,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

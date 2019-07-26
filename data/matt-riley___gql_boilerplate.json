@@ -1,0 +1,52 @@
+{
+  "repo_name": "gql_boilerplate",
+  "repo_full_name": "matt-riley/gql_boilerplate",
+  "repo_owner": "matt-riley",
+  "repo_description": "GraphQL boilerplate",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.graphql",
+      "path": "src/schema/root.graphql",
+      "sha": "374a8765b19b9f8b8e3dc00c0e583ddc40cc6094",
+      "url": "https://api.github.com/repositories/88868154/contents/src/schema/root.graphql?ref=f27e9f8d2fcd47f3a2e5256128b9f966627089db",
+      "git_url": "https://api.github.com/repositories/88868154/git/blobs/374a8765b19b9f8b8e3dc00c0e583ddc40cc6094",
+      "html_url": "https://github.com/matt-riley/gql_boilerplate/blob/f27e9f8d2fcd47f3a2e5256128b9f966627089db/src/schema/root.graphql",
+      "content": "\"The root query\"\ntype Query {\n  me: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "730d97933a604fc298012af07cec813c771141f4",
+      "url": "https://api.github.com/repositories/88868154/contents/schema.graphql?ref=f27e9f8d2fcd47f3a2e5256128b9f966627089db",
+      "git_url": "https://api.github.com/repositories/88868154/git/blobs/730d97933a604fc298012af07cec813c771141f4",
+      "html_url": "https://github.com/matt-riley/gql_boilerplate/blob/f27e9f8d2fcd47f3a2e5256128b9f966627089db/schema.graphql",
+      "content": "\"\"\"The root query\"\"\"\ntype Query {\n  me: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-20T13:23:46Z",
+    "updated_at": "2019-07-19T06:16:22Z",
+    "pushed_at": "2019-07-19T06:16:22Z",
+    "issues": 6,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 328,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 22,
+    "pull_requests_merged": 306,
+    "releases": 12,
+    "stargazers": 3
+  }
+}

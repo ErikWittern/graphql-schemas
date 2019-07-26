@@ -1,0 +1,42 @@
+{
+  "repo_name": "api3",
+  "repo_full_name": "tovare/api3",
+  "repo_owner": "tovare",
+  "repo_description": "API v3",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "ef8814e056431c3ef0bde0665ae0ca6b7cad23dd",
+      "url": "https://api.github.com/repositories/158968958/contents/schema/schema.graphql?ref=16ee5e6a5018bfce1e6bada5c4081812b0ecba54",
+      "git_url": "https://api.github.com/repositories/158968958/git/blobs/ef8814e056431c3ef0bde0665ae0ca6b7cad23dd",
+      "html_url": "https://github.com/tovare/api3/blob/16ee5e6a5018bfce1e6bada5c4081812b0ecba54/schema/schema.graphql",
+      "content": "schema {\n    query: Query\n}\n\ntype Ngram {\n    Ng : String\n    ID : Int\n    Len : Int\n    Gtf : Int\n    Df : Int\n    Sdf : Int\n    W1 : Float\n    W2 : Float\n}\n\n\n\n# ## Root query type\n#    Kun for å teste ut\ntype Query {\n    hello: String!\n    search(text: String!): [String]!\n    searchNgram(text: String!): Ngram\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-24T19:55:29Z",
+    "updated_at": "2018-12-01T22:51:56Z",
+    "pushed_at": "2018-12-01T22:51:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

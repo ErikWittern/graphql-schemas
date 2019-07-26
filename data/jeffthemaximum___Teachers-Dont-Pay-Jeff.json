@@ -1,0 +1,52 @@
+{
+  "repo_name": "Teachers-Dont-Pay-Jeff",
+  "repo_full_name": "jeffthemaximum/teachers-dont-pay-jeff",
+  "repo_owner": "jeffthemaximum",
+  "repo_description": "free edtech tools for teachers",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "templates/rubix/relay/relay-example/data/schema.graphql",
+      "sha": "231853a2e87799010cbfd90aa717bc3d4e28203f",
+      "url": "https://api.github.com/repositories/85317797/contents/templates/rubix/relay/relay-example/data/schema.graphql?ref=05a92353c5bbf0c09f088bc35c37c79f1ecec78b",
+      "git_url": "https://api.github.com/repositories/85317797/git/blobs/231853a2e87799010cbfd90aa717bc3d4e28203f",
+      "html_url": "https://github.com/jeffthemaximum/Teachers-Dont-Pay-Jeff/blob/05a92353c5bbf0c09f088bc35c37c79f1ecec78b/templates/rubix/relay/relay-example/data/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ninput AddTodoInput {\n  todo: String!\n  clientMutationId: String!\n}\n\ntype AddTodoPayload {\n  todoEdge: TodoEdge\n  user: User\n  error: String\n  clientMutationId: String!\n}\n\ntype Mutation {\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  updateTodo(input: UpdateTodoInput!): UpdateTodoPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  user: User\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype RemoveTodoPayload {\n  todoIdToBeDeleted: ID\n  user: User\n  clientMutationId: String!\n}\n\ntype Todo implements Node {\n  id: ID!\n  _id: String\n  todo: String\n  completed: Boolean\n}\n\ntype TodoConnection {\n  pageInfo: PageInfo!\n  edges: [TodoEdge]\n}\n\ntype TodoEdge {\n  node: Todo\n  cursor: String!\n}\n\ninput UpdateTodoInput {\n  id: ID!\n  todo: String!\n  completed: Boolean!\n  clientMutationId: String!\n}\n\ntype UpdateTodoPayload {\n  todo: Todo\n  user: User\n  clientMutationId: String!\n}\n\ntype User implements Node {\n  id: ID!\n  todos(after: String, first: Int, before: String, last: Int): TodoConnection\n  getTodo(id: String): Todo\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 15
+    },
+    {
+      "name": "schema.graphql",
+      "path": "templates/rubix/relay/relay-seed/data/schema.graphql",
+      "sha": "d36a0cda569340689aa41d3bca74e9dadf7df7ef",
+      "url": "https://api.github.com/repositories/85317797/contents/templates/rubix/relay/relay-seed/data/schema.graphql?ref=05a92353c5bbf0c09f088bc35c37c79f1ecec78b",
+      "git_url": "https://api.github.com/repositories/85317797/git/blobs/d36a0cda569340689aa41d3bca74e9dadf7df7ef",
+      "html_url": "https://github.com/jeffthemaximum/Teachers-Dont-Pay-Jeff/blob/05a92353c5bbf0c09f088bc35c37c79f1ecec78b/templates/rubix/relay/relay-seed/data/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Greetings {\n  hello: String\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype Query {\n  node(id: ID!): Node\n  user: User\n}\n\ntype User {\n  greetings: Greetings\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-17T14:01:02Z",
+    "updated_at": "2018-03-20T20:07:56Z",
+    "pushed_at": "2018-03-20T20:07:48Z",
+    "issues": 5,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

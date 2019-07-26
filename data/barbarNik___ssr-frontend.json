@@ -1,0 +1,42 @@
+{
+  "repo_name": "ssr-frontend",
+  "repo_full_name": "barbarnik/ssr-frontend",
+  "repo_owner": "barbarNik",
+  "repo_description": "Example Apollo SSR Frontend based on Lee Benson's ReactQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "adaa494bcb2810ecff2399ad8a80dd39489e8ea3",
+      "url": "https://api.github.com/repositories/179501557/contents/schema.graphql?ref=970e9e48025163b6b7df621b7c2998293b0c67ea",
+      "git_url": "https://api.github.com/repositories/179501557/git/blobs/adaa494bcb2810ecff2399ad8a80dd39489e8ea3",
+      "html_url": "https://github.com/barbarNik/ssr-frontend/blob/970e9e48025163b6b7df621b7c2998293b0c67ea/schema.graphql",
+      "content": "# This file was generated based on \".graphqlconfig\" at Mon Mar 11 11:59:29 CET 2019. Do not edit manually.\n\nschema {\n    query: Query\n    mutation: Mutation\n}\n\ntype Mutation {\n    SignIn(password: String!, username: String!): User\n}\n\ntype Pokemon {\n    height: Range\n    id: String\n    image: String\n    name: String\n    number: String\n    types: [String]\n    weight: Range\n}\n\ntype Query {\n    currentUser: User\n    getAdminPokedex: [Pokemon]\n    getPokedex: [Pokemon]\n    getPokemons: [Pokemon]\n}\n\ntype Range {\n    maximum: String\n    minimux: String\n}\n\ntype User {\n    avatar: String\n    id: String\n    jwt: String\n    name: String\n    role: String\n    surname: String\n    username: String\n}\n\nenum CacheControlScope {\n    PRIVATE\n    PUBLIC\n}\n\n\"The `Upload` scalar type represents a file upload.\"\nscalar Upload",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-04T13:20:18Z",
+    "updated_at": "2019-04-04T13:22:19Z",
+    "pushed_at": "2019-04-04T13:22:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

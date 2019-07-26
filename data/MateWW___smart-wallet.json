@@ -1,0 +1,55 @@
+{
+  "repo_name": "smart-wallet",
+  "repo_full_name": "mateww/smart-wallet",
+  "repo_owner": "MateWW",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.gql",
+      "path": "backend/src/features/user/schemas/user.gql",
+      "sha": "3252ecac4954a5ab49512a926ee50aafb9505315",
+      "url": "https://api.github.com/repositories/163340075/contents/backend/src/features/user/schemas/user.gql?ref=3c4a46729c56a8a693d945f29aea1e67b2b4e961",
+      "git_url": "https://api.github.com/repositories/163340075/git/blobs/3252ecac4954a5ab49512a926ee50aafb9505315",
+      "html_url": "https://github.com/MateWW/smart-wallet/blob/3c4a46729c56a8a693d945f29aea1e67b2b4e961/backend/src/features/user/schemas/user.gql",
+      "content": "type User {\n    id: String!\n    email: String!\n    firstName: String!\n    lastName: String!\n    role: Int!\n}\n\ntype Query {\n    getUser(id: String!): User\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "auth.gql",
+      "path": "backend/src/common/auth/schemas/auth.gql",
+      "sha": "50bf84e5eb1419ef82045f810373f6eedc7fe9a9",
+      "url": "https://api.github.com/repositories/163340075/contents/backend/src/common/auth/schemas/auth.gql?ref=3c4a46729c56a8a693d945f29aea1e67b2b4e961",
+      "git_url": "https://api.github.com/repositories/163340075/git/blobs/50bf84e5eb1419ef82045f810373f6eedc7fe9a9",
+      "html_url": "https://github.com/MateWW/smart-wallet/blob/3c4a46729c56a8a693d945f29aea1e67b2b4e961/backend/src/common/auth/schemas/auth.gql",
+      "content": "input RegisterData {\n    email: String!\n    password: String!\n    firstName: String!\n    lastName: String!\n}\n\ninput SignInData {\n    email: String!\n    password: String!\n}\n\ntype Query {\n    signIn(credentials: SignInData): String\n}\n\ntype Mutation {\n    register(data: RegisterData): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-27T22:09:09Z",
+    "updated_at": "2019-02-27T19:35:55Z",
+    "pushed_at": "2019-02-27T19:35:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

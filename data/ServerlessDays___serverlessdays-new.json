@@ -1,0 +1,55 @@
+{
+  "repo_name": "serverlessdays-new",
+  "repo_full_name": "serverlessdays/serverlessdays-new",
+  "repo_owner": "ServerlessDays",
+  "repo_description": "ServerlessDays Regional Event Template",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": ".autographql/http/schema.gql",
+      "sha": "5885a6a43c8663f1ce117d1856cf07861cc5b145",
+      "url": "https://api.github.com/repositories/171911200/contents/.autographql/http/schema.gql?ref=0c70148788007f6b48967c2ab7d2a89fb2ce18f6",
+      "git_url": "https://api.github.com/repositories/171911200/git/blobs/5885a6a43c8663f1ce117d1856cf07861cc5b145",
+      "html_url": "https://github.com/ServerlessDays/serverlessdays-new/blob/0c70148788007f6b48967c2ab7d2a89fb2ce18f6/.autographql/http/schema.gql",
+      "content": "scalar DateTime\nscalar URL\nscalar Email \n\ntype SocialLinks {\n    name: String\n    icon: URL\n    link: URL\n}\n\ntype Speaker {\n    id: ID!\n    name: String!\n    organisation: String\n    nationality: String\n    bio: String\n    profilePic: URL\n    status: Status\n    social: [SocialLinks]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype Room {\n    id: ID!\n    name: String!\n    description: String\n    layout: String\n    capacity: Int\n    facilities: [String]\n    accessibility: [String]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype Venue {\n    id: ID!\n    name: String!\n    address: String\n    city: String\n    image: URL\n    rooms: [Room]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\nenum Status {\n    PUBLISHED,\n    DRAFT,\n    ARCHIVED\n}\n\ntype Session {\n    id: ID!\n    name: String\n    description: String\n    speakers: [Speaker]\n    video: URL\n    status: Status\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype DayAgenda {\n    date: DateTime\n    startTime: DateTime\n    endTime: DateTime\n    session: Session\n    description: String\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype EventAgenda {\n    id: ID!\n    eventId: ID\n    DayAgendas: [DayAgenda]\n}\n\ntype SponsorContacts {\n    name: String!\n    title: String!\n    email: Email\n    phone: String\n    location: String\n}\n\ntype Sponsor {\n    name: String\n    logo: URL\n    description: URL\n    contact: [SponsorContacts]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype Milestone {\n    id: ID!\n    description: String!\n    date: DateTime!\n}\n\ntype Event {\n    id: ID!\n    name: String!\n    description: String\n    startDate: DateTime\n    endDate: DateTime\n    logo: URL\n    hero: URL\n    tagline: String\n    milestones: [Milestone]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype EventSponsors {\n    id: ID!\n    eventId: ID\n    sponsor: Sponsor\n    tier: String\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype Query {\n    getEvent (id: ID!): Event\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 17
+    },
+    {
+      "name": "schema.gql",
+      "path": "src/graphql/schema/schema.gql",
+      "sha": "5885a6a43c8663f1ce117d1856cf07861cc5b145",
+      "url": "https://api.github.com/repositories/171911200/contents/src/graphql/schema/schema.gql?ref=0c70148788007f6b48967c2ab7d2a89fb2ce18f6",
+      "git_url": "https://api.github.com/repositories/171911200/git/blobs/5885a6a43c8663f1ce117d1856cf07861cc5b145",
+      "html_url": "https://github.com/ServerlessDays/serverlessdays-new/blob/0c70148788007f6b48967c2ab7d2a89fb2ce18f6/src/graphql/schema/schema.gql",
+      "content": "scalar DateTime\nscalar URL\nscalar Email \n\ntype SocialLinks {\n    name: String\n    icon: URL\n    link: URL\n}\n\ntype Speaker {\n    id: ID!\n    name: String!\n    organisation: String\n    nationality: String\n    bio: String\n    profilePic: URL\n    status: Status\n    social: [SocialLinks]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype Room {\n    id: ID!\n    name: String!\n    description: String\n    layout: String\n    capacity: Int\n    facilities: [String]\n    accessibility: [String]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype Venue {\n    id: ID!\n    name: String!\n    address: String\n    city: String\n    image: URL\n    rooms: [Room]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\nenum Status {\n    PUBLISHED,\n    DRAFT,\n    ARCHIVED\n}\n\ntype Session {\n    id: ID!\n    name: String\n    description: String\n    speakers: [Speaker]\n    video: URL\n    status: Status\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype DayAgenda {\n    date: DateTime\n    startTime: DateTime\n    endTime: DateTime\n    session: Session\n    description: String\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype EventAgenda {\n    id: ID!\n    eventId: ID\n    DayAgendas: [DayAgenda]\n}\n\ntype SponsorContacts {\n    name: String!\n    title: String!\n    email: Email\n    phone: String\n    location: String\n}\n\ntype Sponsor {\n    name: String\n    logo: URL\n    description: URL\n    contact: [SponsorContacts]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype Milestone {\n    id: ID!\n    description: String!\n    date: DateTime!\n}\n\ntype Event {\n    id: ID!\n    name: String!\n    description: String\n    startDate: DateTime\n    endDate: DateTime\n    logo: URL\n    hero: URL\n    tagline: String\n    milestones: [Milestone]\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype EventSponsors {\n    id: ID!\n    eventId: ID\n    sponsor: Sponsor\n    tier: String\n    createdAt: DateTime\n    modifiedAt: DateTime\n}\n\ntype Query {\n    getEvent (id: ID!): Event\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 17
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-21T17:01:06Z",
+    "updated_at": "2019-03-25T10:32:39Z",
+    "pushed_at": "2019-02-21T17:01:12Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

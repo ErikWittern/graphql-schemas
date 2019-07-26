@@ -1,0 +1,42 @@
+{
+  "repo_name": "api.adamperyman.com",
+  "repo_full_name": "adamperyman/api.adamperyman.com",
+  "repo_owner": "adamperyman",
+  "repo_description": "A simple GraphQL API for adamperyman.com.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "a9559e440324ac077c2bd3b7a881dffee3edcd16",
+      "url": "https://api.github.com/repositories/115914514/contents/src/schema.graphql?ref=fab77b0be0081221d0d15f809cadb046c46a6e71",
+      "git_url": "https://api.github.com/repositories/115914514/git/blobs/a9559e440324ac077c2bd3b7a881dffee3edcd16",
+      "html_url": "https://github.com/adamperyman/api.adamperyman.com/blob/fab77b0be0081221d0d15f809cadb046c46a6e71/src/schema.graphql",
+      "content": "type User {\n  _id: ID!\n  name: String!\n}\n\ntype Query {\n  user(_id: ID!): User\n  users(limit: Int): [User]\n}\n\ntype Mutation {\n  createUser(name: String): String\n  deleteUser(_id: ID!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-01T11:16:26Z",
+    "updated_at": "2018-01-03T11:43:19Z",
+    "pushed_at": "2018-01-05T03:10:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

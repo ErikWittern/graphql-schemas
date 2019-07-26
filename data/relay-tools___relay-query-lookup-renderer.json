@@ -1,0 +1,41 @@
+{
+  "repo_name": "relay-query-lookup-renderer",
+  "repo_full_name": "relay-tools/relay-query-lookup-renderer",
+  "repo_owner": "relay-tools",
+  "repo_description": "Same as Relay Modern's QueryRenderer, but will check the store for data before fetching",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "__test__/schema.graphql",
+      "sha": "60e33823f3e7e4c3106754aab416b4fdf9ebbbc2",
+      "url": "https://api.github.com/repositories/92657946/contents/__test__/schema.graphql?ref=e1154e145a2ecfc2f5e163a9972226585c5d5727",
+      "git_url": "https://api.github.com/repositories/92657946/git/blobs/60e33823f3e7e4c3106754aab416b4fdf9ebbbc2",
+      "html_url": "https://github.com/relay-tools/relay-query-lookup-renderer/blob/e1154e145a2ecfc2f5e163a9972226585c5d5727/__test__/schema.graphql",
+      "content": "type Author {\n    id: ID!\n    firstName: String\n    lastName: String\n    posts: [Post] # the list of Posts by this author\n}\ntype Post {\n    id: ID!\n    title: String\n    author: Author\n    votes: Int\n}\n# the schema allows the following query:\ntype Query {\n    posts: [Post]\n    author(id: ID!): Author\n}\n# this schema allows the following mutation:\ntype Mutation {\n    upvotePost (\n    postId: ID!\n    ): Post\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-28T11:46:32Z",
+    "updated_at": "2019-07-11T00:16:21Z",
+    "pushed_at": "2019-07-01T15:55:17Z",
+    "issues": 15,
+    "watchers": 4,
+    "fork_count": 19,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 6,
+    "releases": 3,
+    "stargazers": 45
+  }
+}

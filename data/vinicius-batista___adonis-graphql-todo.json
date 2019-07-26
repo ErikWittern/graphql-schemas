@@ -1,0 +1,58 @@
+{
+  "repo_name": "adonis-graphql-todo",
+  "repo_full_name": "vinicius-batista/adonis-graphql-todo",
+  "repo_owner": "vinicius-batista",
+  "repo_description": "A simple todo example built with adonis and graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Auth.gql",
+      "path": "app/Schema/Auth.gql",
+      "sha": "40ce441ed8ad430e443814bdcb3800d657687d69",
+      "url": "https://api.github.com/repositories/123040555/contents/app/Schema/Auth.gql?ref=836c33025e39076956bbfc6ad7bcf0c8a8796090",
+      "git_url": "https://api.github.com/repositories/123040555/git/blobs/40ce441ed8ad430e443814bdcb3800d657687d69",
+      "html_url": "https://github.com/vinicius-batista/adonis-graphql-todo/blob/836c33025e39076956bbfc6ad7bcf0c8a8796090/app/Schema/Auth.gql",
+      "content": "type AuthTokens {\n  type: String!,\n  token: String!,\n  refreshToken: String\n}\n\ninput RegisterUserInput {\n  email: String!,\n  username: String!,\n  password: String!\n}\n\ninput LoginUserInput {\n  email: String!,\n  password: String!\n}\n\ntype Mutation {\n  registerUser(input: RegisterUserInput): String,\n  loginUser(input: LoginUserInput): AuthTokens,\n}\n\ntype Query {\n  newToken(refreshToken: String!): AuthTokens\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    },
+    {
+      "name": "Todo.gql",
+      "path": "app/Schema/Todo.gql",
+      "sha": "1393495c9b591c83de10c2e9105db742a1d2d01b",
+      "url": "https://api.github.com/repositories/123040555/contents/app/Schema/Todo.gql?ref=836c33025e39076956bbfc6ad7bcf0c8a8796090",
+      "git_url": "https://api.github.com/repositories/123040555/git/blobs/1393495c9b591c83de10c2e9105db742a1d2d01b",
+      "html_url": "https://github.com/vinicius-batista/adonis-graphql-todo/blob/836c33025e39076956bbfc6ad7bcf0c8a8796090/app/Schema/Todo.gql",
+      "content": "type Todo {\n  id: Int!,\n  text: String!,\n  completed: Boolean,\n  userId: Int!,\n  created_at: String,\n  updated_at: String\n}\n\ntype Query {\n  todos: [Todo]\n}\n\ninput CreateTodoInput {\n  text: String!\n}\n\ninput UpdateTodoInput {\n  id: Int!,\n  text: String,\n  completed: Boolean\n}\n\ninput DeleteTodoInput {\n  id: Int!\n}\n\ntype Mutation {\n  createTodo (input: CreateTodoInput): Todo,\n  updateTodo (input: UpdateTodoInput): Todo,\n  deleteTodo (input: DeleteTodoInput): String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-26T22:42:28Z",
+    "updated_at": "2018-02-26T22:42:33Z",
+    "pushed_at": "2018-03-13T13:15:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

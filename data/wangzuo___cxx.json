@@ -1,0 +1,52 @@
+{
+  "repo_name": "cxx",
+  "repo_full_name": "wangzuo/cxx",
+  "repo_owner": "wangzuo",
+  "repo_description": "universal react app with relay",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/todomvc-example/schema.graphql",
+      "sha": "b5553e085988bfad68b02d828eb6c36e882e4fca",
+      "url": "https://api.github.com/repositories/88231375/contents/packages/todomvc-example/schema.graphql?ref=89c099ebf8c1ce2857045ff4428b5e10411157a5",
+      "git_url": "https://api.github.com/repositories/88231375/git/blobs/b5553e085988bfad68b02d828eb6c36e882e4fca",
+      "html_url": "https://github.com/wangzuo/cxx/blob/89c099ebf8c1ce2857045ff4428b5e10411157a5/packages/todomvc-example/schema.graphql",
+      "content": "input AddTodoInput {\n  text: String!\n  clientMutationId: String\n}\n\ntype AddTodoPayload {\n  todoEdge: TodoEdge\n  viewer: User\n  clientMutationId: String\n}\n\ninput ChangeTodoStatusInput {\n  complete: Boolean!\n  id: ID!\n  clientMutationId: String\n}\n\ntype ChangeTodoStatusPayload {\n  todo: Todo\n  viewer: User\n  clientMutationId: String\n}\n\ninput MarkAllTodosInput {\n  complete: Boolean!\n  clientMutationId: String\n}\n\ntype MarkAllTodosPayload {\n  changedTodos: [Todo]\n  viewer: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  changeTodoStatus(input: ChangeTodoStatusInput!): ChangeTodoStatusPayload\n  markAllTodos(input: MarkAllTodosInput!): MarkAllTodosPayload\n  removeCompletedTodos(input: RemoveCompletedTodosInput!): RemoveCompletedTodosPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n  renameTodo(input: RenameTodoInput!): RenameTodoPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  viewer: User\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ninput RemoveCompletedTodosInput {\n  clientMutationId: String\n}\n\ntype RemoveCompletedTodosPayload {\n  deletedTodoIds: [String]\n  viewer: User\n  clientMutationId: String\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype RemoveTodoPayload {\n  deletedTodoId: ID\n  viewer: User\n  clientMutationId: String\n}\n\ninput RenameTodoInput {\n  id: ID!\n  text: String!\n  clientMutationId: String\n}\n\ntype RenameTodoPayload {\n  todo: Todo\n  clientMutationId: String\n}\n\ntype Todo implements Node {\n  # The ID of an object\n  id: ID!\n  text: String\n  complete: Boolean\n}\n\n# A connection to a list of items.\ntype TodoConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TodoEdge]\n}\n\n# An edge in a connection.\ntype TodoEdge {\n  # The item at the end of the edge\n  node: Todo\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  todos(status: String = \"any\", after: String, first: Int, before: String, last: Int): TodoConnection\n  totalCount: Int\n  completedCount: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 20
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/hello-world-example/schema.graphql",
+      "sha": "04196242d297b517061450b18cdfe6c28e57dc0e",
+      "url": "https://api.github.com/repositories/88231375/contents/packages/hello-world-example/schema.graphql?ref=89c099ebf8c1ce2857045ff4428b5e10411157a5",
+      "git_url": "https://api.github.com/repositories/88231375/git/blobs/04196242d297b517061450b18cdfe6c28e57dc0e",
+      "html_url": "https://github.com/wangzuo/cxx/blob/89c099ebf8c1ce2857045ff4428b5e10411157a5/packages/hello-world-example/schema.graphql",
+      "content": "type Query {\n  hello: String\n  world: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-14T03:58:47Z",
+    "updated_at": "2017-06-13T16:49:15Z",
+    "pushed_at": "2017-09-12T07:28:50Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

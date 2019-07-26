@@ -1,0 +1,41 @@
+{
+  "repo_name": "ember-apollo-client",
+  "repo_full_name": "ember-graphql/ember-apollo-client",
+  "repo_owner": "ember-graphql",
+  "repo_description": "🚀 An ember-cli addon for Apollo Client and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "test-schema.graphql",
+      "path": "tests/fixtures/test-schema.graphql",
+      "sha": "31c1203ca5fd7c80e5a1f06be916fa93b739c513",
+      "url": "https://api.github.com/repositories/78405075/contents/tests/fixtures/test-schema.graphql?ref=5cfa8865998e16d5a87fbd95ba644a2d27e9cc5d",
+      "git_url": "https://api.github.com/repositories/78405075/git/blobs/31c1203ca5fd7c80e5a1f06be916fa93b739c513",
+      "html_url": "https://github.com/ember-graphql/ember-apollo-client/blob/5cfa8865998e16d5a87fbd95ba644a2d27e9cc5d/tests/fixtures/test-schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\n# The query type, represents all of the entry points into our object graph\ntype Query {\n  hero(episode: Episode): Character\n\n  reviews(episode: Episode!): [Review]\n\n  search(text: String): [SearchResult]\n\n  characters(kind: String): [SearchResult]\n\n  droid(id: ID!): Droid\n\n  human(id: ID!): Human\n\n  starship(id: ID!): Starship\n}\n\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n  createReview(episode: Episode, review: ReviewInput!): Review\n  changeCharacterName(id: ID!, name: String!): Character\n}\n\n# The episodes in the Star Wars trilogy\nenum Episode {\n  # Star Wars Episode IV: A New Hope, released in 1977.\n  NEWHOPE\n\n  # Star Wars Episode V: The Empire Strikes Back, released in 1980.\n  EMPIRE\n\n  # Star Wars Episode VI: Return of the Jedi, released in 1983.\n  JEDI\n}\n\n# A character from the Star Wars universe\ninterface Character {\n  # The ID of the character\n  id: ID!\n\n  # The name of the character\n  name: String!\n\n  # The friends of the character, or an empty list if they have none\n  friends: [Character]\n\n  # The movies this character appears in\n  appearsIn: [Episode]!\n}\n\n# Units of height\nenum LengthUnit {\n  # The standard unit around the world\n  METER\n\n  # Primarily used in the United States\n  FOOT\n}\n\n# A humanoid creature from the Star Wars universe\ntype Human implements Character {\n  # The ID of the human\n  id: ID!\n\n  # What this human calls themselves\n  name: String!\n\n  # Height in the preferred unit, default is meters\n  height(unit: LengthUnit = METER): Float\n\n  # Mass in kilograms, or null if unknown\n  mass: Float\n\n  # This human's friends, or an empty list if they have none\n  friends: [Character]\n\n  # The movies this human appears in\n  appearsIn: [Episode]!\n\n  # A list of starships this person has piloted, or an empty list if none\n  starships: [Starship]\n}\n\n# An autonomous mechanical character in the Star Wars universe\ntype Droid implements Character {\n  # The ID of the droid\n  id: ID!\n\n  # What others call this droid\n  name: String!\n\n  # This droid's friends, or an empty list if they have none\n  friends: [Character]\n\n  # The movies this droid appears in\n  appearsIn: [Episode]!\n\n  # This droid's primary function\n  primaryFunction: String\n}\n\n# Represents a review for a movie\ntype Review {\n  # The number of stars this review gave, 1-5\n  stars: Int!\n\n  # Comment about the movie\n  commentary: String\n}\n\n# The input object sent when someone is creating a new review\ninput ReviewInput {\n  # 0-5 stars\n  stars: Int!\n\n  # Comment about the movie, optional\n  commentary: String\n}\n\ntype Starship {\n  # The ID of the starship\n  id: ID!\n\n  # The name of the starship\n  name: String!\n\n  # Length of the starship, along the longest axis\n  length(unit: LengthUnit = METER): Float\n}\n\nunion SearchResult = Human | Droid | Starship\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-09T07:36:20Z",
+    "updated_at": "2019-07-15T23:03:54Z",
+    "pushed_at": "2019-07-01T01:24:20Z",
+    "issues": 85,
+    "watchers": 16,
+    "fork_count": 51,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 208,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 73,
+    "pull_requests_merged": 131,
+    "releases": 7,
+    "stargazers": 208
+  }
+}

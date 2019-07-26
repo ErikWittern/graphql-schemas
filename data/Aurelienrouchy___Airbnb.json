@@ -1,0 +1,63 @@
+{
+  "repo_name": "Airbnb",
+  "repo_full_name": "aurelienrouchy/airbnb",
+  "repo_owner": "Aurelienrouchy",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/user/me/schema.graphql",
+      "sha": "34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "url": "https://api.github.com/repositories/161765401/contents/packages/server/src/modules/user/me/schema.graphql?ref=ecb625b032b53c349f8a66a1d8aff43f201a0b4f",
+      "git_url": "https://api.github.com/repositories/161765401/git/blobs/34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "html_url": "https://github.com/Aurelienrouchy/Airbnb/blob/ecb625b032b53c349f8a66a1d8aff43f201a0b4f/packages/server/src/modules/user/me/schema.graphql",
+      "content": "type Query {\n  me: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Aurelienrouchy/Airbnb/blob/ecb625b032b53c349f8a66a1d8aff43f201a0b4f/packages/server/src/modules/user/me/schema.graphql:\ntype Query {\n  me: User\n}\n\n# https://github.com/Aurelienrouchy/Airbnb/blob/ecb625b032b53c349f8a66a1d8aff43f201a0b4f/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: ID!\n  email: String!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "packages/server/src/modules/user/shared/User.graphql",
+      "sha": "ab5f3f3ef90bcc0d84c785b1fa0c4a2abb354f5b",
+      "url": "https://api.github.com/repositories/161765401/contents/packages/server/src/modules/user/shared/User.graphql?ref=ecb625b032b53c349f8a66a1d8aff43f201a0b4f",
+      "git_url": "https://api.github.com/repositories/161765401/git/blobs/ab5f3f3ef90bcc0d84c785b1fa0c4a2abb354f5b",
+      "html_url": "https://github.com/Aurelienrouchy/Airbnb/blob/ecb625b032b53c349f8a66a1d8aff43f201a0b4f/packages/server/src/modules/user/shared/User.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-14T09:55:32Z",
+    "updated_at": "2018-12-14T11:33:48Z",
+    "pushed_at": "2018-12-14T11:33:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "repo_name": "pigment",
+  "repo_full_name": "julienpradet/pigment",
+  "repo_owner": "JulienPradet",
+  "repo_description": "Experimental repo for building React/GraphQL applications",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "packages/pigment-graphql/src/modules/url/schema.gql",
+      "sha": "4bac5aa823bc3047373b412a41fb82b57771f114",
+      "url": "https://api.github.com/repositories/127404008/contents/packages/pigment-graphql/src/modules/url/schema.gql?ref=ecdf1ff4b65d47856d92f357bb1a6fdfe30244b8",
+      "git_url": "https://api.github.com/repositories/127404008/git/blobs/4bac5aa823bc3047373b412a41fb82b57771f114",
+      "html_url": "https://github.com/JulienPradet/pigment/blob/ecdf1ff4b65d47856d92f357bb1a6fdfe30244b8/packages/pigment-graphql/src/modules/url/schema.gql",
+      "content": "type Query {\n  matchUrl(path: String!): MatchedUrl\n}\n\ntype MatchedUrl {\n  seoPath: String\n  pagePath: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.gql",
+      "path": "packages/pigment-demo/src/server/modules/blog/schema.gql",
+      "sha": "688af386b5b019ad57426a6c860d78ad4ae4057a",
+      "url": "https://api.github.com/repositories/127404008/contents/packages/pigment-demo/src/server/modules/blog/schema.gql?ref=ecdf1ff4b65d47856d92f357bb1a6fdfe30244b8",
+      "git_url": "https://api.github.com/repositories/127404008/git/blobs/688af386b5b019ad57426a6c860d78ad4ae4057a",
+      "html_url": "https://github.com/JulienPradet/pigment/blob/ecdf1ff4b65d47856d92f357bb1a6fdfe30244b8/packages/pigment-demo/src/server/modules/blog/schema.gql",
+      "content": "type Query {\n  blog: Blog\n}\n\ntype Blog {\n  posts(from: Int, to: Int): [Post]\n  post(id: String): Post\n}\n\ntype Post {\n  id: String\n  path: String\n  title: String\n  content: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-30T08:38:05Z",
+    "updated_at": "2018-06-24T14:50:44Z",
+    "pushed_at": "2019-07-04T07:49:15Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 7,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

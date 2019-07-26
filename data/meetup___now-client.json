@@ -1,0 +1,42 @@
+{
+  "repo_name": "now-client",
+  "repo_full_name": "meetup/now-client",
+  "repo_owner": "meetup",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "localSchema.graphql",
+      "path": "src/localSchema.graphql",
+      "sha": "4e6148e5dfb85d13a30814da1ccb7653b294f4bb",
+      "url": "https://api.github.com/repositories/135313020/contents/src/localSchema.graphql?ref=ec6ba1a970ae3c25d68abdde968a969c0066651e",
+      "git_url": "https://api.github.com/repositories/135313020/git/blobs/4e6148e5dfb85d13a30814da1ccb7653b294f4bb",
+      "html_url": "https://github.com/meetup/now-client/blob/ec6ba1a970ae3c25d68abdde968a969c0066651e/src/localSchema.graphql",
+      "content": "type Query {\n  auth: Auth\n  newUser: NewUser\n}\n\ntype Mutation {\n  updateAuth(token: String, refreshToken: String): Auth\n  storeNewUser(input: CreateNewUserInput): NewUser\n}\n\ntype Auth {\n  token: String\n  refreshToken: String\n  isLoggedIn: Boolean\n}\n\ntype NewUser {\n  firstName: String\n  lastName: String\n  birthday: String\n  email: String\n  didPhoto: Boolean\n  didBio: Boolean\n}\n\ninput CreateNewUserInput {\n  firstName: String\n  lastName: String\n  birthday: String\n  email: String\n  didPhoto: Boolean\n  didBio: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-29T15:01:50Z",
+    "updated_at": "2019-07-09T16:06:00Z",
+    "pushed_at": "2018-10-17T19:03:57Z",
+    "issues": 0,
+    "watchers": 8,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

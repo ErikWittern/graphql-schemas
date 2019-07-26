@@ -1,0 +1,63 @@
+{
+  "repo_name": "code-ponder",
+  "repo_full_name": "wojciech-bilicki/code-ponder",
+  "repo_owner": "wojciech-bilicki",
+  "repo_description": "Just learning from ben awad",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/user/me/schema.graphql",
+      "sha": "88b6740cbc2299628066474620e55b00311c232c",
+      "url": "https://api.github.com/repositories/161697412/contents/packages/server/src/modules/user/me/schema.graphql?ref=e60a538493188e7ef5c79eb200624d8086d7a23c",
+      "git_url": "https://api.github.com/repositories/161697412/git/blobs/88b6740cbc2299628066474620e55b00311c232c",
+      "html_url": "https://github.com/wojciech-bilicki/code-ponder/blob/e60a538493188e7ef5c79eb200624d8086d7a23c/packages/server/src/modules/user/me/schema.graphql",
+      "content": "type Query {\n  me: User\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/wojciech-bilicki/code-ponder/blob/e60a538493188e7ef5c79eb200624d8086d7a23c/packages/server/src/modules/user/me/schema.graphql:\ntype Query {\n  me: User\n}\n# https://github.com/wojciech-bilicki/code-ponder/blob/e60a538493188e7ef5c79eb200624d8086d7a23c/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: ID!\n  username: String!\n  email: String!\n}",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "packages/server/src/modules/user/shared/User.graphql",
+      "sha": "2e77da54e5dc7dad8bb677a2a5af2abda7ddcccf",
+      "url": "https://api.github.com/repositories/161697412/contents/packages/server/src/modules/user/shared/User.graphql?ref=e60a538493188e7ef5c79eb200624d8086d7a23c",
+      "git_url": "https://api.github.com/repositories/161697412/git/blobs/2e77da54e5dc7dad8bb677a2a5af2abda7ddcccf",
+      "html_url": "https://github.com/wojciech-bilicki/code-ponder/blob/e60a538493188e7ef5c79eb200624d8086d7a23c/packages/server/src/modules/user/shared/User.graphql",
+      "content": "type User {\n  id: ID!\n  username: String!\n  email: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-13T21:34:41Z",
+    "updated_at": "2019-02-01T08:54:12Z",
+    "pushed_at": "2019-02-01T08:54:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

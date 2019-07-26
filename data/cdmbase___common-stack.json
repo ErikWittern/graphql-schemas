@@ -1,0 +1,42 @@
+{
+  "repo_name": "common-stack",
+  "repo_full_name": "cdmbase/common-stack",
+  "repo_owner": "cdmbase",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "raw2_type.gql",
+      "path": "packages/common-server-core/src/connector/__tests__/samples/graphql/types/client/raw2_type.gql",
+      "sha": "43006fe02ebdbedcf194a21235df70169a56d4f1",
+      "url": "https://api.github.com/repositories/122759720/contents/packages/common-server-core/src/connector/__tests__/samples/graphql/types/client/raw2_type.gql?ref=e4d441a318dce4221c43ff1342782437469d5763",
+      "git_url": "https://api.github.com/repositories/122759720/git/blobs/43006fe02ebdbedcf194a21235df70169a56d4f1",
+      "html_url": "https://github.com/cdmbase/common-stack/blob/e4d441a318dce4221c43ff1342782437469d5763/packages/common-server-core/src/connector/__tests__/samples/graphql/types/client/raw2_type.gql",
+      "content": "type Raw2 {\n  field: String!\n}\n\ntype Query {\n  raw2Query: [Raw2]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-24T16:53:17Z",
+    "updated_at": "2019-05-29T18:15:31Z",
+    "pushed_at": "2019-05-29T18:15:10Z",
+    "issues": 13,
+    "watchers": 2,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 25,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 20,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

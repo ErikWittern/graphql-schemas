@@ -1,0 +1,42 @@
+{
+  "repo_name": "nest-typescript-graphql-starter",
+  "repo_full_name": "jakubszalaty/nest-typescript-graphql-starter",
+  "repo_owner": "jakubszalaty",
+  "repo_description": "Starter for a Nest GraphQL Server w/ TypeScript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "c3888789ba361f783cf9f1655990e6862a9c8c8f",
+      "url": "https://api.github.com/repositories/121862077/contents/src/schema.graphql?ref=ab15d124a2905332f92062e1c17f0770a7c3d7c2",
+      "git_url": "https://api.github.com/repositories/121862077/git/blobs/c3888789ba361f783cf9f1655990e6862a9c8c8f",
+      "html_url": "https://github.com/jakubszalaty/nest-typescript-graphql-starter/blob/ab15d124a2905332f92062e1c17f0770a7c3d7c2/src/schema.graphql",
+      "content": "type helloPayload {\n    msg: String\n}\n\ntype Query {\n    hello: helloPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-17T14:30:34Z",
+    "updated_at": "2018-02-17T14:33:25Z",
+    "pushed_at": "2018-02-19T17:35:12Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

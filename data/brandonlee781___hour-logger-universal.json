@@ -1,0 +1,240 @@
+{
+  "repo_name": "hour-logger-universal",
+  "repo_full_name": "brandonlee781/hour-logger-universal",
+  "repo_owner": "brandonlee781",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "DontBeA.query.graphql",
+      "path": "server/modules/dontbea/schema/DontBeA.query.graphql",
+      "sha": "e6fe67f6ee5a58cae7f2c3c29c98b6ef1f6f004e",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/dontbea/schema/DontBeA.query.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/e6fe67f6ee5a58cae7f2c3c29c98b6ef1f6f004e",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/dontbea/schema/DontBeA.query.graphql",
+      "content": "type Query {\n  allDontBeAs: AllDontBeAsPayLoad!\n  randomDontBeA: RandomDontBeAPayload!\n}\n\ntype AllDontBeAsPayLoad {\n  dontBeAs: [DontBeA!]!\n}\n\ntype RandomDontBeAPayload {\n  dontBeA: DontBeA!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/dontbea/schema/DontBeA.query.graphql:\ntype Query {\n  allDontBeAs: AllDontBeAsPayLoad!\n  randomDontBeA: RandomDontBeAPayload!\n}\n\ntype AllDontBeAsPayLoad {\n  dontBeAs: [DontBeA!]!\n}\n\ntype RandomDontBeAPayload {\n  dontBeA: DontBeA!\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/dontbea/schema/DontBeA.type.graphql:\n# A single \"Don't be a...\" phrase\ntype DontBeA {\n  # UUID of phrase\n  id: ID!\n  # The actual phrase\n  phrase: String\n  # The season and episode the phrase is from\n  episodeNo: String\n  # The title of the episode the phrase is from\n  episodeTitle: String\n  # Timestamp log entry was added to database\n  createdAt: String\n  # Timestamp log entry was last modified in database\n  updatedAt: String\n}",
+        "mergedPaths": [
+          "server/modules/dontbea/schema/DontBeA.type.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "DontBeA"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "DontBeA.type.graphql",
+      "path": "server/modules/dontbea/schema/DontBeA.type.graphql",
+      "sha": "b28b761ee560e8e2cc84821d89f7d1d0bff6c022",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/dontbea/schema/DontBeA.type.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/b28b761ee560e8e2cc84821d89f7d1d0bff6c022",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/dontbea/schema/DontBeA.type.graphql",
+      "content": "# A single \"Don't be a...\" phrase\ntype DontBeA {\n  # UUID of phrase\n  id: ID!\n  # The actual phrase\n  phrase: String\n  # The season and episode the phrase is from\n  episodeNo: String\n  # The title of the episode the phrase is from\n  episodeTitle: String\n  # Timestamp log entry was added to database\n  createdAt: String\n  # Timestamp log entry was last modified in database\n  updatedAt: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "User.query.graphql",
+      "path": "server/modules/user/schema/User.query.graphql",
+      "sha": "5cc9d2014652b0e1b3870145e19da1b2a536c436",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/user/schema/User.query.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/5cc9d2014652b0e1b3870145e19da1b2a536c436",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/user/schema/User.query.graphql",
+      "content": "type Query {\n  getUser: User!\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/user/schema/User.query.graphql:\ntype Query {\n  getUser: User!\n}\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/user/schema/User.type.graphql:\ntype User {\n  id: String!\n  email: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n}\n\ntype SigninPayload {\n  token: String\n  user: User\n}\n\ninput AuthProviderSignupData {\n  email: AUTH_PROVIDER_EMAIL\n}\n\ninput AUTH_PROVIDER_EMAIL {\n  email: String!\n  password: String!\n}\n",
+        "mergedPaths": [
+          "server/modules/user/schema/User.type.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.type.graphql",
+      "path": "server/modules/user/schema/User.type.graphql",
+      "sha": "e3e57385710974c1211d12b2cacf9d8c09dac85b",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/user/schema/User.type.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/e3e57385710974c1211d12b2cacf9d8c09dac85b",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/user/schema/User.type.graphql",
+      "content": "type User {\n  id: String!\n  email: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n}\n\ntype SigninPayload {\n  token: String\n  user: User\n}\n\ninput AuthProviderSignupData {\n  email: AUTH_PROVIDER_EMAIL\n}\n\ninput AUTH_PROVIDER_EMAIL {\n  email: String!\n  password: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "Client.query.graphql",
+      "path": "server/modules/client/schema/Client.query.graphql",
+      "sha": "12ab34f009f17219f4a06f25610f22bf6dc1f989",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/client/schema/Client.query.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/12ab34f009f17219f4a06f25610f22bf6dc1f989",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/client/schema/Client.query.graphql",
+      "content": "type Query {\n  # Get all Clients in the database\n  allClients: AllClientsPayload\n  # Get a single Clint from the database by its UUID\n  oneClient(input: OneClientInput!): OneClientPayload\n}\n\ntype AllClientsPayload {\n  clients: [Client!]\n}\n\ninput OneClientInput {\n  id: String!\n}\n\ntype OneClientPayload {\n  client: Client!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/client/schema/Client.query.graphql:\ntype Query {\n  # Get all Clients in the database\n  allClients: AllClientsPayload\n  # Get a single Clint from the database by its UUID\n  oneClient(input: OneClientInput!): OneClientPayload\n}\n\ntype AllClientsPayload {\n  clients: [Client!]\n}\n\ninput OneClientInput {\n  id: String!\n}\n\ntype OneClientPayload {\n  client: Client!\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/client/schema/Client.type.graphql:\ntype Client {\n  id: String!\n  name: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n  user: User\n  projects: [Project]\n  createdAt: String\n  updatedAt: String\n}\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/user/schema/User.type.graphql:\ntype User {\n  id: String!\n  email: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n}\n\ntype SigninPayload {\n  token: String\n  user: User\n}\n\ninput AuthProviderSignupData {\n  email: AUTH_PROVIDER_EMAIL\n}\n\ninput AUTH_PROVIDER_EMAIL {\n  email: String!\n  password: String!\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/project/schema/Project.type.graphql:\ntype Project {\n  id: String!\n  name: String\n  color: String\n  favorite: Boolean\n  logs: [Log]\n  client: Client\n  user: User\n  createdAt: String\n  updatedAt: String\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/log/schema/Log.type.graphql:\n# A single log entry detailing a period of time spent working on a specific project and any notes describing what was done\ntype Log {\n  # UUID of log entry\n  id: ID!\n  # Time string in 24 hour time log entry began\n  startTime: String\n  # Timestamp of the start date and time\n  start: String\n  # Time string in 24 hour time log entry ended\n  endTime: String\n  # Timestamp of the end date and time\n  end: String\n  # Date of log entry\n  date: String\n  # Number of hours between startTime and endTime\n  duration: Float\n  # Project log entry is associated with\n  project: Project\n  # User log entry is associated with\n  user: User\n  # Any notes associated with log entry\n  note: String\n  # Timestamp log entry was added to database\n  createdAt: String\n  # Timestamp log entry was last modified in database\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "server/modules/client/schema/Client.type.graphql",
+          "server/modules/user/schema/User.type.graphql",
+          "server/modules/project/schema/Project.type.graphql",
+          "server/modules/log/schema/Log.type.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Client",
+          "User",
+          "Project",
+          "Log"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 11
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Project.type.graphql",
+      "path": "server/modules/project/schema/Project.type.graphql",
+      "sha": "017a4c623d19b27c6894e38885a0ca344484f1fb",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/project/schema/Project.type.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/017a4c623d19b27c6894e38885a0ca344484f1fb",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/project/schema/Project.type.graphql",
+      "content": "type Project {\n  id: String!\n  name: String\n  color: String\n  favorite: Boolean\n  logs: [Log]\n  client: Client\n  user: User\n  createdAt: String\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Client.type.graphql",
+      "path": "server/modules/client/schema/Client.type.graphql",
+      "sha": "61d27a52c05c066afa8dacfa0d65ba87fa2a7f08",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/client/schema/Client.type.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/61d27a52c05c066afa8dacfa0d65ba87fa2a7f08",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/client/schema/Client.type.graphql",
+      "content": "type Client {\n  id: String!\n  name: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n  user: User\n  projects: [Project]\n  createdAt: String\n  updatedAt: String\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Log.type.graphql",
+      "path": "server/modules/log/schema/Log.type.graphql",
+      "sha": "c6f965034fe5297dbbe5f1c5edb6ff186d42eea7",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/log/schema/Log.type.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/c6f965034fe5297dbbe5f1c5edb6ff186d42eea7",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/log/schema/Log.type.graphql",
+      "content": "# A single log entry detailing a period of time spent working on a specific project and any notes describing what was done\ntype Log {\n  # UUID of log entry\n  id: ID!\n  # Time string in 24 hour time log entry began\n  startTime: String\n  # Timestamp of the start date and time\n  start: String\n  # Time string in 24 hour time log entry ended\n  endTime: String\n  # Timestamp of the end date and time\n  end: String\n  # Date of log entry\n  date: String\n  # Number of hours between startTime and endTime\n  duration: Float\n  # Project log entry is associated with\n  project: Project\n  # User log entry is associated with\n  user: User\n  # Any notes associated with log entry\n  note: String\n  # Timestamp log entry was added to database\n  createdAt: String\n  # Timestamp log entry was last modified in database\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Project.query.graphql",
+      "path": "server/modules/project/schema/Project.query.graphql",
+      "sha": "c22e2c90c54f9fcd962dfaf04812056bab9d4f61",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/project/schema/Project.query.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/c22e2c90c54f9fcd962dfaf04812056bab9d4f61",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/project/schema/Project.query.graphql",
+      "content": "type Query {\n  # Get all Projects in the database\n  allProjects: AllProjectsPayload\n  # Get a single Project from the database by its UUID\n  oneProject(input: OneProjectInput!): OneProjectPayload\n}\n\ntype AllProjectsPayload {\n  projects: [Project!]!\n}\n\ninput OneProjectInput {\n  id: String!\n}\n\ntype OneProjectPayload {\n  project: Project!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/project/schema/Project.query.graphql:\ntype Query {\n  # Get all Projects in the database\n  allProjects: AllProjectsPayload\n  # Get a single Project from the database by its UUID\n  oneProject(input: OneProjectInput!): OneProjectPayload\n}\n\ntype AllProjectsPayload {\n  projects: [Project!]!\n}\n\ninput OneProjectInput {\n  id: String!\n}\n\ntype OneProjectPayload {\n  project: Project!\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/project/schema/Project.type.graphql:\ntype Project {\n  id: String!\n  name: String\n  color: String\n  favorite: Boolean\n  logs: [Log]\n  client: Client\n  user: User\n  createdAt: String\n  updatedAt: String\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/log/schema/Log.type.graphql:\n# A single log entry detailing a period of time spent working on a specific project and any notes describing what was done\ntype Log {\n  # UUID of log entry\n  id: ID!\n  # Time string in 24 hour time log entry began\n  startTime: String\n  # Timestamp of the start date and time\n  start: String\n  # Time string in 24 hour time log entry ended\n  endTime: String\n  # Timestamp of the end date and time\n  end: String\n  # Date of log entry\n  date: String\n  # Number of hours between startTime and endTime\n  duration: Float\n  # Project log entry is associated with\n  project: Project\n  # User log entry is associated with\n  user: User\n  # Any notes associated with log entry\n  note: String\n  # Timestamp log entry was added to database\n  createdAt: String\n  # Timestamp log entry was last modified in database\n  updatedAt: String\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/client/schema/Client.type.graphql:\ntype Client {\n  id: String!\n  name: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n  user: User\n  projects: [Project]\n  createdAt: String\n  updatedAt: String\n}\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/user/schema/User.type.graphql:\ntype User {\n  id: String!\n  email: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n}\n\ntype SigninPayload {\n  token: String\n  user: User\n}\n\ninput AuthProviderSignupData {\n  email: AUTH_PROVIDER_EMAIL\n}\n\ninput AUTH_PROVIDER_EMAIL {\n  email: String!\n  password: String!\n}\n",
+        "mergedPaths": [
+          "server/modules/project/schema/Project.type.graphql",
+          "server/modules/log/schema/Log.type.graphql",
+          "server/modules/client/schema/Client.type.graphql",
+          "server/modules/user/schema/User.type.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Project",
+          "Log",
+          "Client",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 11
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Invoice.query.graphql",
+      "path": "server/modules/invoice/schema/Invoice.query.graphql",
+      "sha": "18530eca988719febea668abd598a30dd26cfaf3",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/invoice/schema/Invoice.query.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/18530eca988719febea668abd598a30dd26cfaf3",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/invoice/schema/Invoice.query.graphql",
+      "content": "type Query {\n  # Get all Invoices from the database\n  allInvoices: AllInvoicesPayload\n  # Get a single Invoice from the database based on invoice ID\n  oneInvoice(input: OneInvoiceInput!): OneInvoicePayload\n}\n\ntype AllInvoicesPayload {\n  invoices: [Invoice!]!\n}\n\ninput OneInvoiceInput {\n  id: ID\n  number: Int\n}\n\ntype OneInvoicePayload {\n  invoice: Invoice!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/invoice/schema/Invoice.query.graphql:\ntype Query {\n  # Get all Invoices from the database\n  allInvoices: AllInvoicesPayload\n  # Get a single Invoice from the database based on invoice ID\n  oneInvoice(input: OneInvoiceInput!): OneInvoicePayload\n}\n\ntype AllInvoicesPayload {\n  invoices: [Invoice!]!\n}\n\ninput OneInvoiceInput {\n  id: ID\n  number: Int\n}\n\ntype OneInvoicePayload {\n  invoice: Invoice!\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/invoice/schema/Invoice.type.graphql:\ntype Invoice {\n  id: ID!\n  number: Int\n  hours: Float\n  rate: Int\n  date: String\n  logs: [Log!]\n  user: User\n  createdAt: String\n  updatedAt: String\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/log/schema/Log.type.graphql:\n# A single log entry detailing a period of time spent working on a specific project and any notes describing what was done\ntype Log {\n  # UUID of log entry\n  id: ID!\n  # Time string in 24 hour time log entry began\n  startTime: String\n  # Timestamp of the start date and time\n  start: String\n  # Time string in 24 hour time log entry ended\n  endTime: String\n  # Timestamp of the end date and time\n  end: String\n  # Date of log entry\n  date: String\n  # Number of hours between startTime and endTime\n  duration: Float\n  # Project log entry is associated with\n  project: Project\n  # User log entry is associated with\n  user: User\n  # Any notes associated with log entry\n  note: String\n  # Timestamp log entry was added to database\n  createdAt: String\n  # Timestamp log entry was last modified in database\n  updatedAt: String\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/user/schema/User.type.graphql:\ntype User {\n  id: String!\n  email: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n}\n\ntype SigninPayload {\n  token: String\n  user: User\n}\n\ninput AuthProviderSignupData {\n  email: AUTH_PROVIDER_EMAIL\n}\n\ninput AUTH_PROVIDER_EMAIL {\n  email: String!\n  password: String!\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/project/schema/Project.type.graphql:\ntype Project {\n  id: String!\n  name: String\n  color: String\n  favorite: Boolean\n  logs: [Log]\n  client: Client\n  user: User\n  createdAt: String\n  updatedAt: String\n}\n\n# https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/client/schema/Client.type.graphql:\ntype Client {\n  id: String!\n  name: String!\n  address: String\n  city: String\n  state: String\n  zip: String\n  user: User\n  projects: [Project]\n  createdAt: String\n  updatedAt: String\n}",
+        "mergedPaths": [
+          "server/modules/invoice/schema/Invoice.type.graphql",
+          "server/modules/log/schema/Log.type.graphql",
+          "server/modules/user/schema/User.type.graphql",
+          "server/modules/project/schema/Project.type.graphql",
+          "server/modules/client/schema/Client.type.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Invoice",
+          "Log",
+          "User",
+          "Project",
+          "Client"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 12
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Invoice.type.graphql",
+      "path": "server/modules/invoice/schema/Invoice.type.graphql",
+      "sha": "a6085a9e03b8b3c4b88c06fe031adfda528f8791",
+      "url": "https://api.github.com/repositories/150586863/contents/server/modules/invoice/schema/Invoice.type.graphql?ref=2d5e54c96b2b32397ecb58f791ff1cd749a6a465",
+      "git_url": "https://api.github.com/repositories/150586863/git/blobs/a6085a9e03b8b3c4b88c06fe031adfda528f8791",
+      "html_url": "https://github.com/brandonlee781/hour-logger-universal/blob/2d5e54c96b2b32397ecb58f791ff1cd749a6a465/server/modules/invoice/schema/Invoice.type.graphql",
+      "content": "type Invoice {\n  id: ID!\n  number: Int\n  hours: Float\n  rate: Int\n  date: String\n  logs: [Log!]\n  user: User\n  createdAt: String\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-27T12:56:05Z",
+    "updated_at": "2018-10-28T13:29:47Z",
+    "pushed_at": "2018-10-28T13:29:45Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

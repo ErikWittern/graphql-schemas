@@ -1,0 +1,39 @@
+{
+  "repo_name": "swmansion-hackaton-backend",
+  "repo_full_name": "radlinskii/swmansion-hackaton-backend",
+  "repo_owner": "radlinskii",
+  "repo_description": "graphqlful backend to app created for hackaton hosted by software mansion 12.05.2018",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "a2931fb813e139c40d85119c532de4d2e8f73968",
+      "url": "https://api.github.com/repositories/133018997/contents/schema.graphql?ref=725d2dd84c936eee57b51d6faf8480bf8bfb8062",
+      "git_url": "https://api.github.com/repositories/133018997/git/blobs/a2931fb813e139c40d85119c532de4d2e8f73968",
+      "html_url": "https://github.com/radlinskii/swmansion-hackaton-backend/blob/725d2dd84c936eee57b51d6faf8480bf8bfb8062/schema.graphql",
+      "content": "# source: https://house-app-api.herokuapp.com/graphql\n# timestamp: Sun May 13 2018 14:03:12 GMT+0200 (CEST)\n\nschema {\n  query: RootQuery\n  mutation: Mutation\n}\n\ntype DoneTask {\n  id: ID\n  date: String\n  user: User\n  task: Task\n  sprint: Sprint\n}\n\ntype Mutation {\n  addUser(username: String, password: String, points: Int): User\n  addTask(title: String!, reward: Int!, iconIndex: Int): Task\n  addDoneTask(date: String!, userID: ID!, taskID: ID!, sprintID: ID!): DoneTask\n  addSprint(prize: String!, deadline: String!): Sprint\n  addRoom(name: String!, sprintID: ID!): Room\n}\n\ntype Room {\n  id: ID\n  name: String\n  sprint: Sprint\n  roommates: [User]\n  doneTasks: [DoneTask]\n}\n\ntype RootQuery {\n  user(id: ID): User\n  room(id: ID): Room\n  rooms: [Room]\n  tasks: [Task]\n}\n\ntype Sprint {\n  id: ID\n  prize: String\n  deadline: String\n}\n\ntype Task {\n  id: ID\n  title: String\n  reward: Int\n  iconIndex: Int\n}\n\ntype User {\n  id: ID\n  username: String\n  password: String\n  points: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-11T09:24:04Z",
+    "updated_at": "2018-05-13T19:37:33Z",
+    "pushed_at": "2018-05-13T13:12:08Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

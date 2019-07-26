@@ -1,0 +1,42 @@
+{
+  "repo_name": "itali_analytics_teacher_dashboard",
+  "repo_full_name": "uq-uqx/itali_analytics_teacher_dashboard",
+  "repo_owner": "UQ-UQx",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "767f52f3e8281b8cd27194278f0269a3c7c98b8e",
+      "url": "https://api.github.com/repositories/167086945/contents/src/schema.graphql?ref=9e7141d1c78568c9dc56848d076fac556ae328bb",
+      "git_url": "https://api.github.com/repositories/167086945/git/blobs/767f52f3e8281b8cd27194278f0269a3c7c98b8e",
+      "html_url": "https://github.com/UQ-UQx/itali_analytics_teacher_dashboard/blob/9e7141d1c78568c9dc56848d076fac556ae328bb/src/schema.graphql",
+      "content": "schema {\n  query: Query # root query type\n}\n\ntype Query {\n  student(id: ID): Student # get course by ID\n  students(course: ID, filter: Filter): [Student]\n  enrolmentSummary(course_id: ID, filter: Filter): EnrolmentSummary\n  courseEngagement(course_id: ID, filter: Filter): EngagementSummary\n  studentEngagement(student_id: ID, course_id: ID): EngagementSummary\n}\n\ninput ageFilter {\n  min: Int\n  max: Int\n}\n\ninput gpaFilter {\n  min: Float\n  max: Float\n}\n\ninput Filter {\n  age: ageFilter\n  gpa: gpaFilter\n  program: ID\n  gender: Gender\n  study_load: StudyLoad\n  residential_status: ResidentialStatus\n}\n\ninput DateFilter {\n  min: Int # unix timestamp\n  max: Int # unix timestamp\n}\n\ninput NumVideos {\n  plays: Int # number of top videos to show\n  pauses: Int # number of top videos to show\n  playsOverTime: Int # number of top videos to show per day/week/whatever the time series is\n  pausesOverTime: Int # number of top videos to show per day/week/whatever the time series is\n}\n\ntype EnrolmentSummary {\n  course: Course\n  number_of_students: Int\n  brand_new_students: Int\n  international_students: Int\n  non_english_students: Int\n  age_distribution: [AgeDistribution]\n  gpa_distribution: [GpaDistribution]\n  program_distribution: [ProgramDistribution]\n  language_distribution: [LanguageDistribution]\n}\n\ntype AgeDistribution {\n  age: Int\n  count: Int\n}\n\ntype GpaDistribution {\n  gpa: Float\n  count: Int\n}\n\ntype ProgramDistribution {\n  program: UQProgram\n  count: Int\n}\n\ntype LanguageDistribution {\n  language: String\n  count: Int\n}\n\ntype Student {\n  id: ID\n  first_name: String\n  last_name: String\n  age: Int\n  gender: Gender\n  native_language: String\n  residential_status: ResidentialStatus\n  main_program: EnrolledProgram # see UQProgram type definition\n  other_programs: [EnrolledProgram]\n  study_load: StudyLoad\n  enrolment_level: EnrolmentLevel\n}\n\ntype UQProgram {\n  id: ID\n  title: String\n  start_year: Int\n  start_semester: Semester\n  enrolment_level: EnrolmentLevel\n}\n\ntype Course {\n  id: ID\n  code: String\n  title: String\n  offering: CourseOffering # See CourseOffering Type definition\n  students: [Student] # list of students defined by Student Type\n  engagement: EngagementSummary # list of engagement records defined by Engagement interface + types that implement it\n  enrolment_level: EnrolmentLevel\n}\n\ntype CourseOffering {\n  semester: Semester\n  year: Int\n}\n\ntype EnrolledCourse {\n  status: EnrolmentStatus\n  course: Course # the course that a student has ever enrolled in, see Course type definition\n  engagement: EngagementSummary # list of engagement entries of this student within the course, see Engagement type definition\n  gpa: Float\n}\n\ntype EnrolledProgram {\n  program: UQProgram\n  gpa: Float\n  study_load: StudyLoad\n}\n\ntype VideoPlaysTotal {\n  block_id: String\n  name: String\n  plays: Int\n}\n\ntype VideoPausesTotal {\n  block_id: String\n  name: String\n  pauses: Int\n}\n\ntype AssetUse {\n  day: String\n  count: Int\n}\n\ntype LocationUse {\n  day: String\n  type: Location\n  count: Int\n}\n\ntype DeviceUse {\n  day: String\n  type: Device\n  count: Int\n}\n\ntype OverallUse {\n  day: String\n  count: Int\n}\n\ntype BlackboardEngagementSummary {\n  overall: [OverallUse]\n  assets: [AssetUse]\n  device: [DeviceUse]\n  location: [LocationUse]\n}\n\ntype EdxEdgeEngagementSummary {\n  overall: [OverallUse]\n  device: [DeviceUse]\n  location: [LocationUse]\n}\n\ntype EngagementSummary {\n  videos_plays: [VideoPlaysTotal]\n  videos_pauses: [VideoPausesTotal]\n  blackboard: BlackboardEngagementSummary\n  edx_edge: EdxEdgeEngagementSummary\n}\n\nenum AssetType {\n  LECTURE\n  READING\n  EXTERNAL_TUTORIAL\n}\nenum FileType {\n  PDF\n  WORD\n  EXCEL\n  POWERPOINT\n  WEB_LINK\n  VIDEO\n  AUDIO\n  TEXT\n  PAGES\n  SHEETS\n}\n\nenum EnrolmentLevel {\n  UNDERGRADUATE\n  POSTGRADUATE\n}\n\nenum Semester {\n  SEMESTER_ONE\n  SEMESTER_TWO\n  SUMMER\n}\n\nenum Location {\n  ON_CAMPUS\n  OFF_CAMPUS\n}\n\nenum Gender {\n  MALE\n  FEMALE\n  OTHER\n}\n\nenum ResidentialStatus {\n  DOMESTIC\n  INTERNATIONAL\n}\n\nenum StudyLoad {\n  FULL_TIME\n  PART_TIME\n}\nenum EnrolmentStatus {\n  ENROLLED\n  COMPLETED\n  FAILED\n  WITHDREW\n}\n\nenum PlatformType {\n  BLACKBOARD\n  EDXEDGE\n  LECTURE\n  TUTORIAL\n  PRACTICAL\n  PLACEMENT\n  CAMPUS\n}\n\nenum Device {\n  MOBILE\n  TABLET\n  DESKTOP\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 21,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 38
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-23T00:05:56Z",
+    "updated_at": "2019-07-18T01:47:17Z",
+    "pushed_at": "2019-07-18T01:47:15Z",
+    "issues": 33,
+    "watchers": 5,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 31,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 29,
+    "releases": 1,
+    "stargazers": 0
+  }
+}

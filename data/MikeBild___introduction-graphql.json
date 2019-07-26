@@ -1,0 +1,42 @@
+{
+  "repo_name": "introduction-graphql",
+  "repo_full_name": "mikebild/introduction-graphql",
+  "repo_owner": "MikeBild",
+  "repo_description": "Introduction to GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "example/packages/server/lib/schema.graphql",
+      "sha": "445d045048d0eb8b0056bf3aebfb2e5839e49cb9",
+      "url": "https://api.github.com/repositories/81143594/contents/example/packages/server/lib/schema.graphql?ref=cc3043aefe3309698e4f41dd5c66f9137bea597b",
+      "git_url": "https://api.github.com/repositories/81143594/git/blobs/445d045048d0eb8b0056bf3aebfb2e5839e49cb9",
+      "html_url": "https://github.com/MikeBild/introduction-graphql/blob/cc3043aefe3309698e4f41dd5c66f9137bea597b/example/packages/server/lib/schema.graphql",
+      "content": "type Query {\n  articles: [Article]\n  article(id: ID!): Article\n}\n\ntype Article {\n  id: ID!\n  authorId: ID\n  content: String\n}\n\ntype Mutation {\n  articleAdd(input: ArticleAddInput!): ArticleAddResult!\n}\n\ninput ArticleAddInput {\n  content: String!\n  authorId: ID!\n}\n\ntype ArticleAddResult {\n  result: Article\n  failure: Failure\n}\n\ntype Failure {\n  message: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-06T23:15:43Z",
+    "updated_at": "2019-03-05T13:19:06Z",
+    "pushed_at": "2019-01-12T11:11:16Z",
+    "issues": 1,
+    "watchers": 4,
+    "fork_count": 3,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 22
+  }
+}

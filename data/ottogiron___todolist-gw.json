@@ -1,0 +1,41 @@
+{
+  "repo_name": "todolist-gw",
+  "repo_full_name": "ottogiron/todolist-gw",
+  "repo_owner": "ottogiron",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "e84844155d8c84b95c04dacebc94529794a01586",
+      "url": "https://api.github.com/repositories/134005254/contents/data/schema.graphql?ref=ddfa36bab03767536d6dabbd3f76f4769b6279b1",
+      "git_url": "https://api.github.com/repositories/134005254/git/blobs/e84844155d8c84b95c04dacebc94529794a01586",
+      "html_url": "https://github.com/ottogiron/todolist-gw/blob/ddfa36bab03767536d6dabbd3f76f4769b6279b1/data/schema.graphql",
+      "content": "\ntype Query { \n  allTodoLists:[TodoList]\n  todoList(id: String): TodoList\n}\n\ntype Mutation  {\n   removeTodoItem(input: RemoveTodoItemInput!): RemoveTodoItemPayload\n   addTodoItem(input: AddTodoItemInput!): AddTodoItemPayload\n   removeCompleted(id: String!): RemoveCompletedPayload\n   setTodoItemDescription(input: SetTodoItemDescriptionInput!): SetTodoItemDescriptionPayload\n   checkTodoItem(input: CheckTodoItemInput!): CheckTodoItemPayload\n   checkAllTodoItems(input: CheckAllTodoItemsInput!): CheckAllTodoItemsPayload\n}\n\n\ntype TodoList {\n  id: ID!\n  version: Int\n  items: [Item]\n  createdAt: String\n  updatedAt: String\n}\n\n\ntype Item {\n    id: Int!\n    desc: String\n    completed: Boolean\n    todoList: TodoList\n}\n\ninput RemoveTodoItemInput {\n  id: String!\n  item_id: Int! \n}\n\ntype RemoveTodoItemPayload {\n  id: String!\n  item_id: Int!\n}\n\ntype RemoveCompletedPayload {\n  id: String\n}\n\n\ninput AddTodoItemInput {\n  id: String!\n  desc: String!\n}\n\ntype AddTodoItemPayload {\n  id: String!\n  desc: String! \n}\n\ninput SetTodoItemDescriptionInput {\n  id: String!\n  item_id: Int!\n  desc: String!\n}\n\ntype SetTodoItemDescriptionPayload {\n  id: String!\n  item_id: Int!\n  desc: String!\n}\n\ninput CheckTodoItemInput {\n  id: String!\n  item_id: Int!\n  checked: Boolean!\n} \n\ntype CheckTodoItemPayload{\n  id: String!\n  item_id: Int!\n  checked: Boolean!\n}\n\ninput CheckAllTodoItemsInput {\n  id: String!\n  checked: Boolean!\n}\n\ntype CheckAllTodoItemsPayload {\n  id: String!\n  checked: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-18T21:18:49Z",
+    "updated_at": "2018-06-25T23:23:38Z",
+    "pushed_at": "2018-06-25T23:23:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

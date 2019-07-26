@@ -1,0 +1,39 @@
+{
+  "repo_name": "Suventure",
+  "repo_full_name": "satishsathya11/suventure",
+  "repo_owner": "satishsathya11",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema.graphql",
+      "sha": "a8ec783a817002f42a840d9a73cc083d544adcc6",
+      "url": "https://api.github.com/repositories/76352307/contents/src/data/schema.graphql?ref=50a3fd9c048a45a63d16f183e7f677963f70a522",
+      "git_url": "https://api.github.com/repositories/76352307/git/blobs/a8ec783a817002f42a840d9a73cc083d544adcc6",
+      "html_url": "https://github.com/satishsathya11/Suventure/blob/50a3fd9c048a45a63d16f183e7f677963f70a522/src/data/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutation\n}\n\ninput AddTodoInput {\n  text: String!\n  clientMutationId: String!\n}\n\ntype AddTodoPayload {\n  viewer: User\n  todoEdge: TodoEdge\n  clientMutationId: String!\n}\n\ninput ChangeTodoStatusInput {\n  id: ID!\n  complete: Boolean!\n  clientMutationId: String!\n}\n\ntype ChangeTodoStatusPayload {\n  viewer: User\n  todo: Todo\n  clientMutationId: String!\n}\n\ninput MarkAllTodosInput {\n  complete: Boolean!\n  clientMutationId: String!\n}\n\ntype MarkAllTodosPayload {\n  viewer: User\n  changedTodos: [Todo]\n  clientMutationId: String!\n}\n\ntype Mutation {\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  changeTodoStatus(input: ChangeTodoStatusInput!): ChangeTodoStatusPayload\n  markAllTodos(input: MarkAllTodosInput!): MarkAllTodosPayload\n  removeCompletedTodos(input: RemoveCompletedTodosInput!): RemoveCompletedTodosPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n  renameTodo(input: RenameTodoInput!): RenameTodoPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ninput RemoveCompletedTodosInput {\n  clientMutationId: String!\n}\n\ntype RemoveCompletedTodosPayload {\n  viewer: User\n  deletedIds: [String]\n  clientMutationId: String!\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype RemoveTodoPayload {\n  viewer: User\n  deletedId: ID\n  clientMutationId: String!\n}\n\ninput RenameTodoInput {\n  id: ID!\n  text: String!\n  clientMutationId: String!\n}\n\ntype RenameTodoPayload {\n  todo: Todo\n  clientMutationId: String!\n}\n\ntype Root {\n  viewer: User\n  node(id: ID!): Node\n}\n\ntype Todo implements Node {\n  id: ID!\n  text: String\n  complete: Boolean\n}\n\ntype TodoConnection {\n  pageInfo: PageInfo!\n  edges: [TodoEdge]\n}\n\ntype TodoEdge {\n  node: Todo\n  cursor: String!\n}\n\ntype User implements Node {\n  id: ID!\n  todos(status: String = \"any\", after: String, first: Int, before: String, last: Int): TodoConnection\n  numTodos: Int\n  numCompletedTodos: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-13T11:23:30Z",
+    "updated_at": "2016-12-13T12:26:06Z",
+    "pushed_at": "2016-12-13T12:38:23Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "cc0-1.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

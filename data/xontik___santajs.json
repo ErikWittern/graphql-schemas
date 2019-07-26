@@ -1,0 +1,41 @@
+{
+  "repo_name": "santajs",
+  "repo_full_name": "xontik/santajs",
+  "repo_owner": "xontik",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "prisma/schema.graphql",
+      "sha": "700a78f3d35418385eb6355d788080d9a1b1265d",
+      "url": "https://api.github.com/repositories/164735619/contents/prisma/schema.graphql?ref=c9be01d39a74e2de8f07619d875d55af33d3d8ff",
+      "git_url": "https://api.github.com/repositories/164735619/git/blobs/700a78f3d35418385eb6355d788080d9a1b1265d",
+      "html_url": "https://github.com/xontik/santajs/blob/c9be01d39a74e2de8f07619d875d55af33d3d8ff/prisma/schema.graphql",
+      "content": "scalar DateTime\n\ntype AuthPayload {\n    token: String\n    user: User\n}\n\n\ntype User {\n    id: ID!\n    email: String!\n    firstname: String\n    lastname: String\n    pseudo: String\n    lists: [List!]\n    gifteds: [Gifter!]\n    events: [Event!]\n}\n\ntype Event {\n    id: ID!\n    title: String!\n    date: DateTime\n    place: String\n    creator: User!\n    image: String\n    eventLists: [EventList!]\n}\n\ntype EventList {\n    id: ID!\n    event: Event!\n    user: User!\n    list: List!\n    comment: String\n}\n\ntype Gift {\n    id: ID!\n    name: String!\n    image: String\n    link: String\n    lists: [List!]!\n    gifters: [Gifter!]\n}\n\ntype Gifter {\n    id: ID!\n    user: User!\n    list: List!\n    gift: Gift!\n#    type: GiftParticipation!\n    comment: String\n}\ntype List {\n    id: ID!\n    name: String!\n    owner: User!\n    image: String\n    gifts: [Gift!]\n    events: [Event!]\n}\n\n\ntype Mutation {\n    signup(email: String!, password: String!, firstname: String, lastname: String, pseudo: String): AuthPayload\n    login(email: String!, password: String!): AuthPayload\n}\n\n\ntype Query {\n    users: [User]\n    emailExist(email: String!): Boolean\n    pseudoExist(pseudo: String!): Boolean\n    checkLogin: String\n    hello(name: String!): String\n}\n\nenum GiftParticipation {\n    TOTAL\n    PARTIAL\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-08T21:26:49Z",
+    "updated_at": "2019-02-08T12:54:13Z",
+    "pushed_at": "2019-02-08T12:54:12Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 12,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 11,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

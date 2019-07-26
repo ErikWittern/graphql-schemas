@@ -1,0 +1,39 @@
+{
+  "repo_name": "next.js-master",
+  "repo_full_name": "lucky830/next.js-master",
+  "repo_owner": "lucky830",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/with-relay-modern-server-express/server/schema.graphql",
+      "sha": "cd3fd5cb91e6134cb7489b5ee945d129e30c213a",
+      "url": "https://api.github.com/repositories/163365336/contents/examples/with-relay-modern-server-express/server/schema.graphql?ref=f3fd0a1e2004dd1b5126448d73d6be5fa2d8295e",
+      "git_url": "https://api.github.com/repositories/163365336/git/blobs/cd3fd5cb91e6134cb7489b5ee945d129e30c213a",
+      "html_url": "https://github.com/lucky830/next.js-master/blob/f3fd0a1e2004dd1b5126448d73d6be5fa2d8295e/examples/with-relay-modern-server-express/server/schema.graphql",
+      "content": "type Query {\n  viewer(after: String, before: String, first: Int, last: Int): Viewer!\n  node(id: ID!): Node\n}\n\ntype Viewer {\n  allBlogPosts(after: String, before: String, first: Int, last: Int): BlogPostConnection!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype BlogPostConnection {\n  pageInfo: PageInfo!\n  edges: [BlogPostEdge]\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype BlogPostEdge {\n  node: BlogPost!\n  cursor: String!\n}\n\ntype BlogPost implements Node {\n  content: String!\n  id: ID!\n  title: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-28T04:21:28Z",
+    "updated_at": "2018-12-28T04:30:39Z",
+    "pushed_at": "2018-12-28T04:30:36Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

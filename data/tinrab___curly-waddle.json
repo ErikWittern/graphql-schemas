@@ -1,0 +1,41 @@
+{
+  "repo_name": "curly-waddle",
+  "repo_full_name": "tinrab/curly-waddle",
+  "repo_owner": "tinrab",
+  "repo_description": "Example GraphQL Server Using PostgreSQL Window Functions",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "035b2a87e5cb734c0bed80f9c1b68f91b4304531",
+      "url": "https://api.github.com/repositories/138924980/contents/graphql/schema.graphql?ref=35abfdc2b4be7637c8ca67c18a8bef072d34563e",
+      "git_url": "https://api.github.com/repositories/138924980/git/blobs/035b2a87e5cb734c0bed80f9c1b68f91b4304531",
+      "html_url": "https://github.com/tinrab/curly-waddle/blob/35abfdc2b4be7637c8ca67c18a8bef072d34563e/graphql/schema.graphql",
+      "content": "scalar Time\n\ninput Pagination {\n  skip: Int!\n  take: Int!\n}\n\ntype User {\n    id: String!\n    name: String!\n    posts(pagination: Pagination): [Post!]!\n}\n\ntype Post {\n    id: String!\n    body: String!\n    createdAt: Time!\n    user: User\n}\n\ninput CreateUserInput {\n    name: String!\n}\n\ninput CreatePostInput {\n    userId: String!\n    body: String!\n}\n\ntype Mutation {\n    createUser(input: CreateUserInput!): User\n    createPost(input: CreatePostInput!): Post\n}\n\ntype Query {\n    users(pagination: Pagination): [User!]!\n    posts(pagination: Pagination): [Post!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-27T19:35:11Z",
+    "updated_at": "2019-05-11T22:50:20Z",
+    "pushed_at": "2018-08-23T06:01:02Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "repo_name": "create-react-ts-relay-server-app",
+  "repo_full_name": "joenoon/create-react-ts-relay-server-app",
+  "repo_owner": "joenoon",
+  "repo_description": "Demo structure for creating a ts graphql server, react app based on CRA 2 with typescript + relay",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "ro.schema.graphql",
+      "path": "packages/demo-react-app/ro.schema.graphql",
+      "sha": "d185798fb4bad52004b136e87d4874f79b79a677",
+      "url": "https://api.github.com/repositories/146262504/contents/packages/demo-react-app/ro.schema.graphql?ref=5058dedea887969243ddb9fd0bbb1398c7c4a29e",
+      "git_url": "https://api.github.com/repositories/146262504/git/blobs/d185798fb4bad52004b136e87d4874f79b79a677",
+      "html_url": "https://github.com/joenoon/create-react-ts-relay-server-app/blob/5058dedea887969243ddb9fd0bbb1398c7c4a29e/packages/demo-react-app/ro.schema.graphql",
+      "content": "type Account implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  extid: String!\n  name: String\n  email: String\n  user: User\n}\n\ninput CreateProjectInput {\n  name: String!\n  clientMutationId: String\n}\n\ntype CreateProjectPayload {\n  viewer: Viewer!\n  project: Project\n  errors: String\n  clientMutationId: String\n}\n\ninput LoginWithTokenInput {\n  auth_token: String!\n  clientMutationId: String\n}\n\ntype LoginWithTokenPayload {\n  jwt: String\n  viewer: Viewer!\n  errors: String\n  clientMutationId: String\n}\n\ninput LogoutInput {\n  clientMutationId: String\n}\n\ntype LogoutPayload {\n  viewer: Viewer!\n  clientMutationId: String\n}\n\ntype Mutation {\n  createProject(input: CreateProjectInput!): CreateProjectPayload\n  loginWithToken(input: LoginWithTokenInput!): LoginWithTokenPayload\n  logout(input: LogoutInput!): LogoutPayload\n  requestCode(input: RequestCodeInput!): RequestCodePayload\n  requestToken(input: RequestTokenInput!): RequestTokenPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Project implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype ProjectConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [ProjectEdge]\n  totalCount: Int!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype ProjectEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Project\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype Query {\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n  viewer: Viewer!\n}\n\ninput RequestCodeInput {\n  email: String\n  clientMutationId: String\n}\n\ntype RequestCodePayload {\n  code_token: String\n  errors: String\n  clientMutationId: String\n}\n\ninput RequestTokenInput {\n  code_token: String\n  code: String\n  clientMutationId: String\n}\n\ntype RequestTokenPayload {\n  auth_token: String\n  errors: String\n  clientMutationId: String\n}\n\ntype User implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n  about: String\n  username: String\n}\n\ntype Viewer implements Node {\n  id: ID!\n  me: Account\n  name: String\n  email: String\n  project(id: String!): Project\n  myProjects(after: String, first: Int, before: String, last: Int): ProjectConnection!\n  otherProjects(after: String, first: Int, before: String, last: Int): ProjectConnection!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 20
+    },
+    {
+      "name": "ro.schema.graphql",
+      "path": "packages/demo-ts-server/src/schema/ro.schema.graphql",
+      "sha": "d185798fb4bad52004b136e87d4874f79b79a677",
+      "url": "https://api.github.com/repositories/146262504/contents/packages/demo-ts-server/src/schema/ro.schema.graphql?ref=5058dedea887969243ddb9fd0bbb1398c7c4a29e",
+      "git_url": "https://api.github.com/repositories/146262504/git/blobs/d185798fb4bad52004b136e87d4874f79b79a677",
+      "html_url": "https://github.com/joenoon/create-react-ts-relay-server-app/blob/5058dedea887969243ddb9fd0bbb1398c7c4a29e/packages/demo-ts-server/src/schema/ro.schema.graphql",
+      "content": "type Account implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  extid: String!\n  name: String\n  email: String\n  user: User\n}\n\ninput CreateProjectInput {\n  name: String!\n  clientMutationId: String\n}\n\ntype CreateProjectPayload {\n  viewer: Viewer!\n  project: Project\n  errors: String\n  clientMutationId: String\n}\n\ninput LoginWithTokenInput {\n  auth_token: String!\n  clientMutationId: String\n}\n\ntype LoginWithTokenPayload {\n  jwt: String\n  viewer: Viewer!\n  errors: String\n  clientMutationId: String\n}\n\ninput LogoutInput {\n  clientMutationId: String\n}\n\ntype LogoutPayload {\n  viewer: Viewer!\n  clientMutationId: String\n}\n\ntype Mutation {\n  createProject(input: CreateProjectInput!): CreateProjectPayload\n  loginWithToken(input: LoginWithTokenInput!): LoginWithTokenPayload\n  logout(input: LogoutInput!): LogoutPayload\n  requestCode(input: RequestCodeInput!): RequestCodePayload\n  requestToken(input: RequestTokenInput!): RequestTokenPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Project implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype ProjectConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [ProjectEdge]\n  totalCount: Int!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype ProjectEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Project\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype Query {\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n  viewer: Viewer!\n}\n\ninput RequestCodeInput {\n  email: String\n  clientMutationId: String\n}\n\ntype RequestCodePayload {\n  code_token: String\n  errors: String\n  clientMutationId: String\n}\n\ninput RequestTokenInput {\n  code_token: String\n  code: String\n  clientMutationId: String\n}\n\ntype RequestTokenPayload {\n  auth_token: String\n  errors: String\n  clientMutationId: String\n}\n\ntype User implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n  about: String\n  username: String\n}\n\ntype Viewer implements Node {\n  id: ID!\n  me: Account\n  name: String\n  email: String\n  project(id: String!): Project\n  myProjects(after: String, first: Int, before: String, last: Int): ProjectConnection!\n  otherProjects(after: String, first: Int, before: String, last: Int): ProjectConnection!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-27T07:31:01Z",
+    "updated_at": "2019-02-19T04:10:31Z",
+    "pushed_at": "2018-10-01T23:28:24Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

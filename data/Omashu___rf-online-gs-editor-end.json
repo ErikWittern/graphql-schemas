@@ -1,0 +1,58 @@
+{
+  "repo_name": "rf-online-gs-editor-end",
+  "repo_full_name": "omashu/rf-online-gs-editor-end",
+  "repo_owner": "Omashu",
+  "repo_description": "RF Online GS Editor (Backend, 2.2.3.2 only)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "roles.graphql",
+      "path": "src/api/roles/roles.graphql",
+      "sha": "b86b53cdeb41bdb3aa365ad5bdbe5418becec5de",
+      "url": "https://api.github.com/repositories/161147514/contents/src/api/roles/roles.graphql?ref=339491425be0ebd69f7f5887d30b566625d4a74f",
+      "git_url": "https://api.github.com/repositories/161147514/git/blobs/b86b53cdeb41bdb3aa365ad5bdbe5418becec5de",
+      "html_url": "https://github.com/Omashu/rf-online-gs-editor-end/blob/339491425be0ebd69f7f5887d30b566625d4a74f/src/api/roles/roles.graphql",
+      "content": "scalar JSON\nscalar DateTime\n\ntype Query {\n  roles(sort: JSON, take: Int, skip: Int, where: JSON): Roles\n  role(id: String!): Role\n}\n\ntype Mutation {\n  roleCreate(title: String!, name: String, isDefault: Boolean): Role\n}\n\ntype Roles {\n  items: [Role]\n  total: Int\n}\n\ntype Role {\n  id: String\n  title: String\n  name: String\n  isDefault: Boolean\n  createdAt: DateTime\n  updatedAt: DateTime\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    },
+    {
+      "name": "users.graphql",
+      "path": "src/api/users/users.graphql",
+      "sha": "33d505cdc0d55e0713fef684e5df56bf863affe7",
+      "url": "https://api.github.com/repositories/161147514/contents/src/api/users/users.graphql?ref=dd5bd722753cbeec1eea6d726c5568f542a2ae40",
+      "git_url": "https://api.github.com/repositories/161147514/git/blobs/33d505cdc0d55e0713fef684e5df56bf863affe7",
+      "html_url": "https://github.com/Omashu/rf-online-gs-editor-end/blob/dd5bd722753cbeec1eea6d726c5568f542a2ae40/src/api/users/users.graphql",
+      "content": "scalar JSON\nscalar DateTime\n\ntype Query {\n  users(sort: JSON, take: Int, skip: Int, where: JSON): Users\n  user(id: String!): User\n}\n\ntype Mutation {\n  userLogin(ident: String!, password: String!): User\n  userRegister(login: String!, password: String!, email: String!): UserRegister\n}\n\ntype UserRegister {\n  token: String!\n  user: User\n}\n\ntype Users {\n  items: [User]\n  total: Int\n}\n\ntype User {\n  id: String\n  login: String\n  email: String\n  createdAt: DateTime\n  updatedAt: DateTime\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-10T09:09:46Z",
+    "updated_at": "2018-12-10T11:13:58Z",
+    "pushed_at": "2018-12-10T11:13:56Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

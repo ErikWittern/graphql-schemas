@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-resolver",
+  "repo_full_name": "sjhitchner/graphql-resolver",
+  "repo_owner": "sjhitchner",
+  "repo_description": "Utilities to generate glue code for GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "schema.gql",
+      "sha": "1a55b6261d7266501d9e1fe9cc1295cdbe658646",
+      "url": "https://api.github.com/repositories/142084366/contents/schema.gql?ref=2d4efedbc702d02fcfa5914f23654257e6af60a3",
+      "git_url": "https://api.github.com/repositories/142084366/git/blobs/1a55b6261d7266501d9e1fe9cc1295cdbe658646",
+      "html_url": "https://github.com/sjhitchner/graphql-resolver/blob/2d4efedbc702d02fcfa5914f23654257e6af60a3/schema.gql",
+      "content": "schema {\n\tquery: Query\n}\n\ntype Query {\n\trewardAsset (id: ID!): RewardAsset!\n\trewardAssets: [RewardAsset]!\n\tcampaign (id: ID!): Campaign\n\tcampaigns (active: Boolean!): [Campaign]!\n\tnode(id: ID!): Node\n}\n\ninterface Node {\n\tid: ID!\n}\n\ntype Campaign implements Node {\n\tid: ID!\n\tname: String!\n\tactive: Boolean!\n\trewardAssets(first: Int, after: ID): RewardAssetConnection!\n} \n\ntype RewardAsset implements Node {\n\tid: ID!\n\tactive: Boolean!\n\tcampaignId: String!\n\tcampaign: Campaign!\n}\n\ntype RewardAssetConnection {\n\ttotalCount: Int!\n\tedges: [RewardAssetEdge]\n\tpageInfo: PageInfo!\n}\n\ntype RewardAssetEdge {\n\tcursor: ID!\n\tnode: RewardAsset!\n}\n\ntype PageInfo {\n\tstartCursor: ID\n\tendCursor: ID\n\thasNextPage: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-24T00:40:55Z",
+    "updated_at": "2018-12-11T06:34:29Z",
+    "pushed_at": "2019-01-15T21:41:33Z",
+    "issues": 17,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

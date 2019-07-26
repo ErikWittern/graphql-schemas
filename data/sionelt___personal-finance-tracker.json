@@ -1,0 +1,39 @@
+{
+  "repo_name": "personal-finance-tracker",
+  "repo_full_name": "sionelt/personal-finance-tracker",
+  "repo_owner": "sionelt",
+  "repo_description": "App that keep tracks of expenses and income manually and ahead of time.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.schema.graphql",
+      "path": "serverless/src/api/user/user.schema.graphql",
+      "sha": "ef730c3808abefb29bd277cd8c00c7208145006c",
+      "url": "https://api.github.com/repositories/159617333/contents/serverless/src/api/user/user.schema.graphql?ref=a1daeffdf98b3bde567c39eb5369d63de85b3f32",
+      "git_url": "https://api.github.com/repositories/159617333/git/blobs/ef730c3808abefb29bd277cd8c00c7208145006c",
+      "html_url": "https://github.com/sionelt/personal-finance-tracker/blob/a1daeffdf98b3bde567c39eb5369d63de85b3f32/serverless/src/api/user/user.schema.graphql",
+      "content": "type Query {\n  users: [User!]!\n  me: User!\n}\n\ntype Mutation {\n  createUser(input: CreateUserInput): User!\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n}\n\ninput CreateUserInput {\n  name: String!\n  email: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-29T06:18:08Z",
+    "updated_at": "2018-12-29T15:23:46Z",
+    "pushed_at": "2018-12-31T23:02:46Z",
+    "issues": 10,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 9,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "photo-awsmobile-appsync-sample",
+  "repo_full_name": "yashiro01232/photo-awsmobile-appsync-sample",
+  "repo_owner": "yashiro01232",
+  "repo_description": "A sample program using awsmobile and appsync",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "awsmobilejs/backend/appsync/schema.graphql",
+      "sha": "ab039f180a47a25d6b9967b326f9d4cac29fe721",
+      "url": "https://api.github.com/repositories/144920725/contents/awsmobilejs/backend/appsync/schema.graphql?ref=8571af85edbd5429ea1cdb649c4248e60e44b7bb",
+      "git_url": "https://api.github.com/repositories/144920725/git/blobs/ab039f180a47a25d6b9967b326f9d4cac29fe721",
+      "html_url": "https://github.com/yashiro01232/photo-awsmobile-appsync-sample/blob/8571af85edbd5429ea1cdb649c4248e60e44b7bb/awsmobilejs/backend/appsync/schema.graphql",
+      "content": "type Mutation\n{\npostImages(file: S3ObjectInput! ): Photo\n}\n\ntype Photo\n{\nid: String!\ntimestamp: Int!\n}\n\ntype Query\n{\ngetImages: [Photo]\n}\n\ninput S3ObjectInput\n{\nbucket: String!\nkey: String!\nregion: String!\nlocalUri: String\nmimeType: String}\n\nschema \n{\nquery: Query\nmutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-16T01:27:04Z",
+    "updated_at": "2018-08-16T02:56:05Z",
+    "pushed_at": "2018-08-16T03:03:32Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

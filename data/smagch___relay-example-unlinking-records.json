@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-example-unlinking-records",
+  "repo_full_name": "smagch/relay-example-unlinking-records",
+  "repo_owner": "smagch",
+  "repo_description": "React Relay Unlinking Records",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "84388220159af0491d67131eb26f5e5eabebc5f5",
+      "url": "https://api.github.com/repositories/127452057/contents/schema.graphql?ref=12e16b0865986d1edcbfe7373a7ee10dfe860b8d",
+      "git_url": "https://api.github.com/repositories/127452057/git/blobs/84388220159af0491d67131eb26f5e5eabebc5f5",
+      "html_url": "https://github.com/smagch/relay-example-unlinking-records/blob/12e16b0865986d1edcbfe7373a7ee10dfe860b8d/schema.graphql",
+      "content": "input ChangeNameInput {\n  id: ID!\n  name: String!\n  clientMutationId: String\n}\n\ntype ChangeNamePayload {\n  renamedUser: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  changeName(input: ChangeNameInput!): ChangeNamePayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\ntype Query {\n  users: [User!]!\n  user: User\n}\n\ntype User implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-30T16:57:07Z",
+    "updated_at": "2019-07-02T06:49:14Z",
+    "pushed_at": "2018-03-30T17:23:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

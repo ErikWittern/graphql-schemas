@@ -1,0 +1,42 @@
+{
+  "repo_name": "titch",
+  "repo_full_name": "piglovesyou/titch",
+  "repo_owner": "piglovesyou",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema.graphql",
+      "sha": "4a049ef2068c72f079bebdf50483801461d70cbc",
+      "url": "https://api.github.com/repositories/138403368/contents/src/data/schema.graphql?ref=8ee258a38baf552af8f95bc3721e6a15295b022f",
+      "git_url": "https://api.github.com/repositories/138403368/git/blobs/4a049ef2068c72f079bebdf50483801461d70cbc",
+      "html_url": "https://github.com/piglovesyou/titch/blob/8ee258a38baf552af8f95bc3721e6a15295b022f/src/data/schema.graphql",
+      "content": "type AucItemImage {\n  src: String\n  width: Int\n  height: Int\n}\n\ntype AucItemDetail {\n  id: String\n  title: String\n  state: String\n  price: Int\n  priceText: String\n  images: [AucItemImage]\n}\n\ntype AucItem {\n  id: String\n  title: String\n  imgSrc: String\n  imgWidth: Int\n  imgHeight: Int\n  itemURL: String\n  price: Int\n}\n\ntype AucItemList {\n  totalCount: Int\n  items: [AucItem]\n}\n\ntype ResponseUnarchiveAucItems {\n  userId: String!\n  removedItemIds: [String!]\n}\n\ntype ResponseArchiveAucItems {\n  userId: String!\n  addedItemIds: [String!]\n}\n\ntype OperaProject {\n  id: String!\n  name: String!\n  ratio: Int\n}\n\ntype OperaProjectList {\n  projects: [OperaProject]\n}\n\ntype Query {\n  getAucItemDetail(id: String): AucItemDetail\n  getAucItemList(query: String, from: Int, count: Int): AucItemList\n  getCurrentProjects(userId: String): OperaProjectList\n}\n\ntype Mutation {\n  archiveAucItems(userId: String!, itemIds: [String!]): ResponseArchiveAucItems\n  unarchiveAucItems(userId: String!, itemIds: [String!]): ResponseUnarchiveAucItems\n  updateProjectRatio(userId: String!, projectId: String!, ratio: Int): OperaProject\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-23T13:29:54Z",
+    "updated_at": "2018-06-30T10:09:51Z",
+    "pushed_at": "2018-06-30T10:09:49Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

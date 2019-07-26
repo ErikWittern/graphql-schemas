@@ -1,0 +1,42 @@
+{
+  "repo_name": "vue-music-demo",
+  "repo_full_name": "webgzh907247189/vue-music-demo",
+  "repo_owner": "webgzh907247189",
+  "repo_description": "this is music-demo for vue",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/gql/schema/schema.graphql",
+      "sha": "ad5e4b18173be855e8e9d2ca03fcbc71f14198a7",
+      "url": "https://api.github.com/repositories/175756315/contents/server/gql/schema/schema.graphql?ref=fc2ce4d18dc948b377c7c652dfde1389fd06246e",
+      "git_url": "https://api.github.com/repositories/175756315/git/blobs/ad5e4b18173be855e8e9d2ca03fcbc71f14198a7",
+      "html_url": "https://github.com/webgzh907247189/vue-music-demo/blob/fc2ce4d18dc948b377c7c652dfde1389fd06246e/server/gql/schema/schema.graphql",
+      "content": "# #号用于写注释\n\nschema {            # schema关键字用于定义schema入口\n    query: Query    # query是规定的入口字段，这里表示所有的查询都是查询 Query 类型下的字段\n}\n\ntype Query {        # type 关键字用于定义结构\n    node: Node      # 因为我们要将Post和User分离出去，由于结构定义不允许空结构，Node在这里只是作为占位\n}\n\ntype Node {\n    id: ID          # ID 类型，ID类型代表唯一性，值可以是数字或字符串\n}\n\nscalar Date         # 自定义Date类型",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-15T05:43:52Z",
+    "updated_at": "2019-04-10T13:12:03Z",
+    "pushed_at": "2019-04-10T13:12:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

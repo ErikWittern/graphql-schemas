@@ -1,0 +1,226 @@
+{
+  "repo_name": "sbt-graphql",
+  "repo_full_name": "muuki88/sbt-graphql",
+  "repo_owner": "muuki88",
+  "repo_description": "SBT plugin to generate and validate graphql schemas written with Sangria",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/test/resources/sangria/blog/schema.graphql",
+      "sha": "0d31b639d73f62d5db060a1858e66410e310a39a",
+      "url": "https://api.github.com/repositories/103051433/contents/src/test/resources/sangria/blog/schema.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/0d31b639d73f62d5db060a1858e66410e310a39a",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/test/resources/sangria/blog/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  blogs(pagination: Pagination!, query: String): [Blog!]!\n  blog(id: ID!): Blog!\n  articles(query: ArticleQuery): [Article!]!\n  search(text: String!, pagination: Pagination!): [SearchResult!]!\n}\n\ninput Pagination {\n  first: Int!\n  count: Int!\n  order: PaginationOrder = ASC\n}\n\nenum PaginationOrder {\n  ASC\n  DESC\n}\n\ninput ArticleQuery {\n  ids: [ID!]\n  statuses: [ArticleStatus!]\n}\n\ninterface Identifiable {\n  id: ID!\n}\n\ntype Blog implements Identifiable {\n  id: ID!\n  title: String!\n  url: String! @deprecated(reason: \"Use `uri` instead\")\n  uri: String!\n  articles(pagination: Pagination!, statuses: [ArticleStatus!] = [PUBLISHED]): [Article!]!\n}\n\ntype Article implements Identifiable {\n  id: ID!\n  title: String!\n  body: String!\n  status: ArticleStatus!\n  author: Author!\n  tags: [String!]!\n}\n\nenum ArticleStatus {\n  DRAFT\n  PUBLISHED\n}\n\ntype Author implements Identifiable {\n  id: ID!\n  name: String!\n  articles(pagination: Pagination!): [Article!]!\n}\n\nunion SearchResult = Blog | Article | Author\n\ntype Mutation {\n  addBlog(title: String!, uri: String!): Blog!\n  addArticle(content: ArticleContent!): Article!\n  updateArticle(id: ID!, content: ArticleContent!): Article!\n  publishArticle(id: ID!): Article!\n}\n\ninput ArticleContent {\n  title: String!\n  body: String!\n  tags: [String!]\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 13
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/test/resources/apollo/blog/schema.graphql",
+      "sha": "ddde2772828bd0dd79b8eef2697847cad80ceabe",
+      "url": "https://api.github.com/repositories/103051433/contents/src/test/resources/apollo/blog/schema.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/ddde2772828bd0dd79b8eef2697847cad80ceabe",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/test/resources/apollo/blog/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  blogs(pagination: Pagination!, query: String): [Blog!]!\n  blog(id: ID!): Blog!\n  articles(query: ArticleQuery): [Article!]!\n  search(text: String!, pagination: Pagination!): [SearchResult!]!\n}\n\ninput Pagination {\n  first: Int!\n  count: Int!\n  order: PaginationOrder = ASC\n}\n\nenum PaginationOrder {\n  ASC\n  DESC\n}\n\ninput ArticleQuery {\n  ids: [ID!]\n  statuses: [ArticleStatus!]\n}\n\ninterface Identifiable {\n  id: ID!\n}\n\ntype Blog implements Identifiable {\n  id: ID!\n  title: String!\n  url: String! @deprecated(reason: \"Use `uri` instead\")\n  uri: String!\n  articles(pagination: Pagination!, statuses: [ArticleStatus!] = [PUBLISHED]): [Article!]!\n}\n\ntype Article implements Identifiable {\n  id: ID!\n  title: String!\n  body: String!\n  status: ArticleStatus!\n  author: Author!\n  tags: [String!]!\n}\n\nenum ArticleStatus {\n  DRAFT\n  PUBLISHED\n}\n\ntype Author implements Identifiable {\n  id: ID!\n  name: String!\n  articles(pagination: Pagination!): [Article!]!\n}\n\nunion SearchResult = Blog | Article | Author\n\ntype Mutation {\n  addBlog(title: String!, uri: String!): Blog!\n  addArticle(content: ArticleContent!): Article!\n  updateArticle(id: ID!, content: ArticleContent!): Article!\n  publishArticle(id: ID!): Article!\n}\n\ninput ArticleAuthor {\n  id: ID!\n}\n\ninput ArticleContent {\n  title: String!\n  body: String!\n  tags: [String!]\n  author: ArticleAuthor!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 14
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/sbt-test/codegen/apollo/src/main/resources/schema.graphql",
+      "sha": "3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/codegen/apollo/src/main/resources/schema.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/sbt-test/codegen/apollo/src/main/resources/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n}\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character! @deprecated(reason: \"Use `human` or `droid` fields instead\")\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/sbt-test/codegen/generate/src/main/resources/schema.graphql",
+      "sha": "3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/codegen/generate/src/main/resources/schema.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/sbt-test/codegen/generate/src/main/resources/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n}\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character! @deprecated(reason: \"Use `human` or `droid` fields instead\")\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/sbt-test/codegen/apollo-duplicate-fragments/src/main/resources/schema.graphql",
+      "sha": "3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/codegen/apollo-duplicate-fragments/src/main/resources/schema.graphql?ref=6203fa73f4d70a00c4857bdebc959c89a3da0492",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/6203fa73f4d70a00c4857bdebc959c89a3da0492/src/sbt-test/codegen/apollo-duplicate-fragments/src/main/resources/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n}\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character! @deprecated(reason: \"Use `human` or `droid` fields instead\")\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/sbt-test/codegen/apollo-magic-imports/src/main/resources/schema.graphql",
+      "sha": "3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/codegen/apollo-magic-imports/src/main/resources/schema.graphql?ref=ec8f1aa7f58b654cb3803a44353c0c868f00f70e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/ec8f1aa7f58b654cb3803a44353c0c868f00f70e/src/sbt-test/codegen/apollo-magic-imports/src/main/resources/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n}\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character! @deprecated(reason: \"Use `human` or `droid` fields instead\")\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/sbt-test/codegen/generate-named/src/main/resources/schema.graphql",
+      "sha": "86d873454ac5a71c0ddfd1afebbd799daebc5b03",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/codegen/generate-named/src/main/resources/schema.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/86d873454ac5a71c0ddfd1afebbd799daebc5b03",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/sbt-test/codegen/generate-named/src/main/resources/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character!\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/test/resources/sangria/starwars/schema.graphql",
+      "sha": "86d873454ac5a71c0ddfd1afebbd799daebc5b03",
+      "url": "https://api.github.com/repositories/103051433/contents/src/test/resources/sangria/starwars/schema.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/86d873454ac5a71c0ddfd1afebbd799daebc5b03",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/test/resources/sangria/starwars/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character!\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/sbt-test/codegen/apollo-circe/src/main/resources/schema.graphql",
+      "sha": "0b4b0c25e4b542b981313e4950ddab28d49d39a7",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/codegen/apollo-circe/src/main/resources/schema.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/0b4b0c25e4b542b981313e4950ddab28d49d39a7",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/sbt-test/codegen/apollo-circe/src/main/resources/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\ntype Starship {\n  id: ID!\n  name: String\n}\n\n# A search result can have different types\nunion SearchResult = Human | Droid | Starship\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character!\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n\n   search(text: String!): [SearchResult!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 7
+    },
+    {
+      "name": "product.graphql",
+      "path": "src/sbt-test/schema/schema-snippet/schemas/product.graphql",
+      "sha": "78619b9055ee8274279486dd5a0edb0ffc1d0358",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/schema/schema-snippet/schemas/product.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/78619b9055ee8274279486dd5a0edb0ffc1d0358",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/sbt-test/schema/schema-snippet/schemas/product.graphql",
+      "content": "# Entity that can be identified\ninterface Identifiable {\n  id: String!\n}\n\n# The product picture\ntype Picture {\n  width: Int!\n  height: Int!\n\n  # Picture CDN URL\n  url: String\n}\n\ntype Product implements Identifiable {\n  id: String!\n  name: String!\n  description: String!\n  picture(size: Int!): Picture!\n}\n\ntype Query {\n  # Returns a product with specific `id`.\n  product(id: String!): Product\n\n  # Returns a list of all available products.\n  products: [Product!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    },
+    {
+      "name": "product.graphql",
+      "path": "src/sbt-test/validation/schema/schemas/product.graphql",
+      "sha": "78619b9055ee8274279486dd5a0edb0ffc1d0358",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/validation/schema/schemas/product.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/78619b9055ee8274279486dd5a0edb0ffc1d0358",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/sbt-test/validation/schema/schemas/product.graphql",
+      "content": "# Entity that can be identified\ninterface Identifiable {\n  id: String!\n}\n\n# The product picture\ntype Picture {\n  width: Int!\n  height: Int!\n\n  # Picture CDN URL\n  url: String\n}\n\ntype Product implements Identifiable {\n  id: String!\n  name: String!\n  description: String!\n  picture(size: Int!): Picture!\n}\n\ntype Query {\n  # Returns a product with specific `id`.\n  product(id: String!): Product\n\n  # Returns a list of all available products.\n  products: [Product!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "product-broken.graphql",
+      "path": "src/sbt-test/schema/schema-snippet/schemas/product-broken.graphql",
+      "sha": "94e51467a2650f3a73739f6e8f45fe917f6a1bb4",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/schema/schema-snippet/schemas/product-broken.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/94e51467a2650f3a73739f6e8f45fe917f6a1bb4",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/sbt-test/schema/schema-snippet/schemas/product-broken.graphql",
+      "content": "# Entity that can be identified\ninterface Identifiable {\n  id: String!\n}\n\n# The product picture\ntype Picture {\n  width: Int!\n  height: Int!\n\n  # Picture CDN URL\n  url: String\n}\n\ntype Product implements Identifiable {\n  id: String!\n  name: String!\n  breakingChangeField: String!\n  description: String!\n  picture(size: Int!): Picture!\n}\n\ntype Query {\n  # Returns a product with specific `id`.\n  product(id: String!): Product\n\n  # Returns a list of all available products.\n  products: [Product!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "product-broken.graphql",
+      "path": "src/sbt-test/validation/schema/schemas/product-broken.graphql",
+      "sha": "94e51467a2650f3a73739f6e8f45fe917f6a1bb4",
+      "url": "https://api.github.com/repositories/103051433/contents/src/sbt-test/validation/schema/schemas/product-broken.graphql?ref=419d3079b2993a154026d307e0d6de2e41f6053e",
+      "git_url": "https://api.github.com/repositories/103051433/git/blobs/94e51467a2650f3a73739f6e8f45fe917f6a1bb4",
+      "html_url": "https://github.com/muuki88/sbt-graphql/blob/419d3079b2993a154026d307e0d6de2e41f6053e/src/sbt-test/validation/schema/schemas/product-broken.graphql",
+      "content": "# Entity that can be identified\ninterface Identifiable {\n  id: String!\n}\n\n# The product picture\ntype Picture {\n  width: Int!\n  height: Int!\n\n  # Picture CDN URL\n  url: String\n}\n\ntype Product implements Identifiable {\n  id: String!\n  name: String!\n  breakingChangeField: String!\n  description: String!\n  picture(size: Int!): Picture!\n}\n\ntype Query {\n  # Returns a product with specific `id`.\n  product(id: String!): Product\n\n  # Returns a list of all available products.\n  products: [Product!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-10T18:18:47Z",
+    "updated_at": "2019-07-18T11:22:51Z",
+    "pushed_at": "2019-07-18T11:22:49Z",
+    "issues": 32,
+    "watchers": 5,
+    "fork_count": 14,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 42,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 6,
+    "pull_requests_merged": 36,
+    "releases": 11,
+    "stargazers": 69
+  }
+}

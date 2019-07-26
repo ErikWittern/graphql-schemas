@@ -1,0 +1,39 @@
+{
+  "repo_name": "bjd-db",
+  "repo_full_name": "cowpewter/bjd-db",
+  "repo_owner": "cowpewter",
+  "repo_description": "An online bjd database",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.gql",
+      "path": "src/schema/typedef/Query.gql",
+      "sha": "0547026a6770f9c9491018af7b22e6d1425bd763",
+      "url": "https://api.github.com/repositories/178721351/contents/src/schema/typedef/Query.gql?ref=17e272b18e400191c40038cdd6cc04e7ca88a62d",
+      "git_url": "https://api.github.com/repositories/178721351/git/blobs/0547026a6770f9c9491018af7b22e6d1425bd763",
+      "html_url": "https://github.com/cowpewter/bjd-db/blob/17e272b18e400191c40038cdd6cc04e7ca88a62d/src/schema/typedef/Query.gql",
+      "content": "type Query {\n  _empty: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-31T17:42:13Z",
+    "updated_at": "2019-04-25T20:48:20Z",
+    "pushed_at": "2019-04-25T20:48:17Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "ppx_graphql",
+  "repo_full_name": "andreas/ppx_graphql",
+  "repo_owner": "andreas",
+  "repo_description": "Type-safe GraphQL queries in OCaml",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/schema.graphql",
+      "sha": "364d49803fb759b7a5923444aa5de9b0909070ad",
+      "url": "https://api.github.com/repositories/101096173/contents/test/schema.graphql?ref=2d185501ce812a241ce3a8bb42b3a531a3366eee",
+      "git_url": "https://api.github.com/repositories/101096173/git/blobs/364d49803fb759b7a5923444aa5de9b0909070ad",
+      "html_url": "https://github.com/andreas/ppx_graphql/blob/2d185501ce812a241ce3a8bb42b3a531a3366eee/test/schema.graphql",
+      "content": "enum COLOR {\n    RED\n    GREEN\n    BLUE\n}\n\ninput IntervalInput {\n    min: Float\n    max: Float\n}\n\ninput PersonFilter {\n    favorite_color: COLOR\n    age: IntervalInput\n}\n\ntype Person {\n    id: ID!\n    age: Int!\n    name: String!\n    nickname: String\n    net_worth: Float\n    favorite_color: COLOR\n    friends: [Person]!\n}\n\ntype Pet {\n  name: String!\n}\n\nunion SearchResult = Person | Pet\n\ntype Query {\n    # Nullable primitives\n    nullable_int: Int\n    nullable_string: String\n    nullable_float: Float\n    nullable_bool: Boolean\n    nullable_id: ID\n    nullable_enum: COLOR\n\n    # Non-nullable primitives\n    non_nullable_int: Int!\n    non_nullable_string: String!\n    non_nullable_float: Float!\n    non_nullable_bool: Boolean!\n    non_nullable_id: ID!\n    non_nullable_enum: COLOR!\n\n    # List of primitives\n    list_int: [Int]\n    list_string: [String]\n    list_float: [Float]\n    list_bool: [Boolean]\n    list_id: [ID]\n    list_enum: [COLOR]\n\n    # Objects\n    person: Person!\n\n    filter_persons(filter: PersonFilter): [Person]!\n\n    search(query: String!): [SearchResult!]!\n}\n\nschema {\n    query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-22T18:43:20Z",
+    "updated_at": "2019-06-20T11:50:16Z",
+    "pushed_at": "2019-05-06T18:15:13Z",
+    "issues": 2,
+    "watchers": 3,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 2,
+    "stargazers": 52
+  }
+}

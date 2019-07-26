@@ -1,0 +1,42 @@
+{
+  "repo_name": "medusa",
+  "repo_full_name": "glhd/medusa",
+  "repo_owner": "glhd",
+  "repo_description": "Headless content management",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "resources/schema.graphql",
+      "sha": "cdf296f17741ae0fd58ff8a3acc2bf182b51afb4",
+      "url": "https://api.github.com/repositories/172582899/contents/resources/schema.graphql?ref=38b06a1d91245beb3979c4f79d81ff4f4b72fda8",
+      "git_url": "https://api.github.com/repositories/172582899/git/blobs/cdf296f17741ae0fd58ff8a3acc2bf182b51afb4",
+      "html_url": "https://github.com/glhd/medusa/blob/38b06a1d91245beb3979c4f79d81ff4f4b72fda8/resources/schema.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n}\n\ninterface MutationResponse {\n    code: Int!\n    success: Boolean!\n    message: String!\n}\n\ntype ContentType {\n    id: ID!\n    title: String!\n    is_singleton: Boolean!\n    fields: [Field!]!\n    rules: String!\n    messages: String!\n}\n\ntype Field {\n    name: ID!\n    component: String!\n    display_name: String!\n    label: String!\n    config: String!\n    initial_value: String!\n    rules: String!\n    messages: String!\n}\n\ntype Content {\n    id: ID!\n    content_type: ContentType!\n    description: String!\n    slug: String!\n    data: String!\n}\n\ntype PaginatedContent {\n    total: Int!\n    per_page: Int!\n    current_page: Int!\n    last_page: Int!\n    content: [Content]!\n}\n\ntype Query {\n    getContentType(id: ID!): ContentType!\n    allContentTypes: [ContentType!]!\n    getContent(id: ID!): Content\n    allContent(page: Int): PaginatedContent!\n    searchContent(query: String!, content_type_id: ID, page: Int) : PaginatedContent!\n}\n\ntype CreateContentResponse implements MutationResponse {\n    code: Int!\n    success: Boolean!\n    message: String!\n    validation: [String]\n    content: Content\n}\n\ntype UpdateContentResponse implements MutationResponse {\n    code: Int!\n    success: Boolean!\n    message: String!\n    content: Content\n}\n\ntype Mutation {\n    createContent(content_type_id: ID!, data: String!): CreateContentResponse!\n    updateContent(id: ID!, data: String!): UpdateContentResponse!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-25T20:52:30Z",
+    "updated_at": "2019-07-16T17:26:02Z",
+    "pushed_at": "2019-03-11T14:01:30Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

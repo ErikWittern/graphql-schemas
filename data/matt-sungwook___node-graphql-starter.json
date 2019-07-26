@@ -1,0 +1,42 @@
+{
+  "repo_name": "node-graphql-starter",
+  "repo_full_name": "matt-sungwook/node-graphql-starter",
+  "repo_owner": "matt-sungwook",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "common.graphql",
+      "path": "src/graphql/schema/common.graphql",
+      "sha": "1f455d52e062c360353efda11be5fc5ecb3e891a",
+      "url": "https://api.github.com/repositories/170341678/contents/src/graphql/schema/common.graphql?ref=cff83c40c556932bd3c5d7529486ce4dad1cb6c9",
+      "git_url": "https://api.github.com/repositories/170341678/git/blobs/1f455d52e062c360353efda11be5fc5ecb3e891a",
+      "html_url": "https://github.com/matt-sungwook/node-graphql-starter/blob/cff83c40c556932bd3c5d7529486ce4dad1cb6c9/src/graphql/schema/common.graphql",
+      "content": "\"Date custom scalar (ISO string)\"\nscalar Date\n\ntype Query {\n  \"\"\"\n  Returns the timezone offset of the server\n  \"\"\"\n  serverTimezoneOffset: Int!\n}\n\ntype Mutation {\n  \"\"\"\n  A test mutation that returns the input value\n  \"\"\"\n  test(value: Date!): Date\n}\n\ntype PageInfo {\n  hasPreviousPage: Boolean!\n  hasNextPage: Boolean!\n  startCursor: String!\n  endCursor: String!\n  totalCount: Int!\n}\n\ninput PaginationFilter {\n  \"\"\"\n  The cursor of the first item to be returned\n  \"\"\"\n  after: String\n  \"\"\"\n  The number of items to be returned\n  \"\"\"\n  first: Int\n  \"\"\"\n  Sort criteria\n  \"\"\"\n  sort: [SortCriteria!]\n}\n\ninput SortCriteria {\n  \"\"\"\n  Field name to be sorted\n  \"\"\"\n  field: String!\n  \"\"\"\n  Sort direction (ASC, DESC)\n  Default = ASC\n  \"\"\"\n  direction: SortDirection = ASC\n}\n\nenum SortDirection {\n  ASC\n  DESC\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-12T15:28:03Z",
+    "updated_at": "2019-06-12T12:31:06Z",
+    "pushed_at": "2019-06-12T06:29:51Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

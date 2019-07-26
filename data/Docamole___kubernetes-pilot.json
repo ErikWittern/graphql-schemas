@@ -1,0 +1,39 @@
+{
+  "repo_name": "kubernetes-pilot",
+  "repo_full_name": "docamole/kubernetes-pilot",
+  "repo_owner": "Docamole",
+  "repo_description": "Dashboard and GraphQL API for managing Kubernetes resources.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "clientTypes.graphql",
+      "path": "dashboard/src/js/lib/PilotClient/clientTypes.graphql",
+      "sha": "8d16b0ceb0c78b792fd2cd9aa18eb38fcba55908",
+      "url": "https://api.github.com/repositories/152953732/contents/dashboard/src/js/lib/PilotClient/clientTypes.graphql?ref=35bfc2c362c9e5ad844de7c6ee2d89a5528853f1",
+      "git_url": "https://api.github.com/repositories/152953732/git/blobs/8d16b0ceb0c78b792fd2cd9aa18eb38fcba55908",
+      "html_url": "https://github.com/Docamole/kubernetes-pilot/blob/35bfc2c362c9e5ad844de7c6ee2d89a5528853f1/dashboard/src/js/lib/PilotClient/clientTypes.graphql",
+      "content": "type Query {\n  activeNamespace: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-14T08:24:45Z",
+    "updated_at": "2018-10-22T22:22:55Z",
+    "pushed_at": "2018-10-23T23:00:30Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

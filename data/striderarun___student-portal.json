@@ -1,0 +1,42 @@
+{
+  "repo_name": "student-portal",
+  "repo_full_name": "striderarun/student-portal",
+  "repo_owner": "striderarun",
+  "repo_description": "A Spring Boot, GraphQL, React and Relay JS based web application",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/main/resources/schema.graphql",
+      "sha": "4eac78853f68721ecfa525208808453877d80936",
+      "url": "https://api.github.com/repositories/93112131/contents/src/main/resources/schema.graphql?ref=3d9f91935a998e1ea2ca7a5febdceee4ab99565b",
+      "git_url": "https://api.github.com/repositories/93112131/git/blobs/4eac78853f68721ecfa525208808453877d80936",
+      "html_url": "https://github.com/striderarun/student-portal/blob/3d9f91935a998e1ea2ca7a5febdceee4ab99565b/src/main/resources/schema.graphql",
+      "content": "schema {\n    query: QueryType\n    mutation: MutationType\n}\n\ntype QueryType {\n    prefect : Student\n    student(id : String) : Student\n    studentByName(name : String) : Student\n    students(ids : [String]) : [Student]\n    grade : [Student]\n}\n\ntype MutationType {\n    addStudent(student: StudentInput): MutationResult\n}\n\ntype Student {\n    id : String\n    firstName : String\n    lastName : String\n    grade : String\n    age : Int\n    email : String\n    guardianName : String\n}\n\ninput StudentInput {\n    firstName: String\n    lastName: String\n    grade : String\n    age : Int\n    email : String\n    guardianName : String\n}\n\ntype MutationResult {\n   success: Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-02T00:51:54Z",
+    "updated_at": "2018-02-21T02:36:16Z",
+    "pushed_at": "2017-11-11T07:39:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

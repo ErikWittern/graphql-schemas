@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay2ts",
+  "repo_full_name": "alloy/relay2ts",
+  "repo_owner": "alloy",
+  "repo_description": "Generate TypeScript interfaces for your Relay GraphQL query fragments.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/schema.graphql",
+      "sha": "4058255129d214f2fb70d9d736b551f0c7c56b0f",
+      "url": "https://api.github.com/repositories/79310497/contents/test/schema.graphql?ref=5ae99369c9d7aa65fae9c389dc181dae13600199",
+      "git_url": "https://api.github.com/repositories/79310497/git/blobs/4058255129d214f2fb70d9d736b551f0c7c56b0f",
+      "html_url": "https://github.com/alloy/relay2ts/blob/5ae99369c9d7aa65fae9c389dc181dae13600199/test/schema.graphql",
+      "content": "type Query {\n  artwork: Artwork\n  partner: Partner\n}\n\ntype Artwork {\n  id: ID!\n  title: String\n  gene_ids: [String!]!\n  artists(shallow: Boolean): [Artist]\n}\n\ntype Artist {\n  id: ID!\n  name: String!\n  artworks_count: Int!\n}\n\ntype Partner {\n  id: ID!\n  name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-18T06:27:49Z",
+    "updated_at": "2018-05-22T12:35:01Z",
+    "pushed_at": "2017-02-09T12:46:33Z",
+    "issues": 4,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 7
+  }
+}

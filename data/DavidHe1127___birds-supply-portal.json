@@ -1,0 +1,42 @@
+{
+  "repo_name": "birds-supply-portal",
+  "repo_full_name": "davidhe1127/birds-supply-portal",
+  "repo_owner": "DavidHe1127",
+  "repo_description": ":bird:  Admin portal where suppliers can log in to manage their offers & products",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "71ac33c34a149cac220967b19c8744b56e3de68b",
+      "url": "https://api.github.com/repositories/114074689/contents/schema.graphql?ref=ab480e611b0535e5f384468498f3a92ea912dce2",
+      "git_url": "https://api.github.com/repositories/114074689/git/blobs/71ac33c34a149cac220967b19c8744b56e3de68b",
+      "html_url": "https://github.com/DavidHe1127/birds-supply-portal/blob/ab480e611b0535e5f384468498f3a92ea912dce2/schema.graphql",
+      "content": "# Common\ndirective @isAuthenticated on QUERY | FIELD\n\ndirective @hasScope(scope: [String]) on QUERY | FIELD\n\ninput addCustomerInput {\n  first_name: String\n  last_name: String\n  email: String\n  gender: Gender\n}\n\ninput addParrotInput {\n  name: String\n  size: Int\n  mass: Int\n  distribution: String\n  lifespan: Int\n  species: Species\n  code: String\n}\n\ninput addProductInput {\n  price: Int\n  qty: Int\n  parrotCode: String\n  avatar: String\n}\n\ntype addProductPayload {\n  product: Product\n}\n\ninput addRequestInput {\n  parrot: String\n  code: String\n  reason: String\n}\n\ninput approveRequestInput {\n  id: ID!\n}\n\n# Customer\ntype Customer {\n  id: ID!\n  first_name: String\n  last_name: String\n  email: String\n  gender: Gender\n}\n\ninput delCustomerInput {\n  _id: ID!\n  email: String\n}\n\ninput delProductInput {\n  id: ID!\n}\n\ntype delProductPayload {\n  deletedProductId: String!\n}\n\n# Errors for relay to read server errors\ntype Error {\n  id: ID\n  message: String\n  data: ErrorData\n}\n\ntype ErrorData {\n  type: String\n}\n\nenum Gender {\n  Female\n  Male\n}\n\n# Mutation\ntype Mutation {\n  addParrot(input: addParrotInput!): Parrot\n  addCustomer(input: addCustomerInput): Customer\n  setCustomer(input: setCustomerInput): Customer\n  delCustomer(input: delCustomerInput): Customer\n  addProduct(input: addProductInput!): addProductPayload\n  delProduct(input: delProductInput!): delProductPayload\n  setProduct(input: setProductInput!): setProductPayload\n  addRequest(input: addRequestInput!): requestPayload\n  rejectRequest(input: rejectRequestInput!): requestPayload\n  approveRequest(input: approveRequestInput!): requestPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# Parrot\ntype Parrot implements Node {\n  id: ID!\n  name: String\n  size: Int\n  mass: Float\n  distribution: String\n  description: String\n  lifespan: Int\n  species: Species\n  code: String\n}\n\ntype ParrotConnection {\n  pageInfo: PageInfo!\n\n  # a list of edges\n  edges: [ParrotEdge]\n  count: Int!\n}\n\ntype ParrotEdge {\n  cursor: String\n  node: Parrot\n}\n\n# Product\ntype Product implements Node {\n  id: ID!\n  sku: String\n  qty: Int\n  price: Int\n  avatar: String\n  parrot: Parrot\n  supplier: Supplier\n}\n\ntype ProductConnection {\n  pageInfo: PageInfo!\n\n  # a list of edges\n  edges: [ProductEdge]\n  count: Int!\n}\n\ntype ProductEdge {\n  cursor: String\n  node: Product\n}\n\n# Query\ntype Query {\n  customer(email: String): Customer\n  customers: [Customer]\n  parrot(id: ID, code: String): Parrot\n  parrots(skip: Int, after: String, before: String, first: Int, last: Int): ParrotConnection\n  parrotsToProduct(supplierId: ID): ParrotConnection\n  ifParrotExist(code: String!): Boolean\n  request(id: ID!): Request\n  requests(skip: Int, after: String, before: String, first: Int, last: Int, reqId: ID): RequestConnection\n  product(id: ID!): Product\n  products(skip: Int, after: String, before: String, first: Int, last: Int, supplierId: ID): ProductConnection\n  bestSellers(skip: Int, after: String, before: String, first: Int, last: Int, supplierId: ID): ProductConnection\n  supplier(id: ID, code: String): Supplier\n  suppliers(skip: Int, after: String, before: String, first: Int, last: Int): SupplierConnection\n  viewer: User\n  errors: [Error]\n}\n\ninput rejectRequestInput {\n  id: ID!\n  reason: String\n}\n\ntype rejectRequestPayload {\n  request: Request\n}\n\ntype Request implements Node {\n  id: ID!\n  parrot: String\n  code: String\n  reason: String\n  status: Status\n}\n\ntype RequestConnection {\n  pageInfo: PageInfo!\n\n  # a list of edges\n  edges: [RequestEdge]\n  count: Int!\n}\n\ntype RequestEdge {\n  cursor: String\n  node: Request\n}\n\ntype requestPayload {\n  request: Request\n}\n\ninput setCustomerInput {\n  _id: ID!\n  email: String\n}\n\ninput setProductInput {\n  id: ID!\n  qty: Int\n  price: Int\n}\n\ntype setProductPayload {\n  product: Product\n}\n\nenum Species {\n  macaws\n  conures\n  cockatoos\n  amazons\n}\n\n# Request\nenum Status {\n  pending\n  rejected\n  approved\n}\n\n# Supplier\ntype Supplier implements Node {\n  id: ID!\n  name: String\n  address: String\n  code: String!\n  parrotsConnection(first: Int, after: String, last: Int, before: String): SupplierParrotsConnection\n}\n\ntype SupplierConnection {\n  pageInfo: PageInfo!\n\n  # a list of edges\n  edges: [SupplierEdge]\n  count: Int!\n}\n\ntype SupplierEdge {\n  cursor: String\n  node: Supplier\n}\n\ntype SupplierParrotsConnection {\n  pageInfo: PageInfo!\n  edges: [SupplierParrotsEdge]\n}\n\ntype SupplierParrotsEdge {\n  cursor: String\n  node: Parrot\n}\n\n# User\ntype User implements Node {\n  id: ID!\n  products(skip: Int, after: String, before: String, first: Int, last: Int): ProductConnection\n  requests(skip: Int, after: String, before: String, first: Int, last: Int): RequestConnection\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 26,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 42
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-13T04:42:02Z",
+    "updated_at": "2018-10-04T13:52:47Z",
+    "pushed_at": "2018-10-04T13:52:45Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

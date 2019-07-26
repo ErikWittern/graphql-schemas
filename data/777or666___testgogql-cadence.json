@@ -1,0 +1,42 @@
+{
+  "repo_name": "testgogql-cadence",
+  "repo_full_name": "777or666/testgogql-cadence",
+  "repo_owner": "777or666",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "models/schema.graphql",
+      "sha": "c872c758e6b6d12d7744ab4c5195a82a92199c3f",
+      "url": "https://api.github.com/repositories/149755051/contents/models/schema.graphql?ref=33f22e0101d8517b6c17634a7c6c5342dbbc013f",
+      "git_url": "https://api.github.com/repositories/149755051/git/blobs/c872c758e6b6d12d7744ab4c5195a82a92199c3f",
+      "html_url": "https://github.com/777or666/testgogql-cadence/blob/33f22e0101d8517b6c17634a7c6c5342dbbc013f/models/schema.graphql",
+      "content": "type Domain {\t\n \tname: String!\n\tstatus: String!\n\tdescription: String\n\tOwnerEmail: String\n\tworkflows: [Workflow!]\n}\n\ntype Workflow {\n\tid: ID!\n\tworkflowId: String!\n\trunId: String!\n\ttaskList: String!\n\tname: String!\n\tstartTime: Time!\n\tcloseTime: Time\n\tcloseStatus: String\n\thistoryLength: Int\n\tjsonHistory: String\t\n\tresult: String\n\tisDone: Boolean\n\tisCanceled: Boolean\n\tinWork: Boolean\n\tactivities: [Activity!]\n\tcreatedAt: Time!\n}\n\ntype Activity{\n\tid: ID!\t\n\tactivityId: String!\n\tdescription: String!\n\toperation: String!\n\troles: [String!]\n\tstarttoclosetimeout: Int!\n\tisDone: Boolean!\n\tinWork: Boolean!\n\tisCanceled: Boolean!\n\tError: String!\t\n}\n\ntype Query {\t\n\tDomain(name: String): Domain\t\n\tWorkflow(id: ID!): Workflow\n\tallWorkflows(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String, domain: String): [Workflow]\n\tallOpenWorkflows(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String, domain: String): [Workflow]\n\tallCloseWorkflows(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String, domain: String): [Workflow]\n}\n\ntype Mutation {\n\tworkflowStart(workflowname: String!, input: String!): Workflow!\n\tworkflowCancel(reason: String!, input: String!): String\n\tworkflowTerminate(reason: String!, input: String!): String\n\tactivityPerform(activityId: String!, input: String!): String\t\n\tactivityFailed(activityId: String!, input: String!): String\t\n}\n\ntype Subscription {\n\tworkflow : Workflow!\n}\n\nscalar Time",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-21T11:38:13Z",
+    "updated_at": "2018-11-23T15:24:25Z",
+    "pushed_at": "2018-11-23T15:24:23Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

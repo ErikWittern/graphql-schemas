@@ -1,0 +1,42 @@
+{
+  "repo_name": "process-center",
+  "repo_full_name": "andrewhanasiro/process-center",
+  "repo_owner": "AndrewHanasiro",
+  "repo_description": "Project Model Dev for J+",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "backend/src/models/graphql/schema.gql",
+      "sha": "826ab6e9d7679780f0842a122a34807985bc583b",
+      "url": "https://api.github.com/repositories/165064810/contents/backend/src/models/graphql/schema.gql?ref=583bc1f866b271cf5f416f6f4baccb7e881da0dc",
+      "git_url": "https://api.github.com/repositories/165064810/git/blobs/826ab6e9d7679780f0842a122a34807985bc583b",
+      "html_url": "https://github.com/AndrewHanasiro/process-center/blob/583bc1f866b271cf5f416f6f4baccb7e881da0dc/backend/src/models/graphql/schema.gql",
+      "content": "type Name {\n  firstName: String\n  lastName: String\n}\n\ninput NameInput {\n  firstName: String\n  lastName: String\n}\n\ntype Password {\n  salt: String\n  passwordHash: String\n  timeSetted: Int\n}\n\ntype Log {\n  ini: String\n  end: String\n}\n\ntype User {\n  _id: String\n  name: Name\n  email: String\n  age: Int\n  active: String\n  passwordHistory: [Password]\n  log: [Log]\n}\n\ntype Query {\n  getAll: [User]\n  getOne(id: String!): User\n}\n\ntype Mutation {\n  createOne(\n    age: Int!\n    email: String!\n    name: NameInput!\n    password: String!\n  ): User\n  updateOne(id: String!): User\n  deleteOne(id: String!): Boolean\n  deleteAll: Boolean\n}\n\ntype Subscription {\n  add: User\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-10T13:29:27Z",
+    "updated_at": "2019-02-25T20:17:45Z",
+    "pushed_at": "2019-02-25T20:17:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

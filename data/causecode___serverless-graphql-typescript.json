@@ -1,0 +1,66 @@
+{
+  "repo_name": "serverless-graphql-typescript",
+  "repo_full_name": "causecode/serverless-graphql-typescript",
+  "repo_owner": "causecode",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "app-backend/src/query.graphql",
+      "sha": "2232fb0d7990b8af4b34fddb6ef54a261a85085f",
+      "url": "https://api.github.com/repositories/128047421/contents/app-backend/src/query.graphql?ref=eed64bb918ac5fcbca776f92f6bf3d1ebcdb72f6",
+      "git_url": "https://api.github.com/repositories/128047421/git/blobs/2232fb0d7990b8af4b34fddb6ef54a261a85085f",
+      "html_url": "https://github.com/causecode/serverless-graphql-typescript/blob/eed64bb918ac5fcbca776f92f6bf3d1ebcdb72f6/app-backend/src/query.graphql",
+      "content": "#import \"./random/schema.graphql\"\n\ntype Query {\n    getRandomList(length: Int): Random\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/causecode/serverless-graphql-typescript/blob/eed64bb918ac5fcbca776f92f6bf3d1ebcdb72f6/app-backend/src/query.graphql:\n#import \"./random/schema.graphql\"\n\ntype Query {\n    getRandomList(length: Int): Random\n}\n\n# https://github.com/causecode/serverless-graphql-typescript/blob/eed64bb918ac5fcbca776f92f6bf3d1ebcdb72f6/app-backend/src/random/schema.graphql:\ntype Random {\n    list: [Int]!\n    length: Int\n    sum: Int\n}\n",
+        "mergedPaths": [
+          "app-backend/src/random/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Random"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app-backend/src/random/schema.graphql",
+      "sha": "e5b5c5cd3429b3b88585d8d29ee68e8359f86a8a",
+      "url": "https://api.github.com/repositories/128047421/contents/app-backend/src/random/schema.graphql?ref=eed64bb918ac5fcbca776f92f6bf3d1ebcdb72f6",
+      "git_url": "https://api.github.com/repositories/128047421/git/blobs/e5b5c5cd3429b3b88585d8d29ee68e8359f86a8a",
+      "html_url": "https://github.com/causecode/serverless-graphql-typescript/blob/eed64bb918ac5fcbca776f92f6bf3d1ebcdb72f6/app-backend/src/random/schema.graphql",
+      "content": "type Random {\n    list: [Int]!\n    length: Int\n    sum: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-04T10:36:09Z",
+    "updated_at": "2019-02-18T18:23:35Z",
+    "pushed_at": "2018-04-06T12:07:49Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

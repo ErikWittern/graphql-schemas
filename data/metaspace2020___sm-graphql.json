@@ -1,0 +1,42 @@
+{
+  "repo_name": "sm-graphql",
+  "repo_full_name": "metaspace2020/sm-graphql",
+  "repo_owner": "metaspace2020",
+  "repo_description": "GraphQL server for communication between the frontend and the backend",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "f3e820aee630279212ad3c0295f03bd26f5b5050",
+      "url": "https://api.github.com/repositories/76255059/contents/schema.graphql?ref=f87cc17ce85dd5d52450f3783449baff1bf714e7",
+      "git_url": "https://api.github.com/repositories/76255059/git/blobs/f3e820aee630279212ad3c0295f03bd26f5b5050",
+      "html_url": "https://github.com/metaspace2020/sm-graphql/blob/f87cc17ce85dd5d52450f3783449baff1bf714e7/schema.graphql",
+      "content": "type Person {\n  name: String!\n  surname: String!\n  email: String!\n}\n\nenum PersonRole {\n  SUBMITTER,\n  PI\n}\n\nenum Polarity {\n  POSITIVE\n  NEGATIVE\n}\n\ntype Analyzer {\n  type: String!\n  resolvingPower(mz: Float!): Float!\n}\n\nenum AnnotationOrderBy {\n  ORDER_BY_MZ\n  ORDER_BY_MSM\n  ORDER_BY_FDR_MSM\n  ORDER_BY_DATASET\n  ORDER_BY_FORMULA\n}\n\nenum DatasetOrderBy {\n  ORDER_BY_DATE\n  ORDER_BY_NAME\n}\n\nenum SortingOrder {\n  ASCENDING,\n  DESCENDING\n}\n\nenum JobStatus {\n  QUEUED,\n  STARTED,\n  INDEXING,\n  FINISHED,\n  FAILED\n}\n\ntype FdrCounts {\n  dbName: String!\n  levels: [Float!]!\n  counts: [Float!]!\n}\n\ntype Dataset {\n  id: String!\n  name: String!\n\n  institution: String!\n  submitter: Person!\n  principalInvestigator: Person\n\n  polarity: Polarity!\n  ionisationSource: String!\n  analyzer: Analyzer!\n\n  organism: String\n  organismPart: String\n  condition: String\n  growthConditions: String\n  maldiMatrix: String\n\n  configJson: String!\n  # full metadata JSON conforming to schema published at\n  # https://github.com/metaspace2020/metadata\n  metadataJson: String!\n  isPublic: Boolean!\n  molDBs: [String!]!\n  adducts: [String!]!\n  acquisitionGeometry: String\n  metadataType: String!\n\n  status: JobStatus\n  inputPath: String\n  uploadDateTime: String\n  fdrCounts(inpFdrLvls: [Int!]!, checkLvl: Int!): FdrCounts\n  opticalImage: String!\n}\n\n# fields of categorical type\nenum DatasetAggField {\n  DF_INSTITUTION,\n  DF_SUBMITTER_FIRST_NAME,\n  DF_SUBMITTER_SURNAME,\n  DF_POLARITY,\n  DF_ION_SOURCE,\n  DF_ANALYZER_TYPE,\n  DF_ORGANISM,\n  DF_ORGANISM_PART,\n  DF_CONDITION,\n  DF_GROWTH_CONDITIONS,\n  DF_MALDI_MATRIX\n}\n\ntype CompoundInfoEntry {\n  database: String!\n  url: String\n  databaseId: String!\n}\n\ntype Compound {\n  name: String!\n  imageURL: String\n  information: [CompoundInfoEntry]\n  # TODO: InChi/SMILES, ClassyFire results\n}\n\ntype Adduct {\n  adduct: String!\n  charge: Int!\n}\n\ntype Spectrum {\n  mzs: [Float!]!\n  intensities: [Float!]!\n}\n\ntype MzImage {\n  mz: Float\n  url: String\n  totalIntensity: Float!\n  minIntensity: Float!\n  maxIntensity: Float!\n}\n\ntype MolecularDatabase {\n  id: Int!\n  name: String!\n  version: String!\n  default: Boolean!\n}\n\ntype Annotation {\n  id: String!\n\n  dataset: Dataset!\n  sumFormula: String!\n  adduct: String!\n  mz: Float!\n  possibleCompounds: [Compound!]!\n  fdrLevel: Float!\n  msmScore: Float!\n  rhoSpatial: Float\n  rhoSpectral: Float\n  rhoChaos: Float\n  isotopeImages: [MzImage!]!\n\n  peakChartData: String  # JSON\n}\n\n# [min, max) interval\ninput NumericRange {\n  min: Float!\n  max: Float!\n}\n\ninput AnnotationFilter {\n  database: String\n  datasetName: String\n  mzFilter: NumericRange\n  msmScoreFilter: NumericRange\n  compoundQuery: String\n  fdrLevel: Float\n  sumFormula: String\n  adduct: String\n}\n\ninput PersonFilter {\n  name: String!\n  surname: String!\n}\n\ninput DatasetFilter {\n  # list of IDs separated by '|'\n  ids: String\n\n  # exact match\n  institution: String\n\n  # substring match\n  name: String\n\n  # exact match\n  submitter: PersonFilter\n\n  polarity: Polarity\n\n  # exact match\n  ionisationSource: String\n\n  # exact match\n  analyzerType: String\n\n  # exact match\n  maldiMatrix: String\n\n  # exact match\n  organism: String\n\n  # exact match\n  organismPart: String\n\n  # exact match\n  condition: String\n\n  # exact match\n  growthConditions: String\n\n  # exact match\n  metadataType: String\n\n  status: JobStatus\n}\n\ninput DatasetCountPerGroupInput {\n  fields: [DatasetAggField!]!\n  filter: DatasetFilter = {}\n  simpleQuery: String\n}\n\ninput DatasetSubmitInput {\n  id: String\n  name: String\n  inputPath: String\n  uploadDT: String\n  isPublic: Boolean = true\n  molDBs: [String!]\n  adducts: [String!]\n  metadataJson: String\n}\n\ninput DatasetUpdateInput {\n  id: String\n  name: String\n  uploadDT: String\n  isPublic: Boolean = true\n  molDBs: [String!]\n  adducts: [String!]\n  metadataJson: String\n}\n\ntype DatasetCountPerGroupListElement {\n  fieldValues: [String!]!  # corresponding to input fields\n  count: Int!\n}\n\ntype DatasetCountPerGroup {\n  counts: [DatasetCountPerGroupListElement]\n}\n\ntype RawOpticalImage {\n    url: String\n    transform: [[Float]]\n}\n\ninput AddOpticalImageInput {\n  datasetId: String!\n  imageUrl: String!\n\n  # 3x3 transformation matrix in row-major order\n  # (acting in homogeneous coordinates)\n  transform: [[Float]]!\n}\n\ntype Query {\n  dataset(id: String!): Dataset\n  datasetByName(name: String!): Dataset\n\n  allDatasets(orderBy: DatasetOrderBy = ORDER_BY_DATE,\n              sortingOrder: SortingOrder = DESCENDING,\n              filter: DatasetFilter = {}, simpleQuery: String,\n              offset: Int = 0, limit: Int = 10): [Dataset!]\n\n  allAnnotations(orderBy: AnnotationOrderBy = ORDER_BY_MSM,\n                 sortingOrder: SortingOrder = DESCENDING,\n                 offset: Int = 0, limit: Int = 10,\n                 filter: AnnotationFilter = {},\n                 datasetFilter: DatasetFilter = {},\n                 simpleQuery: String): [Annotation]\n\n  countDatasets(filter: DatasetFilter = {}, simpleQuery: String): Int!\n\n  countDatasetsPerGroup(query: DatasetCountPerGroupInput!): DatasetCountPerGroup!\n\n  countAnnotations(filter: AnnotationFilter = {},\n                   datasetFilter: DatasetFilter = {},\n                   simpleQuery: String): Int!\n\n  annotation(id: String!): Annotation\n\n  metadataSuggestions(field: String!, query: String!, limit: Int = 10): [String!]!\n\n  peopleSuggestions(role: PersonRole!, query: String!): [Person!]!\n\n  molecularDatabases(hideDeprecated: Boolean = true): [MolecularDatabase!]\n\n  adductSuggestions: [Adduct!]!\n\n  opticalImageUrl(datasetId: String!, zoom: Float = 1): String\n\n  rawOpticalImage(datasetId: String!): RawOpticalImage\n\n  thumbnailImage(datasetId: String!): String,\n\n  reprocessingNeeded(input: DatasetUpdateInput!): Boolean!\n}\n\ntype Mutation {\n  submitDataset(input: DatasetSubmitInput!, priority: Int=0, delFirst: Boolean=false): String!\n\n  # for dev purposes only\n  resubmitDataset(datasetId: String, priority: Int=0, delFirst: Boolean=false): String!\n\n  # TODO: consider renaming to updateDataset\n  updateMetadata(input: DatasetUpdateInput!, priority: Int=0): String!\n\n  deleteDataset(datasetId: String!): String!\n\n  addOpticalImage(input: AddOpticalImageInput!): String!\n\n  deleteOpticalImage(datasetId: String!): String!\n}\n\ntype DatasetStatusUpdate {\n  dataset: Dataset\n}\n\ntype Subscription {\n  datasetStatusUpdated: DatasetStatusUpdate\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 34
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-12T12:36:46Z",
+    "updated_at": "2018-06-28T07:14:31Z",
+    "pushed_at": "2018-06-28T07:12:10Z",
+    "issues": 0,
+    "watchers": 4,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 23,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 6,
+    "pull_requests_merged": 16,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

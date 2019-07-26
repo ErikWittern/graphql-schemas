@@ -1,0 +1,42 @@
+{
+  "repo_name": "demo-graphql-wrapped-rest-api",
+  "repo_full_name": "tsubasa/demo-graphql-wrapped-rest-api",
+  "repo_owner": "tsubasa",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "demo-graphql-wrapped-rest-api/src/schema.graphql",
+      "sha": "5de9e3bec063c4b13f5d8d97aa0bc8e017863a7d",
+      "url": "https://api.github.com/repositories/163798443/contents/demo-graphql-wrapped-rest-api/src/schema.graphql?ref=73205f05d9dd1d024dd97395af85b549d73edcf1",
+      "git_url": "https://api.github.com/repositories/163798443/git/blobs/5de9e3bec063c4b13f5d8d97aa0bc8e017863a7d",
+      "html_url": "https://github.com/tsubasa/demo-graphql-wrapped-rest-api/blob/73205f05d9dd1d024dd97395af85b549d73edcf1/demo-graphql-wrapped-rest-api/src/schema.graphql",
+      "content": "type Query {\n  items: [Item!]!\n  item(id: ID!): Item\n}\n\ntype Item {\n  id: ID!\n  name: String!\n  price: Int!\n  category: Category!\n  specs: [Spec!]!\n}\n\ntype Category {\n  id: ID!\n  name: String!\n}\n\ntype Spec {\n  id: ID!\n  name: String!\n  value: [SpecValue!]!\n}\n\ntype SpecValue {\n  id: ID!\n  value: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-02T05:38:23Z",
+    "updated_at": "2019-02-14T15:24:49Z",
+    "pushed_at": "2019-01-02T08:26:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

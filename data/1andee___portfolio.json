@@ -1,0 +1,126 @@
+{
+  "repo_name": "portfolio",
+  "repo_full_name": "1andee/portfolio",
+  "repo_owner": "1andee",
+  "repo_description": "Personal site made with GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "src/server/types/Query.graphql",
+      "sha": "92b4fb4676947f5923627bd295db454c946e50ec",
+      "url": "https://api.github.com/repositories/148400646/contents/src/server/types/Query.graphql?ref=b990a08008485fe40cf69b5f782e474c480a8489",
+      "git_url": "https://api.github.com/repositories/148400646/git/blobs/92b4fb4676947f5923627bd295db454c946e50ec",
+      "html_url": "https://github.com/1andee/portfolio/blob/b990a08008485fe40cf69b5f782e474c480a8489/src/server/types/Query.graphql",
+      "content": "# Here's all the field types you can use in your query!\ntype Query {\n  # My Name\n  name: String\n  # My Email\n  email: String\n  # My current employer\n  company: String\n  # My Twitter\n  twitter: String\n  # My GitHub\n  github: String\n  # My LinkedIn\n  linkedin: String\n  # Am I employed?\n  employed: Boolean\n  jobs: [Job]\n  repos: [Repo]\n  talks: [Talk]\n  projects: [Project]\n  education: [Education]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/1andee/portfolio/blob/b990a08008485fe40cf69b5f782e474c480a8489/src/server/types/Query.graphql:\n# Here's all the field types you can use in your query!\ntype Query {\n  # My Name\n  name: String\n  # My Email\n  email: String\n  # My current employer\n  company: String\n  # My Twitter\n  twitter: String\n  # My GitHub\n  github: String\n  # My LinkedIn\n  linkedin: String\n  # Am I employed?\n  employed: Boolean\n  jobs: [Job]\n  repos: [Repo]\n  talks: [Talk]\n  projects: [Project]\n  education: [Education]\n}\n\n# https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Job.graphql:\ntype Job {\n  # Company name\n  company: String\n  # Title\n  title: String\n  # Where this job was located\n  location: String\n  # Start date\n  started: String\n  # End date\n  finished: String\n}\n\n# https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Repo.graphql:\ntype Repo {\n  # Repo Name\n  name: String\n  # Link to repo\n  url: String\n  # Repo description\n  description: String\n  # Programming language\n  language: String\n  # Number of stars\n  stars: Int\n  # Is it forked?\n  fork: Boolean\n  # Owner of the repo\n  owner: String\n}\n\n# https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Talk.graphql:\ntype Talk {\n  # Talk name\n  name: String\n  # Event that hosted this talk\n  event: String\n  # Date\n  date: String\n  # Video link\n  video: String\n  # Slides link\n  slides: String\n  # Completed?\n  done: Boolean,\n  # Location\n  location: String\n}\n\n# https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Project.graphql:\ntype Project {\n  # Project name\n  name: String\n  # Program description\n  description: String\n  # Repository URL\n  github: String\n  # Website (if deployed)\n  website: String\n}\n\n# https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Education.graphql:\ntype Education {\n  # Institution name\n  school: String\n  # Program name\n  program: String\n  # Start date\n  started: String\n  # End date\n  finished: String\n}\n",
+        "mergedPaths": [
+          "src/server/types/Job.graphql",
+          "src/server/types/Repo.graphql",
+          "src/server/types/Talk.graphql",
+          "src/server/types/Project.graphql",
+          "src/server/types/Education.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Job",
+          "Repo",
+          "Talk",
+          "Project",
+          "Education"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 6,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Education.graphql",
+      "path": "src/server/types/Education.graphql",
+      "sha": "1ab8e871a1468e8013fc5cbace0135fd537b0c3a",
+      "url": "https://api.github.com/repositories/148400646/contents/src/server/types/Education.graphql?ref=3955720773102ef1140b75db78eca3a088feb098",
+      "git_url": "https://api.github.com/repositories/148400646/git/blobs/1ab8e871a1468e8013fc5cbace0135fd537b0c3a",
+      "html_url": "https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Education.graphql",
+      "content": "type Education {\n  # Institution name\n  school: String\n  # Program name\n  program: String\n  # Start date\n  started: String\n  # End date\n  finished: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Project.graphql",
+      "path": "src/server/types/Project.graphql",
+      "sha": "430f54af6b40cf765d86dc92fb233c539d5f9d01",
+      "url": "https://api.github.com/repositories/148400646/contents/src/server/types/Project.graphql?ref=3955720773102ef1140b75db78eca3a088feb098",
+      "git_url": "https://api.github.com/repositories/148400646/git/blobs/430f54af6b40cf765d86dc92fb233c539d5f9d01",
+      "html_url": "https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Project.graphql",
+      "content": "type Project {\n  # Project name\n  name: String\n  # Program description\n  description: String\n  # Repository URL\n  github: String\n  # Website (if deployed)\n  website: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Job.graphql",
+      "path": "src/server/types/Job.graphql",
+      "sha": "b462dc832b2a596c538ab4325f5986837c554b7c",
+      "url": "https://api.github.com/repositories/148400646/contents/src/server/types/Job.graphql?ref=3955720773102ef1140b75db78eca3a088feb098",
+      "git_url": "https://api.github.com/repositories/148400646/git/blobs/b462dc832b2a596c538ab4325f5986837c554b7c",
+      "html_url": "https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Job.graphql",
+      "content": "type Job {\n  # Company name\n  company: String\n  # Title\n  title: String\n  # Where this job was located\n  location: String\n  # Start date\n  started: String\n  # End date\n  finished: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Talk.graphql",
+      "path": "src/server/types/Talk.graphql",
+      "sha": "3781f55fda9d7f1fc4431d22c15bcc1079e94b52",
+      "url": "https://api.github.com/repositories/148400646/contents/src/server/types/Talk.graphql?ref=3955720773102ef1140b75db78eca3a088feb098",
+      "git_url": "https://api.github.com/repositories/148400646/git/blobs/3781f55fda9d7f1fc4431d22c15bcc1079e94b52",
+      "html_url": "https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Talk.graphql",
+      "content": "type Talk {\n  # Talk name\n  name: String\n  # Event that hosted this talk\n  event: String\n  # Date\n  date: String\n  # Video link\n  video: String\n  # Slides link\n  slides: String\n  # Completed?\n  done: Boolean,\n  # Location\n  location: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Repo.graphql",
+      "path": "src/server/types/Repo.graphql",
+      "sha": "ade3480f2cab6fcac06c10f3c4477fd9503204ed",
+      "url": "https://api.github.com/repositories/148400646/contents/src/server/types/Repo.graphql?ref=3955720773102ef1140b75db78eca3a088feb098",
+      "git_url": "https://api.github.com/repositories/148400646/git/blobs/ade3480f2cab6fcac06c10f3c4477fd9503204ed",
+      "html_url": "https://github.com/1andee/portfolio/blob/3955720773102ef1140b75db78eca3a088feb098/src/server/types/Repo.graphql",
+      "content": "type Repo {\n  # Repo Name\n  name: String\n  # Link to repo\n  url: String\n  # Repo description\n  description: String\n  # Programming language\n  language: String\n  # Number of stars\n  stars: Int\n  # Is it forked?\n  fork: Boolean\n  # Owner of the repo\n  owner: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-12T01:06:04Z",
+    "updated_at": "2018-12-17T02:49:10Z",
+    "pushed_at": "2018-12-17T02:49:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

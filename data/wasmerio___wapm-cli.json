@@ -1,0 +1,41 @@
+{
+  "repo_name": "wapm-cli",
+  "repo_full_name": "wasmerio/wapm-cli",
+  "repo_owner": "wasmerio",
+  "repo_description": "WebAssembly Package Manager (CLI)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "a94004715c0079fd84aa00984ce19c69909e86b2",
+      "url": "https://api.github.com/repositories/177042614/contents/graphql/schema.graphql?ref=ff96c4c2ba448e8ecc266cee338ec12a4b068f9c",
+      "git_url": "https://api.github.com/repositories/177042614/git/blobs/a94004715c0079fd84aa00984ce19c69909e86b2",
+      "html_url": "https://github.com/wasmerio/wapm-cli/blob/ff96c4c2ba448e8ecc266cee338ec12a4b068f9c/graphql/schema.graphql",
+      "content": "# source: https://registry.wapm.dev/graphql\n# timestamp: Mon May 13 2019 11:55:33 GMT-0700 (Pacific Daylight Time)\n\n\"\"\"\nThe `DateTime` scalar type represents a DateTime\nvalue as specified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).\n\"\"\"\nscalar DateTime\n\n\"\"\"\nThe `GenericScalar` scalar type represents a generic\nGraphQL scalar value that could be:\nString, Boolean, Int, Float, List or Object.\n\"\"\"\nscalar GenericScalar\n\ninput InputSignature {\n  publicKeyKeyId: String!\n  data: String!\n}\n\ntype Mutation {\n  publishPublicKey(input: PublishPublicKeyInput!): PublishPublicKeyPayload\n  publishPackage(input: PublishPackageInput!): PublishPackagePayload\n  tokenAuth(input: ObtainJSONWebTokenInput!): ObtainJSONWebTokenPayload\n  registerUser(input: RegisterUserInput!): RegisterUserPayload\n  verifyToken(input: VerifyInput!): VerifyPayload\n  refreshToken(input: RefreshInput!): RefreshPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n}\n\ninput ObtainJSONWebTokenInput {\n  clientMutationId: String\n  username: String!\n  password: String!\n}\n\n\"\"\"Obtain JSON Web Token mutation\"\"\"\ntype ObtainJSONWebTokenPayload {\n  token: String\n  clientMutationId: String\n  refreshToken: String\n}\n\ntype Package implements Node {\n  name: String!\n  namespace: String\n  private: Boolean!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  maintainers: [User]\n  versions: [PackageVersion]\n\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  alias: String\n  displayName: String!\n  lastVersion: PackageVersion\n\n  \"\"\"The public keys for all the published versions\"\"\"\n  publicKeys: [PublicKey!]!\n}\n\ntype PackageConnection {\n  pageInfo: PageInfo!\n  edges: [PackageEdge]!\n}\n\ntype PackageDistribution {\n  downloadUrl: String!\n}\n\ntype PackageEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Package\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype PackageVersion {\n  package: Package!\n  version: String!\n  description: String!\n  manifest: String!\n  license: String\n  licenseFile: String\n  readme: String\n  repository: String\n  homepage: String\n  versionPosition: Int!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  publishedBy: User!\n  signature: Signature\n  file: String!\n  distribution: PackageDistribution!\n  isLastVersion: Boolean!\n}\n\ntype PackageVersionConnection {\n  pageInfo: PageInfo!\n  edges: [PackageVersionEdge]!\n}\n\ntype PackageVersionEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: PackageVersion\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype PublicKey implements Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  owner: User!\n  keyId: String!\n  key: String!\n  revokedAt: DateTime\n  uploadedAt: DateTime!\n  verifyingSignature: Signature\n  revoked: Boolean!\n}\n\ninput PublishPackageInput {\n  name: String!\n  version: String!\n  description: String!\n  manifest: String!\n  license: String\n  licenseFile: String\n  readme: String\n  repository: String\n  homepage: String\n  file: String\n  signature: InputSignature\n  clientMutationId: String\n}\n\ntype PublishPackagePayload {\n  success: Boolean!\n  packageVersion: PackageVersion!\n  clientMutationId: String\n}\n\ninput PublishPublicKeyInput {\n  keyId: String!\n  key: String!\n  verifyingSignatureId: String\n  clientMutationId: String\n}\n\ntype PublishPublicKeyPayload {\n  success: Boolean!\n  publicKey: PublicKey!\n  clientMutationId: String\n}\n\ntype Query {\n  \"\"\"The ID of the object\"\"\"\n  node(id: ID!): Node\n  packages(before: String, after: String, first: Int, last: Int): PackageConnection\n  recentPackageVersions(before: String, after: String, first: Int, last: Int): PackageVersionConnection\n  getPackage(name: String!): Package\n  getPackages(names: [String!]!): [Package]!\n  getPackageVersion(name: String!, version: String): PackageVersion\n  search(query: String!, before: String, after: String, first: Int, last: Int): SearchConnection!\n  viewer: User\n}\n\ninput RefreshInput {\n  refreshToken: String!\n  clientMutationId: String\n}\n\ntype RefreshPayload {\n  token: String\n  payload: GenericScalar\n  clientMutationId: String\n  refreshToken: String\n}\n\ninput RegisterUserInput {\n  fullName: String!\n  email: String!\n  username: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype RegisterUserPayload {\n  token: String\n  clientMutationId: String\n}\n\ntype SearchConnection {\n  pageInfo: PageInfo!\n  edges: [SearchEdge]!\n}\n\ntype SearchEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: SearchResult\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\nunion SearchResult = PackageVersion\n\ntype Signature {\n  id: ID!\n  publicKey: PublicKey!\n  data: String!\n  createdAt: DateTime!\n}\n\ntype User {\n  \"\"\"Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.\"\"\"\n  username: String!\n  avatar(size: Int): String\n}\n\ninput VerifyInput {\n  token: String!\n  clientMutationId: String\n}\n\ntype VerifyPayload {\n  payload: GenericScalar\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 21,
+      "containsCycle": true,
+      "numDefinitions": 32
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-22T00:10:10Z",
+    "updated_at": "2019-07-17T22:16:22Z",
+    "pushed_at": "2019-07-16T20:12:02Z",
+    "issues": 35,
+    "watchers": 8,
+    "fork_count": 7,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 106,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 4,
+    "pull_requests_merged": 101,
+    "releases": 5,
+    "stargazers": 123
+  }
+}

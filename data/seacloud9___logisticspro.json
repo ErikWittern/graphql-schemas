@@ -1,0 +1,39 @@
+{
+  "repo_name": "logisticspro",
+  "repo_full_name": "seacloud9/logisticspro",
+  "repo_owner": "seacloud9",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "6442b18d6dd006627c083c886d5053a166caa255",
+      "url": "https://api.github.com/repositories/171988334/contents/server/src/schema.graphql?ref=e7fe6500494b6563fda046be72125631e86eb17a",
+      "git_url": "https://api.github.com/repositories/171988334/git/blobs/6442b18d6dd006627c083c886d5053a166caa255",
+      "html_url": "https://github.com/seacloud9/logisticspro/blob/e7fe6500494b6563fda046be72125631e86eb17a/server/src/schema.graphql",
+      "content": "type Query {\n  feed: [Post!]!\n  drafts: [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String): Post\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n}\n\ntype Post {\n  id: ID!\n  published: Boolean!\n  title: String!\n  content: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-22T03:29:25Z",
+    "updated_at": "2019-03-04T17:55:43Z",
+    "pushed_at": "2019-03-04T17:49:03Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

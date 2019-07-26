@@ -1,0 +1,55 @@
+{
+  "repo_name": "mango",
+  "repo_full_name": "benjamin-coleman/mango",
+  "repo_owner": "Benjamin-Coleman",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "1c08f85ef5b61b9823ad1ec1b9c4208768ac3eaf",
+      "url": "https://api.github.com/repositories/142875349/contents/server/src/schema.graphql?ref=e7a5ba6883a8dece324a438c57ff2b79b896c60c",
+      "git_url": "https://api.github.com/repositories/142875349/git/blobs/1c08f85ef5b61b9823ad1ec1b9c4208768ac3eaf",
+      "html_url": "https://github.com/Benjamin-Coleman/mango/blob/e7a5ba6883a8dece324a438c57ff2b79b896c60c/server/src/schema.graphql",
+      "content": "# import User from './generated/prisma.graphql'\n\ntype Query {\n  user(id: ID!): User\n  allUsers: [User]\n  me: User\n}\n\ntype User {\n  id: ID!\n  username: String\n  password: String\n}\n\ntype Mutation {\n  signup(username: String!, password: String!): AuthPayload!\n  login(username: String!, password: String!): AuthPayload!\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    },
+    {
+      "name": "prisma.graphql",
+      "path": "server/src/generated/prisma.graphql",
+      "sha": "f5af8dc60ecd57f120f9fb17829a90e476f3b8ff",
+      "url": "https://api.github.com/repositories/142875349/contents/server/src/generated/prisma.graphql?ref=e7a5ba6883a8dece324a438c57ff2b79b896c60c",
+      "git_url": "https://api.github.com/repositories/142875349/git/blobs/f5af8dc60ecd57f120f9fb17829a90e476f3b8ff",
+      "html_url": "https://github.com/Benjamin-Coleman/mango/blob/e7a5ba6883a8dece324a438c57ff2b79b896c60c/server/src/generated/prisma.graphql",
+      "content": "# source: http://localhost:4466\n# timestamp: Fri Aug 17 2018 12:57:38 GMT-0400 (Eastern Daylight Time)\n\ntype AggregateUser {\n  count: Int!\n}\n\ntype BatchPayload {\n  \"\"\"The number of nodes that have been affected by the Batch operation.\"\"\"\n  count: Long!\n}\n\n\"\"\"\nThe `Long` scalar type represents non-fractional signed whole numeric values.\nLong can represent values between -(2^63) and 2^63 - 1.\n\"\"\"\nscalar Long\n\ntype Mutation {\n  createUser(data: UserCreateInput!): User!\n  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User\n  deleteUser(where: UserWhereUniqueInput!): User\n  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!\n  updateManyUsers(data: UserUpdateInput!, where: UserWhereInput): BatchPayload!\n  deleteManyUsers(where: UserWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Query {\n  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!\n  user(where: UserWhereUniqueInput!): User\n  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!\n\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n}\n\ntype Subscription {\n  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload\n}\n\ntype User implements Node {\n  id: ID!\n  username: String!\n  password: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype UserConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [UserEdge]!\n  aggregate: AggregateUser!\n}\n\ninput UserCreateInput {\n  username: String!\n  password: String\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype UserEdge {\n  \"\"\"The item at the end of the edge.\"\"\"\n  node: User!\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\nenum UserOrderByInput {\n  id_ASC\n  id_DESC\n  username_ASC\n  username_DESC\n  password_ASC\n  password_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\ntype UserPreviousValues {\n  id: ID!\n  username: String!\n  password: String\n}\n\ntype UserSubscriptionPayload {\n  mutation: MutationType!\n  node: User\n  updatedFields: [String!]\n  previousValues: UserPreviousValues\n}\n\ninput UserSubscriptionWhereInput {\n  \"\"\"Logical AND on all given filters.\"\"\"\n  AND: [UserSubscriptionWhereInput!]\n\n  \"\"\"Logical OR on all given filters.\"\"\"\n  OR: [UserSubscriptionWhereInput!]\n\n  \"\"\"Logical NOT on all given filters combined by AND.\"\"\"\n  NOT: [UserSubscriptionWhereInput!]\n\n  \"\"\"\n  The subscription event gets dispatched when it's listed in mutation_in\n  \"\"\"\n  mutation_in: [MutationType!]\n\n  \"\"\"\n  The subscription event gets only dispatched when one of the updated fields names is included in this list\n  \"\"\"\n  updatedFields_contains: String\n\n  \"\"\"\n  The subscription event gets only dispatched when all of the field names included in this list have been updated\n  \"\"\"\n  updatedFields_contains_every: [String!]\n\n  \"\"\"\n  The subscription event gets only dispatched when some of the field names included in this list have been updated\n  \"\"\"\n  updatedFields_contains_some: [String!]\n  node: UserWhereInput\n}\n\ninput UserUpdateInput {\n  username: String\n  password: String\n}\n\ninput UserWhereInput {\n  \"\"\"Logical AND on all given filters.\"\"\"\n  AND: [UserWhereInput!]\n\n  \"\"\"Logical OR on all given filters.\"\"\"\n  OR: [UserWhereInput!]\n\n  \"\"\"Logical NOT on all given filters combined by AND.\"\"\"\n  NOT: [UserWhereInput!]\n  id: ID\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  id_not: ID\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  id_in: [ID!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  id_not_in: [ID!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  id_lt: ID\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  id_lte: ID\n\n  \"\"\"All values greater than the given value.\"\"\"\n  id_gt: ID\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  id_gte: ID\n\n  \"\"\"All values containing the given string.\"\"\"\n  id_contains: ID\n\n  \"\"\"All values not containing the given string.\"\"\"\n  id_not_contains: ID\n\n  \"\"\"All values starting with the given string.\"\"\"\n  id_starts_with: ID\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  id_not_starts_with: ID\n\n  \"\"\"All values ending with the given string.\"\"\"\n  id_ends_with: ID\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  id_not_ends_with: ID\n  username: String\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  username_not: String\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  username_in: [String!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  username_not_in: [String!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  username_lt: String\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  username_lte: String\n\n  \"\"\"All values greater than the given value.\"\"\"\n  username_gt: String\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  username_gte: String\n\n  \"\"\"All values containing the given string.\"\"\"\n  username_contains: String\n\n  \"\"\"All values not containing the given string.\"\"\"\n  username_not_contains: String\n\n  \"\"\"All values starting with the given string.\"\"\"\n  username_starts_with: String\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  username_not_starts_with: String\n\n  \"\"\"All values ending with the given string.\"\"\"\n  username_ends_with: String\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  username_not_ends_with: String\n  password: String\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  password_not: String\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  password_in: [String!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  password_not_in: [String!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  password_lt: String\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  password_lte: String\n\n  \"\"\"All values greater than the given value.\"\"\"\n  password_gt: String\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  password_gte: String\n\n  \"\"\"All values containing the given string.\"\"\"\n  password_contains: String\n\n  \"\"\"All values not containing the given string.\"\"\"\n  password_not_contains: String\n\n  \"\"\"All values starting with the given string.\"\"\"\n  password_starts_with: String\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  password_not_starts_with: String\n\n  \"\"\"All values ending with the given string.\"\"\"\n  password_ends_with: String\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  password_not_ends_with: String\n}\n\ninput UserWhereUniqueInput {\n  id: ID\n  username: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-30T12:53:47Z",
+    "updated_at": "2018-08-24T16:57:14Z",
+    "pushed_at": "2018-09-11T21:54:08Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

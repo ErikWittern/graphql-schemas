@@ -1,0 +1,41 @@
+{
+  "repo_name": "trailpack-apollo",
+  "repo_full_name": "matteozambon89/trailpack-apollo",
+  "repo_owner": "matteozambon89",
+  "repo_description": "GraphQL for Trails.JS powered by Apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/api/graphql/schema.graphql",
+      "sha": "bba4238bf4a1477fef5f0c2f989a4b3a5cd7fa50",
+      "url": "https://api.github.com/repositories/124308805/contents/test/api/graphql/schema.graphql?ref=74b120348d31bbdc92e29f32abdca939614e0eab",
+      "git_url": "https://api.github.com/repositories/124308805/git/blobs/bba4238bf4a1477fef5f0c2f989a4b3a5cd7fa50",
+      "html_url": "https://github.com/matteozambon89/trailpack-apollo/blob/74b120348d31bbdc92e29f32abdca939614e0eab/test/api/graphql/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Query {\n  posts: [Post!]!\n}\n\ntype Author {\n  id: ID!\n  name: String!\n  posts: [Post!]!\n}\n\ntype Post {\n  id: ID!\n  isPublished: Boolean!\n  title: String!\n  text: String!\n  author: Author!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-07T23:46:50Z",
+    "updated_at": "2018-03-07T23:47:13Z",
+    "pushed_at": "2018-03-07T23:47:12Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

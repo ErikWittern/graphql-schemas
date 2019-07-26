@@ -1,0 +1,39 @@
+{
+  "repo_name": "music",
+  "repo_full_name": "xinshangshangxin/music",
+  "repo_owner": "xinshangshangxin",
+  "repo_description": "每首歌只听最High部分的音乐播放器(支持酷狗/网易/虾米)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "song.graphql",
+      "path": "backend/src/graphqls/song.graphql",
+      "sha": "f3d8c74c4faf6e9845af359b256cfa9aa49de815",
+      "url": "https://api.github.com/repositories/169364541/contents/backend/src/graphqls/song.graphql?ref=ae4d3c659cbcb5041600a87cb7ede7f6b18cb931",
+      "git_url": "https://api.github.com/repositories/169364541/git/blobs/f3d8c74c4faf6e9845af359b256cfa9aa49de815",
+      "html_url": "https://github.com/xinshangshangxin/music/blob/ae4d3c659cbcb5041600a87cb7ede7f6b18cb931/backend/src/graphqls/song.graphql",
+      "content": "enum Provider {\n  kugou\n  netease\n  xiami\n}\n\nenum BitRate {\n  mid\n  high\n  sq\n  hq\n}\n\nenum Privilege {\n  deny\n  allow\n  audition\n  unknown\n}\n\nenum RankType {\n  new\n  hot\n}\n\ninput ISearchQuery {\n  keyword: String!\n  skip: Int\n  limit: Int\n}\n\ntype ISearchArtist {\n  id: String\n  name: String!\n}\ntype ISearchAlbum {\n  id: String\n  name: String\n  img: String\n}\n\ntype ISearchItem {\n  privilege: Privilege!\n  provider: Provider!\n  id: String!\n  name: String!\n  artists: [ISearchArtist]!\n  album: ISearchAlbum\n}\n\ntype IPeaks {\n  precision: Int!\n  data: [Float]!\n}\n\ntype SongDetail {\n  privilege: Privilege!\n  id: String!\n  name: String!\n  provider: Provider!\n  artists: [ISearchArtist]!\n  lrc: String\n  klyric: String\n  album: ISearchAlbum\n  peakStartTime: Float\n  peakDuration: Int\n  peaks: [IPeaks]\n}\n\ninput PeakInput {\n  duration: Int!\n  startTime: Float!\n}\n\ninput PeaksInput {\n  precision: Int!\n  data: [Float]!\n}\n\ninput PeakTimeInput {\n  id: String!\n  provider: Provider!\n  peaks: PeaksInput!\n  peak: PeakInput\n}\n\ntype Query {\n  search(keyword: String!, providers: [Provider]): [ISearchItem]\n  get(id: ID!, provider: Provider!, br: BitRate, peakDuration: Int): SongDetail\n  url(id: ID!, provider: Provider!, br: BitRate): String\n  rank(provider: Provider!, rankType: RankType): [ISearchItem]\n  playlist(provider: Provider!, id: String): [ISearchItem]\n  album(provider: Provider!, id: String): [ISearchItem]\n  parseUrl(url: String!): [ISearchItem]\n}\n\ntype Mutation {\n  triggerPeak(id: ID!, provider: Provider!): Boolean\n  addPeakTime(peakTime: PeakTimeInput!): Boolean\n  deletePeakTime(id: ID!, provider: Provider!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-06T06:30:55Z",
+    "updated_at": "2019-07-19T03:43:49Z",
+    "pushed_at": "2019-07-19T03:43:47Z",
+    "issues": 2,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 5,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 7
+  }
+}

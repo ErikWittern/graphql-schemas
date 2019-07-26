@@ -1,0 +1,41 @@
+{
+  "repo_name": "expo-push-server",
+  "repo_full_name": "coreline-agency/expo-push-server",
+  "repo_owner": "CoreLine-agency",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "graphql.graphql",
+      "path": "graphql.graphql",
+      "sha": "78b8ef7f399df41538f230ac1549a8a6f1f2b404",
+      "url": "https://api.github.com/repositories/156372436/contents/graphql.graphql?ref=03a6fb13845ac1066b93690411643f7092e9f9a6",
+      "git_url": "https://api.github.com/repositories/156372436/git/blobs/78b8ef7f399df41538f230ac1549a8a6f1f2b404",
+      "html_url": "https://github.com/CoreLine-agency/expo-push-server/blob/03a6fb13845ac1066b93690411643f7092e9f9a6/graphql.graphql",
+      "content": "type Channel {\n  id: EntityId!\n  name: String!\n  subscriptions: [TokenChannelSubscription!]!\n  notificationChannels: [NotificationChannel!]!\n}\n\ninput ChannelCreateInput {\n  name: String!\n}\n\ninput ChannelEditInput {\n  id: EntityId!\n  name: String\n}\n\ninput ChannelNestedInput {\n  id: EntityId\n  name: String\n}\n\n\"\"\"ID scalar type\"\"\"\nscalar EntityId\n\ntype File {\n  id: EntityId!\n  contentBase64: String!\n  url: String!\n  thumbUrl: String!\n}\n\ninput FileCreateInput {\n  contentBase64: String!\n}\n\ninput FileEditInput {\n  id: EntityId!\n  contentBase64: String\n}\n\n\"\"\"\nThe `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).\n\"\"\"\nscalar JSON\n\ntype LoginResponse {\n  token: String!\n  user: User!\n}\n\ntype Mutation {\n  emailRegister(input: UserCreateInput!): LoginResponse!\n  emailLogin(password: String!, email: String!): LoginResponse!\n  logout: Boolean!\n  facebookLogin(facebookAccessToken: String!): String!\n  googleLogin(googleAccessToken: String!): String!\n  createChannel(input: ChannelCreateInput!): Channel!\n  updateChannel(input: ChannelEditInput!): Channel!\n  deleteChannels(ids: [ID!]!): Boolean!\n  createFile(input: FileCreateInput!): File!\n  updateFile(input: FileEditInput!): File!\n  deleteFiles(ids: [ID!]!): Boolean!\n  createNotificationChannel(input: NotificationChannelCreateInput!): NotificationChannel!\n  updateNotificationChannel(input: NotificationChannelEditInput!): NotificationChannel!\n  deleteNotificationChannels(ids: [ID!]!): Boolean!\n  createNotification(input: NotificationCreateInput!): Notification!\n  updateNotification(input: NotificationEditInput!): Notification!\n  deleteNotifications(ids: [ID!]!): Boolean!\n  forgotPassword(email: String!): Boolean!\n  resetPassword(newPassword: String!, forgotPasswordCode: String!): LoginResponse!\n  changePassword(newPassword: String!, oldPassword: String!): Boolean!\n  createTokenChannelSubscription(input: TokenChannelSubscriptionCreateInput!): TokenChannelSubscription!\n  updateTokenChannelSubscription(input: TokenChannelSubscriptionEditInput!): TokenChannelSubscription!\n  deleteTokenChannelSubscriptions(ids: [ID!]!): Boolean!\n  createToken(input: TokenCreateInput!): Token!\n  updateToken(input: TokenEditInput!): Token!\n  deleteTokens(ids: [ID!]!): Boolean!\n  registerToken(channelsNames: [String!]!, pushToken: String!): Token!\n  createUser(input: UserCreateInput!): User!\n  updateUser(input: UserEditInput!): User!\n  deleteUsers(ids: [ID!]!): Boolean!\n}\n\ntype Notification {\n  id: EntityId!\n  title: String\n  body: String\n  priority: NotificationPriority!\n  sound: NotificationSound!\n  badge: Float\n  channelId: String\n  notificationChannels: [NotificationChannel!]!\n}\n\ntype NotificationChannel {\n  id: EntityId!\n  notification: Notification!\n  channel: Channel!\n}\n\ninput NotificationChannelCreateInput {\n  notification: NotificationNestedInput!\n  channel: ChannelNestedInput!\n}\n\ninput NotificationChannelEditInput {\n  id: EntityId!\n  notification: NotificationNestedInput\n  channel: ChannelNestedInput\n}\n\ninput NotificationCreateInput {\n  title: String\n  body: String\n  priority: NotificationPriority!\n  sound: NotificationSound!\n  badge: Float\n  channelId: String\n  channelsNames: [String!]!\n  data: JSON\n}\n\ninput NotificationEditInput {\n  id: EntityId!\n  title: String\n  body: String\n  priority: NotificationPriority\n  sound: NotificationSound\n  badge: Float\n  channelId: String\n}\n\ninput NotificationNestedInput {\n  id: EntityId\n  title: String\n  body: String\n  priority: NotificationPriority\n  sound: NotificationSound\n  badge: Float\n  channelId: String\n}\n\nenum NotificationPriority {\n  default\n  normal\n  high\n}\n\nenum NotificationSound {\n  default\n  none\n}\n\ntype Query {\n  channel(id: EntityId!): Channel!\n  channels: [Channel!]!\n  file(id: EntityId!): File!\n  files: [File!]!\n  notificationChannel(id: EntityId!): NotificationChannel!\n  notificationChannels: [NotificationChannel!]!\n  notification(id: EntityId!): Notification!\n  notifications: [Notification!]!\n  tokenChannelSubscription(id: EntityId!): TokenChannelSubscription!\n  tokenChannelSubscriptions: [TokenChannelSubscription!]!\n  token(id: EntityId!): Token!\n  tokens: [Token!]!\n  user(id: EntityId!): User!\n  users: [User!]!\n}\n\ntype Token {\n  id: EntityId!\n  content: String!\n  subscriptions: [TokenChannelSubscription!]!\n}\n\ntype TokenChannelSubscription {\n  id: EntityId!\n  token: Token!\n  channel: Channel!\n}\n\ninput TokenChannelSubscriptionCreateInput {\n  token: TokenNestedInput!\n  channel: ChannelNestedInput!\n}\n\ninput TokenChannelSubscriptionEditInput {\n  id: EntityId!\n  token: TokenNestedInput\n  channel: ChannelNestedInput\n}\n\ninput TokenCreateInput {\n  content: String!\n}\n\ninput TokenEditInput {\n  id: EntityId!\n  content: String\n}\n\ninput TokenNestedInput {\n  id: EntityId\n  content: String\n}\n\ntype User {\n  id: EntityId!\n  email: String\n  firstName: String!\n  lastName: String!\n  fullName: String\n}\n\ninput UserCreateInput {\n  email: String\n  password: String!\n  firstName: String!\n  lastName: String!\n  fullName: String\n}\n\ninput UserEditInput {\n  id: EntityId!\n  email: String\n  password: String\n  firstName: String\n  lastName: String\n  fullName: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": true,
+      "numDefinitions": 31
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-06T11:20:55Z",
+    "updated_at": "2019-04-11T08:45:46Z",
+    "pushed_at": "2019-04-11T08:45:45Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "voyager-chat-server",
+  "repo_full_name": "voyager-gold/voyager-chat-server",
+  "repo_owner": "voyager-gold",
+  "repo_description": "Powered by Apollo GraphQL & Subscription",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/graphql/schema.graphql",
+      "sha": "f9443ae06fc5fc3ca5389bad906b112fcb149ee2",
+      "url": "https://api.github.com/repositories/184850941/contents/server/graphql/schema.graphql?ref=0a2eadd8e33444a654c534a1cc723684c929b3a4",
+      "git_url": "https://api.github.com/repositories/184850941/git/blobs/f9443ae06fc5fc3ca5389bad906b112fcb149ee2",
+      "html_url": "https://github.com/voyager-gold/voyager-chat-server/blob/0a2eadd8e33444a654c534a1cc723684c929b3a4/server/graphql/schema.graphql",
+      "content": "scalar Date\n\ntype User {\n  id: ID!\n  lastIP: String\n  lastLoginAt: Date\n  username: String!\n  createdAt: Date!\n  channels: [Channel]\n}\n\ntype Channel {\n  id: ID!\n  name: String!\n  createdAt: Date!\n  participants: [User]\n  participantCount: Int\n  messages(limit: Int!): [Message]\n}\n\ntype Message {\n  id: ID!\n  indexInChannel: Int\n  createdAt: Date!\n  createdBy: User!\n  channel: Channel!\n  text: String!\n}\n\ntype JoinResult {\n  user: User!\n  channel: Channel!\n}\n\ntype Query {\n  channels: [Channel]\n  channel(\n    channelID: ID!\n  ): Channel\n  messagesForChannel(\n    channelID: ID!\n  ): [Message]\n  users: [User]\n  user(id: ID!): User\n}\n\ntype Mutation {\n  typing(\n    userID: ID!,    \n    channelID: ID!\n  ): Boolean\n  join(\n    username: String!,\n    channelName: String!\n  ): JoinResult\n  messageNew(\n    channelID: ID!, \n    userID: ID!,\n    text: String!\n  ): Message\n}\n\ntype Subscription {\n  onChannelAdded: Channel \n  onTypingIndicatorChanged(\n    channelID: ID!\n  ): [User]\n  onMessageAdded(\n    channelID: ID!\n  ): Message\n  onMemberJoin(\n    channelID: ID!\n  ): User\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-04T04:14:57Z",
+    "updated_at": "2019-05-04T04:31:22Z",
+    "pushed_at": "2019-05-04T04:31:21Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

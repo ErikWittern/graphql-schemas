@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-pokedex",
+  "repo_full_name": "sevinf/graphql-pokedex",
+  "repo_owner": "SevInf",
+  "repo_description": "Pokedex graphql schema",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "b5c5b278d6cfcf78145c24ee5d7bc923fc369bc6",
+      "url": "https://api.github.com/repositories/85918319/contents/schema.graphql?ref=a4be4c5cbcc43756ebb66f578fd8081a762978b6",
+      "git_url": "https://api.github.com/repositories/85918319/git/blobs/b5c5b278d6cfcf78145c24ee5d7bc923fc369bc6",
+      "html_url": "https://github.com/SevInf/graphql-pokedex/blob/a4be4c5cbcc43756ebb66f578fd8081a762978b6/schema.graphql",
+      "content": "interface Node {\n    id: ID!\n}\n\ntype Pokemon implements Node {\n    id: ID!\n    name: String\n    weight: Int\n    height: Int\n    spriteUrl: String\n}\n\ntype PokemonConnection {\n    nodes: [Pokemon]\n    pageInfo: PageInfo\n}\n\ntype PageInfo {\n    endCursor: String\n}\n\ntype Trainer implements Node {\n    id: ID!\n    name: String\n    age: Int\n    hometown: String\n    region: String\n    eyeColor: String\n    hairColor: String\n    caughtPokemonCount: Int!\n    caughtPokemon(offset: Int = 0, limit: Int = 10): [Pokemon]\n    caughtPokemonConnection(first: Int = 10, after: String = null): PokemonConnection\n}\n\ntype Query {\n    node(id: ID!): Node\n    currentTrainer: Trainer,\n    pokemonByName(name: String): Pokemon\n    pokemon(id: ID!): Pokemon\n}\n\ntype Mutation {\n    updateName(name: String!): Trainer\n    freePokemon(id: ID!): Pokemon\n}\n\nschema {\n    query: Query\n    mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-23T07:11:27Z",
+    "updated_at": "2018-06-25T12:50:14Z",
+    "pushed_at": "2018-06-25T12:50:12Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

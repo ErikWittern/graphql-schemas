@@ -1,0 +1,42 @@
+{
+  "repo_name": "ml-react",
+  "repo_full_name": "haroldsanchezb/ml-react",
+  "repo_owner": "haroldSanchezb",
+  "repo_description": "Relay App",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "bf38a4e53671692319e6fa60c4cf60a5e799ea49",
+      "url": "https://api.github.com/repositories/92236581/contents/schema.graphql?ref=60912ad660c6f209b2c276cda5ceed608bc9c30e",
+      "git_url": "https://api.github.com/repositories/92236581/git/blobs/bf38a4e53671692319e6fa60c4cf60a5e799ea49",
+      "html_url": "https://github.com/haroldSanchezb/ml-react/blob/60912ad660c6f209b2c276cda5ceed608bc9c30e/schema.graphql",
+      "content": "type Category {\n  id: String\n  name: String\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype Price {\n  currency: String\n  amount: Int\n  decimals: Int\n}\n\ntype Product implements Node {\n  # The ID of an object\n  id: ID!\n  productId: String\n  title: String\n  description: String\n  price: Price\n  thumbnail: String\n  picture: String\n  condition: String\n  shipping: Boolean\n  city: String\n  sold: Int\n  categories: [Category]\n}\n\ntype Query {\n  search(id: ID!): Search\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  product(id: ID!): Product\n}\n\ntype Search implements Node {\n  # The ID of an object\n  id: ID!\n  query: String\n  categories: [Category]\n  items: [Product]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-24T01:26:58Z",
+    "updated_at": "2017-05-28T06:25:27Z",
+    "pushed_at": "2017-05-30T08:40:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

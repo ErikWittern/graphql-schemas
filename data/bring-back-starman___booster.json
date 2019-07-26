@@ -1,0 +1,58 @@
+{
+  "repo_name": "booster",
+  "repo_full_name": "bring-back-starman/booster",
+  "repo_owner": "bring-back-starman",
+  "repo_description": "[NodeJS] Bring Back Starman API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/mission/schema.graphql",
+      "sha": "9cccb24022a8f673f32ef968a90cebfb7be1b69f",
+      "url": "https://api.github.com/repositories/122732299/contents/src/graphql/mission/schema.graphql?ref=0fbfa737efd2b811c4bcbb7bd38864dd618760dd",
+      "git_url": "https://api.github.com/repositories/122732299/git/blobs/9cccb24022a8f673f32ef968a90cebfb7be1b69f",
+      "html_url": "https://github.com/bring-back-starman/booster/blob/0fbfa737efd2b811c4bcbb7bd38864dd618760dd/src/graphql/mission/schema.graphql",
+      "content": "type Mission {\n    id: ID!\n    name: String\n    vehicle: Vehicle\n    launchNumber: Int\n    missionNumber: Int\n    date: DateRange\n    outcome: String\n    patchUrl: String\n    launchVideo: String\n    description: String\n    orbit: String\n}\n\ntype DateRange {\n    from: String\n    to: String\n    type: String\n}\n\ninput NewMission {\n    id: ID\n    name: String\n    vehicle: Vehicle\n    launchNumber: Int\n    missionNumber: Int\n    date: NewDateRange\n    outcome: String\n    patchUrl: String\n    launchVideo: String\n    description: String\n    orbit: String\n}\n\ninput NewDateRange {\n    from: String\n    to: String\n    type: String\n}\n\nenum MissionType {\n    PAST\n    UPCOMING\n    ALL\n}\n\nenum Vehicle {\n    F1\n    F5\n    F9\n    FH\n}\n\nenum OrderType {\n    ASC\n    DESC\n}\n\ntype Query {\n    mission(id: ID!): Mission\n    missions(limit: Int = 10, offset: Int, page: Int = 1, type: MissionType = UPCOMING, order: OrderType = DESC): [Mission]\n}\n\ntype Mutation {\n    createMission(mission: NewMission!): Mission\n    deleteMission(id: ID!): Boolean\n    deleteMissions: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/orbit/schema.graphql",
+      "sha": "3f2514394904827f54576284703fe973ae7abdc0",
+      "url": "https://api.github.com/repositories/122732299/contents/src/graphql/orbit/schema.graphql?ref=0fbfa737efd2b811c4bcbb7bd38864dd618760dd",
+      "git_url": "https://api.github.com/repositories/122732299/git/blobs/3f2514394904827f54576284703fe973ae7abdc0",
+      "html_url": "https://github.com/bring-back-starman/booster/blob/0fbfa737efd2b811c4bcbb7bd38864dd618760dd/src/graphql/orbit/schema.graphql",
+      "content": "type Orbit {\n    acronym: String!\n    name: String\n    altitudeKm: Altitude\n    description: String\n}\n\ntype Altitude {\n    min: Int\n    max: Int\n}\n\ninput NewOrbit {\n    acronym: String!\n    name: String\n    altitudeKm: NewAltitude\n    description: String\n}\n\ninput NewAltitude {\n    min: Int\n    max: Int\n}\n\ntype Query {\n    orbit(acronym: String!): Orbit\n    orbits: [Orbit]\n}\n\ntype Mutation {\n    createOrbit(orbit: NewOrbit!): Orbit\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-24T10:55:50Z",
+    "updated_at": "2018-06-11T09:23:21Z",
+    "pushed_at": "2018-03-22T19:16:33Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

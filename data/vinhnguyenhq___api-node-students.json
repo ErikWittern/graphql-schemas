@@ -1,0 +1,39 @@
+{
+  "repo_name": "api-node-students",
+  "repo_full_name": "vinhnguyenhq/api-node-students",
+  "repo_owner": "vinhnguyenhq",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.graphql",
+      "path": "src/api/resources/user/user.graphql",
+      "sha": "724e23011e0d19c753979a4d4815ae0fbb46319d",
+      "url": "https://api.github.com/repositories/121775459/contents/src/api/resources/user/user.graphql?ref=41e967badf781181db8b9fded928e90f17ca7915",
+      "git_url": "https://api.github.com/repositories/121775459/git/blobs/724e23011e0d19c753979a4d4815ae0fbb46319d",
+      "html_url": "https://github.com/vinhnguyenhq/api-node-students/blob/41e967badf781181db8b9fded928e90f17ca7915/src/api/resources/user/user.graphql",
+      "content": "type User {\n  username: String!\n  createdAt: String!\n  updatedAt: String!\n}\n\ninput UpdatedUser {\n  username: String!\n}\n\ntype Query {\n  getMe: User!\n}\n\ntype Mutation {\n  updateMe(input: UpdatedUser!): User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-16T16:49:18Z",
+    "updated_at": "2018-02-16T17:29:34Z",
+    "pushed_at": "2018-02-16T17:29:33Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

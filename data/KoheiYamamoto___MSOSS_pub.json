@@ -1,0 +1,41 @@
+{
+  "repo_name": "MSOSS_pub",
+  "repo_full_name": "koheiyamamoto/msoss_pub",
+  "repo_owner": "KoheiYamamoto",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "app/schema.gql",
+      "sha": "881122c49da45ec05f966f1ba64246144f0c3948",
+      "url": "https://api.github.com/repositories/160940121/contents/app/schema.gql?ref=4a708b93e4b873e28756c060470ccbba8f8744fc",
+      "git_url": "https://api.github.com/repositories/160940121/git/blobs/881122c49da45ec05f966f1ba64246144f0c3948",
+      "html_url": "https://github.com/KoheiYamamoto/MSOSS_pub/blob/4a708b93e4b873e28756c060470ccbba8f8744fc/app/schema.gql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype CreateMessage {\n  message: Message\n}\n\ninput CreateMessageInput {\n  myUniqueId: String!\n  targetUniqueId: String!\n  text: String!\n  datetime: DateTime!\n}\n\ntype CreateUser {\n  user: User\n}\n\ninput CreateUserInput {\n  accountId: ID!\n  password: String!\n  username: String!\n  image: String\n  expertise: [ExpertiseInput]\n  pLanguage: [PLanguageInput]\n}\n\nscalar DateTime\n\ntype Expertise implements Node {\n  id: ID!\n  expertise: String\n  userId: String\n  user: User\n}\n\ntype ExpertiseConnection {\n  pageInfo: PageInfo!\n  edges: [ExpertiseEdge]!\n}\n\ntype ExpertiseEdge {\n  node: Expertise\n  cursor: String!\n}\n\ninput ExpertiseInput {\n  expertise: String!\n}\n\ntype Location implements Node {\n  uniqueId: String!\n  latitude: Float\n  longitude: Float\n  datetime: DateTime\n  id: ID!\n}\n\ntype Message implements Node {\n  id: ID!\n  myUniqueId: String\n  targetUniqueId: String\n  text: String\n  datetime: DateTime\n}\n\ntype MessageConnection {\n  pageInfo: PageInfo!\n  edges: [MessageEdge]!\n}\n\ntype MessageEdge {\n  node: Message\n  cursor: String!\n}\n\ntype Mutation {\n  createUser(input: CreateUserInput!): CreateUser\n  updateUser(input: UpdateUserInput!): UpdateUser\n  createMessage(input: CreateMessageInput!): CreateMessage\n  updateLocation(input: UpdateLocationInput!): UpdateLocation\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PLanguage implements Node {\n  id: ID!\n  language: String\n  userId: String!\n  user: User\n}\n\ntype PLanguageConnection {\n  pageInfo: PageInfo!\n  edges: [PLanguageEdge]!\n}\n\ntype PLanguageEdge {\n  node: PLanguage\n  cursor: String!\n}\n\ninput PLanguageInput {\n  language: String!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  user(uniqueId: String): User\n  message(myUniqueId: String, targetUniqueId: String, before: String, after: String, first: Int, last: Int): MessageConnection\n}\n\ntype UpdateLocation {\n  location: Location\n}\n\ninput UpdateLocationInput {\n  uniqueId: String!\n  latitude: Float!\n  longitude: Float!\n  datetime: DateTime!\n}\n\ntype UpdateUser {\n  user: User\n}\n\ninput UpdateUserInput {\n  uniqueId: String!\n  accountId: String\n  password: String\n  username: String\n  image: String\n  expertise: [ExpertiseInput]\n  pLanguage: [PLanguageInput]\n}\n\ntype User implements Node {\n  accountId: String\n  password: String\n  username: String\n  image: String\n  uniqueId: String!\n  expertise(before: String, after: String, first: Int, last: Int): ExpertiseConnection\n  pLanguage(before: String, after: String, first: Int, last: Int): PLanguageConnection\n  id: ID!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": true,
+      "numDefinitions": 27
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-08T13:04:27Z",
+    "updated_at": "2019-02-11T13:37:18Z",
+    "pushed_at": "2019-02-11T13:48:45Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

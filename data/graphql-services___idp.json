@@ -1,0 +1,42 @@
+{
+  "repo_name": "idp",
+  "repo_full_name": "graphql-services/idp",
+  "repo_owner": "graphql-services",
+  "repo_description": "Identity provider service for authenticating users based on email/password credentials",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "7a06f818daf1bb435080223e7da80930c059f67a",
+      "url": "https://api.github.com/repositories/170139961/contents/schema.graphql?ref=0b91a715e0011d33a053d11695e58955c7bbc2aa",
+      "git_url": "https://api.github.com/repositories/170139961/git/blobs/7a06f818daf1bb435080223e7da80930c059f67a",
+      "html_url": "https://github.com/graphql-services/idp/blob/0b91a715e0011d33a053d11695e58955c7bbc2aa/schema.graphql",
+      "content": "scalar Time\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n\nenum UserGender {\n  male\n  female\n}\n\ntype User {\n  id: ID!\n  email: String!\n  passwordHash: String!\n  email_verified: Boolean!\n  # given_name: String\n  # family_name: String\n  # middle_name: String\n  # nickname: String\n  # preferred_username: String\n  # profile: String\n  # picture: String\n  # website: String\n  # gender: UserGender\n  # birthdate: Date\n  # zoneinfo: String\n  # locale: String\n  # phone_number: String\n  # phone_number_verified: String\n  # address: String\n  updated_at: Time!\n}\n\ntype Query {\n  # find user by email (also check if given email address isn't taken)\n  getUser(email: String!): User\n  # check credentials and return user\n  login(email: String!, password: String!): User!\n}\n\ninput UserInput {\n  email: String!\n  password: String!\n  given_name: String\n  family_name: String\n  middle_name: String\n}\n\ntype Mutation {\n  # https://auth0.com/docs/connections/database/custom-db/templates/create#javascript\n  createUser(input: UserInput!): User!\n  deleteUser(id: ID!): User!\n\n  # mask user as verified\n  verifyUser(email: String!): User!\n  # change password for given user (user login to check if previous password is valid)\n  changePassword(email: String!, newPassword: String!): User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-11T14:12:18Z",
+    "updated_at": "2019-07-04T02:46:55Z",
+    "pushed_at": "2019-07-04T02:46:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

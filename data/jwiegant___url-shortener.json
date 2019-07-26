@@ -1,0 +1,68 @@
+{
+  "repo_name": "url-shortener",
+  "repo_full_name": "jwiegant/url-shortener",
+  "repo_owner": "jwiegant",
+  "repo_description": "AWS AppSync, GraphQL, DynamoDB, Lambda, React, Redux URL Shortener project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "3/backend/schema.graphql",
+      "sha": "e1fa61a62ce536d7c1852d8539e11710e96db89d",
+      "url": "https://api.github.com/repositories/157834868/contents/3/backend/schema.graphql?ref=8e11dc493e2db963f6ed4ecabb488d80e668647f",
+      "git_url": "https://api.github.com/repositories/157834868/git/blobs/e1fa61a62ce536d7c1852d8539e11710e96db89d",
+      "html_url": "https://github.com/jwiegant/url-shortener/blob/8e11dc493e2db963f6ed4ecabb488d80e668647f/3/backend/schema.graphql",
+      "content": "# Schema\nschema {\n  query: Query\n  mutation: Mutation\n}\n\n# Queries\ntype Query {\n  # Query to get all the items of the logged in user with support for paging\n  getItems(limit: Int, nextToken: String): ItemConnection\n}\n\n# Paged item result\ntype ItemConnection {\n  items: [Item]\n  nextToken: String\n}\n\n# Mutations\ntype Mutation {\n  createItem(url: String!): Item\n}\n\n# Single item (our DynamoDB row)\ntype Item {\n  item_counter: Int\n  created_at: Int\n  last_visit: Int\n  slug: String\n  url: String\n  user_id: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "1/backend/schema.graphql",
+      "sha": "e1fa61a62ce536d7c1852d8539e11710e96db89d",
+      "url": "https://api.github.com/repositories/157834868/contents/1/backend/schema.graphql?ref=034f84f1d3cdbb64bec3052bb126dafc23425433",
+      "git_url": "https://api.github.com/repositories/157834868/git/blobs/e1fa61a62ce536d7c1852d8539e11710e96db89d",
+      "html_url": "https://github.com/jwiegant/url-shortener/blob/034f84f1d3cdbb64bec3052bb126dafc23425433/1/backend/schema.graphql",
+      "content": "# Schema\nschema {\n  query: Query\n  mutation: Mutation\n}\n\n# Queries\ntype Query {\n  # Query to get all the items of the logged in user with support for paging\n  getItems(limit: Int, nextToken: String): ItemConnection\n}\n\n# Paged item result\ntype ItemConnection {\n  items: [Item]\n  nextToken: String\n}\n\n# Mutations\ntype Mutation {\n  createItem(url: String!): Item\n}\n\n# Single item (our DynamoDB row)\ntype Item {\n  item_counter: Int\n  created_at: Int\n  last_visit: Int\n  slug: String\n  url: String\n  user_id: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "2/backend/schema.graphql",
+      "sha": "e1fa61a62ce536d7c1852d8539e11710e96db89d",
+      "url": "https://api.github.com/repositories/157834868/contents/2/backend/schema.graphql?ref=bb534c5857a71431afc280988706648012436d60",
+      "git_url": "https://api.github.com/repositories/157834868/git/blobs/e1fa61a62ce536d7c1852d8539e11710e96db89d",
+      "html_url": "https://github.com/jwiegant/url-shortener/blob/bb534c5857a71431afc280988706648012436d60/2/backend/schema.graphql",
+      "content": "# Schema\nschema {\n  query: Query\n  mutation: Mutation\n}\n\n# Queries\ntype Query {\n  # Query to get all the items of the logged in user with support for paging\n  getItems(limit: Int, nextToken: String): ItemConnection\n}\n\n# Paged item result\ntype ItemConnection {\n  items: [Item]\n  nextToken: String\n}\n\n# Mutations\ntype Mutation {\n  createItem(url: String!): Item\n}\n\n# Single item (our DynamoDB row)\ntype Item {\n  item_counter: Int\n  created_at: Int\n  last_visit: Int\n  slug: String\n  url: String\n  user_id: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-16T08:15:45Z",
+    "updated_at": "2019-05-26T02:38:53Z",
+    "pushed_at": "2019-01-05T19:27:30Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

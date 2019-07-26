@@ -1,0 +1,39 @@
+{
+  "repo_name": "prisma",
+  "repo_full_name": "tarun-developer/prisma",
+  "repo_owner": "tarun-developer",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "cluster.graphql",
+      "path": "cli/packages/prisma-cli-core/src/test/cluster.graphql",
+      "sha": "6cc1bc2dc4c7dc05e5058b0999bc9f9a0598e222",
+      "url": "https://api.github.com/repositories/149333680/contents/cli/packages/prisma-cli-core/src/test/cluster.graphql?ref=bc54d0f312d362d0e2f635ef066f706cbd66355f",
+      "git_url": "https://api.github.com/repositories/149333680/git/blobs/6cc1bc2dc4c7dc05e5058b0999bc9f9a0598e222",
+      "html_url": "https://github.com/tarun-developer/prisma/blob/bc54d0f312d362d0e2f635ef066f706cbd66355f/cli/packages/prisma-cli-core/src/test/cluster.graphql",
+      "content": "input AddProjectInput {\n  name: String!\n  stage: String!\n  secrets: [String!]\n  clientMutationId: String\n}\n\ntype AddProjectPayload {\n  project: Project\n  clientMutationId: String\n}\n\n# Information about the deployed cluster\ntype ClusterInfo {\n  version: String!\n  commit: String!\n}\n\ntype CreateEnum implements MigrationStep {\n  name: String!\n  values: [String!]!\n  type: String!\n}\n\ntype CreateField implements MigrationStep {\n  model: String!\n  name: String!\n  typeName: String!\n  isRequired: Boolean!\n  isList: Boolean!\n  unique: Boolean!\n  relation: String\n  default: String\n  enum: String\n  type: String!\n}\n\ntype CreateModel implements MigrationStep {\n  name: String!\n  type: String!\n}\n\ntype CreateRelation implements MigrationStep {\n  name: String!\n  leftModel: String!\n  rightModel: String!\n  type: String!\n}\n\nscalar DateTime\n\ntype DeleteEnum implements MigrationStep {\n  name: String!\n  type: String!\n}\n\ntype DeleteField implements MigrationStep {\n  model: String!\n  name: String!\n  type: String!\n}\n\ntype DeleteModel implements MigrationStep {\n  name: String!\n  type: String!\n}\n\ninput DeleteProjectInput {\n  name: String!\n  stage: String!\n  clientMutationId: String\n}\n\ntype DeleteProjectPayload {\n  project: Project\n  clientMutationId: String\n}\n\ntype DeleteRelation implements MigrationStep {\n  name: String!\n  type: String!\n}\n\ninput DeployInput {\n  name: String!\n  stage: String!\n  types: String!\n  dryRun: Boolean\n  secrets: [String!]\n  subscriptions: [FunctionInput!]\n  force: Boolean\n  clientMutationId: String\n}\n\ntype DeployPayload {\n  errors: [SchemaError!]!\n  migration: Migration\n  warnings: [SchemaWarning!]!\n  clientMutationId: String\n}\n\ninput FunctionInput {\n  name: String!\n  query: String!\n  url: String!\n  headers: [HeaderInput!]!\n}\n\ninput HeaderInput {\n  name: String!\n  value: String!\n}\n\n# This is a migration\ntype Migration {\n  projectId: String!\n  revision: Int!\n  status: String!\n  applied: Int!\n  rolledBack: Int!\n  steps: [MigrationStep!]!\n  errors: [String!]!\n  startedAt: DateTime\n  finishedAt: DateTime\n}\n\n# This is a migration step.\ninterface MigrationStep {\n  type: String!\n}\n\ntype Mutation {\n  deploy(input: DeployInput!): DeployPayload\n  addProject(input: AddProjectInput!): AddProjectPayload\n  deleteProject(input: DeleteProjectInput!): DeleteProjectPayload\n}\n\n# This is a project\ntype Project {\n  metricKey: String!\n  name: String!\n  stage: String!\n}\n\ntype Query {\n  # Shows the status of the next migration in line to be applied to the project.\n  # If no such migration exists, it shows the last applied migration.\n  migrationStatus(name: String!, stage: String!): Migration!\n\n  # Shows all projects the caller has access to.\n  listProjects: [Project!]!\n\n  # Shows all migrations for the project. Debug query, will likely be removed in the future.\n  listMigrations(name: String!, stage: String!): [Migration!]!\n\n  # Gets a project by name and stage.\n  project(name: String!, stage: String!): Project!\n\n  # Information about the cluster\n  clusterInfo: ClusterInfo!\n\n  # generates a token for the given project\n  generateProjectToken(name: String!, stage: String!): String!\n}\n\n# An error that occurred while validating the schema.\ntype SchemaError {\n  type: String!\n  field: String\n  description: String!\n}\n\n# A warning created while validating the schema against existing data.\ntype SchemaWarning {\n  type: String!\n  field: String\n  description: String!\n}\n\ntype UpdateEnum implements MigrationStep {\n  name: String!\n  newName: String\n  values: [String!]\n  type: String!\n}\n\ntype UpdateField implements MigrationStep {\n  model: String!\n  name: String!\n  newName: String\n  typeName: String\n  isRequired: Boolean\n  isList: Boolean\n  unique: Boolean\n  relation: String\n  default: String\n  enum: String\n  type: String!\n}\n\ntype UpdateModel implements MigrationStep {\n  name: String!\n  newName: String!\n  type: String!\n}\n\ntype UpdateRelation implements MigrationStep {\n  name: String!\n  newName: String\n  modelAId: String\n  modelBId: String\n  type: String!\n}\n\ntype UpdateSecrets implements MigrationStep {\n  message: String!\n  type: String!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 30
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-18T18:22:10Z",
+    "updated_at": "2018-09-18T18:31:38Z",
+    "pushed_at": "2018-09-18T18:31:34Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

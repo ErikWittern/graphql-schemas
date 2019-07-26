@@ -1,0 +1,57 @@
+{
+  "repo_name": "bwlines-server",
+  "repo_full_name": "dhayaec/bwlines-server",
+  "repo_owner": "dhayaec",
+  "repo_description": "Book store graphql api using typescript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "category.graphql",
+      "path": "src/modules/category/category.graphql",
+      "sha": "6b052c3555d53ad34b0dfbb988cc86c8f67e7d64",
+      "url": "https://api.github.com/repositories/144705795/contents/src/modules/category/category.graphql?ref=4c6b3b84190d0d3a59aff5823f034c6959f17705",
+      "git_url": "https://api.github.com/repositories/144705795/git/blobs/6b052c3555d53ad34b0dfbb988cc86c8f67e7d64",
+      "html_url": "https://github.com/dhayaec/bwlines-server/blob/4c6b3b84190d0d3a59aff5823f034c6959f17705/src/modules/category/category.graphql",
+      "content": "type Query {\n  listMainCategories: [CategoryResponse]\n  getChildCategories(id: ID!): NestedChildren\n  getBreadCrumbPath(id: ID!): BreadCrumb\n  getCategoryById(id: ID!): CategoryResponse\n}\n\ntype Mutation {\n  addCategory(name: String!, parentId: ID): CategoryResponse\n}\n\ntype CategoryResponse {\n  id: ID\n  name: String\n  slug: String\n}\n\ntype NestedChildren {\n  id: ID\n  name: String\n  slug: String\n  children: [NestedChildren]\n}\n\ntype BreadCrumb {\n  id: ID\n  name: String\n  slug: String\n  parent: BreadCrumb\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/modules/user/user.graphql",
+      "sha": "539157201c702589a0f0884e5406c01f25bd9b4c",
+      "url": "https://api.github.com/repositories/144705795/contents/src/modules/user/user.graphql?ref=03290909a3e071748c58af02bdf7931ec4e660d2",
+      "git_url": "https://api.github.com/repositories/144705795/git/blobs/539157201c702589a0f0884e5406c01f25bd9b4c",
+      "html_url": "https://github.com/dhayaec/bwlines-server/blob/03290909a3e071748c58af02bdf7931ec4e660d2/src/modules/user/user.graphql",
+      "content": "type Query {\n  me: UserResponse\n  getUser(id: ID!): UserResponse\n  listUsers(isAdmin: Boolean, page: Int): [UserResponse]\n}\n\ntype Mutation {\n  register(\n    name: String!\n    email: String!\n    password: String!\n    mobile: String\n    admin: Boolean\n  ): UserResponse\n  login(email: String!, password: String!): UserResponse\n  logout: Boolean\n  resendVerifySignup: Boolean\n  sendResetPassword(email: String!): Boolean\n  verifyResetPassword(\n    token: String!\n    password: String!\n    confirmPassword: String!\n  ): UserResponse\n  changePassword(oldPassword: String!, password: String!): UserResponse\n  changeEmail(email: String!): UserResponse\n}\n\ntype Animal {\n  kind: String!\n}\n\ntype UserResponse {\n  id: ID\n  name: String\n  email: String\n  mobile: String\n}\n\ntype Error {\n  path: String!\n  message: String!\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  password: String!\n  mobile: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-14T10:34:16Z",
+    "updated_at": "2018-09-14T13:29:04Z",
+    "pushed_at": "2018-09-14T13:29:03Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "mst-gql",
+  "repo_full_name": "mobxjs/mst-gql",
+  "repo_owner": "mobxjs",
+  "repo_description": "Bindings for mobx-state-tree and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/3-twitter-clone/src/server/schema.graphql",
+      "sha": "47d3db05572397ddf14e71aae636e0d0c02dbe40",
+      "url": "https://api.github.com/repositories/185248649/contents/examples/3-twitter-clone/src/server/schema.graphql?ref=ffb3dbde1a62323f5c5066b25b5a442a27d2f598",
+      "git_url": "https://api.github.com/repositories/185248649/git/blobs/47d3db05572397ddf14e71aae636e0d0c02dbe40",
+      "html_url": "https://github.com/mobxjs/mst-gql/blob/ffb3dbde1a62323f5c5066b25b5a442a27d2f598/examples/3-twitter-clone/src/server/schema.graphql",
+      "content": "type User {\n  id: ID\n  name: String!\n  avatar: String!\n}\ntype Message {\n  id: ID\n  timestamp: Float!\n  user: User!\n  text: String!\n  likes: [User!]\n  replies: [Reply!]\n}\ntype Reply {\n  id: ID\n  timestamp: Float!\n  user: User!\n  text: String!\n  likes: [User!]\n}\ntype Query {\n  messages(offset: ID, count: Int): [Message]\n  message(id: ID!): Message\n  me: User\n}\ntype Subscription {\n  newMessages: Message\n}\ntype Mutation {\n  changeName(id: ID!, name: String!): User\n  like(msg: ID!, user: ID!): Message\n  postTweet(text: String!, user: ID!, replyTo: ID): Message\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-06T18:17:04Z",
+    "updated_at": "2019-07-19T15:25:49Z",
+    "pushed_at": "2019-07-18T21:41:14Z",
+    "issues": 31,
+    "watchers": 17,
+    "fork_count": 21,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 28,
+    "pull_requests_open": 6,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 21,
+    "releases": 0,
+    "stargazers": 225
+  }
+}

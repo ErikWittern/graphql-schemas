@@ -1,0 +1,111 @@
+{
+  "repo_name": "airstay",
+  "repo_full_name": "vivekimsit/airstay",
+  "repo_owner": "vivekimsit",
+  "repo_description": "Airbnb clone",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/message/find/schema.graphql",
+      "sha": "a56b695cbb312aefdc8175b5c4eb0c3d94e92109",
+      "url": "https://api.github.com/repositories/138075155/contents/packages/server/src/modules/message/find/schema.graphql?ref=a768e15d807c92d49542c2e52b7c62ebbf253f32",
+      "git_url": "https://api.github.com/repositories/138075155/git/blobs/a56b695cbb312aefdc8175b5c4eb0c3d94e92109",
+      "html_url": "https://github.com/vivekimsit/airstay/blob/a768e15d807c92d49542c2e52b7c62ebbf253f32/packages/server/src/modules/message/find/schema.graphql",
+      "content": "type Message {\n  text: String!\n  user: User!\n  listingId: String!\n}\n\ntype Query {\n  messages(listingId: String!): [Message!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/vivekimsit/airstay/blob/a768e15d807c92d49542c2e52b7c62ebbf253f32/packages/server/src/modules/message/find/schema.graphql:\ntype Message {\n  text: String!\n  user: User!\n  listingId: String!\n}\n\ntype Query {\n  messages(listingId: String!): [Message!]!\n}\n\n# https://github.com/vivekimsit/airstay/blob/3fda468307c9e8b57028d3bfe785c16f9fc31207/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: ID!\n  email: String!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "packages/server/src/modules/user/shared/User.graphql",
+      "sha": "ab5f3f3ef90bcc0d84c785b1fa0c4a2abb354f5b",
+      "url": "https://api.github.com/repositories/138075155/contents/packages/server/src/modules/user/shared/User.graphql?ref=3fda468307c9e8b57028d3bfe785c16f9fc31207",
+      "git_url": "https://api.github.com/repositories/138075155/git/blobs/ab5f3f3ef90bcc0d84c785b1fa0c4a2abb354f5b",
+      "html_url": "https://github.com/vivekimsit/airstay/blob/3fda468307c9e8b57028d3bfe785c16f9fc31207/packages/server/src/modules/user/shared/User.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/user/me/schema.graphql",
+      "sha": "34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "url": "https://api.github.com/repositories/138075155/contents/packages/server/src/modules/user/me/schema.graphql?ref=3fda468307c9e8b57028d3bfe785c16f9fc31207",
+      "git_url": "https://api.github.com/repositories/138075155/git/blobs/34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "html_url": "https://github.com/vivekimsit/airstay/blob/3fda468307c9e8b57028d3bfe785c16f9fc31207/packages/server/src/modules/user/me/schema.graphql",
+      "content": "type Query {\n  me: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/vivekimsit/airstay/blob/3fda468307c9e8b57028d3bfe785c16f9fc31207/packages/server/src/modules/user/me/schema.graphql:\ntype Query {\n  me: User\n}\n\n# https://github.com/vivekimsit/airstay/blob/3fda468307c9e8b57028d3bfe785c16f9fc31207/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: ID!\n  email: String!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/listing/find/schema.graphql",
+      "sha": "0da754e01cd78eb31525577b2702f7bc5bc93f82",
+      "url": "https://api.github.com/repositories/138075155/contents/packages/server/src/modules/listing/find/schema.graphql?ref=006c7486dfa62d8d717063ded6d289f723242a78",
+      "git_url": "https://api.github.com/repositories/138075155/git/blobs/0da754e01cd78eb31525577b2702f7bc5bc93f82",
+      "html_url": "https://github.com/vivekimsit/airstay/blob/006c7486dfa62d8d717063ded6d289f723242a78/packages/server/src/modules/listing/find/schema.graphql",
+      "content": "type Listing {\n  id: ID!\n  name: String!\n  category: String!\n  description: String!\n  price: Int!\n  beds: Int!\n  guests: Int!\n  latitude: Float!\n  longitude: Float!\n  amenities: [String!]!\n  pictureUrl: String!\n  owner: User!\n}\n\ntype Query {\n  findListings: [Listing!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/vivekimsit/airstay/blob/006c7486dfa62d8d717063ded6d289f723242a78/packages/server/src/modules/listing/find/schema.graphql:\ntype Listing {\n  id: ID!\n  name: String!\n  category: String!\n  description: String!\n  price: Int!\n  beds: Int!\n  guests: Int!\n  latitude: Float!\n  longitude: Float!\n  amenities: [String!]!\n  pictureUrl: String!\n  owner: User!\n}\n\ntype Query {\n  findListings: [Listing!]!\n}\n\n# https://github.com/vivekimsit/airstay/blob/3fda468307c9e8b57028d3bfe785c16f9fc31207/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: ID!\n  email: String!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-20T19:09:30Z",
+    "updated_at": "2018-08-28T21:18:08Z",
+    "pushed_at": "2018-08-28T21:18:06Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

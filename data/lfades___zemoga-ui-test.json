@@ -1,0 +1,42 @@
+{
+  "repo_name": "zemoga-ui-test",
+  "repo_full_name": "lfades/zemoga-ui-test",
+  "repo_owner": "lfades",
+  "repo_description": "UI test project presented to Zemoga",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Schema.graphql",
+      "path": "api/src/Schema.graphql",
+      "sha": "cd7ce160847a3f41ccb1e62e5bf3a44fd6a3202f",
+      "url": "https://api.github.com/repositories/154740346/contents/api/src/Schema.graphql?ref=48f2aca9276fc1b286767a2555267af049717b0c",
+      "git_url": "https://api.github.com/repositories/154740346/git/blobs/cd7ce160847a3f41ccb1e62e5bf3a44fd6a3202f",
+      "html_url": "https://github.com/lfades/zemoga-ui-test/blob/48f2aca9276fc1b286767a2555267af049717b0c/api/src/Schema.graphql",
+      "content": "scalar Date\n\ninput UpdatePersonInput {\n  id: ID!\n  name: String\n  description: String\n  photoUrl: String\n  tags: [String!]\n}\n\ninput CreatePersonInput {\n  name: String!\n  description: String!\n  photoUrl: String!\n  tags: [String!]!\n}\n\ntype Person {\n  id: ID!\n  name: String!\n  description: String!\n  photoUrl: String!\n  votesUp: Int!\n  votesDown: Int!\n  createdAt: Date!\n  updatedAt: Date!\n  tags: [String!]!\n}\n\ntype Query {\n  people: [Person!]!\n  person(id: ID!): Person\n}\n\ntype Mutation {\n  vote(personId: ID!, up: Boolean!): Person\n  createPerson(data: CreatePersonInput!): Person\n  updatePerson(data: UpdatePersonInput!): Person\n  removePerson(id: ID!): Person\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-25T21:32:14Z",
+    "updated_at": "2019-02-05T00:24:49Z",
+    "pushed_at": "2019-02-05T00:25:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

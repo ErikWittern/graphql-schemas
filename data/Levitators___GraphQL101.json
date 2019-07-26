@@ -1,0 +1,68 @@
+{
+  "repo_name": "GraphQL101",
+  "repo_full_name": "levitators/graphql101",
+  "repo_owner": "Levitators",
+  "repo_description": "A GraphQL boilerplate using graphql-yoga written in typescript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/facebookAuth/schema.graphql",
+      "sha": "760ddb2bb7d6702debf9c8dde4b5792f474c2761",
+      "url": "https://api.github.com/repositories/117203763/contents/src/modules/facebookAuth/schema.graphql?ref=b1419d5756368038cfc9963cabcaf99ebfe4c27a",
+      "git_url": "https://api.github.com/repositories/117203763/git/blobs/760ddb2bb7d6702debf9c8dde4b5792f474c2761",
+      "html_url": "https://github.com/Levitators/GraphQL101/blob/b1419d5756368038cfc9963cabcaf99ebfe4c27a/src/modules/facebookAuth/schema.graphql",
+      "content": "type User {\n  id: Int!\n  email: String!\n  googleUserId: String!\n  facebookUserId: String!\n  username: String!\n}\n\ntype AuthResponse {\n  auth_token: String!\n  user: User\n}\n\n# Dummy query to be romved when Query root type must be provided error is fixed\ntype Query {\n  Hello: String\n}\n\ntype Mutation {\n  AuthenticateFacebookUser(facebookToken: String!): AuthResponse\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/googleAuth/schema.graphql",
+      "sha": "421ae30652fbac786f31d6137a1e4ec187c1ac15",
+      "url": "https://api.github.com/repositories/117203763/contents/src/modules/googleAuth/schema.graphql?ref=b1419d5756368038cfc9963cabcaf99ebfe4c27a",
+      "git_url": "https://api.github.com/repositories/117203763/git/blobs/421ae30652fbac786f31d6137a1e4ec187c1ac15",
+      "html_url": "https://github.com/Levitators/GraphQL101/blob/b1419d5756368038cfc9963cabcaf99ebfe4c27a/src/modules/googleAuth/schema.graphql",
+      "content": "type User {\n  id: Int!\n  email: String!\n  googleUserId: String!\n  facebookUserId: String!\n  username: String!\n}\n\ntype AuthResponse {\n  auth_token: String!\n  user: User\n}\n\n# Dummy query to be romved when Query root type must be provided error is fixed\ntype Query {\n  Hello: String\n}\n\ntype Mutation {\n  AuthenticateGoogleUser(googleToken: String!): AuthResponse\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/users/schema.graphql",
+      "sha": "1c34a17e4223c70459ed85e0781a194adad8326d",
+      "url": "https://api.github.com/repositories/117203763/contents/src/modules/users/schema.graphql?ref=b1419d5756368038cfc9963cabcaf99ebfe4c27a",
+      "git_url": "https://api.github.com/repositories/117203763/git/blobs/1c34a17e4223c70459ed85e0781a194adad8326d",
+      "html_url": "https://github.com/Levitators/GraphQL101/blob/b1419d5756368038cfc9963cabcaf99ebfe4c27a/src/modules/users/schema.graphql",
+      "content": "type User {\n  id: Int!\n  email: String!\n  googleUserId: String!\n  facebookUserId: String!\n  username: String!\n}\n\ntype Query {\n  users: [User]\n  user(email: String!): User\n  facebookUser(facebookUserId: String!): User\n  googleUser(googleUserId: String!): User\n}\n\ntype Mutation {\n  createUser(email: String!, googleUserId: String!, facebookUserId: String!,username: String!): User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-12T06:43:02Z",
+    "updated_at": "2018-11-19T01:13:41Z",
+    "pushed_at": "2018-07-22T13:07:02Z",
+    "issues": 3,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 10,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "quick-delivery",
+  "repo_full_name": "vtex-apps/quick-delivery",
+  "repo_owner": "vtex-apps",
+  "repo_description": "Quick Delivery component",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "0475960ef2129e5ae640c915e669a216cf2ee6cb",
+      "url": "https://api.github.com/repositories/153678732/contents/graphql/schema.graphql?ref=7b926621a6bde5a455ee07e3c8a4a7e85e50f1fd",
+      "git_url": "https://api.github.com/repositories/153678732/git/blobs/0475960ef2129e5ae640c915e669a216cf2ee6cb",
+      "html_url": "https://github.com/vtex-apps/quick-delivery/blob/7b926621a6bde5a455ee07e3c8a4a7e85e50f1fd/graphql/schema.graphql",
+      "content": "type Query {\n  foo: String\n}\n\ntype Mutation {\n  setup(ZIP: String): GenericResponse\n}\n\ntype GenericResponse {\n  message: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-18T19:45:38Z",
+    "updated_at": "2019-05-16T21:27:10Z",
+    "pushed_at": "2018-10-19T21:25:11Z",
+    "issues": 0,
+    "watchers": 38,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

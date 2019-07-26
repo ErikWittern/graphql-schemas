@@ -1,0 +1,62 @@
+{
+  "repo_name": "easygraphql-parser",
+  "repo_full_name": "easygraphql/easygraphql-parser",
+  "repo_owner": "EasyGraphQL",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "test/schema/schema.gql",
+      "sha": "7e75649bcea58d180746d65e4062aa7a1f0ec3f8",
+      "url": "https://api.github.com/repositories/158273007/contents/test/schema/schema.gql?ref=4f126c350676559d1eb3ef31d6a085c0e3f13d5a",
+      "git_url": "https://api.github.com/repositories/158273007/git/blobs/7e75649bcea58d180746d65e4062aa7a1f0ec3f8",
+      "html_url": "https://github.com/EasyGraphQL/easygraphql-parser/blob/4f126c350676559d1eb3ef31d6a085c0e3f13d5a/test/schema/schema.gql",
+      "content": "type Family {\n  name: String!\n  ages: [Int]!\n  user: User!\n}\n\ntype Me {\n  id: ID!\n  email: String \n  username: [String!]!\n  fullName: String!\n  result: Float @deprecated(reason: \"Result field\")\n  phone: [Int]!\n  apiKey: String!\n  users: [User]!\n  verified: Boolean!\n}\n\ntype User {\n  email: String!\n  username: String!\n  fullName: String!\n  phone: String!\n  family: Family!\n}\n\ntype Query {\n  getMe: Me\n  getUsers: [User!]!\n  getUserByUsername(username: String!, id: Int!): User\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    },
+    {
+      "name": "student.gql",
+      "path": "test/schema/student.gql",
+      "sha": "22042e058af94cf9041f8befc486581f8be14577",
+      "url": "https://api.github.com/repositories/158273007/contents/test/schema/student.gql?ref=1e115c23f8b4b704644f3a6199793895df49e8f2",
+      "git_url": "https://api.github.com/repositories/158273007/git/blobs/22042e058af94cf9041f8befc486581f8be14577",
+      "html_url": "https://github.com/EasyGraphQL/easygraphql-parser/blob/1e115c23f8b4b704644f3a6199793895df49e8f2/test/schema/student.gql",
+      "content": "interface User {\n  email: String!\n  username: String!\n}\n\ntype Student implements User {\n  email: String!\n  username: String!\n  fullName: String!\n}\n\ntype Teacher implements User {\n  email: String!\n  username: String!\n  age: Int!\n}\n\ninput StudentInput {\n  email: String!\n  username: String!\n  fullName: String!\n  password: String!\n}\n\ntype Query {\n  getStudentByUsername(username: String!, name: String!): Student\n  getStudents: [Student]!\n}\n\ntype Mutation {\n  createStudent(input: StudentInput!): Student\n  createStudents(input: [StudentInput]!): [Student]!\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-19T18:37:43Z",
+    "updated_at": "2019-07-05T18:37:11Z",
+    "pushed_at": "2019-07-18T23:06:56Z",
+    "issues": 3,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 18,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 15,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

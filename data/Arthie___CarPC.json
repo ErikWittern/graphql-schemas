@@ -1,0 +1,42 @@
+{
+  "repo_name": "CarPC",
+  "repo_full_name": "arthie/carpc",
+  "repo_owner": "Arthie",
+  "repo_description": "React App designed to run on a raspberry pi and make driving my car more fun.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/graphql/schema.graphql",
+      "sha": "486a8b5d1b3ba048f3d1b0d715e925505d00c1ce",
+      "url": "https://api.github.com/repositories/118649661/contents/server/src/graphql/schema.graphql?ref=668d23f91ec6498e9ef2837d10f600a2850b8c4c",
+      "git_url": "https://api.github.com/repositories/118649661/git/blobs/486a8b5d1b3ba048f3d1b0d715e925505d00c1ce",
+      "html_url": "https://github.com/Arthie/CarPC/blob/668d23f91ec6498e9ef2837d10f600a2850b8c4c/server/src/graphql/schema.graphql",
+      "content": "# dont split in multiple files aka dont inport bug with path finding / or webpack alias\n\ntype Subscription {\n  carEvent: Car!\n}\n\ntype Car {\n  speed: Float\n  rpm: Float\n}\n\ntype Query {\n  folder(path: String!): Folder!\n}\n\ntype Folder {\n  directories: [DirectoryItem!]!\n  files: [FileItem!]!\n  music: [MusicItem!]!\n}\n\ntype DirectoryItem {\n  path: String!\n}\n\ntype FileItem {\n  path: String!\n  ext: String!\n}\n\ntype MusicItem {\n  path: String!\n  ext: String!\n  metadata: Metadata!\n}\n\ntype Metadata {\n  artist: String\n  album: String\n  title: String\n  picture: String\n  duration: Float!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-23T18:11:41Z",
+    "updated_at": "2019-06-10T16:59:51Z",
+    "pushed_at": "2019-04-29T15:46:13Z",
+    "issues": 0,
+    "watchers": 4,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 12
+  }
+}

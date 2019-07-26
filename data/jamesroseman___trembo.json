@@ -1,0 +1,67 @@
+{
+  "repo_name": "trembo",
+  "repo_full_name": "jamesroseman/trembo",
+  "repo_owner": "jamesroseman",
+  "repo_description": "A starting boilerplate for TypeScript web applications that use a GraphQL backend powered by MongoDB.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Common.graphql",
+      "path": "server/src/schema/Common.graphql",
+      "sha": "da605d814caa76b06155b733294f94a28e8b6c7c",
+      "url": "https://api.github.com/repositories/147696227/contents/server/src/schema/Common.graphql?ref=eb0f54e06ca487fc44cf2a957b5aa5eb7d137217",
+      "git_url": "https://api.github.com/repositories/147696227/git/blobs/da605d814caa76b06155b733294f94a28e8b6c7c",
+      "html_url": "https://github.com/jamesroseman/trembo/blob/eb0f54e06ca487fc44cf2a957b5aa5eb7d137217/server/src/schema/Common.graphql",
+      "content": "### COMMON SCHEMA ###\n\n# Helper types\nscalar Date\n\n# Relay common types\ninterface Node {\n  id: ID!\n}\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: ID\n  endCursor: ID\n}\ninput ConnectionArgs {\n  first: Int,\n  last: Int,\n  before: ID,\n  after: ID\n}\n\n# Root Query type\ntype Query {\n  # Relay signatures\n  node(id: ID!): Node\n\n  # Model signatures\n  user(id: ID!): User,\n  users(first: Int, after: String, last: Int, before: String): UserConnection,\n  ## Add new model signatures above this comment ##\n}\n\n# Root Mutation type\ntype Mutation {\n  introduceUser(input: IntroduceUserInput): IntroduceUserPayload,\n  ## Add new model mutation signatures above this comment ##\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jamesroseman/trembo/blob/eb0f54e06ca487fc44cf2a957b5aa5eb7d137217/server/src/schema/Common.graphql:\n### COMMON SCHEMA ###\n\n# Helper types\nscalar Date\n\n# Relay common types\ninterface Node {\n  id: ID!\n}\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: ID\n  endCursor: ID\n}\ninput ConnectionArgs {\n  first: Int,\n  last: Int,\n  before: ID,\n  after: ID\n}\n\n# Root Query type\ntype Query {\n  # Relay signatures\n  node(id: ID!): Node\n\n  # Model signatures\n  user(id: ID!): User,\n  users(first: Int, after: String, last: Int, before: String): UserConnection,\n  ## Add new model signatures above this comment ##\n}\n\n# Root Mutation type\ntype Mutation {\n  introduceUser(input: IntroduceUserInput): IntroduceUserPayload,\n  ## Add new model mutation signatures above this comment ##\n}\n\n# https://github.com/jamesroseman/trembo/blob/eb0f54e06ca487fc44cf2a957b5aa5eb7d137217/server/src/schema/User.graphql:\n### USER SCHEMA ###\n\n# Base User type\ntype User implements Node {\n  id: ID!\n  firstName: String!\n  lastName: String!\n}\n\n# User Queries\ntype UserEdge {\n  node: User!\n  cursor: ID!\n}\ntype UserConnection {\n  pageInfo: PageInfo\n  edges: [UserEdge]\n}\n\n# User Mutations\ninput UserInput {\n  firstName: String!\n  lastName: String!\n}\ninput IntroduceUserInput {\n  userInput: UserInput!\n  clientMutationId: String!\n}\ntype IntroduceUserPayload {\n  user: User!\n  clientMutationId: String!\n}\n",
+        "mergedPaths": [
+          "server/src/schema/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "UserConnection",
+          "IntroduceUserPayload"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 7,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 12
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "server/src/schema/User.graphql",
+      "sha": "5e9e17a1cb7ad58224c1e40d706b1a2eb24c4bb5",
+      "url": "https://api.github.com/repositories/147696227/contents/server/src/schema/User.graphql?ref=eb0f54e06ca487fc44cf2a957b5aa5eb7d137217",
+      "git_url": "https://api.github.com/repositories/147696227/git/blobs/5e9e17a1cb7ad58224c1e40d706b1a2eb24c4bb5",
+      "html_url": "https://github.com/jamesroseman/trembo/blob/eb0f54e06ca487fc44cf2a957b5aa5eb7d137217/server/src/schema/User.graphql",
+      "content": "### USER SCHEMA ###\n\n# Base User type\ntype User implements Node {\n  id: ID!\n  firstName: String!\n  lastName: String!\n}\n\n# User Queries\ntype UserEdge {\n  node: User!\n  cursor: ID!\n}\ntype UserConnection {\n  pageInfo: PageInfo\n  edges: [UserEdge]\n}\n\n# User Mutations\ninput UserInput {\n  firstName: String!\n  lastName: String!\n}\ninput IntroduceUserInput {\n  userInput: UserInput!\n  clientMutationId: String!\n}\ntype IntroduceUserPayload {\n  user: User!\n  clientMutationId: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-06T15:40:23Z",
+    "updated_at": "2018-09-06T17:08:06Z",
+    "pushed_at": "2018-09-06T17:01:45Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

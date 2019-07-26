@@ -1,0 +1,58 @@
+{
+  "repo_name": "pipe-back-api",
+  "repo_full_name": "pipetracker/pipe-back-api",
+  "repo_owner": "pipetracker",
+  "repo_description": "Graphql API ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "users.graphql",
+      "path": "schemas/users.graphql",
+      "sha": "607a069ba15e7a622532595be54b5dd2df54b61a",
+      "url": "https://api.github.com/repositories/152920356/contents/schemas/users.graphql?ref=1ceb1853b7839fc59c926395de84692fd7e64d67",
+      "git_url": "https://api.github.com/repositories/152920356/git/blobs/607a069ba15e7a622532595be54b5dd2df54b61a",
+      "html_url": "https://github.com/pipetracker/pipe-back-api/blob/1ceb1853b7839fc59c926395de84692fd7e64d67/schemas/users.graphql",
+      "content": "  type Query {\n    users: [user]\n  }\n\n  type user {\n    id: ID\n    name: String\n    email: String\n    alias: String\n  }\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    },
+    {
+      "name": "addresses.graphql",
+      "path": "schemas/addresses.graphql",
+      "sha": "1e2146421f55d4f8acd5fa3ff5316389c455d5f8",
+      "url": "https://api.github.com/repositories/152920356/contents/schemas/addresses.graphql?ref=1ceb1853b7839fc59c926395de84692fd7e64d67",
+      "git_url": "https://api.github.com/repositories/152920356/git/blobs/1e2146421f55d4f8acd5fa3ff5316389c455d5f8",
+      "html_url": "https://github.com/pipetracker/pipe-back-api/blob/1ceb1853b7839fc59c926395de84692fd7e64d67/schemas/addresses.graphql",
+      "content": "type Query {\r\n  addresses: [address]\r\n}\r\n\r\ntype address {\r\n  id: ID\r\n  name: String\r\n  city: String\r\n  state: String\r\n  country: String\r\n  position: position\r\n}\r\n\r\ntype position {\r\n  x: Int\r\n  y: Int\r\n  srid: Int\r\n}\r\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-13T22:40:10Z",
+    "updated_at": "2018-10-13T23:39:37Z",
+    "pushed_at": "2018-10-13T23:39:35Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

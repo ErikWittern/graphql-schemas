@@ -1,0 +1,41 @@
+{
+  "repo_name": "gateway",
+  "repo_full_name": "hyped-text/gateway",
+  "repo_owner": "hyped-text",
+  "repo_description": "API Gateway for the hyped-text",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "infra/graphql/schema.gql",
+      "sha": "3b42ca87d43c7e7f793a91f52eddf942478dc0d1",
+      "url": "https://api.github.com/repositories/168235541/contents/infra/graphql/schema.gql?ref=50eec2a22715be62dfb73979cd8e61186a427003",
+      "git_url": "https://api.github.com/repositories/168235541/git/blobs/3b42ca87d43c7e7f793a91f52eddf942478dc0d1",
+      "html_url": "https://github.com/hyped-text/gateway/blob/50eec2a22715be62dfb73979cd8e61186a427003/infra/graphql/schema.gql",
+      "content": "type Like {\n  id: ID!\n  author: Author!\n  entityId: String!\n  entityType: String!\n}\n\ninterface Likeable {\n  likes: [Like]!\n}\n\ntype Author implements Likeable {\n  id: ID!\n  nickname: String!\n  email: String!\n  articles: [Article]!\n  comments: [Comment]!\n  likes: [Like]!\n}\n\ntype Article implements Likeable {\n  id: ID!\n  author: Author!\n  title: String\n  text: String\n  likes: [Like]!\n}\n\ntype Avatar {\n  medias: [String]!\n}\n\nunion Topic = Article | Author | Comment\n\ntype Comment implements Likeable {\n  id: ID!\n  text: String!\n  author: Author!\n  topic: Topic!\n  comments: [Comment]!\n  likes: [Like]!\n}\n\ntype Query {\n  articles: [Article]\n  author(id: ID!): Author\n  authors: [Author]!\n}\n\ninput ArticleInput {\n  id: ID\n  title: String\n  text: String\n}\n\ninput AccountInput {\n  email: String!\n  password: String!\n}\n\ntype CommentUpdate {\n  id: ID!\n  text: String!\n  author: ID!\n}\n\ntype Mutation {\n  createAccount(accountInput: AccountInput!): String!\n  deleteAccount(accountInput: AccountInput!): Boolean!\n  login(accountInput: AccountInput!): String!\n  saveArticle(articleInput: ArticleInput!): Article\n  commentArticle(id: ID!, comment: String): CommentUpdate\n  like(id: String!, type: String!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-29T21:55:15Z",
+    "updated_at": "2019-02-25T09:02:59Z",
+    "pushed_at": "2019-02-25T10:00:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

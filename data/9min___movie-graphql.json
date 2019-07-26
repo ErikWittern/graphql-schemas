@@ -1,0 +1,39 @@
+{
+  "repo_name": "movie-graphql",
+  "repo_full_name": "9min/movie-graphql",
+  "repo_owner": "9min",
+  "repo_description": "Movie API with GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "6a70e54cecd764c02e84d5edb7fe9b9a23d6c2c9",
+      "url": "https://api.github.com/repositories/163781125/contents/graphql/schema.graphql?ref=7a688bccf9d47e2610597cfda0d1d8c5efb15500",
+      "git_url": "https://api.github.com/repositories/163781125/git/blobs/6a70e54cecd764c02e84d5edb7fe9b9a23d6c2c9",
+      "html_url": "https://github.com/9min/movie-graphql/blob/7a688bccf9d47e2610597cfda0d1d8c5efb15500/graphql/schema.graphql",
+      "content": "type Movie {\n  id: Int!,\n  title: String!\n  rating: Float!\n  summary: String\n  language: String!\n  genres: [String]\n  description_full: String\n  medium_cover_image: String\n}\n\ntype Query {\n  movies(limit: Int, minimum_rating: Float): [Movie]!\n  movie(movie_id: Int!): Movie!\n  suggestions(movie_id: Int!): [Movie]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-02T01:41:20Z",
+    "updated_at": "2019-05-15T09:31:53Z",
+    "pushed_at": "2019-01-04T01:32:58Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

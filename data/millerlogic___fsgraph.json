@@ -1,0 +1,42 @@
+{
+  "repo_name": "fsgraph",
+  "repo_full_name": "millerlogic/fsgraph",
+  "repo_owner": "millerlogic",
+  "repo_description": "fsgraph is a GraphQL interface for a file system",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "4ceefd0eca0e278fe309e91cec8daec69be96860",
+      "url": "https://api.github.com/repositories/156441508/contents/schema.graphql?ref=3194c2a6196929e3a813be3fdf230387998995d8",
+      "git_url": "https://api.github.com/repositories/156441508/git/blobs/4ceefd0eca0e278fe309e91cec8daec69be96860",
+      "html_url": "https://github.com/millerlogic/fsgraph/blob/3194c2a6196929e3a813be3fdf230387998995d8/schema.graphql",
+      "content": "directive @scalarInfo(\n    baseType: String!\n) on SCALAR\n\n\"a 64-bit integer\"\nscalar Int64 @scalarInfo(baseType: \"Int\")\n\nenum FileType {\n    regular\n    dir\n    symlink\n    namedPipe\n    socket\n    device\n    charDevice\n    irregular\n}\n\n\"a representation of the file's mode\"\ntype FileMode {\n    \"the type of file\"\n    type: FileType!\n    \"permission bits\"\n    perm: Int!\n    \"whether or not the sticky bit is set\"\n    sticky: Boolean!\n}\n\n\"a generic file\"\ninterface File {\n    \"file ID\"\n    id: ID!\n    \"the file's name, without path\"\n    name: String!\n    \"the full path to the file\"\n    path: String!\n    \"the size of the file, in bytes\"\n    size: Int64\n    \"the file mode\"\n    mode: FileMode!\n    \"file modification time\"\n    modTime: String!\n    \"the parent directory of this file, or null if at the root directory\"\n    parent: File\n}\n\n\"file contents (read) or write encoding\"\nenum Encoding {\n    auto # only valid as input to RegularFile.contents\n    utf8\n    base64\n}\n\n\"the contents of a file\"\ntype FileContents {\n    \"the file's data contents\"\n    data: String!\n    \"the position of the file after the read if there is more data to read, to be used with seek\"\n    next: Int64\n    \"the encoding of data\"\n    encoding: Encoding!\n    \"set to a warning if there was data loss\"\n    warning: String\n}\n\ntype RegularFile implements File {\n    id: ID!\n    name: String!\n    path: String!\n    size: Int64\n    mode: FileMode!\n    modTime: String!\n    parent: File\n    # maxReadBytes is the max bytes to return, default (-1) for unlimited.\n    # The implementation may enforce a hard cap on the bytes read, requiring paging with next/seek.\n    # Negative seek means don't seek.\n    \"the contents of this file\"\n    contents(encoding: Encoding! = auto, maxReadBytes: Int64! = -1, seek: Int64! = -1): FileContents!\n}\n\ntype Dir implements File {\n    id: ID!\n    name: String!\n    path: String!\n    size: Int64\n    mode: FileMode!\n    modTime: String!\n    parent: File\n    # first is max children to return, default (-1) for unlimited.\n    # The children are in no particular order.\n    \"this directory's nested (child) files\"\n    children(first: Int! = -1): [File!]!\n    # escaping this parent dir is not allowed.\n    \"returns the specified nested file, or null if it doesn't exist\"\n    file(path: String!): File\n}\n\n# do not reference Internal_OtherFile; the other file types may be moved to new types.\n\"do not reference this type or depend on it in any way\"\ntype Internal_OtherFile implements File {\n    id: ID!\n    name: String!\n    path: String!\n    size: Int64!\n    mode: FileMode!\n    modTime: String!\n    parent: File\n}\n\n\"a generic result of an operation\"\ninterface Result {\n    \"a string describing the operation\"\n    s: String!\n    \"any warning messages, or null\"\n    warning: String\n}\n\ntype OKResult implements Result {\n    s: String!\n    warning: String\n}\n\n\"the result of a file operation\"\ntype FileResult implements Result {\n    s: String!\n    warning: String\n    \"the target file\"\n    file: File!\n}\n\ntype Query {\n    \"get the root dir\"\n    root: Dir!\n    # Returns the specified dir. There is no concept of a current/working directory.\n    # If the dir doesn't exist, null is returned.\n    \"returns the specified dir, or null if it doesn't exist\"\n    cd(path: String!): Dir\n    # essentially a shortcut for root.file(path)\n    \"returns the specified nested file, or null if it doesn't exist\"\n    file(path: String!): File\n}\n\n\"specifies how a file is to be opened\"\nenum FileOpen {\n    \"create file if it doesn't exist\"\n    create\n    \"file must not exist\"\n    new\n    \"truncate the file if it exists\"\n    truncate\n    \"writes will be appended to the end of the file\"\n    append\n}\n\ntype Mutation {\n    \"remove the specified file; if a directory, it must be empty\"\n    remove(path: String!): OKResult!\n    \"rename a file\"\n    rename(path: String!, newName: String!): FileResult!\n    \"change a file's mode (permission bits)\"\n    chmod(path: String!, mode: Int!): FileResult!\n    \"write to the specified file\"\n    write(path: String!, contents: String!, open: [FileOpen!]! = [create, truncate], encoding: Encoding! = utf8): FileResult!\n    \"make a single dir\"\n    mkdir(path: String!): FileResult!\n    \"make entire dir path, attempts to create any missing dirs\"\n    mkdirAll(path: String!): FileResult!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-06T20:12:38Z",
+    "updated_at": "2018-11-19T19:29:37Z",
+    "pushed_at": "2018-11-07T00:55:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

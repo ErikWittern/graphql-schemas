@@ -1,0 +1,95 @@
+{
+  "repo_name": "graphql-node-sqlite",
+  "repo_full_name": "sreekanth-anubolu/graphql-node-sqlite",
+  "repo_owner": "sreekanth-anubolu",
+  "repo_description": "GraphQL NodeJS and SQLite",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "schema/Query.graphql",
+      "sha": "3625559fdcab91d54b4578d0934614f125147af2",
+      "url": "https://api.github.com/repositories/128387557/contents/schema/Query.graphql?ref=2a24e723e9db0325f48b0ff75a7ea79969937743",
+      "git_url": "https://api.github.com/repositories/128387557/git/blobs/3625559fdcab91d54b4578d0934614f125147af2",
+      "html_url": "https://github.com/sreekanth-anubolu/graphql-node-sqlite/blob/2a24e723e9db0325f48b0ff75a7ea79969937743/schema/Query.graphql",
+      "content": "type Query {\n  Skills: [Skill!]\n  Users(ids: [Int!]): [User!]!\n  Organisations(ids: [Int!]): [Organisation!]!\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/sreekanth-anubolu/graphql-node-sqlite/blob/2a24e723e9db0325f48b0ff75a7ea79969937743/schema/Query.graphql:\ntype Query {\n  Skills: [Skill!]\n  Users(ids: [Int!]): [User!]!\n  Organisations(ids: [Int!]): [Organisation!]!\n}\n# https://github.com/sreekanth-anubolu/graphql-node-sqlite/blob/2a24e723e9db0325f48b0ff75a7ea79969937743/schema/Skill.graphql:\ntype Skill {\n  id: Int!\n  name: String!\n}\n# https://github.com/sreekanth-anubolu/graphql-node-sqlite/blob/2a24e723e9db0325f48b0ff75a7ea79969937743/schema/User.graphql:\ntype User {\n  id: Int!\n  name: String!\n  email: String!\n  Organisations: [Organisation!]\n  Skills: [Skill!]\n}\n# https://github.com/sreekanth-anubolu/graphql-node-sqlite/blob/2a24e723e9db0325f48b0ff75a7ea79969937743/schema/Organisation.graphql:\ntype Organisation {\n  id: Int!\n  name: String!\n  location: String\n}",
+        "mergedPaths": [
+          "schema/Skill.graphql",
+          "schema/User.graphql",
+          "schema/Organisation.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Skill",
+          "User",
+          "Organisation"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "schema/User.graphql",
+      "sha": "6c03d96e1af87133b51cbe2ae03ceb1f4369d998",
+      "url": "https://api.github.com/repositories/128387557/contents/schema/User.graphql?ref=2a24e723e9db0325f48b0ff75a7ea79969937743",
+      "git_url": "https://api.github.com/repositories/128387557/git/blobs/6c03d96e1af87133b51cbe2ae03ceb1f4369d998",
+      "html_url": "https://github.com/sreekanth-anubolu/graphql-node-sqlite/blob/2a24e723e9db0325f48b0ff75a7ea79969937743/schema/User.graphql",
+      "content": "type User {\n  id: Int!\n  name: String!\n  email: String!\n  Organisations: [Organisation!]\n  Skills: [Skill!]\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Skill.graphql",
+      "path": "schema/Skill.graphql",
+      "sha": "5b06267cd9d93ac05b58d426b4aebf698e2f4ab2",
+      "url": "https://api.github.com/repositories/128387557/contents/schema/Skill.graphql?ref=2a24e723e9db0325f48b0ff75a7ea79969937743",
+      "git_url": "https://api.github.com/repositories/128387557/git/blobs/5b06267cd9d93ac05b58d426b4aebf698e2f4ab2",
+      "html_url": "https://github.com/sreekanth-anubolu/graphql-node-sqlite/blob/2a24e723e9db0325f48b0ff75a7ea79969937743/schema/Skill.graphql",
+      "content": "type Skill {\n  id: Int!\n  name: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Organisation.graphql",
+      "path": "schema/Organisation.graphql",
+      "sha": "5833b608e071f52699f591a6b7667194c3fbc1b0",
+      "url": "https://api.github.com/repositories/128387557/contents/schema/Organisation.graphql?ref=2a24e723e9db0325f48b0ff75a7ea79969937743",
+      "git_url": "https://api.github.com/repositories/128387557/git/blobs/5833b608e071f52699f591a6b7667194c3fbc1b0",
+      "html_url": "https://github.com/sreekanth-anubolu/graphql-node-sqlite/blob/2a24e723e9db0325f48b0ff75a7ea79969937743/schema/Organisation.graphql",
+      "content": "type Organisation {\n  id: Int!\n  name: String!\n  location: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-06T11:42:10Z",
+    "updated_at": "2018-04-06T12:19:51Z",
+    "pushed_at": "2018-04-06T12:19:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

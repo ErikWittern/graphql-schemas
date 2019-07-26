@@ -1,0 +1,42 @@
+{
+  "repo_name": "kubelay",
+  "repo_full_name": "mikekap/kubelay",
+  "repo_owner": "mikekap",
+  "repo_description": "GraphQL interface to Kubernetes",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "8a2b678d604f5d901dea1beba2865e4419d6dc08",
+      "url": "https://api.github.com/repositories/70873496/contents/data/schema.graphql?ref=534bfb28ab84a20fb430d8a3c50c1b312e67e8f6",
+      "git_url": "https://api.github.com/repositories/70873496/git/blobs/8a2b678d604f5d901dea1beba2865e4419d6dc08",
+      "html_url": "https://github.com/mikekap/kubelay/blob/534bfb28ab84a20fb430d8a3c50c1b312e67e8f6/data/schema.graphql",
+      "content": "schema {\n  query: QueryType\n}\n\ntype AllNamespacesConnection {\n  pageInfo: PageInfo!\n  edges: [AllNamespacesEdge]\n}\n\ntype AllNamespacesEdge {\n  node: Namespace\n  cursor: String!\n}\n\ntype AllNodesConnection {\n  pageInfo: PageInfo!\n  edges: [AllNodesEdge]\n}\n\ntype AllNodesEdge {\n  node: KubeNode\n  cursor: String!\n}\n\ntype AllPodsConnection {\n  pageInfo: PageInfo!\n  edges: [AllPodsEdge]\n}\n\ntype AllPodsEdge {\n  node: Pod\n  cursor: String!\n}\n\ntype AwsElasticBlockStore implements Volume {\n  name: String!\n  volumeId: String\n  fsType: String\n  partition: Int\n  readOnly: Boolean\n}\n\ntype ConfigMapRefEnvVar implements EnvVar {\n  name: String!\n  configMapName: String!\n  key: String!\n}\n\ninterface ContainerState {\n  __unused: String\n}\n\ntype ContainerStateRunning implements ContainerState {\n  __unused: String\n  startedAt: DateTime\n}\n\ntype ContainerStateTerminated implements ContainerState {\n  __unused: String\n  exitCode: Int!\n  signal: Int\n  reason: String\n  message: String\n  startedAt: DateTime\n  finishedAt: DateTime\n  containerID: String\n}\n\ntype ContainerStateWaiting implements ContainerState {\n  __unused: String\n  reason: String\n  message: String\n}\n\ntype ContainerStatus {\n  state: ContainerState\n  lastState: ContainerState\n  ready: Boolean\n  restartCount: Int\n  image: String\n  containerID: String\n}\n\ntype ContainerType {\n  name: String!\n  image: String!\n  command: [String]\n  args: [String]\n  ports: [PortType]\n  resources: GraphQLResourcesType\n  workingDir: String\n  env: [EnvVar]\n}\n\nscalar DateTime\n\ntype EmptyDir implements Volume {\n  name: String!\n}\n\ninterface EnvVar {\n  name: String!\n}\n\ntype Event implements Node {\n  id: ID!\n  metadata: Metadata\n  involvedObject: EventInvolvedObject\n  type: String\n  reason: String\n  message: String\n  firstTimestamp: DateTime\n  lastTimestamp: DateTime\n  count: Int\n}\n\ntype EventConnection {\n  pageInfo: PageInfo!\n  edges: [EventEdge]\n}\n\ntype EventEdge {\n  node: Event\n  cursor: String!\n}\n\ntype EventInvolvedObject {\n  node: Node\n  fieldRef: String\n}\n\ntype FieldRefEnvVar implements EnvVar {\n  name: String!\n  apiVersion: String\n  fieldPath: String!\n}\n\ntype GraphQLResourcesType {\n  limits: JSON\n  requests: JSON\n}\n\ntype HostPath implements Volume {\n  name: String!\n  path: String\n}\n\nscalar JSON\n\ntype KubeNode implements Node {\n  id: ID!\n  metadata: Metadata\n  events(after: String, first: Int, before: String, last: Int): EventConnection\n  status: NodeStatus\n}\n\ntype LiveContainer {\n  name: String!\n  spec: ContainerType\n  status: ContainerStatus\n}\n\ntype Metadata {\n  name: String!\n  namespace: Namespace\n  creationTimestamp: DateTime\n  deletionTimestamp: DateTime\n  labels: JSON\n  annotations: JSON\n  ownerReferences: [OwnerReferences]\n}\n\ntype Namespace implements Node {\n  id: ID!\n  metadata: Metadata\n  events(after: String, first: Int, before: String, last: Int): EventConnection\n  pods(after: String, first: Int, before: String, last: Int): PodsInNamespaceConnectionConnection\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype NodeAttachedVolume {\n  name: String\n  devicePath: String\n}\n\ntype NodeCondition {\n  type: String\n  status: String\n  lastHeartbeatTime: DateTime\n  lastTransitionTime: DateTime\n  reason: String\n  message: String\n}\n\ntype NodeStatus {\n  capacity: JSON\n  allocatable: JSON\n  phase: String\n  conditions: [NodeCondition]\n  volumesAttached: [NodeAttachedVolume]\n}\n\ntype OwnerReferences {\n  kind: String\n  name: String\n  controller: Boolean\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype PersistentVolumeClaim implements Volume {\n  name: String!\n  claimName: String!\n  readOnly: Boolean\n}\n\ntype Pod implements Node {\n  id: ID!\n  metadata: Metadata\n  spec: PodSpec\n  containers: [LiveContainer]\n  events(after: String, first: Int, before: String, last: Int): EventConnection\n  status: PodStatus\n}\n\ntype PodCondition {\n  type: String!\n  status: String!\n  lastProbeTime: DateTime\n  lastTransitionTime: DateTime\n  reason: String\n  message: String\n}\n\ntype PodsInNamespaceConnectionConnection {\n  pageInfo: PageInfo!\n  edges: [PodsInNamespaceConnectionEdge]\n}\n\ntype PodsInNamespaceConnectionEdge {\n  node: Pod\n  cursor: String!\n}\n\ntype PodSpec {\n  volumes: [Volume]\n  containers: [ContainerType]\n  serviceAccountName: String\n  dnsPolicy: String\n  hostname: String\n  subdomain: String\n}\n\ntype PodStatus {\n  phase: String\n  conditions: [PodCondition]\n  message: String\n  reason: String\n  hostIP: String\n  podIP: String\n  startTime: DateTime\n}\n\ntype PortType {\n  name: String\n  hostPort: Int\n  containerPort: Int!\n  protocol: String\n  hostIP: String\n}\n\ntype QueryType {\n  node(id: ID!): Node\n  podById(namespace: String, name: String!): Pod\n  kubeNodeById(name: String): KubeNode\n  root: RootType\n}\n\ntype ResourceFieldRefEnvVar implements EnvVar {\n  name: String!\n  containerName: String\n  resource: String!\n  divisor: String\n}\n\ntype RootType {\n  namespaces(after: String, first: Int, before: String, last: Int): AllNamespacesConnection\n  kubeNodes(after: String, first: Int, before: String, last: Int): AllNodesConnection\n  pods(after: String, first: Int, before: String, last: Int, namespace: String): AllPodsConnection\n}\n\ntype Secret implements Volume {\n  name: String!\n  secretName: String!\n}\n\ntype SecretKeyRefEnvVar implements EnvVar {\n  name: String!\n  secretName: String!\n  key: String!\n}\n\ntype ValueEnvVar implements EnvVar {\n  name: String!\n  value: String!\n}\n\ninterface Volume {\n  name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 44,
+      "containsCycle": false,
+      "polynomialLevel": 5,
+      "numDefinitions": 51
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-14T04:15:53Z",
+    "updated_at": "2019-06-17T04:38:13Z",
+    "pushed_at": "2016-12-12T06:08:49Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 21
+  }
+}

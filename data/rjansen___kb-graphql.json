@@ -1,0 +1,42 @@
+{
+  "repo_name": "kb-graphql",
+  "repo_full_name": "rjansen/kb-graphql",
+  "repo_owner": "rjansen",
+  "repo_description": "A sample GraphQL server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "read-schema.graphql",
+      "path": "read-schema.graphql",
+      "sha": "779a20034aa8007ae6f146706245a1ad1c6dc6e8",
+      "url": "https://api.github.com/repositories/173039819/contents/read-schema.graphql?ref=db86b8f2fb2b3d8e8e35b1dc278541ebbe4e194d",
+      "git_url": "https://api.github.com/repositories/173039819/git/blobs/779a20034aa8007ae6f146706245a1ad1c6dc6e8",
+      "html_url": "https://github.com/rjansen/kb-graphql/blob/db86b8f2fb2b3d8e8e35b1dc278541ebbe4e194d/read-schema.graphql",
+      "content": "interface Product {\n  id: ID!\n  name: String!\n  description: String\n  value: Float\n}\n\ntype Book implements Product {\n  id: ID!\n  name: String!\n  description: String\n  value: Float\n  isbn: String!\n  author: String!\n  flavor: String\n}\n\ntype Audio implements Product {\n  id: ID!\n  name: String!\n  description: String\n  value: Float\n  singer: String!\n  compositor: String!\n  duration: Float\n}\n\ntype Video implements Product {\n  id: ID!\n  name: String!\n  description: String\n  value: Float\n  director: String!\n  writer: String!\n  actors: [String!]!\n  duration: Float\n}\n\ninput ProductFilter {\n  id: ID\n  name: String\n  value: Float\n}\n\nunion SearchResult = Book | Audio | Video\n\ntype Query {\n  book(id: ID!): Book\n  audio(id: ID!): Audio\n  video(id: ID!): Video\n  productBy(filter: ProductFilter): Product\n  search(filter: ProductFilter): SearchResult\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-28T04:15:51Z",
+    "updated_at": "2019-02-28T23:09:36Z",
+    "pushed_at": "2019-02-28T23:10:39Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

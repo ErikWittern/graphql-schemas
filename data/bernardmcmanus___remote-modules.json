@@ -1,0 +1,42 @@
+{
+  "repo_name": "remote-modules",
+  "repo_full_name": "bernardmcmanus/remote-modules",
+  "repo_owner": "bernardmcmanus",
+  "repo_description": "A module manager for distributed applications",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "dev/remote-package/tests/relay/schema.graphql",
+      "sha": "9de7c563a32c944abc845fc916f082d1f5472a78",
+      "url": "https://api.github.com/repositories/137164434/contents/dev/remote-package/tests/relay/schema.graphql?ref=c586fd02dd5f8cfcc2cf7a363deee2d25001b1e2",
+      "git_url": "https://api.github.com/repositories/137164434/git/blobs/9de7c563a32c944abc845fc916f082d1f5472a78",
+      "html_url": "https://github.com/bernardmcmanus/remote-modules/blob/c586fd02dd5f8cfcc2cf7a363deee2d25001b1e2/dev/remote-package/tests/relay/schema.graphql",
+      "content": "type DummyType {\n  id: ID,\n  bool: Boolean\n}\n\ntype Query {\n  dummy: DummyType\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-13T04:56:55Z",
+    "updated_at": "2018-10-15T02:18:54Z",
+    "pushed_at": "2018-11-25T22:07:13Z",
+    "issues": 13,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 32,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 32,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

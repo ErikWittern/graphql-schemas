@@ -1,0 +1,42 @@
+{
+  "repo_name": "NodeJS-MongoDB-GraphQL",
+  "repo_full_name": "antikytheraton/nodejs-mongodb-graphql",
+  "repo_owner": "antikytheraton",
+  "repo_description": "https://github.com/prismagraphql/graphql-yoga",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "6124203de960c9ed065533ecd632efbc8d7a627d",
+      "url": "https://api.github.com/repositories/138775392/contents/src/graphql/schema.graphql?ref=c8a6723d34b6b872732d03667dce998e201e5bad",
+      "git_url": "https://api.github.com/repositories/138775392/git/blobs/6124203de960c9ed065533ecd632efbc8d7a627d",
+      "html_url": "https://github.com/antikytheraton/NodeJS-MongoDB-GraphQL/blob/c8a6723d34b6b872732d03667dce998e201e5bad/src/graphql/schema.graphql",
+      "content": "type Query {\n    info: String!\n    feed: [Link!]!\n}\n\ntype Link {\n    id: ID!\n    description: String!\n    url: String!\n}\n\ntype Mutation {\n    createLink(\n        description: String!,\n        url: String!\n    ): Boolean!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-26T18:06:58Z",
+    "updated_at": "2018-06-26T20:44:28Z",
+    "pushed_at": "2018-06-26T20:44:25Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

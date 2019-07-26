@@ -1,0 +1,42 @@
+{
+  "repo_name": "blog",
+  "repo_full_name": "fullstackdemo/blog",
+  "repo_owner": "fullStackDemo",
+  "repo_description": "CentOS服务器配置，NodeJs 项目配置，开发随笔，react源码解读, vue源码解读，架构分析，性能优化",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/hackernews-node/src/schema.graphql",
+      "sha": "c36bf442743a38aeea521d1ddb6afd0e73891b5b",
+      "url": "https://api.github.com/repositories/175123000/contents/graphql/hackernews-node/src/schema.graphql?ref=47accf115624a0328d3ca8aac57d2d19baa9d743",
+      "git_url": "https://api.github.com/repositories/175123000/git/blobs/c36bf442743a38aeea521d1ddb6afd0e73891b5b",
+      "html_url": "https://github.com/fullStackDemo/blog/blob/47accf115624a0328d3ca8aac57d2d19baa9d743/graphql/hackernews-node/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  age: [Int]\n  feed: [Link!]!\n  link(id: ID!): Link\n}\n\ntype Mutation {\n  post(url:String!, description: String!) : Link!\n  # update a link\n  updateLink(id: ID!, url: String, description: String): Link\n  # delete a link\n  deleteLink(id: ID!): Link\n\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-12T02:50:39Z",
+    "updated_at": "2019-07-17T23:41:34Z",
+    "pushed_at": "2019-07-17T23:41:32Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "repo_name": "webpack-config-github",
+  "repo_full_name": "github/webpack-config-github",
+  "repo_owner": "github",
+  "repo_description": "An opinionated webpack config for GitHub apps.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/relay/data/schema.graphql",
+      "sha": "99066c4e915d406c2e28aa2b9a3ed372e7070032",
+      "url": "https://api.github.com/repositories/110906175/contents/examples/relay/data/schema.graphql?ref=88037db571a99caa040fa33aebe0c9ab4340ce43",
+      "git_url": "https://api.github.com/repositories/110906175/git/blobs/99066c4e915d406c2e28aa2b9a3ed372e7070032",
+      "html_url": "https://github.com/github/webpack-config-github/blob/88037db571a99caa040fa33aebe0c9ab4340ce43/examples/relay/data/schema.graphql",
+      "content": "type Query {\n  user(userId: Int!): User\n}\n\ntype User {\n  id: ID!\n  username: String!\n  fullName: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/relay-ts/data/schema.graphql",
+      "sha": "99066c4e915d406c2e28aa2b9a3ed372e7070032",
+      "url": "https://api.github.com/repositories/110906175/contents/examples/relay-ts/data/schema.graphql?ref=ddd1a239ee0d95529eab547560eeaa8be3aa28d3",
+      "git_url": "https://api.github.com/repositories/110906175/git/blobs/99066c4e915d406c2e28aa2b9a3ed372e7070032",
+      "html_url": "https://github.com/github/webpack-config-github/blob/ddd1a239ee0d95529eab547560eeaa8be3aa28d3/examples/relay-ts/data/schema.graphql",
+      "content": "type Query {\n  user(userId: Int!): User\n}\n\ntype User {\n  id: ID!\n  username: String!\n  fullName: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/github-graphql/data/schema.graphql",
+      "sha": "82fbb5ea0320a9008ab18aa0ef9b0923c77405a6",
+      "url": "https://api.github.com/repositories/110906175/contents/examples/github-graphql/data/schema.graphql?ref=88037db571a99caa040fa33aebe0c9ab4340ce43",
+      "git_url": "https://api.github.com/repositories/110906175/git/blobs/82fbb5ea0320a9008ab18aa0ef9b0923c77405a6",
+      "html_url": "https://github.com/github/webpack-config-github/blob/88037db571a99caa040fa33aebe0c9ab4340ce43/examples/github-graphql/data/schema.graphql",
+      "content": "type Query {\n  user(userId: Int!): User\n}\n\ntype User {\n  id: String!\n  username: String!\n  fullName: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-16T01:17:06Z",
+    "updated_at": "2019-06-22T14:02:28Z",
+    "pushed_at": "2019-01-31T17:24:48Z",
+    "issues": 10,
+    "watchers": 4,
+    "fork_count": 9,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 27,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 4,
+    "pull_requests_merged": 23,
+    "releases": 0,
+    "stargazers": 30
+  }
+}

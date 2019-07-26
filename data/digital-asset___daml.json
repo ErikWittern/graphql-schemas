@@ -1,0 +1,41 @@
+{
+  "repo_name": "daml",
+  "repo_full_name": "digital-asset/daml",
+  "repo_owner": "digital-asset",
+  "repo_description": "The DAML smart contract language",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "navigator/backend/src/test/resources/schema.graphql",
+      "sha": "0396d301067a0a386f52982ba9164c89e43c90c1",
+      "url": "https://api.github.com/repositories/178222328/contents/navigator/backend/src/test/resources/schema.graphql?ref=c645348ca1f13bda148d7089b342ebee70256698",
+      "git_url": "https://api.github.com/repositories/178222328/git/blobs/0396d301067a0a386f52982ba9164c89e43c90c1",
+      "html_url": "https://github.com/digital-asset/daml/blob/c645348ca1f13bda148d7089b342ebee70256698/navigator/backend/src/test/resources/schema.graphql",
+      "content": "type Choice {\n  name: String!\n  parameter: DamlLfType!\n  consuming: Boolean!\n}\n\ninterface Command {\n  id: ID!\n  workflowId: ID!\n  index: Int!\n  platformTime: Time!\n  status: CommandStatus!\n}\n\n\ntype CommandEdge {\n  node: Command!\n  cursor: String!\n}\n\nscalar CommandId\n\ntype CommandPagination {\n  beforeCount: Int!\n  totalCount: Int!\n  sortings: [Sorting!]\n  edges: [CommandEdge!]!\n}\n\ninterface CommandStatus {\n  completed: Boolean!\n}\n\ntype CommandStatusWaiting implements CommandStatus\n\ntype CommandStatusSuccess implements CommandStatus {\n  transaction: Transaction!\n}\n\ntype CommandStatusError implements CommandStatus {\n  code: String!\n  details: String!\n}\n\ntype CommandStatusUnknown implements CommandStatus\n\ntype Contract implements Node {\n  id: ID!\n  template: Template!\n  createEvent: CreatedEvent!\n  archiveEvent: ExercisedEvent\n  exerciseEvents: [ExercisedEvent!]!\n  argument: DamlLfValueRecord!\n  agreementText: String\n}\n\ntype ContractEdge {\n  node: Contract!\n  cursor: String!\n}\n\ntype ContractPagination {\n  beforeCount: Int!\n  totalCount: Int!\n  sortings: [Sorting!]\n  edges: [ContractEdge!]!\n}\n\ntype CreateCommand implements Node & Command {\n  template: Template\n  templateId: String!\n  argument: DamlLfValueRecord!\n}\n\ntype CreatedEvent implements Node & Event {\n  id: ID!\n  parent: Event\n  transaction: Transaction!\n  witnessParties: [Party!]!\n  workflowId: String!\n  contract: Contract!\n  argument: DamlLfValueRecord!\n}\n\nscalar DamlLfDataType\n\ntype DamlLfDefDataType implements Node & DamlLfNode {\n  id: ID!\n  package: String!\n  module: String!\n  name: String!\n  dataType: DamlLfDataType!\n  typeVars: [String!]!\n  dependencies(depth: Int): [DamlLfDefDataType!]!\n}\n\ninterface DamlLfNode {\n  id: ID!\n  package: String!\n  module: String!\n  name: String!\n}\n\nscalar DamlLfType\n\nscalar DamlLfValue\n\nscalar DamlLfValueRecord\n\nenum Direction {\n  ASCENDING\n  DESCENDING\n}\n\ninterface Event {\n  id: ID!\n  parent: Event\n  transaction: Transaction!\n  witnessParties: [Party!]!\n  workflowId: String!\n}\n\ntype ExerciseCommand implements Node & Command {\n  contract: Contract\n  contractId: String!\n  choice: String!\n  argument: DamlLfValue!\n}\n\ntype ExercisedEvent implements Node & Event {\n  id: ID!\n  parent: Event\n  transaction: Transaction!\n  witnessParties: [Party!]!\n  workflowId: String!\n  contract: Contract!\n  choice: String!\n  argument: DamlLfValue!\n  actingParties: [Party!]!\n  consuming: Boolean!\n  children: [Event!]!\n}\n\ninput FilterCriterion {\n  field: String!\n  value: String!\n}\n\nscalar LedgerOffset\n\ntype LedgerTime {\n  id: ID!\n  time: Time!\n  type: TimeType!\n}\n\ntype Mutation {\n  advanceTime(time: Time!): LedgerTime!\n  create(templateId: ID!, argument: DamlLfValue): CommandId!\n  exercise(contractId: ID!, choiceId: ID!, argument: DamlLfValue): CommandId!\n}\n\ninterface Node {\n  id: ID!\n}\n\nscalar Party\n\ntype Query {\n  ledgerTime: LedgerTime!\n  latestTransaction: Transaction\n  node(typename: String!, id: ID!): Node\n  nodes(typename: String!, ids: [ID!]!): [Node!]!\n  template(topLevelDecl: String!): [Template!]!\n  commandStatus(id: ID!): CommandStatus\n  templates(search: String, filter: [FilterCriterion!], count: Int, start: String, sort: [SortCriterion!]): TemplatePagination!\n  contracts(search: String, filter: [FilterCriterion!], includeArchived: Boolean, count: Int, start: String, sort: [SortCriterion!]): ContractPagination!\n  commands(search: String, filter: [FilterCriterion!], count: Int, start: String, sort: [SortCriterion!]): CommandPagination!\n}\n\ninput SortCriterion {\n  field: String!\n  direction: Direction!\n}\n\ntype Sorting {\n  field: String!\n  direction: Direction!\n}\n\ntype Template implements Node & DamlLfNode {\n  id: ID!\n  package: String!\n  module: String!\n  name: String!\n  topLevelDecl: String!\n  parameter: DamlLfType!\n  parameterDef: DamlLfDefDataType!\n  choices: [Choice!]!\n  contracts(search: String, filter: [FilterCriterion!], includeArchived: Boolean, count: Int, start: String, sort: [SortCriterion!]): ContractPagination!\n}\n\ntype TemplateEdge {\n  node: Template!\n  cursor: String!\n}\n\ntype TemplatePagination {\n  beforeCount: Int!\n  totalCount: Int!\n  sortings: [Sorting!]\n  edges: [TemplateEdge!]!\n}\n\nscalar Time\n\nenum TimeType {\n  static\n  wallclock\n  simulated\n}\n\ntype Transaction implements Node {\n  id: ID!\n  offset: LedgerOffset!\n  effectiveAt: Time!\n  commandId: CommandId!\n  events: [Event!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 23,
+      "containsCycle": true,
+      "numDefinitions": 40
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-28T14:38:37Z",
+    "updated_at": "2019-07-19T19:33:21Z",
+    "pushed_at": "2019-07-19T19:33:14Z",
+    "issues": 672,
+    "watchers": 21,
+    "fork_count": 41,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 1561,
+    "pull_requests_open": 31,
+    "pull_requests_closed": 105,
+    "pull_requests_merged": 1425,
+    "releases": 18,
+    "stargazers": 221
+  }
+}

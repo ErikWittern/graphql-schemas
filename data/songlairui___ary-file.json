@@ -1,0 +1,42 @@
+{
+  "repo_name": "ary-file",
+  "repo_full_name": "songlairui/ary-file",
+  "repo_owner": "songlairui",
+  "repo_description": "目录信息",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/fed/apollo-server/schema.graphql",
+      "sha": "cd4207083aae6b40ca8cff2dfe354df510239a83",
+      "url": "https://api.github.com/repositories/181203875/contents/packages/fed/apollo-server/schema.graphql?ref=dafd602b74a23462beb9f03b439a6e054586a367",
+      "git_url": "https://api.github.com/repositories/181203875/git/blobs/cd4207083aae6b40ca8cff2dfe354df510239a83",
+      "html_url": "https://github.com/songlairui/ary-file/blob/dafd602b74a23462beb9f03b439a6e054586a367/packages/fed/apollo-server/schema.graphql",
+      "content": "# Included scalars\nscalar JSON\nscalar Upload\n\n# It will increment!\ntype Counter {\n  # Number of increments\n  count: Int!\n  # Full message for testing\n  countStr: String\n}\n\n# A text message send by users\ntype Message {\n  id: ID!\n  # Message content\n  text: String!\n}\n\n# Input from user to create a message\ninput MessageInput {\n  # Message content\n  text: String!\n}\n\ntype WorkingDir {\n  title: String\n  path: String!\n  desc: String\n  sort: Int\n}\n\ninput WorkingDirInput {\n  title: String\n  path: String!\n  desc: String\n  sort: Int\n}\n\ntype File {\n  id: ID!\n  path: String!\n  filename: String!\n  mimetype: String!\n  encoding: String!\n}\ntype FsItem {\n  name: String!\n  isDir: Boolean!\n}\n\ntype Query {\n  ls(dir: String, first: Int, limit: Int, showHidden: Boolean): [FsItem]\n  # Test query with a parameter\n  hello(name: String): String!\n  # List of messages sent by users\n  messages: [Message]\n  uploads: [File]\n  workingDir(id: ID, path: String): WorkingDir\n  workingDirs: [WorkingDir]\n}\n\ntype Mutation {\n  myMutation: String!\n  # Add a message and publish it on 'messages' subscription channel\n  addMessage(input: MessageInput!): Message!\n  singleUpload(file: Upload!): File!\n  multipleUpload(files: [Upload!]!): [File!]!\n  addWorkingDir(input: WorkingDirInput): WorkingDir!\n  updateWorkingDir(input: WorkingDirInput): WorkingDir!\n  deleteWorkingDir(input: WorkingDirInput): WorkingDir!\n}\n\ntype Subscription {\n  mySub: String!\n  # This will update every 2 seconds\n  counter: Counter!\n  # When a new message is added\n  messageAdded: Message!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-13T17:10:41Z",
+    "updated_at": "2019-04-18T16:19:14Z",
+    "pushed_at": "2019-07-13T04:06:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

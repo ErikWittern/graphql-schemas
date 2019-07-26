@@ -1,0 +1,42 @@
+{
+  "repo_name": "nde-termennetwerk",
+  "repo_full_name": "knaw-huc/nde-termennetwerk",
+  "repo_owner": "knaw-huc",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/main/resources/nl/knaw/huc/di/nde/registry/schema.graphql",
+      "sha": "8d529cfe4c6dc49e82cca0d0b292c4168b0aed69",
+      "url": "https://api.github.com/repositories/159294264/contents/src/main/resources/nl/knaw/huc/di/nde/registry/schema.graphql?ref=3943387b9ede71f63b3f529ecd24cfa015978695",
+      "git_url": "https://api.github.com/repositories/159294264/git/blobs/8d529cfe4c6dc49e82cca0d0b292c4168b0aed69",
+      "html_url": "https://github.com/knaw-huc/nde-termennetwerk/blob/3943387b9ede71f63b3f529ecd24cfa015978695/src/main/resources/nl/knaw/huc/di/nde/registry/schema.graphql",
+      "content": "type Query {\n  terms(match : String!, dataset : [String!]!) : [Dataset]\n}\n\ntype Dataset {\n  dataset: ID!\n  label: [String]\n  terms: [Term]\n}\n\ntype Term {\n  uri: String!\n  prefLabel: [String]\n  altLabel: [String]\n  scopeNote: [String]\n  definition: [String]\n  broader: [String]\n  narrower: [String]\n  related: [String]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-27T07:32:10Z",
+    "updated_at": "2019-05-05T15:46:49Z",
+    "pushed_at": "2019-06-06T12:40:37Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 6,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 22,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 19,
+    "releases": 4,
+    "stargazers": 0
+  }
+}

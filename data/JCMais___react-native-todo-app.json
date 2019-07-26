@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-native-todo-app",
+  "repo_full_name": "jcmais/react-native-todo-app",
+  "repo_owner": "JCMais",
+  "repo_description": "Self-learning project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "e1a1ac9b3f2c81516d2d43a2272372965a28deb8",
+      "url": "https://api.github.com/repositories/87369797/contents/data/schema.graphql?ref=5c327c0e3488dfd81ce426d067d92bae4a89c9a5",
+      "git_url": "https://api.github.com/repositories/87369797/git/blobs/e1a1ac9b3f2c81516d2d43a2272372965a28deb8",
+      "html_url": "https://github.com/JCMais/react-native-todo-app/blob/5c327c0e3488dfd81ce426d067d92bae4a89c9a5/data/schema.graphql",
+      "content": "input AddTodoInput {\n  text: String!\n  clientMutationId: String\n}\n\ntype AddTodoPayload {\n  todoEdge: TodoEdge\n  viewer: User\n  error: String\n  clientMutationId: String\n}\n\ninput ChangePasswordInput {\n  oldPassword: String!\n\n  # user new password\n  password: String!\n  clientMutationId: String\n}\n\ntype ChangePasswordPayload {\n  error: String\n  viewer: User\n  clientMutationId: String\n}\n\ninput ChangeTodoTextInput {\n  id: ID!\n  text: String!\n  clientMutationId: String\n}\n\ntype ChangeTodoTextPayload {\n  todo: Todo\n  viewer: User\n  error: String\n  clientMutationId: String\n}\n\ninput DeleteTodoInput {\n  id: [ID!]\n  clientMutationId: String\n}\n\ntype DeleteTodoPayload {\n  deletedId: [ID]\n  viewer: User\n  error: String\n  clientMutationId: String\n}\n\ninput LoginEmailInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype LoginEmailPayload {\n  token: String\n  viewer: User\n  error: String\n  clientMutationId: String\n}\n\ntype Mutation {\n  RegisterEmail(input: RegisterEmailInput!): RegisterEmailPayload\n  LoginEmail(input: LoginEmailInput!): LoginEmailPayload\n  ChangePassword(input: ChangePasswordInput!): ChangePasswordPayload\n  AddTodo(input: AddTodoInput!): AddTodoPayload\n  ChangeTodoText(input: ChangeTodoTextInput!): ChangeTodoTextPayload\n  ToggleTodoStatus(input: ToggleTodoStatusInput!): ToggleTodoStatusPayload\n  DeleteTodo(input: DeleteTodoInput!): DeleteTodoPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# The root of all... queries\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: User\n}\n\ninput RegisterEmailInput {\n  name: String!\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype RegisterEmailPayload {\n  token: String\n  viewer: User\n  error: String\n  clientMutationId: String\n}\n\n# Todo data\ntype Todo implements Node {\n  # The ID of an object\n  id: ID!\n  _id: String\n  text: String\n  completedAt: String\n  color: String\n  order: Int\n}\n\n# A connection to a list of items.\ntype TodoConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TodoEdge]\n  count: Int\n}\n\n# An edge in a connection.\ntype TodoEdge {\n  # The item at the end of the edge\n  node: Todo\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput ToggleTodoStatusInput {\n  id: ID!\n  completed: Boolean!\n  clientMutationId: String\n}\n\ntype ToggleTodoStatusPayload {\n  todo: Todo\n  viewer: User\n  error: String\n  clientMutationId: String\n}\n\n# User data\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  _id: String\n  name: String\n  email: String\n  active: Boolean\n  todos(after: String, first: Int, before: String, last: Int, search: String, hideCompleted: Boolean = false): TodoConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 22
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-06T00:48:23Z",
+    "updated_at": "2018-12-12T08:32:22Z",
+    "pushed_at": "2018-08-30T23:02:53Z",
+    "issues": 0,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

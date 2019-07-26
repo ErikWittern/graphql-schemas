@@ -1,0 +1,42 @@
+{
+  "repo_name": "playZikServer",
+  "repo_full_name": "dadou4243/playzikserver",
+  "repo_owner": "dadou4243",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/collections/schema.graphql",
+      "sha": "d56f843ebbcc80c66866ccc6b8e3e1b84d7364fe",
+      "url": "https://api.github.com/repositories/79731550/contents/src/collections/schema.graphql?ref=243ca755910e961cfd8bb927da925970404a1a8d",
+      "git_url": "https://api.github.com/repositories/79731550/git/blobs/d56f843ebbcc80c66866ccc6b8e3e1b84d7364fe",
+      "html_url": "https://github.com/dadou4243/playZikServer/blob/243ca755910e961cfd8bb927da925970404a1a8d/src/collections/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\nscalar Void\nscalar MyInt\nscalar MyFloat\nscalar MyString\nscalar Date\nscalar UUID\nscalar JSON\nscalar Coord\n\ntype Query {\n  me: String\n}\n\ntype Mutation {\n  me: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-22T17:04:50Z",
+    "updated_at": "2017-09-14T18:26:01Z",
+    "pushed_at": "2017-06-09T14:41:33Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

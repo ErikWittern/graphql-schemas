@@ -1,0 +1,39 @@
+{
+  "repo_name": "codestats_flutter",
+  "repo_full_name": "schwusch/codestats_flutter",
+  "repo_owner": "Schwusch",
+  "repo_description": "Flutter app for browsing Code::Stats profiles",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "lib/schema.graphql",
+      "sha": "8d4ec9c8c3f809346b2e61ddf8f7bcebdb23d980",
+      "url": "https://api.github.com/repositories/163194769/contents/lib/schema.graphql?ref=f7e2bde96670dbabe5775193063972369cb6f595",
+      "git_url": "https://api.github.com/repositories/163194769/git/blobs/8d4ec9c8c3f809346b2e61ddf8f7bcebdb23d980",
+      "html_url": "https://github.com/Schwusch/codestats_flutter/blob/f7e2bde96670dbabe5775193063972369cb6f595/lib/schema.graphql",
+      "content": "schema {\n  query: RootQueryType\n}\n\n\"\"\"ISO 8601 date\"\"\"\nscalar Date\n\n\"\"\"RFC3339 time with timezone\"\"\"\nscalar Datetime\n\n\"\"\"User profile public data\"\"\"\ntype Profile {\n  \"\"\"User's dates when they have been active and their XP\"\"\"\n  dates(since: Date): [ProfileDate]\n\n  \"\"\"\n  User's dates since given date with their summed XP per language per day\n  \"\"\"\n  dayLanguageXps(since: Date!): [ProfileDaylanguage]\n\n  \"\"\"User's XP by day of week\"\"\"\n  dayOfWeekXps(since: Date): [ProfileDowXp]\n\n  \"\"\"User's XP by day of year\"\"\"\n  dayOfYearXps: ProfileDayOfYearXp\n\n  \"\"\"User's XP by hour of day (in 24 hour format)\"\"\"\n  hourOfDayXps: ProfileHourOfDayXp\n\n  \"\"\"User's languages and their XP\"\"\"\n  languages(since: Datetime): [ProfileLanguage]\n\n  \"\"\"User's machines and their XP\"\"\"\n  machines(since: Datetime): [ProfileMachine]\n\n  \"\"\"Timestamp when user registered into service\"\"\"\n  registered: Datetime\n\n  \"\"\"Total amount of XP of user\"\"\"\n  totalXp: Int\n}\n\n\"\"\"Date when user was active and its total XP for a profile\"\"\"\ntype ProfileDate {\n  date: String\n  xp: Int\n}\n\n\"\"\"Date when profile has an amount of XP of the language\"\"\"\ntype ProfileDaylanguage {\n  date: Date\n  language: String\n  xp: Int\n}\n\n\"\"\"\nMap where key is number of day of year (including leap day, like in the year 2000) and value is amount of XP\n\"\"\"\nscalar ProfileDayOfYearXp\n\n\"\"\"Day of week and its combined XP\"\"\"\ntype ProfileDowXp {\n  day: Int\n  xp: Int\n}\n\n\"\"\"\nMap where key is hour of day (in 24 hour format) and value is amount of XP\n\"\"\"\nscalar ProfileHourOfDayXp\n\n\"\"\"Language and its total XP for a profile\"\"\"\ntype ProfileLanguage {\n  name: String\n  xp: Int\n}\n\n\"\"\"Machine and its total XP for a profile\"\"\"\ntype ProfileMachine {\n  name: String\n  xp: Int\n}\n\ntype RootQueryType {\n  \"\"\"Get profile by username\"\"\"\n  profile(\n    \"\"\"Username of profile\"\"\"\n    username: String\n  ): Profile\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-26T15:44:52Z",
+    "updated_at": "2019-07-17T07:06:46Z",
+    "pushed_at": "2019-03-31T17:33:11Z",
+    "issues": 0,
+    "watchers": 6,
+    "fork_count": 7,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 21
+  }
+}

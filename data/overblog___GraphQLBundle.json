@@ -1,0 +1,41 @@
+{
+  "repo_name": "GraphQLBundle",
+  "repo_full_name": "overblog/graphqlbundle",
+  "repo_owner": "overblog",
+  "repo_description": "This bundle provides tools to build a complete GraphQL server in your Symfony App.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "tests/Functional/Command/fixtures/schema.graphql",
+      "sha": "6ebdece9307c10e403f173f795fd3a9ac8e1bb39",
+      "url": "https://api.github.com/repositories/51749954/contents/tests/Functional/Command/fixtures/schema.graphql?ref=1dd83323daa680c81971518e4715dc548a640626",
+      "git_url": "https://api.github.com/repositories/51749954/git/blobs/6ebdece9307c10e403f173f795fd3a9ac8e1bb39",
+      "html_url": "https://github.com/overblog/GraphQLBundle/blob/1dd83323daa680c81971518e4715dc548a640626/tests/Functional/Command/fixtures/schema.graphql",
+      "content": "\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Query {\n  user: User\n}\n\ntype User {\n  \"\"\"the user name\"\"\"\n  name: String\n  friends(after: String, first: Int, before: String, last: Int): friendConnection\n  friendsForward(after: String, first: Int): userConnection\n  friendsBackward(before: String, last: Int): userConnection\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype friendConnection {\n  totalCount: Int\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  edges: [friendEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype friendEdge {\n  friendshipTime: String\n\n  \"\"\"The item at the end of the edge.\"\"\"\n  node: User\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype userConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  edges: [userEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype userEdge {\n  \"\"\"The item at the end of the edge.\"\"\"\n  node: User\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-02-15T11:03:43Z",
+    "updated_at": "2019-07-19T11:57:45Z",
+    "pushed_at": "2019-07-19T11:56:34Z",
+    "issues": 224,
+    "watchers": 40,
+    "fork_count": 103,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 309,
+    "pull_requests_open": 5,
+    "pull_requests_closed": 26,
+    "pull_requests_merged": 278,
+    "releases": 63,
+    "stargazers": 466
+  }
+}

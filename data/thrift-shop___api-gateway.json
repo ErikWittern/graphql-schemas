@@ -1,0 +1,107 @@
+{
+  "repo_name": "api-gateway",
+  "repo_full_name": "thrift-shop/api-gateway",
+  "repo_owner": "thrift-shop",
+  "repo_description": "Thrift Shop API Gateway implemented in GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootQuery.graphql",
+      "path": "graphql/inventory/rootQuery.graphql",
+      "sha": "ed429e8ed771f0660546841b0e09b72c2102512e",
+      "url": "https://api.github.com/repositories/106974117/contents/graphql/inventory/rootQuery.graphql?ref=6a32fab7064bd892d91aecb12fd438d6d164b25f",
+      "git_url": "https://api.github.com/repositories/106974117/git/blobs/ed429e8ed771f0660546841b0e09b72c2102512e",
+      "html_url": "https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/inventory/rootQuery.graphql",
+      "content": "type RootQuery {\n  getInventory(itemId: String): ItemStatus\n}\n\ntype RootMutation {\n  reduceInventory(input: ReduceInventoryInput!): ItemStatus\n}\n\nschema {\n  query: RootQuery\n  mutation: RootMutation\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/inventory/rootQuery.graphql:\ntype RootQuery {\n  getInventory(itemId: String): ItemStatus\n}\n\ntype RootMutation {\n  reduceInventory(input: ReduceInventoryInput!): ItemStatus\n}\n\nschema {\n  query: RootQuery\n  mutation: RootMutation\n}\n\n# https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/inventory/inventory.graphql:\ntype ItemStatus {\n    itemId: String\n    qty: Int\n}\n\ninput ReduceInventoryInput {\n    itemId: String\n    qty: Int\n}\n",
+        "mergedPaths": [
+          "graphql/inventory/inventory.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "ItemStatus"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "inventory.graphql",
+      "path": "graphql/inventory/inventory.graphql",
+      "sha": "6bf11a91291b8e3979f08b8928463f4e5e3348bf",
+      "url": "https://api.github.com/repositories/106974117/contents/graphql/inventory/inventory.graphql?ref=6a32fab7064bd892d91aecb12fd438d6d164b25f",
+      "git_url": "https://api.github.com/repositories/106974117/git/blobs/6bf11a91291b8e3979f08b8928463f4e5e3348bf",
+      "html_url": "https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/inventory/inventory.graphql",
+      "content": "type ItemStatus {\n    itemId: String\n    qty: Int\n}\n\ninput ReduceInventoryInput {\n    itemId: String\n    qty: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "rootQuery.graphql",
+      "path": "graphql/catalog/rootQuery.graphql",
+      "sha": "34ac58be31fdfb7ce7eed792f2ea205852efa78e",
+      "url": "https://api.github.com/repositories/106974117/contents/graphql/catalog/rootQuery.graphql?ref=6a32fab7064bd892d91aecb12fd438d6d164b25f",
+      "git_url": "https://api.github.com/repositories/106974117/git/blobs/34ac58be31fdfb7ce7eed792f2ea205852efa78e",
+      "html_url": "https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/catalog/rootQuery.graphql",
+      "content": "type RootQuery {\n  allItems: [Item]\n}\n\nschema {\n  query: RootQuery\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/catalog/rootQuery.graphql:\ntype RootQuery {\n  allItems: [Item]\n}\n\nschema {\n  query: RootQuery\n}\n\n# https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/catalog/catalog.graphql:\ntype Item {\n    itemId: String\n    version: Int\n    name: String\n    description: String\n    status: ItemStatus\n}\n\n# https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/inventory/inventory.graphql:\ntype ItemStatus {\n    itemId: String\n    qty: Int\n}\n\ninput ReduceInventoryInput {\n    itemId: String\n    qty: Int\n}\n",
+        "mergedPaths": [
+          "graphql/catalog/catalog.graphql",
+          "graphql/inventory/inventory.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Item",
+          "ItemStatus"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "catalog.graphql",
+      "path": "graphql/catalog/catalog.graphql",
+      "sha": "13a92b32e539d4e9cbddb6b7f9d26dff0e9b6df4",
+      "url": "https://api.github.com/repositories/106974117/contents/graphql/catalog/catalog.graphql?ref=6a32fab7064bd892d91aecb12fd438d6d164b25f",
+      "git_url": "https://api.github.com/repositories/106974117/git/blobs/13a92b32e539d4e9cbddb6b7f9d26dff0e9b6df4",
+      "html_url": "https://github.com/thrift-shop/api-gateway/blob/6a32fab7064bd892d91aecb12fd438d6d164b25f/graphql/catalog/catalog.graphql",
+      "content": "type Item {\n    itemId: String\n    version: Int\n    name: String\n    description: String\n    status: ItemStatus\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-15T01:07:50Z",
+    "updated_at": "2019-05-27T12:35:01Z",
+    "pushed_at": "2018-03-09T04:06:17Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

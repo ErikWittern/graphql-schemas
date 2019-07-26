@@ -1,0 +1,39 @@
+{
+  "repo_name": "relay-sample-database",
+  "repo_full_name": "pt-br/relay-sample-database",
+  "repo_owner": "pt-br",
+  "repo_description": "A sample database for mock data purposes",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "94267dcf1febd81bfbfd81314252139e08d0a37e",
+      "url": "https://api.github.com/repositories/81651334/contents/data/schema.graphql?ref=07fa69866963d602da8895ca6daccdd304615578",
+      "git_url": "https://api.github.com/repositories/81651334/git/blobs/94267dcf1febd81bfbfd81314252139e08d0a37e",
+      "html_url": "https://github.com/pt-br/relay-sample-database/blob/07fa69866963d602da8895ca6daccdd304615578/data/schema.graphql",
+      "content": "input AddPhoneInput {\n  model: String!\n  image: String!\n  clientMutationId: String!\n}\n\ntype AddPhonePayload {\n  viewer: User\n  clientMutationId: String!\n}\n\ntype Mutation {\n  addPhone(input: AddPhoneInput!): AddPhonePayload\n  removePhone(input: RemovePhoneInput!): RemovePhonePayload\n  updatePhone(input: UpdatePhoneInput!): UpdatePhonePayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Phone {\n  id: ID!\n  phoneId: String!\n  model: String!\n  image: String\n}\n\ntype PhoneConnection {\n  pageInfo: PageInfo!\n  edges: [PhoneEdge]\n}\n\ntype PhoneEdge {\n  node: Phone\n  cursor: String!\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n}\n\ninput RemovePhoneInput {\n  phoneId: String!\n  clientMutationId: String!\n}\n\ntype RemovePhonePayload {\n  viewer: User\n  clientMutationId: String!\n}\n\ninput UpdatePhoneInput {\n  phoneId: String!\n  phoneModel: String\n  phoneImage: String\n  clientMutationId: String!\n}\n\ntype UpdatePhonePayload {\n  viewer: User\n  clientMutationId: String!\n}\n\ntype User implements Node {\n  id: ID!\n  userId: String!\n  phones(after: String, first: Int, before: String, last: Int): PhoneConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-11T12:25:42Z",
+    "updated_at": "2017-02-11T12:43:41Z",
+    "pushed_at": "2017-02-12T02:37:22Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

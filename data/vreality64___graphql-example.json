@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql-example",
+  "repo_full_name": "vreality64/graphql-example",
+  "repo_owner": "vreality64",
+  "repo_description": "simple graphql example",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "review.graphql",
+      "path": "src/graphql/entity/review/review.graphql",
+      "sha": "370d022e3a4890db6b485cd7429e79f580aa4570",
+      "url": "https://api.github.com/repositories/153063199/contents/src/graphql/entity/review/review.graphql?ref=da5a83e75159a690b49765e88e09f008fe6fcfb6",
+      "git_url": "https://api.github.com/repositories/153063199/git/blobs/370d022e3a4890db6b485cd7429e79f580aa4570",
+      "html_url": "https://github.com/vreality64/graphql-example/blob/da5a83e75159a690b49765e88e09f008fe6fcfb6/src/graphql/entity/review/review.graphql",
+      "content": "type Review {\n  id: ID!\n}\n\ntype Query {\n  review(id: ID!): Review\n  reviews(limit: Int = 10, skip: Int): [Review]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/graphql/entity/user/user.graphql",
+      "sha": "4c135c8c7f2d31b4db362225d596ec1ca9469314",
+      "url": "https://api.github.com/repositories/153063199/contents/src/graphql/entity/user/user.graphql?ref=da5a83e75159a690b49765e88e09f008fe6fcfb6",
+      "git_url": "https://api.github.com/repositories/153063199/git/blobs/4c135c8c7f2d31b4db362225d596ec1ca9469314",
+      "html_url": "https://github.com/vreality64/graphql-example/blob/da5a83e75159a690b49765e88e09f008fe6fcfb6/src/graphql/entity/user/user.graphql",
+      "content": "enum UserType {\n  LINE\n}\n\ntype User {\n  id: ID!\n  type: UserType\n  userName: String\n  profileImage: String\n}\n\ntype Query {\n  user(id: ID!): User\n  users(limit: Int = 10, skip: Int): [User]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-15T06:26:57Z",
+    "updated_at": "2019-03-16T12:45:19Z",
+    "pushed_at": "2019-03-16T12:45:20Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "postgap-api",
+  "repo_full_name": "opentargets/postgap-api",
+  "repo_owner": "opentargets",
+  "repo_description": "A GraphQL API for serving POSTGAP data",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema.gql",
+      "sha": "0709a99519de1fa9fd578049ff931830d0b2dd18",
+      "url": "https://api.github.com/repositories/127815133/contents/src/schema.gql?ref=47eebfb9fec78a4a2b27759a3435cd0dec4c757a",
+      "git_url": "https://api.github.com/repositories/127815133/git/blobs/0709a99519de1fa9fd578049ff931830d0b2dd18",
+      "html_url": "https://github.com/opentargets/postgap-api/blob/47eebfb9fec78a4a2b27759a3435cd0dec4c757a/src/schema.gql",
+      "content": "type Query {\n  locus(\n    chromosome: String\n    start: Int\n    end: Int\n    g2VMustHaves: [String]\n    g2VScore: [Float]\n    r2: [Float]\n    gwasPValue: [Float]\n    selectedId: String\n    selectedType: String\n  ): DrawableLocus\n  locusTable(\n    chromosome: String\n    start: Int\n    end: Int\n    g2VMustHaves: [String]\n    g2VScore: [Float]\n    r2: [Float]\n    gwasPValue: [Float]\n    selectedId: String\n    selectedType: String\n    offset: Int\n    limit: Int\n  ): LocusTable\n  diseaseTable(efoId: String, offset: Int, limit: Int): DiseaseTable\n  geneLocation(geneId: String): GeneLocation\n  variantLocation(variantId: String): VariantLocation\n  search(queryString: String): [SearchResult]\n}\ntype Gene {\n  # The Ensembl gene identifier.\n  id: String\n  symbol: String\n  description: String\n  chromosome: String\n  tss: Int\n  start: Int\n  end: Int\n  forwardStrand: Boolean\n  # canonicalTranscript: CanonicalTranscript\n  exons: [[Int]]\n  selected: Boolean\n}\ntype GeneLocation {\n  id: String\n  symbol: String\n  chromosome: String\n  start: Int\n  end: Int\n}\ntype VariantLocation {\n  id: String\n  chromosome: String\n  position: Int\n  isLeadVariant: Boolean\n  isVariant: Boolean\n}\ntype SearchResult {\n  id: String\n  name: String\n  type: String\n}\ntype Variant {\n  id: String\n  # chromosome: String\n  position: Int\n  selected: Boolean\n}\ntype LeadVariant {\n  id: String\n  # chromosome: String\n  position: Int\n  selected: Boolean\n}\ntype Disease {\n  id: String\n  name: String\n  selected: Boolean\n}\ntype GeneVariant {\n  id: String\n  geneId: String\n  geneSymbol: String\n  # geneChromosome: String\n  geneTss: Int\n  # canonicalTranscript: CanonicalTranscript\n  vId: String\n  # variantChromosome: String\n  vPos: Int\n  otG2VScore: Float\n  gtexMaxTissue: String\n  gtexMaxValue: Float\n  vep: Float\n  vepTerms: String\n  gtex: Float\n  pchic: Float\n  fantom5: Float\n  dhs: Float\n  nearest: Boolean\n  selected: Boolean\n}\ntype VariantLeadVariant {\n  id: String\n  vId: String\n  # variantChromosome: String\n  vPos: Int\n  lvId: String\n  # leadVariantChromosome: String\n  lvPos: Int\n  r2: Float\n  selected: Boolean\n}\ntype LeadVariantDisease {\n  id: String\n  lvId: String\n  # leadVariantChromosome: String\n  lvPos: Int\n  efoId: String\n  efoName: String\n  gwasPValue: Float\n  gwasOddsRatio: Float\n  gwasBeta: Float\n  gwasStudy: String\n  gwasPMId: String\n  gwasSize: Int\n  selected: Boolean\n}\ntype CanonicalTranscript {\n  id: String\n  start: Int\n  end: Int\n  forwardStrand: Boolean\n  exons: [[Int]]\n  tss: Int\n  translationStart: Int\n  translationEnd: Int\n}\ntype DrawableLocus {\n  genes: [Gene]\n  variants: [Variant]\n  leadVariants: [LeadVariant]\n  diseases: [Disease]\n  geneVariants: [GeneVariant]\n  variantLeadVariants: [VariantLeadVariant]\n  leadVariantDiseases: [LeadVariantDisease]\n  maxGwasPValue: Float\n}\ntype LocusTable {\n  rows: [FullTableRow]\n  total: Int\n  offset: Int\n  limit: Int\n}\ntype DiseaseTable {\n  rows: [FullTableRow]\n  total: Int\n  offset: Int\n  limit: Int\n}\ntype FullTableRow {\n  index: Int\n  geneId: String\n  geneSymbol: String\n  geneChromosome: String\n  geneTss: Int\n  vId: String\n  variantChromosome: String\n  vPos: Int\n  lvId: String\n  efoId: String\n  efoName: String\n  otG2VScore: Float\n  gtexMaxTissue: String\n  gtexMaxValue: Float\n  vep: Float\n  vepTerms: String\n  gtex: Float\n  pchic: Float\n  fantom5: Float\n  dhs: Float\n  nearest: Boolean\n  r2: Float\n  gwasPValue: Float\n  gwasOddsRatio: Float\n  gwasBeta: Float\n  gwasSize: Int\n  gwasPMId: String\n  gwasStudy: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-02T21:34:47Z",
+    "updated_at": "2018-11-27T14:29:36Z",
+    "pushed_at": "2018-11-27T14:29:35Z",
+    "issues": 5,
+    "watchers": 5,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

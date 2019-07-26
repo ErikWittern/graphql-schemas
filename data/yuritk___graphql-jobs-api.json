@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-jobs-api",
+  "repo_full_name": "yuritk/graphql-jobs-api",
+  "repo_owner": "yuritk",
+  "repo_description": "API for vacancies/jobs based on GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "72c65e365f8dc12a75096a2d0c28a7ca7abe2cf0",
+      "url": "https://api.github.com/repositories/116991960/contents/data/schema.graphql?ref=4eb9c0e13ad17a024b58b6b5d9a3b76132144ddd",
+      "git_url": "https://api.github.com/repositories/116991960/git/blobs/72c65e365f8dc12a75096a2d0c28a7ca7abe2cf0",
+      "html_url": "https://github.com/yuritk/graphql-jobs-api/blob/4eb9c0e13ad17a024b58b6b5d9a3b76132144ddd/data/schema.graphql",
+      "content": "input ChangePasswordInput {\n  oldPassword: String!\n\n  \"\"\"user new password\"\"\"\n  password: String!\n  clientMutationId: String\n}\n\ntype ChangePasswordPayload {\n  error: String\n  me: User\n  clientMutationId: String\n}\n\n\"\"\"Job data\"\"\"\ntype Job {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  _id: String\n  user: String\n  active: Boolean\n  email: String\n  title: String\n  salary: Float\n  benefits: String\n  description: String\n  workload: String\n  localization: String\n  addinfo: String\n  contract: String\n  areas: [String]\n  subareas: [String]\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype JobConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [JobEdge]\n  count: Int\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype JobEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Job\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ninput LoginEmailInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype LoginEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\ntype Mutation {\n  LoginEmail(input: LoginEmailInput!): LoginEmailPayload\n  RegisterEmail(input: RegisterEmailInput!): RegisterEmailPayload\n  ChangePassword(input: ChangePasswordInput!): ChangePasswordPayload\n  RegisterJob(input: RegisterJobInput!): RegisterJobPayload\n  UpdateJob(input: UpdateJobInput!): UpdateJobPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\n\"\"\"The root of all... queries\"\"\"\ntype Query {\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n  me: User\n  user(id: ID!): User\n  users(after: String, first: Int, before: String, last: Int, search: String): UserConnection\n  job(id: String!): Job\n  allJobs(after: String, first: Int, before: String, last: Int, search: String): JobConnection\n}\n\ninput RegisterEmailInput {\n  name: String!\n  email: String!\n  password: String!\n  displayname: String!\n  description: String!\n  clientMutationId: String\n}\n\ntype RegisterEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\ninput RegisterJobInput {\n  user: String!\n  active: Boolean!\n  email: String!\n  title: String!\n  salary: Float!\n  benefits: String\n  description: String!\n  workload: String!\n  localization: String!\n  addinfo: String\n  contract: String!\n  areas: [String]\n  subareas: [String]\n  clientMutationId: String\n}\n\ntype RegisterJobPayload {\n  jobinfo: Job\n  error: String\n  clientMutationId: String\n}\n\ninput UpdateJobInput {\n  id: String\n  active: Boolean\n  email: String\n  title: String\n  salary: Float\n  benefits: String\n  description: String\n  workload: String\n  localization: String\n  addinfo: String\n  contract: String\n  areas: [String]\n  subareas: [String]\n  clientMutationId: String\n}\n\ntype UpdateJobPayload {\n  jobinfo: Job\n  error: String\n  clientMutationId: String\n}\n\n\"\"\"User data\"\"\"\ntype User implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  _id: String\n  active: Boolean\n  name: String\n  email: String\n  displayname: String\n  description: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype UserConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [UserEdge]\n  count: Int\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype UserEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: User\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-10T17:56:33Z",
+    "updated_at": "2018-01-23T13:28:57Z",
+    "pushed_at": "2018-01-24T02:07:40Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 7
+  }
+}

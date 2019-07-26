@@ -1,0 +1,39 @@
+{
+  "repo_name": "godispatch",
+  "repo_full_name": "deeper-x/godispatch",
+  "repo_owner": "deeper-x",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "eb1602e07ef7b0ac90f8aa0009976d0d48c54243",
+      "url": "https://api.github.com/repositories/186017177/contents/schema.graphql?ref=1c40b9f17ded106293b77abfeac0cf66bacdf09b",
+      "git_url": "https://api.github.com/repositories/186017177/git/blobs/eb1602e07ef7b0ac90f8aa0009976d0d48c54243",
+      "html_url": "https://github.com/deeper-x/godispatch/blob/1c40b9f17ded106293b77abfeac0cf66bacdf09b/schema.graphql",
+      "content": "type Todo {\n  id: ID!\n  text: String!\n  done: Boolean!\n  user: User!\n}\n\ntype User {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  todos: [Todo!]!\n}\n\ninput NewTodo {\n  text: String!\n  userId: String!\n}\n\ntype Mutation {\n  createTodo(input: NewTodo!): Todo!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-10T16:04:02Z",
+    "updated_at": "2019-05-10T21:51:43Z",
+    "pushed_at": "2019-05-10T21:51:42Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "craftbot-api",
+  "repo_full_name": "jimbothree/craftbot-api",
+  "repo_owner": "jimbothree",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "configuration.graphql",
+      "path": "src/web/resolvers/configuration/configuration.graphql",
+      "sha": "c6dafaee72ac4b017bfd4b24722e4e8920beb408",
+      "url": "https://api.github.com/repositories/161967388/contents/src/web/resolvers/configuration/configuration.graphql?ref=b5ba564b0f16e5c404dbf09cee31a7aa1e6f9d10",
+      "git_url": "https://api.github.com/repositories/161967388/git/blobs/c6dafaee72ac4b017bfd4b24722e4e8920beb408",
+      "html_url": "https://github.com/jimbothree/craftbot-api/blob/b5ba564b0f16e5c404dbf09cee31a7aa1e6f9d10/src/web/resolvers/configuration/configuration.graphql",
+      "content": "type Configuration {\n  API_KEY: String\n  DEBUG: Boolean\n  LOG_TO_FILE: Boolean\n}\n\ntype Query {\n  configuration: Configuration\n}\n\ntype Mutation {\n  setConfiguration(config: ConfigurationInput!): Configuration\n}\n\ninput ConfigurationInput {\n  API_KEY: String\n  DEBUG: Boolean\n  LOG_TO_FILE: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-16T04:24:23Z",
+    "updated_at": "2018-12-18T03:11:34Z",
+    "pushed_at": "2018-12-18T03:11:32Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

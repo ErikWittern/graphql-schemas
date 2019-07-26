@@ -1,0 +1,42 @@
+{
+  "repo_name": "wingbot",
+  "repo_full_name": "wingbotai/wingbot",
+  "repo_owner": "wingbotai",
+  "repo_description": "Javascript chatbot library for wingbot.ai (docs here: https://wingbotai.github.io/wingbot)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/graphApi/schema.gql",
+      "sha": "60d981da200d1a73a117e4c2051e5f4c9acf5fe8",
+      "url": "https://api.github.com/repositories/129722989/contents/src/graphApi/schema.gql?ref=52865adffbe0874ca27ec403bc15d418cbc0373d",
+      "git_url": "https://api.github.com/repositories/129722989/git/blobs/60d981da200d1a73a117e4c2051e5f4c9acf5fe8",
+      "html_url": "https://github.com/wingbotai/wingbot/blob/52865adffbe0874ca27ec403bc15d418cbc0373d/src/graphApi/schema.gql",
+      "content": "scalar Any\n\ntype Tag {\n    tag: String!,\n    subscribtions: Int!\n}\n\ntype Tags {\n    data: [Tag]!\n    lastKey: String\n}\n\ntype Subscribtion {\n    pageId: String\n    senderId: String\n}\n\ntype Subscribtions {\n    data: [Subscribtion]!\n    lastKey: String\n    count: Int!\n}\n\ntype Campaign {\n    id: String!,\n    name: String!\n\n    action: String!\n    data: String,\n\n    include: [String]!\n    exclude: [String]!\n    pageId: String\n\n    sliding: Boolean\n    slide: Int\n    slideRound: Int\n    active: Boolean!\n    in24hourWindow: Boolean!\n    startAt: Float\n    allowRepeat: Boolean!\n    type: String\n\n    sent: Int!\n    failed: Int!\n    delivery: Int!\n    read: Int!\n    notSent: Int!\n    leaved: Int!\n    queued: Int!\n    negative: Int!\n    positive: Int!\n\n    hasCondition: Boolean!\n    condition: String\n}\n\ntype Campaigns {\n    data: [Campaign]!\n    lastKey: String\n}\n\ninput CampaignsCondition {\n    active: Boolean\n    sliding: Boolean\n}\n\ntype QueuingResult {\n    queued: Int!\n}\n\ntype PostBackResult {\n    status: Int\n}\n\ntype ValidationResult {\n    ok: Boolean!\n    error: String\n}\n\ninput CreateCampaignInput {\n    name: String!\n    action: String!\n    data: String = \"{}\"\n\n    include: [String]! = []\n    exclude: [String]! = []\n    pageId: String\n\n    sliding: Boolean = false\n    slide: Int\n    slideRound: Int\n    active: Boolean! = false\n    in24hourWindow: Boolean! = true\n    startAt: Float\n    allowRepeat: Boolean! = false\n    type: String\n\n    hasCondition: Boolean! = false\n    condition: String\n}\n\ninput UpdateCampaignInput {\n    name: String\n    action: String\n    data: String\n\n    include: [String]\n    exclude: [String]\n    pageId: String\n\n    sliding: Boolean\n    slide: Int\n    slideRound: Int\n    active: Boolean\n    in24hourWindow: Boolean\n    startAt: Float\n    allowRepeat: Boolean\n    type: String\n\n    hasCondition: Boolean\n    condition: String\n}\n\ntype Query {\n    \"list tags statistics\"\n    tags(pageId:String): Tags\n\n    \"fetch user ids for selected tag\"\n    subscribtions (\n        include: [String!] = []\n        exclude: [String!] = []\n        pageId: String\n        limit: Int = 100\n        lastKey: String\n    ): Subscribtions\n\n    \"get a campaign by ID\"\n    campaign (\n        campaignId: String!\n    ): Campaign\n\n    \"list of user defined campaigns\"\n    campaigns(\n        limit: Int\n        lastKey: String\n        condition: CampaignsCondition\n    ): Campaigns\n\n    \"returns the API version\"\n    version: String!\n\n    \"export subscribtions from campaigns\"\n    unsuccessfulSubscribers(\n        campaignId: String\n        sentWithoutReaction: Boolean = false\n        pageId: String\n    ): Subscribtions\n}\n\ntype Mutation {\n    \"validate conversation data\"\n    validateBot(bot:Any!): ValidationResult\n\n    \"invalidate a conversation cache in the chatbot\"\n    updateBot: Boolean\n\n    \"send a message to any user\"\n    postBack(pageId:String!,senderId:String!,action:String!,data:Any): PostBackResult\n\n    \"create a new campaign\"\n    createCampaign(campaign: CreateCampaignInput!): Campaign\n\n    \"update a campaign\"\n    updateCampaign(campaignId: String!, update: UpdateCampaignInput!): Campaign\n\n    \"remove a campaign\"\n    removeCampaign(campaignId: String!): Boolean\n\n    \"run a campaign\"\n    runCampaign(campaignId: String!): QueuingResult\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-16T10:03:48Z",
+    "updated_at": "2019-07-19T17:24:30Z",
+    "pushed_at": "2019-07-19T17:24:36Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

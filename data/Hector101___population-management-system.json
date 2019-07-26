@@ -1,0 +1,42 @@
+{
+  "repo_name": "population-management-system",
+  "repo_full_name": "hector101/population-management-system",
+  "repo_owner": "Hector101",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "d7e12711d4225304c864ddcfcfa74ad864b8399e",
+      "url": "https://api.github.com/repositories/168375615/contents/schema.graphql?ref=a8df7f27edb11de823cb82a746c7fb386edc1c38",
+      "git_url": "https://api.github.com/repositories/168375615/git/blobs/d7e12711d4225304c864ddcfcfa74ad864b8399e",
+      "html_url": "https://github.com/Hector101/population-management-system/blob/a8df7f27edb11de823cb82a746c7fb386edc1c38/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n  mutation: RootMutation\n}\n\n\"\"\"Location population details\"\"\"\ntype location {\n  \"\"\"Location ID\"\"\"\n  id: ID!\n\n  \"\"\"Location name\"\"\"\n  name: String!\n\n  \"\"\"Male population in a location\"\"\"\n  malePopulation: Int!\n\n  \"\"\"Female population in a location\"\"\"\n  femalePopulation: Int!\n\n  \"\"\"Total population of both genders in this location\"\"\"\n  totalPopulation: Int!\n\n  \"\"\"primary key of location's parent location\"\"\"\n  parentId: String\n}\n\n\"\"\"Response message\"\"\"\ntype message {\n  \"\"\"message after successful location population modification\"\"\"\n  message: String!\n}\n\n\"\"\"Root Mutation for Population Management System\"\"\"\ntype RootMutation {\n  \"\"\"Create new location with the population details of location\"\"\"\n  createLocation(name: String!, malePopulation: Int!, femalePopulation: Int!, parentId: String): location\n\n  \"\"\"Update existing population details of a location\"\"\"\n  updateLocation(id: ID!, name: String, malePopulation: Int, femalePopulation: Int, totalPopulation: Int, parentId: String): message\n\n  \"\"\"Delete existing population details of a location\"\"\"\n  deleteLocation(id: ID!): message\n}\n\n\"\"\"Root Query for Population Management System\"\"\"\ntype RootQuery {\n  \"\"\"List of all locations and their population details\"\"\"\n  locationsPopulation: [location]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-30T16:27:25Z",
+    "updated_at": "2019-02-02T12:50:59Z",
+    "pushed_at": "2019-02-02T12:50:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

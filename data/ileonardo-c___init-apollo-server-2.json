@@ -1,0 +1,66 @@
+{
+  "repo_name": "init-apollo-server-2",
+  "repo_full_name": "ileonardo-c/init-apollo-server-2",
+  "repo_owner": "ileonardo-c",
+  "repo_description": "Exemplo de projeto usando o GraphQL com o Apollo Server 2",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "index.gql",
+      "path": "src/schema/index.gql",
+      "sha": "a717ad31d64ca3a883024c5e2dfbfedf02d787d4",
+      "url": "https://api.github.com/repositories/165050890/contents/src/schema/index.gql?ref=f494656125c0cb879c3ca76d34ec9758cced16be",
+      "git_url": "https://api.github.com/repositories/165050890/git/blobs/a717ad31d64ca3a883024c5e2dfbfedf02d787d4",
+      "html_url": "https://github.com/ileonardo-c/init-apollo-server-2/blob/f494656125c0cb879c3ca76d34ec9758cced16be/src/schema/index.gql",
+      "content": "#import './Hello.gql'\n\n# The Root Query type\ntype Query {\n  hello: [Hello]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ileonardo-c/init-apollo-server-2/blob/f494656125c0cb879c3ca76d34ec9758cced16be/src/schema/index.gql:\n#import './Hello.gql'\n\n# The Root Query type\ntype Query {\n  hello: [Hello]\n}\n\n# https://github.com/ileonardo-c/init-apollo-server-2/blob/c6185097344540638b87baf2892ee74f0c385c46/src/schema/Hello.gql:\ntype Hello {\n  name: String\n}\n",
+        "mergedPaths": [
+          "src/schema/Hello.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Hello"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Hello.gql",
+      "path": "src/schema/Hello.gql",
+      "sha": "6b6b07ffff75e5e15d65a9e88089800eec951b95",
+      "url": "https://api.github.com/repositories/165050890/contents/src/schema/Hello.gql?ref=c6185097344540638b87baf2892ee74f0c385c46",
+      "git_url": "https://api.github.com/repositories/165050890/git/blobs/6b6b07ffff75e5e15d65a9e88089800eec951b95",
+      "html_url": "https://github.com/ileonardo-c/init-apollo-server-2/blob/c6185097344540638b87baf2892ee74f0c385c46/src/schema/Hello.gql",
+      "content": "type Hello {\n  name: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-10T11:51:03Z",
+    "updated_at": "2019-01-17T14:47:28Z",
+    "pushed_at": "2019-01-17T14:47:27Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

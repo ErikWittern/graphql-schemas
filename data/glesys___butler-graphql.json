@@ -1,0 +1,42 @@
+{
+  "repo_name": "butler-graphql",
+  "repo_full_name": "glesys/butler-graphql",
+  "repo_owner": "glesys",
+  "repo_description": "An opinionated GraphQL package for Laravel.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "tests/stubs/schema.graphql",
+      "sha": "813083be10c6fee04b6ce3812d352739f6536c3c",
+      "url": "https://api.github.com/repositories/130051324/contents/tests/stubs/schema.graphql?ref=00932b0feef45d665256689ddb1267bc5a810c07",
+      "git_url": "https://api.github.com/repositories/130051324/git/blobs/813083be10c6fee04b6ce3812d352739f6536c3c",
+      "html_url": "https://github.com/glesys/butler-graphql/blob/00932b0feef45d665256689ddb1267bc5a810c07/tests/stubs/schema.graphql",
+      "content": "type Query {\n    testResolvers: [Thing]\n    dataLoader: [Thing]\n    throwError: String!\n    throwException: String!\n    throwModelNotFoundException: String!\n    throwValidationException: String!\n    ping: String!\n    nonExistingClassDependency: String!\n    resolveInterfaceFromQuery: [Attachment!]!\n    resolveInterfaceFromType: Thing!\n    variousCasing: [VariousCasing!]!\n}\n\ntype Mutation {\n    testMutation(input: TestMutationInput): TestMutationPayload\n}\n\ninput TestMutationInput {\n    message: String!\n}\n\ntype TestMutationPayload {\n    message: String!\n}\n\ntype Thing {\n    name: String!\n    typeField: String!\n    typeFieldWithClosure: String!\n    missingType: SubThing\n    dataLoaded: String!\n    attachment: Attachment\n}\n\ntype SubThing {\n    name: String!\n}\n\ninterface Attachment {\n    name: String!\n    size: Int!\n}\n\ntype Photo implements Attachment {\n    name: String!\n    size: Int!\n    height: Int!\n    width: Int!\n}\n\ntype Video implements Attachment {\n    name: String!\n    size: Int!\n    length: Int!\n}\n\ntype VariousCasing {\n    name: String!\n    camelCase: String!\n    snake_case: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-18T11:22:11Z",
+    "updated_at": "2019-07-10T11:12:56Z",
+    "pushed_at": "2019-07-10T11:12:57Z",
+    "issues": 1,
+    "watchers": 6,
+    "fork_count": 4,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 17,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 17,
+    "releases": 10,
+    "stargazers": 30
+  }
+}

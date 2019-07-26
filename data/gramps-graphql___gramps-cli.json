@@ -1,0 +1,39 @@
+{
+  "repo_name": "gramps-cli",
+  "repo_full_name": "gramps-graphql/gramps-cli",
+  "repo_owner": "gramps-graphql",
+  "repo_description": "CLI for creating and developing with GrAMPS data sources.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/data-source-one/schema.graphql",
+      "sha": "c49a0c7b3094756062a65d93086e69d714c77b94",
+      "url": "https://api.github.com/repositories/109304021/contents/test/fixtures/data-source-one/schema.graphql?ref=cca0873c09373f6e07f7d2e2685ee65fcb56dff9",
+      "git_url": "https://api.github.com/repositories/109304021/git/blobs/c49a0c7b3094756062a65d93086e69d714c77b94",
+      "html_url": "https://github.com/gramps-graphql/gramps-cli/blob/cca0873c09373f6e07f7d2e2685ee65fcb56dff9/test/fixtures/data-source-one/schema.graphql",
+      "content": "type Query {\n  test: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-02T18:34:03Z",
+    "updated_at": "2019-05-14T16:52:58Z",
+    "pushed_at": "2019-07-19T13:16:00Z",
+    "issues": 23,
+    "watchers": 2,
+    "fork_count": 8,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 48,
+    "pull_requests_open": 20,
+    "pull_requests_closed": 9,
+    "pull_requests_merged": 19,
+    "releases": 7,
+    "stargazers": 10
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "team-formation",
+  "repo_full_name": "hackgt/team-formation",
+  "repo_owner": "HackGT",
+  "repo_description": "Team Formation application",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "api.graphql",
+      "path": "server/api.graphql",
+      "sha": "d0eb01e8330adc73a1608d5672a2bfde2ea5ebb4",
+      "url": "https://api.github.com/repositories/166320802/contents/server/api.graphql?ref=c4937e72c2e8d8107eeccdefd375ebd15c62a97e",
+      "git_url": "https://api.github.com/repositories/166320802/git/blobs/d0eb01e8330adc73a1608d5672a2bfde2ea5ebb4",
+      "html_url": "https://github.com/HackGT/team-formation/blob/c4937e72c2e8d8107eeccdefd375ebd15c62a97e/server/api.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n}\n\ntype Query {\n    user(skill: String, name: String, email: String, grad_year: String, school: String, visible: Int): [User!]!\n    user_profile(uuid: String): User!\n}\n\ntype Mutation {\n    toggle_visibility(uuid: String): User!\n    update_user(uuid: String, name: String email: String, grad_year: String, school: String, contact: String, skills: [String], experience: String, contact_method: String): User!\n}\n\ntype User {\n    id: ID\n    uuid: String\n    name: String\n    email: String\n    school: String\n    grad_year: String\n    beginner: Boolean\n    skills: [String]\n    experience: String\n    contact: String\n    contact_method: String\n    visible: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-18T01:07:23Z",
+    "updated_at": "2019-05-05T16:27:34Z",
+    "pushed_at": "2019-07-13T08:05:20Z",
+    "issues": 10,
+    "watchers": 7,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 18,
+    "pull_requests_open": 8,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

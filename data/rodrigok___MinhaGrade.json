@@ -1,0 +1,41 @@
+{
+  "repo_name": "MinhaGrade",
+  "repo_full_name": "rodrigok/minhagrade",
+  "repo_owner": "rodrigok",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/api/schema.graphql",
+      "sha": "acf2d21a0e0d80fdbbfdde8bb645e20920ad22a8",
+      "url": "https://api.github.com/repositories/39036726/contents/server/api/schema.graphql?ref=36802105ecac7c740acc103603ed03dbb9cdb690",
+      "git_url": "https://api.github.com/repositories/39036726/git/blobs/acf2d21a0e0d80fdbbfdde8bb645e20920ad22a8",
+      "html_url": "https://github.com/rodrigok/MinhaGrade/blob/36802105ecac7c740acc103603ed03dbb9cdb690/server/api/schema.graphql",
+      "content": "scalar JSON\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n\ntype Email {\n  address: String\n  verified: Boolean\n}\n\ntype UserProfile {\n  name: String\n  course: Course\n}\n\ntype User {\n  _id: String\n  mainEmail: Email\n  admin: Boolean\n  emails: [Email]\n  grade: JSON\n  calendar: JSON\n  profile: UserProfile\n  hasPassword: Boolean\n}\n\ntype FacebookUser {\n  id: String\n  name: String\n  pictureUrl: String\n}\n\ntype Teacher {\n  _id: String\n  name: String\n}\n\ntype CalendarItem {\n  _id: String\n  day: String\n  shift: String\n  interested: Float\n  teacher: Teacher\n  room: String\n  grade (course: String): Grade\n  userStatus: String\n  userInterested: Boolean\n  friendsInterested: [FacebookUser]\n}\n\ntype Calendar {\n  _id: String\n  name: String\n  active: Boolean\n  grade: [CalendarItem]\n}\n\ntype Grade {\n  _id: String\n  semester: String\n  code: String\n  name: String\n  requirement: [Grade]\n  description: String\n  credit: Float\n  workload: Float\n  allNames: [String]\n  userStatus: String\n}\n\ntype Course {\n  _id: String\n  name: String\n  elective: Float\n}\n\ntype Query {\n  user(userId: String): User\n  teachers: [Teacher]\n  calendar: Calendar\n  calendars: [Calendar]\n  grades(userId: String): [Grade]\n  courses: [Course]\n}\n\n# Type returned when the user logs in\ntype LoginMethodResponse {\n  # Id of the user logged in user\n  id: String!\n  # Token of the connection\n  token: String!\n  # Expiration date for the token\n  tokenExpires: Float!\n  # The logged in user\n  user: User\n}\n\ninput CreateUserProfileInput {\n  name: String\n}\n\ntype SuccessResponse {\n  # True if it succeeded\n  success: Boolean\n}\n\n# A hashsed password\ninput HashedPassword {\n  # The hashed password\n  digest: String!\n  # Algorithm used to hash the password\n  algorithm: String!\n}\n\ntype Mutation {\n  updateGradeItem(\n      _id: String!\n      status: String!\n  ): User\n\n  updateCalendarItemInterest(\n    calendarId: String!\n    gradeItemId: String!\n    shift: String!\n    day: String!\n    interested: Boolean!\n  ): Boolean\n\n  setTeacherInCalendarItem(\n    calendarId: String!\n    gradeItemId: String!\n    shift: String!\n    day: String!\n    teacherId: String!\n  ): Boolean\n\n  setRoomInCalendarItem(\n    calendarId: String!\n    gradeItemId: String!\n    shift: String!\n    day: String!\n    room: String!\n  ): Boolean\n\n  removeItemFromCalendar(\n    calendarId: String!\n    gradeItemId: String!\n    shift: String!\n    day: String!\n  ): Boolean\n\n  addItemToCalendar(\n    calendarId: String!\n    gradeItemId: String!\n    shift: String!\n    day: String!\n  ): Boolean\n\n  createTeacher(\n    name: String!\n  ): Teacher\n\n  updateTeacher(\n    _id: String!\n    name: String!\n  ): Teacher\n\n  removeTeacher(\n    _id: String!\n  ): Boolean\n\n  createCourse(\n    name: String!\n    elective: Float!\n  ): Course\n\n  updateCourse(\n    _id: String!\n    name: String!\n    elective: Float!\n  ): Course\n\n  removeCourse(\n    _id: String!\n  ): Boolean\n\n  createCalendar(\n    name: String!\n  ): Calendar\n\n  updateCalendar(\n    _id: String!\n    name: String!\n  ): Calendar\n\n  removeCalendar(\n    _id: String!\n  ): Boolean\n\n  activateCalendar(\n    _id: String!\n    active: Boolean!\n  ): Boolean\n\n  signup(\n    name: String!\n    email: String!\n    course: String!\n    password: String!\n  ): SignupResult\n\n  login(\n    email: String!\n    password: String!\n  ): LoginResult\n\n  setCourse(\n    course: String!\n  ): Boolean\n\n  setPassword(\n    currentPassword: String\n    password: String!\n  ): Boolean\n\n  # Log the user in with a password.\n  loginWithPassword (username: String, email: String, password: HashedPassword, plainPassword: String): LoginMethodResponse\n  # Create a new user.\n  createUser (username: String, email: String, password: HashedPassword, plainPassword: String, profile: CreateUserProfileInput): LoginMethodResponse\n  # Change the current user's password. Must be logged in.\n  changePassword (oldPassword: HashedPassword!, newPassword: HashedPassword!): SuccessResponse\n  # Request a forgot password email.\n  forgotPassword (email: String!): SuccessResponse\n  # Reset the password for a user using a token received in email. Logs the user in afterwards.\n  resetPassword (newPassword: HashedPassword!, token: String!): LoginMethodResponse\n  # Log the user out.\n  logout (token: String!): SuccessResponse\n  # Marks the user's email address as verified. Logs the user in afterwards.\n  verifyEmail (token: String!): LoginMethodResponse\n  # Send an email with a link the user can use verify their email address.\n  resendVerificationEmail (email: String): SuccessResponse\n  # Login the user with a facebook access token\n  loginWithFacebook (accessToken: String!): LoginMethodResponse\n\n  setPushToken (token: String!): Boolean\n}\n\ntype SignupResult {\n  success: Boolean\n}\n\ntype LoginResult {\n  success: Boolean\n  token: String\n  tokenExpires: String\n}\n\ntype Subscription {\n  grade: Grade\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-07-13T20:52:36Z",
+    "updated_at": "2019-07-11T12:49:41Z",
+    "pushed_at": "2018-12-01T13:24:57Z",
+    "issues": 14,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

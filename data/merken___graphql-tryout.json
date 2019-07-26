@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-tryout",
+  "repo_full_name": "merken/graphql-tryout",
+  "repo_owner": "merken",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphqlclient/schema.graphql",
+      "sha": "077dd3991a6c1b547c820fc842f549a6cf11678d",
+      "url": "https://api.github.com/repositories/123542745/contents/graphqlclient/schema.graphql?ref=9ddb0816d2fd2cd6b4fc9bce87ddff7f513c690c",
+      "git_url": "https://api.github.com/repositories/123542745/git/blobs/077dd3991a6c1b547c820fc842f549a6cf11678d",
+      "html_url": "https://github.com/merken/graphql-tryout/blob/9ddb0816d2fd2cd6b4fc9bce87ddff7f513c690c/graphqlclient/schema.graphql",
+      "content": "type Book {\n  _id: ID\n  title: String\n  author: String\n}\n\ntype Store {\n  books: [Book]\n}\n\ntype Query {\n  store: Store\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-02T06:59:08Z",
+    "updated_at": "2018-04-21T14:04:30Z",
+    "pushed_at": "2018-04-21T14:04:29Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

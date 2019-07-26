@@ -1,0 +1,42 @@
+{
+  "repo_name": "gqlgen-starwars",
+  "repo_full_name": "danishsatkut/gqlgen-starwars",
+  "repo_owner": "danishsatkut",
+  "repo_description": "GraphQL server over StarWars API (SWAPI)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "75140520f84963346ee1d19e337f7f2eb4cdce5d",
+      "url": "https://api.github.com/repositories/187539448/contents/schema/schema.graphql?ref=0206f949af176d61866995b18ab65e5ff6a5f1e6",
+      "git_url": "https://api.github.com/repositories/187539448/git/blobs/75140520f84963346ee1d19e337f7f2eb4cdce5d",
+      "html_url": "https://github.com/danishsatkut/gqlgen-starwars/blob/0206f949af176d61866995b18ab65e5ff6a5f1e6/schema/schema.graphql",
+      "content": "type Query {\n    film(id: ID!): Film!\n}\n\ntype Film {\n    id: ID!\n    name: String!\n    episodeId: Int!\n    director: String!\n    producer: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-19T23:41:56Z",
+    "updated_at": "2019-07-10T05:36:38Z",
+    "pushed_at": "2019-06-03T10:24:10Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 13,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

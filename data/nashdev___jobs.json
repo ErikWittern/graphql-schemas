@@ -1,0 +1,41 @@
+{
+  "repo_name": "jobs",
+  "repo_full_name": "nashdev/jobs",
+  "repo_owner": "nashdev",
+  "repo_description": "NashDev Jobs API + Bot",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/schema.graphql",
+      "sha": "ed2af88680aab4c8ab21d04964f3d5729dba72a8",
+      "url": "https://api.github.com/repositories/97056146/contents/src/server/schema.graphql?ref=9b6ae40fdda8e5c2ea7ffe34814610a7864a8eb6",
+      "git_url": "https://api.github.com/repositories/97056146/git/blobs/ed2af88680aab4c8ab21d04964f3d5729dba72a8",
+      "html_url": "https://github.com/nashdev/jobs/blob/9b6ae40fdda8e5c2ea7ffe34814610a7864a8eb6/src/server/schema.graphql",
+      "content": "scalar Datetime\n\ndirective @isOwner on FIELD | FIELD_DEFINITION\n\ntype User {\n  id: ID!\n  name: String\n  slackId: String\n  slackHandle: String\n  location: String\n  website: String\n  picture: String\n  resume: String\n  github: String\n  twitter: String\n  facebook: String\n  linkedin: String\n  available: Boolean\n  public: Boolean\n\n  createdAt: Datetime\n  updatedAt: Datetime\n\n  companies: [Company!]\n  jobs: [Job!]\n}\n\ntype Company {\n  id: ID!\n  name: String!\n  location: String\n  phone: String\n  size: Int\n  picture: String\n  banner: String\n  short_description: String\n  description: String\n  github: String\n  twitter: String\n  facebook: String\n  linkedin: String\n  createdAt: Datetime!\n  updatedAt: Datetime\n  user: User!\n  jobs: [Job!]\n}\n\ntype Job {\n  id: ID!\n  user: User\n  company: Company\n  title: String!\n  short_description: String\n  description: String!\n  type: String!\n  status: String\n  recruiter: Boolean!\n  recruiterAgency: String\n  location: String!\n  website: String\n  experienceRange: String!\n  salary: String!\n  remote: Boolean!\n  createdAt: Datetime!\n  updatedAt: Datetime\n}\n\ntype Token {\n  token: String!\n  user: User!\n}\n\n# Inputs\ninput CreateJobInput {\n  company_id: ID!\n  title: String!\n  short_description: String!\n  description: String!\n  type: String!\n  recruiter: Boolean!\n  recruiter_agency: String\n  location: String!\n  website: String\n  experience_range: String!\n  salary_range: String!\n  remote_available: Boolean!\n}\n\ninput EditJobInput {\n  id: ID!\n  company_id: ID!\n  title: String\n  description: String\n  short_description: String\n  type: String\n  status: String\n  recruiter: Boolean\n  recruiter_agency: String\n  location: String\n  website: String\n  experience_range: String\n  salary_range: String\n  remote_available: Boolean\n}\n\ninput CreateCompanyInput {\n  name: String!\n  location: String\n  phone: String\n  size: Int\n  picture: String\n  banner: String\n  short_description: String\n  description: String\n  twitter: String\n  github: String\n  facebook: String\n  linkedin: String\n}\n\ninput EditCompanyInput {\n  id: ID!\n  name: String\n  location: String\n  phone: String\n  size: Int\n  picture: String\n  banner: String\n  short_description: String\n  description: String\n  twitter: String\n  github: String\n  facebook: String\n  linkedin: String\n}\n\ninput EditUserInput {\n  name: String!\n  location: String\n  website: String\n  picture: String\n  resume: String\n  github: String\n  twitter: String\n  facebook: String\n  linkedin: String\n  available: Boolean\n  public: Boolean\n}\n\ntype PaginatedJob {\n  cursor: Datetime\n  entries: [Job!]!\n}\n\ntype PaginatedCompany {\n  cursor: Datetime\n  entries: [Company!]!\n}\n\ntype PaginatedUser {\n  cursor: Datetime\n  entries: [User!]!\n}\n\nenum SlackMessageTarget {\n  COMPANY\n  PERSON\n  JOB\n}\n\ntype Query {\n  # Companies\n  companies(cursor: String, limit: Int, filter: String): PaginatedCompany\n  company(id: ID!): Company\n  # Jobs\n  jobs(cursor: String, limit: Int, filter: String, type: String): PaginatedJob\n  job(id: ID!): Job\n  # Users\n  me: User\n  users(\n    cursor: String\n    limit: Int\n    filter: String\n    availableOnly: Boolean\n  ): PaginatedUser\n\n  user(id: ID!): User\n  getToken(code: String): Token\n}\n\ntype Mutation {\n  # Companies\n  createCompany(company: CreateCompanyInput): Company\n  updateCompany(company: EditCompanyInput): Company\n  deleteCompany(id: ID!): Company\n  # Jobs\n  createJob(job: CreateJobInput): Job\n  updateJob(job: EditJobInput): Job\n  deleteJob(id: ID!): Job\n  # Users\n  updateUser(user: EditUserInput): User\n  deleteUser(id: ID!): User\n\n  # Slack\n  slackMessage(id: ID!, type: SlackMessageTarget!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 17
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-12T22:12:13Z",
+    "updated_at": "2019-07-05T18:33:15Z",
+    "pushed_at": "2019-07-19T15:27:33Z",
+    "issues": 86,
+    "watchers": 6,
+    "fork_count": 26,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 115,
+    "pull_requests_open": 23,
+    "pull_requests_closed": 47,
+    "pull_requests_merged": 45,
+    "releases": 0,
+    "stargazers": 37
+  }
+}

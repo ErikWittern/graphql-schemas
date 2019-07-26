@@ -1,0 +1,39 @@
+{
+  "repo_name": "gql-playground",
+  "repo_full_name": "delete/gql-playground",
+  "repo_owner": "delete",
+  "repo_description": "NestJS + Graphql playground",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.types.graphql",
+      "path": "src/app/modules/user/user.types.graphql",
+      "sha": "2440847d4091c713ab1bde71c26a0d23420200bb",
+      "url": "https://api.github.com/repositories/141201486/contents/src/app/modules/user/user.types.graphql?ref=459f8981e9c6bdf66cade9b5cf84d7ae03474002",
+      "git_url": "https://api.github.com/repositories/141201486/git/blobs/2440847d4091c713ab1bde71c26a0d23420200bb",
+      "html_url": "https://github.com/delete/gql-playground/blob/459f8981e9c6bdf66cade9b5cf84d7ae03474002/src/app/modules/user/user.types.graphql",
+      "content": "type Query {\n  users(team: String): [User]\n  devs: [User]\n}\n\ntype User {\n  username: String\n  team: String \n  role: [String]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-16T22:31:13Z",
+    "updated_at": "2018-07-26T01:28:27Z",
+    "pushed_at": "2018-07-26T01:28:25Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "node-graphql-sandbox",
+  "repo_full_name": "zarathustra323/node-graphql-sandbox",
+  "repo_owner": "zarathustra323",
+  "repo_description": "A sandbox for building a Node GraphQL server.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "index.graphql",
+      "path": "src/graphql/definitions/index.graphql",
+      "sha": "d6b0fcf62e3ee96bf722158027dc06ba881e926f",
+      "url": "https://api.github.com/repositories/144716064/contents/src/graphql/definitions/index.graphql?ref=526ffebc40cb1d1e6a4c0bed8b86645f4afe3734",
+      "git_url": "https://api.github.com/repositories/144716064/git/blobs/d6b0fcf62e3ee96bf722158027dc06ba881e926f",
+      "html_url": "https://github.com/zarathustra323/node-graphql-sandbox/blob/526ffebc40cb1d1e6a4c0bed8b86645f4afe3734/src/graphql/definitions/index.graphql",
+      "content": "scalar Date\n\ntype Query {\n  ping: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-14T12:18:26Z",
+    "updated_at": "2018-08-14T21:19:45Z",
+    "pushed_at": "2018-08-14T21:19:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphqlCoin",
+  "repo_full_name": "teddy-schmitz/graphqlcoin",
+  "repo_owner": "Teddy-Schmitz",
+  "repo_description": "Graphql server for Bitcoin compatible JSONRPC server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "schema.gql",
+      "sha": "a46b430115bfd8685b6a80548576d90821c2541b",
+      "url": "https://api.github.com/repositories/123209075/contents/schema.gql?ref=0fb6179588e9cb60c509fd32644cf12fcc34c867",
+      "git_url": "https://api.github.com/repositories/123209075/git/blobs/a46b430115bfd8685b6a80548576d90821c2541b",
+      "html_url": "https://github.com/Teddy-Schmitz/graphqlCoin/blob/0fb6179588e9cb60c509fd32644cf12fcc34c867/schema.gql",
+      "content": "schema {\n    query: Query\n}\n\ntype Query {\n    block(hash: String, height: UInt64): Block!\n    transaction(id: String!): Transaction!\n    estimatefee(blocks: Int = 2): FeeEstimate!\n    difficulty: Float!\n    mempool: [MemPoolTrx]\n}\n\nscalar Time\nscalar UInt64\nscalar Int64\n\ntype Block {\n    hash: String!\n    strippedsize: UInt64!\n    size: UInt64!\n    height: UInt64!\n    confirmations: UInt64!\n    weight: UInt64!\n    time: Time!\n    bits: String!\n    version: UInt64!\n    versionhex: String!\n    merkleroot: String!\n    mediantime: Time!\n    nonce: Int64!\n    difficulty: Float!\n    chainwork: String!\n    previousblockhash: String!\n    nextblockhash: String!\n    trxIDs: [String]\n\n    transactions: [Transaction]\n}\n\ntype Transaction {\n    id: String!\n    hash: String!\n    version: UInt64!\n    size: UInt64!\n    vsize: UInt64!\n    locktime: UInt64!\n    blockhash: String!\n    time: Time!\n    confirmations: UInt64!\n    blocktime: Time!\n\n    block: Block!\n}\n\ntype FeeEstimate {\n    feerate: Float!\n    blocks: Int!\n}\n\ntype MemPoolTrx {\n    id: String!\n    size: UInt64!\n    fee: Float!\n    modifiedFee: Float!\n    time: Time!\n    height: UInt64!\n    descendantCount: UInt64!\n    descendantSize: UInt64!\n    descendantFees: UInt64!\n    ancestorCount: UInt64!\n    ancestorSize: UInt64!\n    ancestorFees: UInt64!\n    depends: [String]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-28T01:07:03Z",
+    "updated_at": "2018-02-28T02:10:09Z",
+    "pushed_at": "2018-02-28T12:50:01Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

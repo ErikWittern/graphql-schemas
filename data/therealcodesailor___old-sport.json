@@ -1,0 +1,42 @@
+{
+  "repo_name": "old-sport",
+  "repo_full_name": "therealcodesailor/old-sport",
+  "repo_owner": "therealcodesailor",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql-server/src/schema.graphql",
+      "sha": "9e7165863190bc3f4d3cf3bdbb31d99e518671d3",
+      "url": "https://api.github.com/repositories/147416919/contents/graphql-server/src/schema.graphql?ref=7695f1098495789ec4541cc3947c7b076cd5d034",
+      "git_url": "https://api.github.com/repositories/147416919/git/blobs/9e7165863190bc3f4d3cf3bdbb31d99e518671d3",
+      "html_url": "https://github.com/therealcodesailor/old-sport/blob/7695f1098495789ec4541cc3947c7b076cd5d034/graphql-server/src/schema.graphql",
+      "content": "type Query {\n    # Fetches all the stars in the catalog (>46,000).\n    starDataList: [StarData]\n    # Fetches a single star by ID (zero-based).\n    starData(id: Int!): StarData\n}\n\ntype StarData {\n    id: Int!\n    CommonName: String\n    GlieseCatalogId: String\n    ProperName: String\n    SpectralType: String\n    DistanceInParsecs: Float\n    x: Float\n    y: Float\n    z: Float\n    AbsoluteMagnitude: Float\n}\n\ninput NewStarData {\n    HipparcosCatalogId: Int\n    CommonName: String\n    BayerFlamsteedDesignation: String\n    GlieseCatalogId: String\n    HenryDraperCatalogId: String\n    HarvardRevisedCatalogId: String\n    ProperName: String\n    SpectralType: String\n    DistanceInParsecs: Float\n    x: Float\n    y: Float\n    z: Float\n    AbsoluteMagnitude: Float\n}\n\ntype Mutation {\n    createStarData(newStarData: NewStarData!): StarData!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-04T20:52:45Z",
+    "updated_at": "2019-02-18T14:17:16Z",
+    "pushed_at": "2019-02-18T14:17:14Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

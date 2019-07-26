@@ -1,0 +1,42 @@
+{
+  "repo_name": "one_server",
+  "repo_full_name": "seirius/one_server",
+  "repo_owner": "seirius",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema.gql",
+      "sha": "edf7d5dea6378b65e5f24214bd8e3573a7312b46",
+      "url": "https://api.github.com/repositories/146808719/contents/src/schema.gql?ref=d09b0b8fb266af4b2f04dfc7f8b90104f88ba0e4",
+      "git_url": "https://api.github.com/repositories/146808719/git/blobs/edf7d5dea6378b65e5f24214bd8e3573a7312b46",
+      "html_url": "https://github.com/seirius/one_server/blob/d09b0b8fb266af4b2f04dfc7f8b90104f88ba0e4/src/schema.gql",
+      "content": "type Summoner {\n    profileIconId: Int,\n    name: String,\n    summonerLevel: Int,\n    accountId: Int,\n    id: Int,\n    revisionDate: Int\n}\ntype Query {\n    summoner(name: String!): Summoner,\n    profileIcon(iconId: Int!): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-30T21:31:11Z",
+    "updated_at": "2018-09-02T13:05:50Z",
+    "pushed_at": "2018-09-02T13:05:48Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "movie-time",
+  "repo_full_name": "yusinto/movie-time",
+  "repo_owner": "yusinto",
+  "repo_description": "A simple app to view and filter movies by genres",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "8cd2ed1c990bb30220811d43b0df67e8c6c1619c",
+      "url": "https://api.github.com/repositories/55813359/contents/src/graphql/schema.graphql?ref=f91eb094fad39b03d50f62ea00c51f4955479e48",
+      "git_url": "https://api.github.com/repositories/55813359/git/blobs/8cd2ed1c990bb30220811d43b0df67e8c6c1619c",
+      "html_url": "https://github.com/yusinto/movie-time/blob/f91eb094fad39b03d50f62ea00c51f4955479e48/src/graphql/schema.graphql",
+      "content": "enum Classification {\n  UNCLASSIFIED\n  GENERAL\n  PARENTAL_GUIDANCE\n  PARENTAL_GUIDANCE_13\n  RESTRICTED\n}\n\nenum Genre {\n  ACTION\n  ADVENTURE\n  ANIMATION\n  BIOGRAPHY\n  COMEDY\n  CRIME\n  DRAMA\n  FAMILY\n  FANTASY\n  HISTORY\n  MUSIC\n  MUSICAL\n  MYSTERY\n  ROMANCE\n  SCIFI\n  THRILLER\n  WAR\n  WESTERN\n}\n\ntype Movie {\n  rating: Float\n  genres: [Genre]\n  classification: Classification\n  languages: [String]\n  title: String\n}\n\ntype Query {\n  viewer: User\n}\n\ntype User {\n  movieList(genre: String): [Movie]\n  allGenres: [String]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-04-08T22:25:19Z",
+    "updated_at": "2018-07-21T00:37:24Z",
+    "pushed_at": "2017-05-31T21:47:05Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 334,
+    "pull_requests_open": 334,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

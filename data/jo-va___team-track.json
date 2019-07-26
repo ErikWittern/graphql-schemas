@@ -1,0 +1,106 @@
+{
+  "repo_name": "team-track",
+  "repo_full_name": "jo-va/team-track",
+  "repo_owner": "jo-va",
+  "repo_description": "A mobile application for tracking your distance and the distance of your team during an outdoor event",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "server/schema/query.graphql",
+      "sha": "3920062a1c2a3e97aaed4a36c21aec7a9a674e91",
+      "url": "https://api.github.com/repositories/126476551/contents/server/schema/query.graphql?ref=7278232872551110d566dcd3c0690ffab64a2ca2",
+      "git_url": "https://api.github.com/repositories/126476551/git/blobs/3920062a1c2a3e97aaed4a36c21aec7a9a674e91",
+      "html_url": "https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/query.graphql",
+      "content": "type Query {\n    currentUser: User\n    currentParticipant: Participant\n\n    participant(id: ID!): Participant\n    participants(event: ID!): [Participant]\n\n    group(id: ID!): Group\n    groups(event: ID!): [Group]\n\n    event(id: ID!): Event\n    events: [Event]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/query.graphql:\ntype Query {\n    currentUser: User\n    currentParticipant: Participant\n\n    participant(id: ID!): Participant\n    participants(event: ID!): [Participant]\n\n    group(id: ID!): Group\n    groups(event: ID!): [Group]\n\n    event(id: ID!): Event\n    events: [Event]\n}\n\n# https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/user.graphql:\ntype User {\n    id: ID!,\n    username: String!\n    jwt: String!\n    events: [Event]\n}\n\n# https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/participant.graphql:\ntype Participant {\n    id: ID!,\n    username: String!\n    jwt: String!\n    group: Group!\n    event: Event!\n    distance: Float\n    latitude: Float\n    longitude: Float\n    isActive: Boolean\n    isOutOfRange: Boolean\n}\n\n# https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/group.graphql:\ntype Group {\n    id: ID!\n    name: String!\n    event: Event!\n    participants: [Participant]\n    distance: Float\n    secret: String\n}\n\n# https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/event.graphql:\ntype Event  {\n    id: ID!\n    name: String!\n    groups: [Group]\n    latitude: Float\n    longitude: Float\n    radius: Float\n    distance: Float\n    state: String\n}\n",
+        "mergedPaths": [
+          "server/schema/user.graphql",
+          "server/schema/participant.graphql",
+          "server/schema/group.graphql",
+          "server/schema/event.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Participant",
+          "Group",
+          "Event"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "group.graphql",
+      "path": "server/schema/group.graphql",
+      "sha": "859610e01ecce7a338d0460c7f6780061952b6f9",
+      "url": "https://api.github.com/repositories/126476551/contents/server/schema/group.graphql?ref=7278232872551110d566dcd3c0690ffab64a2ca2",
+      "git_url": "https://api.github.com/repositories/126476551/git/blobs/859610e01ecce7a338d0460c7f6780061952b6f9",
+      "html_url": "https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/group.graphql",
+      "content": "type Group {\n    id: ID!\n    name: String!\n    event: Event!\n    participants: [Participant]\n    distance: Float\n    secret: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "event.graphql",
+      "path": "server/schema/event.graphql",
+      "sha": "234646b0c81a8c6cc0af87b53446dd3d97605fb5",
+      "url": "https://api.github.com/repositories/126476551/contents/server/schema/event.graphql?ref=7278232872551110d566dcd3c0690ffab64a2ca2",
+      "git_url": "https://api.github.com/repositories/126476551/git/blobs/234646b0c81a8c6cc0af87b53446dd3d97605fb5",
+      "html_url": "https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/event.graphql",
+      "content": "type Event  {\n    id: ID!\n    name: String!\n    groups: [Group]\n    latitude: Float\n    longitude: Float\n    radius: Float\n    distance: Float\n    state: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "participant.graphql",
+      "path": "server/schema/participant.graphql",
+      "sha": "7fd538cf281b5877e96198407b0f369a839898b3",
+      "url": "https://api.github.com/repositories/126476551/contents/server/schema/participant.graphql?ref=7278232872551110d566dcd3c0690ffab64a2ca2",
+      "git_url": "https://api.github.com/repositories/126476551/git/blobs/7fd538cf281b5877e96198407b0f369a839898b3",
+      "html_url": "https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/participant.graphql",
+      "content": "type Participant {\n    id: ID!,\n    username: String!\n    jwt: String!\n    group: Group!\n    event: Event!\n    distance: Float\n    latitude: Float\n    longitude: Float\n    isActive: Boolean\n    isOutOfRange: Boolean\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "user.graphql",
+      "path": "server/schema/user.graphql",
+      "sha": "3df28a24991528069e2bdb02859d17c6b11cf584",
+      "url": "https://api.github.com/repositories/126476551/contents/server/schema/user.graphql?ref=7278232872551110d566dcd3c0690ffab64a2ca2",
+      "git_url": "https://api.github.com/repositories/126476551/git/blobs/3df28a24991528069e2bdb02859d17c6b11cf584",
+      "html_url": "https://github.com/jo-va/team-track/blob/7278232872551110d566dcd3c0690ffab64a2ca2/server/schema/user.graphql",
+      "content": "type User {\n    id: ID!,\n    username: String!\n    jwt: String!\n    events: [Event]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-23T11:33:06Z",
+    "updated_at": "2019-03-29T00:26:35Z",
+    "pushed_at": "2018-05-05T03:21:52Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

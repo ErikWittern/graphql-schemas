@@ -1,0 +1,42 @@
+{
+  "repo_name": "generator-nestjs-app",
+  "repo_full_name": "ashinzekene/generator-nestjs-app",
+  "repo_owner": "ashinzekene",
+  "repo_description": "🏗️ A yeoman generator for nestjs apps",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "cats.types.graphql",
+      "path": "generators/app/templates/12-graphql-apollo/src/modules/cats/cats.types.graphql",
+      "sha": "c48875f16fc075ccb7bf1296d9b5e355174abcb2",
+      "url": "https://api.github.com/repositories/118064788/contents/generators/app/templates/12-graphql-apollo/src/modules/cats/cats.types.graphql?ref=68bff2065e2e19ea8313cc4596cef7a01dd8b100",
+      "git_url": "https://api.github.com/repositories/118064788/git/blobs/c48875f16fc075ccb7bf1296d9b5e355174abcb2",
+      "html_url": "https://github.com/ashinzekene/generator-nestjs-app/blob/68bff2065e2e19ea8313cc4596cef7a01dd8b100/generators/app/templates/12-graphql-apollo/src/modules/cats/cats.types.graphql",
+      "content": "type Query {\n  getCats: [Cat]\n  cat(id: ID!): Cat\n  catByHumanId(id: ID!): Cat\n}\n\ntype Mutation {\n  createCat(name: String): Cat\n}\n\ntype Cat {\n  id: Int\n  name: String\n  age: Int\n  humanId: Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-19T02:18:15Z",
+    "updated_at": "2019-06-27T13:24:10Z",
+    "pushed_at": "2018-03-10T14:41:18Z",
+    "issues": 1,
+    "watchers": 3,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 1,
+    "stargazers": 19
+  }
+}

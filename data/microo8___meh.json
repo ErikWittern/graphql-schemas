@@ -1,0 +1,42 @@
+{
+  "repo_name": "meh",
+  "repo_full_name": "microo8/meh",
+  "repo_owner": "microo8",
+  "repo_description": "not interesting projects/tests/examples that don't deserve to have own repository",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gqlgen_test/schema.graphql",
+      "sha": "3d55e25b444b6906907f797fc0177bdf99cf98e3",
+      "url": "https://api.github.com/repositories/67701285/contents/gqlgen_test/schema.graphql?ref=99ff9fbdfe446c6974236ce5bf1df391a5064d41",
+      "git_url": "https://api.github.com/repositories/67701285/git/blobs/3d55e25b444b6906907f797fc0177bdf99cf98e3",
+      "html_url": "https://github.com/microo8/meh/blob/99ff9fbdfe446c6974236ce5bf1df391a5064d41/gqlgen_test/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  users: [User!]!\n}\n\ntype Mutation {\n  createUser(name: String): User!\n}\n\ntype User {\n  id: String!\n  Name: String!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-08T12:30:04Z",
+    "updated_at": "2019-05-14T06:28:01Z",
+    "pushed_at": "2019-05-14T06:27:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "wtfpl",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

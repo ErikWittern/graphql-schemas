@@ -1,0 +1,42 @@
+{
+  "repo_name": "old_portfolio",
+  "repo_full_name": "jphunter/old_portfolio",
+  "repo_owner": "JPHUNTER",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "ba0f6c3936a501f5093689167ac725e3cf8e279a",
+      "url": "https://api.github.com/repositories/61474030/contents/server/data/schema.graphql?ref=7416c6adf114eb96a8e55f14f85282b56ee5e0b1",
+      "git_url": "https://api.github.com/repositories/61474030/git/blobs/ba0f6c3936a501f5093689167ac725e3cf8e279a",
+      "html_url": "https://github.com/JPHUNTER/old_portfolio/blob/7416c6adf114eb96a8e55f14f85282b56ee5e0b1/server/data/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Feature implements Node {\n  id: ID!\n  name: String\n  description: String\n  url: String\n}\n\ntype FeatureConnection {\n  pageInfo: PageInfo!\n  edges: [FeatureEdge]\n}\n\ntype FeatureEdge {\n  node: Feature\n  cursor: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n}\n\ntype User implements Node {\n  id: ID!\n  features(after: String, first: Int, before: String, last: Int): FeatureConnection\n  works(after: String, first: Int, before: String, last: Int): WorkConnection\n  username: String\n  website: String\n}\n\ntype Work implements Node {\n  id: ID!\n  name: String\n  description: String\n  url: String\n}\n\ntype WorkConnection {\n  pageInfo: PageInfo!\n  edges: [WorkEdge]\n}\n\ntype WorkEdge {\n  node: Work\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-06-19T09:56:47Z",
+    "updated_at": "2016-11-17T09:13:56Z",
+    "pushed_at": "2016-06-30T11:15:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

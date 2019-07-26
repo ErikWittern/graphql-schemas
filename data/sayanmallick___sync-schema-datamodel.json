@@ -1,0 +1,42 @@
+{
+  "repo_name": "sync-schema-datamodel",
+  "repo_full_name": "sayanmallick/sync-schema-datamodel",
+  "repo_owner": "sayanmallick",
+  "repo_description": "I niffty little tool that will sync your schema.gql file to datamodel.prismafile",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "schema.gql",
+      "sha": "c65f3753310a10207f23c12fdf7113c0352e36a3",
+      "url": "https://api.github.com/repositories/170290695/contents/schema.gql?ref=7a308f5fa568224e1d46d3c38c5d62bf455b50f3",
+      "git_url": "https://api.github.com/repositories/170290695/git/blobs/c65f3753310a10207f23c12fdf7113c0352e36a3",
+      "html_url": "https://github.com/sayanmallick/sync-schema-datamodel/blob/7a308f5fa568224e1d46d3c38c5d62bf455b50f3/schema.gql",
+      "content": "type User2 {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  email: String!\n  name: String!\n}\n\ntype Mutation {\n  register(data: RegisterInput!): User!\n  login(password: String!, email: String!): User\n  confirmuser(token: String!): Boolean\n}\n\ntype User3 {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  email: String!\n  name: String!\n}\n\ntype Query {\n  hello: String!\n  me: User\n}\n\ninput RegisterInput {\n  firstName: String!\n  lastName: String!\n  email: String!\n  password: String!\n}\n\ninput RegisterInput2 {\n  firstName: String!\n  lastName: String!\n  email: String!\n  password: String!\n}\n\ntype User {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  email: String!\n  name: String!\n}\n\ntype Post {\n  id: ID!\n  contend: String!\n  author: User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-12T09:33:52Z",
+    "updated_at": "2019-02-12T14:18:38Z",
+    "pushed_at": "2019-02-12T14:18:36Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

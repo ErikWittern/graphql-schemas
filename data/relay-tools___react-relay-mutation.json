@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-relay-mutation",
+  "repo_full_name": "relay-tools/react-relay-mutation",
+  "repo_owner": "relay-tools",
+  "repo_description": "Higher-level React mutation API for Relay",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/schema.graphql",
+      "sha": "5bc13c680ecb752a34c03651ccab6a43f6c7ffe1",
+      "url": "https://api.github.com/repositories/177635355/contents/test/fixtures/schema.graphql?ref=dab91de2cce0a87dad9fd6c2f09feebbb68ee1f2",
+      "git_url": "https://api.github.com/repositories/177635355/git/blobs/5bc13c680ecb752a34c03651ccab6a43f6c7ffe1",
+      "html_url": "https://github.com/relay-tools/react-relay-mutation/blob/dab91de2cce0a87dad9fd6c2f09feebbb68ee1f2/test/fixtures/schema.graphql",
+      "content": "input DoStuffInput {\n  name: String!\n  clientMutationId: String\n}\n\ntype DoStuffPayload {\n  result: String\n  clientMutationId: String\n}\n\ntype Mutation {\n  doStuff(input: DoStuffInput!): DoStuffPayload\n}\n\ntype Query {\n  dummy: ID\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-25T17:42:12Z",
+    "updated_at": "2019-07-19T06:13:29Z",
+    "pushed_at": "2019-07-19T06:13:28Z",
+    "issues": 1,
+    "watchers": 4,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 177,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 11,
+    "pull_requests_merged": 165,
+    "releases": 0,
+    "stargazers": 25
+  }
+}

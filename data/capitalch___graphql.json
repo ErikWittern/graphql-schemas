@@ -1,0 +1,55 @@
+{
+  "repo_name": "graphql",
+  "repo_full_name": "capitalch/graphql",
+  "repo_owner": "capitalch",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "adam2-graphql-server/schema.graphql",
+      "sha": "69938152be552697ccd0b0f178a6f59516f66cd6",
+      "url": "https://api.github.com/repositories/184119942/contents/adam2-graphql-server/schema.graphql?ref=9b40c5fb1ac1acb324235fdb764f8ec51a357c70",
+      "git_url": "https://api.github.com/repositories/184119942/git/blobs/69938152be552697ccd0b0f178a6f59516f66cd6",
+      "html_url": "https://github.com/capitalch/graphql/blob/9b40c5fb1ac1acb324235fdb764f8ec51a357c70/adam2-graphql-server/schema.graphql",
+      "content": "type Query {\n\tgreeting: String\n\ttest: String\n\tstudents: [Student]\n\tcolleges: [College]\n\tcontacts: [Contact]\n\tbrands: [Brand]\n}\n\ntype Generic {\n\tgen:String\n}\n\ntype Brand {\n\tid: ID!\n\tname: String\n}\n\ntype Student {\n\tid: ID!\n\tfirstName: String\n\tlastName: String\n\tpassword: String\n\tcollegeId: String\n}\n\ntype College {\n\tid: ID!\n\tname: String\n\tlocation: String\n\trating: Float\n}\n\ntype Contact {\n\tisActive: Boolean\n\teyeColor: String\n\tname: String\n\tgender: String\n\tcompany: String\n\temail: String\n\tphone: String\n\taddress: String\n\tage: Int\n}\n\ntype Mutation {\n\tinsertTest(name: String, address: String): Test\n}\n\ntype Test {\n\tname: String\n\taddress: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    },
+    {
+      "name": "schema.graphql",
+      "path": "adam1-apollo/server/src/schema.graphql",
+      "sha": "53d45ae0b9846bf4c3cfc845b60d4f2d5d5677f7",
+      "url": "https://api.github.com/repositories/184119942/contents/adam1-apollo/server/src/schema.graphql?ref=fc8616ad72bb75483a9936a6414634a732237e5c",
+      "git_url": "https://api.github.com/repositories/184119942/git/blobs/53d45ae0b9846bf4c3cfc845b60d4f2d5d5677f7",
+      "html_url": "https://github.com/capitalch/graphql/blob/fc8616ad72bb75483a9936a6414634a732237e5c/adam1-apollo/server/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  info: String!\n  feed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): Feed!\n}\n\nenum LinkOrderByInput {\n  description_ASC\n  description_DESC\n  url_ASC\n  url_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\ntype Feed {\n  links: [Link!]!\n  count: Int!\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n  vote(linkId: ID!): Vote!\n}\n\ntype Subscription {\n  newLink: Link\n  newVote: Vote\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n\ntype Link {\n  id: ID!\n  createdAt: DateTime!\n  description: String!\n  url: String!\n  postedBy: User\n  votes: [Vote!]!\n}\n\ntype Vote {\n  id: ID!\n  link: Link!\n  user: User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-29T18:08:04Z",
+    "updated_at": "2019-05-05T16:49:17Z",
+    "pushed_at": "2019-05-05T16:49:15Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

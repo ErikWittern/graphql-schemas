@@ -1,0 +1,55 @@
+{
+  "repo_name": "ts-module-shop",
+  "repo_full_name": "notadd/ts-module-shop",
+  "repo_owner": "notadd",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "classify.types.graphql",
+      "path": "package/type/classify.types.graphql",
+      "sha": "60f203c9d1c3f81a7511eb9b8e10024b41ceec0a",
+      "url": "https://api.github.com/repositories/128887805/contents/package/type/classify.types.graphql?ref=cabada76194af0b81ba1785345dad1557b7a85c5",
+      "git_url": "https://api.github.com/repositories/128887805/git/blobs/60f203c9d1c3f81a7511eb9b8e10024b41ceec0a",
+      "html_url": "https://github.com/notadd/ts-module-shop/blob/cabada76194af0b81ba1785345dad1557b7a85c5/package/type/classify.types.graphql",
+      "content": "type Query{\n    classify(id:Int!,level:Int!):ClassifyData\n    classifies(parentId:Int,level:Int!):ClassiesData\n}\n\ntype Mutation{\n    createClassify(name:String!,description:String!,level:Int!,parentId:Int):ShopCommonData\n    updateClassify(id:Int!,name:String!,description:String!,level:Int!):ShopCommonData\n    deleteClassify(id:Int!,level:Int!):ShopCommonData\n}\n\ntype ClassiesData{\n    code:Int\n    message:String\n    classifies:[Classify]\n}\n\ntype ClassifyData{\n    code:Int\n    message:String\n    classify:Classify\n}\n\ntype Classify{\n    id:Int\n    name:String\n    description:String\n    level:Int\n}\n\ntype ShopCommonData{\n    code:Int\n    message:String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    },
+    {
+      "name": "classify.original.graphql",
+      "path": "src/type/classify.original.graphql",
+      "sha": "60f203c9d1c3f81a7511eb9b8e10024b41ceec0a",
+      "url": "https://api.github.com/repositories/128887805/contents/src/type/classify.original.graphql?ref=cabada76194af0b81ba1785345dad1557b7a85c5",
+      "git_url": "https://api.github.com/repositories/128887805/git/blobs/60f203c9d1c3f81a7511eb9b8e10024b41ceec0a",
+      "html_url": "https://github.com/notadd/ts-module-shop/blob/cabada76194af0b81ba1785345dad1557b7a85c5/src/type/classify.original.graphql",
+      "content": "type Query{\n    classify(id:Int!,level:Int!):ClassifyData\n    classifies(parentId:Int,level:Int!):ClassiesData\n}\n\ntype Mutation{\n    createClassify(name:String!,description:String!,level:Int!,parentId:Int):ShopCommonData\n    updateClassify(id:Int!,name:String!,description:String!,level:Int!):ShopCommonData\n    deleteClassify(id:Int!,level:Int!):ShopCommonData\n}\n\ntype ClassiesData{\n    code:Int\n    message:String\n    classifies:[Classify]\n}\n\ntype ClassifyData{\n    code:Int\n    message:String\n    classify:Classify\n}\n\ntype Classify{\n    id:Int\n    name:String\n    description:String\n    level:Int\n}\n\ntype ShopCommonData{\n    code:Int\n    message:String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-10T06:56:12Z",
+    "updated_at": "2019-07-15T20:55:28Z",
+    "pushed_at": "2018-05-15T10:31:08Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

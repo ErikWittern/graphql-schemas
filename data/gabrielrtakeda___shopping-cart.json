@@ -1,0 +1,42 @@
+{
+  "repo_name": "shopping-cart",
+  "repo_full_name": "gabrielrtakeda/shopping-cart",
+  "repo_owner": "gabrielrtakeda",
+  "repo_description": "React, Relay, GraphQL, and Material-UI shopping cart example project.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "fb3af2d410fd7d9f2751e6981ad2e5499f41d73e",
+      "url": "https://api.github.com/repositories/155729579/contents/server/data/schema.graphql?ref=f6db6a89151b378aa978e086155b57e07848eab3",
+      "git_url": "https://api.github.com/repositories/155729579/git/blobs/fb3af2d410fd7d9f2751e6981ad2e5499f41d73e",
+      "html_url": "https://github.com/gabrielrtakeda/shopping-cart/blob/f6db6a89151b378aa978e086155b57e07848eab3/server/data/schema.graphql",
+      "content": "type Cart implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  items(after: String, first: Int, before: String, last: Int): CartItemConnection\n  totalItemsQuantity: Int\n  totalItemsPrice: Float\n}\n\ntype CartItem implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  quantity: Int\n  product: Product\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype CartItemConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [CartItemEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype CartItemEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: CartItem\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype Category implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n  products(after: String, first: Int, before: String, last: Int): ProductConnection\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype CategoryConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [CategoryEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype CategoryEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Category\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype Market implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  categories(after: String, first: Int, before: String, last: Int): CategoryConnection\n  categoriesTotalCount: Int\n  product(id: ID, after: String, first: Int, before: String, last: Int): Product\n  products(categoryId: String = \"all\", after: String, first: Int, before: String, last: Int): ProductConnection\n  cart: Cart\n}\n\ntype Mutation {\n  removeProductFromCart(input: RemoveProductFromCartInput!): RemoveProductFromCartPayload\n  updateProductInTheCart(input: UpdateProductInTheCartInput!): UpdateProductInTheCartPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Price {\n  default: Float\n  sale: Float\n}\n\ntype Product implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  categoryId: Int\n  category: ProductCategory\n  quantity: Int\n  price: Price\n  name: String\n  attributes: [String]\n  image: String\n  description: String\n}\n\ntype ProductCategory implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype ProductConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [ProductEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype ProductEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Product\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype Query {\n  categories: CategoryConnection\n  market: Market\n\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n}\n\ninput RemoveProductFromCartInput {\n  productId: ID!\n  clientMutationId: String\n}\n\ntype RemoveProductFromCartPayload {\n  item: CartItem\n  market: Market\n  clientMutationId: String\n}\n\ninput UpdateProductInTheCartInput {\n  productId: ID!\n  quantity: Int!\n  append: Boolean = false\n  clientMutationId: String\n}\n\ntype UpdateProductInTheCartPayload {\n  item: CartItem\n  market: Market\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-01T14:42:09Z",
+    "updated_at": "2019-02-18T01:13:02Z",
+    "pushed_at": "2018-11-08T21:46:51Z",
+    "issues": 14,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 12,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 12,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "introduction-kubernetes",
+  "repo_full_name": "mikebild/introduction-kubernetes",
+  "repo_owner": "MikeBild",
+  "repo_description": "Introduction to Kubernetes",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "examples/todo-app-stack/backend/schema.gql",
+      "sha": "7358e88a530324d44943695b98e669160d966436",
+      "url": "https://api.github.com/repositories/151971916/contents/examples/todo-app-stack/backend/schema.gql?ref=f7567a8570fa7227c34d9021c908cfc2cdcd7cf3",
+      "git_url": "https://api.github.com/repositories/151971916/git/blobs/7358e88a530324d44943695b98e669160d966436",
+      "html_url": "https://github.com/MikeBild/introduction-kubernetes/blob/f7567a8570fa7227c34d9021c908cfc2cdcd7cf3/examples/todo-app-stack/backend/schema.gql",
+      "content": "type Todo {\n  id: ID!\n  rev: ID!\n  description: String!\n  done: Boolean\n}\n\ntype Query {\n  todos: [Todo]\n  todo(id: ID!): Todo\n}\n\ntype TodoAddResult {\n  result: Todo\n  failure: TodoAddFailure\n}\n\ntype ResetResult {\n  result: ResetStatus\n  failure: ResetFailure\n}\n\ntype TodoToggleDoneResult {\n  result: Todo\n  failure: TodoToggleDoneFailure\n}\n\ntype TodoRemoveResult {\n  result: Todo\n  failure: TodoRemoveFailure\n}\n\ntype ResetStatus {\n  status: String!\n}\n\ntype ResetFailure {\n  message: String!\n}\n\ntype TodoToggleDoneFailure {\n  message: String!\n}\n\ntype TodoRemoveFailure {\n  message: String!\n}\n\ntype TodoAddFailure {\n  message: String!\n}\n\ninput AddTodoInput {\n  description: String!\n}\n\ntype Mutation {\n  todoAdd(input: AddTodoInput!): TodoAddResult\n  todoRemove(id: ID!): TodoRemoveResult\n  todoToggleDone(id: ID!): TodoToggleDoneResult\n  reset: ResetResult\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-07T18:23:45Z",
+    "updated_at": "2019-06-23T06:49:16Z",
+    "pushed_at": "2018-10-10T18:35:39Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

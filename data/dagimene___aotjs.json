@@ -1,0 +1,42 @@
+{
+  "repo_name": "aotjs",
+  "repo_full_name": "dagimene/aotjs",
+  "repo_owner": "dagimene",
+  "repo_description": "Autogeneration of Things - Examples of GraphQL generation from a HAL API and other things",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "result-small.graphql",
+      "path": "packages/hal-to-graphql/test/result-small.graphql",
+      "sha": "6a98f3d15e7fae2cecce1bbe6a5cb91d46b2ec65",
+      "url": "https://api.github.com/repositories/107156608/contents/packages/hal-to-graphql/test/result-small.graphql?ref=16301a3ae3c7a015afced59fab5a3389fa1e8438",
+      "git_url": "https://api.github.com/repositories/107156608/git/blobs/6a98f3d15e7fae2cecce1bbe6a5cb91d46b2ec65",
+      "html_url": "https://github.com/dagimene/aotjs/blob/16301a3ae3c7a015afced59fab5a3389fa1e8438/packages/hal-to-graphql/test/result-small.graphql",
+      "content": "type Person {\n  id: ID!\n  skin_color: String\n  self: Person\n  starships: [Starship]\n}\n\ntype Query {\n  getPeopleCollection: [Person]\n  getPerson(\n    # ID of the `Person` to return\n    personId: String\n  ): Person\n  getPersonStarshipsCollection(\n    # ID of the parent `Person`\n    personId: String\n  ): [Starship]\n  getStarshipsCollection: [Starship]\n  getStarship(\n    # ID of the `Starship` to return\n    starshipId: String\n  ): Starship\n}\n\ntype Starship {\n  id: ID!\n  cargo_capacity: String\n  starship_class: String\n  self: Starship\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-16T16:54:07Z",
+    "updated_at": "2019-01-13T06:11:57Z",
+    "pushed_at": "2018-07-17T14:59:39Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

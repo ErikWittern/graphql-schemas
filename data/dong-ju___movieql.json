@@ -1,0 +1,52 @@
+{
+  "repo_name": "movieql",
+  "repo_full_name": "dong-ju/movieql",
+  "repo_owner": "dong-ju",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "test.graphql",
+      "path": "graphql/test.graphql",
+      "sha": "84470e3497c7158005fbe048cfbb232281535ca8",
+      "url": "https://api.github.com/repositories/143226891/contents/graphql/test.graphql?ref=655169612ae3357244d775d012d47a0c6a73adc5",
+      "git_url": "https://api.github.com/repositories/143226891/git/blobs/84470e3497c7158005fbe048cfbb232281535ca8",
+      "html_url": "https://github.com/dong-ju/movieql/blob/655169612ae3357244d775d012d47a0c6a73adc5/graphql/test.graphql",
+      "content": "type Movie {\r\n\tid: Int!\r\n\tname: String!\r\n\tscore: Int!\r\n}\r\n\r\ntype Query {\r\n\tmovies: [Movie]!\r\n\tmovie(id: Int!): Movie\r\n}\r\n\r\ntype Mutation {\r\n\taddMovie(name: String!, score: Int!): Movie!\r\n\tdeleteMovie(id: Int!): Boolean!\r\n}\r\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "movieApiSchema.graphql",
+      "path": "graphql/movieApiSchema.graphql",
+      "sha": "bccd0ac3203921235443f9945f626059e68cb1f3",
+      "url": "https://api.github.com/repositories/143226891/contents/graphql/movieApiSchema.graphql?ref=655169612ae3357244d775d012d47a0c6a73adc5",
+      "git_url": "https://api.github.com/repositories/143226891/git/blobs/bccd0ac3203921235443f9945f626059e68cb1f3",
+      "html_url": "https://github.com/dong-ju/movieql/blob/655169612ae3357244d775d012d47a0c6a73adc5/graphql/movieApiSchema.graphql",
+      "content": "type Movie {\r\n\tid: Int!\r\n\ttitle: String!\r\n\trating: Float\r\n\tdescription_intro: String\r\n\tlanguage: String\r\n\tmedium_cover_image: String\r\n\tgenres: [String]\r\n}\r\n\r\ntype Query {\r\n\tmovies(limit: Int, rating: Float): [Movie]!\r\n\tmovie(id: Int!): Movie\r\n\tsuggestions(id: Int!): [Movie]!\r\n}\r\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-02T01:36:49Z",
+    "updated_at": "2018-08-02T01:37:49Z",
+    "pushed_at": "2018-08-02T01:37:49Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

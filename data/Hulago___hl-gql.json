@@ -1,0 +1,94 @@
+{
+  "repo_name": "hl-gql",
+  "repo_full_name": "hulago/hl-gql",
+  "repo_owner": "Hulago",
+  "repo_description": "gql tests",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "post.controller.graphql",
+      "path": "src/schema/controllers/post.controller.graphql",
+      "sha": "00a37428158d0af95c576551306d3e61083b925f",
+      "url": "https://api.github.com/repositories/142983329/contents/src/schema/controllers/post.controller.graphql?ref=139e8680ed36ad3409a228a1d8487a6296d313f6",
+      "git_url": "https://api.github.com/repositories/142983329/git/blobs/00a37428158d0af95c576551306d3e61083b925f",
+      "html_url": "https://github.com/Hulago/hl-gql/blob/139e8680ed36ad3409a228a1d8487a6296d313f6/src/schema/controllers/post.controller.graphql",
+      "content": "type Query {\n  posts: [Post]\n  post(id: Int): Post\n}\n\n# type Mutation {\n#   postSave(id: Int, title: String, text: String): Post\n#   postDelete(id: Int): Boolean\n# }\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Hulago/hl-gql/blob/139e8680ed36ad3409a228a1d8487a6296d313f6/src/schema/controllers/post.controller.graphql:\ntype Query {\n  posts: [Post]\n  post(id: Int): Post\n}\n\n# type Mutation {\n#   postSave(id: Int, title: String, text: String): Post\n#   postDelete(id: Int): Boolean\n# }\n\n# https://github.com/Hulago/hl-gql/blob/139e8680ed36ad3409a228a1d8487a6296d313f6/src/schema/models/post.model.graphql:\ntype Post {\n  id: Int\n  title: String\n  text: String\n  categories: [Category]\n}\n\n# https://github.com/Hulago/hl-gql/blob/139e8680ed36ad3409a228a1d8487a6296d313f6/src/schema/models/category.model.graphql:\ntype Category {\n  id: Int\n  name: String\n  locationId: Int\n  location: Location\n}\n\n# https://github.com/Hulago/hl-gql/blob/139e8680ed36ad3409a228a1d8487a6296d313f6/src/schema/models/location.model.graphql:\ntype Location {\n  id: Int\n  name: String\n  lat: Int\n  long: Int\n}\n",
+        "mergedPaths": [
+          "src/schema/models/post.model.graphql",
+          "src/schema/models/category.model.graphql",
+          "src/schema/models/location.model.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post",
+          "Category",
+          "Location"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "location.model.graphql",
+      "path": "src/schema/models/location.model.graphql",
+      "sha": "0cea97d40c6776d43836b4ce90dda0c383f95f4f",
+      "url": "https://api.github.com/repositories/142983329/contents/src/schema/models/location.model.graphql?ref=139e8680ed36ad3409a228a1d8487a6296d313f6",
+      "git_url": "https://api.github.com/repositories/142983329/git/blobs/0cea97d40c6776d43836b4ce90dda0c383f95f4f",
+      "html_url": "https://github.com/Hulago/hl-gql/blob/139e8680ed36ad3409a228a1d8487a6296d313f6/src/schema/models/location.model.graphql",
+      "content": "type Location {\n  id: Int\n  name: String\n  lat: Int\n  long: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "post.model.graphql",
+      "path": "src/schema/models/post.model.graphql",
+      "sha": "ad8074b1a3b4a7000fd2bb27593cd43581c7116e",
+      "url": "https://api.github.com/repositories/142983329/contents/src/schema/models/post.model.graphql?ref=139e8680ed36ad3409a228a1d8487a6296d313f6",
+      "git_url": "https://api.github.com/repositories/142983329/git/blobs/ad8074b1a3b4a7000fd2bb27593cd43581c7116e",
+      "html_url": "https://github.com/Hulago/hl-gql/blob/139e8680ed36ad3409a228a1d8487a6296d313f6/src/schema/models/post.model.graphql",
+      "content": "type Post {\n  id: Int\n  title: String\n  text: String\n  categories: [Category]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "category.model.graphql",
+      "path": "src/schema/models/category.model.graphql",
+      "sha": "dc6191360846e27bfba02145e8b34a8dccb35e00",
+      "url": "https://api.github.com/repositories/142983329/contents/src/schema/models/category.model.graphql?ref=139e8680ed36ad3409a228a1d8487a6296d313f6",
+      "git_url": "https://api.github.com/repositories/142983329/git/blobs/dc6191360846e27bfba02145e8b34a8dccb35e00",
+      "html_url": "https://github.com/Hulago/hl-gql/blob/139e8680ed36ad3409a228a1d8487a6296d313f6/src/schema/models/category.model.graphql",
+      "content": "type Category {\n  id: Int\n  name: String\n  locationId: Int\n  location: Location\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-31T08:11:15Z",
+    "updated_at": "2018-07-31T16:59:27Z",
+    "pushed_at": "2018-07-31T16:59:26Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

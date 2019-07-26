@@ -1,0 +1,42 @@
+{
+  "repo_name": "simpleGraphQL",
+  "repo_full_name": "nizarayari/simplegraphql",
+  "repo_owner": "nizarayari",
+  "repo_description": "Simple GraphQL server returning a list of bookings",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "booking.graphql",
+      "path": "src/api/booking/booking.graphql",
+      "sha": "6193ff2f206ff08dd6b100281e101faf46adfcc2",
+      "url": "https://api.github.com/repositories/145909314/contents/src/api/booking/booking.graphql?ref=ef9f1d87daecdbd5812e2827dad5209005c0cc3d",
+      "git_url": "https://api.github.com/repositories/145909314/git/blobs/6193ff2f206ff08dd6b100281e101faf46adfcc2",
+      "html_url": "https://github.com/nizarayari/simpleGraphQL/blob/ef9f1d87daecdbd5812e2827dad5209005c0cc3d/src/api/booking/booking.graphql",
+      "content": "\nenum Status {\n  CANCELLED\n  RESERVED\n  HOLD\n}\n\ntype Booking {\n  id: ID!\n  status: Status!\n  startDate: String!\n  endDate: String!\n  guest: Guest!\n  source: String!\n  bookingPrice: Price! \n}\n\ntype Guest {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  email: String!\n  address: Address!\n}\n\ntype Price {\n  value: Float!\n  currency: String!\n}\n\ntype Address {\n  streetAddress: String!\n  city: String!\n  state: String!\n  zipCode: String!\n  country: String!\n}\n\ntype Query {\n  bookings: [Booking]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-23T21:31:28Z",
+    "updated_at": "2018-08-24T01:09:37Z",
+    "pushed_at": "2018-08-24T01:09:35Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

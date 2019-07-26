@@ -1,0 +1,42 @@
+{
+  "repo_name": "zerosum",
+  "repo_full_name": "travellingsalesmanco/zerosum",
+  "repo_owner": "travellingsalesmanco",
+  "repo_description": "A social experiment game",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/src/zerosum/models/schema/schema.graphql",
+      "sha": "8994a64b908efb66b5ec41c6310d4a763bd24dbd",
+      "url": "https://api.github.com/repositories/147839480/contents/backend/src/zerosum/models/schema/schema.graphql?ref=364352cae95e888164f61cb7c65ed18799f41141",
+      "git_url": "https://api.github.com/repositories/147839480/git/blobs/8994a64b908efb66b5ec41c6310d4a763bd24dbd",
+      "html_url": "https://github.com/travellingsalesmanco/zerosum/blob/364352cae95e888164f61cb7c65ed18799f41141/backend/src/zerosum/models/schema/schema.graphql",
+      "content": "# Following https://github.com/deltaskelta/graphql-go-pets-example\n\nscalar Time\n\nschema {\n    query: Query\n    mutation: Mutation\n}\n\n# The query type, represents all of the entry points into our object graph\ntype Query {\n    user(id: ID): User\n    game(id: ID!): Game\n    activeGames(filter: String!, joined: Boolean, created: Boolean, limit: Int): [Game]!\n    completedGames(created: Boolean!): [Game]!\n    vote(gameId: ID!): Vote\n    votes(limit: Int, after: String): [Vote]!\n    gameCount: Int!\n    leaderboard(limit: Int!): [User]!\n    storeHats(owned: Boolean!): [Hat]!\n    achievedHats: [Hat]!\n\n}\n\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n    deleteUser: Boolean!\n    addGame(game: GameInput!): Game\n    addVote(vote: VoteInput!): Vote\n    buyHat(id: ID!): Hat\n    validateResult(gameId: ID!): Boolean!\n}\nenum GameMode {\n    MAJORITY\n    MINORITY\n}\n\nenum Stakes {\n    NO_STAKES\n    FIXED_STAKES\n    FIXED_LIMIT\n    NO_LIMIT\n}\n\ntype VoteResult {\n    win: Boolean\n    netChange: Int\n}\n\ntype OptionResult {\n    voteCount: Int\n    totalValue: Int\n    winner: Boolean\n}\n\ntype Game {\n    id: ID!\n    owner: User\n    topic: String\n    startTime: Time\n    endTime: Time\n    totalMoney: Int\n    gameMode: GameMode\n    stakes: Stakes\n    voted: Boolean\n    resolved: Boolean\n    options: [Option]\n}\n\ntype Hat {\n    id: ID!\n    name: String!\n    price: Int!\n    img: String!\n}\n\ntype Option {\n    id: ID!\n    body: String\n    result: OptionResult\n}\n\ntype User {\n    id: ID!\n    name: String\n    img: String\n    money: Int\n    winRate: Float\n    level: Int\n    expProgress: Float\n    ranking: Int\n}\n\ntype Vote {\n    game: Game\n    option: Option\n    money: Int\n    resolved: Boolean\n    result: VoteResult\n}\n\ninput GameInput {\n    topic: String!\n    duration: Int!\n    gameMode: GameMode!\n    stakes: Stakes!\n    options: [String!]!\n}\n\ninput VoteInput {\n    gameId: ID!\n    optionId: ID!\n    amount: Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-07T15:07:48Z",
+    "updated_at": "2018-10-02T08:17:12Z",
+    "pushed_at": "2018-10-02T08:17:33Z",
+    "issues": 4,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 1,
+    "stargazers": 0
+  }
+}

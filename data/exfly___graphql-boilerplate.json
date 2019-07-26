@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-boilerplate",
+  "repo_full_name": "exfly/graphql-boilerplate",
+  "repo_owner": "exfly",
+  "repo_description": "graphql boilerplate for gqlgen (generated gql interface by gqlgen)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "f6e1bac5662f46ff3987fbf54fd2bfbe4a4088c8",
+      "url": "https://api.github.com/repositories/160435817/contents/schema.graphql?ref=67e03e07d35c3836abe4771f32f00c98d4bbfd8d",
+      "git_url": "https://api.github.com/repositories/160435817/git/blobs/f6e1bac5662f46ff3987fbf54fd2bfbe4a4088c8",
+      "html_url": "https://github.com/exfly/graphql-boilerplate/blob/67e03e07d35c3836abe4771f32f00c98d4bbfd8d/schema.graphql",
+      "content": "# GraphQL schema example\n#\n# https://gqlgen.com/getting-started/\n\ntype Todo {\n  id: ID!\n  text: String!\n  done: Boolean!\n  user: User!\n}\n\ntype User {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  todos: [Todo!]!\n}\n\ninput NewTodo {\n  text: String!\n  userId: String!\n}\n\ntype Mutation {\n  createTodo(input: NewTodo!): Todo!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-05T00:18:20Z",
+    "updated_at": "2019-07-09T20:30:58Z",
+    "pushed_at": "2019-03-15T14:26:37Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

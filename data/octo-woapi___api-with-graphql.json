@@ -1,0 +1,42 @@
+{
+  "repo_name": "api-with-graphql",
+  "repo_full_name": "octo-woapi/api-with-graphql",
+  "repo_owner": "octo-woapi",
+  "repo_description": "Katapi with GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "e70663b1aea80fbe49da922a71252b99f96a3adb",
+      "url": "https://api.github.com/repositories/129065298/contents/schema.graphql?ref=cb5574f0de639f51f6d1005e21ff8fa6acc078da",
+      "git_url": "https://api.github.com/repositories/129065298/git/blobs/e70663b1aea80fbe49da922a71252b99f96a3adb",
+      "html_url": "https://github.com/octo-woapi/api-with-graphql/blob/cb5574f0de639f51f6d1005e21ff8fa6acc078da/schema.graphql",
+      "content": "type Query {\n    hello(id: Int): String\n    product(id: Int!): Product\n    order(id: Int!): Order\n    products(after: Int, first: Int): [Product]\n    orders(after: Int, first: Int): [Order]\n    bill(id: Int!): Bill\n    bills(after: Int, first: Int): [Bill]\n}\n\ntype Mutation {\n    createProduct(name: String!, price: Float, weight: Float): [Product]\n    updateProduct(id: ID!, name: String, price: Float, weight: Float): [Product]\n    deleteProduct(id: ID!): [Product]\n    createOrder(productId: Int!, quantity: Int!): [Order]\n    updateStatus(orderId: Int!, status: String!): [Order]\n    addProductInOrder(orderId: Int!, productId: Int!, quantity: Int!): [Order]\n    removeProductInOrder(orderId: Int!, productId: Int!): [Order]\n    deleteOrder(id: Int!): [Order]\n}\n\ntype Product {\n    id: Int!\n    name: String!\n    weight: Float\n    price: Float\n}\n\ntype Order {\n    id: Int!\n    productsList: [OrderedProduct]!\n    status: String!\n    shipmentAmount: Float\n    totalAmount: Float\n    weight: Float\n}\n\ntype OrderedProduct {\n    product : Product\n    quantity : Int\n}\n\nscalar Date\n\ntype Bill {\n    id: Int!\n    createdAt: Date!\n    orderId: Int!\n    amount: Float!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-11T09:00:56Z",
+    "updated_at": "2018-12-05T13:06:42Z",
+    "pushed_at": "2018-12-03T15:00:14Z",
+    "issues": 0,
+    "watchers": 8,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

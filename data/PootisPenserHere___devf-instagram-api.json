@@ -1,0 +1,42 @@
+{
+  "repo_name": "devf-instagram-api",
+  "repo_full_name": "pootispenserhere/devf-instagram-api",
+  "repo_owner": "PootisPenserHere",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "c63808b7017569d8fbf23eea0e78c7471c1b0933",
+      "url": "https://api.github.com/repositories/158305972/contents/src/schema.graphql?ref=9ca81ed819634e7d12dcba6178eb53ec1c517de8",
+      "git_url": "https://api.github.com/repositories/158305972/git/blobs/c63808b7017569d8fbf23eea0e78c7471c1b0933",
+      "html_url": "https://github.com/PootisPenserHere/devf-instagram-api/blob/9ca81ed819634e7d12dcba6178eb53ec1c517de8/src/schema.graphql",
+      "content": "type Query {\n    prueba:String!\n    getAllPosts: [PostOutput]\n}\n\ntype Mutation{\n    signup(data:UserInput!):AuthToken,\n    login(email:String!,password:String!):AuthToken,\n    createInstagramPost(data: PostInput!): String,\n    findPostByUserId(user_id: Int!): [PostOutput],\n    saveLikedActionPost(postID:ID!, user_id:ID!): String\n}\n\ninput UserInput {\n    first_name:String!,\n    last_name:String!,\n    email:String!,\n    password:String!,\n    birth_date:String,\n    gender:Gender,\n    nationality:String\n}\n\nenum Gender {\n    Male,\n    Female\n}\n\ntype AuthToken {\n    token:String\n}\n\ntype PostOutput {\n    _id: ID,\n    user_id: String,\n    photo: String,\n    title: String,\n    message: String,\n    likes: [LikeOutput],\n    comments: [CommentOutput],\n    is_active: Boolean\n}\n\ntype LikeOutput {\n   user_id:ID\n}\ntype CommentOutput {\n   user_id:ID,\n   user_comment:String\n}\n\n\ninput PostInput {\n    user_id: ID!,\n    title: String!\n    photo: String!,\n    message: String!,\n    likes: [LikeInput],\n    comments: [CommentInput],\n    is_active: Boolean\n}\n\ninput LikeInput {\n    user_id: ID\n}\n\ninput CommentInput {\n    user_id:ID!,\n    comment:String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-20T00:03:28Z",
+    "updated_at": "2019-07-17T22:15:20Z",
+    "pushed_at": "2018-12-14T22:25:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "bsd-3-clause",
+    "pull_requests": 16,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 16,
+    "releases": 1,
+    "stargazers": 0
+  }
+}

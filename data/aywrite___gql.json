@@ -1,0 +1,41 @@
+{
+  "repo_name": "gql",
+  "repo_full_name": "aywrite/gql",
+  "repo_owner": "aywrite",
+  "repo_description": "testing graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "b74e729993c7612cd5f566596245de63857daf02",
+      "url": "https://api.github.com/repositories/114937414/contents/schema/schema.graphql?ref=684478684259fffc1585df7f67a20029368902b6",
+      "git_url": "https://api.github.com/repositories/114937414/git/blobs/b74e729993c7612cd5f566596245de63857daf02",
+      "html_url": "https://github.com/aywrite/gql/blob/684478684259fffc1585df7f67a20029368902b6/schema/schema.graphql",
+      "content": "schema {\n\tquery: Query\n}\ntype Query {\n\tcity(id: ID!): City\n\tcountry(id: ID!): Country\n}\ntype City {\n\tid: ID!\n\tname: String!\n\tcountry: Country\n}\ntype Country {\n\tid: ID!\n\tname: String!\n\tcities: [City]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-20T22:35:08Z",
+    "updated_at": "2018-06-16T06:49:45Z",
+    "pushed_at": "2018-06-16T06:49:43Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

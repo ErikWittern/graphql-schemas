@@ -1,0 +1,42 @@
+{
+  "repo_name": "shopapi",
+  "repo_full_name": "farnasirim/shopapi",
+  "repo_owner": "farnasirim",
+  "repo_description": "Demonstration of mongodb data access through an API using graphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/graphql/schema.graphql",
+      "sha": "f62c0b121f2bfc3a4abc16637f1642e78e421036",
+      "url": "https://api.github.com/repositories/149177876/contents/api/graphql/schema.graphql?ref=b103acfb8a04b5576180d28c1b877e176b917fab",
+      "git_url": "https://api.github.com/repositories/149177876/git/blobs/f62c0b121f2bfc3a4abc16637f1642e78e421036",
+      "html_url": "https://github.com/farnasirim/shopapi/blob/b103acfb8a04b5576180d28c1b877e176b917fab/api/graphql/schema.graphql",
+      "content": "schema {\n\t# Root query type\n\tquery: Query\n\n\t# Root mutation type\n\tmutation: Mutation\n}\n\ntype Query {\n\tshops: [Shop!]!\n\tshopByName(shopName: String!): Shop!\n\t# Maybe later on shopByID, productByID, etc.\n\t\n}\n\ntype Mutation {\n\tcreateShop(name: String!): Shop!\n\n\t# What remains is the support for different currencies. If there was some\n\t# currency that we could not support with simple dollar and cents value\n\t# we would provide an additional API for those with a more general way of\n\t# inputting the amount (e.g. String) and the currency, and will then\n\t# will handle the parsing, summation, etc. with \"strategy\" pattern.\n\t# The good thing though is that the reader client won't change even in that\n\t# case, because they would be asking for the display value, which is a fair\n\t# tradeoff as the writer clients are much less \"sensitive\" in an ecommerce\n\t# business and something like a force update can be issued to them with\n\t# more flexibility.\n\tcreateProductInShop(shopID: ID!, productName: String!, dollars: Int!, cents: Int!): Product!\n\n\tcreateOrderInShop(shopID: ID!): Order!\n\n\taddProductToOrder(orderID: ID!, productID: ID!, howMany: Int! = 1): LineItem!\n}\n\ntype Shop {\n\tid: ID!\n\tname: String!\n\tproducts: [Product!]!\n\torders: [Order!]!\n\n\ttotalSales: DollarValue!\n}\n\ntype Product {\n\tid: ID!\n\tname: String!\n\tprice: DollarValue!\n}\n\ntype Order {\n\tid: ID!\n\tlines: [LineItem!]!\n\tprice: DollarValue!\n}\n\n# Corresponds to 'one row' of an Order.\n# E.g. Buying a loaf of bread and a carton of milk may result in an order\n# with two line items:\n#   '1x loaf of bread - $3.00' and\n#   '1x carton of milk - $2.00'\ntype LineItem {\n\tid: ID!\n\t# The corresponding product of the line item\n\t# Can be unioned with a Service type for shipping etc.\n\tproduct: Product!\n\t\n\t# Maybe support weighted items? For now we have to encapsulate that \n\t# inside the product itself (1 lb pack of strawberries)\n\tquantity: Int!\n\t\n\t# Total price of this line\n\tprice: DollarValue!\n}\n\n# The client should not do any calculations with the actual amount and\n# Therefore a String value only for display purposes will suffice.\n# Nevertheless separating out the DollarValue is worth any complications\n# caused by needing the value in the client later on. (payment services,\n# third party client side integrations, another server with business logic\n# using this api etc.)\ntype DollarValue {\n\t# The amount plus (maybe) the currency for showing to the client\n\tdisplay: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-17T19:34:42Z",
+    "updated_at": "2019-01-19T17:39:07Z",
+    "pushed_at": "2018-09-24T06:27:23Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

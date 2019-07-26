@@ -1,0 +1,95 @@
+{
+  "repo_name": "graphql-sequelize-security-improvements",
+  "repo_full_name": "caioflores/graphql-sequelize-security-improvements",
+  "repo_owner": "caioflores",
+  "repo_description": "A project to test some security improvements using Sequelize and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Queries.graphql",
+      "path": "src/graphql/queries/Queries.graphql",
+      "sha": "03f4dda462b187dcc6d5eb46bf13540e09f80828",
+      "url": "https://api.github.com/repositories/158628118/contents/src/graphql/queries/Queries.graphql?ref=1ab54957d5dd2cd9c5183282311b1c3fc4895a7c",
+      "git_url": "https://api.github.com/repositories/158628118/git/blobs/03f4dda462b187dcc6d5eb46bf13540e09f80828",
+      "html_url": "https://github.com/caioflores/graphql-sequelize-security-improvements/blob/1ab54957d5dd2cd9c5183282311b1c3fc4895a7c/src/graphql/queries/Queries.graphql",
+      "content": "\"Queries\"\ntype Query {\n  \"\"\"\n  Get a user\n  \"\"\"\n  user(id: String!): User\n  \"\"\"\n  Get user credentials\n  \"\"\"\n  login(email: String!, password: String!): AuthToken\n  \"\"\"\n  Get a task\n  \"\"\"\n  task(id: String!): Task\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/caioflores/graphql-sequelize-security-improvements/blob/1ab54957d5dd2cd9c5183282311b1c3fc4895a7c/src/graphql/queries/Queries.graphql:\n\"Queries\"\ntype Query {\n  \"\"\"\n  Get a user\n  \"\"\"\n  user(id: String!): User\n  \"\"\"\n  Get user credentials\n  \"\"\"\n  login(email: String!, password: String!): AuthToken\n  \"\"\"\n  Get a task\n  \"\"\"\n  task(id: String!): Task\n}\n\n# https://github.com/caioflores/graphql-sequelize-security-improvements/blob/1ab54957d5dd2cd9c5183282311b1c3fc4895a7c/src/graphql/types/User.graphql:\n\"\"\"\nUser: represents a user\n\"\"\"\ntype User {\n  \"\"\"\n  User id\n  \"\"\"\n  id: String\n  \"\"\"\n  User email\n  \"\"\"\n  email: String\n  \"\"\"\n  User password\n  \"\"\"\n  password: String\n}\n\n# https://github.com/caioflores/graphql-sequelize-security-improvements/blob/1ab54957d5dd2cd9c5183282311b1c3fc4895a7c/src/graphql/types/AuthToken.graphql:\n\"\"\"\nAuthToken: represents a users authentication token\n\"\"\"\ntype AuthToken {\n  \"\"\"\n  Token\n  \"\"\"\n  token: String!\n  \"\"\"\n  User\n  \"\"\"\n  user: User!\n}\n\n# https://github.com/caioflores/graphql-sequelize-security-improvements/blob/1ab54957d5dd2cd9c5183282311b1c3fc4895a7c/src/graphql/types/Task.graphql:\n\"\"\"\nTask: represents a task\n\"\"\"\ntype Task {\n  \"\"\"\n  Task id\n  \"\"\"\n  id: String\n  \"\"\"\n  Task content\n  \"\"\"\n  content: String\n}\n",
+        "mergedPaths": [
+          "src/graphql/types/User.graphql",
+          "src/graphql/types/AuthToken.graphql",
+          "src/graphql/types/Task.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "AuthToken",
+          "Task"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Task.graphql",
+      "path": "src/graphql/types/Task.graphql",
+      "sha": "a222617a308c06cf8a7867660ce10b16a2a2f13c",
+      "url": "https://api.github.com/repositories/158628118/contents/src/graphql/types/Task.graphql?ref=1ab54957d5dd2cd9c5183282311b1c3fc4895a7c",
+      "git_url": "https://api.github.com/repositories/158628118/git/blobs/a222617a308c06cf8a7867660ce10b16a2a2f13c",
+      "html_url": "https://github.com/caioflores/graphql-sequelize-security-improvements/blob/1ab54957d5dd2cd9c5183282311b1c3fc4895a7c/src/graphql/types/Task.graphql",
+      "content": "\"\"\"\nTask: represents a task\n\"\"\"\ntype Task {\n  \"\"\"\n  Task id\n  \"\"\"\n  id: String\n  \"\"\"\n  Task content\n  \"\"\"\n  content: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "AuthToken.graphql",
+      "path": "src/graphql/types/AuthToken.graphql",
+      "sha": "f26cc3c89c9b8df698087d152f10d4f4e62c1735",
+      "url": "https://api.github.com/repositories/158628118/contents/src/graphql/types/AuthToken.graphql?ref=1ab54957d5dd2cd9c5183282311b1c3fc4895a7c",
+      "git_url": "https://api.github.com/repositories/158628118/git/blobs/f26cc3c89c9b8df698087d152f10d4f4e62c1735",
+      "html_url": "https://github.com/caioflores/graphql-sequelize-security-improvements/blob/1ab54957d5dd2cd9c5183282311b1c3fc4895a7c/src/graphql/types/AuthToken.graphql",
+      "content": "\"\"\"\nAuthToken: represents a users authentication token\n\"\"\"\ntype AuthToken {\n  \"\"\"\n  Token\n  \"\"\"\n  token: String!\n  \"\"\"\n  User\n  \"\"\"\n  user: User!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "User.graphql",
+      "path": "src/graphql/types/User.graphql",
+      "sha": "edbb1310100c20fe7065340c983878821de429f4",
+      "url": "https://api.github.com/repositories/158628118/contents/src/graphql/types/User.graphql?ref=1ab54957d5dd2cd9c5183282311b1c3fc4895a7c",
+      "git_url": "https://api.github.com/repositories/158628118/git/blobs/edbb1310100c20fe7065340c983878821de429f4",
+      "html_url": "https://github.com/caioflores/graphql-sequelize-security-improvements/blob/1ab54957d5dd2cd9c5183282311b1c3fc4895a7c/src/graphql/types/User.graphql",
+      "content": "\"\"\"\nUser: represents a user\n\"\"\"\ntype User {\n  \"\"\"\n  User id\n  \"\"\"\n  id: String\n  \"\"\"\n  User email\n  \"\"\"\n  email: String\n  \"\"\"\n  User password\n  \"\"\"\n  password: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-22T01:49:07Z",
+    "updated_at": "2018-11-23T12:21:33Z",
+    "pushed_at": "2018-11-22T02:21:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

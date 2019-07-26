@@ -1,0 +1,140 @@
+{
+  "repo_name": "frameworks-graphql",
+  "repo_full_name": "kugtong33/frameworks-graphql",
+  "repo_owner": "kugtong33",
+  "repo_description": "Typescript scaffold for web frameworks",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.gql",
+      "path": "packages/express/src/api/graphql/types/query.gql",
+      "sha": "641a2eaae823fb73c49b0945380d46f07c2175ec",
+      "url": "https://api.github.com/repositories/143597536/contents/packages/express/src/api/graphql/types/query.gql?ref=3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1",
+      "git_url": "https://api.github.com/repositories/143597536/git/blobs/641a2eaae823fb73c49b0945380d46f07c2175ec",
+      "html_url": "https://github.com/kugtong33/frameworks-graphql/blob/3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1/packages/express/src/api/graphql/types/query.gql",
+      "content": "type Query {\n  account(id: String!): Account\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/kugtong33/frameworks-graphql/blob/3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1/packages/express/src/api/graphql/types/query.gql:\ntype Query {\n  account(id: String!): Account\n}\n\n# https://github.com/kugtong33/frameworks-graphql/blob/3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1/packages/express/src/api/graphql/types/account.gql:\ntype Account {\n  id: String!\n  username: String!\n  firstname: String\n  lastname: String\n  age: Int\n}",
+        "mergedPaths": [
+          "packages/express/src/api/graphql/types/account.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Account"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "account.gql",
+      "path": "packages/express/src/api/graphql/types/account.gql",
+      "sha": "15aba1e0d41aeb29b277405a0efbc2d67383c408",
+      "url": "https://api.github.com/repositories/143597536/contents/packages/express/src/api/graphql/types/account.gql?ref=3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1",
+      "git_url": "https://api.github.com/repositories/143597536/git/blobs/15aba1e0d41aeb29b277405a0efbc2d67383c408",
+      "html_url": "https://github.com/kugtong33/frameworks-graphql/blob/3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1/packages/express/src/api/graphql/types/account.gql",
+      "content": "type Account {\n  id: String!\n  username: String!\n  firstname: String\n  lastname: String\n  age: Int\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "query.gql",
+      "path": "packages/koa/src/api/graphql/types/query.gql",
+      "sha": "641a2eaae823fb73c49b0945380d46f07c2175ec",
+      "url": "https://api.github.com/repositories/143597536/contents/packages/koa/src/api/graphql/types/query.gql?ref=3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1",
+      "git_url": "https://api.github.com/repositories/143597536/git/blobs/641a2eaae823fb73c49b0945380d46f07c2175ec",
+      "html_url": "https://github.com/kugtong33/frameworks-graphql/blob/3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1/packages/koa/src/api/graphql/types/query.gql",
+      "content": "type Query {\n  account(id: String!): Account\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/kugtong33/frameworks-graphql/blob/3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1/packages/koa/src/api/graphql/types/query.gql:\ntype Query {\n  account(id: String!): Account\n}\n\n# https://github.com/kugtong33/frameworks-graphql/blob/3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1/packages/koa/src/api/graphql/types/account.gql:\ntype Account {\n  id: String!\n  username: String!\n  firstname: String\n  lastname: String\n  age: Int\n}",
+        "mergedPaths": [
+          "packages/koa/src/api/graphql/types/account.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Account"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "account.gql",
+      "path": "packages/koa/src/api/graphql/types/account.gql",
+      "sha": "15aba1e0d41aeb29b277405a0efbc2d67383c408",
+      "url": "https://api.github.com/repositories/143597536/contents/packages/koa/src/api/graphql/types/account.gql?ref=3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1",
+      "git_url": "https://api.github.com/repositories/143597536/git/blobs/15aba1e0d41aeb29b277405a0efbc2d67383c408",
+      "html_url": "https://github.com/kugtong33/frameworks-graphql/blob/3f4ce3327fb9b15c01cefc3efbed4729a2efd4f1/packages/koa/src/api/graphql/types/account.gql",
+      "content": "type Account {\n  id: String!\n  username: String!\n  firstname: String\n  lastname: String\n  age: Int\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "query.gql",
+      "path": "packages/nest/src/api/graphql/types/query.gql",
+      "sha": "641a2eaae823fb73c49b0945380d46f07c2175ec",
+      "url": "https://api.github.com/repositories/143597536/contents/packages/nest/src/api/graphql/types/query.gql?ref=77ee863eed74bd209306afc8cd502e2b12b86ab2",
+      "git_url": "https://api.github.com/repositories/143597536/git/blobs/641a2eaae823fb73c49b0945380d46f07c2175ec",
+      "html_url": "https://github.com/kugtong33/frameworks-graphql/blob/77ee863eed74bd209306afc8cd502e2b12b86ab2/packages/nest/src/api/graphql/types/query.gql",
+      "content": "type Query {\n  account(id: String!): Account\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/kugtong33/frameworks-graphql/blob/77ee863eed74bd209306afc8cd502e2b12b86ab2/packages/nest/src/api/graphql/types/query.gql:\ntype Query {\n  account(id: String!): Account\n}\n\n# https://github.com/kugtong33/frameworks-graphql/blob/77ee863eed74bd209306afc8cd502e2b12b86ab2/packages/nest/src/api/graphql/types/account.gql:\ntype Account {\n  id: String!\n  username: String!\n  firstname: String\n  lastname: String\n  age: Int\n}",
+        "mergedPaths": [
+          "packages/nest/src/api/graphql/types/account.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Account"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "account.gql",
+      "path": "packages/nest/src/api/graphql/types/account.gql",
+      "sha": "15aba1e0d41aeb29b277405a0efbc2d67383c408",
+      "url": "https://api.github.com/repositories/143597536/contents/packages/nest/src/api/graphql/types/account.gql?ref=77ee863eed74bd209306afc8cd502e2b12b86ab2",
+      "git_url": "https://api.github.com/repositories/143597536/git/blobs/15aba1e0d41aeb29b277405a0efbc2d67383c408",
+      "html_url": "https://github.com/kugtong33/frameworks-graphql/blob/77ee863eed74bd209306afc8cd502e2b12b86ab2/packages/nest/src/api/graphql/types/account.gql",
+      "content": "type Account {\n  id: String!\n  username: String!\n  firstname: String\n  lastname: String\n  age: Int\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-05T08:53:09Z",
+    "updated_at": "2019-05-02T01:00:48Z",
+    "pushed_at": "2019-07-12T00:19:54Z",
+    "issues": 39,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 57,
+    "pull_requests_open": 8,
+    "pull_requests_closed": 39,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

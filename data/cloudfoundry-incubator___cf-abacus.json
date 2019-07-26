@@ -1,0 +1,42 @@
+{
+  "repo_name": "cf-abacus",
+  "repo_full_name": "cloudfoundry-incubator/cf-abacus",
+  "repo_owner": "cloudfoundry-incubator",
+  "repo_description": "CF usage metering and aggregation",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "api.graphql",
+      "path": "lib/aggregation/reporting/src/api.graphql",
+      "sha": "7e400569b11e8ff4e1424b1a37003a2d3e7ca419",
+      "url": "https://api.github.com/repositories/39099954/contents/lib/aggregation/reporting/src/api.graphql?ref=737e8c115be598b5a3e7502fca8481407fa6aae1",
+      "git_url": "https://api.github.com/repositories/39099954/git/blobs/7e400569b11e8ff4e1424b1a37003a2d3e7ca419",
+      "html_url": "https://github.com/cloudfoundry-incubator/cf-abacus/blob/737e8c115be598b5a3e7502fca8481407fa6aae1/lib/aggregation/reporting/src/api.graphql",
+      "content": "type PlanMetric {\n  metric: String\n  quantity: Float\n  cost: Float\n  summary: Float\n  charge: Float\n}\n\ntype Plan {\n  plan_id: String\n  charge: Float\n  aggregated_usage: [PlanMetric]\n}\n\ntype ResourceMetric {\n  metric: String\n  quantity: Float\n  summary: Float\n  charge: Float\n}\n\ntype Resource {\n  resource_id: String\n  charge: Float\n  aggregated_usage: [ResourceMetric]\n  plans: [Plan]\n}\n\nenum ConsumerType {\n  CF_APP,\n  EXTERNAL\n}\n\ntype ConsumerID {\n  type: ConsumerType\n  consumer_id: String\n}\n\ntype Consumer {\n  consumer: ConsumerID\n  charge: Float\n  resources: [Resource]\n}\n\ntype Space {\n  space_id: String\n  charge: Float\n  resources: [Resource]\n  consumers: [Consumer]\n}\n\ntype OrganizationReport {\n  id: String\n  organization_id: String\n  start: Int\n  end: Int\n  charge: Float\n  resources: [Resource]\n  spaces: [Space]\n}\n\ntype Query {\n  organization(\n    organization_id: String!,\n    time: Int,\n    authorization: String) : OrganizationReport\n\n  organizations(\n    organization_ids: [String],\n    time: Int,\n    authorization: String) : [OrganizationReport]\n\n  account(\n    account_id: String!,\n    time: Int,\n    authorization: String) : [OrganizationReport]\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 6,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-07-14T20:58:02Z",
+    "updated_at": "2019-07-10T11:39:14Z",
+    "pushed_at": "2019-07-10T11:39:12Z",
+    "issues": 414,
+    "watchers": 36,
+    "fork_count": 88,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 762,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 97,
+    "pull_requests_merged": 664,
+    "releases": 14,
+    "stargazers": 93
+  }
+}

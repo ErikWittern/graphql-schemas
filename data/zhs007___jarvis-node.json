@@ -1,0 +1,42 @@
+{
+  "repo_name": "jarvis-node",
+  "repo_full_name": "zhs007/jarvis-node",
+  "repo_owner": "zhs007",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "netcore.graphql",
+      "path": "graphql/netcore.graphql",
+      "sha": "40cbeb69479c5194f22ca4fe0be68b55986d8bec",
+      "url": "https://api.github.com/repositories/114450970/contents/graphql/netcore.graphql?ref=7d0e43aeff2a0d46f8fe3206e663635558f1f494",
+      "git_url": "https://api.github.com/repositories/114450970/git/blobs/40cbeb69479c5194f22ca4fe0be68b55986d8bec",
+      "html_url": "https://github.com/zhs007/jarvis-node/blob/7d0e43aeff2a0d46f8fe3206e663635558f1f494/graphql/netcore.graphql",
+      "content": "type NodeInfo {\n    nameid: String!\n    nodeAddr: String!\n    clientNums: Int!\n    connectNums: Int!\n}\n\ntype Query {\n    nodes: [NodeInfo]!\n}\n\nschema {\n    query: Query\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-16T10:04:24Z",
+    "updated_at": "2018-06-02T09:43:46Z",
+    "pushed_at": "2018-06-02T09:43:45Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

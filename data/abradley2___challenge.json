@@ -1,0 +1,42 @@
+{
+  "repo_name": "challenge",
+  "repo_full_name": "abradley2/challenge",
+  "repo_owner": "abradley2",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "84362c53f78145cc769c5ce9c1fa1b0666c2c08a",
+      "url": "https://api.github.com/repositories/100209456/contents/server/schema.graphql?ref=995cf348bb32c83cefe1141804105b03ff4aa597",
+      "git_url": "https://api.github.com/repositories/100209456/git/blobs/84362c53f78145cc769c5ce9c1fa1b0666c2c08a",
+      "html_url": "https://github.com/abradley2/challenge/blob/995cf348bb32c83cefe1141804105b03ff4aa597/server/schema.graphql",
+      "content": "type Location {\n\tlat: Float!,\n\tlng: Float!\n}\n\ntype User {\n\tname: String!,\n\tlocation: Location\n}\n\ntype Event {\n\tid: String!,\n\ttitle: String!,\n\tdescription: String!,\n\ttags: [String]!,\n\tstart: Int!,\n\tend: Int!,\n\tlocation: Location,\n\tparticipants: [User]!\n}\n\ntype Query {\n\tevents: [Event],\n\ttoken(username: String!): String\n}\n\ntype Mutation {\n\tcreateEvent(\n\t\ttitle: String!,\n\t\tdescription: String!,\n\t\ttags: [String]!,\n\t\tstart: Int!,\n\t\tend: Int!\n\t): Event,\n\tdeleteEvent(id: String): String\n}\n\nschema {\n\tquery: Query,\n\tmutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-13T22:55:55Z",
+    "updated_at": "2017-08-14T03:04:44Z",
+    "pushed_at": "2017-08-19T16:43:58Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

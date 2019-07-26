@@ -1,0 +1,41 @@
+{
+  "repo_name": "movie-journal",
+  "repo_full_name": "andrianmauricio/movie-journal",
+  "repo_owner": "AndrianMauricio",
+  "repo_description": "I use this project to learn about React, Apollo and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "04bbe75ff82905a4953a71c4011d7279d8f311b1",
+      "url": "https://api.github.com/repositories/161165050/contents/server/schema.graphql?ref=9afeb6ecb4485325f3628f10cef6e7cd20932943",
+      "git_url": "https://api.github.com/repositories/161165050/git/blobs/04bbe75ff82905a4953a71c4011d7279d8f311b1",
+      "html_url": "https://github.com/AndrianMauricio/movie-journal/blob/9afeb6ecb4485325f3628f10cef6e7cd20932943/server/schema.graphql",
+      "content": "type Query {\n  user(userId: ID!): User\n  #users: [User!]! #DELETE\n  isLoggedIn: Boolean!\n  movieList(listId: ID!): MovieList\n  #movieLists: [MovieList!]! #DELETE\n  movie(movieId: ID!): Movie\n  movies: [Movie!]!\n}\n\ntype Mutation {\n  # User Creact Delete\n  signUp(email: String!, password: String!, name: String!): String!\n  logIn(email: String!, password: String!): String!\n  logOut(id: ID!): User!\n  deleteUser(userId: ID!): User\n  # Movie List Creact Update Delete\n  createMovieList(title: String!, userId: ID!): MovieList!\n  updateMovieList(listId: ID!, newTitle: String): MovieList\n  deleteMovieList(listId: ID!): MovieList\n  # Movie Creact Update Delete\n  createMovie(title: String!): Movie!\n  updateMovie(movieId: ID!, newTitle: String): Movie\n  deleteMovie(movieId: ID!): Movie\n  # Movie List and Movie related\n  addMovieToList(listId: ID!, movieId: ID!): MovieList!\n  removeMovieFromList(listId: ID!, movieId: ID!): MovieList!\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  password: String!\n  movieLists: [MovieList!]!\n}\n\ntype MovieList {\n  id: ID!\n  title: String!\n  author: User!\n  movies: [Movie!]!\n}\n\ntype Movie {\n  id: ID!\n  title: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-10T11:34:10Z",
+    "updated_at": "2019-01-10T14:54:51Z",
+    "pushed_at": "2019-01-10T14:54:49Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

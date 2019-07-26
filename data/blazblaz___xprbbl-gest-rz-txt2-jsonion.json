@@ -1,0 +1,42 @@
+{
+  "repo_name": "xprbbl-gest-rz-txt2-jsonion",
+  "repo_full_name": "blazblaz/xprbbl-gest-rz-txt2-jsonion",
+  "repo_owner": "blazblaz",
+  "repo_description": "Node.js API [y: express-babel]  ·  In development: node-rhizome, rz-gesture-reflection, jsonion, text2json  ·  Forked packages: lowdb, coseq",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "public/schema.graphql",
+      "sha": "f290bac45e5dda95484bf1f48b0b1181bdef48a8",
+      "url": "https://api.github.com/repositories/187650913/contents/public/schema.graphql?ref=46ddeac772212d10fe142fdf911dca050bf576e9",
+      "git_url": "https://api.github.com/repositories/187650913/git/blobs/f290bac45e5dda95484bf1f48b0b1181bdef48a8",
+      "html_url": "https://github.com/blazblaz/xprbbl-gest-rz-txt2-jsonion/blob/46ddeac772212d10fe142fdf911dca050bf576e9/public/schema.graphql",
+      "content": "type Query {\n\tisLogin(auth: String!): Boolean!\n\tuploads: [File]\n}\ntype Mutation {\n\tlogin(username: String!, pwd: String!, auth: String!): Boolean!\n\tsignup(username: String!, pwd: String!, auth: String!): Boolean!\n\tsingleUpload (file: Upload!, auth: String!): File!\n\tmultipleUpload (files: [Upload!]!, auth: String!): [File!]!\n}\ntype Subscription {\n    counter: Counter!\n}\n\n\n\ntype Counter {\n    count: Int!\n    countStr: String\n}\n\ntype File {\n\tid: ID!\n\tpath: String!\n\tfilename: String!\n\tmimetype: String!\n\tencoding: String!\n}\n\nscalar Upload\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-20T13:56:56Z",
+    "updated_at": "2019-05-27T10:40:20Z",
+    "pushed_at": "2019-05-27T10:40:19Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

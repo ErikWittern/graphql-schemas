@@ -1,0 +1,39 @@
+{
+  "repo_name": "examples",
+  "repo_full_name": "micro/examples",
+  "repo_owner": "micro",
+  "repo_description": "How-to examples for using Micro",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "greeter/api/graphql/graphql/schema.graphql",
+      "sha": "cc6183a672bf6f0f7e2fa3c967a3410ba816816a",
+      "url": "https://api.github.com/repositories/78118788/contents/greeter/api/graphql/graphql/schema.graphql?ref=be6a312c68ebd497a5b9125ab925593de36173d6",
+      "git_url": "https://api.github.com/repositories/78118788/git/blobs/cc6183a672bf6f0f7e2fa3c967a3410ba816816a",
+      "html_url": "https://github.com/micro/examples/blob/be6a312c68ebd497a5b9125ab925593de36173d6/greeter/api/graphql/graphql/schema.graphql",
+      "content": "type HelloResponse {\n  msg: String!\n}\n\ntype Query {\n  hello(name: String! = \"World\"): HelloResponse\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-05T14:14:59Z",
+    "updated_at": "2019-07-19T20:17:54Z",
+    "pushed_at": "2019-07-19T20:17:52Z",
+    "issues": 46,
+    "watchers": 27,
+    "fork_count": 160,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 29,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 7,
+    "pull_requests_merged": 22,
+    "releases": 2,
+    "stargazers": 620
+  }
+}

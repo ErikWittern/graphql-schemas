@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-mm",
+  "repo_full_name": "idkjs/relay-mm",
+  "repo_owner": "idkjs",
+  "repo_description": "testing create-graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "86013293a081b5d7b9f705e58696ce2b9cb036c3",
+      "url": "https://api.github.com/repositories/89351408/contents/data/schema.graphql?ref=e90aaa9494879d8ca390110a344bb652b90fab6a",
+      "git_url": "https://api.github.com/repositories/89351408/git/blobs/86013293a081b5d7b9f705e58696ce2b9cb036c3",
+      "html_url": "https://github.com/idkjs/relay-mm/blob/e90aaa9494879d8ca390110a344bb652b90fab6a/data/schema.graphql",
+      "content": "# Represents Business\ntype Business implements Node {\n  # The ID of an object\n  id: ID!\n  name: String\n  likesCount: Int\n  url: String\n  business_id: String\n  createdAt: String\n  updatedAt: String\n\n  # list of reviews for this business\n  reviews: [Review]\n}\n\n# A connection to a list of items.\ntype BusinessConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [BusinessEdge]\n}\n\n# An edge in a connection.\ntype BusinessEdge {\n  # The item at the end of the edge\n  node: Business\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput ChangePasswordInput {\n  oldPassword: String!\n\n  # user new password\n  password: String!\n  clientMutationId: String\n}\n\ntype ChangePasswordPayload {\n  error: String\n  me: User\n  clientMutationId: String\n}\n\ninput LoginEmailInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype LoginEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\ntype Mutation {\n  LoginEmail(input: LoginEmailInput!): LoginEmailPayload\n  RegisterEmail(input: RegisterEmailInput!): RegisterEmailPayload\n  ChangePassword(input: ChangePasswordInput!): ChangePasswordPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# The root of all... queries\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: Viewer\n}\n\ninput RegisterEmailInput {\n  name: String!\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype RegisterEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\n# Represents Review\ntype Review implements Node {\n  # The ID of an object\n  id: ID!\n  review_id: String\n  user_id: String\n  business_id: String\n  date: String\n  text: String\n  useful: Int\n  funny: Int\n  cool: Int\n  createdAt: String\n  updatedAt: String\n}\n\n# A connection to a list of items.\ntype ReviewConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [ReviewEdge]\n}\n\n# An edge in a connection.\ntype ReviewEdge {\n  # The item at the end of the edge\n  node: Review\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# User data\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  _id: String\n  name: String\n  email: String\n  active: Boolean\n}\n\n# A connection to a list of items.\ntype UserConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [UserEdge]\n  count: Int\n}\n\n# An edge in a connection.\ntype UserEdge {\n  # The item at the end of the edge\n  node: User\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# ...\ntype Viewer implements Node {\n  # The ID of an object\n  id: ID!\n  me: User\n  user(id: ID!): User\n  users(after: String, first: Int, before: String, last: Int, search: String): UserConnection\n  business(id: ID!): Business\n  businesses(after: String, first: Int, before: String, last: Int, search: String): BusinessConnection\n  review(id: ID!): Review\n  reviews(after: String, first: Int, before: String, last: Int, search: String): ReviewConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-25T11:09:54Z",
+    "updated_at": "2017-04-25T11:10:03Z",
+    "pushed_at": "2018-02-15T11:55:31Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

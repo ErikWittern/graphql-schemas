@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-server",
+  "repo_full_name": "laminembn/graphql-server",
+  "repo_owner": "LamineMbn",
+  "repo_description": "A minimalist graphql server using Graphpack",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "final/src/schema.graphql",
+      "sha": "fb4a817253b1d37d23d99974b1aa34e8db1e532e",
+      "url": "https://api.github.com/repositories/167999400/contents/final/src/schema.graphql?ref=aef2ae2d13baf3b477aaf103c1ec02b54f2fd51b",
+      "git_url": "https://api.github.com/repositories/167999400/git/blobs/fb4a817253b1d37d23d99974b1aa34e8db1e532e",
+      "html_url": "https://github.com/LamineMbn/graphql-server/blob/aef2ae2d13baf3b477aaf103c1ec02b54f2fd51b/final/src/schema.graphql",
+      "content": "type Query {\n    characters : [Character]\n    character(name: String!) : Character\n    houses: [House]\n}\n\ntype Mutation {\n    \"\"\"\n    Create a new house\n    \"\"\"\n    createHouse(id: ID!, name: String!, words: String): [House]!,\n\n    \"\"\"\n    Update an existing house\n    \"\"\"\n    updateHouse(id: ID!, name: String!, words: String): [House]!,\n\n    \"\"\"\n    Delete a house\n    \"\"\"\n    deleteHouse(id: ID!): [House]!,\n}\n\ntype Character {\n    id:       ID!,\n    male:      Boolean\n    house:     String,\n    slug:      String,\n    name:      String,\n    books:     [String],\n    titles:    [String]\n}\n\ntype House {\n    id:       ID!,\n    name:      String,\n    words:      String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-28T16:57:02Z",
+    "updated_at": "2019-02-04T10:49:23Z",
+    "pushed_at": "2019-02-04T10:49:22Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

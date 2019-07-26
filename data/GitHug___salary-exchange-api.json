@@ -1,0 +1,42 @@
+{
+  "repo_name": "salary-exchange-api",
+  "repo_full_name": "githug/salary-exchange-api",
+  "repo_owner": "GitHug",
+  "repo_description": "API to get exchange rate from the European Central Bank",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "5052a0f600fdc99cdaf5e14dbf4c5a1064ced7f8",
+      "url": "https://api.github.com/repositories/120102462/contents/schema.graphql?ref=fe6bb0d150e9d960afd6bcbcd3559e6d146d69b1",
+      "git_url": "https://api.github.com/repositories/120102462/git/blobs/5052a0f600fdc99cdaf5e14dbf4c5a1064ced7f8",
+      "html_url": "https://github.com/GitHug/salary-exchange-api/blob/fe6bb0d150e9d960afd6bcbcd3559e6d146d69b1/schema.graphql",
+      "content": "type Query {\n  exchangeRates(\n    period: Period!,\n    currencyFrom: String!,\n    currencyTo: String!,\n    amount: Float): [ExchangeRate],\n\n  buyingPower(\n    period: Period,\n    date: String,\n    currencyFrom: String!,\n    currencyTo: String!,\n    amount: Float\n  ): BuyingPower,\n\n  latestExchangeRate(\n    currencyFrom: String!,\n    currencyTo: String!\n  ): ExchangeRate\n}\n\ntype ExchangeRate {\n  date: String!\n  time: String,\n  timezone: String,\n  currencyFrom: String!\n  currencyTo: String!\n  exchangeRate: Float!\n  totalAmountExchangeRate: Float!\n}\n\nenum Period {\n  ONE_MONTH,\n  THREE_MONTHS,\n  SIX_MONTHS,\n  ONE_YEAR,\n  THREE_YEARS,\n  FIVE_YEARS,\n  ALL\n}\n\ntype BuyingPower {\n  historicalExchangeRate: ExchangeRate,\n  currentExchangeRate: ExchangeRate,\n  difference: BuyingPowerDifference!\n}\n\ntype BuyingPowerDifference {\n  rate: Float!,\n  ratePercentage: Float!,\n  sinceDate: String!,\n  latestDate: String!,\n  originalBuyingPower: Float,\n  currentBuyingPower: Float,\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-03T15:18:34Z",
+    "updated_at": "2018-05-07T22:50:56Z",
+    "pushed_at": "2018-05-07T22:50:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

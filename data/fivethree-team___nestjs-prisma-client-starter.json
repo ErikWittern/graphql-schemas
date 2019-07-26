@@ -1,0 +1,39 @@
+{
+  "repo_name": "nestjs-prisma-client-starter",
+  "repo_full_name": "fivethree-team/nestjs-prisma-client-starter",
+  "repo_owner": "fivethree-team",
+  "repo_description": "Starter project for NestJS 😻 includes Graphql with Prisma Client, Passport-JWT authentication, Swagger Api and Docker",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "645f1fe53fcc373f73be88253f9adda424d5f616",
+      "url": "https://api.github.com/repositories/160067449/contents/src/schema.graphql?ref=cc8a6a13eae227c87ef717c32f864d40c3d730de",
+      "git_url": "https://api.github.com/repositories/160067449/git/blobs/645f1fe53fcc373f73be88253f9adda424d5f616",
+      "html_url": "https://github.com/fivethree-team/nestjs-prisma-client-starter/blob/cc8a6a13eae227c87ef717c32f864d40c3d730de/src/schema.graphql",
+      "content": "type Query {\n    helloWorld: String\n    hello(name: String!): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-02T16:35:28Z",
+    "updated_at": "2019-07-19T18:38:54Z",
+    "pushed_at": "2019-07-19T19:25:55Z",
+    "issues": 3,
+    "watchers": 4,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 114,
+    "pull_requests_open": 12,
+    "pull_requests_closed": 81,
+    "pull_requests_merged": 21,
+    "releases": 0,
+    "stargazers": 38
+  }
+}

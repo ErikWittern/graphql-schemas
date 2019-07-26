@@ -1,0 +1,39 @@
+{
+  "repo_name": "apollo-starter-kit",
+  "repo_full_name": "luanatsainsburys/apollo-starter-kit",
+  "repo_owner": "luanatsainsburys",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "f7fc1002b4feed16a7ab403d440d9f67c3fe5573",
+      "url": "https://api.github.com/repositories/76670947/contents/data/schema.graphql?ref=426e6c93224b4dee44512b14c304844c73b031b0",
+      "git_url": "https://api.github.com/repositories/76670947/git/blobs/f7fc1002b4feed16a7ab403d440d9f67c3fe5573",
+      "html_url": "https://github.com/luanatsainsburys/apollo-starter-kit/blob/426e6c93224b4dee44512b14c304844c73b031b0/data/schema.graphql",
+      "content": "type Query {\n  testString: String\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-16T17:04:24Z",
+    "updated_at": "2016-12-16T17:05:26Z",
+    "pushed_at": "2016-12-16T17:05:24Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

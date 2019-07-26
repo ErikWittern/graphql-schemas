@@ -1,0 +1,39 @@
+{
+  "repo_name": "FoodTruckApi",
+  "repo_full_name": "team-rocket-coding-collective/foodtruckapi",
+  "repo_owner": "Team-Rocket-Coding-Collective",
+  "repo_description": "TODO delete currently using as a reference",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/api/graphql/schema.graphql",
+      "sha": "69394f7ee483a89e7df8d34a0f04e58515a27e8b",
+      "url": "https://api.github.com/repositories/91993091/contents/app/api/graphql/schema.graphql?ref=27ffc29224bddd6eb3a153a195a8f4613441b8af",
+      "git_url": "https://api.github.com/repositories/91993091/git/blobs/69394f7ee483a89e7df8d34a0f04e58515a27e8b",
+      "html_url": "https://github.com/Team-Rocket-Coding-Collective/FoodTruckApi/blob/27ffc29224bddd6eb3a153a195a8f4613441b8af/app/api/graphql/schema.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n}\n\ntype Query {\n  getUserById(id: ID!): User\n  getUserByEmail(email: String!): User\n}\n\ntype Mutation {\n  createUser(email: String!): User\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-21T23:07:33Z",
+    "updated_at": "2017-05-27T21:16:07Z",
+    "pushed_at": "2017-05-23T03:41:55Z",
+    "issues": 4,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

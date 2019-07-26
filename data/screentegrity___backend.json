@@ -1,0 +1,42 @@
+{
+  "repo_name": "backend",
+  "repo_full_name": "screentegrity/backend",
+  "repo_owner": "screentegrity",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "26a1a7b7a90c06bd9f9551e4ab0e7d46f3a136e9",
+      "url": "https://api.github.com/repositories/179882796/contents/schema/schema.graphql?ref=1ddbf9176b894313ceaaf15c77de023f47feba90",
+      "git_url": "https://api.github.com/repositories/179882796/git/blobs/26a1a7b7a90c06bd9f9551e4ab0e7d46f3a136e9",
+      "html_url": "https://github.com/screentegrity/backend/blob/1ddbf9176b894313ceaaf15c77de023f47feba90/schema/schema.graphql",
+      "content": "type Query {\n  \"A simple type for getting started!\"\n  hello: String\n  candidates(review_status: ReviewStatus!): [Candidate!]!\n  getUnscoredAnswers( candidate_id: ID! ): [CandidateAnswer]\n}\n\ntype Mutation {\n  createSomething(data1: String!, data2: String!): Something!\n  addCandidate(candidate_name: String!, picture_url: String!): Candidate! \n  setCandidateStatusPending(id: ID!): Candidate\n  setCandidateStatusCompleted(id: ID!): Candidate\n}\n\ntype Subscription {\n  somethingAdded: Something!\n}\n\ntype Something {\n  id: ID!,\n  data1: String!,\n  data2: String!\n}\n\ntype Candidate {\n  id: ID!,\n  candidate_name: String!,\n  picture_url: String!,\n  time_posted: String!\n}\n\ntype CandidateAnswer {\n  id: ID!,\n  candidate_id: ID!,\n  question_id: ID!,\n  user_answer: String!,\n  question: String!,\n  max_points: Int!,\n  correct_answer: CorrectAnswer!\n}\n\nenum ReviewStatus {\n  NEW\n  PENDING\n  COMPLETED\n}\n\nenum CorrectAnswer {\n  NA\n  A\n  B\n  C\n  D\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-06T20:24:17Z",
+    "updated_at": "2019-04-07T17:29:17Z",
+    "pushed_at": "2019-04-07T17:29:16Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

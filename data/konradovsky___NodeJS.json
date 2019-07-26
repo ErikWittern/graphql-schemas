@@ -1,0 +1,52 @@
+{
+  "repo_name": "NodeJS",
+  "repo_full_name": "konradovsky/nodejs",
+  "repo_owner": "konradovsky",
+  "repo_description": "Learning node js for self improving and fun.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "GraphQl/03_GraphQL Basics - Mutations/src/schema.graphql",
+      "sha": "c07aa706c7685e1301dd1862523afdc7c7ed172d",
+      "url": "https://api.github.com/repositories/143859857/contents/GraphQl/03_GraphQL%20Basics%20-%20Mutations/src/schema.graphql?ref=b2a09532d3cfa82e45b456a878eff5fdf965c8c2",
+      "git_url": "https://api.github.com/repositories/143859857/git/blobs/c07aa706c7685e1301dd1862523afdc7c7ed172d",
+      "html_url": "https://github.com/konradovsky/NodeJS/blob/b2a09532d3cfa82e45b456a878eff5fdf965c8c2/GraphQl/03_GraphQL%20Basics%20-%20Mutations/src/schema.graphql",
+      "content": "    type Query {\n        users(query:String): [User!]!\n        posts(query:String): [Post!]!\n        comments(query:String): [Comment!]!\n    }\n    type Mutation {\n        createUser(data: CreateUserInput!): User!\n        deleteUser(id: ID!): User!\n        updateUser(id: ID!, data: UpdateUserInput!): User!\n\n        createPost(data: CreatePostInput!): Post!\n        deletePost(id: ID!): Post!\n        updatePost(id: ID!, data: UpdatePostInput!): Post!\n\n        createComment(data: CreateCommentInput!): Comment!\n        deleteComment(id: ID!): Comment!\n        updateComment(id: ID!, data: UpdateCommentInput!): Comment!\n    }\n    type Subscription {\n        count: Int!\n    }\n    input CreateUserInput {\n        name: String!, \n        email: String!, \n        age: Int\n    }\n    input UpdateUserInput {\n        name: String, \n        email: String, \n        age: Int\n    }\n    input CreatePostInput {\n        title: String!, \n        body: String!, \n        published: Boolean!, \n        author: String!\n    }\n    input UpdatePostInput {\n        title: String, \n        body: String, \n        published: Boolean\n    }\n    input CreateCommentInput {\n        text: String!, \n        author: String!, \n        post: String!\n    }\n    input UpdateCommentInput {\n        text: String, \n    }\n    type Comment {\n        id: ID!\n        author: User!\n        text: String!\n        post: Post!\n    }\n    type User {\n        id: ID!\n        name: String!\n        email: String!\n        age: Int\n        posts: [Post!]!\n        comments: [Comment!]!\n    }\n    type Post {\n        id: ID!\n        title: String!\n        body: String!\n        published: Boolean!\n        author: User!\n        comments: [Comment!]!\n    }",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 12
+    },
+    {
+      "name": "schema.graphql",
+      "path": "GraphQl/04_GraphQL Basics - Subscriptions/src/schema.graphql",
+      "sha": "4f4e5f110c45a37c9d85dd0f579e537f386b70ac",
+      "url": "https://api.github.com/repositories/143859857/contents/GraphQl/04_GraphQL%20Basics%20-%20Subscriptions/src/schema.graphql?ref=e5faaf89ca876aaa2a7a87d6e51824a169339322",
+      "git_url": "https://api.github.com/repositories/143859857/git/blobs/4f4e5f110c45a37c9d85dd0f579e537f386b70ac",
+      "html_url": "https://github.com/konradovsky/NodeJS/blob/e5faaf89ca876aaa2a7a87d6e51824a169339322/GraphQl/04_GraphQL%20Basics%20-%20Subscriptions/src/schema.graphql",
+      "content": "    type Query {\n        users(query:String): [User!]!\n        posts(query:String): [Post!]!\n        comments(query:String): [Comment!]!\n    }\n    type Mutation {\n        createUser(data: CreateUserInput!): User!\n        deleteUser(id: ID!): User!\n        updateUser(id: ID!, data: UpdateUserInput!): User!\n\n        createPost(data: CreatePostInput!): Post!\n        deletePost(id: ID!): Post!\n        updatePost(id: ID!, data: UpdatePostInput!): Post!\n\n        createComment(data: CreateCommentInput!): Comment!\n        deleteComment(id: ID!): Comment!\n        updateComment(id: ID!, data: UpdateCommentInput!): Comment!\n    }\n    type Subscription {\n        count: Int!\n        comment(postId: ID!): Comment!\n        post: Post!\n    }\n    input CreateUserInput {\n        name: String!, \n        email: String!, \n        age: Int\n    }\n    input UpdateUserInput {\n        name: String, \n        email: String, \n        age: Int\n    }\n    input CreatePostInput {\n        title: String!, \n        body: String!, \n        published: Boolean!, \n        author: String!\n    }\n    input UpdatePostInput {\n        title: String, \n        body: String, \n        published: Boolean\n    }\n    input CreateCommentInput {\n        text: String!, \n        author: String!, \n        post: String!\n    }\n    input UpdateCommentInput {\n        text: String, \n    }\n    type Comment {\n        id: ID!\n        author: User!\n        text: String!\n        post: Post!\n    }\n    type User {\n        id: ID!\n        name: String!\n        email: String!\n        age: Int\n        posts: [Post!]!\n        comments: [Comment!]!\n    }\n    type Post {\n        id: ID!\n        title: String!\n        body: String!\n        published: Boolean!\n        author: User!\n        comments: [Comment!]!\n    }",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-07T10:49:21Z",
+    "updated_at": "2018-12-05T07:32:23Z",
+    "pushed_at": "2018-12-05T07:32:21Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 15,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 15,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

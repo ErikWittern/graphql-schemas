@@ -1,0 +1,39 @@
+{
+  "repo_name": "fusionjs",
+  "repo_full_name": "fusionjs/fusionjs",
+  "repo_owner": "fusionjs",
+  "repo_description": "The fusionjs monorepo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "fusion-cli/test/e2e/gql/fixture/src/schema.graphql",
+      "sha": "31d91d69038afc2f3d78ef9f9fe74bcfce611531",
+      "url": "https://api.github.com/repositories/108948103/contents/fusion-cli/test/e2e/gql/fixture/src/schema.graphql?ref=10b64c280d4acc76ed0639e21e05fc12be15b318",
+      "git_url": "https://api.github.com/repositories/108948103/git/blobs/31d91d69038afc2f3d78ef9f9fe74bcfce611531",
+      "html_url": "https://github.com/fusionjs/fusionjs/blob/10b64c280d4acc76ed0639e21e05fc12be15b318/fusion-cli/test/e2e/gql/fixture/src/schema.graphql",
+      "content": "type Query {\n  user: User\n}\n\ntype User {\n  firstName: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-31T05:09:50Z",
+    "updated_at": "2019-07-19T12:53:50Z",
+    "pushed_at": "2019-07-19T20:12:56Z",
+    "issues": 165,
+    "watchers": 21,
+    "fork_count": 54,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 388,
+    "pull_requests_open": 17,
+    "pull_requests_closed": 89,
+    "pull_requests_merged": 282,
+    "releases": 48,
+    "stargazers": 868
+  }
+}

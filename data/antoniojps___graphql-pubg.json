@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-pubg",
+  "repo_full_name": "antoniojps/graphql-pubg",
+  "repo_owner": "antoniojps",
+  "repo_description": "GraphQL wrapper for the PUBG API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "360ec305ca20b2f04134473320695dbcd2ca2ff3",
+      "url": "https://api.github.com/repositories/138006012/contents/graphql/schema.graphql?ref=5f5081546d7ac411e8f45f05019ed7f4c3d6f4dd",
+      "git_url": "https://api.github.com/repositories/138006012/git/blobs/360ec305ca20b2f04134473320695dbcd2ca2ff3",
+      "html_url": "https://github.com/antoniojps/graphql-pubg/blob/5f5081546d7ac411e8f45f05019ed7f4c3d6f4dd/graphql/schema.graphql",
+      "content": "type Query {\n\tplayer(name: String!,matchesLimit: Int,shards:String) : Player\n\tmatch(id: ID!, shards: String!) : Match\n}\n\ntype Player {\n\tid: ID!\n\tname: String\n\tmatches: [Match]\n}\n\ntype Match {\n\tid: String\n\tgameMode: String\n\tcreatedAt: String\n\tmap: String\n\tisCustomMatch: Boolean\n\tduration: Int\n\tserver: String\n\ttotalParticipants: Int\n\trosters: [Roster]\n}\n\ntype Roster {\n\tid: ID!\n\tslot: Int\n\tstats: RosterStats\n\tparticipants: [Participant]\n}\n\ntype RosterStats {\n\trank: Int\n\twon: Boolean\n\tkills: Int\n\tdamage: Int\n\tdbnos: Int\n}\n\ntype Participant {\n\tid: ID!\n\tname: String\n\tkills: Int\n\tdamage: Float\n\tdbnos: Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-20T08:55:09Z",
+    "updated_at": "2019-07-05T05:55:27Z",
+    "pushed_at": "2018-07-01T05:32:36Z",
+    "issues": 0,
+    "watchers": 19,
+    "fork_count": 31,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 53
+  }
+}

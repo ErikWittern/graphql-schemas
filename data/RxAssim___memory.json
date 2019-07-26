@@ -1,0 +1,42 @@
+{
+  "repo_name": "memory",
+  "repo_full_name": "rxassim/memory",
+  "repo_owner": "RxAssim",
+  "repo_description": "Small full-stack project built with React and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/src/schema.graphql",
+      "sha": "d880de28591d1592fc2025142d68a583c5d37de3",
+      "url": "https://api.github.com/repositories/185172500/contents/backend/src/schema.graphql?ref=0bc4b85ac92e773e835f160233e9653bc7567687",
+      "git_url": "https://api.github.com/repositories/185172500/git/blobs/d880de28591d1592fc2025142d68a583c5d37de3",
+      "html_url": "https://github.com/RxAssim/memory/blob/0bc4b85ac92e773e835f160233e9653bc7567687/backend/src/schema.graphql",
+      "content": "type User {\n  id: ID!\n  name: String!\n  score: Int\n}\n\ntype AuthenticatedUser {\n  user: User!\n  token: String!\n}\n\ntype Query {\n  leaderboard: [User]\n}\n\ntype Mutation {\n  createUser(name: String!): AuthenticatedUser!\n  saveScore(score: Int!): User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-06T10:11:09Z",
+    "updated_at": "2019-05-06T10:11:26Z",
+    "pushed_at": "2019-05-06T10:11:24Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "ytdl",
+  "repo_full_name": "maple3142/ytdl",
+  "repo_owner": "maple3142",
+  "repo_description": "Get youtube video download url",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "schema.gql",
+      "sha": "36f3e63f755de1a5ae0daf444f2b0dbe27234b0b",
+      "url": "https://api.github.com/repositories/130371895/contents/schema.gql?ref=d586fabea02fd4c890b8853e93dc8fd63bf72e80",
+      "git_url": "https://api.github.com/repositories/130371895/git/blobs/36f3e63f755de1a5ae0daf444f2b0dbe27234b0b",
+      "html_url": "https://github.com/maple3142/ytdl/blob/d586fabea02fd4c890b8853e93dc8fd63bf72e80/schema.gql",
+      "content": "type Query {\n\tsearch(id: String!): SearchResult\n}\ntype SearchResult {\n\tstream: [Stream]\n\tadaptive: [Adaptive]\n\tmeta: Meta\n}\ntype Stream {\n\ts: String\n\titag: String\n\turl: String\n\ttype: String\n\tquality: String\n\tsp: String\n}\ntype Adaptive {\n\tlmt: String\n\txtags: String\n\tclen: String\n\tprojection_type: String\n\tquality_label: String\n\ttype: String\n\turl: String\n\tsp: String\n\titag: String\n\ts: String\n\tinit: String\n\tsize: String\n\tindex: String\n\tfps: String\n\tbitrate: String\n}\ntype Meta {\n\tplayer_response: String\n\titct: String\n\tadaptive_fmts: String\n\taccount_playback_token: String\n\tof: String\n\tno_get_video_log: String\n\tapply_fade_on_midrolls: String\n\tcr: String\n\tavg_rating: String\n\tshow_content_thumbnail: String\n\tcver: String\n\toid: String\n\tfmt_list: String\n\tcl: String\n\tmidroll_prefetch_size: String\n\tenabled_engage_types: String\n\tallow_html5_ads: String\n\tvideo_id: String\n\tssl: String\n\tvm: String\n\tserialized_ad_ux_config: String\n\txhr_apiary_host: String\n\ttmi: String\n\teventid: String\n\tiv3_module: String\n\tad_logging_flag: String\n\tcsi_page_type: String\n\tthumbnail_url: String\n\tkeywords: String\n\tinnertube_context_client_version: String\n\tmidroll_freqcap: String\n\tapiary_host_firstparty: String\n\tgapi_hint_params: String\n\tapiary_host: String\n\tinnertube_api_version: String\n\tad_preroll: String\n\ttoken: String\n\tfade_in_start_milliseconds: String\n\tvss_host: String\n\ttag_for_child_directed: String\n\tmpu: String\n\tptchn: String\n\tiv_load_policy: String\n\tfade_out_start_milliseconds: String\n\tplayer_error_log_fraction: String\n\tatc: String\n\thl: String\n\tidpj: String\n\tiv_invideo_url: String\n\tis_listed: String\n\tfade_out_duration_milliseconds: String\n\tvideostats_playback_base_url: String\n\tfexp: String\n\tptk: String\n\tfflags: String\n\tallow_ratings: String\n\tvmap: String\n\tucid: String\n\ttimestamp: String\n\texternal_play_video: String\n\twatermark: String\n\tad3_module: String\n\ttitle: String\n\tallow_embed: String\n\tad_device: String\n\tpltype: String\n\thost_language: String\n\tt: String\n\turl_encoded_fmt_stream_map: String\n\tinnertube_api_key: String\n\tauthor: String\n\tloudness: String\n\tstoryboard_spec: String\n\tfade_in_duration_milliseconds: String\n\trvs: String\n\tplid: String\n\tsffb: String\n\tc: String\n\tldpj: String\n\tview_count: String\n\tallow_below_the_player_companion: String\n\tenablecsi: String\n\tstatus: String\n\trelative_loudness: String\n\tlength_seconds: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-20T14:17:31Z",
+    "updated_at": "2019-07-15T17:42:32Z",
+    "pushed_at": "2019-07-12T12:39:03Z",
+    "issues": 7,
+    "watchers": 7,
+    "fork_count": 19,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 78
+  }
+}

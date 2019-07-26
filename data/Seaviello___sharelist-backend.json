@@ -1,0 +1,42 @@
+{
+  "repo_name": "sharelist-backend",
+  "repo_full_name": "seaviello/sharelist-backend",
+  "repo_owner": "Seaviello",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "9e0a182b8569bc1be146874f5de0a5f7d25bccc4",
+      "url": "https://api.github.com/repositories/156682514/contents/src/schema.graphql?ref=3f73d1b6e238fdf512044e2f8d9884ac39ea88f4",
+      "git_url": "https://api.github.com/repositories/156682514/git/blobs/9e0a182b8569bc1be146874f5de0a5f7d25bccc4",
+      "html_url": "https://github.com/Seaviello/sharelist-backend/blob/3f73d1b6e238fdf512044e2f8d9884ac39ea88f4/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype User {\n    id: ID!\n    name: String!\n    email: String!\n    password: String!\n    resetToken: String\n    resetTokenExpiry: Float\n    createdAt: DateTime!\n    updatedAt: DateTime!\n}\n\ntype Query {\n    currentUser: User\n}\n\ntype Mutation {\n    #####   User operations   #####\n    signup(email: String!,\n        password: String!,\n        name: String!): User!\n    signin(email: String!,\n        password: String!): User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-08T09:31:11Z",
+    "updated_at": "2018-11-15T08:12:16Z",
+    "pushed_at": "2018-11-15T08:12:14Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

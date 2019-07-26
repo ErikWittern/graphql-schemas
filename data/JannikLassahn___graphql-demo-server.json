@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-demo-server",
+  "repo_full_name": "janniklassahn/graphql-demo-server",
+  "repo_owner": "JannikLassahn",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema/schema.gql",
+      "sha": "acb4a823bfd89c5db4a4dc913552dbfa6b60b87a",
+      "url": "https://api.github.com/repositories/161218538/contents/src/schema/schema.gql?ref=4d7fa7fcbdb63ded0e6426643288cd1fe6e60672",
+      "git_url": "https://api.github.com/repositories/161218538/git/blobs/acb4a823bfd89c5db4a4dc913552dbfa6b60b87a",
+      "html_url": "https://github.com/JannikLassahn/graphql-demo-server/blob/4d7fa7fcbdb63ded0e6426643288cd1fe6e60672/src/schema/schema.gql",
+      "content": "scalar Date\n\ntype Movie {\n    id: ID!\n    title: String!\n    createdAt: Date!\n    updatedAt: Date!\n    genres: [String!]\n    runtime: Int\n    releasedAt: Date\n    reviews(after: String, before: String, first: Int, last: Int): ReviewConnection!\n    # cast(after: String, before: String, first: Int, last: Int): CastConnection!\n}\n\ntype Review {\n    title: String!\n    content: String!\n    rating: Int!\n    createdAt: Date\n}\n\ntype ReviewEdge {\n    node: Review\n    cursor: String!\n}\n\ntype ReviewConnection {\n    pageInfo: PageInfo!\n    edges: [ReviewEdge]\n}\n\ntype Cast {\n    character: String!\n    actor: Actor!\n    movie: Movie!\n}\n\ntype CastEdge {\n    node: Cast\n    cursor: String!\n}\n\ntype CastConnection {\n    pageInfo: PageInfo!\n    edges: [CastEdge]\n}\n\ntype Actor {\n    id: ID!\n    firstName: String!\n    lastName: String!\n    bio: String\n    birthday: Date\n    cast(after: String, before: String, first: Int, last: Int): CastConnection!\n}\n\ntype ActorConnection {\n    edges: [ActorEdge]\n    pageInfo: PageInfo\n}\n\ntype ActorEdge {\n    cursor: String\n    node: Actor\n}\n\ntype PageInfo {\n    hasNextPage: Boolean!\n    hasPreviousPage: Boolean!\n}\n\ntype MovieConnection {\n    edges: [MovieEdge]\n    pageInfo: PageInfo\n}\n\ntype MovieEdge {\n    cursor: String\n    node: Movie\n}\n\nenum SearchType {\n    ACTOR\n    MOVIE\n}\n\nunion SearchResultItem = Actor | Movie\n\ntype SearchResultItemConnection {\n    edges: [SearchResultItemEdge]\n    pageInfo: PageInfo\n}\n\ntype SearchResultItemEdge {\n    node: SearchResultItem\n    cursor: String\n}\n\ninput AddMovieInput {\n    title: String!\n    description: String!\n    genres: String\n    runtime: Int\n    releasedAt: Date\n}\n\ninput AddReviewInput {\n    movieId: ID!\n    title: String!\n    content: String!\n    rating: Int\n}\n\ninput AddActorInput {\n    firstName: String!\n    lastName: String!\n    bio: String\n    birthday: Date\n}\n\ntype Query {\n    allMovies(after: String, before: String, first: Int, last: Int): MovieConnection! \n    movie(id: ID!): Movie\n\n    allActors(after: String, before: String, first: Int, last: Int): ActorConnection!\n    actor(id: ID!): Actor\n\n    search(after: String, before: String, first: Int, last: Int, query: String, searchType: SearchType): SearchResultItemConnection\n}\n\ntype Mutation {\n    addMovie(input: AddMovieInput): Movie\n    deleteMovie(movieId: ID!): Boolean\n\n    addReview(input: AddReviewInput!): Review\n\n    addActor(input: AddActorInput!): Actor\n    deleteActor(actorId: ID!): Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 17,
+      "containsCycle": true,
+      "numDefinitions": 23
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-10T18:26:34Z",
+    "updated_at": "2018-12-18T10:05:48Z",
+    "pushed_at": "2018-12-18T12:14:06Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

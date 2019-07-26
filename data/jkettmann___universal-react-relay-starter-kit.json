@@ -1,0 +1,41 @@
+{
+  "repo_name": "universal-react-relay-starter-kit",
+  "repo_full_name": "jkettmann/universal-react-relay-starter-kit",
+  "repo_owner": "jkettmann",
+  "repo_description": "A starter kit for React in combination with Relay including a GraphQL server, server side rendering, code splitting, i18n, SEO.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/graphql/schema.graphql",
+      "sha": "2f110efe12d429dcbf0f7287075e689a8e6e6905",
+      "url": "https://api.github.com/repositories/103810828/contents/server/graphql/schema.graphql?ref=b6500f3cf904464666d15a82c9b050e9131c32a9",
+      "git_url": "https://api.github.com/repositories/103810828/git/blobs/2f110efe12d429dcbf0f7287075e689a8e6e6905",
+      "html_url": "https://github.com/jkettmann/universal-react-relay-starter-kit/blob/b6500f3cf904464666d15a82c9b050e9131c32a9/server/graphql/schema.graphql",
+      "content": "input ConfirmPasswordInput {\n  email: String!\n  pin: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype ConfirmPasswordPayload {\n  success: Boolean\n  clientMutationId: String\n}\n\ninput CreatePostInput {\n  title: String!\n  description: String!\n  clientMutationId: String\n}\n\ntype CreatePostPayload {\n  postEdge: PostEdge\n  user: User\n  clientMutationId: String\n}\n\ninput LoginInput {\n  email: String\n  password: String\n  facebookToken: String\n  clientMutationId: String\n}\n\ntype LoginPayload {\n  user: User\n  permission: Permission\n  clientMutationId: String\n}\n\ninput LogoutInput {\n  clientMutationId: String\n}\n\ntype LogoutPayload {\n  success: Boolean\n  clientMutationId: String\n}\n\ntype Mutation {\n  register(input: RegisterInput!): RegisterPayload\n  login(input: LoginInput!): LoginPayload\n  logout(input: LogoutInput!): LogoutPayload\n  resendVerification(input: ResendVerificationInput!): ResendVerificationPayload\n  verifyAccount(input: VerifyAccountInput!): VerifyAccountPayload\n  resetPassword(input: ResetPasswordInput!): ResetPasswordPayload\n  confirmPassword(input: ConfirmPasswordInput!): ConfirmPasswordPayload\n  createPost(input: CreatePostInput!): CreatePostPayload\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Permission {\n  id: ID\n  isAnonymous: Boolean\n  isLoggedIn: Boolean\n  canPublish: Boolean\n}\n\n# A post\ntype Post {\n  # The ID of an object\n  id: ID!\n\n  # The posts creators\n  creator: User\n\n  # The posts title\n  title: String\n\n  # The posts image\n  image: String\n\n  # The posts description\n  description: String\n}\n\n# A connection to a list of items.\ntype PostConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [PostEdge]\n}\n\n# An edge in a connection.\ntype PostEdge {\n  # The item at the end of the edge\n  node: Post\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Query {\n  permission: Permission\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n  post(postId: String): Post\n  user: User\n}\n\ninput RegisterInput {\n  email: String!\n  password: String!\n  firstName: String!\n  lastName: String!\n  clientMutationId: String\n}\n\ntype RegisterPayload {\n  user: User\n  clientMutationId: String\n}\n\ninput ResendVerificationInput {\n  email: String!\n  clientMutationId: String\n}\n\ntype ResendVerificationPayload {\n  success: Boolean\n  clientMutationId: String\n}\n\ninput ResetPasswordInput {\n  email: String!\n  clientMutationId: String\n}\n\ntype ResetPasswordPayload {\n  success: Boolean\n  clientMutationId: String\n}\n\ntype User {\n  # The ID of an object\n  id: ID!\n\n  # the users email address\n  email: String\n\n  # the users first name\n  firstName: String\n\n  # the users last name\n  lastName: String\n\n  # the users role\n  role: String\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n}\n\ninput VerifyAccountInput {\n  email: String!\n  pin: String!\n  clientMutationId: String\n}\n\ntype VerifyAccountPayload {\n  success: Boolean\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": true,
+      "numDefinitions": 24
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-17T07:23:44Z",
+    "updated_at": "2019-04-04T18:17:53Z",
+    "pushed_at": "2018-02-25T03:17:21Z",
+    "issues": 55,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 40,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 37,
+    "releases": 0,
+    "stargazers": 13
+  }
+}

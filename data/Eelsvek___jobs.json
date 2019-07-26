@@ -1,0 +1,39 @@
+{
+  "repo_name": "jobs",
+  "repo_full_name": "eelsvek/jobs",
+  "repo_owner": "Eelsvek",
+  "repo_description": "react + graphql job board",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "95e93697645b745e91cc2c1ac632a12f8ccd5398",
+      "url": "https://api.github.com/repositories/167272270/contents/server/schema.graphql?ref=26adc29a7c2c191e708a760ba67012c9b1536482",
+      "git_url": "https://api.github.com/repositories/167272270/git/blobs/95e93697645b745e91cc2c1ac632a12f8ccd5398",
+      "html_url": "https://github.com/Eelsvek/jobs/blob/26adc29a7c2c191e708a760ba67012c9b1536482/server/schema.graphql",
+      "content": "type Query {\n  company(id: ID!): Company\n  job(id: ID!): Job\n  jobs: [Job]\n}\n\ntype Mutation {\n createJob(input: CreateJobInput): Job\n}\n\ntype Company {\n  id: ID!\n  name: String\n  description: String\n  jobs: [Job]\n}\n\ntype Job {\n  id: ID!\n  title: String\n  company: Company\n  description: String\n}\n\ninput CreateJobInput {\n  companyId: ID\n  title: String\n  description: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-23T23:55:26Z",
+    "updated_at": "2019-01-25T01:36:50Z",
+    "pushed_at": "2019-01-25T01:36:48Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

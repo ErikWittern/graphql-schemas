@@ -1,0 +1,42 @@
+{
+  "repo_name": "fastify-gql-plugin",
+  "repo_full_name": "bdatdo0601/fastify-gql-plugin",
+  "repo_owner": "bdatdo0601",
+  "repo_description": "GraphQL Plugins for Fastify",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "testSchema1.graphql",
+      "path": "__mock__/testSchema1.graphql",
+      "sha": "109b11261b6bc5d566e5f3b9b011056d3105dec7",
+      "url": "https://api.github.com/repositories/149636089/contents/__mock__/testSchema1.graphql?ref=15d9882ea06ea99b4663eec339839f05628e99dd",
+      "git_url": "https://api.github.com/repositories/149636089/git/blobs/109b11261b6bc5d566e5f3b9b011056d3105dec7",
+      "html_url": "https://github.com/bdatdo0601/fastify-gql-plugin/blob/15d9882ea06ea99b4663eec339839f05628e99dd/__mock__/testSchema1.graphql",
+      "content": "type Query {\n    foo: String\n}\n\nschema {\n    query: Query\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-20T16:06:56Z",
+    "updated_at": "2018-09-21T16:29:17Z",
+    "pushed_at": "2018-09-21T16:29:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

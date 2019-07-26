@@ -1,0 +1,41 @@
+{
+  "repo_name": "my-special-way-portal",
+  "repo_full_name": "myspecialway/my-special-way-portal",
+  "repo_owner": "myspecialway",
+  "repo_description": "Front-end management portal for My Special Way",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "ee6f68c6a9d8dd222a2b1b0a53faad2124b8719c",
+      "url": "https://api.github.com/repositories/134296759/contents/schema.graphql?ref=6dc416ebed6e7197c5f2914edbeaddba6e4624f9",
+      "git_url": "https://api.github.com/repositories/134296759/git/blobs/ee6f68c6a9d8dd222a2b1b0a53faad2124b8719c",
+      "html_url": "https://github.com/myspecialway/my-special-way-portal/blob/6dc416ebed6e7197c5f2914edbeaddba6e4624f9/schema.graphql",
+      "content": "# source: http://localhost:3000\n# timestamp: Sun Jun 10 2018 21:43:57 GMT+0300 (Jerusalem Daylight Time)\n\ntype Class {\n  id: ID!\n  level: Int!\n  number: Int!\n  name: String!\n  Users: [User]\n}\n\ninput ClassFilter {\n  q: String\n  ids: [ID]\n  id: ID\n  level: Int\n  number: Int\n  name: String\n  level_lt: Int\n  level_lte: Int\n  level_gt: Int\n  level_gte: Int\n  number_lt: Int\n  number_lte: Int\n  number_gt: Int\n  number_gte: Int\n}\n\ntype ListMetadata {\n  count: Int\n}\n\ntype Mutation {\n  createUser(\n    id: ID!\n    userName: String!\n    firstName: String!\n    lastName: String!\n    email: String!\n    userType: String!\n    class_id: ID!\n  ): User\n  updateUser(\n    id: ID!\n    userName: String\n    firstName: String\n    lastName: String\n    email: String\n    userType: String\n    class_id: ID\n  ): User\n  updateUserPassword(username: String!, password: String!): User\n  userForgetPassword(username: String!): User\n  removeUser(id: ID!): Boolean\n  createClass(id: ID!, level: Int!, number: Int!, name: String!): Class\n  updateClass(id: ID!, level: Int, number: Int, name: String): Class\n  removeClass(id: ID!): Boolean\n}\n\ntype Query {\n  User(id: ID!): User\n  allUsers(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: UserFilter): [User]\n  _allUsersMeta(page: Int, perPage: Int, filter: UserFilter): ListMetadata\n  Class(id: ID!): Class\n  allClasses(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: ClassFilter): [Class]\n  _allClassesMeta(page: Int, perPage: Int, filter: ClassFilter): ListMetadata\n}\n\ntype User {\n  id: ID!\n  userName: String!\n  firstName: String!\n  lastName: String!\n  email: String!\n  userType: String!\n  class_id: ID!\n  Class: Class\n}\n\ninput UserFilter {\n  q: String\n  ids: [ID]\n  id: ID\n  userName: String\n  firstName: String\n  lastName: String\n  email: String\n  userType: String\n  class_id: ID\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-21T16:38:56Z",
+    "updated_at": "2019-05-19T18:26:46Z",
+    "pushed_at": "2019-05-19T18:26:44Z",
+    "issues": 444,
+    "watchers": 12,
+    "fork_count": 8,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 236,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 22,
+    "pull_requests_merged": 213,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

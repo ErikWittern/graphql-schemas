@@ -1,0 +1,55 @@
+{
+  "repo_name": "graphql-typescript-server-boilerplate",
+  "repo_full_name": "rodolfosilva/graphql-typescript-server-boilerplate",
+  "repo_owner": "RodolfoSilva",
+  "repo_description": "GraphQL Boilerplate",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "welcome.graphql",
+      "path": "src/graphql/typeDefs/welcome.graphql",
+      "sha": "e28c3fda0fa4094fac9197c62de8a6714e0d0d70",
+      "url": "https://api.github.com/repositories/153694954/contents/src/graphql/typeDefs/welcome.graphql?ref=55a77f5a72a8df654f9272ae2907f4a1aed36fbe",
+      "git_url": "https://api.github.com/repositories/153694954/git/blobs/e28c3fda0fa4094fac9197c62de8a6714e0d0d70",
+      "html_url": "https://github.com/RodolfoSilva/graphql-typescript-server-boilerplate/blob/55a77f5a72a8df654f9272ae2907f4a1aed36fbe/src/graphql/typeDefs/welcome.graphql",
+      "content": "type Query {\n  welcome(name: String): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/graphql/typeDefs/user.graphql",
+      "sha": "1857a4f086577a16aa10866079a9708e4a1660dd",
+      "url": "https://api.github.com/repositories/153694954/contents/src/graphql/typeDefs/user.graphql?ref=5671101a0155178d93b21a49d025d9247972922d",
+      "git_url": "https://api.github.com/repositories/153694954/git/blobs/1857a4f086577a16aa10866079a9708e4a1660dd",
+      "html_url": "https://github.com/RodolfoSilva/graphql-typescript-server-boilerplate/blob/5671101a0155178d93b21a49d025d9247972922d/src/graphql/typeDefs/user.graphql",
+      "content": "type Query {\n  me: User\n}\n\ntype Mutation {\n  signIn(email: String!, password: String!): AuthPayload!\n  signUp(name: String, email: String!, password: String!): AuthPayload!\n  createUser(name: String, email: String!, password: String!, roles: [String!]!): User!\n  updateUser(id: ID!, name: String, email: String, roles: [String!]): User!\n  changeUserPassword(id: ID!, password: String!): Boolean!\n  removeUser(id: ID!): Boolean!\n}\n\ntype OAuth {\n  access_token: String!\n  token_type: String!\n  expires_in: Int!\n}\n\ntype AuthPayload {\n  token: OAuth!\n  user: User!\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  roles: [String!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-18T22:26:17Z",
+    "updated_at": "2019-04-22T17:09:54Z",
+    "pushed_at": "2018-10-28T21:39:37Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

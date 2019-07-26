@@ -1,0 +1,39 @@
+{
+  "repo_name": "swapi-graphql",
+  "repo_full_name": "matias-pierobon/swapi-graphql",
+  "repo_owner": "matias-pierobon",
+  "repo_description": "A graphql implementation for the swapi",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "11fede5d6401d46c5a4341888a921626dbd47829",
+      "url": "https://api.github.com/repositories/124709334/contents/src/schema.graphql?ref=ead7cae59c352d20991a59c61c3c85cd022a0166",
+      "git_url": "https://api.github.com/repositories/124709334/git/blobs/11fede5d6401d46c5a4341888a921626dbd47829",
+      "html_url": "https://github.com/matias-pierobon/swapi-graphql/blob/ead7cae59c352d20991a59c61c3c85cd022a0166/src/schema.graphql",
+      "content": "type Query {\n  hello(name: String): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-11T00:11:11Z",
+    "updated_at": "2018-03-11T00:13:31Z",
+    "pushed_at": "2018-03-11T00:14:33Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

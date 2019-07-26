@@ -1,0 +1,41 @@
+{
+  "repo_name": "apollo-chat-graphql-server",
+  "repo_full_name": "blackuy/apollo-chat-graphql-server",
+  "repo_owner": "blackuy",
+  "repo_description": "Apollo Chat is a Chat Service build on GraphQL Apollo with Subscriptions",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/graphql/schema.graphql",
+      "sha": "f9443ae06fc5fc3ca5389bad906b112fcb149ee2",
+      "url": "https://api.github.com/repositories/90205442/contents/server/graphql/schema.graphql?ref=4df1aa61cfe8fca3aac1ea0ab8438721a9221b6b",
+      "git_url": "https://api.github.com/repositories/90205442/git/blobs/f9443ae06fc5fc3ca5389bad906b112fcb149ee2",
+      "html_url": "https://github.com/blackuy/apollo-chat-graphql-server/blob/4df1aa61cfe8fca3aac1ea0ab8438721a9221b6b/server/graphql/schema.graphql",
+      "content": "scalar Date\n\ntype User {\n  id: ID!\n  lastIP: String\n  lastLoginAt: Date\n  username: String!\n  createdAt: Date!\n  channels: [Channel]\n}\n\ntype Channel {\n  id: ID!\n  name: String!\n  createdAt: Date!\n  participants: [User]\n  participantCount: Int\n  messages(limit: Int!): [Message]\n}\n\ntype Message {\n  id: ID!\n  indexInChannel: Int\n  createdAt: Date!\n  createdBy: User!\n  channel: Channel!\n  text: String!\n}\n\ntype JoinResult {\n  user: User!\n  channel: Channel!\n}\n\ntype Query {\n  channels: [Channel]\n  channel(\n    channelID: ID!\n  ): Channel\n  messagesForChannel(\n    channelID: ID!\n  ): [Message]\n  users: [User]\n  user(id: ID!): User\n}\n\ntype Mutation {\n  typing(\n    userID: ID!,    \n    channelID: ID!\n  ): Boolean\n  join(\n    username: String!,\n    channelName: String!\n  ): JoinResult\n  messageNew(\n    channelID: ID!, \n    userID: ID!,\n    text: String!\n  ): Message\n}\n\ntype Subscription {\n  onChannelAdded: Channel \n  onTypingIndicatorChanged(\n    channelID: ID!\n  ): [User]\n  onMessageAdded(\n    channelID: ID!\n  ): Message\n  onMemberJoin(\n    channelID: ID!\n  ): User\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-04T00:37:53Z",
+    "updated_at": "2018-12-18T03:19:38Z",
+    "pushed_at": "2018-01-22T06:26:17Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

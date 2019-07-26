@@ -1,0 +1,39 @@
+{
+  "repo_name": "udemycourses",
+  "repo_full_name": "kresten/udemycourses",
+  "repo_owner": "Kresten",
+  "repo_description": "Various udemy courses",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.gql",
+      "path": "fullstack_vue_graphql/typeDefs.gql",
+      "sha": "4a4449571175df0e8bc2ec292155ae7960fbf875",
+      "url": "https://api.github.com/repositories/150243866/contents/fullstack_vue_graphql/typeDefs.gql?ref=86e5935c5d3152726bd69f6b4c5aa39f61591986",
+      "git_url": "https://api.github.com/repositories/150243866/git/blobs/4a4449571175df0e8bc2ec292155ae7960fbf875",
+      "html_url": "https://github.com/Kresten/udemycourses/blob/86e5935c5d3152726bd69f6b4c5aa39f61591986/fullstack_vue_graphql/typeDefs.gql",
+      "content": "type User {\n  _id: ID\n  username: String!\n  email: String!\n  password: String!\n  avatar: String\n  joinDate: String\n  favorites: [Post]\n}\n\ntype Post {\n  _id: ID\n  title: String!\n  imageUrl: String!\n  categories: [String]!\n  description: String!\n  createdDate: String\n  likes: Int\n  createdBy: User!\n  messages: [Message]\n}\n\ntype Message {\n  _id: ID\n  messageBody: String!\n  messageDate: String\n  messageUser: User!\n}\n\ntype Token {\n  token: String!\n}\n\ntype PostsPage {\n  posts: [Post]\n  hasMore: Boolean\n}\n\ntype LikesFaves {\n  likes: Int\n  favorites: [Post]\n}\n\ntype Query {\n  getCurrentUser: User\n  getPosts: [Post]\n  getUserPosts(userId: ID!): [Post]\n  getPost(postId: ID!): Post!\n  searchPosts(searchTerm: String): [Post]\n  infiniteScrollPosts(pageNum: Int!, pageSize: Int!): PostsPage\n}\n\ntype Mutation {\n  addPost(\n    title: String!\n    imageUrl: String!\n    categories: [String]!\n    description: String!\n    creatorId: ID!\n  ): Post!\n  updateUserPost(\n    postId: ID!\n    userId: ID!\n    title: String!\n    imageUrl: String!\n    categories: [String]!\n    description: String!\n    ): Post!\n  deleteUserPost(postId: ID!): Post!\n  addPostMessage(messageBody: String!, userId: ID!, postId: ID!): Message!\n  likePost(postId: ID!, username: String!): LikesFaves!\n  unlikePost(postId: ID!, username: String!): LikesFaves!\n  loginUser(username: String!, password: String!): Token\n  signupUser(username: String!, email: String!, password: String!): Token\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-25T09:57:00Z",
+    "updated_at": "2018-11-27T15:55:27Z",
+    "pushed_at": "2018-11-27T15:55:25Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

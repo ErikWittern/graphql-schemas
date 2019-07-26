@@ -1,0 +1,42 @@
+{
+  "repo_name": "mady",
+  "repo_full_name": "guigrpa/mady",
+  "repo_owner": "guigrpa",
+  "repo_description": "An easy-to-use tool to manage and translate ICU MessageFormat messages",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "gqlSchema.graphql",
+      "path": "src/common/gqlSchema.graphql",
+      "sha": "6b2c081d59be49404c6e1f3cf37878386594cbc8",
+      "url": "https://api.github.com/repositories/55226451/contents/src/common/gqlSchema.graphql?ref=9bb142253fa3a0918b522db20087e7a24847517b",
+      "git_url": "https://api.github.com/repositories/55226451/git/blobs/6b2c081d59be49404c6e1f3cf37878386594cbc8",
+      "html_url": "https://github.com/guigrpa/mady/blob/9bb142253fa3a0918b522db20087e7a24847517b/src/common/gqlSchema.graphql",
+      "content": "type Config implements Node {\n  # The ID of an object\n  id: ID!\n  srcPaths: [String!]!\n  srcExtensions: [String!]!\n  langs: [String!]!\n  msgFunctionNames: [String!]!\n  msgRegexps: [String!]!\n  fMinify: Boolean!\n  fJsOutput: Boolean!\n  fJsonOutput: Boolean!\n  fReactIntlOutput: Boolean!\n}\n\ninput ConfigUpdate {\n  srcPaths: [String!]\n  srcExtensions: [String!]\n  langs: [String!]\n  msgFunctionNames: [String!]\n  msgRegexps: [String!]\n  fMinify: Boolean\n  fJsOutput: Boolean\n  fJsonOutput: Boolean\n  fReactIntlOutput: Boolean\n}\n\ntype CreatedTranslationInKeyTranslationsPayload {\n  viewer: Viewer\n  translation: Translation\n  parent: Key\n  createdTranslationEdge: TranslationEdge\n}\n\ninput CreateTranslationInKeyTranslationsInput {\n  attrs: TranslationCreate\n  parentId: ID!\n  storyId: String\n  clientMutationId: String\n}\n\ntype CreateTranslationInKeyTranslationsPayload {\n  viewer: Viewer\n  stats: Stats!\n  translation: Translation\n  parent: Key\n  createdTranslationEdge: TranslationEdge\n  clientMutationId: String\n}\n\ntype Key implements Node {\n  # The ID of an object\n  id: ID!\n  isDeleted: Boolean\n  context: String\n  text: String!\n  description: String\n  firstUsed: String!\n  unusedSince: String\n  sources: [String!]!\n  isMarkdown: Boolean\n  scope: String\n  translations(after: String, first: Int, before: String, last: Int): TranslationConnection\n}\n\n# A connection to a list of items.\ntype KeyConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [KeyEdge]\n}\n\n# An edge in a connection.\ntype KeyEdge {\n  # The item at the end of the edge\n  node: Key\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput KeyUpdate {\n  isDeleted: Boolean\n  context: String\n  text: String\n  firstUsed: String\n  unusedSince: String\n}\n\ntype Mutation {\n  updateConfig(input: UpdateConfigInput!): UpdateConfigPayload\n  updateKey(input: UpdateKeyInput!): UpdateKeyPayload\n  parseSrcFiles(input: ParseSrcFilesInput!): ParseSrcFilesPayload\n  createTranslationInKeyTranslations(input: CreateTranslationInKeyTranslationsInput!): CreateTranslationInKeyTranslationsPayload\n  updateTranslation(input: UpdateTranslationInput!): UpdateTranslationPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype ParsedSrcFilesPayload {\n  viewer: Viewer\n}\n\ninput ParseSrcFilesInput {\n  storyId: String\n  clientMutationId: String\n}\n\ntype ParseSrcFilesPayload {\n  keys(after: String, first: Int, before: String, last: Int): KeyConnection\n  viewer: Viewer\n  clientMutationId: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: Viewer\n}\n\ntype Stats implements Node {\n  # The ID of an object\n  id: ID!\n  numTotalKeys: Float!\n  numUsedKeys: Float!\n  numTranslations: [StatsForLang]\n}\n\ntype StatsForLang {\n  lang: String!\n  value: Float!\n}\n\ntype Subscription {\n  updatedConfig: UpdatedConfigPayload\n  updatedStats: UpdatedStatsPayload\n  parsedSrcFiles: ParsedSrcFilesPayload\n  updatedKey: UpdatedKeyPayload\n  createdTranslationInKeyTranslations: CreatedTranslationInKeyTranslationsPayload\n  updatedTranslation: UpdatedTranslationPayload\n}\n\ntype Translation implements Node {\n  # The ID of an object\n  id: ID!\n  isDeleted: Boolean\n  lang: String!\n  translation: String!\n  fuzzy: Boolean\n  keyId: ID!\n}\n\n# A connection to a list of items.\ntype TranslationConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TranslationEdge]\n}\n\ninput TranslationCreate {\n  lang: String!\n  translation: String!\n  fuzzy: Boolean\n  keyId: ID!\n}\n\n# An edge in a connection.\ntype TranslationEdge {\n  # The item at the end of the edge\n  node: Translation\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput TranslationUpdate {\n  isDeleted: Boolean\n  translation: String\n  fuzzy: Boolean\n}\n\ninput UpdateConfigInput {\n  attrs: ConfigUpdate\n  storyId: String\n  clientMutationId: String\n}\n\ntype UpdateConfigPayload {\n  viewer: Viewer\n  stats: Stats!\n  config: Config\n  clientMutationId: String\n}\n\ntype UpdatedConfigPayload {\n  viewer: Viewer\n  config: Config\n}\n\ntype UpdatedKeyPayload {\n  viewer: Viewer\n  key: Key\n}\n\ntype UpdatedStatsPayload {\n  viewer: Viewer\n  stats: Stats\n}\n\ntype UpdatedTranslationPayload {\n  viewer: Viewer\n  translation: Translation\n}\n\ninput UpdateKeyInput {\n  id: ID!\n  attrs: KeyUpdate\n  storyId: String\n  clientMutationId: String\n}\n\ntype UpdateKeyPayload {\n  viewer: Viewer\n  stats: Stats!\n  key: Key\n  clientMutationId: String\n}\n\ninput UpdateTranslationInput {\n  id: ID!\n  attrs: TranslationUpdate\n  storyId: String\n  clientMutationId: String\n}\n\ntype UpdateTranslationPayload {\n  viewer: Viewer\n  stats: Stats!\n  translation: Translation\n  clientMutationId: String\n}\n\ntype Viewer implements Node {\n  # The ID of an object\n  id: ID!\n  config: Config!\n  stats: Stats!\n  keys(after: String, first: Int, before: String, last: Int): KeyConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 25,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 35
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-04-01T11:07:22Z",
+    "updated_at": "2019-07-15T20:49:27Z",
+    "pushed_at": "2019-01-25T15:07:00Z",
+    "issues": 10,
+    "watchers": 4,
+    "fork_count": 11,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 11,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 7,
+    "releases": 0,
+    "stargazers": 72
+  }
+}

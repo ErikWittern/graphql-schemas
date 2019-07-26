@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-react-event-booking",
+  "repo_full_name": "sayanmallick/graphql-react-event-booking",
+  "repo_owner": "sayanmallick",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typedefs.graphql",
+      "path": "graphql/schema/typedefs.graphql",
+      "sha": "4aa53f16e73bf4efc3d102264032c6a1b7eb1f40",
+      "url": "https://api.github.com/repositories/163300946/contents/graphql/schema/typedefs.graphql?ref=19d5eeebeb9cb02ece69f2f31c418eed572f9ae4",
+      "git_url": "https://api.github.com/repositories/163300946/git/blobs/4aa53f16e73bf4efc3d102264032c6a1b7eb1f40",
+      "html_url": "https://github.com/sayanmallick/graphql-react-event-booking/blob/19d5eeebeb9cb02ece69f2f31c418eed572f9ae4/graphql/schema/typedefs.graphql",
+      "content": "type Booking {\n  _id: ID!\n  event: Event!\n  user: User!\n  createdAt: String!\n  updatedAt: String!\n}\n\ntype Event {\n  _id: ID!\n  title: String!\n  description: String!\n  price: Float!\n  date: String!\n  creator: User!\n}\n\ntype User {\n  _id: ID!\n  email: String!\n  password: String\n  createdEvents: [Event!]\n}\n\ntype AuthData {\n  userId: ID!\n  token: String!\n  tokenExpiration: Int!\n}\n\ntype Query {\n  events: [Event!]!\n  bookings: [Booking!]!\n  login(email: String!, password: String!): AuthData!\n}\n\ntype Mutation {\n  createEvent(\n    title: String!\n    description: String!\n    price: Float!\n    date: String!\n  ): Event\n  createUser(email: String!, password: String!): User\n  bookEvent(eventId: ID!): Booking!\n  cancelBooking(bookingId: ID!): Event!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-27T14:01:20Z",
+    "updated_at": "2019-02-19T09:20:15Z",
+    "pushed_at": "2019-01-02T05:21:26Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

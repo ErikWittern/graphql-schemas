@@ -1,0 +1,42 @@
+{
+  "repo_name": "lucky-draw-campaign",
+  "repo_full_name": "makhokit/lucky-draw-campaign",
+  "repo_owner": "makhokit",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "api-gateway.graphql",
+      "path": "src/api-gateway/api-gateway.graphql",
+      "sha": "3aad42a81ff90ea7d269d80fda69b9aec511b03a",
+      "url": "https://api.github.com/repositories/170527501/contents/src/api-gateway/api-gateway.graphql?ref=9cc2f8aa06f071f7bea1e2aa969a13cd1a6a2b28",
+      "git_url": "https://api.github.com/repositories/170527501/git/blobs/3aad42a81ff90ea7d269d80fda69b9aec511b03a",
+      "html_url": "https://github.com/makhokit/lucky-draw-campaign/blob/9cc2f8aa06f071f7bea1e2aa969a13cd1a6a2b28/src/api-gateway/api-gateway.graphql",
+      "content": "scalar Date\n\n\ntype Query {\n\n  # Meta\n\n  # get the health state by the current date\n  health: Date\n}\n\ntype Mutation {\n  ping: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-13T15:06:47Z",
+    "updated_at": "2019-02-13T16:36:36Z",
+    "pushed_at": "2019-02-13T16:36:35Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

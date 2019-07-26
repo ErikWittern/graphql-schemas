@@ -1,0 +1,39 @@
+{
+  "repo_name": "koa-graphql-boilerplate",
+  "repo_full_name": "capaj/koa-graphql-boilerplate",
+  "repo_owner": "capaj",
+  "repo_description": "a minimal boilerplate for graphql API running on koa with graphiql. Standard.js for linting with flowtype for typechecking",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "ec0434a3e4e77220295f34cee0b8fedbe29c1bb7",
+      "url": "https://api.github.com/repositories/99485202/contents/src/schema.graphql?ref=89727cfd66867e97642f2a5f3f383e9ba90849d4",
+      "git_url": "https://api.github.com/repositories/99485202/git/blobs/ec0434a3e4e77220295f34cee0b8fedbe29c1bb7",
+      "html_url": "https://github.com/capaj/koa-graphql-boilerplate/blob/89727cfd66867e97642f2a5f3f383e9ba90849d4/src/schema.graphql",
+      "content": "type Query {\n  time: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-06T12:33:55Z",
+    "updated_at": "2018-07-08T10:38:48Z",
+    "pushed_at": "2018-07-08T10:38:47Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 7
+  }
+}

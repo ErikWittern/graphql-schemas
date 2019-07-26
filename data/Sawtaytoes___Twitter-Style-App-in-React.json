@@ -1,0 +1,41 @@
+{
+  "repo_name": "Twitter-Style-App-in-React",
+  "repo_full_name": "sawtaytoes/twitter-style-app-in-react",
+  "repo_owner": "Sawtaytoes",
+  "repo_description": "A quick demo of using creating an app like Twitter in React",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "type-defs.gql",
+      "path": "api/type-defs.gql",
+      "sha": "86cbe6f1f08607da092e988e5aa437d0974c6ce7",
+      "url": "https://api.github.com/repositories/76101933/contents/api/type-defs.gql?ref=bfb7e202ea0661749917691d185e9d1e456c9abb",
+      "git_url": "https://api.github.com/repositories/76101933/git/blobs/86cbe6f1f08607da092e988e5aa437d0974c6ce7",
+      "html_url": "https://github.com/Sawtaytoes/Twitter-Style-App-in-React/blob/bfb7e202ea0661749917691d185e9d1e456c9abb/api/type-defs.gql",
+      "content": "# Basic User Info including associated Tweets\ntype User {\n\tjoinTime: DateTime\n\ttweets(content: String): [Tweet]!\n\tuserId: Int!\n\tusername: String\n}\n\n# A single Tweet including a link back to User\ntype Tweet {\n\tcontent: String\n\tpostTime: DateTime\n\ttweetId: Int!\n\tuser: User!\n\tuserId: Int\n}\n\n# Custom type for extending JS dates to include string and Unix variants\ntype DateTime {\n\ttime: String\n\tunixTime: String\n}\n\n# Get Tweets and Users\ntype Query {\n\ttweet(tweetId: Int): Tweet\n\ttweets(userId: Int, content: String): [Tweet]!\n\tuser(userId: Int): User\n\tusers(username: String): [User]!\n}\n\n# Add, Edit, and Remove Tweets and Users\ntype Mutation {\n\taddTweet(input: AddTweetInput!): Tweet\n\tupdateTweet(input: UpdateTweetInput!): Tweet\n\taddUser(input: AddUserInput!): User\n\tloginUser(input: LoginUserInput!): User\n\tupdateUser(input: UpdateUserInput!): User\n}\n\n# Login User\ninput LoginUserInput {\n\tusername: String!,\n\tpassword: String!,\n}\n\n# Add User\ninput AddUserInput {\n\tusername: String!,\n\tpassword: String!,\n}\n\n# Update User\ninput UpdateUserInput {\n\tuserId: Int!,\n\tdisplayName: String!,\n}\n\n# Add Tweet\ninput AddTweetInput {\n\tuserId: Int!,\n\tcontent: String!,\n}\n\n# Update Tweet\ninput UpdateTweetInput {\n\ttweetId: Int!,\n\tcontent: String!,\n}\n\nschema {\n\tquery: Query\n\tmutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-10T09:01:45Z",
+    "updated_at": "2018-11-21T11:18:39Z",
+    "pushed_at": "2018-11-21T11:20:19Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

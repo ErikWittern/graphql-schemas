@@ -1,0 +1,41 @@
+{
+  "repo_name": "dashboard",
+  "repo_full_name": "lowsky/dashboard",
+  "repo_owner": "lowsky",
+  "repo_description": "Dashboard for all feature branches - linking to the deployed/running in docker containers  and showing their states. Live Version:",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/relay/data/schema.graphql",
+      "sha": "8c4ce81cd230e570d6675a6812fa832e113d544d",
+      "url": "https://api.github.com/repositories/32982326/contents/src/relay/data/schema.graphql?ref=2384c9a9872f4ad2d22d1e98c2b1de75701b490a",
+      "git_url": "https://api.github.com/repositories/32982326/git/blobs/8c4ce81cd230e570d6675a6812fa832e113d544d",
+      "html_url": "https://github.com/lowsky/dashboard/blob/2384c9a9872f4ad2d22d1e98c2b1de75701b490a/src/relay/data/schema.graphql",
+      "content": "# source: http://localhost:3000/graphql\n# timestamp: Sun Feb 25 2018 02:36:17 GMT+0100 (CET)\n\nschema {\n    query: GraphQL_github_API\n}\n\ntype GithubAPI {\n    user(username: String!): GithubUser\n    repo(\n        name: String!\n\n        ownerUsername: String!\n    ): GithubRepo\n}\n\ntype GithubBranch {\n    name: String\n    lastCommit: GithubCommit\n}\n\ntype GithubCommit {\n    sha: String\n    author: UserOrCommitAuthor\n    message: String\n    date: String\n    status: [GithubStatus]\n    tree: GithubTree\n}\n\ntype GithubCommitAuthor {\n    email: String\n    name: String\n}\n\ntype GithubIssue {\n    id: Int\n    state: String\n    title: String\n    body: String\n    user: GithubUser\n    assignee: GithubUser\n    closed_by: GithubUser\n    labels: [GithubIssueLabelType]\n    commentCount: Int\n    comments: [GithubIssueCommentType]\n}\n\ntype GithubIssueCommentType {\n    id: Int\n    body: String\n    user: GithubUser\n}\n\ntype GithubIssueLabelType {\n    url: String\n    name: String\n    color: String\n}\n\ntype GithubRepo {\n    id: String\n    name: String\n    commits(limit: Int): [GithubCommit]\n    issues(limit: Int): [GithubIssue]\n    branches(limit: Int): [GithubBranch]\n    owner: GithubUser\n}\n\ntype GithubStatus {\n    state: String\n    description: String\n    target_url: String\n    context: String\n    updated_at: String\n}\n\ntype GithubTree {\n    entries: [GithubTreeEntry]\n}\n\ntype GithubTreeEntry {\n    path: String\n    last_commit: GithubCommit\n}\n\ntype GithubUser {\n    login: String\n\n    id: ID!\n\n    company: String\n    avatar_url: String\n    repos: [GithubRepo]\n}\n\ntype GraphQL_github_API {\n    github: GithubAPI\n}\n\nunion UserOrCommitAuthor = GithubCommitAuthor | GithubUser\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-03-27T11:24:17Z",
+    "updated_at": "2019-07-10T06:29:00Z",
+    "pushed_at": "2019-07-19T18:28:59Z",
+    "issues": 77,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 808,
+    "pull_requests_open": 17,
+    "pull_requests_closed": 242,
+    "pull_requests_merged": 549,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "testserver",
+  "repo_full_name": "8972059948/testserver",
+  "repo_owner": "8972059948",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/utils/schema.graphql",
+      "sha": "96dd20072a45e76b496f1112ea5fd8f42a6f140d",
+      "url": "https://api.github.com/repositories/145668992/contents/src/utils/schema.graphql?ref=402031a2af553657a84c9b16d6334148faef81f2",
+      "git_url": "https://api.github.com/repositories/145668992/git/blobs/96dd20072a45e76b496f1112ea5fd8f42a6f140d",
+      "html_url": "https://github.com/8972059948/testserver/blob/402031a2af553657a84c9b16d6334148faef81f2/src/utils/schema.graphql",
+      "content": "schema {\n  query: RootQueryType\n  mutation: MutationRoot\n}\n\n\"\"\"food item\"\"\"\ntype food {\n  \"\"\"The id of the food item.\"\"\"\n  itemId: Int\n\n  \"\"\"The name of the food.\"\"\"\n  foodName: String\n\n  \"\"\"The type of food. \"\"\"\n  foodType: String\n}\n\n\"\"\"food item\"\"\"\ninput foodinputitem {\n  \"\"\"The name of the food.\"\"\"\n  foodName: String\n\n  \"\"\"The type of food. \"\"\"\n  foodType: String\n}\n\n\"\"\"Mutation API\"\"\"\ntype MutationRoot {\n  fooditemSave(inputItem: foodinputitem!): food\n  resturentmenuItemSave(inputItem: resturentmutation!): resturent\n}\n\n\"\"\"resturen menu item\"\"\"\ntype resturent {\n  \"\"\"The name of the resturent.\"\"\"\n  resturentName: String\n\n  \"\"\"The type of menu a resturent have. \"\"\"\n  menuType: [String]\n}\n\n\"\"\"resturent menu items\"\"\"\ninput resturentmutation {\n  \"\"\"The name of the resturent.\"\"\"\n  resturentName: String\n\n  \"\"\"The type of menu a resturent have. \"\"\"\n  menuType: [String]\n}\n\ntype RootQueryType {\n  foodItem(itemId: ID!): [food]\n  foodItems: [food]\n  resturentCollection: [resturent]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-22T06:54:39Z",
+    "updated_at": "2018-08-22T06:57:45Z",
+    "pushed_at": "2018-08-22T06:57:43Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

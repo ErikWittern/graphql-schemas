@@ -1,0 +1,39 @@
+{
+  "repo_name": "flock-server",
+  "repo_full_name": "mrcknz/flock-server",
+  "repo_owner": "mrcknz",
+  "repo_description": "Planning a trip with your friends has never been easier.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.typeDefs.gql",
+      "path": "src/graphql/schema/root.typeDefs.gql",
+      "sha": "4036a8505765b21ccb73b8442aaf08493606d855",
+      "url": "https://api.github.com/repositories/158717391/contents/src/graphql/schema/root.typeDefs.gql?ref=6d1126255ed9f502bf310b9127114ca7dcffb9b8",
+      "git_url": "https://api.github.com/repositories/158717391/git/blobs/4036a8505765b21ccb73b8442aaf08493606d855",
+      "html_url": "https://github.com/mrcknz/flock-server/blob/6d1126255ed9f502bf310b9127114ca7dcffb9b8/src/graphql/schema/root.typeDefs.gql",
+      "content": "# GraphQL doesn't allow for empty types (at least not yet!)\n# We can extend these empty `root` types in the other type definitions 👍\n# The root types might also be a good place for general queries / mutations\n# that are not associated with any specific entity\n\ntype Query {\n  _empty: String\n}\n\ntype Mutation {\n  _empty: String\n}\n\ntype Subscription {\n  _empty: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-22T15:19:16Z",
+    "updated_at": "2018-12-11T17:14:01Z",
+    "pushed_at": "2019-07-17T20:01:05Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 28,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 24,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

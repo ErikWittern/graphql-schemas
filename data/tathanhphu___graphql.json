@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql",
+  "repo_full_name": "tathanhphu/graphql",
+  "repo_owner": "tathanhphu",
+  "repo_description": "graphql self study",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "server/src/graphql/schema.gql",
+      "sha": "8fbad8988339a50fd3cf9ad6a173785f5fdf411d",
+      "url": "https://api.github.com/repositories/158342921/contents/server/src/graphql/schema.gql?ref=406e98087bced6773e977e23c08b434f4768e786",
+      "git_url": "https://api.github.com/repositories/158342921/git/blobs/8fbad8988339a50fd3cf9ad6a173785f5fdf411d",
+      "html_url": "https://github.com/tathanhphu/graphql/blob/406e98087bced6773e977e23c08b434f4768e786/server/src/graphql/schema.gql",
+      "content": "type User {\n  userName: String!\n  accessToken: String!\n}\n\ninput LoginInput {\n  userName: String\n  password: String\n}\ntype Query {\n  login(input: LoginInput): User\n}\n\nschema {\n  query: Query\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-20T06:41:32Z",
+    "updated_at": "2018-11-21T08:41:07Z",
+    "pushed_at": "2018-12-06T14:25:26Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

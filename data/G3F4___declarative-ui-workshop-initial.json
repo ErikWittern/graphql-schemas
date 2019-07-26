@@ -1,0 +1,42 @@
+{
+  "repo_name": "declarative-ui-workshop-initial",
+  "repo_full_name": "g3f4/declarative-ui-workshop-initial",
+  "repo_owner": "G3F4",
+  "repo_description": "declarative-ui-workshop-initial",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "98cf369160668cc789393f0d9381f2fa981080af",
+      "url": "https://api.github.com/repositories/76284010/contents/data/schema.graphql?ref=bf868390e2d87b7ab654d160e9757a23c1f1c741",
+      "git_url": "https://api.github.com/repositories/76284010/git/blobs/98cf369160668cc789393f0d9381f2fa981080af",
+      "html_url": "https://github.com/G3F4/declarative-ui-workshop-initial/blob/bf868390e2d87b7ab654d160e9757a23c1f1c741/data/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype App implements Node {\n  id: ID!\n  name: String\n  categories(names: [String]): [Category]\n}\n\ntype Category implements Node {\n  id: ID!\n  categoryID: String\n  name: String\n  description: String\n  events(after: String, first: Int, before: String, last: Int): EventConnection\n}\n\ntype Event implements Node {\n  id: ID!\n  description: String\n  name: String\n}\n\ntype EventConnection {\n  pageInfo: PageInfo!\n  edges: [EventEdge]\n}\n\ntype EventEdge {\n  node: Event\n  cursor: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  app: App\n  categories(names: [String]): [Category]\n  node(id: ID!): Node\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-12T18:30:35Z",
+    "updated_at": "2016-12-12T18:47:20Z",
+    "pushed_at": "2016-12-12T18:49:04Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

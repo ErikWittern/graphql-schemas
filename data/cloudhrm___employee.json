@@ -1,0 +1,41 @@
+{
+  "repo_name": "employee",
+  "repo_full_name": "cloudhrm/employee",
+  "repo_owner": "cloudhrm",
+  "repo_description": "Main employee information",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "4c23b13f4938ff397da47acf2cdca2fc0646558f",
+      "url": "https://api.github.com/repositories/181281114/contents/src/schema.graphql?ref=79659ea6c33a91c169fc026caaf0e5168ee031b2",
+      "git_url": "https://api.github.com/repositories/181281114/git/blobs/4c23b13f4938ff397da47acf2cdca2fc0646558f",
+      "html_url": "https://github.com/cloudhrm/employee/blob/79659ea6c33a91c169fc026caaf0e5168ee031b2/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  me: Employee!\n  skill(search: String!): [Skill!]!\n}\n\ntype Mutation {\n  createCV(firstName: String!, lastName: String!): Employee!\n  addSkill(skillId: String!): EmployeeSkill!\n  addEducation(\n    fromYear: Int!\n    toYear: Int\n    degree: String\n    fieldOfStudy: String\n    school: String\n    locationText: String\n    locationId: Int\n    notes: String\n    current: Boolean!\n  ): Education!\n  addExpierience(\n    position: String!\n    company: String!\n    locationText: String\n    locationId: Int\n    fromYear: Int\n    toYear: Int\n    current: Boolean!\n  ): Experience!\n  addLink(link: String!): Link!\n}\n\ntype Employee {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  livingLocationText: String\n  livingplaceId: Int\n  about: String\n  workSince: Int\n  skills: [EmployeeSkill!]!\n  links: [Link!]!\n  experience: [Experience!]!\n  education: [Education!]!\n}\n\ntype Skill {\n  id: ID!\n  name: String!\n}\n\ntype EmployeeSkill {\n  id: ID!\n  employee: Employee!\n  skill: Skill!\n  level: Int\n  years: Int\n}\n\ntype Link {\n  id: ID!\n  employee: Employee!\n  link: String!\n}\n\ntype Experience {\n  id: ID!\n  employee: Employee!\n  position: String!\n  company: String!\n  companyId: String\n  locationText: String\n  locationid: Int\n  fromYear: Int\n  toYear: Int\n  current: Boolean!\n}\n\ntype Education {\n  id: ID!\n  employee: Employee!\n  fromYear: Int!\n  toYear: Int\n  degree: String\n  fieldOfStudy: String\n  school: String\n  locationText: String\n  locationId: Int\n  notes: String\n  current: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-14T08:36:33Z",
+    "updated_at": "2019-07-13T14:55:19Z",
+    "pushed_at": "2019-07-13T14:55:23Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

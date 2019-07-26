@@ -1,0 +1,42 @@
+{
+  "repo_name": "public-js-knowledge",
+  "repo_full_name": "alindumitru25/public-js-knowledge",
+  "repo_owner": "alindumitru25",
+  "repo_description": "knowledge about different javascript / computer science subjects",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql-relay-example/client/schema.graphql",
+      "sha": "2ee772851afc6db018a4068e93b0dd2ef924eeb2",
+      "url": "https://api.github.com/repositories/125381811/contents/graphql-relay-example/client/schema.graphql?ref=1482aca8f0fc0beee22f392b9edae60a0e8efac8",
+      "git_url": "https://api.github.com/repositories/125381811/git/blobs/2ee772851afc6db018a4068e93b0dd2ef924eeb2",
+      "html_url": "https://github.com/alindumitru25/public-js-knowledge/blob/1482aca8f0fc0beee22f392b9edae60a0e8efac8/graphql-relay-example/client/schema.graphql",
+      "content": "input CreatePostInput {\n  description: String!\n  imageUrl: String!\n}\n\ntype CreatePostPayload {\n  viewer: Viewer!\n  clientMutationId: String!\n  post: PostEdge\n}\n\ninput DeletePostInput {\n  id: ID!\n}\n\ntype DeletePostPayload {\n  deletedId: ID\n}\n\ntype Mutation {\n  createPost(input: CreatePostInput!): CreatePostPayload!\n  deletePost(input: DeletePostInput!): DeletePostPayload!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Post implements Node {\n  id: ID!\n  description: String!\n  imageUrl: String!\n}\n\ntype PostConnection {\n  pageInfo: PageInfo!\n  edges: [PostEdge]\n}\n\ntype PostEdge {\n  node: Post\n  cursor: String!\n}\n\ntype Query {\n  viewer: Viewer!\n  node(id: ID!): Node\n}\n\ntype User {\n  name: String!\n}\n\ntype Viewer {\n  allPosts(last: Int): PostConnection\n  id: ID!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-15T14:44:21Z",
+    "updated_at": "2018-04-18T16:49:19Z",
+    "pushed_at": "2018-03-19T14:22:21Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

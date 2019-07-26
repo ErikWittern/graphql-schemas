@@ -1,0 +1,39 @@
+{
+  "repo_name": "reactql",
+  "repo_full_name": "leebenson/reactql",
+  "repo_owner": "leebenson",
+  "repo_description": "Universal React+GraphQL starter kit: React 16, Apollo 2, MobX, Emotion, Webpack 4, GraphQL Code Generator, React Router 4, PostCSS, SSR",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "e7ac56272358e6d7f8e993204805f7b893b3f144",
+      "url": "https://api.github.com/repositories/81242375/contents/schema/schema.graphql?ref=a6abe69095ca7637886614fdaf74ca8588e6b0da",
+      "git_url": "https://api.github.com/repositories/81242375/git/blobs/e7ac56272358e6d7f8e993204805f7b893b3f144",
+      "html_url": "https://github.com/leebenson/reactql/blob/a6abe69095ca7637886614fdaf74ca8588e6b0da/schema/schema.graphql",
+      "content": "type Story {\n  id: String\n  title: String\n  url: String\n}\n\ntype HackerNews {\n  topStories: [Story]\n}\n\ntype Query {\n  hn: HackerNews\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-07T18:53:12Z",
+    "updated_at": "2019-07-19T15:15:55Z",
+    "pushed_at": "2019-05-21T13:52:45Z",
+    "issues": 148,
+    "watchers": 58,
+    "fork_count": 135,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 21,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 6,
+    "pull_requests_merged": 15,
+    "releases": 45,
+    "stargazers": 1534
+  }
+}

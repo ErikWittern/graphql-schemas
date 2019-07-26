@@ -1,0 +1,39 @@
+{
+  "repo_name": "pepelatz-next-server",
+  "repo_full_name": "pepelatz/pepelatz-next-server",
+  "repo_owner": "pepelatz",
+  "repo_description": "The backend for a pepelatz.club using Koa, MongoDB and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema.gql",
+      "sha": "4933f16613160a07840674072c19e98a60a9739f",
+      "url": "https://api.github.com/repositories/140713070/contents/src/schema.gql?ref=508a56a5b4d3445598e17b743c979d3e332a5097",
+      "git_url": "https://api.github.com/repositories/140713070/git/blobs/4933f16613160a07840674072c19e98a60a9739f",
+      "html_url": "https://github.com/pepelatz/pepelatz-next-server/blob/508a56a5b4d3445598e17b743c979d3e332a5097/src/schema.gql",
+      "content": "type Query {\n  hi: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-12T12:54:55Z",
+    "updated_at": "2019-07-07T16:40:20Z",
+    "pushed_at": "2018-08-06T14:45:04Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 14
+  }
+}

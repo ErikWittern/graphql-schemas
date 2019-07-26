@@ -1,0 +1,41 @@
+{
+  "repo_name": "modular.js",
+  "repo_full_name": "graber-1/modular.js",
+  "repo_owner": "graber-1",
+  "repo_description": "Provides a framework to include modules for event-driven development in node.js.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/modules/example/schema.graphql",
+      "sha": "44eb0abb51df1277533d7bcd64736e837dab8bda",
+      "url": "https://api.github.com/repositories/128184905/contents/app/modules/example/schema.graphql?ref=08be08aa73a846a9f63d17536d457b359b429eec",
+      "git_url": "https://api.github.com/repositories/128184905/git/blobs/44eb0abb51df1277533d7bcd64736e837dab8bda",
+      "html_url": "https://github.com/graber-1/modular.js/blob/08be08aa73a846a9f63d17536d457b359b429eec/app/modules/example/schema.graphql",
+      "content": "type Author {\n  id: Int\n  firstName: String\n  lastName: String\n  posts: [Post]\n},\ntype Post {\n  id: Int\n  title: String\n  text: String\n  views: Int\n  author: Author\n},\n\ntype Query {\n  author(firstName: String, lastName: String): Author\n  allAuthors: [Author]\n  getFortuneCookie: String # we'll use this later\n}\n\ntype Mutation {\n  setViews(postId: Int, views: Int): Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-05T09:26:44Z",
+    "updated_at": "2018-04-23T14:00:13Z",
+    "pushed_at": "2018-04-23T14:00:11Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

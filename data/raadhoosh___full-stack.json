@@ -1,0 +1,39 @@
+{
+  "repo_name": "full-stack",
+  "repo_full_name": "raadhoosh/full-stack",
+  "repo_owner": "raadhoosh",
+  "repo_description": "This repo is for documents and samples of the back-end, front-end, android and ios",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/schema.graphql",
+      "sha": "45a7089d3bd2f1da25e98e638a6ea92b347ac768",
+      "url": "https://api.github.com/repositories/164283127/contents/backend/schema.graphql?ref=78807ff45bc8332b4eff0410b597a4083836b152",
+      "git_url": "https://api.github.com/repositories/164283127/git/blobs/45a7089d3bd2f1da25e98e638a6ea92b347ac768",
+      "html_url": "https://github.com/raadhoosh/full-stack/blob/78807ff45bc8332b4eff0410b597a4083836b152/backend/schema.graphql",
+      "content": "type Query {\n  publishedPosts: [Post!]!\n  post(postId: ID!): Post\n  postsByUser(userId: ID!): [Post!]!\n}\n\ntype Mutation {\n  createUser(name: String!): User\n  createDraft(title: String!, userId: ID!): Post\n  publish(postId: ID!): Post\n}\n\ntype User {\n  id: ID!\n  email: String\n  name: String!\n  posts: [Post!]!\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  published: Boolean!\n  author: User\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-06T06:54:40Z",
+    "updated_at": "2019-01-06T10:00:19Z",
+    "pushed_at": "2019-01-11T23:22:25Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

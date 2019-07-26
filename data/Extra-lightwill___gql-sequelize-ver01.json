@@ -1,0 +1,41 @@
+{
+  "repo_name": "gql-sequelize-ver01",
+  "repo_full_name": "extra-lightwill/gql-sequelize-ver01",
+  "repo_owner": "Extra-lightwill",
+  "repo_description": "Relay/GraphQL/SQL (real db) - Super basic application that demonstrates how to use Relay + GraphQL to query and write to a SQL back-end.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "41bbb39fafb7e69a3aae8c3d1989304ea5978b1c",
+      "url": "https://api.github.com/repositories/81948224/contents/server/data/schema.graphql?ref=9e75352190a9a7ea43b74229a6e237c1d84b4d0d",
+      "git_url": "https://api.github.com/repositories/81948224/git/blobs/41bbb39fafb7e69a3aae8c3d1989304ea5978b1c",
+      "html_url": "https://github.com/Extra-lightwill/gql-sequelize-ver01/blob/9e75352190a9a7ea43b74229a6e237c1d84b4d0d/server/data/schema.graphql",
+      "content": "input addTaskInput {\n  text: String!\n  clientMutationId: String\n}\n\ntype addTaskPayload {\n  viewer: User\n  task: Task\n  taskEdge: TaskEdge\n  clientMutationId: String\n}\n\ntype Mutation {\n  addTask(input: addTaskInput!): addTaskPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  viewer: User\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ntype Task implements Node {\n  # The ID of an object\n  id: ID!\n  completed: Boolean\n  text: String\n  user: User\n}\n\n# A connection to a list of items.\ntype TaskConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TaskEdge]\n}\n\nenum TaskConnectionOrder {\n  ID\n}\n\n# An edge in a connection.\ntype TaskEdge {\n  # The item at the end of the edge\n  node: Task\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype User {\n  # The ID of an object\n  id: ID!\n\n  # Users's username\n  username: String\n\n  # User's website\n  test01: String\n\n  # User's website\n  test02: String\n\n  # User's website\n  website: String\n  users(limit: Int, order: String): [User]\n  tasks(after: String, first: Int, before: String, last: Int, orderBy: [TaskConnectionOrder]): TaskConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-14T13:31:57Z",
+    "updated_at": "2017-02-14T16:57:54Z",
+    "pushed_at": "2017-02-21T23:37:47Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

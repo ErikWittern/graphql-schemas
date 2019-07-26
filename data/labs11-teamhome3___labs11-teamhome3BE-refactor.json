@@ -1,0 +1,41 @@
+{
+  "repo_name": "labs11-teamhome3BE-refactor",
+  "repo_full_name": "labs11-teamhome3/labs11-teamhome3be-refactor",
+  "repo_owner": "labs11-teamhome3",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "9f9e1445d1de08b50ed3c9d9358dcad8f3c233c8",
+      "url": "https://api.github.com/repositories/176829382/contents/src/schema.graphql?ref=ed3ff3e91800dec84e8f328c727ae3d2e750547c",
+      "git_url": "https://api.github.com/repositories/176829382/git/blobs/9f9e1445d1de08b50ed3c9d9358dcad8f3c233c8",
+      "html_url": "https://github.com/labs11-teamhome3/labs11-teamhome3BE-refactor/blob/ed3ff3e91800dec84e8f328c727ae3d2e750547c/src/schema.graphql",
+      "content": "scalar Date\n\nenum Role {\n  ADMIN\n  GENERAL\n}\n\ntype Mutation {\n  createUser(name: String!, email: String!, sub: String, profilePic: String): User!\n  authenticateUser(idToken: String!): User\n  updateUserContactInfo(id: ID!, name: String, email: String, phone: String, profilePic: String): User!\n  createTodo(description: String!, partOf: ID!, completed: Boolean): Todo\n  deleteTodo(id: String!): Todo\n  updateTodo(id: String!, description: String!, completed: Boolean): Todo\n  createTodoList(\n    description: String!\n    ownedBy: String!\n    completed: Boolean\n    inTeam: ID\n  ): TodoList\n  deleteTodoList(id: String!): TodoList!\n  updateTodoList(\n    id: String!\n    description: String!\n    completed: Boolean\n  ): TodoList\n  createTeam(teamName: String!, userId: ID!): Team\n  deleteTeam(id: ID!): Team\n  updateTeamName(id: ID!, teamName: String!): Team\n  addTodoListToTeam(teamId: ID!, todoListId: ID!): Team\n  removeTodoListFromTeam(teamId: ID!, todoListId: ID!): Team\n  addUserToTeam(userId: ID!, teamId: ID!): Team\n  removeUserFromTeam(userId: ID!, teamId: ID!): Team\n  toggleTodoComplete(todoId: ID!): Todo\n  toggleTodoListComplete(todoListId: ID!): TodoList\n  addUserToOwners(userId: ID!, todoListId: ID!): TodoList\n  addUserToAssignees(userId: ID!, todoListId: ID!): TodoList\n  removeUserFromOwners(userId: ID!, todoListId: ID!): TodoList\n  removeUserFromAssignees(userId: ID!, todoListId: ID!): TodoList\n  createMessage(\n    title: String!\n    teamId: ID!\n    userId: ID!\n    content: String!\n  ): Message\n  updateMessage(title: String, content: String, messageId: ID!): Message\n  deleteMessage(id: ID!): Message\n  likeMessage(messageId: ID!, userId: ID!): Message\n  unlikeMessage(messageId: ID!, userId: ID!): Message\n  addEvent(\n    userId: ID\n    teamId: ID!\n    action_string: String!\n    object_string: String!\n  ): Event\n  deleteEvent(eventId: ID!): Event\n  addTag(name: String!, teamId: ID!): Tag\n  updateTag(tagId: ID!, name: String): Tag\n  deleteTag(tagId: ID!): Tag\n  addMessageComment(\n    messageId: ID!\n    userId: ID!\n    content: String!\n    image: String\n  ): MessageComment\n  updateMessageComment(\n    commentId: ID!\n    content: String\n    image: String\n  ): MessageComment\n  deleteMessageComment(commentId: ID!): MessageComment\n  likeMessageComment(commentId: ID!, userId: ID!): MessageComment\n  unlikeMessageComment(commentId: ID!, userId: ID!): MessageComment\n\n  addDocument(\n    doc_url: String!\n    folderId: ID\n    teamId: ID!\n    userId: ID!\n    title: String!\n    textContent: String!\n    tagId: ID\n    image: String\n  ): Document\n  updateDocument(\n    documentId: ID!\n    doc_url: String\n    folderId: ID\n    title: String\n    textContent: String\n    tagId: ID\n    image: String\n  ): Document\n  deleteDocument(documentId: ID!): Document\n  ## Need to add ability to subscribe users\n\n  addDocumentComment(\n    userId: ID!\n    documentId: ID!\n    content: String!\n  ): DocumentComment\n  deleteDocumentComment(documentCommentId: ID!): DocumentComment\n  likeDocumentComment(commentId: ID!, userId: ID!): DocumentComment\n  unlikeDocumentComment(commentId: ID!, userId: ID!): DocumentComment\n\n  createFolder(title: String!, userId: ID!, teamId: ID!): Folder\n  deleteFolder(folderId: ID!): Folder\n  updateFolderTitle(folderId: ID!, title: String): Folder\n  addDocumentToFolder(folderId: ID!, documentId: ID!): Document\n  removeDocumentFromFolder(folderId: ID!, documentId: ID!): Document\n\n  addTagToMessage(messageId: ID!, tagId: ID!): Message\n  removeTagFromMessage(messageId: ID!): Message\n  addTagToDocument(documentId: ID!, tagId: ID!): Document\n  removeTagFromDocument(documentId: ID!): Document\n\n  upgradeToPremium(teamId: ID!, source: String!): Team\n}\n\ntype Query {\n  info: String!\n  todoes(todoListId: ID): [Todo]\n  todo(id: ID!): Todo!\n  users: [User]\n  user(authId: String, id: ID): User!\n  todoLists(teamId: ID): [TodoList]\n  todoList(id: ID!): TodoList!\n  teamsByUser(userId: ID): [Team]\n  team(id: ID!): Team!\n  messages(teamId: ID): [Message]\n  message(id: ID!): Message\n  findEventById(eventId: ID!): Event\n  findEventsByTeam(teamId: ID): [Event]\n  findEventsByUser(userId: ID!): [Event]\n  findTagsByTeam(teamId: ID!): [Tag]\n  findTag(tagId: ID!): Tag\n  findMessageCommentsByMessage(messageId: ID!): [MessageComment]\n  findMessageComment(commentId: ID!): MessageComment\n  findMessagesByTag(tagId: ID): [Message]\n\n  findDocument(id: ID!): Document\n  findDocumentsByTeam(teamId: ID): [Document]\n  findDocumentsByUser(userId: ID): [Document]\n  findDocumentsByTag(tagId: ID): [Document]\n\n  documentComments: [DocumentComment]\n  findDocumentComment(id: ID!): DocumentComment\n  findDocumentCommentsByUser(userId: ID): [DocumentComment]\n  findDocumentCommentsByTeam(teamId: ID): [DocumentComment]\n\n  findFolder(id: ID): Folder\n  findFoldersByTeam(teamId: ID): [Folder]\n}\n\ntype TodoList {\n  id: ID!\n  createdAt: Date\n  description: String!\n  ownedBy: [User!]!\n  assignedTo: [User!]!\n  todos: [Todo!]!\n  completed: Boolean\n  inTeam: Team\n}\n\ntype Todo {\n  id: ID!\n  createdAt: Date\n  description: String!\n  partOf: TodoList\n  completed: Boolean\n}\n\ntype User {\n  id: ID!\n  createdAt: Date\n  identity: String\n  authId: String\n  name: String\n  todoListsOwned: [TodoList]\n  todoListsAssigned: [TodoList]\n  inTeam: [Team]\n  role: Role\n  email: String\n  phone: String\n  profilePic: String\n  events: [Event]\n}\n\ntype Team {\n  id: ID!\n  createdAt: Date\n  teamName: String!\n  members: [User!]\n  todoLists: [TodoList!]\n  messages: [Message!]\n  events: [Event]\n  tags: [Tag]\n  documents: [Document]\n  folders: [Folder]\n  premium: Boolean\n}\n\ntype Message {\n  id: ID!\n  createdAt: Date\n  title: String!\n  creator: User!\n  inTeam: Team!\n  content: String!\n  images: [String]\n  tag: Tag\n  likes: [User]\n  comments: [MessageComment]\n  subscribedUsers: [User]\n}\n\ntype MessageComment {\n  id: ID!\n  createdAt: Date\n  content: String!\n  user: User!\n  message: Message!\n  image: String\n  likes: [User]\n}\n\ntype Tag {\n  id: ID!\n  createdAt: Date\n  name: String!\n  team: Team\n}\n\ntype Event {\n  id: ID!\n  createdAt: Date\n  team: Team!\n  user: User\n  action_string: String!\n  object_string: String!\n}\n\ntype Document {\n  id: ID!\n  createdAt: Date\n  doc_url: String!\n  user: User!\n  folder: Folder\n  team: Team!\n  title: String!\n  textContent: String!\n  tag: Tag\n  images: [String]\n  comments: [DocumentComment]\n  subscribedUsers: [User]\n}\n\ntype DocumentComment {\n  id: ID!\n  createdAt: Date\n  user: User!\n  document: Document!\n  content: String!\n  image: String\n  likes: [User]\n}\n\ntype Folder {\n  id: ID!\n  createdAt: Date\n  title: String!\n  user: User!\n  team: Team!\n  documents: [Document]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-20T22:55:02Z",
+    "updated_at": "2019-04-26T08:18:40Z",
+    "pushed_at": "2019-04-26T08:18:39Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 66,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 5,
+    "pull_requests_merged": 61,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

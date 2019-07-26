@@ -1,0 +1,39 @@
+{
+  "repo_name": "joboty",
+  "repo_full_name": "adam-s/joboty",
+  "repo_owner": "adam-s",
+  "repo_description": "Another job board using ReactJS and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "src/server/api/rootSchema.graphql",
+      "sha": "71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "url": "https://api.github.com/repositories/115836292/contents/src/server/api/rootSchema.graphql?ref=4fe49a32503e709f7c0a545e48c94525241c8f95",
+      "git_url": "https://api.github.com/repositories/115836292/git/blobs/71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "html_url": "https://github.com/adam-s/joboty/blob/4fe49a32503e709f7c0a545e48c94525241c8f95/src/server/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-31T01:53:34Z",
+    "updated_at": "2017-12-31T01:54:22Z",
+    "pushed_at": "2018-01-11T23:53:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

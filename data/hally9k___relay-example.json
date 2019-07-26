@@ -1,0 +1,39 @@
+{
+  "repo_name": "relay-example",
+  "repo_full_name": "hally9k/relay-example",
+  "repo_owner": "hally9k",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "ce5731b266a126b4e17108f5571b40a412f4a819",
+      "url": "https://api.github.com/repositories/131907632/contents/server/schema.graphql?ref=6e883001f37e5852dbbb5c7f0af616ba726df083",
+      "git_url": "https://api.github.com/repositories/131907632/git/blobs/ce5731b266a126b4e17108f5571b40a412f4a819",
+      "html_url": "https://github.com/hally9k/relay-example/blob/6e883001f37e5852dbbb5c7f0af616ba726df083/server/schema.graphql",
+      "content": "input CreateUser {\n  dateOfBirth: DateTime\n  name: String\n}\n\n# If authentication was successful the payload contains the user and a token. If unsuccessful this payload is null.\ntype CreateUserPayload {\n  user: User\n  clientMutationId: String\n  viewer: Viewer!\n}\n\nscalar DateTime\n\ninput DeleteUserInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype DeleteUserPayload {\n  viewer: Viewer!\n  clientMutationId: String!\n  user: User\n  edge: UserEdge\n  deletedId: ID\n}\n\n# HelloPayload\ntype HelloPayload {\n  message: String!\n}\n\ntype Mutation {\n  updateUser(input: UpdateUserInput!): UpdateUserPayload\n  updateOrCreateUser(input: UpdateOrCreateUserInput!): UpdateOrCreateUserPayload\n  deleteUser(input: DeleteUserInput!): DeleteUserPayload\n  createUser(input: SignupUserInput!): CreateUserPayload!\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  viewer: Viewer!\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ninput SignupUserInput {\n  dateOfBirth: DateTime\n  name: String\n  clientMutationId: String!\n}\n\ninput UpdateOrCreateUserInput {\n  update: UpdateUser!\n  create: CreateUser!\n  clientMutationId: String!\n}\n\ntype UpdateOrCreateUserPayload {\n  viewer: Viewer!\n  clientMutationId: String!\n  user: User\n  edge: UserEdge\n}\n\ninput UpdateUser {\n  dateOfBirth: DateTime\n  id: ID!\n  name: String\n}\n\ninput UpdateUserInput {\n  dateOfBirth: DateTime\n  id: ID!\n  name: String\n  clientMutationId: String!\n}\n\ntype UpdateUserPayload {\n  viewer: Viewer!\n  clientMutationId: String!\n  user: User\n  edge: UserEdge\n}\n\ntype User implements Node {\n  dateOfBirth: DateTime\n  id: ID!\n  name: String\n}\n\n# A connection to a list of items.\ntype UserConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [UserEdge]\n\n  # Count of filtered result set without considering pagination arguments\n  count: Int!\n}\n\n# An edge in a connection.\ntype UserEdge {\n  # The item at the end of the edge.\n  node: User!\n\n  # A cursor for use in pagination.\n  cursor: String!\n}\n\ninput UserFilter {\n  # Logical AND on all given filters.\n  AND: [UserFilter!]\n\n  # Logical OR on all given filters.\n  OR: [UserFilter!]\n  dateOfBirth: DateTime\n\n  # All values that are not equal to given value.\n  dateOfBirth_not: DateTime\n\n  # All values that are contained in given list.\n  dateOfBirth_in: [DateTime!]\n\n  # All values that are not contained in given list.\n  dateOfBirth_not_in: [DateTime!]\n\n  # All values less than the given value.\n  dateOfBirth_lt: DateTime\n\n  # All values less than or equal the given value.\n  dateOfBirth_lte: DateTime\n\n  # All values greater than the given value.\n  dateOfBirth_gt: DateTime\n\n  # All values greater than or equal the given value.\n  dateOfBirth_gte: DateTime\n  id: ID\n\n  # All values that are not equal to given value.\n  id_not: ID\n\n  # All values that are contained in given list.\n  id_in: [ID!]\n\n  # All values that are not contained in given list.\n  id_not_in: [ID!]\n\n  # All values less than the given value.\n  id_lt: ID\n\n  # All values less than or equal the given value.\n  id_lte: ID\n\n  # All values greater than the given value.\n  id_gt: ID\n\n  # All values greater than or equal the given value.\n  id_gte: ID\n\n  # All values containing the given string.\n  id_contains: ID\n\n  # All values not containing the given string.\n  id_not_contains: ID\n\n  # All values starting with the given string.\n  id_starts_with: ID\n\n  # All values not starting with the given string.\n  id_not_starts_with: ID\n\n  # All values ending with the given string.\n  id_ends_with: ID\n\n  # All values not ending with the given string.\n  id_not_ends_with: ID\n  name: String\n\n  # All values that are not equal to given value.\n  name_not: String\n\n  # All values that are contained in given list.\n  name_in: [String!]\n\n  # All values that are not contained in given list.\n  name_not_in: [String!]\n\n  # All values less than the given value.\n  name_lt: String\n\n  # All values less than or equal the given value.\n  name_lte: String\n\n  # All values greater than the given value.\n  name_gt: String\n\n  # All values greater than or equal the given value.\n  name_gte: String\n\n  # All values containing the given string.\n  name_contains: String\n\n  # All values not containing the given string.\n  name_not_contains: String\n\n  # All values starting with the given string.\n  name_starts_with: String\n\n  # All values not starting with the given string.\n  name_not_starts_with: String\n\n  # All values ending with the given string.\n  name_ends_with: String\n\n  # All values not ending with the given string.\n  name_not_ends_with: String\n}\n\nenum UserOrderBy {\n  dateOfBirth_ASC\n  dateOfBirth_DESC\n  id_ASC\n  id_DESC\n  name_ASC\n  name_DESC\n}\n\n# This is the famous Relay viewer object\ntype Viewer {\n  allUsers(filter: UserFilter, orderBy: UserOrderBy, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!\n  user: User\n  User(id: ID): User\n\n  # hello\n  hello(name: String): HelloPayload\n  id: ID!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 22
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-02T21:27:04Z",
+    "updated_at": "2018-05-10T21:16:29Z",
+    "pushed_at": "2018-05-10T21:16:28Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

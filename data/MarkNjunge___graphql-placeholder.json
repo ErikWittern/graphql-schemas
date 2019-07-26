@@ -1,0 +1,70 @@
+{
+  "repo_name": "graphql-placeholder",
+  "repo_full_name": "marknjunge/graphql-placeholder",
+  "repo_owner": "MarkNjunge",
+  "repo_description": "A GraphQL implementation of JSONPlaceholder",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "queries.graphql",
+      "path": "src/graphql/types/queries.graphql",
+      "sha": "c581d579546923ea23e67f1d064f420515eac2c9",
+      "url": "https://api.github.com/repositories/140274581/contents/src/graphql/types/queries.graphql?ref=a99674d4b00db32b1b0f9b77044d8e0883cd5565",
+      "git_url": "https://api.github.com/repositories/140274581/git/blobs/c581d579546923ea23e67f1d064f420515eac2c9",
+      "html_url": "https://github.com/MarkNjunge/graphql-placeholder/blob/a99674d4b00db32b1b0f9b77044d8e0883cd5565/src/graphql/types/queries.graphql",
+      "content": "type Query {\n  users: [User]\n  user(id: Int!): User!\n\n  posts: [Post]\n  post(id: Int!): Post!\n\n  albums: [Album]\n  album(id: Int!): Album!\n\n  photos: [Photo]\n  photo(id: Int!): Photo!\n\n  todos: [Todo]\n  todo(id: Int!): Todo!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/MarkNjunge/graphql-placeholder/blob/a99674d4b00db32b1b0f9b77044d8e0883cd5565/src/graphql/types/queries.graphql:\ntype Query {\n  users: [User]\n  user(id: Int!): User!\n\n  posts: [Post]\n  post(id: Int!): Post!\n\n  albums: [Album]\n  album(id: Int!): Album!\n\n  photos: [Photo]\n  photo(id: Int!): Photo!\n\n  todos: [Todo]\n  todo(id: Int!): Todo!\n}\n\n# https://github.com/MarkNjunge/graphql-placeholder/blob/a99674d4b00db32b1b0f9b77044d8e0883cd5565/src/graphql/types/types.graphql:\ntype Post {\n  id: Int!\n  title: String!\n  body: String!\n  user: User!\n  comments: [Comment]\n}\n\ninput AddPostInput {\n  title: String!\n  body: String!\n  userId: Int!\n}\n\ntype Comment {\n  postId: Int!\n  id: Int!\n  name: String!\n  email: String!\n  body: String!\n}\n\ntype Album {\n  id: Int!\n  title: String!\n  user: User!\n}\n\ntype Photo {\n  id: Int!\n  title: String!\n  url: String!\n  thumbnailUrl: String!\n  album: Album!\n}\n\ntype Todo {\n  id: Int!\n  title: String!\n  completed: Boolean!\n  user: User!\n}\n\ntype User {\n  id: Int!\n  name: String!\n  username: String!\n  email: String!\n  address: Address!\n  phone: String!\n  website: String!\n  company: Company!\n}\n\ntype Address {\n  street: String!\n  suite: String!\n  city: String!\n  zipcode: String!\n  geo: Geo!\n}\n\ntype Geo {\n  lat: String!\n  lng: String!\n}\n\ntype Company {\n  name: String!\n  catchPhrase: String!\n  bs: String!\n}\n",
+        "mergedPaths": [
+          "src/graphql/types/types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post",
+          "Album",
+          "Photo",
+          "Todo",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 10,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 11
+      },
+      "validSchema": false
+    },
+    {
+      "name": "types.graphql",
+      "path": "src/graphql/types/types.graphql",
+      "sha": "cb8cc5ac785848ce17305a5775bd7c7aadda22f2",
+      "url": "https://api.github.com/repositories/140274581/contents/src/graphql/types/types.graphql?ref=a99674d4b00db32b1b0f9b77044d8e0883cd5565",
+      "git_url": "https://api.github.com/repositories/140274581/git/blobs/cb8cc5ac785848ce17305a5775bd7c7aadda22f2",
+      "html_url": "https://github.com/MarkNjunge/graphql-placeholder/blob/a99674d4b00db32b1b0f9b77044d8e0883cd5565/src/graphql/types/types.graphql",
+      "content": "type Post {\n  id: Int!\n  title: String!\n  body: String!\n  user: User!\n  comments: [Comment]\n}\n\ninput AddPostInput {\n  title: String!\n  body: String!\n  userId: Int!\n}\n\ntype Comment {\n  postId: Int!\n  id: Int!\n  name: String!\n  email: String!\n  body: String!\n}\n\ntype Album {\n  id: Int!\n  title: String!\n  user: User!\n}\n\ntype Photo {\n  id: Int!\n  title: String!\n  url: String!\n  thumbnailUrl: String!\n  album: Album!\n}\n\ntype Todo {\n  id: Int!\n  title: String!\n  completed: Boolean!\n  user: User!\n}\n\ntype User {\n  id: Int!\n  name: String!\n  username: String!\n  email: String!\n  address: Address!\n  phone: String!\n  website: String!\n  company: Company!\n}\n\ntype Address {\n  street: String!\n  suite: String!\n  city: String!\n  zipcode: String!\n  geo: Geo!\n}\n\ntype Geo {\n  lat: String!\n  lng: String!\n}\n\ntype Company {\n  name: String!\n  catchPhrase: String!\n  bs: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-09T11:15:24Z",
+    "updated_at": "2019-06-26T05:04:09Z",
+    "pushed_at": "2018-08-11T08:10:19Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

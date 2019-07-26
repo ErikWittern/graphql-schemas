@@ -1,0 +1,42 @@
+{
+  "repo_name": "pathimagequiz",
+  "repo_full_name": "darkbladecr/pathimagequiz",
+  "repo_owner": "Darkbladecr",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "85493010267659ecccf6b06aa971749a10fdd110",
+      "url": "https://api.github.com/repositories/154386127/contents/server/src/schema.graphql?ref=01be8238cde9eb81c97c48fb1da541fbe938e8d4",
+      "git_url": "https://api.github.com/repositories/154386127/git/blobs/85493010267659ecccf6b06aa971749a10fdd110",
+      "html_url": "https://github.com/Darkbladecr/pathimagequiz/blob/01be8238cde9eb81c97c48fb1da541fbe938e8d4/server/src/schema.graphql",
+      "content": "type Query {\n  user(_id: String!): User\n  images: [Image]\n}\ntype Mutation {\n  login(username: String!, password: String!): String\n  upvote(_id: String!, choice: String!, vessels: Boolean!): Marksheet\n}\ntype User {\n  _id: ID\n  username: String\n  marksheet: [Marksheet]\n}\ntype Marksheet {\n  image: String\n  choice: String\n  vessels: Boolean\n}\n\ntype Image {\n  _id: ID\n  url: String!\n  a: Int\n  b1: Int\n  b2: Int\n  b3: Int\n  vessels: Int\n  noVessels: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-23T19:36:17Z",
+    "updated_at": "2019-01-05T17:31:14Z",
+    "pushed_at": "2019-01-05T17:31:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

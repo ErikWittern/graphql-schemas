@@ -1,0 +1,39 @@
+{
+  "repo_name": "beg-graphQL-API",
+  "repo_full_name": "rosselherrera/beg-graphql-api",
+  "repo_owner": "RosselHerrera",
+  "repo_description": "Una simple API GraphQL ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "561f648ada5e082b4b1cf5d8c8998b1b78defd2d",
+      "url": "https://api.github.com/repositories/165982498/contents/src/schema.graphql?ref=f00b161791cd0749e8ac32878c3cc991770d9b5b",
+      "git_url": "https://api.github.com/repositories/165982498/git/blobs/561f648ada5e082b4b1cf5d8c8998b1b78defd2d",
+      "html_url": "https://github.com/RosselHerrera/beg-graphQL-API/blob/f00b161791cd0749e8ac32878c3cc991770d9b5b/src/schema.graphql",
+      "content": "type Query {\r\n  users: [User!]!\r\n  user(id: ID!): User!\r\n}\r\ntype User {\r\n  id: ID!\r\n  name: String!\r\n  email: String!\r\n  age: Int\r\n}\r\ntype Mutation {\r\n  createUser(id: ID!, name: String!, email: String!, age: Int): User!\r\n  updateUser(id: ID!, name: String, email: String, age: Int): User!\r\n  deleteUser(id: ID!): User!\r\n}\r\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-16T05:54:39Z",
+    "updated_at": "2019-01-16T06:16:03Z",
+    "pushed_at": "2019-01-16T06:16:02Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

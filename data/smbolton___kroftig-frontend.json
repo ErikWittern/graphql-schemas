@@ -1,0 +1,41 @@
+{
+  "repo_name": "kroftig-frontend",
+  "repo_full_name": "smbolton/kroftig-frontend",
+  "repo_owner": "smbolton",
+  "repo_description": "A tool for auditing multiple related git repositories. JavaScript, React, Relay, GraphQL.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "config/schema.graphql",
+      "sha": "c58d818c9fbfbed6ecffe2a3073b076db813eec7",
+      "url": "https://api.github.com/repositories/125809644/contents/config/schema.graphql?ref=06cff8f0ec2f9cd37c2fdae89d71d9db2fb2b8b1",
+      "git_url": "https://api.github.com/repositories/125809644/git/blobs/c58d818c9fbfbed6ecffe2a3073b076db813eec7",
+      "html_url": "https://github.com/smbolton/kroftig-frontend/blob/06cff8f0ec2f9cd37c2fdae89d71d9db2fb2b8b1/config/schema.graphql",
+      "content": "type Branch implements Node {\n  # The ID of the object.\n  id: ID!\n  name: String\n  message: String\n  rev: String\n  ctime: String\n}\n\ntype BranchConnection {\n  pageInfo: PageInfo!\n  edges: [BranchEdge]!\n}\n\ntype BranchEdge {\n  # The item at the end of the edge\n  node: Branch\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Commit implements Node {\n  # The ID of the object.\n  id: ID!\n  oid: String\n  message: String\n  author: String\n  authorTime: String\n  authorEmail: String\n  committer: String\n  committerTime: String\n  committerEmail: String\n  parentIds: [String]\n\n  # Relatively expensive, only fetch if needed\n  tree(before: String, after: String, first: Int, last: Int): Tree\n}\n\ntype CommitConnection {\n  pageInfo: PageInfo!\n  edges: [CommitEdge]!\n  rev: String\n}\n\ntype CommitEdge {\n  # The item at the end of the edge\n  node: Commit\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput LogInInput {\n  username: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype LogInPayload {\n  user: User\n  clientMutationId: String\n}\n\ninput LogOutInput {\n  clientMutationId: String\n}\n\ntype LogOutPayload {\n  success: Boolean\n  clientMutationId: String\n}\n\ntype Mutation {\n  logIn(input: LogInInput!): LogInPayload\n  logOut(input: LogOutInput!): LogOutPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The ID of the object.\n  id: ID!\n}\n\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # The ID of the object\n  node(id: ID!): Node\n  repo(name: String!): Repo\n  repos: [Repo]\n  user: User\n  users: [User]\n}\n\ntype Repo implements Node {\n  # The ID of the object.\n  id: ID!\n  name: String!\n  path: String!\n  description: String\n  currentBranch: String\n  branches(before: String, after: String, first: Int, last: Int): BranchConnection\n  commit(rev: String!): Commit\n  commits(rev: String, before: String, after: String, first: Int, last: Int): CommitConnection\n  tree(rev: String!, path: String, before: String, after: String, first: Int, last: Int): Tree\n}\n\ntype Tree {\n  pageInfo: PageInfo!\n  edges: [TreeEdge]!\n}\n\ntype TreeEdge {\n  # The item at the end of the edge\n  node: TreeEntry\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype TreeEntry implements Node {\n  # The ID of the object.\n  id: ID!\n  oid: String\n  name: String\n  filemode: Int\n  type: String\n  size: Int\n  latestCommit: Commit\n}\n\ntype User {\n  id: ID!\n\n  # Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.\n  username: String!\n  firstName: String!\n  lastName: String!\n  email: String!\n\n  # Designates whether the user can log into this admin site.\n  isStaff: Boolean!\n\n  # Designates whether this user should be treated as active. Unselect this instead of deleting accounts.\n  isActive: Boolean!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": true,
+      "numDefinitions": 19
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-19T06:11:09Z",
+    "updated_at": "2019-01-15T07:01:25Z",
+    "pushed_at": "2018-03-19T06:50:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

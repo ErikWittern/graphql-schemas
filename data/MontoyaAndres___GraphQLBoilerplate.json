@@ -1,0 +1,63 @@
+{
+  "repo_name": "GraphQLBoilerplate",
+  "repo_full_name": "montoyaandres/graphqlboilerplate",
+  "repo_owner": "MontoyaAndres",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/user/me/schema.graphql",
+      "sha": "38d7aed56a27fd6baae9917dc8da73f8c402b67f",
+      "url": "https://api.github.com/repositories/143570386/contents/src/modules/user/me/schema.graphql?ref=dddf08e80cfc4ac135e23525db5e995b5cb71a67",
+      "git_url": "https://api.github.com/repositories/143570386/git/blobs/38d7aed56a27fd6baae9917dc8da73f8c402b67f",
+      "html_url": "https://github.com/MontoyaAndres/GraphQLBoilerplate/blob/dddf08e80cfc4ac135e23525db5e995b5cb71a67/src/modules/user/me/schema.graphql",
+      "content": "type Query {\n\tme: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/MontoyaAndres/GraphQLBoilerplate/blob/dddf08e80cfc4ac135e23525db5e995b5cb71a67/src/modules/user/me/schema.graphql:\ntype Query {\n\tme: User\n}\n\n# https://github.com/MontoyaAndres/GraphQLBoilerplate/blob/dddf08e80cfc4ac135e23525db5e995b5cb71a67/src/modules/user/shared/User.graphql:\ntype User {\n\tid: ID!\n\temail: String!\n}\n",
+        "mergedPaths": [
+          "src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "src/modules/user/shared/User.graphql",
+      "sha": "788f0e65864874dba7e54667901bc125a4520aa3",
+      "url": "https://api.github.com/repositories/143570386/contents/src/modules/user/shared/User.graphql?ref=dddf08e80cfc4ac135e23525db5e995b5cb71a67",
+      "git_url": "https://api.github.com/repositories/143570386/git/blobs/788f0e65864874dba7e54667901bc125a4520aa3",
+      "html_url": "https://github.com/MontoyaAndres/GraphQLBoilerplate/blob/dddf08e80cfc4ac135e23525db5e995b5cb71a67/src/modules/user/shared/User.graphql",
+      "content": "type User {\n\tid: ID!\n\temail: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-04T23:43:56Z",
+    "updated_at": "2019-06-15T22:47:42Z",
+    "pushed_at": "2018-12-24T15:50:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

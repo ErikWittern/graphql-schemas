@@ -1,0 +1,52 @@
+{
+  "repo_name": "siler",
+  "repo_full_name": "leocavalcante/siler",
+  "repo_owner": "leocavalcante",
+  "repo_description": ":zap: Flat-files and plain-old PHP functions rockin'on as a set of general purpose high-level abstractions.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/graphql/schema.graphql",
+      "sha": "8a83ac8f76a0a830eac9aed32e771341f322eb29",
+      "url": "https://api.github.com/repositories/75350712/contents/examples/graphql/schema.graphql?ref=90e69af03e73ec0bd39cc3fe53ee93453bf95285",
+      "git_url": "https://api.github.com/repositories/75350712/git/blobs/8a83ac8f76a0a830eac9aed32e771341f322eb29",
+      "html_url": "https://github.com/leocavalcante/siler/blob/90e69af03e73ec0bd39cc3fe53ee93453bf95285/examples/graphql/schema.graphql",
+      "content": "type Message {\n  id: Int\n  roomId: Int\n  body: String\n  timestamp: String\n}\n\ntype Room {\n  id: Int\n  name: String\n  messages: [Message]\n}\n\ntype Query {\n  messages(roomName: String): [Message]\n  rooms: [Room]\n}\n\ntype Mutation {\n  start(roomName: String): Room\n  chat(roomName: String, body: String): Message\n}\n\ntype Subscription {\n  inbox(roomName: String): Message\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "tests/fixtures/schema.graphql",
+      "sha": "ad4b6f33e2ec51ded0f5a879b2bd0cedd682327a",
+      "url": "https://api.github.com/repositories/75350712/contents/tests/fixtures/schema.graphql?ref=90e69af03e73ec0bd39cc3fe53ee93453bf95285",
+      "git_url": "https://api.github.com/repositories/75350712/git/blobs/ad4b6f33e2ec51ded0f5a879b2bd0cedd682327a",
+      "html_url": "https://github.com/leocavalcante/siler/blob/90e69af03e73ec0bd39cc3fe53ee93453bf95285/tests/fixtures/schema.graphql",
+      "content": "type Query {\n  user: User\n}\n\ntype User {\n  name: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-02T02:01:48Z",
+    "updated_at": "2019-07-19T13:59:00Z",
+    "pushed_at": "2019-06-22T17:37:00Z",
+    "issues": 59,
+    "watchers": 52,
+    "fork_count": 59,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 121,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 12,
+    "pull_requests_merged": 108,
+    "releases": 10,
+    "stargazers": 751
+  }
+}

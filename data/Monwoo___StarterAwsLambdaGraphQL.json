@@ -1,0 +1,42 @@
+{
+  "repo_name": "StarterAwsLambdaGraphQL",
+  "repo_full_name": "monwoo/starterawslambdagraphql",
+  "repo_owner": "Monwoo",
+  "repo_description": "Starter to use AWS Lambda hosting with GraphQL, inspired from https://cloudacademy.com/blog/how-to-write-graphql-apps-using-aws-lambda/",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "AWSLambda/schema.graphql",
+      "sha": "835e0523e4aa3a8c24fb9353d870e0dfde6ff047",
+      "url": "https://api.github.com/repositories/103407638/contents/AWSLambda/schema.graphql?ref=cc4300c2494649d3194244376cbc6ff518a47989",
+      "git_url": "https://api.github.com/repositories/103407638/git/blobs/835e0523e4aa3a8c24fb9353d870e0dfde6ff047",
+      "html_url": "https://github.com/Monwoo/StarterAwsLambdaGraphQL/blob/cc4300c2494649d3194244376cbc6ff518a47989/AWSLambda/schema.graphql",
+      "content": "########### DATE ##\nscalar Date\n\n########### USER ##\ntype User {\n  _id: String\n  firstname: String\n  lastname: String\n  email: String\n  password: String\n  roles: [ Role ]\n}\n\ntype Role {\n  value: String\n}\n\n# the schema allows the following query:\ntype Query {\n    userByEmail(email: String!): User\n    users: [User]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-13T14:06:12Z",
+    "updated_at": "2019-05-03T21:12:49Z",
+    "pushed_at": "2019-04-29T11:30:51Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

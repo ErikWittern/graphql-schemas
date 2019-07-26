@@ -1,0 +1,71 @@
+{
+  "repo_name": "graphql-schema-diff",
+  "repo_full_name": "fabsrc/graphql-schema-diff",
+  "repo_owner": "fabsrc",
+  "repo_description": ":page_facing_up::arrows_counterclockwise::page_facing_up: Returns the diff of two GraphQL schemas. Detects dangerous and breaking changes.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "localSchemaBreaking.graphql",
+      "path": "src/__tests__/fixtures/localSchemaBreaking.graphql",
+      "sha": "a16fc238d9f603db5b0b054e0bf03f455ec43a74",
+      "url": "https://api.github.com/repositories/169482393/contents/src/__tests__/fixtures/localSchemaBreaking.graphql?ref=9560e580a49b1cc0a0fb17be381051e821757255",
+      "git_url": "https://api.github.com/repositories/169482393/git/blobs/a16fc238d9f603db5b0b054e0bf03f455ec43a74",
+      "html_url": "https://github.com/fabsrc/graphql-schema-diff/blob/9560e580a49b1cc0a0fb17be381051e821757255/src/__tests__/fixtures/localSchemaBreaking.graphql",
+      "content": "enum TestEnum {\n  FIRST_VALUE\n}\n\ntype Query {\n  test: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    },
+    {
+      "name": "localSchema.graphql",
+      "path": "src/__tests__/fixtures/localSchema.graphql",
+      "sha": "5a2358b0c78876d2abdd30c1e95ce9f54b5448d6",
+      "url": "https://api.github.com/repositories/169482393/contents/src/__tests__/fixtures/localSchema.graphql?ref=9560e580a49b1cc0a0fb17be381051e821757255",
+      "git_url": "https://api.github.com/repositories/169482393/git/blobs/5a2358b0c78876d2abdd30c1e95ce9f54b5448d6",
+      "html_url": "https://github.com/fabsrc/graphql-schema-diff/blob/9560e580a49b1cc0a0fb17be381051e821757255/src/__tests__/fixtures/localSchema.graphql",
+      "content": "enum TestEnum {\n  FIRST_VALUE\n}\n\ntype Query {\n  test: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    },
+    {
+      "name": "localSchemaDangerous.graphql",
+      "path": "src/__tests__/fixtures/localSchemaDangerous.graphql",
+      "sha": "ad67f2fc1e7d1efb06af57c6bbca2c6b536d99da",
+      "url": "https://api.github.com/repositories/169482393/contents/src/__tests__/fixtures/localSchemaDangerous.graphql?ref=9560e580a49b1cc0a0fb17be381051e821757255",
+      "git_url": "https://api.github.com/repositories/169482393/git/blobs/ad67f2fc1e7d1efb06af57c6bbca2c6b536d99da",
+      "html_url": "https://github.com/fabsrc/graphql-schema-diff/blob/9560e580a49b1cc0a0fb17be381051e821757255/src/__tests__/fixtures/localSchemaDangerous.graphql",
+      "content": "enum TestEnum {\n  FIRST_VALUE\n  SECOND_VALUE\n}\n\ntype Query {\n  test: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-06T21:52:22Z",
+    "updated_at": "2019-06-22T10:42:44Z",
+    "pushed_at": "2019-06-08T09:10:43Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 1,
+    "stargazers": 5
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-with-nodejs",
+  "repo_full_name": "nicolasmartinezullan/graphql-with-nodejs",
+  "repo_owner": "nicolasmartinezullan",
+  "repo_description": "Small playground of a GraphQL API server using Node.js",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema.gql",
+      "sha": "310d798ef561dfb9545cf25b567dd566a79b92ae",
+      "url": "https://api.github.com/repositories/171019992/contents/src/schema.gql?ref=f02653228dafc0d0a7a0a22a67b450a799da5f27",
+      "git_url": "https://api.github.com/repositories/171019992/git/blobs/310d798ef561dfb9545cf25b567dd566a79b92ae",
+      "html_url": "https://github.com/nicolasmartinezullan/graphql-with-nodejs/blob/f02653228dafc0d0a7a0a22a67b450a799da5f27/src/schema.gql",
+      "content": "type Query {\n  hello: String\n  bye: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-16T15:42:11Z",
+    "updated_at": "2019-02-16T15:43:48Z",
+    "pushed_at": "2019-02-16T15:43:47Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

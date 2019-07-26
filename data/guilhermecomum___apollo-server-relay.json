@@ -1,0 +1,42 @@
+{
+  "repo_name": "apollo-server-relay",
+  "repo_full_name": "guilhermecomum/apollo-server-relay",
+  "repo_owner": "guilhermecomum",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "e4cbf85bb2a21daa608a2a059d8d19d72f041d62",
+      "url": "https://api.github.com/repositories/78134024/contents/data/schema.graphql?ref=32ad2a91da19e9b576f967567bb96810ab1de44c",
+      "git_url": "https://api.github.com/repositories/78134024/git/blobs/e4cbf85bb2a21daa608a2a059d8d19d72f041d62",
+      "html_url": "https://github.com/guilhermecomum/apollo-server-relay/blob/32ad2a91da19e9b576f967567bb96810ab1de44c/data/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n}\n\ntype Post {\n  id: ID!\n  title: String\n  votes: String\n}\n\ntype Posts {\n  id: ID!\n  postList: [Post]\n}\n\ntype RootQuery {\n  viewer: User\n}\n\ntype User {\n  posts: Posts\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-05T17:33:22Z",
+    "updated_at": "2017-01-05T17:34:19Z",
+    "pushed_at": "2017-01-06T19:55:25Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

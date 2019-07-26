@@ -1,0 +1,39 @@
+{
+  "repo_name": "react-firebase-starter",
+  "repo_full_name": "kriasoft/react-firebase-starter",
+  "repo_owner": "kriasoft",
+  "repo_description": "Boilerplate (seed) project for creating web apps with React.js, GraphQL.js and Relay",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "49c6a65fb143de02f6ee490a0429b8fa3fceb6b5",
+      "url": "https://api.github.com/repositories/37616442/contents/schema.graphql?ref=3fe1112dccd6bbb51e5a6a587dbfd8942abfe255",
+      "git_url": "https://api.github.com/repositories/37616442/git/blobs/49c6a65fb143de02f6ee490a0429b8fa3fceb6b5",
+      "html_url": "https://github.com/kriasoft/react-firebase-starter/blob/3fe1112dccd6bbb51e5a6a587dbfd8942abfe255/schema.graphql",
+      "content": "enum AuthenticationProvider {\n  GOOGLE\n  TWITTER\n  FACEBOOK\n}\n\ntype Comment implements Node {\n  # The ID of an object\n  id: ID!\n  story: Story!\n  parent: Comment\n  author: User!\n  comments: [Comment]\n  text: String\n  pointsCount: Int!\n  createdAt(format: String): String\n  updatedAt(format: String): String\n}\n\ninput CreateStoryInput {\n  title: String\n  text: String\n  validateOnly: Boolean\n  clientMutationId: String\n}\n\ntype CreateStoryPayload {\n  story: Story\n  clientMutationId: String\n}\n\ninput DeleteUserInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype DeleteUserPayload {\n  deletedUserId: String\n  clientMutationId: String\n}\n\ntype Identity {\n  # The ID of an object\n  id: ID!\n  provider: AuthenticationProvider\n  providerId: String\n  email: String\n  displayName: String\n  photoURL: String\n  profileURL: String\n}\n\ninput LikeStoryInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype LikeStoryPayload {\n  story: Story\n  clientMutationId: String\n}\n\ntype Mutation {\n  # Update user.\n  updateUser(input: UpdateUserInput!): UpdateUserPayload\n\n  # Delete user.\n  deleteUser(input: DeleteUserInput!): DeleteUserPayload\n\n  # Create a new story.\n  createStory(input: CreateStoryInput!): CreateStoryPayload\n  updateStory(input: UpdateStoryInput!): UpdateStoryPayload\n  likeStory(input: LikeStoryInput!): LikeStoryPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n\n  # Fetches objects given their IDs\n  nodes(\n    # The IDs of objects\n    ids: [ID!]!\n  ): [Node]!\n  me: User\n  user(username: String!): User\n  users(after: String, first: Int): UserConnection\n  story(slug: String!): Story\n  stories: [Story]\n}\n\ntype Story implements Node {\n  # The ID of an object\n  id: ID!\n  author: User!\n  slug: String!\n  title: String!\n  text(truncate: Int): String!\n  isURL: Boolean!\n  comments: [Comment]\n  pointsCount: Int!\n  pointGiven: Boolean!\n  commentsCount: Int!\n  createdAt(format: String): String\n  updatedAt(format: String): String\n}\n\ninput UpdateStoryInput {\n  id: ID!\n  title: String\n  text: String\n  approved: Boolean\n  validateOnly: Boolean\n  clientMutationId: String\n}\n\ntype UpdateStoryPayload {\n  story: Story\n  clientMutationId: String\n}\n\ninput UpdateUserInput {\n  id: ID!\n  username: String\n  email: String\n  displayName: String\n  photoURL: String\n  timeZone: String\n  isAdmin: Boolean\n  validateOnly: Boolean\n  clientMutationId: String\n}\n\ntype UpdateUserPayload {\n  user: User\n  clientMutationId: String\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  username: String!\n  email: String\n  displayName: String\n  photoURL: String\n  timeZone: String\n  identities: [Identity]\n  isAdmin: Boolean\n  createdAt(format: String): String\n  updatedAt(format: String): String\n  lastLoginAt(format: String): String\n}\n\n# A connection to a list of items.\ntype UserConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [UserEdge]\n  totalCount: Int!\n}\n\n# An edge in a connection.\ntype UserEdge {\n  # The item at the end of the edge\n  node: User\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-06-17T19:33:23Z",
+    "updated_at": "2019-07-19T16:54:02Z",
+    "pushed_at": "2019-07-19T14:17:32Z",
+    "issues": 214,
+    "watchers": 99,
+    "fork_count": 654,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 130,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 44,
+    "pull_requests_merged": 85,
+    "releases": 1,
+    "stargazers": 3805
+  }
+}

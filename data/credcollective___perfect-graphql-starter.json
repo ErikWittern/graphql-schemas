@@ -1,0 +1,78 @@
+{
+  "repo_name": "perfect-graphql-starter",
+  "repo_full_name": "credcollective/perfect-graphql-starter",
+  "repo_owner": "credcollective",
+  "repo_description": "a boilerplate for your GraphQL server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "domain/schemas/Query.graphql",
+      "sha": "08bfe6a535333ad8ceb50f3f47e4c47df0ca4164",
+      "url": "https://api.github.com/repositories/67225216/contents/domain/schemas/Query.graphql?ref=4aee96413537871cd3f7a4f106796d442169f2f4",
+      "git_url": "https://api.github.com/repositories/67225216/git/blobs/08bfe6a535333ad8ceb50f3f47e4c47df0ca4164",
+      "html_url": "https://github.com/credcollective/perfect-graphql-starter/blob/4aee96413537871cd3f7a4f106796d442169f2f4/domain/schemas/Query.graphql",
+      "content": "type Query {\n  getAuthor(_id: Int!): Author\n  getPostsByAuthor(authorId: Int!): [Post]\n  getPostsByTitle(titleContains: String!): [Post]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/credcollective/perfect-graphql-starter/blob/4aee96413537871cd3f7a4f106796d442169f2f4/domain/schemas/Query.graphql:\ntype Query {\n  getAuthor(_id: Int!): Author\n  getPostsByAuthor(authorId: Int!): [Post]\n  getPostsByTitle(titleContains: String!): [Post]\n}\n\n# https://github.com/credcollective/perfect-graphql-starter/blob/4aee96413537871cd3f7a4f106796d442169f2f4/domain/schemas/Author.graphql:\ntype Author {\n  _id: Int!\n  firstName: String\n  lastName: String\n  posts: [Post]\n}\n\n# https://github.com/credcollective/perfect-graphql-starter/blob/4aee96413537871cd3f7a4f106796d442169f2f4/domain/schemas/Post.graphql:\ntype Post {\n  _id: Int!\n  private: Boolean\n  title: String\n  text: String\n  views: Int\n  author: Author\n}\n",
+        "mergedPaths": [
+          "domain/schemas/Author.graphql",
+          "domain/schemas/Post.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Author",
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Post.graphql",
+      "path": "domain/schemas/Post.graphql",
+      "sha": "18ffc50a5cf0b577fc9b62b5e35039f5f721fc06",
+      "url": "https://api.github.com/repositories/67225216/contents/domain/schemas/Post.graphql?ref=4aee96413537871cd3f7a4f106796d442169f2f4",
+      "git_url": "https://api.github.com/repositories/67225216/git/blobs/18ffc50a5cf0b577fc9b62b5e35039f5f721fc06",
+      "html_url": "https://github.com/credcollective/perfect-graphql-starter/blob/4aee96413537871cd3f7a4f106796d442169f2f4/domain/schemas/Post.graphql",
+      "content": "type Post {\n  _id: Int!\n  private: Boolean\n  title: String\n  text: String\n  views: Int\n  author: Author\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Author.graphql",
+      "path": "domain/schemas/Author.graphql",
+      "sha": "49a346907b7f7ebba193e337e4c615002db12568",
+      "url": "https://api.github.com/repositories/67225216/contents/domain/schemas/Author.graphql?ref=4aee96413537871cd3f7a4f106796d442169f2f4",
+      "git_url": "https://api.github.com/repositories/67225216/git/blobs/49a346907b7f7ebba193e337e4c615002db12568",
+      "html_url": "https://github.com/credcollective/perfect-graphql-starter/blob/4aee96413537871cd3f7a4f106796d442169f2f4/domain/schemas/Author.graphql",
+      "content": "type Author {\n  _id: Int!\n  firstName: String\n  lastName: String\n  posts: [Post]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-02T13:34:32Z",
+    "updated_at": "2019-06-09T00:34:25Z",
+    "pushed_at": "2016-09-09T08:34:59Z",
+    "issues": 1,
+    "watchers": 6,
+    "fork_count": 16,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 50
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "poodle",
+  "repo_full_name": "poodleapp/poodle",
+  "repo_owner": "PoodleApp",
+  "repo_description": "Experimental email client with social features",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/main/schema/schema.graphql",
+      "sha": "9b47fff4fce5157142379d7ed164c250382c4bd0",
+      "url": "https://api.github.com/repositories/186266396/contents/packages/main/schema/schema.graphql?ref=98051aa371e83d812bc7d27b2b7f52467fdb127c",
+      "git_url": "https://api.github.com/repositories/186266396/git/blobs/9b47fff4fce5157142379d7ed164c250382c4bd0",
+      "html_url": "https://github.com/PoodleApp/poodle/blob/98051aa371e83d812bc7d27b2b7f52467fdb127c/packages/main/schema/schema.graphql",
+      "content": "type Account {\n  id: ID!\n  email: String!\n  loggedIn: Boolean!\n  conversations(label: String): [Conversation!]!\n  messages: [Message!]!\n}\n\ntype AccountMutations {\n  create(email: String!): Account!\n  authenticate(id: ID!): Account!\n  sync(id: ID!): Account!\n}\n\ntype Conversation {\n  id: ID!\n  date: String!\n  from: Address!\n  labels: [String!]\n  presentableElements: [Presentable!]!\n  isRead: Boolean!\n  subject: String\n}\n\ntype ConversationMutations {\n  archive(id: ID!): Conversation!\n  setIsRead(id: ID!, isRead: Boolean!): Conversation!\n}\n\ntype Message {\n  id: ID!\n  date: String!\n  messageId: ID!\n  subject: String\n  from: [Address!]!\n}\n\ntype Address {\n  host: String!\n  mailbox: String!\n  name: String\n}\n\ntype Presentable {\n  id: ID!\n  contents: [Content!]!\n  date: String!\n  from: Address!\n}\n\ntype Content {\n  type: String!\n  subtype: String!\n  content: String!\n}\n\ntype Mutation {\n  accounts: AccountMutations!\n  conversations: ConversationMutations!\n}\n\ntype Query {\n  account(id: ID!): Account\n  accounts: [Account!]!\n  conversation(id: ID!): Conversation\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 4,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-12T14:38:52Z",
+    "updated_at": "2019-07-17T16:33:48Z",
+    "pushed_at": "2019-07-19T20:45:04Z",
+    "issues": 5,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 24,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 22,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "repo_name": "Project-WebCube",
+  "repo_full_name": "dexteryy/project-webcube",
+  "repo_owner": "dexteryy",
+  "repo_description": "Continuously updated JS infrastructure for modern web dev",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "index.gql",
+      "path": "examples/webcube-examples/src/redux-source-sample/common/apis/starWars/schema/index.gql",
+      "sha": "9162b372688a0e0596c77048d406bc5a8d923e05",
+      "url": "https://api.github.com/repositories/50371712/contents/examples/webcube-examples/src/redux-source-sample/common/apis/starWars/schema/index.gql?ref=fc3cb79bf202c23f0bbc8f5e4971277f3efb4f96",
+      "git_url": "https://api.github.com/repositories/50371712/git/blobs/9162b372688a0e0596c77048d406bc5a8d923e05",
+      "html_url": "https://github.com/dexteryy/Project-WebCube/blob/fc3cb79bf202c23f0bbc8f5e4971277f3efb4f96/examples/webcube-examples/src/redux-source-sample/common/apis/starWars/schema/index.gql",
+      "content": "type Character {\n  url: ID!\n  name: String!\n  height: String!\n  mass: String!\n  gender: String!\n  starships: [Starship!]\n  films: [Film!]!\n}\n\ntype Starship {\n  url: ID!\n  name: String!\n  model: String!\n  passengers: String!\n  crew: String!\n  manufacturer: String!\n  created: String!\n  characters: [Character!]!\n  films: [Film!]!\n}\n\ntype Film {\n  url: ID!\n  title: String!\n  director: String!\n  created: String!\n  characters: [Character!]!\n  starships: [Starship!]!\n}\n\ntype Query {\n  character(id: String!): Character\n  starship(id: String!): Starship\n  film(id: String!): Film\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "index.gql",
+      "path": "examples/webcube-examples/src/redux-cube-sample/common/apis/main/schema/index.gql",
+      "sha": "f1aaf4b7cf0c8d13cf935d34c32a5e14d09b0b9e",
+      "url": "https://api.github.com/repositories/50371712/contents/examples/webcube-examples/src/redux-cube-sample/common/apis/main/schema/index.gql?ref=fc3cb79bf202c23f0bbc8f5e4971277f3efb4f96",
+      "git_url": "https://api.github.com/repositories/50371712/git/blobs/f1aaf4b7cf0c8d13cf935d34c32a5e14d09b0b9e",
+      "html_url": "https://github.com/dexteryy/Project-WebCube/blob/fc3cb79bf202c23f0bbc8f5e4971277f3efb4f96/examples/webcube-examples/src/redux-cube-sample/common/apis/main/schema/index.gql",
+      "content": "type Query {\n  renameMe: [String]\n}\n\ntype Mutation {\n  renameMe(id: ID): [String]\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-01-25T18:33:02Z",
+    "updated_at": "2019-06-24T14:59:31Z",
+    "pushed_at": "2019-03-01T06:12:46Z",
+    "issues": 4,
+    "watchers": 7,
+    "fork_count": 16,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 124
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "timefilter",
+  "repo_full_name": "nscarlson/timefilter",
+  "repo_owner": "nscarlson",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.gql",
+      "path": "packages/timefilter-graphql/src/typeDefs/typeDefs.gql",
+      "sha": "2ce454e30cd24848f7745aa7a6c629a5a1ed021c",
+      "url": "https://api.github.com/repositories/149055811/contents/packages/timefilter-graphql/src/typeDefs/typeDefs.gql?ref=7d19b267c6ec5c121583560c046622d5e2df140d",
+      "git_url": "https://api.github.com/repositories/149055811/git/blobs/2ce454e30cd24848f7745aa7a6c629a5a1ed021c",
+      "html_url": "https://github.com/nscarlson/timefilter/blob/7d19b267c6ec5c121583560c046622d5e2df140d/packages/timefilter-graphql/src/typeDefs/typeDefs.gql",
+      "content": "scalar Date\n\ntype Query {\n  city(id: ID!): City\n  cities: [City]\n  event: Event\n  geographicSite(id: ID!): GeographicSite\n  geographicSites: [GeographicSite]\n  person(id: ID!): Person\n}\n\ntype Mutation {\n  createCity(input: CreateCityInput!): City\n  createGeographicSite(input: CreateGeographicSiteInput!): GeographicSite\n  createPerson(input: CreatePersonInput!): Person\n}\n\ntype City {\n  id: ID!\n  name: String\n  lat: Float\n  long: Float\n}\n\ninput CreateCityInput {\n  name: String!\n  lat: Float!\n  long: Float!\n}\n\ntype Person {\n  id: ID!\n  name: String!\n  birthDate: Date!\n  deathDate: Date!\n}\n\ninput CreatePersonInput {\n  name: String!\n  birthDate: Date!\n  deathDate: Date!\n}\n\ntype GeographicSite {\n  id: ID!\n  name: String!\n  location: GeographicPoint!\n}\n\ninput CreateGeographicSiteInput {\n  name: String!\n  location: CreateGeographicPointInput!\n}\n\ntype Event {\n  id: ID!\n  intervalBegin: Int\n  intervalEnd: Int\n}\n\ntype GeographicRegion {\n  id: ID!\n  boundaries: [Int]!\n}\n\ntype GeographicPoint {\n  id: ID!\n  lat: Float!\n  long: Float!\n}\n\ninput CreateGeographicPointInput {\n  lat: Float!\n  long: Float!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-17T02:06:02Z",
+    "updated_at": "2018-10-12T06:24:24Z",
+    "pushed_at": "2019-07-19T21:00:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 26,
+    "pull_requests_open": 13,
+    "pull_requests_closed": 8,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

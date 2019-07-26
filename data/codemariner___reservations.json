@@ -1,0 +1,42 @@
+{
+  "repo_name": "reservations",
+  "repo_full_name": "codemariner/reservations",
+  "repo_owner": "codemariner",
+  "repo_description": "An experiment in building a React+GraphQL+Apollo fullstack app.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "server/schema/schema.gql",
+      "sha": "1e90a87f1fd593e7e7e398c8a391c6ebcf22f5b7",
+      "url": "https://api.github.com/repositories/155951149/contents/server/schema/schema.gql?ref=a9032150b922af7c45e5a7c1975ce63f1458bd6c",
+      "git_url": "https://api.github.com/repositories/155951149/git/blobs/1e90a87f1fd593e7e7e398c8a391c6ebcf22f5b7",
+      "html_url": "https://github.com/codemariner/reservations/blob/a9032150b922af7c45e5a7c1975ce63f1458bd6c/server/schema/schema.gql",
+      "content": "scalar Date\n\ntype Query {\n  reservation(id:ID!): Reservation\n\n  reservations: [Reservation!]!\n}\n\ntype Mutation {\n  createReservation(reservation:CreateReservationInput!): Reservation\n  deleteReservation(id:ID!): ID\n}\n\n\ntype Reservation {\n  id: ID!\n  name: String!\n  hotelName: String!\n  arrivalDate: Date!\n  departureDate: Date!\n  createdAt: Date!\n  updatedAt: Date!\n}\n\n\ninput CreateReservationInput {\n  name: String!\n  hotelName: String!\n  arrivalDate: Date!\n  departureDate: Date!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-03T04:50:19Z",
+    "updated_at": "2018-11-03T05:13:14Z",
+    "pushed_at": "2018-11-03T05:13:12Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

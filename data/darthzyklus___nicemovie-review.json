@@ -1,0 +1,39 @@
+{
+  "repo_name": "nicemovie-review",
+  "repo_full_name": "darthzyklus/nicemovie-review",
+  "repo_owner": "darthzyklus",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "apiWrapper/src/schema.graphql",
+      "sha": "d0220c52ac3b9671c4e92fd85129c0f81c228306",
+      "url": "https://api.github.com/repositories/163678981/contents/apiWrapper/src/schema.graphql?ref=d392a0bd238770b99fe7b04c99b6a69e82dd663f",
+      "git_url": "https://api.github.com/repositories/163678981/git/blobs/d0220c52ac3b9671c4e92fd85129c0f81c228306",
+      "html_url": "https://github.com/darthzyklus/nicemovie-review/blob/d392a0bd238770b99fe7b04c99b6a69e82dd663f/apiWrapper/src/schema.graphql",
+      "content": " type Query {\n    hello(name: String): String!\n  }",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-31T15:26:28Z",
+    "updated_at": "2019-01-04T11:05:58Z",
+    "pushed_at": "2019-01-04T11:05:56Z",
+    "issues": 3,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

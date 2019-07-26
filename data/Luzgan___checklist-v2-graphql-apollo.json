@@ -1,0 +1,42 @@
+{
+  "repo_name": "checklist-v2-graphql-apollo",
+  "repo_full_name": "luzgan/checklist-v2-graphql-apollo",
+  "repo_owner": "Luzgan",
+  "repo_description": "Example project with GraphQL and Apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "11cae9ed143ae5d3c2e0780bac9645763ad529cf",
+      "url": "https://api.github.com/repositories/97699949/contents/schema.graphql?ref=d0c9afbf24fa263750de6c5e1b50ae6125565e27",
+      "git_url": "https://api.github.com/repositories/97699949/git/blobs/11cae9ed143ae5d3c2e0780bac9645763ad529cf",
+      "html_url": "https://github.com/Luzgan/checklist-v2-graphql-apollo/blob/d0c9afbf24fa263750de6c5e1b50ae6125565e27/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n  mutation: RootMutation\n}\n\ntype AllTasks {\n  tasks: [Task]\n  lastId: String\n  numberReturned: Int\n}\n\ntype RootMutation {\n  # Task repository\n  taskRepositoryMutation: TaskRepositoryMutation\n}\n\ntype RootQuery {\n  # User repository\n  userRepositoryQuery: UserRepositoryQuery\n\n  # Task repository\n  taskRepositoryQuery: TaskRepositoryQuery\n}\n\ntype Task {\n  id: String\n  name: String\n  status: TaskStatusEnum\n}\n\ntype TaskRepositoryMutation {\n  addTask(name: String): Task\n  markDone(id: String): Task\n  deleteTask(id: String): Boolean\n}\n\ntype TaskRepositoryQuery {\n  # A list of the tasks in the database\n  allTasks(limit: Int, lastId: String): AllTasks\n\n  # Total count of tasks\n  tasksCount: Int\n}\n\nenum TaskStatusEnum {\n  READY\n  DONE\n}\n\ntype User {\n  name: String\n  status: String\n}\n\ntype UserRepositoryQuery {\n  user: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-19T09:43:24Z",
+    "updated_at": "2017-07-26T12:11:33Z",
+    "pushed_at": "2017-07-19T10:46:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

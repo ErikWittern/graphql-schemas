@@ -1,0 +1,78 @@
+{
+  "repo_name": "apollo17",
+  "repo_full_name": "c0ndu17/apollo17",
+  "repo_owner": "c0ndu17",
+  "repo_description": "Node, Express, React & Apollo, with isomorphic rendering, & D-to-the-ocker.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "server/api/mongo/schema/query.graphql",
+      "sha": "011356939d28c37ce2c8fd033cf234828768eca9",
+      "url": "https://api.github.com/repositories/78439666/contents/server/api/mongo/schema/query.graphql?ref=2a4919899d17514c53b89679734d5ba1bb426977",
+      "git_url": "https://api.github.com/repositories/78439666/git/blobs/011356939d28c37ce2c8fd033cf234828768eca9",
+      "html_url": "https://github.com/c0ndu17/apollo17/blob/2a4919899d17514c53b89679734d5ba1bb426977/server/api/mongo/schema/query.graphql",
+      "content": "type Query {\n  getUser(id: String!): User\n  testString: String\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/c0ndu17/apollo17/blob/2a4919899d17514c53b89679734d5ba1bb426977/server/api/mongo/schema/query.graphql:\ntype Query {\n  getUser(id: String!): User\n  testString: String\n}\n\n# https://github.com/c0ndu17/apollo17/blob/2a4919899d17514c53b89679734d5ba1bb426977/server/api/mongo/schema/user.graphql:\ntype User {\n  _id: String\n  displayName: String\n  email: String\n  firstName: String\n  lastName: String\n  birthday: String\n  cars: [ Car ]\n}\n\ninput InputUser {\n  displayName: String!\n  email: String!\n  firstName: String!\n  lastName: String!\n  birthday: String!\n}\n\n# https://github.com/c0ndu17/apollo17/blob/2a4919899d17514c53b89679734d5ba1bb426977/server/api/mongo/schema/car.graphql:\ntype Car {\n  _id: String\n  model: String\n  registrationNo: String\n  owner: User\n}\n\ninput InputCar {\n  model: String!\n  registrationNo: String!\n  owner: String!\n}\n",
+        "mergedPaths": [
+          "server/api/mongo/schema/user.graphql",
+          "server/api/mongo/schema/car.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Car"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "car.graphql",
+      "path": "server/api/mongo/schema/car.graphql",
+      "sha": "56fcc97935dc66677a1cf91bed52ef5d7df57c9b",
+      "url": "https://api.github.com/repositories/78439666/contents/server/api/mongo/schema/car.graphql?ref=2a4919899d17514c53b89679734d5ba1bb426977",
+      "git_url": "https://api.github.com/repositories/78439666/git/blobs/56fcc97935dc66677a1cf91bed52ef5d7df57c9b",
+      "html_url": "https://github.com/c0ndu17/apollo17/blob/2a4919899d17514c53b89679734d5ba1bb426977/server/api/mongo/schema/car.graphql",
+      "content": "type Car {\n  _id: String\n  model: String\n  registrationNo: String\n  owner: User\n}\n\ninput InputCar {\n  model: String!\n  registrationNo: String!\n  owner: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "user.graphql",
+      "path": "server/api/mongo/schema/user.graphql",
+      "sha": "7c236644c2a6aeef0374155bcb7d4088e46a726e",
+      "url": "https://api.github.com/repositories/78439666/contents/server/api/mongo/schema/user.graphql?ref=2a4919899d17514c53b89679734d5ba1bb426977",
+      "git_url": "https://api.github.com/repositories/78439666/git/blobs/7c236644c2a6aeef0374155bcb7d4088e46a726e",
+      "html_url": "https://github.com/c0ndu17/apollo17/blob/2a4919899d17514c53b89679734d5ba1bb426977/server/api/mongo/schema/user.graphql",
+      "content": "type User {\n  _id: String\n  displayName: String\n  email: String\n  firstName: String\n  lastName: String\n  birthday: String\n  cars: [ Car ]\n}\n\ninput InputUser {\n  displayName: String!\n  email: String!\n  firstName: String!\n  lastName: String!\n  birthday: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-09T15:07:46Z",
+    "updated_at": "2017-01-09T15:12:10Z",
+    "pushed_at": "2017-01-09T15:13:22Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "repo_name": "nxplorerjs-mono-starter",
+  "repo_full_name": "ers-hcl/nxplorerjs-mono-starter",
+  "repo_owner": "ERS-HCL",
+  "repo_description": "This is a mono repo version of the nxplorerjs microservice project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "queries.graphql",
+      "path": "packages/nxp-swapi-server/src/graphql/schema/queries.graphql",
+      "sha": "9c3c06b8e4d6ef4a72ee9ceb54bd378e752f44bb",
+      "url": "https://api.github.com/repositories/142267223/contents/packages/nxp-swapi-server/src/graphql/schema/queries.graphql?ref=5ccb7d617e9fcda0898b42885813b2ac4af15dae",
+      "git_url": "https://api.github.com/repositories/142267223/git/blobs/9c3c06b8e4d6ef4a72ee9ceb54bd378e752f44bb",
+      "html_url": "https://github.com/ERS-HCL/nxplorerjs-mono-starter/blob/5ccb7d617e9fcda0898b42885813b2ac4af15dae/packages/nxp-swapi-server/src/graphql/schema/queries.graphql",
+      "content": "type Query {\n  peopleWithPlanet(id: Int!): PeopleWithPlanetType\n  \"\"\"\n  Starwars people API call using Dataloader\n  \"\"\"\n  people(id: Int!): PeopleType\n  \"\"\"\n  Starwars people API call using REST DataSource\n  \"\"\"\n  peopleDS(id: Int!): PeopleType\n  \"\"\"\n  Starwars people batch API call using Dataloader\n  \"\"\"\n  peopleList(keys: [Int]): [PeopleType]\n  peopleMock: PeopleType\n  \"\"\"\n  Starwars planet API call using Dataloader\n  \"\"\"\n  planet(id: Int!): PlanetType\n  \"\"\"\n  Starwars starship API call using Dataloader\n  \"\"\"\n  starship(id: Int!): StarshipType\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ERS-HCL/nxplorerjs-mono-starter/blob/5ccb7d617e9fcda0898b42885813b2ac4af15dae/packages/nxp-swapi-server/src/graphql/schema/queries.graphql:\ntype Query {\n  peopleWithPlanet(id: Int!): PeopleWithPlanetType\n  \"\"\"\n  Starwars people API call using Dataloader\n  \"\"\"\n  people(id: Int!): PeopleType\n  \"\"\"\n  Starwars people API call using REST DataSource\n  \"\"\"\n  peopleDS(id: Int!): PeopleType\n  \"\"\"\n  Starwars people batch API call using Dataloader\n  \"\"\"\n  peopleList(keys: [Int]): [PeopleType]\n  peopleMock: PeopleType\n  \"\"\"\n  Starwars planet API call using Dataloader\n  \"\"\"\n  planet(id: Int!): PlanetType\n  \"\"\"\n  Starwars starship API call using Dataloader\n  \"\"\"\n  starship(id: Int!): StarshipType\n}\n\n# https://github.com/ERS-HCL/nxplorerjs-mono-starter/blob/5ccb7d617e9fcda0898b42885813b2ac4af15dae/packages/nxp-swapi-server/src/graphql/schema/starwars.graphql:\ntype PeopleWithPlanetType {\n    name: String\n    height: String\n    mass: String\n    hair_color: String\n    skin_color: String\n    eye_color: String\n    birth_year: String\n    gender: String\n    homeworld: PlanetType\n    films: [String]\n    species: [String]\n    vehicles: [String]\n    starships: [String]\n    created: String\n    edited: String\n    url: String\n}\n\ntype PeopleType {\n    name: String \n    height: String \n    mass: String \n    hair_color: String \n    skin_color: String \n    eye_color: String \n    birth_year: String \n    gender: String \n    homeworld: String \n    films: [String] \n    species: [String] \n    vehicles: [String] \n    starships: [String] \n    created: String \n    edited: String \n    url: String\n}\n\ntype PlanetType { \n    name: String \n    rotation_period: String \n    orbital_period: String \n    diameter: String \n    climate: String \n    gravity: String \n    terrain: String \n    surface_water: String \n    population: String \n    residents: [String] \n    films: [String] \n    created: String \n    edited: String \n    url: String\n}\n\ntype StarshipType { \n    name: String\n\tmodel: String\n\tmanufacturer: String\n\tcost_in_credits: String\n\tlength: String\n\tmax_atmosphering_speed: String\n\tcrew: String\n\tpassengers: String\n\tcargo_capacity: String\n\tconsumables: String\n\thyperdrive_rating: String\n\tMGLT: String\n\tstarship_class: String\n\tpilots: [String],\n\tfilms: [String],\n\tcreated: String\n\tedited: String\n\turl: String\n}\n",
+        "mergedPaths": [
+          "packages/nxp-swapi-server/src/graphql/schema/starwars.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "PeopleWithPlanetType",
+          "PeopleType",
+          "PlanetType",
+          "StarshipType"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "starwars.graphql",
+      "path": "packages/nxp-swapi-server/src/graphql/schema/starwars.graphql",
+      "sha": "b9a5ce531bad0b106830e9afc83f1e6536edcae4",
+      "url": "https://api.github.com/repositories/142267223/contents/packages/nxp-swapi-server/src/graphql/schema/starwars.graphql?ref=5ccb7d617e9fcda0898b42885813b2ac4af15dae",
+      "git_url": "https://api.github.com/repositories/142267223/git/blobs/b9a5ce531bad0b106830e9afc83f1e6536edcae4",
+      "html_url": "https://github.com/ERS-HCL/nxplorerjs-mono-starter/blob/5ccb7d617e9fcda0898b42885813b2ac4af15dae/packages/nxp-swapi-server/src/graphql/schema/starwars.graphql",
+      "content": "type PeopleWithPlanetType {\n    name: String\n    height: String\n    mass: String\n    hair_color: String\n    skin_color: String\n    eye_color: String\n    birth_year: String\n    gender: String\n    homeworld: PlanetType\n    films: [String]\n    species: [String]\n    vehicles: [String]\n    starships: [String]\n    created: String\n    edited: String\n    url: String\n}\n\ntype PeopleType {\n    name: String \n    height: String \n    mass: String \n    hair_color: String \n    skin_color: String \n    eye_color: String \n    birth_year: String \n    gender: String \n    homeworld: String \n    films: [String] \n    species: [String] \n    vehicles: [String] \n    starships: [String] \n    created: String \n    edited: String \n    url: String\n}\n\ntype PlanetType { \n    name: String \n    rotation_period: String \n    orbital_period: String \n    diameter: String \n    climate: String \n    gravity: String \n    terrain: String \n    surface_water: String \n    population: String \n    residents: [String] \n    films: [String] \n    created: String \n    edited: String \n    url: String\n}\n\ntype StarshipType { \n    name: String\n\tmodel: String\n\tmanufacturer: String\n\tcost_in_credits: String\n\tlength: String\n\tmax_atmosphering_speed: String\n\tcrew: String\n\tpassengers: String\n\tcargo_capacity: String\n\tconsumables: String\n\thyperdrive_rating: String\n\tMGLT: String\n\tstarship_class: String\n\tpilots: [String],\n\tfilms: [String],\n\tcreated: String\n\tedited: String\n\turl: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-25T07:57:16Z",
+    "updated_at": "2019-06-15T16:22:56Z",
+    "pushed_at": "2018-11-03T04:19:39Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 2,
+    "stargazers": 2
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "Node_Graphql",
+  "repo_full_name": "blackflame007/node_graphql",
+  "repo_owner": "blackflame007",
+  "repo_description": "This repo is a demo of setting up graphql with a node environment. This repo requires Docker as to be installed on your machine as it uses docker for the prisma orm.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "66432844b1d4ff4946056ba67b98cc85861f5e55",
+      "url": "https://api.github.com/repositories/161977156/contents/src/schema.graphql?ref=5cb1ab593d78bfdc6da34df3670da4808992b66f",
+      "git_url": "https://api.github.com/repositories/161977156/git/blobs/66432844b1d4ff4946056ba67b98cc85861f5e55",
+      "html_url": "https://github.com/blackflame007/Node_Graphql/blob/5cb1ab593d78bfdc6da34df3670da4808992b66f/src/schema.graphql",
+      "content": "scalar DateTime\nscalar Upload\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  messages: [Message!]!\n}\n\ntype File {\n  id: ID!\n  path: String!\n  filename: String!\n  mimetype: String!\n  encoding: String!\n  owner: User\n}\n\ntype Query {\n  info: String!\n  feed: [Message!]!\n  message(id: ID!): Message\n}\n\ntype Mutation {\n  post(description: String!): Message!\n\n  singleUpload(file: Upload!): File!\n  multipleUpload(files: [Upload!]!): [File!]!\n\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n\n  updateMessage(id: ID!, url: String, description: String): Message\n\n  deleteMessage(id: ID!): Message\n}\n\ntype Message {\n  id: ID!\n  description: String!\n  createdAt: DateTime!\n  postedBy: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-16T07:12:46Z",
+    "updated_at": "2019-01-11T05:45:57Z",
+    "pushed_at": "2019-01-11T05:45:55Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "encrypt.cool",
+  "repo_full_name": "arichivukula/encrypt.cool",
+  "repo_owner": "AriChivukula",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/schema.graphql",
+      "sha": "acf77e4435accd7e2409c57038d0bde23083ee61",
+      "url": "https://api.github.com/repositories/162491403/contents/src/server/schema.graphql?ref=1b501d97eb59fec56a1a809b08fedf5182c2a1e6",
+      "git_url": "https://api.github.com/repositories/162491403/git/blobs/acf77e4435accd7e2409c57038d0bde23083ee61",
+      "html_url": "https://github.com/AriChivukula/encrypt.cool/blob/1b501d97eb59fec56a1a809b08fedf5182c2a1e6/src/server/schema.graphql",
+      "content": "type Dummy {\n  id: ID!\n}\n\ntype Query {\n  dummy: Dummy!\n}\n\ninput GenerateQRCodeImageInput {\n  hint: String!\n  message: String!\n  password: String!\n}\n\ntype GenerateQRCodeImageOutput {\n  data: String!\n}\n\ninput DecodeQRCodeURLInput {\n  url: String!\n  password: String!\n}\n\ntype DecodeQRCodeURLOutput {\n  message: String!\n}\n\ntype Mutation {\n  generateQRCodeImage(input: GenerateQRCodeImageInput): GenerateQRCodeImageOutput!\n  decodeQRCodeURL(input: DecodeQRCodeURLInput): DecodeQRCodeURLOutput!\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-19T21:13:10Z",
+    "updated_at": "2019-07-19T16:53:03Z",
+    "pushed_at": "2019-07-19T16:53:03Z",
+    "issues": 58,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 137,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 15,
+    "pull_requests_merged": 122,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

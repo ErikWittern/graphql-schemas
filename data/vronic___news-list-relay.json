@@ -1,0 +1,42 @@
+{
+  "repo_name": "news-list-relay",
+  "repo_full_name": "vronic/news-list-relay",
+  "repo_owner": "vronic",
+  "repo_description": "News List web app with using Relay",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "4532903d57c51ba874c032dcf516a5b4aec46989",
+      "url": "https://api.github.com/repositories/52516373/contents/data/schema.graphql?ref=2a929751f765f1f2402ea666d7702febc21b5b6c",
+      "git_url": "https://api.github.com/repositories/52516373/git/blobs/4532903d57c51ba874c032dcf516a5b4aec46989",
+      "html_url": "https://github.com/vronic/news-list-relay/blob/2a929751f765f1f2402ea666d7702febc21b5b6c/data/schema.graphql",
+      "content": "type News implements Node {\n  id: ID!\n  seq: String\n  type: String\n  title: String\n  content: String\n}\n\ntype NewsConnection {\n  pageInfo: PageInfo!\n  edges: [NewsEdge]\n}\n\ntype NewsEdge {\n  node: News\n  cursor: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n  news(seq: String): News\n  feed(filter: String): [News]\n}\n\ntype User implements Node {\n  id: ID!\n  feed(after: String, first: Int, before: String, last: Int): NewsConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-02-25T10:27:58Z",
+    "updated_at": "2016-02-25T10:35:44Z",
+    "pushed_at": "2016-02-25T10:35:43Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-playground",
+  "repo_full_name": "jackinf/relay-playground",
+  "repo_owner": "jackinf",
+  "repo_description": "Relay fullstack \"fork\". It is used for playing around like doing todo lists etc.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "c64ea3a3a2bd95d3a929622fac47e38c4fc5121b",
+      "url": "https://api.github.com/repositories/61605943/contents/server/data/schema.graphql?ref=c01fccb8a46a4034f8ad2006ece77350bd0b0599",
+      "git_url": "https://api.github.com/repositories/61605943/git/blobs/c64ea3a3a2bd95d3a929622fac47e38c4fc5121b",
+      "html_url": "https://github.com/jackinf/relay-playground/blob/c01fccb8a46a4034f8ad2006ece77350bd0b0599/server/data/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ninput AddTodoInput {\n  text: String!\n  clientMutationId: String!\n}\n\ntype AddTodoPayload {\n  todoEdge: TodoEdge\n  viewer: User\n  clientMutationId: String!\n}\n\ninput ChangeStatusInput {\n  complete: Boolean!\n  id: ID!\n  clientMutationId: String!\n}\n\ntype ChangeStatusPayload {\n  todo: Todo\n  viewer: User\n  clientMutationId: String!\n}\n\ntype Feature implements Node {\n  id: ID!\n  name: String\n  description: String\n  url: String\n}\n\ntype FeatureConnection {\n  pageInfo: PageInfo!\n  edges: [FeatureEdge]\n}\n\ntype FeatureEdge {\n  node: Feature\n  cursor: String!\n}\n\ntype Mutation {\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  changeTodoStatus(input: ChangeStatusInput!): ChangeStatusPayload\n  renameTodo(input: RenameTodoInput!): RenameTodoPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype RemoveTodoPayload {\n  deletedTodoId: ID\n  viewer: User\n  clientMutationId: String!\n}\n\ninput RenameTodoInput {\n  id: ID!\n  text: String!\n  clientMutationId: String!\n}\n\ntype RenameTodoPayload {\n  todo: Todo\n  viewer: User\n  clientMutationId: String!\n}\n\ntype Todo implements Node {\n  id: ID!\n  text: String!\n  complete: Boolean\n}\n\ntype TodoConnection {\n  pageInfo: PageInfo!\n  edges: [TodoEdge]\n}\n\ntype TodoEdge {\n  node: Todo\n  cursor: String!\n}\n\ntype User implements Node {\n  id: ID!\n  features(after: String, first: Int, before: String, last: Int): FeatureConnection\n  todos(after: String, first: Int, before: String, last: Int): TodoConnection\n  username: String\n  website: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-06-21T05:53:05Z",
+    "updated_at": "2016-06-21T05:55:34Z",
+    "pushed_at": "2016-06-26T11:39:28Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

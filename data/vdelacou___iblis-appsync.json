@@ -1,0 +1,42 @@
+{
+  "repo_name": "iblis-appsync",
+  "repo_full_name": "vdelacou/iblis-appsync",
+  "repo_owner": "vdelacou",
+  "repo_description": "Serverless GraphQL with AWS AppSync and DynamoDB",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "220da14797c0a341ada178fbb87fc557a0bc560f",
+      "url": "https://api.github.com/repositories/165187943/contents/schema.graphql?ref=bbd4a79023a858aabffb63834a6e971e38302505",
+      "git_url": "https://api.github.com/repositories/165187943/git/blobs/220da14797c0a341ada178fbb87fc557a0bc560f",
+      "html_url": "https://github.com/vdelacou/iblis-appsync/blob/bbd4a79023a858aabffb63834a6e971e38302505/schema.graphql",
+      "content": "# Define the model Battlestar\ntype Battlestar {\n  # the id of the Battlestar\n  id: ID! # the primary partition key in DynamoDB\n  # the name of the Battlestar\n  name: String!\n}\n# Define the queries\ntype Query {\n  # list all Battlestars\n  listBattlestars: [Battlestar]\n}\n# Define the input to create a Battlestar\ninput PutBattlestarInput {\n  # the name of the Battlestar to create\n  name: String!\n}\n# Define the mutations\ntype Mutation {\n  # Create a Battlestar\n  putBattlestar(input: PutBattlestarInput): Battlestar\n}\n# Define the schema\nschema {\n  # all the queries\n  query: Query\n  # all the mutations\n  mutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-11T05:58:06Z",
+    "updated_at": "2019-01-11T06:03:49Z",
+    "pushed_at": "2019-01-11T06:07:03Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 1,
+    "stargazers": 1
+  }
+}

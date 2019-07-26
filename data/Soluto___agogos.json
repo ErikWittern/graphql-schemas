@@ -1,0 +1,42 @@
+{
+  "repo_name": "agogos",
+  "repo_full_name": "soluto/agogos",
+  "repo_owner": "Soluto",
+  "repo_description": "Wiring your microservices to GraphQL without writing any code",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "base.gql",
+      "path": "schema-registry/resources/base.gql",
+      "sha": "ce93cf429c68f83db1a4bfa84206a6b01e1bf40f",
+      "url": "https://api.github.com/repositories/171308450/contents/schema-registry/resources/base.gql?ref=96576adb815d474a3c68c8be87dd0c675c697a58",
+      "git_url": "https://api.github.com/repositories/171308450/git/blobs/ce93cf429c68f83db1a4bfa84206a6b01e1bf40f",
+      "html_url": "https://github.com/Soluto/agogos/blob/96576adb815d474a3c68c8be87dd0c675c697a58/schema-registry/resources/base.gql",
+      "content": "type Query {\n  hello: String @stub(value: \"world\")\n}\n\ndirective @stub(value: String) on FIELD_DEFINITION\ndirective @log on FIELD_DEFINITION\ndirective @overrideContext(value: String) on FIELD_DEFINITION\n\ninput HttpNameValue {\n  name: String!\n  value: String!\n}\n\ndirective @http(\n  url: String!\n  method: String\n  contentType: String\n  query: [HttpNameValue!]\n  body: [HttpNameValue!]\n  timeout: Int\n  headers: [HttpNameValue!]\n) on FIELD_DEFINITION\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-18T15:28:57Z",
+    "updated_at": "2019-07-17T13:22:34Z",
+    "pushed_at": "2019-07-18T06:26:50Z",
+    "issues": 33,
+    "watchers": 5,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 30,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 27,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

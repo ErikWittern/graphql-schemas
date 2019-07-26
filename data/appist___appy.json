@@ -1,0 +1,42 @@
+{
+  "repo_name": "appy",
+  "repo_full_name": "appist/appy",
+  "repo_owner": "appist",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "example/gql/schema.gql",
+      "sha": "9ba341fac9acb7d6b375cc87a741fbd60ee00f8d",
+      "url": "https://api.github.com/repositories/169688061/contents/example/gql/schema.gql?ref=840ed62898171e1fd85dba4e3ea3e73256d1e53a",
+      "git_url": "https://api.github.com/repositories/169688061/git/blobs/9ba341fac9acb7d6b375cc87a741fbd60ee00f8d",
+      "html_url": "https://github.com/appist/appy/blob/840ed62898171e1fd85dba4e3ea3e73256d1e53a/example/gql/schema.gql",
+      "content": "type User {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  users: [User!]!\n}\n\ninput NewUser {\n  email: String!\n  password: String!\n}\n\ntype Mutation {\n  register(input: NewUser!): User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-27T04:48:59Z",
+    "updated_at": "2019-07-14T16:06:40Z",
+    "pushed_at": "2019-07-18T15:15:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

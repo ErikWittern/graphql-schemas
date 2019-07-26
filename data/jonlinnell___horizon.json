@@ -1,0 +1,42 @@
+{
+  "repo_name": "horizon",
+  "repo_full_name": "jonlinnell/horizon",
+  "repo_owner": "jonlinnell",
+  "repo_description": "Event calendar, signage, and integrated CMS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "d4b89e6fd4b9f2670140130ff8bd4ddf1b8f6f74",
+      "url": "https://api.github.com/repositories/126700267/contents/server/schema.graphql?ref=0e89767d9075fb3fd61a7d30eb3d3bb5fc20b54d",
+      "git_url": "https://api.github.com/repositories/126700267/git/blobs/d4b89e6fd4b9f2670140130ff8bd4ddf1b8f6f74",
+      "html_url": "https://github.com/jonlinnell/horizon/blob/0e89767d9075fb3fd61a7d30eb3d3bb5fc20b54d/server/schema.graphql",
+      "content": "scalar DateTime\n\nenum Role {\n  USER,\n  EDITOR,\n  ADMIN\n}\n\nenum Order {\n  ASC,\n  DESC\n}\n\ntype User {\n  id: ID,\n  username: String,\n  createdAt: String,\n  updatedAt: String,\n  roles: [Role],\n}\n\ntype Event {\n  id: ID,\n  title: String,\n  dateStart: DateTime,\n  dateEnd: DateTime,\n  summary: String,\n  location: String,\n  url: String,\n  public: Boolean,\n  ticketed: Boolean,\n  speakers: [String]\n}\n\ninput UserInput {\n  username: String!,\n  password: String!,\n  roles: [Role]!\n}\n\ninput UpdateUserPasswordInput {\n  id: ID!,\n  newPassword: String!\n}\n\ninput IdOnlyInput {\n  id: ID!\n}\n\ninput UpdateEventInput {\n  # Need to look at this re: validation of required fields\n  id: ID!,\n  title: String,\n  dateStart: DateTime,\n  dateEnd: DateTime,\n  summary: String,\n  location: String,\n  url: String,\n  public: Boolean,\n  ticketed: Boolean,\n  speakers: [String]\n}\n\ninput EventInput {\n  title: String!,\n  dateStart: DateTime!,\n  dateEnd: DateTime!,\n  summary: String,\n  location: String,\n  url: String,\n  public: Boolean!,\n  ticketed: Boolean!,\n  speakers: [String]\n}\n\ntype Query {\n  authenticate(\n    username: String!,\n    password: String!\n  ): String!,\n\n  events(\n    sort: String,\n    order: Order,\n    futureOnly: Boolean\n  ): [Event],\n\n  eventById(id: ID!): Event,\n  \n  me: User\n}\n\ntype Mutation {\n  createNewUser(input: UserInput): User,\n  updateUserPassword(input: UpdateUserPasswordInput): User,\n  createNewEvent(input: EventInput): Event,\n  updateEvent(input: UpdateEventInput): Event,\n  deleteUser(input: IdOnlyInput): Boolean,\n  deleteEvent(input: IdOnlyInput): Boolean,\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-25T13:29:32Z",
+    "updated_at": "2019-03-27T06:26:20Z",
+    "pushed_at": "2018-09-09T13:59:12Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

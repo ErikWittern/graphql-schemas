@@ -1,0 +1,42 @@
+{
+  "repo_name": "jail",
+  "repo_full_name": "er361/jail",
+  "repo_owner": "er361",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "d753e9e9149275c1a187df937778d3d51f443500",
+      "url": "https://api.github.com/repositories/60894815/contents/server/data/schema.graphql?ref=9bb061603eb1335aabcff9f60fb7a85cb6c0375c",
+      "git_url": "https://api.github.com/repositories/60894815/git/blobs/d753e9e9149275c1a187df937778d3d51f443500",
+      "html_url": "https://github.com/er361/jail/blob/9bb061603eb1335aabcff9f60fb7a85cb6c0375c/server/data/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n  mutation: RootMutation\n}\n\ninput addCategoryInput {\n  title: String\n  clientMutationId: String!\n}\n\ntype addCategoryPayload {\n  viewer: Viewer\n  changedCategoryEdge: changedCategoryEdge\n  clientMutationId: String!\n}\n\ninput addMebelInput {\n  categoryId: ID\n  subcategoryId: ID\n  title: String\n  poroda: String\n  art: String\n  img: String\n  price: String\n  clientMutationId: String!\n}\n\ntype addMebelPayload {\n  viewer: Viewer\n  changedMebelEdge: changedMebelEdge\n  clientMutationId: String!\n}\n\ninput addSubCategoryInput {\n  categoryId: ID\n  title: String\n  clientMutationId: String!\n}\n\ntype addSubCategoryPayload {\n  viewer: Viewer\n  changedSubCategoryEdge: changedSubCategoryEdge\n  clientMutationId: String!\n}\n\ntype Category implements Node {\n  title: String\n  _id: ID\n  id: ID!\n}\n\ntype CategoryConnection {\n  pageInfo: PageInfo!\n  edges: [CategoryEdge]\n  count: Float\n}\n\ntype CategoryEdge {\n  node: Category\n  cursor: String!\n}\n\ntype changedCategoryEdge {\n  node: changedCategoryNode\n  cursor: String!\n}\n\ntype changedCategoryNode {\n  title: String\n  _id: ID\n  id: ID!\n}\n\ntype changedMebelEdge {\n  node: changedMebelNode\n  cursor: String!\n}\n\ntype changedMebelNode {\n  categoryId: ID\n  subcategoryId: ID\n  title: String\n  poroda: String\n  art: String\n  img: String\n  price: String\n  _id: ID\n  id: ID!\n}\n\ntype changedSubCategoryEdge {\n  node: changedSubCategoryNode\n  cursor: String!\n}\n\ntype changedSubCategoryNode {\n  categoryId: ID\n  title: String\n  _id: ID\n  id: ID!\n}\n\ninput deleteCategoryInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype deleteCategoryPayload {\n  viewer: Viewer\n  ok: Boolean\n  id: ID!\n  clientMutationId: String!\n}\n\ninput deleteMebelInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype deleteMebelPayload {\n  viewer: Viewer\n  ok: Boolean\n  id: ID!\n  clientMutationId: String!\n}\n\ninput deleteSubCategoryInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype deleteSubCategoryPayload {\n  viewer: Viewer\n  ok: Boolean\n  id: ID!\n  clientMutationId: String!\n}\n\ntype Mebel implements Node {\n  categoryId: ID\n  subcategoryId: ID\n  title: String\n  poroda: String\n  art: String\n  img: String\n  price: String\n  _id: ID\n  id: ID!\n}\n\ntype MebelConnection {\n  pageInfo: PageInfo!\n  edges: [MebelEdge]\n  count: Float\n}\n\ntype MebelEdge {\n  node: Mebel\n  cursor: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\nenum orderByCategory {\n  TITLE_ASC\n  TITLE_DESC\n  _ID_ASC\n  _ID_DESC\n}\n\nenum orderByMebel {\n  CATEGORYID_ASC\n  CATEGORYID_DESC\n  SUBCATEGORYID_ASC\n  SUBCATEGORYID_DESC\n  TITLE_ASC\n  TITLE_DESC\n  PORODA_ASC\n  PORODA_DESC\n  ART_ASC\n  ART_DESC\n  IMG_ASC\n  IMG_DESC\n  PRICE_ASC\n  PRICE_DESC\n  _ID_ASC\n  _ID_DESC\n}\n\nenum orderBySubCategory {\n  CATEGORYID_ASC\n  CATEGORYID_DESC\n  TITLE_ASC\n  TITLE_DESC\n  _ID_ASC\n  _ID_DESC\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype RootMutation {\n  addMebel(input: addMebelInput!): addMebelPayload\n  updateMebel(input: updateMebelInput!): updateMebelPayload\n  deleteMebel(input: deleteMebelInput!): deleteMebelPayload\n  addCategory(input: addCategoryInput!): addCategoryPayload\n  updateCategory(input: updateCategoryInput!): updateCategoryPayload\n  deleteCategory(input: deleteCategoryInput!): deleteCategoryPayload\n  addSubCategory(input: addSubCategoryInput!): addSubCategoryPayload\n  updateSubCategory(input: updateSubCategoryInput!): updateSubCategoryPayload\n  deleteSubCategory(input: deleteSubCategoryInput!): deleteSubCategoryPayload\n}\n\ntype RootQuery {\n  viewer: Viewer\n  node(id: ID!): Node\n  mebel(id: ID!): Mebel\n  mebels(id: [ID], ids: [ID], orderBy: orderByMebel, categoryId: ID, subcategoryId: ID, title: String, poroda: String, art: String, img: String, price: String, _id: ID): [Mebel]\n  category(id: ID!): Category\n  categories(id: [ID], ids: [ID], orderBy: orderByCategory, title: String, _id: ID): [Category]\n  subcategory(id: ID!): SubCategory\n  subcategories(id: [ID], ids: [ID], orderBy: orderBySubCategory, categoryId: ID, title: String, _id: ID): [SubCategory]\n}\n\ntype SubCategory implements Node {\n  categoryId: ID\n  title: String\n  _id: ID\n  id: ID!\n}\n\ntype SubCategoryConnection {\n  pageInfo: PageInfo!\n  edges: [SubCategoryEdge]\n  count: Float\n}\n\ntype SubCategoryEdge {\n  node: SubCategory\n  cursor: String!\n}\n\ninput updateCategoryInput {\n  title: String\n  id: ID!\n  clientMutationId: String!\n}\n\ntype updateCategoryPayload {\n  changedCategory: Category\n  clientMutationId: String!\n}\n\ninput updateMebelInput {\n  categoryId: ID\n  subcategoryId: ID\n  title: String\n  poroda: String\n  art: String\n  img: String\n  price: String\n  id: ID!\n  clientMutationId: String!\n}\n\ntype updateMebelPayload {\n  changedMebel: Mebel\n  clientMutationId: String!\n}\n\ninput updateSubCategoryInput {\n  categoryId: ID\n  title: String\n  id: ID!\n  clientMutationId: String!\n}\n\ntype updateSubCategoryPayload {\n  changedSubCategory: SubCategory\n  clientMutationId: String!\n}\n\ntype Viewer implements Node {\n  id: ID!\n  mebels(after: String, first: Int, before: String, last: Int, orderBy: orderByMebel, categoryId: ID, subcategoryId: ID, title: String, poroda: String, art: String, img: String, price: String, _id: ID): MebelConnection\n  mebel(id: ID!): Mebel\n  categories(after: String, first: Int, before: String, last: Int, orderBy: orderByCategory, title: String, _id: ID): CategoryConnection\n  category(id: ID!): Category\n  subcategories(after: String, first: Int, before: String, last: Int, orderBy: orderBySubCategory, categoryId: ID, title: String, _id: ID): SubCategoryConnection\n  subcategory(id: ID!): SubCategory\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 28,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 42
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-06-11T06:50:33Z",
+    "updated_at": "2016-06-11T06:53:54Z",
+    "pushed_at": "2016-06-14T16:24:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

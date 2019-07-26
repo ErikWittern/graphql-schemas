@@ -1,0 +1,39 @@
+{
+  "repo_name": "create-apollo-app",
+  "repo_full_name": "sysgears/create-apollo-app",
+  "repo_owner": "sysgears",
+  "repo_description": "Create Apollo App is a command-line tool designed to generate fully-configured starter Apollo GraphQL projects with essential dependencies for developing web, server and mobile applications and zero build configuration.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "templates/server/src/schema.graphql",
+      "sha": "e8c9cbdc627305be181a1cbca456af76f814fd51",
+      "url": "https://api.github.com/repositories/96981946/contents/templates/server/src/schema.graphql?ref=28afea86657f2da68d3cc49b4646f2de3bfbe845",
+      "git_url": "https://api.github.com/repositories/96981946/git/blobs/e8c9cbdc627305be181a1cbca456af76f814fd51",
+      "html_url": "https://github.com/sysgears/create-apollo-app/blob/28afea86657f2da68d3cc49b4646f2de3bfbe845/templates/server/src/schema.graphql",
+      "content": "type Query {\n  hello(subject: String): String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-12T08:07:42Z",
+    "updated_at": "2019-07-13T05:27:35Z",
+    "pushed_at": "2019-07-13T05:27:38Z",
+    "issues": 37,
+    "watchers": 19,
+    "fork_count": 9,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 27,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 10,
+    "pull_requests_merged": 17,
+    "releases": 0,
+    "stargazers": 75
+  }
+}

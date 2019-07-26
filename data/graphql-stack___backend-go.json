@@ -1,0 +1,42 @@
+{
+  "repo_name": "backend-go",
+  "repo_full_name": "graphql-stack/backend-go",
+  "repo_owner": "graphql-stack",
+  "repo_description": "Graphql backend in go.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "15e7daee4c902424d403d4716243f42bb116e3c2",
+      "url": "https://api.github.com/repositories/164478013/contents/schema.graphql?ref=727b382d0f5ce07d4acb875e11da5383b17d8a03",
+      "git_url": "https://api.github.com/repositories/164478013/git/blobs/15e7daee4c902424d403d4716243f42bb116e3c2",
+      "html_url": "https://github.com/graphql-stack/backend-go/blob/727b382d0f5ce07d4acb875e11da5383b17d8a03/schema.graphql",
+      "content": "# GraphQL schema example\n#\n# https://gqlgen.com/getting-started/\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  avatar: String\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  content: String!\n  author: User\n  createdAt: Time!\n}\n\ntype PostDetail {\n  id: ID!\n  title: String!\n  content: String!\n  author: User\n  createdAt: Time!\n  comments: [Comment]\n}\n\ntype Comment {\n  id: ID!\n  content: String!\n  author: User\n}\n\ntype Token {\n  token: String!\n}\n\ntype PostsList {\n  totalCount: Int!\n  posts: [Post!]!\n}\n\ntype Query {\n  me: User!\n  posts(limit: Int = 10, offset: Int = 0): PostsList!\n  post(id: ID!): PostDetail!\n}\n\ninput RegisterInput {\n  name: String!\n  email: String!\n  password: String!\n  avatar: String!\n}\n\ninput LoginInput {\n  email: String!\n  password: String!\n}\n\ninput PostInput {\n  title: String!\n  content: String!\n}\n\ninput CommentInput {\n  content: String!\n  postID: ID!\n}\n\ntype Mutation {\n  register(registerInput: RegisterInput!): User!\n  login(loginInput: LoginInput!): Token!\n  createPost(postInput: PostInput!): Post!\n  createComment(commentInput: CommentInput!): Comment!\n}\n\nscalar Time\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-07T19:04:50Z",
+    "updated_at": "2019-01-10T15:15:07Z",
+    "pushed_at": "2019-01-08T16:19:48Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

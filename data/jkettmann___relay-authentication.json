@@ -1,0 +1,39 @@
+{
+  "repo_name": "relay-authentication",
+  "repo_full_name": "jkettmann/relay-authentication",
+  "repo_owner": "jkettmann",
+  "repo_description": "An example app demonstrating role based authentication and file upload with Relay and GraphQL.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/graphql/schema.graphql",
+      "sha": "881af409b680ae15e6dfdf2cc78f1a0b626a772e",
+      "url": "https://api.github.com/repositories/54964493/contents/server/graphql/schema.graphql?ref=4ea6fb79caa4f86e408dd8281865c2436d6eb9d6",
+      "git_url": "https://api.github.com/repositories/54964493/git/blobs/881af409b680ae15e6dfdf2cc78f1a0b626a772e",
+      "html_url": "https://github.com/jkettmann/relay-authentication/blob/4ea6fb79caa4f86e408dd8281865c2436d6eb9d6/server/graphql/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutation\n}\n\ninput CreatePostInput {\n  title: String!\n  description: String!\n\n  # image field is set by upload middleware automatically\n  image: String!\n  clientMutationId: String\n}\n\ntype CreatePostPayload {\n  postEdge: PostEdge\n  user: User\n  clientMutationId: String\n}\n\ninput LoginInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype LoginPayload {\n  user: User\n  clientMutationId: String\n}\n\ninput LogoutInput {\n  clientMutationId: String\n}\n\ntype LogoutPayload {\n  user: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  register(input: RegisterInput!): RegisterPayload\n  login(input: LoginInput!): LoginPayload\n  logout(input: LogoutInput!): LogoutPayload\n  createPost(input: CreatePostInput!): CreatePostPayload\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# A post\ntype Post {\n  # The ID of an object\n  id: ID!\n\n  # The posts creators\n  creator: User\n\n  # The posts title\n  title: String\n\n  # The posts image\n  image: String\n\n  # The posts description\n  description: String\n}\n\n# A connection to a list of items.\ntype PostConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [PostEdge]\n}\n\n# An edge in a connection.\ntype PostEdge {\n  # The item at the end of the edge\n  node: Post\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput RegisterInput {\n  email: String!\n  password: String!\n  firstName: String!\n  lastName: String!\n  clientMutationId: String\n}\n\ntype RegisterPayload {\n  user: User\n  clientMutationId: String\n}\n\ntype Root {\n  viewer: Viewer\n}\n\ntype User {\n  # The ID of an object\n  id: ID!\n\n  # the users email address\n  email: String\n\n  # the users first name\n  firstName: String\n\n  # the users last name\n  lastName: String\n\n  # the users role\n  role: String\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n}\n\ntype Viewer {\n  isLoggedIn: Boolean\n  canPublish: Boolean\n  user: User\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n  post(postId: String): Post\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 17
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-03-29T09:47:21Z",
+    "updated_at": "2019-06-08T09:25:15Z",
+    "pushed_at": "2017-09-10T06:14:17Z",
+    "issues": 9,
+    "watchers": 10,
+    "fork_count": 23,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 6,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 6,
+    "releases": 0,
+    "stargazers": 146
+  }
+}

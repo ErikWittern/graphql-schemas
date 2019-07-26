@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-server",
+  "repo_full_name": "raghuk46/graphql-server",
+  "repo_owner": "raghuk46",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/user/me/schema.graphql",
+      "sha": "19ad8cebfb6699632c74efbb752eec491f233137",
+      "url": "https://api.github.com/repositories/144098086/contents/src/modules/user/me/schema.graphql?ref=026990b998cbed35a385076c8745530582372dc1",
+      "git_url": "https://api.github.com/repositories/144098086/git/blobs/19ad8cebfb6699632c74efbb752eec491f233137",
+      "html_url": "https://github.com/raghuk46/graphql-server/blob/026990b998cbed35a385076c8745530582372dc1/src/modules/user/me/schema.graphql",
+      "content": "type User {\n\tid: ID!\n\temail: String!\n}\n\ntype Query {\n\tme: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-09T03:48:24Z",
+    "updated_at": "2018-08-09T04:01:23Z",
+    "pushed_at": "2018-08-09T04:01:22Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

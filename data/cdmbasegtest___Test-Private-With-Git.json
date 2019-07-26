@@ -1,0 +1,39 @@
+{
+  "repo_name": "Test-Private-With-Git",
+  "repo_full_name": "cdmbasegtest/test-private-with-git",
+  "repo_owner": "cdmbasegtest",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "packages/server/src/api/rootSchema.graphql",
+      "sha": "71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "url": "https://api.github.com/repositories/136925376/contents/packages/server/src/api/rootSchema.graphql?ref=0bd711c430e9682c116240fd5711b4a002a0f0a4",
+      "git_url": "https://api.github.com/repositories/136925376/git/blobs/71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "html_url": "https://github.com/cdmbasegtest/Test-Private-With-Git/blob/0bd711c430e9682c116240fd5711b4a002a0f0a4/packages/server/src/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-11T12:47:41Z",
+    "updated_at": "2018-09-11T04:22:58Z",
+    "pushed_at": "2018-08-26T13:46:13Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

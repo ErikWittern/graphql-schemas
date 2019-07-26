@@ -1,0 +1,41 @@
+{
+  "repo_name": "api",
+  "repo_full_name": "dev-saas/api",
+  "repo_owner": "dev-saas",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "a96e7e13a53065d80b299073214abbb42b38ebc2",
+      "url": "https://api.github.com/repositories/183483080/contents/src/graphql/schema.graphql?ref=b8dee871c676d8af38492fcc97e7cec7859b0b70",
+      "git_url": "https://api.github.com/repositories/183483080/git/blobs/a96e7e13a53065d80b299073214abbb42b38ebc2",
+      "html_url": "https://github.com/dev-saas/api/blob/b8dee871c676d8af38492fcc97e7cec7859b0b70/src/graphql/schema.graphql",
+      "content": "directive @isAuth on FIELD_DEFINITION\ndirective @recaptcha on FIELD_DEFINITION\n\nscalar DateTime\nscalar Email\n\ntype Booking {\n  _id: ID!\n  event: Event!\n  user: User!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n}\n\ntype Event {\n  _id: ID!\n  title: String!\n  description: String!\n  price: Float!\n  date: DateTime!\n  creator: User!\n}\n\ntype User {\n  _id: ID!\n  email: Email!\n  createdEvents: [Event!]\n}\n\ntype AuthData {\n  userId: ID!\n  token: String!\n  tokenExpiration: Int!\n}\n\ninput EventInput {\n  title: String!\n  description: String!\n  price: Float!\n  date: DateTime!\n}\n\ninput UpdateEventInput {\n  _id: ID!\n  event: EventInput!\n}\n\ntype Query {\n  events: [Event!]!\n  bookings: [Booking!]! @isAuth\n  login(email: Email!, password: String!): AuthData! @recaptcha\n\n\n  status: Boolean\n}\n\ntype Mutation {\n  createEvent(eventInput: EventInput!): Event! @isAuth\n  updateEvent(input: UpdateEventInput!): Event! @isAuth\n  createUser(email: Email!, password: String!): User @recaptcha\n  bookEvent(eventId: ID!): Booking! @isAuth\n  cancelBooking(bookingId: ID!): Event! @isAuth\n\n\n  turnOn(relay: Int!): Boolean\n  turnOff(relay: Int!): Boolean\n}\n\ntype NewValue {\n  name: String!\n  value: Float!\n}\n\ntype Subscription {\n  newEvent: Event!\n  updatedEvent: Event!\n\n  newValue: NewValue!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-25T17:47:25Z",
+    "updated_at": "2019-07-19T04:29:03Z",
+    "pushed_at": "2019-07-19T04:29:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

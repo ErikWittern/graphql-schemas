@@ -1,0 +1,58 @@
+{
+  "repo_name": "mt-node-graphql-sample",
+  "repo_full_name": "mayank-tripathi/mt-node-graphql-sample",
+  "repo_owner": "mayank-tripathi",
+  "repo_description": "Sample project to demonstrate integration of graphql in node environment. Adding graphql layer over an database and an external API.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "candidate.graphql",
+      "path": "server/schema/Candidate/candidate.graphql",
+      "sha": "e40eb12db12e0d0dceac3247d46e322ae07be891",
+      "url": "https://api.github.com/repositories/176023881/contents/server/schema/Candidate/candidate.graphql?ref=b278e7c3a36759604af232e76bdecd1c72c9c0b9",
+      "git_url": "https://api.github.com/repositories/176023881/git/blobs/e40eb12db12e0d0dceac3247d46e322ae07be891",
+      "html_url": "https://github.com/mayank-tripathi/mt-node-graphql-sample/blob/b278e7c3a36759604af232e76bdecd1c72c9c0b9/server/schema/Candidate/candidate.graphql",
+      "content": "type Candidate {\n    id: ID!\n    created_date: String!\n    email: String!\n}\n\ntype Query {\n    allCandidates: [Candidate]\n    getCandidatesByEmail(email : String!): [Candidate]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    },
+    {
+      "name": "userApi.graphql",
+      "path": "server/schema/UserApi/userApi.graphql",
+      "sha": "6b074eddcc105b43e2dac8f215d91bd36fd7540d",
+      "url": "https://api.github.com/repositories/176023881/contents/server/schema/UserApi/userApi.graphql?ref=b278e7c3a36759604af232e76bdecd1c72c9c0b9",
+      "git_url": "https://api.github.com/repositories/176023881/git/blobs/6b074eddcc105b43e2dac8f215d91bd36fd7540d",
+      "html_url": "https://github.com/mayank-tripathi/mt-node-graphql-sample/blob/b278e7c3a36759604af232e76bdecd1c72c9c0b9/server/schema/UserApi/userApi.graphql",
+      "content": "type Name{\n    first: String!\n    last: String!\n}\ntype User {\n    id: String!\n    name: Name!\n    company: String!\n    email: String\n}\n\ntype Query {\n    allUsers: [User]\n    UserByEmail(email: String!) : [User]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-16T20:56:00Z",
+    "updated_at": "2019-03-17T13:36:18Z",
+    "pushed_at": "2019-03-17T13:36:17Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

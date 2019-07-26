@@ -1,0 +1,42 @@
+{
+  "repo_name": "burn",
+  "repo_full_name": "wingkwong/burn",
+  "repo_owner": "wingkwong",
+  "repo_description": ":fire::fire::fire: A web platform built with Vue for creating and sending self destructing messages to other people",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "1369521385d18d7baaf1cdcd5547a11fd5c0972d",
+      "url": "https://api.github.com/repositories/148243725/contents/server/src/schema.graphql?ref=bc867befa11b4f17cf59d82fea0720d2f6cc739c",
+      "git_url": "https://api.github.com/repositories/148243725/git/blobs/1369521385d18d7baaf1cdcd5547a11fd5c0972d",
+      "html_url": "https://github.com/wingkwong/burn/blob/bc867befa11b4f17cf59d82fea0720d2f6cc739c/server/src/schema.graphql",
+      "content": "type Message {\n  _id: ID\n  message: String\n}\n\ntype Query {\n  getMessage(id: String!): Message\n}\n\ntype Mutation {\n  createMessage(message: String!): Message\n  deleteMessage(id: String!): Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-11T01:42:09Z",
+    "updated_at": "2019-01-23T13:42:56Z",
+    "pushed_at": "2018-10-08T09:55:12Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

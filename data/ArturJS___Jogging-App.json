@@ -1,0 +1,42 @@
+{
+  "repo_name": "Jogging-App",
+  "repo_full_name": "arturjs/jogging-app",
+  "repo_owner": "ArturJS",
+  "repo_description": "Fullstack App with using ReactJS, Apollo GraphQL, KoaJS, PassportJS and PostgreSQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/src/modules/schema.graphql",
+      "sha": "a1c7b2509f3f95c6ed6e72c315473035d708ae4a",
+      "url": "https://api.github.com/repositories/108525195/contents/backend/src/modules/schema.graphql?ref=b2fe88fb20cae53398830101133ee2fee9b60a16",
+      "git_url": "https://api.github.com/repositories/108525195/git/blobs/a1c7b2509f3f95c6ed6e72c315473035d708ae4a",
+      "html_url": "https://github.com/ArturJS/Jogging-App/blob/b2fe88fb20cae53398830101133ee2fee9b60a16/backend/src/modules/schema.graphql",
+      "content": "type Query\n\ntype Mutation\n\nscalar Long\n\n#import \"./auth/auth.schema.graphql\"\n#import \"./reports/reports.schema.graphql\"\n#import \"./records/records.schema.graphql\"\n#import \"./e2e-tests/e2e-tests.schema.graphql\"\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-27T09:15:08Z",
+    "updated_at": "2019-07-15T17:35:04Z",
+    "pushed_at": "2019-07-15T17:35:05Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 26,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 25,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

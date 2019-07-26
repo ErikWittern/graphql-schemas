@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-nested-problem",
+  "repo_full_name": "jeggy/graphql-nested-problem",
+  "repo_owner": "jeggy",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "car.gql",
+      "path": "src/graphql/car.gql",
+      "sha": "2cc118d4ea8c15a246a40bc52a78d1fb74c2363f",
+      "url": "https://api.github.com/repositories/105159210/contents/src/graphql/car.gql?ref=7fb9cf6964eeccd708c3f9efe33bf0589ca97a82",
+      "git_url": "https://api.github.com/repositories/105159210/git/blobs/2cc118d4ea8c15a246a40bc52a78d1fb74c2363f",
+      "html_url": "https://github.com/jeggy/graphql-nested-problem/blob/7fb9cf6964eeccd708c3f9efe33bf0589ca97a82/src/graphql/car.gql",
+      "content": "type Car{\n  id: ID!\n  model: String!\n  store: Store!\n  storeId: ID!\n  country: Country!\n  countryId: ID!\n}\n\ntype Store {\n  id: ID!\n  name: String!\n  countries: [Country]!\n  countryIds: [ID]!\n  cars: [Car]!\n}\n\ntype Country {\n  id: ID!\n  name: String\n  stores: [Store]!\n}\n\ntype Query {\n  car(id: ID!): Car\n  cars(storeId: ID, countryId: ID): [Car]\n\n  store(id: ID!): Store\n  stores(countryId: ID): [Country]\n\n  country(id: ID!): Country\n  countries: [Country]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-28T14:33:17Z",
+    "updated_at": "2017-09-28T14:37:30Z",
+    "pushed_at": "2017-09-28T15:08:34Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "next-key",
+  "repo_full_name": "lfades/next-key",
+  "repo_owner": "lfades",
+  "repo_description": "Group of packages to make your own authentication",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "packages/next-key-graphql/graphql/Query.graphql",
+      "sha": "0ec7b7b3bdf8821cf625f9cad25a0bbdbb0756a3",
+      "url": "https://api.github.com/repositories/120803593/contents/packages/next-key-graphql/graphql/Query.graphql?ref=97e5e7ea5fb80c2cda3ee93dadbdc2068281b7a8",
+      "git_url": "https://api.github.com/repositories/120803593/git/blobs/0ec7b7b3bdf8821cf625f9cad25a0bbdbb0756a3",
+      "html_url": "https://github.com/lfades/next-key/blob/97e5e7ea5fb80c2cda3ee93dadbdc2068281b7a8/packages/next-key-graphql/graphql/Query.graphql",
+      "content": "# Even though I don't need any query whatsoever it's not possible to use\n# mergeSchemas without defining a Query\ntype Query {\n  # Returns the current version of NextKey\n  nextKeyVersion: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-08T18:56:13Z",
+    "updated_at": "2018-04-23T08:13:23Z",
+    "pushed_at": "2018-04-09T22:53:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

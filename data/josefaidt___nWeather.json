@@ -1,0 +1,42 @@
+{
+  "repo_name": "nWeather",
+  "repo_full_name": "josefaidt/nweather",
+  "repo_owner": "josefaidt",
+  "repo_description": "A GraphQL wrapper for the OpenWeatherMap REST API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "14eabe09c0508e68801ef3f0cc9784384608cfec",
+      "url": "https://api.github.com/repositories/177230904/contents/src/schema.graphql?ref=710c611ff1fa16e9b78204aba41e9af47a2e7c9a",
+      "git_url": "https://api.github.com/repositories/177230904/git/blobs/14eabe09c0508e68801ef3f0cc9784384608cfec",
+      "html_url": "https://github.com/josefaidt/nWeather/blob/710c611ff1fa16e9b78204aba41e9af47a2e7c9a/src/schema.graphql",
+      "content": "type CurrentWeather {\n  _id: ID!\n  id: Int!\n  coord: Coordinates!\n  name: String!\n  sys: SystemInfo!\n  weather: [WeatherStatus!]!\n  main: MainWeatherInfo!\n  wind: WindInfo!\n  dt: Int!\n}\n\ntype Forecast {\n  _id: ID!\n  cnt: Int!\n  list: [ForecastListItem!]!\n}\n\ntype ForecastListItem {\n  dt: Int!\n  dt_txt: String!\n  main: MainWeatherInfo!\n  weather: [WeatherStatus!]!\n  wind: WindInfo!\n}\n\ntype Coordinates {\n  lon: Float!\n  lat: Float!\n}\n\ntype SystemInfo {\n  _id: ID!\n  id: Int!\n  message: Float!\n  country: String!\n  sunrise: Int!\n  sunset: Int!\n  # Extras\n  sunriseTime: String!\n  sunsetTime: String!\n}\n\ntype MainWeatherInfo {\n  temp: Float!\n  humidity: Int!\n  pressure: Float!\n  sea_level: Float!\n  temp_min: Float!\n  temp_max: Float!\n}\n\ntype WindInfo {\n  speed: Float!\n  deg: Float\n}\n\ntype WeatherStatus {\n  id: Int!\n  main: String!\n  description: String!\n  icon: String!\n  # Extras\n  iconLink: String!\n}\n\nscalar Coords\n\ntype Query {\n  currentWeather(zip: Int, city: String, coords: Coords): CurrentWeather!\n  forecast(zip: Int, city: String, coords: Coords, limit: Int): Forecast!\n}\n\nenum LocationQuery {\n  zip\n  city\n  coords\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-23T01:39:08Z",
+    "updated_at": "2019-06-11T20:41:19Z",
+    "pushed_at": "2019-06-11T20:41:24Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

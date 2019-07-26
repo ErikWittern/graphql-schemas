@@ -1,0 +1,42 @@
+{
+  "repo_name": "tartiflette-aiohttp",
+  "repo_full_name": "dailymotion/tartiflette-aiohttp",
+  "repo_owner": "dailymotion",
+  "repo_description": "tartiflette-aiohttp is a wrapper of aiohttp which includes the Tartiflette GraphQL Engine, do not hesitate to take a look of the Tartiflette project.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/aiohttp/dogs/schema.graphql",
+      "sha": "7cc4dde508ea414ae00d7a95798a8988501a4e69",
+      "url": "https://api.github.com/repositories/156493788/contents/examples/aiohttp/dogs/schema.graphql?ref=eed91e18697395851242709d1a2b26a18748ff11",
+      "git_url": "https://api.github.com/repositories/156493788/git/blobs/7cc4dde508ea414ae00d7a95798a8988501a4e69",
+      "html_url": "https://github.com/dailymotion/tartiflette-aiohttp/blob/eed91e18697395851242709d1a2b26a18748ff11/examples/aiohttp/dogs/schema.graphql",
+      "content": "enum Status { SUCCESS }\n\ntype Dog {\n  id: Int!\n  name: String!\n  nickname: String\n}\n\ninput AddDogInput {\n  clientMutationId: String\n  name: String!\n  nickname: String\n}\n\ntype AddDogPayload {\n  clientMutationId: String\n  status: Status\n  dog: Dog\n}\n\ninput UpdateDogInput {\n  clientMutationId: String\n  id: Int!\n  name: String!\n  nickname: String\n}\n\ntype UpdateDogPayload {\n  clientMutationId: String\n  status: Status\n  dog: Dog\n}\n\ntype Query {\n  dog(id: Int!): Dog\n}\n\ntype Mutation {\n  addDog(input: AddDogInput!): AddDogPayload\n  updateDog(input: UpdateDogInput!): UpdateDogPayload\n}\n\ntype Subscription {\n  dogAdded: Dog\n  dogUpdated(id: Int!): Dog\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-07T05:16:40Z",
+    "updated_at": "2019-07-09T07:36:47Z",
+    "pushed_at": "2019-07-09T07:36:46Z",
+    "issues": 5,
+    "watchers": 12,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 31,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 30,
+    "releases": 4,
+    "stargazers": 27
+  }
+}

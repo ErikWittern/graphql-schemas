@@ -1,0 +1,52 @@
+{
+  "repo_name": "nuber-server",
+  "repo_full_name": "brigand3/nuber-server",
+  "repo_owner": "brigand3",
+  "repo_description": "Server for the (N)Uber Clone",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "sayHello.graphql",
+      "path": "src/api/Hello/sayHello/sayHello.graphql",
+      "sha": "523f582ffa19152a339f2453322939e83152ae53",
+      "url": "https://api.github.com/repositories/163619113/contents/src/api/Hello/sayHello/sayHello.graphql?ref=c33a5d5234d396ab9298c1bb49eb9c0a987c6f8d",
+      "git_url": "https://api.github.com/repositories/163619113/git/blobs/523f582ffa19152a339f2453322939e83152ae53",
+      "html_url": "https://github.com/brigand3/nuber-server/blob/c33a5d5234d396ab9298c1bb49eb9c0a987c6f8d/src/api/Hello/sayHello/sayHello.graphql",
+      "content": "type SayHelloResponse {\n    text: String!\n    error: Boolean!\n}\n\ntype Query {\n    sayHello(name: String!): SayHelloResponse!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "sayBye.graphql",
+      "path": "src/api/Hello/sayBye/sayBye.graphql",
+      "sha": "b5dcc6a5871263913dc1bbc6bbc21324dd2bd5c5",
+      "url": "https://api.github.com/repositories/163619113/contents/src/api/Hello/sayBye/sayBye.graphql?ref=dfc73e06eb2c07f882aa6326d7de638c3e24cf0c",
+      "git_url": "https://api.github.com/repositories/163619113/git/blobs/b5dcc6a5871263913dc1bbc6bbc21324dd2bd5c5",
+      "html_url": "https://github.com/brigand3/nuber-server/blob/dfc73e06eb2c07f882aa6326d7de638c3e24cf0c/src/api/Hello/sayBye/sayBye.graphql",
+      "content": "type Query {\n    sayBye: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-30T21:34:59Z",
+    "updated_at": "2019-01-31T08:04:58Z",
+    "pushed_at": "2019-01-31T08:04:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

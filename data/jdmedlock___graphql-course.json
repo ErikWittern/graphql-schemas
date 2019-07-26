@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-course",
+  "repo_full_name": "jdmedlock/graphql-course",
+  "repo_owner": "jdmedlock",
+  "repo_description": "GraphQL Course - Andrew Mead on Udemy",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql-basics/src/schema.graphql",
+      "sha": "88eb945916aa3d1fea2af592e0c97108755d430e",
+      "url": "https://api.github.com/repositories/154984189/contents/graphql-basics/src/schema.graphql?ref=faf6d31fd108ab1854a7101e1363b1c08648e15c",
+      "git_url": "https://api.github.com/repositories/154984189/git/blobs/88eb945916aa3d1fea2af592e0c97108755d430e",
+      "html_url": "https://github.com/jdmedlock/graphql-course/blob/faf6d31fd108ab1854a7101e1363b1c08648e15c/graphql-basics/src/schema.graphql",
+      "content": "type Query {\n  comments: [Comment!]!\n  me: User!\n  post: Post!\n  posts(query: String): [Post!]!\n  users(query: String): [User!]!\n}\n\ntype Mutation {\n  createComment(data: CreateCommentInput!): Comment!\n  updateComment(id: ID!, data: UpdateCommentInput): Comment!\n  deleteComment(id: ID!): Comment!\n\n  createPost(data: CreatePostInput!): Post!\n  updatePost(id: ID!, data: UpdatePostInput): Post!\n  deletePost(id: ID!): Post!\n\n  createUser(data: CreateUserInput!): User!\n  updateUser(id: ID!, data: UpdateUserInput!): User!\n  deleteUser(id: ID!): User!\n}\n\ntype Subscription {\n  comment(postId: ID!): Comment!\n}\n\ninput CreateCommentInput {\n  text: String!\n  author: ID!\n  post: ID!\n}\n\ninput UpdateCommentInput {\n  text: String\n}\n\ninput CreatePostInput {\n  title: String!\n  body: String!\n  published: Boolean!\n  author: ID!\n}\n\ninput UpdatePostInput {\n  title: String\n  body: String\n  published: Boolean\n}\n\ninput CreateUserInput {\n  name: String!\n  email: String!\n  age: Int\n}\n\ninput UpdateUserInput {\n  name: String\n  email: String\n  age: Int\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  author: User!\n  post: Post!\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  body: String!\n  published: Boolean!\n  author: User!\n  comments: [Comment!]!\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  age: Int\n  posts: [Post!]!\n  comments: [Comment!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-27T16:16:34Z",
+    "updated_at": "2018-11-17T00:57:01Z",
+    "pushed_at": "2018-11-17T00:57:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

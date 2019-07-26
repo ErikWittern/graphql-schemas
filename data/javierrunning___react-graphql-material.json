@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-graphql-material",
+  "repo_full_name": "javierrunning/react-graphql-material",
+  "repo_owner": "javierrunning",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/app/schema.graphql",
+      "sha": "0fde8a50fc3b25207697bbec9902f67e3a0fba8c",
+      "url": "https://api.github.com/repositories/80549418/contents/server/app/schema.graphql?ref=4c0a9233462a653e466d7f4505ab863d0dc4246b",
+      "git_url": "https://api.github.com/repositories/80549418/git/blobs/0fde8a50fc3b25207697bbec9902f67e3a0fba8c",
+      "html_url": "https://github.com/javierrunning/react-graphql-material/blob/4c0a9233462a653e466d7f4505ab863d0dc4246b/server/app/schema.graphql",
+      "content": "# All Feeds Information\ntype AllFeeds implements Node {\n  # The ID of an object\n  id: ID!\n\n  # all feeds list\n  items: [Feed]\n\n  # author user list\n  authors: Authors\n}\n\n# A author who is followed by current login user\ntype Author implements Node {\n  # The ID of an object\n  id: ID!\n\n  # user email\n  email: String\n\n  # user name\n  name: String\n\n  # status for author user\n  author: Boolean\n\n  # user photo url path\n  photo: String\n\n  # following status for current author\n  following: String\n\n  # following users count for current author\n  followedCount: String\n\n  # following users count for current author\n  category: String\n}\n\n# Authors Information\ntype Authors implements Node {\n  # The ID of an object\n  id: ID!\n\n  # all authors list\n  authors: [Author]\n}\n\n# A category list\ntype Category implements Node {\n  # The ID of an object\n  id: ID!\n  type: String\n  image: String\n}\n\n# Feed item\ntype Feed implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Feed title\n  title: String\n\n  # Feed description\n  description: String\n\n  # Feed Image path\n  image: String\n\n  # Total like count for current feed\n  likedCount: Int\n\n  # current user liked status\n  liked: Boolean\n\n  # author user id\n  createdBy: String\n}\n\ninput followingAuthorInput {\n  authorId: String\n  following: Boolean\n  query: String\n  offset: Int\n  limit: Int\n  clientMutationId: String\n}\n\ntype followingAuthorPayload {\n  authors: Authors\n  clientMutationId: String\n}\n\ninput getAuthorsByCategoriesInput {\n  categoryTypes: [String]\n  clientMutationId: String\n}\n\ntype getAuthorsByCategoriesPayload {\n  authors: [Author]\n  clientMutationId: String\n}\n\ninput likeFeedInput {\n  feedId: String\n  liked: Boolean\n  clientMutationId: String\n}\n\ntype likeFeedPayload {\n  feed: Feed\n  clientMutationId: String\n}\n\ninput loginInput {\n  id: String!\n  name: String!\n  email: String!\n  author: Boolean\n  photo: String!\n  facebookToken: String\n  googleToken: String\n  clientMutationId: String\n}\n\ntype loginPayload {\n  user: User\n  accessToken: String\n  clientMutationId: String\n}\n\ntype Mutation {\n  signup(input: signupInput!): signupPayload\n  login(input: loginInput!): loginPayload\n  likeFeed(input: likeFeedInput!): likeFeedPayload\n  followingAuthor(input: followingAuthorInput!): followingAuthorPayload\n  getAuthorsByCategories(input: getAuthorsByCategoriesInput!): getAuthorsByCategoriesPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n\n  # Viewer query\n  viewer: ViewerType\n}\n\ninput signupInput {\n  id: String!\n  name: String!\n  email: String!\n  author: Boolean\n  photo: String!\n  clientMutationId: String\n}\n\ntype signupPayload {\n  user: User\n  accessToken: String\n  clientMutationId: String\n}\n\n# A person who uses our app\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n\n  # user email\n  email: String\n\n  # user name\n  name: String\n\n  # status for author user\n  author: Boolean\n\n  # user photo url path\n  photo: String\n  followingAuthors: [Author]\n}\n\n# A viewer object\ntype ViewerType {\n  # Get User information\n  user(id: String): User\n\n  # Get Feeds information\n  feeds(query: String, offset: Int, limit: Int): AllFeeds\n\n  # Get Categories information\n  categories: [Category]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-31T18:34:54Z",
+    "updated_at": "2017-03-12T20:57:08Z",
+    "pushed_at": "2017-01-31T18:41:07Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

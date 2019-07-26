@@ -1,0 +1,41 @@
+{
+  "repo_name": "web-client",
+  "repo_full_name": "phoenixmusical/web-client",
+  "repo_owner": "phoenixmusical",
+  "repo_description": "Phoenix Musical Web Client",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "lib/schema.graphql",
+      "sha": "4d5535a0fa352437d36339f05d9a59ff84ba3c01",
+      "url": "https://api.github.com/repositories/69128430/contents/lib/schema.graphql?ref=30663e1782cff78e50f9b8749bf430680fc6a70c",
+      "git_url": "https://api.github.com/repositories/69128430/git/blobs/4d5535a0fa352437d36339f05d9a59ff84ba3c01",
+      "html_url": "https://github.com/phoenixmusical/web-client/blob/30663e1782cff78e50f9b8749bf430680fc6a70c/lib/schema.graphql",
+      "content": "input AddPostInput {\n  committeeId: ID!\n  name: String!\n  clientMutationId: String\n}\n\ntype AddPostPayload {\n  committee: Committee\n  postEdge: PostEdge\n  clientMutationId: String\n}\n\ntype App {\n  committees: [Committee]\n  events(startDate: String, endDate: String): [Event]\n}\n\ntype Committee implements Node {\n  addedOn: String\n  updatedOn: String\n  addedBy: User\n\n  # The ID of an object\n  id: ID!\n  name: String\n  description: String\n\n  # A committee members\n  members(after: String, first: Int, before: String, last: Int): UserConnection\n\n  # A committee posts\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n\n  # A committee events\n  events(after: String, first: Int, before: String, last: Int): EventConnection\n}\n\n# A connection to a list of items.\ntype CommitteeConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [CommitteeEdge]\n}\n\n# An edge in a connection.\ntype CommitteeEdge {\n  # The item at the end of the edge\n  node: Committee\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Event implements Node {\n  addedOn: String\n  updatedOn: String\n  addedBy: User\n\n  # The ID of an object\n  id: ID!\n  name: String\n  description: String\n  startDate: String\n  endDate: String\n  committee: Committee\n}\n\n# A connection to a list of items.\ntype EventConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [EventEdge]\n}\n\n# An edge in a connection.\ntype EventEdge {\n  # The item at the end of the edge\n  node: Event\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Message implements Node {\n  addedOn: String\n  updatedOn: String\n  addedBy: User\n\n  # The ID of an object\n  id: ID!\n  content: String\n}\n\n# A connection to a list of items.\ntype MessageConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [MessageEdge]\n}\n\n# An edge in a connection.\ntype MessageEdge {\n  # The item at the end of the edge\n  node: Message\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Mutation {\n  addPost(input: AddPostInput!): AddPostPayload\n  writeMessage(input: WriteMessageInput!): WriteMessagePayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Post implements Node {\n  addedOn: String\n  updatedOn: String\n  addedBy: User\n\n  # The ID of an object\n  id: ID!\n  name: String\n  importance: Int\n\n  # A post committee\n  committee: Committee\n\n  # A post messages\n  messages(after: String, first: Int, before: String, last: Int): MessageConnection\n}\n\n# A connection to a list of items.\ntype PostConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [PostEdge]\n}\n\n# An edge in a connection.\ntype PostEdge {\n  # The item at the end of the edge\n  node: Post\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: User\n  app: App\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  email: String\n  firstname: String\n  lastname: String\n  name: String\n\n  # A user committees\n  committees(after: String, first: Int, before: String, last: Int): CommitteeConnection\n}\n\n# A connection to a list of items.\ntype UserConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [UserEdge]\n}\n\n# An edge in a connection.\ntype UserEdge {\n  # The item at the end of the edge\n  node: User\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput WriteMessageInput {\n  postId: ID!\n  content: String!\n  clientMutationId: String\n}\n\ntype WriteMessagePayload {\n  post: Post\n  messageEdge: MessageEdge\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 21,
+      "containsCycle": true,
+      "numDefinitions": 24
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-24T21:23:31Z",
+    "updated_at": "2016-09-25T02:29:00Z",
+    "pushed_at": "2016-11-12T15:42:05Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

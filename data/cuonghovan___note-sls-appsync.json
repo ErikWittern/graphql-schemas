@@ -1,0 +1,39 @@
+{
+  "repo_name": "note-sls-appsync",
+  "repo_full_name": "cuonghovan/note-sls-appsync",
+  "repo_owner": "cuonghovan",
+  "repo_description": "Note api example using appsync + serverless",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "b9b82145ffd00a2e4584451f3700023a918b5b2a",
+      "url": "https://api.github.com/repositories/148128375/contents/schema.graphql?ref=a0f95487bb689dc5a47c58b69030293efca8fe73",
+      "git_url": "https://api.github.com/repositories/148128375/git/blobs/b9b82145ffd00a2e4584451f3700023a918b5b2a",
+      "html_url": "https://github.com/cuonghovan/note-sls-appsync/blob/a0f95487bb689dc5a47c58b69030293efca8fe73/schema.graphql",
+      "content": "type Note {\n  NoteId: ID!\n  title: String\n  content: String\n}\n\ntype PaginatedNotes {\n  notes: [Note!]!\n  nextToken: String\n}\n\ntype Query {\n  allNotes(limit: Int, nextToken: String): PaginatedNotes!\n  getNote(NoteId: ID!): Note\n}\n\ntype Mutation {\n  saveNote(NoteId: ID!, title: String!, content: String!): Note\n  deleteNote(NoteId: ID!): Note\n}\n\ntype Schema {\n  query: Query\n  mutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-10T09:06:37Z",
+    "updated_at": "2018-09-10T09:32:06Z",
+    "pushed_at": "2018-09-10T09:32:05Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

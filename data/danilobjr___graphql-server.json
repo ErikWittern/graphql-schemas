@@ -1,0 +1,66 @@
+{
+  "repo_name": "graphql-server",
+  "repo_full_name": "danilobjr/graphql-server",
+  "repo_owner": "danilobjr",
+  "repo_description": "Hello world of a GraphQL server using graphql-yoga",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "a6810fdfc744dd77c7d323ccb30de648527d203d",
+      "url": "https://api.github.com/repositories/140437843/contents/graphql/schema.graphql?ref=472d18d07a155b25b97bd221960392d487c53baa",
+      "git_url": "https://api.github.com/repositories/140437843/git/blobs/a6810fdfc744dd77c7d323ccb30de648527d203d",
+      "html_url": "https://github.com/danilobjr/graphql-server/blob/472d18d07a155b25b97bd221960392d487c53baa/graphql/schema.graphql",
+      "content": "# import Person from 'person.graphql'\n\ntype Query {\n  people: [Person]\n  person(name: String!): Person\n}\n\ntype Mutation {\n  createPerson(person: PersonInput!): Person\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/danilobjr/graphql-server/blob/472d18d07a155b25b97bd221960392d487c53baa/graphql/schema.graphql:\n# import Person from 'person.graphql'\n\ntype Query {\n  people: [Person]\n  person(name: String!): Person\n}\n\ntype Mutation {\n  createPerson(person: PersonInput!): Person\n}\n\n# https://github.com/danilobjr/graphql-server/blob/472d18d07a155b25b97bd221960392d487c53baa/graphql/person.graphql:\ntype Person {\n  id: ID!\n  name: String!\n  email: String!\n  occupation: String\n  age: Int\n}\n\ninput PersonInput {\n  name: String!\n  email: String!\n  occupation: String\n  age: Int\n}\n",
+        "mergedPaths": [
+          "graphql/person.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Person"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "person.graphql",
+      "path": "graphql/person.graphql",
+      "sha": "ef66e97e114f9c62339901dd7337e778ceeedfae",
+      "url": "https://api.github.com/repositories/140437843/contents/graphql/person.graphql?ref=472d18d07a155b25b97bd221960392d487c53baa",
+      "git_url": "https://api.github.com/repositories/140437843/git/blobs/ef66e97e114f9c62339901dd7337e778ceeedfae",
+      "html_url": "https://github.com/danilobjr/graphql-server/blob/472d18d07a155b25b97bd221960392d487c53baa/graphql/person.graphql",
+      "content": "type Person {\n  id: ID!\n  name: String!\n  email: String!\n  occupation: String\n  age: Int\n}\n\ninput PersonInput {\n  name: String!\n  email: String!\n  occupation: String\n  age: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-10T13:39:49Z",
+    "updated_at": "2018-07-10T14:07:18Z",
+    "pushed_at": "2018-07-10T13:41:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "GraphQL-API",
+  "repo_full_name": "chukwuemekachm/graphql-api",
+  "repo_owner": "chukwuemekachm",
+  "repo_description": "A Basic GraphQL API for Books.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "dd106f291447cb5516a1ae5af3893a1b7da3bc55",
+      "url": "https://api.github.com/repositories/165110968/contents/src/schema.graphql?ref=fbfa565c2e0acf0609cf8d01911aba35605b82c5",
+      "git_url": "https://api.github.com/repositories/165110968/git/blobs/dd106f291447cb5516a1ae5af3893a1b7da3bc55",
+      "html_url": "https://github.com/chukwuemekachm/GraphQL-API/blob/fbfa565c2e0acf0609cf8d01911aba35605b82c5/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  info: String!\n  getPublishers(sort: PublisherSearchPaginationOrderInput): [Publisher!]!\n  getAuthors(sort: UserSearchPaginationOrderInput): [User!]!\n  getBooks(sort: BookSearchPaginationOrderInput): [Book!]!\n  getReviews(sort: ReviewSearchPaginationOrderInput): [Review!]!\n}\n\ntype Mutation {\n  signup(user: SignupInput): AuthResponse!\n  login(user: LoginInput): AuthResponse!\n  createPublisher(publisher: PublisherInput): Publisher!\n  createAuthor(user: AuthorInput!): User!\n  createBook(book: BookInput!): Book!\n  createReview(review: ReviewInput!): Review!\n}\n\ntype AuthResponse {\n  token: String!\n  user: User!\n}\n\ninput SignupInput {\n  firstName: String!\n  lastName: String!\n  email: String!\n  password: String!\n}\n\ninput LoginInput {\n  email: String!\n  password: String!\n}\n\ninput PublisherInput {\n  name: String!\n  about: String!\n  address: String!\n}\n\ninput AuthorInput {\n  firstName: String!\n  lastName: String!\n  email: String!\n}\n\ninput BookInput {\n  title: String!\n  description: String!\n  publishers: [String!]!\n  pages: Int\n  publishDateTime: DateTime!\n  authors: [String!]!\n  isbnNo: String\n}\n\ninput ReviewInput {\n  review: String!\n  reviewer: String!\n  book: String!\n}\n\ninput PublisherSearchPaginationOrderInput {\n  search: String\n  orderBy: PublisherOrderBy\n  offset: Int\n  limit: Int\n}\n\ninput UserSearchPaginationOrderInput {\n  search: String\n  orderBy: UserOrderBy\n  offset: Int\n  limit: Int\n}\n\ninput BookSearchPaginationOrderInput {\n  search: String\n  orderBy: BookOrderBy\n  offset: Int\n  limit: Int\n}\n\ninput ReviewSearchPaginationOrderInput {\n  search: String\n  orderBy: ReviewOrderBy\n  offset: Int\n  limit: Int\n}\n\nenum PublisherOrderBy {\n  name_ASC\n  name_DESC\n  about_ASC\n  about_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\nenum UserOrderBy {\n  lastName_ASC\n  lastName_DESC\n  firstName_ASC\n  firstName_DESC\n  email_ASC\n  email_DESC\n  id_ASC\n  id_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\nenum BookOrderBy {\n  title_ASC\n  title_DESC\n  description_ASC\n  description_DESC\n  isbnNo_ASC\n  isbnNo_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\nenum ReviewOrderBy {\n  review_ASC\n  review_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\ntype Publisher {\n  id: ID!\n  name: String!\n  about: String\n  address: String\n  publication: [Book!]\n  createdAt: DateTime!\n  updatedAt: DateTime!\n}\n\ntype User {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  email: String!\n  books: [Book!]\n  reviews: [Review!]\n  createdAt: DateTime!\n  updatedAt: DateTime!\n}\n\ntype Book {\n  id: ID!\n  title: String!\n  description: String\n  publishers: [Publisher!]!\n  pages: Int\n  publishDateTime: DateTime!\n  authors: [User!]!\n  ratings: [Rating!]\n  reviews: [Review!]!\n  isbnNo: String\n  createdAt: DateTime!\n  updatedAt: DateTime!\n}\n\ntype Review {\n  id: ID!\n  review: String!\n  reviewer: User!\n  book: Book!\n  createdAt: DateTime!\n}\n\ntype Rating {\n  id: ID!\n  rating: Int!\n  rater: User!\n  book: Book!\n  createdAt: DateTime!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 23
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-10T18:31:27Z",
+    "updated_at": "2019-05-26T18:01:07Z",
+    "pushed_at": "2019-02-04T17:46:19Z",
+    "issues": 22,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 20,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 20,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

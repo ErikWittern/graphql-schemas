@@ -1,0 +1,78 @@
+{
+  "repo_name": "apollo-tutorial-kit-part2",
+  "repo_full_name": "caveofcodeblog/apollo-tutorial-kit-part2",
+  "repo_owner": "CaveOfCodeBlog",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "data/schema/query.graphql",
+      "sha": "e7a818fb8e7a8147f479d9e9a8275bf7aa24da90",
+      "url": "https://api.github.com/repositories/71563199/contents/data/schema/query.graphql?ref=a92df70c57cfc0df7b260d1627bca161c3334ff8",
+      "git_url": "https://api.github.com/repositories/71563199/git/blobs/e7a818fb8e7a8147f479d9e9a8275bf7aa24da90",
+      "html_url": "https://github.com/CaveOfCodeBlog/apollo-tutorial-kit-part2/blob/a92df70c57cfc0df7b260d1627bca161c3334ff8/data/schema/query.graphql",
+      "content": "type Query {\n  getUser(id: String!): User,\n  testString: String\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/CaveOfCodeBlog/apollo-tutorial-kit-part2/blob/a92df70c57cfc0df7b260d1627bca161c3334ff8/data/schema/query.graphql:\ntype Query {\n  getUser(id: String!): User,\n  testString: String\n}\n\n# https://github.com/CaveOfCodeBlog/apollo-tutorial-kit-part2/blob/a92df70c57cfc0df7b260d1627bca161c3334ff8/data/schema/user.graphql:\ntype User {\n  _id: String,\n  displayName: String,\n  email: String,\n  firstName: String,\n  lastName: String,\n  birthday: String,\n  cars: [ Car ]\n}\n\n# https://github.com/CaveOfCodeBlog/apollo-tutorial-kit-part2/blob/a92df70c57cfc0df7b260d1627bca161c3334ff8/data/schema/car.graphql:\ntype Car {\n  _id: String,\n  model: String,\n  registrationNo: String,\n  owner: User\n}\n",
+        "mergedPaths": [
+          "data/schema/user.graphql",
+          "data/schema/car.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Car"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "user.graphql",
+      "path": "data/schema/user.graphql",
+      "sha": "e01ee0dd5f79293d4f6d69a0944694dc154e92b4",
+      "url": "https://api.github.com/repositories/71563199/contents/data/schema/user.graphql?ref=a92df70c57cfc0df7b260d1627bca161c3334ff8",
+      "git_url": "https://api.github.com/repositories/71563199/git/blobs/e01ee0dd5f79293d4f6d69a0944694dc154e92b4",
+      "html_url": "https://github.com/CaveOfCodeBlog/apollo-tutorial-kit-part2/blob/a92df70c57cfc0df7b260d1627bca161c3334ff8/data/schema/user.graphql",
+      "content": "type User {\n  _id: String,\n  displayName: String,\n  email: String,\n  firstName: String,\n  lastName: String,\n  birthday: String,\n  cars: [ Car ]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "car.graphql",
+      "path": "data/schema/car.graphql",
+      "sha": "27be9fbea74fa2e8caa24cb5b6a2cf36964cfa84",
+      "url": "https://api.github.com/repositories/71563199/contents/data/schema/car.graphql?ref=a92df70c57cfc0df7b260d1627bca161c3334ff8",
+      "git_url": "https://api.github.com/repositories/71563199/git/blobs/27be9fbea74fa2e8caa24cb5b6a2cf36964cfa84",
+      "html_url": "https://github.com/CaveOfCodeBlog/apollo-tutorial-kit-part2/blob/a92df70c57cfc0df7b260d1627bca161c3334ff8/data/schema/car.graphql",
+      "content": "type Car {\n  _id: String,\n  model: String,\n  registrationNo: String,\n  owner: User\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-21T12:28:55Z",
+    "updated_at": "2018-03-29T16:12:22Z",
+    "pushed_at": "2017-03-13T22:02:58Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

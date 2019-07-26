@@ -1,0 +1,42 @@
+{
+  "repo_name": "cucayo",
+  "repo_full_name": "klugjo/cucayo",
+  "repo_owner": "klugjo",
+  "repo_description": "Meal Planner App",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "3f5c052a3d41688051ce1d7dc0f7e3fadfbad73e",
+      "url": "https://api.github.com/repositories/88625764/contents/data/schema.graphql?ref=c6ba0cda56a802ca28269734f345ca69e7166fee",
+      "git_url": "https://api.github.com/repositories/88625764/git/blobs/3f5c052a3d41688051ce1d7dc0f7e3fadfbad73e",
+      "html_url": "https://github.com/klugjo/cucayo/blob/c6ba0cda56a802ca28269734f345ca69e7166fee/data/schema.graphql",
+      "content": "schema {\n  query: RootQueryType\n}\n\ntype RecipeType {\n  id: ID\n  userId: Int!\n  name: String!\n  status: Int!\n  cooked: Int!\n  instructions: String\n  ingredients: String\n  link: String\n  createdAt: String\n}\n\ntype RootQueryType {\n  # Root level query\n  store: StoreType\n}\n\ntype ShoppingListType {\n  id: ID\n  userId: Int!\n  remarks: String\n  title: String\n  createdAt: String\n  recipes: [RecipeType]\n}\n\ntype StoreType {\n  # Get the current user\n  user(id: Int!): UserType\n\n  # Get the shopping lists\n  shoppingList(userId: Int!): [ShoppingListType]\n}\n\ntype UserType {\n  id: ID\n  firstname: String\n  lastname: String\n  email: String!\n  createdAt: String\n  recipes: [RecipeType]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-18T13:03:25Z",
+    "updated_at": "2017-05-01T13:26:29Z",
+    "pushed_at": "2017-05-10T10:59:04Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

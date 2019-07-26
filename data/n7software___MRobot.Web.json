@@ -1,0 +1,42 @@
+{
+  "repo_name": "MRobot.Web",
+  "repo_full_name": "n7software/mrobot.web",
+  "repo_owner": "n7software",
+  "repo_description": "Multiplayer Robot Angular",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "9dd7df68af180729c8dddbec1b05c9550fc42235",
+      "url": "https://api.github.com/repositories/159616884/contents/schema.graphql?ref=04e5e9247ddd612987c55604681832af1b11e356",
+      "git_url": "https://api.github.com/repositories/159616884/git/blobs/9dd7df68af180729c8dddbec1b05c9550fc42235",
+      "html_url": "https://github.com/n7software/MRobot.Web/blob/04e5e9247ddd612987c55604681832af1b11e356/schema.graphql",
+      "content": "scalar DateTime\nscalar Upload\n\ntype DiscordSettings {\n  showOnProfile: Boolean\n  joinGDM: Boolean\n}\n\ninput NotificationSettingsInput {\n  gameInvitations: [Notifier]\n  playerJoinedGame: [Notifier]\n  turn: [Notifier]\n  gameEnded: [Notifier]\n  turnTimerModified: [Notifier]\n  skipped: [Notifier]\n  comment: [Notifier]\n  privateMessage: [Notifier]\n}\n\ntype NotificationSettings {\n  gameInvitations: [Notifier]\n  playerJoinedGame: [Notifier]\n  turn: [Notifier]\n  gameEnded: [Notifier]\n  turnTimerModified: [Notifier]\n  skipped: [Notifier]\n  comment: [Notifier]\n  privateMessage: [Notifier]\n}\n\nenum JoinFilter {\n  SETTLER\n  CHIEFTAIN\n  WARLORD\n  PRINCE\n  KING\n  EMPEROR\n  IMMORTAL\n  DEITY\n}\n\nenum Notifier {\n  EMAIL\n  DISCORD\n}\n\nenum Theme {\n  LIGHT\n  DARK\n  KING_LIGHT\n  KING_DARK\n}\n\ninput SettingsInput {\n  vacationMode: Boolean\n  country: String\n  availableHours: [Int]\n  theme: Theme!\n  emailAddress: String\n  notifications: NotificationSettingsInput\n}\n\nenum GameType {\n  CIVILIZATION_V\n  CIVILIZATION_BE\n  CIVILIZATION_VI\n  OTHER\n}\n\nenum CivVExpansions {\n  GODS_AND_KINGS\n  BRAVE_NEW_WORLD\n  BABYLON\n  SPAIN_AND_INCA\n  POLYNESIA\n  DENMARK\n  KOREA\n  SCRAMBLED_CONTINENTS_MAP_PACK\n  SCRAMBLED_NATIONS_MAP_PACK\n  MEDITERRANEAN_MAP_PACK\n  ASIA_MAP_PACK\n  AMERICAS_MAP_PACK\n  MESOPOTAMIA_MAP_PACK\n  EXPLORERS_MAP_PACK\n}\n\nenum CivBEExpansions {\n  RISING_TIDE\n  EXOPLANETS\n}\n\nenum CivVIExpansions {\n  RISE_AND_FALL\n  GATHERING_STORM\n  KHMER_AND_INDONESIA\n  NUBIA\n  PERSIA_AND_MACEDON\n  AUSTRALIA\n  POLAND\n}\n\ninput GameInput {\n  name: String!\n  gameType: GameType!\n  customGameType: String\n  parseCivs: Boolean\n  description: String\n  hasMods: Boolean\n  showInPublic: Boolean\n  joinFilter: [JoinFilter]\n  slotLimit: Int\n  turnTimerEnabled: Boolean\n  turnTimerDays: Int\n  multiSlotJoinAllowed: Boolean\n}\n\ntype Game {\n  id: ID!\n  name: String!\n  gameType: GameType!\n  customGameType: String\n  parseCivs: Boolean!\n  description: String\n  createdAt: DateTime!\n  startedAt: DateTime\n  finishedAt: DateTime\n  hasMods: Boolean!\n  showInPublic: Boolean!\n  joinFilter: [JoinFilter]!\n  slotLimit: Int\n  turnTimerEnabled: Boolean!\n  turnTimerDays: Int\n  createdFromSave: Boolean!\n  multiSlotJoinAllowed: Boolean!\n  host: User\n  players: [GamePlayer]\n  turns(skip: Int, take: Int): [Turn]\n}\n\ntype GamePlayer {\n  user: User\n}\n\ntype User {\n  id: ID\n  username: String\n}\n\ntype Turn {\n  player: GamePlayer\n  startedAt: DateTime!\n  finishedAt: DateTime\n  expiresAt: DateTime\n}\n\ntype Settings {\n  vacationMode: Boolean\n  country: String\n  availableHours: [Int]\n  theme: Theme\n  emailAddress: String\n  discordConnected: Boolean\n  discord: DiscordSettings\n  notifications: NotificationSettings\n}\n\ntype GameMutationResponse {\n  clientMutationId: ID\n  game: Game!\n}\n\ntype SettingsMutationResponse {\n  clientMutationId: ID\n}\n\ntype DiscordConnectionResponse {\n  clientMutationId: ID\n}\n\ntype Mutation {\n  createGame(clientMutationId: ID, input: GameInput!): GameMutationResponse\n  saveSettings(\n    clientMutationId: ID\n    input: SettingsInput!\n  ): SettingsMutationResponse\n  completeDiscordConnection(\n    clientMutationId: ID\n    code: ID!\n  ): DiscordConnectionResponse\n  disconnectDiscord(clientMutationId: ID): DiscordConnectionResponse\n}\n\ntype Query {\n  games: [Game]\n  game(id: ID!): Game\n  publicGames(skip: Int!, take: Int!): [Game]\n  settings: Settings\n}\n\nschema {\n  mutation: Mutation\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 25
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-29T06:14:24Z",
+    "updated_at": "2019-01-27T06:09:56Z",
+    "pushed_at": "2019-01-27T06:09:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

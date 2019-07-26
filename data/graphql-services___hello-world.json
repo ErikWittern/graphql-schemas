@@ -1,0 +1,42 @@
+{
+  "repo_name": "hello-world",
+  "repo_full_name": "graphql-services/hello-world",
+  "repo_owner": "graphql-services",
+  "repo_description": "Simple hello world GraphQL api in docker container",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "2d3339576a4059217acc92364de94f55eaa0afe6",
+      "url": "https://api.github.com/repositories/183213367/contents/schema.graphql?ref=f913bc7ea1c963d3b75b092dbea84ac10838b967",
+      "git_url": "https://api.github.com/repositories/183213367/git/blobs/2d3339576a4059217acc92364de94f55eaa0afe6",
+      "html_url": "https://github.com/graphql-services/hello-world/blob/f913bc7ea1c963d3b75b092dbea84ac10838b967/schema.graphql",
+      "content": "schema {\n  query: Query\n  # mutation: Mutation\n}\n\ntype Query {\n  hello: String!\n  foo(blah: String!): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-24T11:18:06Z",
+    "updated_at": "2019-04-24T11:24:25Z",
+    "pushed_at": "2019-04-24T11:24:23Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

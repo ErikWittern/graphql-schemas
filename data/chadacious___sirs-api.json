@@ -1,0 +1,94 @@
+{
+  "repo_name": "sirs-api",
+  "repo_full_name": "chadacious/sirs-api",
+  "repo_owner": "chadacious",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "filterType.graphql",
+      "path": "src/schema/filterType.graphql",
+      "sha": "0a25dc0a070404e9a48dc2f0d0fdb6a386298765",
+      "url": "https://api.github.com/repositories/184148092/contents/src/schema/filterType.graphql?ref=e22526dc4d1657a1780b664b65616e504dcde0e6",
+      "git_url": "https://api.github.com/repositories/184148092/git/blobs/0a25dc0a070404e9a48dc2f0d0fdb6a386298765",
+      "html_url": "https://github.com/chadacious/sirs-api/blob/e22526dc4d1657a1780b664b65616e504dcde0e6/src/schema/filterType.graphql",
+      "content": "type FilterType {\n    # System assigned identifier\n    id: Int\n    code: String\n    name: String\n    description: String\n    ok: Boolean!\n    errors: [Error!]\n}\n\ntype Query {\n    # Simple query to pull filter types.\n    allFilterTypes: [FilterType]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/chadacious/sirs-api/blob/e22526dc4d1657a1780b664b65616e504dcde0e6/src/schema/filterType.graphql:\ntype FilterType {\n    # System assigned identifier\n    id: Int\n    code: String\n    name: String\n    description: String\n    ok: Boolean!\n    errors: [Error!]\n}\n\ntype Query {\n    # Simple query to pull filter types.\n    allFilterTypes: [FilterType]\n}\n\n# https://github.com/chadacious/sirs-api/blob/e22526dc4d1657a1780b664b65616e504dcde0e6/src/schema/common.graphql:\ntype Error {\n    path: String!\n    message: String\n}\n\ntype SimpleResponse {\n    ok: Boolean!\n    id: Int\n    errors: [Error!]\n}",
+        "mergedPaths": [
+          "src/schema/common.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Error"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "common.graphql",
+      "path": "src/schema/common.graphql",
+      "sha": "fa4e73fa5782fe00ca4bfcd20a540f8d046b19e2",
+      "url": "https://api.github.com/repositories/184148092/contents/src/schema/common.graphql?ref=e22526dc4d1657a1780b664b65616e504dcde0e6",
+      "git_url": "https://api.github.com/repositories/184148092/git/blobs/fa4e73fa5782fe00ca4bfcd20a540f8d046b19e2",
+      "html_url": "https://github.com/chadacious/sirs-api/blob/e22526dc4d1657a1780b664b65616e504dcde0e6/src/schema/common.graphql",
+      "content": "type Error {\n    path: String!\n    message: String\n}\n\ntype SimpleResponse {\n    ok: Boolean!\n    id: Int\n    errors: [Error!]\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "sirScale.graphql",
+      "path": "src/schema/sirScale.graphql",
+      "sha": "f35df40b6a2d1bae77e94ce479d05fc723e3c565",
+      "url": "https://api.github.com/repositories/184148092/contents/src/schema/sirScale.graphql?ref=e13c882914710830c4a1350812ab3dbcadd69d3b",
+      "git_url": "https://api.github.com/repositories/184148092/git/blobs/f35df40b6a2d1bae77e94ce479d05fc723e3c565",
+      "html_url": "https://github.com/chadacious/sirs-api/blob/e13c882914710830c4a1350812ab3dbcadd69d3b/src/schema/sirScale.graphql",
+      "content": "scalar DATE\nscalar JSON\n\ntype SIRScale {\n    # System assigned identifier\n    id: Int\n    filterTypeId: Int\n    version: String\n    description: String\n    createdAt: DATE\n    updatedAt: DATE\n    publishedAt: DATE\n    ok: Boolean!\n    errors: [Error!]\n}\n\ntype SIRScaleDefinition {\n    # System assigned identifier\n    id: Int\n    filterTypeId: Int\n    version: String\n    description: String\n    jsonDefinition: JSON\n    serializedDiagram: JSON\n    publishedAt: DATE\n    createdAt: DATE\n    updatedAt: DATE\n    ok: Boolean!\n    errors: [Error!]\n}\n\ninput SIRScaleVersionInput {\n    filterTypeId: Int\n    version: String\n    description: String\n    jsonDefinition: JSON\n    serializedDiagram: JSON\n    publishedAt: DATE\n}\n\ntype Mutation {\n    upsertSIRScaleVersion(id: Int, sirScaleVersionInput: SIRScaleVersionInput!): SimpleResponse!\n}\n\ntype Query {\n    getSIRScaleVersions(filterTypeId: Int!): [SIRScale]\n    loadSIRScaleDefinition(id: Int!): SIRScaleDefinition\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/chadacious/sirs-api/blob/e13c882914710830c4a1350812ab3dbcadd69d3b/src/schema/sirScale.graphql:\nscalar DATE\nscalar JSON\n\ntype SIRScale {\n    # System assigned identifier\n    id: Int\n    filterTypeId: Int\n    version: String\n    description: String\n    createdAt: DATE\n    updatedAt: DATE\n    publishedAt: DATE\n    ok: Boolean!\n    errors: [Error!]\n}\n\ntype SIRScaleDefinition {\n    # System assigned identifier\n    id: Int\n    filterTypeId: Int\n    version: String\n    description: String\n    jsonDefinition: JSON\n    serializedDiagram: JSON\n    publishedAt: DATE\n    createdAt: DATE\n    updatedAt: DATE\n    ok: Boolean!\n    errors: [Error!]\n}\n\ninput SIRScaleVersionInput {\n    filterTypeId: Int\n    version: String\n    description: String\n    jsonDefinition: JSON\n    serializedDiagram: JSON\n    publishedAt: DATE\n}\n\ntype Mutation {\n    upsertSIRScaleVersion(id: Int, sirScaleVersionInput: SIRScaleVersionInput!): SimpleResponse!\n}\n\ntype Query {\n    getSIRScaleVersions(filterTypeId: Int!): [SIRScale]\n    loadSIRScaleDefinition(id: Int!): SIRScaleDefinition\n}\n\n# https://github.com/chadacious/sirs-api/blob/e22526dc4d1657a1780b664b65616e504dcde0e6/src/schema/common.graphql:\ntype Error {\n    path: String!\n    message: String\n}\n\ntype SimpleResponse {\n    ok: Boolean!\n    id: Int\n    errors: [Error!]\n}",
+        "mergedPaths": [
+          "src/schema/common.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Error",
+          "SimpleResponse"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 6,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-29T21:41:19Z",
+    "updated_at": "2019-06-27T13:43:35Z",
+    "pushed_at": "2019-06-27T13:43:33Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

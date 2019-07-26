@@ -1,0 +1,42 @@
+{
+  "repo_name": "express-graphql",
+  "repo_full_name": "tondeveloper/express-graphql",
+  "repo_owner": "tondeveloper",
+  "repo_description": "Small demo of graphql on express",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.graphql",
+      "path": "src/graphql/typeDefs/root.graphql",
+      "sha": "4c589049d33aa57190971a80b21ed416f2f27257",
+      "url": "https://api.github.com/repositories/161857458/contents/src/graphql/typeDefs/root.graphql?ref=884acf025cf2bb333c7b827098bfe9ea017729fa",
+      "git_url": "https://api.github.com/repositories/161857458/git/blobs/4c589049d33aa57190971a80b21ed416f2f27257",
+      "html_url": "https://github.com/tondeveloper/express-graphql/blob/884acf025cf2bb333c7b827098bfe9ea017729fa/src/graphql/typeDefs/root.graphql",
+      "content": "type Query\ntype Mutation\n#type Subscription\n\n#################################\n\ntype Meta {\n  start: Int\n  count: Int\n}\n\ntype Cursor {\n  id: String!\n  type: String!\n}\n\nenum Direction {\n  ASC\n  DESC\n}\n\nenum Search {\n  exact\n  fuzzy\n  none\n}\n\nenum Order {\n  int\n  date\n  string\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-15T01:13:13Z",
+    "updated_at": "2018-12-23T03:19:15Z",
+    "pushed_at": "2018-12-23T03:19:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

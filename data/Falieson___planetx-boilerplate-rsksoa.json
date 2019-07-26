@@ -1,0 +1,42 @@
+{
+  "repo_name": "planetx-boilerplate-rsksoa",
+  "repo_full_name": "falieson/planetx-boilerplate-rsksoa",
+  "repo_owner": "Falieson",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e53650e3c7f49b42a77e0837ba39099adcd46750",
+      "url": "https://api.github.com/repositories/91501233/contents/src/schema.graphql?ref=3d8be115dd6c2e9ed9402d790d841d5bddea63a6",
+      "git_url": "https://api.github.com/repositories/91501233/git/blobs/e53650e3c7f49b42a77e0837ba39099adcd46750",
+      "html_url": "https://github.com/Falieson/planetx-boilerplate-rsksoa/blob/3d8be115dd6c2e9ed9402d790d841d5bddea63a6/src/schema.graphql",
+      "content": "type NewsItem {\n  title: String!\n  link: String!\n  author: String\n  pubDate: String!\n  content: String\n}\n\ntype Query {\n  me: User\n  news: [NewsItem]\n}\n\ntype User {\n  id: ID!\n  email: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-16T20:25:46Z",
+    "updated_at": "2017-05-23T18:33:47Z",
+    "pushed_at": "2017-05-25T21:14:59Z",
+    "issues": 12,
+    "watchers": 4,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

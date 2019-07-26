@@ -1,0 +1,39 @@
+{
+  "repo_name": "inteligir-platform",
+  "repo_full_name": "inteligir/inteligir-platform",
+  "repo_owner": "inteligir",
+  "repo_description": "Inteligir Platform 🚉",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/db/schema.graphql",
+      "sha": "7b0bf7e9a9131486c110103563059b946576e25f",
+      "url": "https://api.github.com/repositories/44467872/contents/server/db/schema.graphql?ref=c559dc13a2949a9f583beaa70ae0b52ab86fcb49",
+      "git_url": "https://api.github.com/repositories/44467872/git/blobs/7b0bf7e9a9131486c110103563059b946576e25f",
+      "html_url": "https://github.com/inteligir/inteligir-platform/blob/c559dc13a2949a9f583beaa70ae0b52ab86fcb49/server/db/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  me: User\n  feed: [Post!]!\n  filterPosts(searchString: String): [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String): Post!\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n  signup(email: String!, password: String!, name: String): AuthPayload!\n  login(email: String!, password: String!): AuthPayload!\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n\ntype Post {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  published: Boolean!\n  title: String!\n  content: String\n  author: User!\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String\n  posts: [Post!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-10-18T06:19:30Z",
+    "updated_at": "2019-03-12T07:36:18Z",
+    "pushed_at": "2019-07-19T19:25:22Z",
+    "issues": 2,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 223,
+    "pull_requests_open": 37,
+    "pull_requests_closed": 46,
+    "pull_requests_merged": 140,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

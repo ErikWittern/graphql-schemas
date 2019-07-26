@@ -1,0 +1,42 @@
+{
+  "repo_name": "tanka-graphql",
+  "repo_full_name": "pekkah/tanka-graphql",
+  "repo_owner": "pekkah",
+  "repo_description": "GraphQL execution library with SignalR based server and ApolloLink implementation",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "dev/graphql.dev.chat.data/idl/schema.graphql",
+      "sha": "1f22936c503df0959f3721766d86c1aa2d3f9ea5",
+      "url": "https://api.github.com/repositories/141878174/contents/dev/graphql.dev.chat.data/idl/schema.graphql?ref=a176015354a409dab1405023d6e1f648824c3c36",
+      "git_url": "https://api.github.com/repositories/141878174/git/blobs/1f22936c503df0959f3721766d86c1aa2d3f9ea5",
+      "html_url": "https://github.com/pekkah/tanka-graphql/blob/a176015354a409dab1405023d6e1f648824c3c36/dev/graphql.dev.chat.data/idl/schema.graphql",
+      "content": "﻿type From {\n    userId: ID!\n    name: String!\n}\n\ntype Message {\n    id: ID!\n    from: From!\n    content: String!\n    timestamp: String\n}\n\ninput InputMessage {\n    content: String!\n}\n\ntype Query {\n    messages: [Message]\n}\n\ntype Mutation {\n    addMessage(message: InputMessage!): Message!\n    editMessage(id: ID!, message: InputMessage!): Message!\n}\n\ntype Subscription {\n    messages: Message\n}\n\nschema {\n    query: Query\n    mutation: Mutation\n    subscription: Subscription\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-22T08:19:21Z",
+    "updated_at": "2019-07-16T19:37:25Z",
+    "pushed_at": "2019-07-16T18:27:26Z",
+    "issues": 49,
+    "watchers": 4,
+    "fork_count": 2,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 232,
+    "pull_requests_open": 5,
+    "pull_requests_closed": 44,
+    "pull_requests_merged": 183,
+    "releases": 14,
+    "stargazers": 29
+  }
+}

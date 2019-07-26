@@ -1,0 +1,39 @@
+{
+  "repo_name": "learning-graphql",
+  "repo_full_name": "victorhqc/learning-graphql",
+  "repo_owner": "victorhqc",
+  "repo_description": "Just me learning how to Graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "5ee31acb2bdf0043e76ae793e2e856d852a75c7a",
+      "url": "https://api.github.com/repositories/169076600/contents/src/schema.graphql?ref=3dc41b83589b58fc147c4e4ba3f95fc51d62bf6b",
+      "git_url": "https://api.github.com/repositories/169076600/git/blobs/5ee31acb2bdf0043e76ae793e2e856d852a75c7a",
+      "html_url": "https://github.com/victorhqc/learning-graphql/blob/3dc41b83589b58fc147c4e4ba3f95fc51d62bf6b/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  feed(filter: String, skip: Int, first: Int, last: Int, orderBy: LinkOrderByInput): Feed!\n  link(id: ID!): Link\n}\n\ntype Mutation {\n  # Creates a new link.\n  post(url: String!, description: String!): Link!,\n\n  # Signup new users\n  signup(email: String!, password: String!, name: String!): AuthPayload,\n\n  # Login existing users\n  login(email: String!, password: String!): AuthPayload,\n\n  # Vote a link\n  vote(linkId: ID!): Vote,\n\n  # Updates a link.\n  updateLink(id: ID!, url: String, description: String): Link,\n\n  # Delete a link.\n  deleteLink(id: ID!): Link\n}\n\n\ntype Feed {\n  links: [Link!]!\n  count: Int!\n}\n\ntype Link {\n  id: ID!,\n  description: String!\n  url: String!\n  postedBy: User\n  votes: [Vote!]!\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n\ntype Vote {\n  id: ID!\n  link: Link!\n  user: User!\n}\n\ntype Subscription {\n  newLink: Link\n  newVote: Vote\n}\n\nenum LinkOrderByInput {\n  description_ASC\n  description_DESC\n  url_ASC\n  url_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-04T12:41:12Z",
+    "updated_at": "2019-02-06T09:28:12Z",
+    "pushed_at": "2019-02-06T09:28:11Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

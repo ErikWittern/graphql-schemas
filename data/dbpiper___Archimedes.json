@@ -1,0 +1,42 @@
+{
+  "repo_name": "Archimedes",
+  "repo_full_name": "dbpiper/archimedes",
+  "repo_owner": "dbpiper",
+  "repo_description": "The news platform for developers",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/schema.graphql",
+      "sha": "348632170c5c13c63d38cecf27893507613c3320",
+      "url": "https://api.github.com/repositories/183307593/contents/src/server/schema.graphql?ref=50113bebdffcf5e7db46b6e1f7d8ae882cc6e0c9",
+      "git_url": "https://api.github.com/repositories/183307593/git/blobs/348632170c5c13c63d38cecf27893507613c3320",
+      "html_url": "https://github.com/dbpiper/Archimedes/blob/50113bebdffcf5e7db46b6e1f7d8ae882cc6e0c9/src/server/schema.graphql",
+      "content": "type Query {\n  releases(owner: String!, name: String!, last: Int!): [Release]!\n}\n\ntype Release {\n  id: ID!\n  name: String\n  tagName: String!\n  url: String!\n  publishedAt: String\n  createdAt: String!\n  updatedAt: String!\n  isPrerelease: Boolean!\n  description: String\n  author: User\n}\n\ntype User {\n  id: ID!\n  name: String\n  login: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-24T21:12:29Z",
+    "updated_at": "2019-07-15T20:59:16Z",
+    "pushed_at": "2019-07-19T19:51:27Z",
+    "issues": 17,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 10,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

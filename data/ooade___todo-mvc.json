@@ -1,0 +1,42 @@
+{
+  "repo_name": "todo-mvc",
+  "repo_full_name": "ooade/todo-mvc",
+  "repo_owner": "ooade",
+  "repo_description": "A todomvc.com example built on RelayJS with @RisingStack/graffiti-mongoose Schema",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "d22b16351e88809fe495a6840a01bbdcd589d930",
+      "url": "https://api.github.com/repositories/69070026/contents/server/data/schema.graphql?ref=118d8ae20a1ff30acad0276338ed721f4243815d",
+      "git_url": "https://api.github.com/repositories/69070026/git/blobs/d22b16351e88809fe495a6840a01bbdcd589d930",
+      "html_url": "https://github.com/ooade/todo-mvc/blob/118d8ae20a1ff30acad0276338ed721f4243815d/server/data/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n  mutation: RootMutation\n  subscription: RootSubscription\n}\n\ninput addSubTodoInput {\n  clientSubscriptionId: String\n}\n\ntype addSubTodoPayload {\n  viewer: Viewer\n  changedSubTodoSubEdge: changedSubTodoEdge\n  clientSubscriptionId: String\n}\n\ninput addTodoInput {\n  # A todo\n  text: String\n\n  # Returns True for completed Todo\n  completed: Boolean\n  clientMutationId: String\n}\n\ntype addTodoPayload {\n  viewer: Viewer\n  changedTodoEdge: changedTodoEdge\n  clientMutationId: String\n}\n\n# An edge in a connection.\ntype changedSubTodoEdge {\n  # The item at the end of the edge\n  node: changedSubTodoSubNode\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype changedSubTodoSubNode {\n  # A todo\n  text: String\n\n  # Returns True for completed Todo\n  completed: Boolean\n  _id: ID\n\n  # The ID of an object\n  id: ID!\n}\n\n# An edge in a connection.\ntype changedTodoEdge {\n  # The item at the end of the edge\n  node: changedTodoNode\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype changedTodoNode {\n  # A todo\n  text: String\n\n  # Returns True for completed Todo\n  completed: Boolean\n  _id: ID\n\n  # The ID of an object\n  id: ID!\n}\n\ninput deleteSubTodoInput {\n  clientSubscriptionId: String\n}\n\ntype deleteSubTodoPayload {\n  viewer: Viewer\n  ok: Boolean\n  id: ID!\n  clientSubscriptionId: String\n}\n\ninput deleteTodoInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype deleteTodoPayload {\n  viewer: Viewer\n  ok: Boolean\n  id: ID!\n  clientMutationId: String\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\nenum orderByTodo {\n  TEXT_ASC\n  TEXT_DESC\n  COMPLETED_ASC\n  COMPLETED_DESC\n  _ID_ASC\n  _ID_DESC\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype RootMutation {\n  addTodo(input: addTodoInput!): addTodoPayload\n  updateTodo(input: updateTodoInput!): updateTodoPayload\n  deleteTodo(input: deleteTodoInput!): deleteTodoPayload\n}\n\ntype RootQuery {\n  todo(id: ID!): Todo\n  todos(\n    # The ID of a Todo\n    id: [ID]\n\n    # The ID of a Todo\n    ids: [ID]\n    orderBy: orderByTodo\n\n    # A todo\n    text: String\n\n    # Returns True for completed Todo\n    completed: Boolean\n    _id: ID\n  ): [Todo]\n  viewer: Viewer\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ntype RootSubscription {\n  addSubTodo(input: addSubTodoInput!): addSubTodoPayload\n  updateSubTodo(input: updateSubTodoInput!): updateSubTodoPayload\n  deleteSubTodo(input: deleteSubTodoInput!): deleteSubTodoPayload\n}\n\ntype Todo implements Node {\n  # A todo\n  text: String\n\n  # Returns True for completed Todo\n  completed: Boolean\n  _id: ID\n\n  # The ID of an object\n  id: ID!\n}\n\n# A connection to a list of items.\ntype TodoConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TodoEdge]\n  count: Int\n}\n\n# An edge in a connection.\ntype TodoEdge {\n  # The item at the end of the edge\n  node: Todo\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput updateSubTodoInput {\n  id: ID!\n  clientSubscriptionId: String\n}\n\ntype updateSubTodoPayload {\n  viewer: Viewer\n  changedSubTodo: Todo\n  clientSubscriptionId: String\n}\n\ninput updateTodoInput {\n  # A todo\n  text: String\n\n  # Returns True for completed Todo\n  completed: Boolean\n  id: ID!\n  clientMutationId: String\n}\n\ntype updateTodoPayload {\n  changedTodo: Todo\n  clientMutationId: String\n}\n\ntype Viewer implements Node {\n  # The ID of an object\n  id: ID!\n  todos(\n    after: String\n    first: Int\n    before: String\n    last: Int\n    orderBy: orderByTodo\n\n    # A todo\n    text: String\n\n    # Returns True for completed Todo\n    completed: Boolean\n    _id: ID\n  ): TodoConnection\n  todo(id: ID!): Todo\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 27
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-24T00:34:15Z",
+    "updated_at": "2017-02-18T03:38:07Z",
+    "pushed_at": "2019-07-05T01:09:38Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 15,
+    "pull_requests_open": 11,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

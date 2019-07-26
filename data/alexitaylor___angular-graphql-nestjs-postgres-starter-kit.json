@@ -1,0 +1,42 @@
+{
+  "repo_name": "angular-graphql-nestjs-postgres-starter-kit",
+  "repo_full_name": "alexitaylor/angular-graphql-nestjs-postgres-starter-kit",
+  "repo_owner": "alexitaylor",
+  "repo_description": " 🚀Angular 7 + GraphQL + NestJS + Postgres Starter Kit",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "roles.graphql",
+      "path": "server/project/src/roles/roles.graphql",
+      "sha": "8fb53d9f60dc6cb04cdbe475bf094f8f82e084af",
+      "url": "https://api.github.com/repositories/169705641/contents/server/project/src/roles/roles.graphql?ref=2fb09b083bd128ab3ba3de5d5351b36155bc55e1",
+      "git_url": "https://api.github.com/repositories/169705641/git/blobs/8fb53d9f60dc6cb04cdbe475bf094f8f82e084af",
+      "html_url": "https://github.com/alexitaylor/angular-graphql-nestjs-postgres-starter-kit/blob/2fb09b083bd128ab3ba3de5d5351b36155bc55e1/server/project/src/roles/roles.graphql",
+      "content": "type Query {\n  roles: [Role!]\n  role(id: ID!): Role\n}\n\ntype Mutation {\n  createRole(name: String!): Role!\n\n  updateRole(id: ID!, name: String!): Role!\n\n  deleteRole(id: ID!): Boolean\n}\n\ntype Role {\n  id: ID!\n  name: String!\n  createdAt: String!\n  updatedAt: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-08T08:37:04Z",
+    "updated_at": "2019-07-19T05:42:03Z",
+    "pushed_at": "2019-07-18T05:24:51Z",
+    "issues": 4,
+    "watchers": 3,
+    "fork_count": 8,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 27,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 24,
+    "releases": 0,
+    "stargazers": 34
+  }
+}

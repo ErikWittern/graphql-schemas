@@ -1,0 +1,39 @@
+{
+  "repo_name": "merge-graphql-schemas",
+  "repo_full_name": "okgrow/merge-graphql-schemas",
+  "repo_owner": "okgrow",
+  "repo_description": "A utility library to facilitate merging of modularized GraphQL schemas and resolver objects.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "raw2_type.gql",
+      "path": "test/graphql/types/client/raw2_type.gql",
+      "sha": "68803f30784050cc6bb8431123433cc3cc894ed0",
+      "url": "https://api.github.com/repositories/77242781/contents/test/graphql/types/client/raw2_type.gql?ref=cf99baac9c178d3fc565d108bc25916b679947e6",
+      "git_url": "https://api.github.com/repositories/77242781/git/blobs/68803f30784050cc6bb8431123433cc3cc894ed0",
+      "html_url": "https://github.com/okgrow/merge-graphql-schemas/blob/cf99baac9c178d3fc565d108bc25916b679947e6/test/graphql/types/client/raw2_type.gql",
+      "content": "type Raw2 {\n  field: String!\n}\n\ntype Query {\n  raw2Query: [Raw2]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-23T18:08:52Z",
+    "updated_at": "2019-07-16T08:50:04Z",
+    "pushed_at": "2019-07-16T08:50:02Z",
+    "issues": 86,
+    "watchers": 20,
+    "fork_count": 78,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 118,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 11,
+    "pull_requests_merged": 107,
+    "releases": 18,
+    "stargazers": 704
+  }
+}

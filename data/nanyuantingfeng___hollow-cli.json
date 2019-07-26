@@ -1,0 +1,42 @@
+{
+  "repo_name": "hollow-cli",
+  "repo_full_name": "nanyuantingfeng/hollow-cli",
+  "repo_owner": "nanyuantingfeng",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/cases/build-gql/schema.graphql",
+      "sha": "9a004a59bbd8662a406b0ec5ac341b2aa53c5f92",
+      "url": "https://api.github.com/repositories/100359373/contents/test/cases/build-gql/schema.graphql?ref=fbb578bfbadd7e29eb22d148dbe86798a39e17b8",
+      "git_url": "https://api.github.com/repositories/100359373/git/blobs/9a004a59bbd8662a406b0ec5ac341b2aa53c5f92",
+      "html_url": "https://github.com/nanyuantingfeng/hollow-cli/blob/fbb578bfbadd7e29eb22d148dbe86798a39e17b8/test/cases/build-gql/schema.graphql",
+      "content": "# This file was generated based on \".graphqlconfig\". Do not edit manually.\n\nschema {\n    query: Root\n    mutation: Mutation\n}\n\ntype Mutation {\n    deleteCluster(input: dashboard_clusterEp_deleteInput!): graphql_gQLMutationResult!\n    saveCluster(input: dashboard_clusterEp_saveInput!): graphql_gQLMutationResult!\n}\n\ntype Root {\n    authList: [dashboard_sessionEp_authMethod!]!\n    cluster(input: dashboard_clusterEp_getInput!): dashboard_cluster!\n    clusters: [dashboard_cluster!]!\n    loginUrl(input: dashboard_sessionEp_loginUrlRequest!): dashboard_sessionEp_loginUrlResponse!\n    session: dashboard_sessionEp_sessionState!\n}\n\ntype agent_clusterAdminService_nodeHealth {\n    health: boot_healthCheckResult!\n    url: String!\n}\n\ntype boot_healthCheckResult {\n    checks: [boot_healthCheckResult_procedureResult!]!\n    outcome: boot_healthState!\n}\n\ntype boot_healthCheckResult_procedureResult {\n    name: String!\n    state: boot_healthState!\n}\n\ntype dashboard_cluster {\n    checkAllNodesHealth: [agent_clusterAdminService_nodeHealth!]!\n    dDL(input: dashboard_cluster_getDDLInput!): String!\n    description: String!\n    endpoint: String!\n    id: ID!\n    name: String!\n    nameSpell: String!\n    nodes: [String!]!\n    secret: String!\n}\n\ntype dashboard_sessionEp_authMethod {\n    name: String!\n    title: String!\n}\n\ntype dashboard_sessionEp_loginUrlResponse {\n    url: String!\n}\n\ntype dashboard_sessionEp_sessionState {\n    hasLogin: Boolean!\n    user: dashboard_sessionEp_userState\n}\n\ntype dashboard_sessionEp_userState {\n    avatar: String!\n    email: String!\n    id: ID!\n    name: String!\n    roles: [String!]!\n}\n\ntype graphql_gQLMutationResult {\n    clientMutationId: String!\n}\n\nenum boot_healthState {\n    DOWN\n    UP\n}\n\ninput dashboard_clusterEp_deleteInput {\n    clientMutationId: String!\n    clusterId: String!\n}\n\ninput dashboard_clusterEp_getInput {\n    clusterId: String!\n}\n\ninput dashboard_clusterEp_saveInput {\n    clientMutationId: String!\n    description: String!\n    endopint: String!\n    id: String\n    name: String!\n    secret: String!\n}\n\ninput dashboard_cluster_getDDLInput {\n    verbose: Boolean!\n}\n\ninput dashboard_sessionEp_loginUrlRequest {\n    callback: String!\n    name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-15T09:01:39Z",
+    "updated_at": "2019-07-08T07:55:28Z",
+    "pushed_at": "2019-07-08T07:55:26Z",
+    "issues": 1,
+    "watchers": 6,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 14
+  }
+}

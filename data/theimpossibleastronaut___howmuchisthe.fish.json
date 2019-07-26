@@ -1,0 +1,42 @@
+{
+  "repo_name": "howmuchisthe.fish",
+  "repo_full_name": "theimpossibleastronaut/howmuchisthe.fish",
+  "repo_owner": "theimpossibleastronaut",
+  "repo_description": "Lyrical madness from the brains of H.P. Baxxter in the form of a JSON API.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "htdocs/schema.gql",
+      "sha": "296b38b322bb07bd943d602c4fca2a3b29eb5dac",
+      "url": "https://api.github.com/repositories/29022457/contents/htdocs/schema.gql?ref=752384bf76babf8153d6455c0089d846e81c45c5",
+      "git_url": "https://api.github.com/repositories/29022457/git/blobs/296b38b322bb07bd943d602c4fca2a3b29eb5dac",
+      "html_url": "https://github.com/theimpossibleastronaut/howmuchisthe.fish/blob/752384bf76babf8153d6455c0089d846e81c45c5/htdocs/schema.gql",
+      "content": "scalar Date\n\ntype Query {\n  random: Quote!\n  video: Video!\n  daily: Quote!\n  quote(id: ID!): Quote!\n}\n\ntype Quote {\n  id: ID!\n  permalink: String!\n  hash: String!\n  text: String!\n  track: String!\n  album: String!\n  year: Int!\n  album_information: String!\n  album_cover: String!\n  album_thumb: String!\n  releasedate: Date!\n\n  # Track data is optional\n  track_cover: String\n  track_thumb: String\n  track_master: String\n\n  # Not all data have videos available\n  videos: [Video]\n}\n\ntype Video {\n  title: String!,\n  link: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-01-09T15:41:15Z",
+    "updated_at": "2019-07-12T04:57:00Z",
+    "pushed_at": "2019-07-12T04:57:05Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

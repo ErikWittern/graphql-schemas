@@ -1,0 +1,42 @@
+{
+  "repo_name": "skiddle-apollo",
+  "repo_full_name": "neilhuyton/skiddle-apollo",
+  "repo_owner": "neilhuyton",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "77fa88d2b72a121abc45e2ca57578a64034070ee",
+      "url": "https://api.github.com/repositories/162325364/contents/server/schema.graphql?ref=435eaee73abcb648d76f2fd1da80929f12f03b8e",
+      "git_url": "https://api.github.com/repositories/162325364/git/blobs/77fa88d2b72a121abc45e2ca57578a64034070ee",
+      "html_url": "https://github.com/neilhuyton/skiddle-apollo/blob/435eaee73abcb648d76f2fd1da80929f12f03b8e/server/schema.graphql",
+      "content": "type Query {\n  events(\n    latitude: Float,\n    longitude: Float,\n    radius: Int,\n    country: String,\n    getdistance: Boolean,\n    keyword: String,\n    eventcode: String,\n    ticketsavailable: Boolean,\n    specialFeatured: Boolean,\n    imagefilter: Boolean,\n    description: Boolean,\n    under18: Boolean,\n    minDate: String, \n    maxDate: String,\n    venueid: Int,\n    a: Int, \n    b: Int, \n    genreId: Int, \n    order: String,\n    limit: Int,\n    shufflelimit: Int,\n    offset: Int\n  ): [Event!]!\n  event(id: ID!): Event\n  venue(id: ID!): Venue\n  venues(\n    latitude: Float,\n    longitude: Float,\n    radius: Int,\n    type: String,\n    limit: Int,\n    offset: Int\n  ): [Venue!]!\n  artists(\n    name: String,\n    venueid: Int,\n    b: Int\n  ): [Artist!]!\n  artist(id: ID!): Artist\n  genres: [Genre]\n}\n\ntype Event {\n  id: ID!\n  EventCode: String!\n  eventname: String!\n  cancelled: String!\n  imageurl: String!\n  largeimageurl: String!\n  link: String!\n  date: String!\n  startdate: String\n  enddate: String\n  dateStart: String\n  dateEnd: String\n  description: String!\n  minage: String\n  Minage: String\n  entryprice: String!\n  openingtimes: OpeningTime\n  genres: [Genre!]\n  venue: Venue\n  artists: [Artist]\n}\n\ntype OpeningTime {\n  doorsopen: String!\n  doorsclose: String!\n  lastentry: String!\n}\n\ntype Venue {\n  id: ID!\n  name: String!\n  address: String!\n  town: String!\n  postcode: String!\n  phone: String!\n  description: String\n  imageurl: String\n  latitude: Float!\n  longitude: Float!\n  distance: Int\n  type: String!\n  link: String!\n}\n\ntype Artist {\n  id: ID!\n  artistid: String\n  name: String!\n  image: String\n  imageurl: String!\n  nextevent: String\n  favourite: Boolean!\n  spotifymp3url: String\n  spotifyartisturl: String\n}\n\ntype Genre {\n  GenreID: String\n  GenreName: String\n  genreid: ID\n  name: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-18T17:45:47Z",
+    "updated_at": "2018-12-18T17:54:06Z",
+    "pushed_at": "2018-12-18T17:53:58Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

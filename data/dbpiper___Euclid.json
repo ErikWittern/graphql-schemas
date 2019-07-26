@@ -1,0 +1,42 @@
+{
+  "repo_name": "Euclid",
+  "repo_full_name": "dbpiper/euclid",
+  "repo_owner": "dbpiper",
+  "repo_description": "A website dedicated to tracking product price information.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/schema.graphql",
+      "sha": "291b903d3f9508f4859c608183b038f154639e43",
+      "url": "https://api.github.com/repositories/163880219/contents/src/server/schema.graphql?ref=437fcb5a5df82b3c8bb02ae87e987b43fc6ab522",
+      "git_url": "https://api.github.com/repositories/163880219/git/blobs/291b903d3f9508f4859c608183b038f154639e43",
+      "html_url": "https://github.com/dbpiper/Euclid/blob/437fcb5a5df82b3c8bb02ae87e987b43fc6ab522/src/server/schema.graphql",
+      "content": "type Query {\n  stock(id: ID!): Stock\n  stocks(ticker: String!, earliestDate: Int!): [Stock!]!\n  allStocks: [Stock!]!\n  tickers: [String!]!\n}\n\ntype Stock {\n  id: ID!\n  price: Float!\n  date: Int!\n  ticker: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-02T19:19:04Z",
+    "updated_at": "2019-05-08T07:54:30Z",
+    "pushed_at": "2019-04-24T21:16:44Z",
+    "issues": 64,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 31,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 29,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

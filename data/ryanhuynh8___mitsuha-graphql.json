@@ -1,0 +1,42 @@
+{
+  "repo_name": "mitsuha-graphql",
+  "repo_full_name": "ryanhuynh8/mitsuha-graphql",
+  "repo_owner": "ryanhuynh8",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "2f6e80ccd524c2c302282c80067b2ae0182ffdaf",
+      "url": "https://api.github.com/repositories/119785230/contents/schema/schema.graphql?ref=60db3beeeebc21fbf7f1b694ae8a24797c53a44e",
+      "git_url": "https://api.github.com/repositories/119785230/git/blobs/2f6e80ccd524c2c302282c80067b2ae0182ffdaf",
+      "html_url": "https://github.com/ryanhuynh8/mitsuha-graphql/blob/60db3beeeebc21fbf7f1b694ae8a24797c53a44e/schema/schema.graphql",
+      "content": "schema {\r\n    query: Query\r\n    mutation: Mutation\r\n}\r\n\r\ntype Query {\r\n    issues(projectId: Int, offset: Int, limit: Int): [Issue]\r\n    issue(id: Int): Issue\r\n    comments(id: Int): [Comment]\r\n    users(projectId: Int): [User]\r\n}\r\n\r\ntype Mutation {\r\n    addComment(issueId: Int, commentText: String): MutationResult\r\n    updateSingleIssue(id: Int, title: String, content: String): MutationResult\r\n}\r\n\r\nenum MutationResult {\r\n    SUCCESS,\r\n    FAILURE,\r\n    PERMISSION_DENIED\r\n}\r\n\r\nscalar Date\r\n\r\ntype Comment {\r\n    id: Int,\r\n    comment: String,\r\n    createdBy: String,\r\n    createdAt: String\r\n}\r\n\r\ntype Issue {\r\n    id: ID\r\n    title: String\r\n    description: String\r\n    status: Int\r\n    updated: String\r\n    created: String\r\n}\r\n\r\ntype User {\r\n    email: String\r\n    name: String\r\n    id: ID\r\n}\r\n\r\ninput HelloInput {\r\n    firstName: String!\r\n    lastName: String\r\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-01T05:00:33Z",
+    "updated_at": "2018-02-13T10:02:08Z",
+    "pushed_at": "2018-02-22T02:57:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

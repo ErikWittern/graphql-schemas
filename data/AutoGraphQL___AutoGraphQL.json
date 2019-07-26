@@ -1,0 +1,39 @@
+{
+  "repo_name": "AutoGraphQL",
+  "repo_full_name": "autographql/autographql",
+  "repo_owner": "AutoGraphQL",
+  "repo_description": "Auto provide data for GraphQL-Java with APIJSON and code free.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/main/resources/schema.graphql",
+      "sha": "e627b2a895c7989385ca93abce1db6005379bf8f",
+      "url": "https://api.github.com/repositories/152688311/contents/src/main/resources/schema.graphql?ref=ec52aaed7639b533335f86f98f0764b530d68c16",
+      "git_url": "https://api.github.com/repositories/152688311/git/blobs/e627b2a895c7989385ca93abce1db6005379bf8f",
+      "html_url": "https://github.com/AutoGraphQL/AutoGraphQL/blob/ec52aaed7639b533335f86f98f0764b530d68c16/src/main/resources/schema.graphql",
+      "content": "\ntype Query {\n    hello: String\n    echo(toEcho: String): String\n    fetch(arg: String): String\n    add(arg: String): String\n    remove(arg: String): String\n    edit(arg: String): String\n    count(arg: String): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-12T03:20:20Z",
+    "updated_at": "2019-07-17T03:21:28Z",
+    "pushed_at": "2019-06-05T06:47:11Z",
+    "issues": 2,
+    "watchers": 3,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 20
+  }
+}

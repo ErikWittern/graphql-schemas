@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-poc",
+  "repo_full_name": "samffy/graphql-poc",
+  "repo_owner": "Samffy",
+  "repo_description": "This project is a proof of concept to test graphQL usage in PHP.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "config/graphql/schema.graphql",
+      "sha": "6dbed59f25e2d54e58027d2509a325337c92088e",
+      "url": "https://api.github.com/repositories/132900635/contents/config/graphql/schema.graphql?ref=c3263f36d4cf3d6fa65fccef3d5229638fd0ef13",
+      "git_url": "https://api.github.com/repositories/132900635/git/blobs/6dbed59f25e2d54e58027d2509a325337c92088e",
+      "html_url": "https://github.com/Samffy/graphql-poc/blob/c3263f36d4cf3d6fa65fccef3d5229638fd0ef13/config/graphql/schema.graphql",
+      "content": "# A animal interface\ninterface Animal {\n  # The id of the animal\n  id: ID!\n\n  # The name of the animal\n  name: String!\n\n  # Breed of the animal\n  breed: String!\n}\n\n# Type of animal manage by the app\ntype Bear implements Animal {\n  # The id of the animal\n  id: ID!\n\n  # The name of the animal\n  name: String!\n\n  # Breed of the animal\n  breed: String!\n}\n\nscalar BirthDate\n\n# Type of vehicle manage by the app\ntype Car implements Vehicle {\n  # Internal identifier\n  id: ID!\n\n  # The manufacturer of the car\n  manufacturer: String!\n\n  # The model of the car\n  model: String!\n\n  # Number of seats in the car\n  seats_number: Int!\n}\n\ninput CarInput {\n  id: ID!\n  manufacturer: String!\n  model: String!\n  seats_number: Int!\n}\n\n# Type of animal manage by the app\ntype Cat implements Animal {\n  # The id of the animal\n  id: ID!\n\n  # The name of the animal\n  name: String!\n\n  # Breed of the animal\n  breed: String!\n}\n\nscalar DateTime\n\n# Type of animal manage by the app\ntype Dog implements Animal {\n  # The id of the animal\n  id: ID!\n\n  # The name of the animal\n  name: String!\n\n  # Breed of the animal\n  breed: String!\n}\n\ninput IdInput {\n  id: String!\n}\n\ntype Mutation {\n  CreateCar(input: CarInput!): Car!\n  UpdateCar(input: CarInput!): Car!\n  DeleteCar(input: IdInput!): ID!\n  CreateTruck(input: TruckInput!): Truck!\n  UpdateTruck(input: TruckInput!): Truck!\n  DeleteTruck(input: IdInput!): ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# Person manage by the app\ntype Person {\n  # Internal identifier\n  id: ID!\n\n  # Name of the person\n  name: String!\n\n  # Title of the person\n  title: PersonTitle!\n\n  # Birth date of the person\n  birth_date: BirthDate\n\n  # Date of creation of the person in database\n  created_at: DateTime!\n\n  # Vehicles of the person\n  vehicles(\n    # Resolves vehicle using its id.\n    id: String\n  ): [Vehicle]\n\n  # Pet of the person\n  pet: Pet\n}\n\n# Title of a person\nenum PersonTitle {\n  unknown\n  Miss\n  Mrs\n  Ms\n  Mr\n}\n\n# Animals available as pet\nunion Pet = Dog | Cat | Bear\n\ntype Query {\n  persons(\n    # Resolves person using its id.\n    id: ID\n  ): [Person]\n  person(\n    # Resolves person using its id.\n    id: ID!\n  ): Person\n  vehicles(\n    after: String\n    first: Int\n\n    # Resolves vehicle using its owner id.\n    owner: ID\n\n    # Resolves vehicle using its id.\n    id: String\n  ): VehicleConnection\n  car(\n    # Resolves car using its id.\n    id: ID!\n  ): Car\n  truck(\n    # Resolves truck using its id.\n    id: ID!\n  ): Truck\n}\n\n# Type of vehicle manage by the app\ntype Truck implements Vehicle {\n  # Internal identifier\n  id: ID!\n\n  # The manufacturer of the truck\n  manufacturer: String!\n\n  # The model of the truck\n  model: String!\n\n  # Maximum load of the truck\n  maximum_load: Int!\n}\n\ninput TruckInput {\n  id: ID!\n  manufacturer: String!\n  model: String!\n  maximum_load: Int!\n}\n\n# A vehicle interface\ninterface Vehicle {\n  # The id of the vehicle\n  id: ID!\n\n  # The manufacturer of the vehicle\n  manufacturer: String!\n\n  # The model of the vehicle\n  model: String!\n}\n\n# A connection to a list of items.\ntype VehicleConnection {\n  # Number of items in the connection\n  totalCount: Int\n\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # Information to aid in pagination.\n  edges: [VehicleEdge]\n}\n\n# An edge in a connection.\ntype VehicleEdge {\n  # The item at the end of the edge.\n  node: Vehicle\n\n  # A cursor for use in pagination.\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-10T12:58:16Z",
+    "updated_at": "2018-12-15T14:23:07Z",
+    "pushed_at": "2018-12-15T14:20:24Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

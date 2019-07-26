@@ -1,0 +1,41 @@
+{
+  "repo_name": "full-stack-vue-app",
+  "repo_full_name": "evolutionharsh/full-stack-vue-app",
+  "repo_owner": "evolutionharsh",
+  "repo_description": "full stack vue app with graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.gql",
+      "path": "typeDefs.gql",
+      "sha": "a049de1cf2eb1f636d9ae4e1b585a75e734ee2eb",
+      "url": "https://api.github.com/repositories/173166542/contents/typeDefs.gql?ref=727fe4c9cf58194c3f7333b37122393460dd8121",
+      "git_url": "https://api.github.com/repositories/173166542/git/blobs/a049de1cf2eb1f636d9ae4e1b585a75e734ee2eb",
+      "html_url": "https://github.com/evolutionharsh/full-stack-vue-app/blob/727fe4c9cf58194c3f7333b37122393460dd8121/typeDefs.gql",
+      "content": "type User {\n    _id: ID \n    username: String! \n    email: String!\n    password: String!\n    avatar: String\n    joinDate: String\n    favorites: [Post]\n}\n\ntype Post {\n    title: String!\n    imageUrl: String!\n    categories: [String]!\n    description: String!\n    createdDate: String\n    likes: Int  \n    createdBy: User!\n    messages: [Message]\n}\n\n\ntype Message {\n    _id: ID \n    messageBody: String!\n    messageDate: String\n    messageUser: User!\n}\n\ntype Query {\n\n    user(_id: ID!): User\n\n}\n\ntype Query1 {\n#    getUser: User\ngetPosts: [Post]\n}\ntype Mutation {\n    addPost(title: String!,imageUrl: String!,categories:[String]!,description: String!, creatorId: ID!): Post!\n    signupUser(username: String!,email: String!,password: String!): User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-28T18:31:46Z",
+    "updated_at": "2019-02-28T20:16:03Z",
+    "pushed_at": "2019-02-28T20:16:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

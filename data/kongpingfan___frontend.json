@@ -1,0 +1,39 @@
+{
+  "repo_name": "frontend",
+  "repo_full_name": "kongpingfan/frontend",
+  "repo_owner": "kongpingfan",
+  "repo_description": "前端学习记录",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "GraphQL/src/schema.graphql",
+      "sha": "71dffa3b48e462a54b4981a97576d029ab4e5de2",
+      "url": "https://api.github.com/repositories/181252477/contents/GraphQL/src/schema.graphql?ref=549e079960b9f55b9f12734676e5fc0c7f468d8a",
+      "git_url": "https://api.github.com/repositories/181252477/git/blobs/71dffa3b48e462a54b4981a97576d029ab4e5de2",
+      "html_url": "https://github.com/kongpingfan/frontend/blob/549e079960b9f55b9f12734676e5fc0c7f468d8a/GraphQL/src/schema.graphql",
+      "content": "type User {\n  id: ID!\n  name: String!\n  email: String!\n  age: Int\n}\n\ntype Query{\n    users:[User!]!\n    user(id:ID!):User!\n}\n\ntype Mutation{\n    createUser(id:ID!, name: String!, email: String!, age:Int):User!\n    updateUser(id:ID!, name: String, email:String, age:Int):User!\n    deleteUser(id:ID!):User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-14T02:47:44Z",
+    "updated_at": "2019-04-14T02:54:30Z",
+    "pushed_at": "2019-04-14T02:54:29Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

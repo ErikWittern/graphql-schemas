@@ -1,0 +1,42 @@
+{
+  "repo_name": "quilt",
+  "repo_full_name": "shopify/quilt",
+  "repo_owner": "Shopify",
+  "repo_description": "A loosely related set of packages for JavaScript / TypeScript projects at Shopify",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/jest-mock-apollo/src/test/fixtures/schema.graphql",
+      "sha": "8a158f4cabd80b5679cba809cab49a86f29d6435",
+      "url": "https://api.github.com/repositories/127035128/contents/packages/jest-mock-apollo/src/test/fixtures/schema.graphql?ref=866191480e26635e3409e47de6bed8a5686d2e03",
+      "git_url": "https://api.github.com/repositories/127035128/git/blobs/8a158f4cabd80b5679cba809cab49a86f29d6435",
+      "html_url": "https://github.com/Shopify/quilt/blob/866191480e26635e3409e47de6bed8a5686d2e03/packages/jest-mock-apollo/src/test/fixtures/schema.graphql",
+      "content": "schema {\n  query: QueryRoot\n}\n\ntype Dog {\n  name: String!\n}\n\ntype Cat {\n  name: String!\n}\n\nunion Pet = Dog | Cat\n\ntype QueryRoot {\n  pets: [Pet!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-27T19:20:06Z",
+    "updated_at": "2019-07-19T05:52:39Z",
+    "pushed_at": "2019-07-19T18:34:14Z",
+    "issues": 259,
+    "watchers": 105,
+    "fork_count": 41,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 534,
+    "pull_requests_open": 21,
+    "pull_requests_closed": 49,
+    "pull_requests_merged": 464,
+    "releases": 0,
+    "stargazers": 306
+  }
+}

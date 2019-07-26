@@ -1,0 +1,42 @@
+{
+  "repo_name": "norris-api-qgl-wrap",
+  "repo_full_name": "mrsir52/norris-api-qgl-wrap",
+  "repo_owner": "mrsir52",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "e5ea06c7d1268d4ff9ba5d45c9b268dba29cdd1c",
+      "url": "https://api.github.com/repositories/142780381/contents/server/src/schema.graphql?ref=e58d0611d96f66cd54d0f719aa1c863ab90f100e",
+      "git_url": "https://api.github.com/repositories/142780381/git/blobs/e5ea06c7d1268d4ff9ba5d45c9b268dba29cdd1c",
+      "html_url": "https://github.com/mrsir52/norris-api-qgl-wrap/blob/e58d0611d96f66cd54d0f719aa1c863ab90f100e/server/src/schema.graphql",
+      "content": "# import Post from \"./generated/prisma.graphql\"\n\ntype Query {\n  getJoke: results\n}\n\ntype results {\n  icon_url: String\n  value: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-29T17:18:22Z",
+    "updated_at": "2018-12-12T16:41:35Z",
+    "pushed_at": "2018-07-29T17:20:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

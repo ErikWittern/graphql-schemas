@@ -1,0 +1,80 @@
+{
+  "repo_name": "graphql-auth-example",
+  "repo_full_name": "caioflores/graphql-auth-example",
+  "repo_owner": "caioflores",
+  "repo_description": "An example implementation of a server using GraphQL, graphql-yoga and Sequelize (with PotgreSQL) with authentication and public/private methods.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Queries.graphql",
+      "path": "src/graphql/queries/Queries.graphql",
+      "sha": "872f3ff3eb201c909792de297a2882e2e158ccd4",
+      "url": "https://api.github.com/repositories/158309623/contents/src/graphql/queries/Queries.graphql?ref=10889874ebc419f1f02a09294d4c5782626958bb",
+      "git_url": "https://api.github.com/repositories/158309623/git/blobs/872f3ff3eb201c909792de297a2882e2e158ccd4",
+      "html_url": "https://github.com/caioflores/graphql-auth-example/blob/10889874ebc419f1f02a09294d4c5782626958bb/src/graphql/queries/Queries.graphql",
+      "content": "\"Queries\"\ntype Query {\n  \"\"\"\n  Get a user\n  \"\"\"\n  user(id: String!): User\n  \"\"\"\n  Get user credentials\n  \"\"\"\n  login(email: String!, password: String!): AuthToken\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/caioflores/graphql-auth-example/blob/10889874ebc419f1f02a09294d4c5782626958bb/src/graphql/queries/Queries.graphql:\n\"Queries\"\ntype Query {\n  \"\"\"\n  Get a user\n  \"\"\"\n  user(id: String!): User\n  \"\"\"\n  Get user credentials\n  \"\"\"\n  login(email: String!, password: String!): AuthToken\n}\n\n# https://github.com/caioflores/graphql-auth-example/blob/aab4fd9eb7c480b5f8ea872796c07f17a3697876/src/graphql/types/User.graphql:\n\"\"\"\nUser: represents a user\n\"\"\"\ntype User {\n  \"\"\"\n  User id\n  \"\"\"\n  id: String\n  \"\"\"\n  User email\n  \"\"\"\n  email: String\n  \"\"\"\n  User password\n  \"\"\"\n  password: String\n}\n\n# https://github.com/caioflores/graphql-auth-example/blob/10889874ebc419f1f02a09294d4c5782626958bb/src/graphql/types/AuthToken.graphql:\n\"\"\"\nAuthToken: represents a users authentication token\n\"\"\"\ntype AuthToken {\n  \"\"\"\n  Token\n  \"\"\"\n  token: String!\n  \"\"\"\n  User\n  \"\"\"\n  user: User!\n}\n",
+        "mergedPaths": [
+          "src/graphql/types/User.graphql",
+          "src/graphql/types/AuthToken.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "AuthToken"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "AuthToken.graphql",
+      "path": "src/graphql/types/AuthToken.graphql",
+      "sha": "f26cc3c89c9b8df698087d152f10d4f4e62c1735",
+      "url": "https://api.github.com/repositories/158309623/contents/src/graphql/types/AuthToken.graphql?ref=10889874ebc419f1f02a09294d4c5782626958bb",
+      "git_url": "https://api.github.com/repositories/158309623/git/blobs/f26cc3c89c9b8df698087d152f10d4f4e62c1735",
+      "html_url": "https://github.com/caioflores/graphql-auth-example/blob/10889874ebc419f1f02a09294d4c5782626958bb/src/graphql/types/AuthToken.graphql",
+      "content": "\"\"\"\nAuthToken: represents a users authentication token\n\"\"\"\ntype AuthToken {\n  \"\"\"\n  Token\n  \"\"\"\n  token: String!\n  \"\"\"\n  User\n  \"\"\"\n  user: User!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "User.graphql",
+      "path": "src/graphql/types/User.graphql",
+      "sha": "edbb1310100c20fe7065340c983878821de429f4",
+      "url": "https://api.github.com/repositories/158309623/contents/src/graphql/types/User.graphql?ref=aab4fd9eb7c480b5f8ea872796c07f17a3697876",
+      "git_url": "https://api.github.com/repositories/158309623/git/blobs/edbb1310100c20fe7065340c983878821de429f4",
+      "html_url": "https://github.com/caioflores/graphql-auth-example/blob/aab4fd9eb7c480b5f8ea872796c07f17a3697876/src/graphql/types/User.graphql",
+      "content": "\"\"\"\nUser: represents a user\n\"\"\"\ntype User {\n  \"\"\"\n  User id\n  \"\"\"\n  id: String\n  \"\"\"\n  User email\n  \"\"\"\n  email: String\n  \"\"\"\n  User password\n  \"\"\"\n  password: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-20T00:52:13Z",
+    "updated_at": "2018-11-22T21:42:50Z",
+    "pushed_at": "2018-11-22T21:42:49Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

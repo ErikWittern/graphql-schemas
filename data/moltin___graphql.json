@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql",
+  "repo_full_name": "moltin/graphql",
+  "repo_owner": "moltin",
+  "repo_description": "⚛️ GraphQL API for Moltin eCommerce",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "8b55df897a6981be31fbea63f70f0af7c741f664",
+      "url": "https://api.github.com/repositories/148440251/contents/src/schema.graphql?ref=3eeb9bde11ec01d7cec214ec296b228b912178fe",
+      "git_url": "https://api.github.com/repositories/148440251/git/blobs/8b55df897a6981be31fbea63f70f0af7c741f664",
+      "html_url": "https://github.com/moltin/graphql/blob/3eeb9bde11ec01d7cec214ec296b228b912178fe/src/schema.graphql",
+      "content": "type Query {\n  me: User!\n  stores: [Store!]!\n  store(id: ID!): Store!\n  keys(storeId: ID): [Key!]!\n  gateways: [Gateway!]!\n  gateway(slug: String!): Gateway!\n  products(\n    dir: SORT_DIR\n    limit: Int\n    offset: Int\n    sort: PRODUCT_SORT_FIELDS\n  ): [Product!]\n  product(id: ID!): Product\n  brands(\n    dir: SORT_DIR\n    limit: Int\n    offset: Int\n    sort: CATALOGUE_SORT_FIELDS\n  ): [Brand!]\n  brand(id: ID!): Brand\n  categories(\n    dir: SORT_DIR\n    limit: Int\n    offset: Int\n    sort: CATALOGUE_SORT_FIELDS\n  ): [Category!]\n  category(id: ID!): Category\n  collections(\n    dir: SORT_DIR\n    limit: Int\n    offset: Int\n    sort: CATALOGUE_SORT_FIELDS\n  ): [Collection!]\n  collection(id: ID!): Collection\n  integrations: [Integration!]\n  integration(id: ID!): Integration\n  inventory(productID: ID!): Inventory\n}\n\ntype Mutation {\n  register(\n    name: String!\n    email: String!\n    password: String!\n    company: String\n  ): AuthPayload!\n  login(email: String!, password: String!): AuthPayload!\n  createToken(\n    client_id: String!\n    client_secret: String\n    grant_type: GRANT_TYPE\n  ): AuthPayload!\n  refreshToken(token: String!): AuthPayload!\n  renameStore(id: ID!, newName: String!): Store!\n  createStore(name: String!): Store!\n  switchStore(id: ID!): SuccessPayload!\n  addUserToStore(\n    id: ID!\n    name: String\n    email: String!\n    role: UserRole\n  ): SuccessPayload!\n  enableIntegrationFromTemplate(type: INTEGRATION_TEMPLATE!): Integration!\n}\n\ntype Invitee {\n  name: String\n  email: String!\n  role: UserRole!\n}\n\ntype Product implements CatalogueResource {\n  id: ID!\n  name: String!\n  description: String!\n  price: [ProductPrice!]\n  sku: String!\n  slug: String!\n  status: CATALOGUE_STATUS!\n  inventory: Inventory!\n  main_image: File\n}\n\ntype ProductPrice {\n  amount: Int!\n  currency: String!\n  includes_tax: Boolean!\n}\n\ntype User {\n  id: ID!\n  name: String!\n  company: String\n  email: String!\n}\n\ntype Store {\n  id: ID!\n  noneUuid: ID!\n  name: String!\n  users: [User!]!\n}\n\ntype Key {\n  user_id: ID!\n  store_id: ID!\n  client_id: String!\n  client_secret: String!\n}\n\ntype AuthPayload {\n  identifier: String!\n  access_token: String!\n  refresh_token: String!\n  token_type: String!\n  expires: Int!\n  expires_in: Int!\n  user: User!\n}\n\ntype SuccessPayload {\n  success: Boolean!\n  message: String\n}\n\nunion Gateway = Stripe | Adyen | Braintree | CardConnect | Manual\n\ntype Stripe {\n  name: String\n  slug: String\n  login: String\n  enabled: Boolean\n}\n\ntype Adyen {\n  name: String\n  slug: String\n  username: String\n  merchant_account: String\n  password: String\n  test: Boolean\n  enabled: Boolean\n}\n\ntype Braintree {\n  name: String\n  slug: String\n  merchant_id: String\n  private_key: String\n  public_key: String\n  environment: String\n  enabled: Boolean\n}\n\ntype CardConnect {\n  name: String\n  slug: String\n  merchant_id: String\n  username: String\n  password: String\n  test: Boolean\n  enabled: Boolean\n}\n\ntype Manual {\n  name: String\n  slug: String\n  enabled: Boolean\n}\n\ntype Brand implements CatalogueResource {\n  id: ID!\n  name: String!\n  description: String!\n  slug: String!\n  status: CATALOGUE_STATUS!\n}\n\ntype Category implements CatalogueResource {\n  id: ID!\n  name: String!\n  description: String!\n  slug: String!\n  status: CATALOGUE_STATUS!\n}\n\ntype Collection implements CatalogueResource {\n  id: ID!\n  name: String!\n  description: String!\n  slug: String!\n  status: CATALOGUE_STATUS!\n}\n\ntype Inventory {\n  allocated: Int!\n  available: Int!\n  total: Int!\n}\n\ntype File {\n  id: ID!\n  file_name: String!\n  file_size: Int!\n  href: String!\n  public: Boolean!\n}\n\ntype Integration {\n  id: ID!\n  name: String!\n  description: String!\n  integration_type: INTEGRATION_TYPE!\n  enabled: Boolean!\n  observes: [String!]\n  configuration: INTEGRATION_CONFIG\n}\n\ntype INTEGRATION_CONFIG {\n  secret_key: String\n  url: String!\n}\n\nenum GRANT_TYPE {\n  implicit\n  client_credentials\n}\n\nenum SORT_DIR {\n  asc\n  desc\n}\n\nenum CATALOGUE_SORT_FIELDS {\n  created_at\n  description\n  name\n  slug\n  status\n  updated_at\n}\n\nenum CATALOGUE_STATUS {\n  draft\n  live\n}\n\nenum PRODUCT_SORT_FIELDS {\n  description\n  name\n  sku\n  slug\n}\n\nenum UserRole {\n  USER\n  ADMIN\n}\n\nenum INTEGRATION_TYPE {\n  webhook\n}\n\nenum INTEGRATION_TEMPLATE {\n  ORDER_CONFIRMATION_EMAIL\n  ORDER_SHIPPED_EMAIL\n}\n\ninterface CatalogueResource {\n  id: ID!\n  name: String!\n  description: String!\n  slug: String!\n  status: CATALOGUE_STATUS!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 22,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 32
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-12T07:31:52Z",
+    "updated_at": "2019-06-17T19:12:06Z",
+    "pushed_at": "2019-06-17T19:12:29Z",
+    "issues": 1,
+    "watchers": 12,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 23,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 22,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

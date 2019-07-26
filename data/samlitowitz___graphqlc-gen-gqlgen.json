@@ -1,0 +1,181 @@
+{
+  "repo_name": "graphqlc-gen-gqlgen",
+  "repo_full_name": "samlitowitz/graphqlc-gen-gqlgen",
+  "repo_owner": "samlitowitz",
+  "repo_description": "A graphqlc code generator using gqlgen configuration and (ideally) producing identical output",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/type-system-extension/schemas/schema.graphql",
+      "sha": "4efccdae9cacce8969481aa7561aecbaee4d35e7",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/type-system-extension/schemas/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/4efccdae9cacce8969481aa7561aecbaee4d35e7",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/type-system-extension/schemas/schema.graphql",
+      "content": "# GraphQL schema example\n#\n# https://gqlgen.com/getting-started/\n\nschema {\n  query: MyQuery\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype Todo implements Node {\n  id: ID!\n  text: String!\n  state: State!\n}\n\ntype MyQuery {\n  todos: [Todo!]!\n}\n\nunion Data = Todo\n\nenum State {\n  NOT_YET\n  DONE\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/selection/schema.graphql",
+      "sha": "729a71c48df7dadfff96736e946f71252f89d43e",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/selection/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/729a71c48df7dadfff96736e946f71252f89d43e",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/selection/schema.graphql",
+      "content": "interface Event {\n    selection: [String!]\n    collected: [String!]\n}\n\ntype Post implements Event {\n    message: String!\n    sent: Time!\n    selection: [String!]\n    collected: [String!]\n}\n\ntype Like implements Event {\n    reaction: String!\n    sent: Time!\n    selection: [String!]\n    collected: [String!]\n}\n\ntype Query {\n    events: [Event!]\n}\n\nscalar Time\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/chat/schema.graphql",
+      "sha": "85a46768edf4f632b1223dcdb82baf3a3bf78e55",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/chat/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/85a46768edf4f632b1223dcdb82baf3a3bf78e55",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/chat/schema.graphql",
+      "content": "type Chatroom {\n    name: String!\n    messages: [Message!]!\n}\n\ntype Message {\n    id: ID!\n    text: String!\n    createdBy: String!\n    createdAt: Time!\n}\n\ntype Query {\n    room(name:String!): Chatroom\n}\n\ntype Mutation {\n    post(text: String!, username: String!, roomName: String!): Message!\n}\n\ntype Subscription {\n    messageAdded(roomName: String!): Message!\n}\n\nscalar Time\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/starwars/schema.graphql",
+      "sha": "48af8e50c1de68e8d3c7ccb0e70dcd4cd6925040",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/starwars/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/48af8e50c1de68e8d3c7ccb0e70dcd4cd6925040",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/starwars/schema.graphql",
+      "content": "# The query type, represents all of the entry points into our object graph\ntype Query {\n    hero(episode: Episode = NEWHOPE): Character\n    reviews(episode: Episode!, since: Time): [Review!]!\n    search(text: String!): [SearchResult!]!\n    character(id: ID!): Character\n    droid(id: ID!): Droid\n    human(id: ID!): Human\n    starship(id: ID!): Starship\n}\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n    createReview(episode: Episode!, review: ReviewInput!): Review\n}\n# The episodes in the Star Wars trilogy\nenum Episode {\n    # Star Wars Episode IV: A New Hope, released in 1977.\n    NEWHOPE\n    # Star Wars Episode V: The Empire Strikes Back, released in 1980.\n    EMPIRE\n    # Star Wars Episode VI: Return of the Jedi, released in 1983.\n    JEDI\n}\n# A character from the Star Wars universe\ninterface Character {\n    # The ID of the character\n    id: ID!\n    # The name of the character\n    name: String!\n    # The friends of the character, or an empty list if they have none\n    friends: [Character!]\n    # The friends of the character exposed as a connection with edges\n    friendsConnection(first: Int, after: ID): FriendsConnection!\n    # The movies this character appears in\n    appearsIn: [Episode!]!\n}\n# Units of height\nenum LengthUnit {\n    # The standard unit around the world\n    METER\n    # Primarily used in the United States\n    FOOT\n}\n# A humanoid creature from the Star Wars universe\ntype Human implements Character {\n    # The ID of the human\n    id: ID!\n    # What this human calls themselves\n    name: String!\n    # Height in the preferred unit, default is meters\n    height(unit: LengthUnit = METER): Float!\n    # Mass in kilograms, or null if unknown\n    mass: Float\n    # This human's friends, or an empty list if they have none\n    friends: [Character!]\n    # The friends of the human exposed as a connection with edges\n    friendsConnection(first: Int, after: ID): FriendsConnection!\n    # The movies this human appears in\n    appearsIn: [Episode!]!\n    # A list of starships this person has piloted, or an empty list if none\n    starships: [Starship!]\n}\n# An autonomous mechanical character in the Star Wars universe\ntype Droid implements Character {\n    # The ID of the droid\n    id: ID!\n    # What others call this droid\n    name: String!\n    # This droid's friends, or an empty list if they have none\n    friends: [Character!]\n    # The friends of the droid exposed as a connection with edges\n    friendsConnection(first: Int, after: ID): FriendsConnection!\n    # The movies this droid appears in\n    appearsIn: [Episode!]!\n    # This droid's primary function\n    primaryFunction: String\n}\n# A connection object for a character's friends\ntype FriendsConnection {\n    # The total number of friends\n    totalCount: Int!\n    # The edges for each of the character's friends.\n    edges: [FriendsEdge!]\n    # A list of the friends, as a convenience when edges are not needed.\n    friends: [Character!]\n    # Information for paginating this connection\n    pageInfo: PageInfo!\n}\n# An edge object for a character's friends\ntype FriendsEdge {\n    # A cursor used for pagination\n    cursor: ID!\n    # The character represented by this friendship edge\n    node: Character\n}\n# Information for paginating this connection\ntype PageInfo {\n    startCursor: ID!\n    endCursor: ID!\n    hasNextPage: Boolean!\n}\n# Represents a review for a movie\ntype Review {\n    # The number of stars this review gave, 1-5\n    stars: Int!\n    # Comment about the movie\n    commentary: String\n    # when the review was posted\n    time: Time\n}\n# The input object sent when someone is creating a new review\ninput ReviewInput {\n    # 0-5 stars\n    stars: Int!\n    # Comment about the movie, optional\n    commentary: String\n    # when the review was posted\n    time: Time\n}\ntype Starship {\n    # The ID of the starship\n    id: ID!\n    # The name of the starship\n    name: String!\n    # Length of the starship, along the longest axis\n    length(unit: LengthUnit = METER): Float!\n    # coordinates tracking this ship\n    history: [[Int!]!]!\n}\nunion SearchResult = Human | Droid | Starship\nscalar Time\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 15
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/dataloader/schema.graphql",
+      "sha": "a0b579a36c2062dbace426ea386c3d44563f3f0b",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/dataloader/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/a0b579a36c2062dbace426ea386c3d44563f3f0b",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/dataloader/schema.graphql",
+      "content": "type Query {\n    customers: [Customer!]\n\n    # these methods are here to test code generation of nested arrays\n    torture1d(customerIds: [Int!]): [Customer!]\n    torture2d(customerIds: [[Int!]]): [[Customer!]]\n}\n\ntype Customer {\n    id: Int!\n    name: String!\n    address: Address\n    orders: [Order!]\n}\n\ntype Address {\n    id: Int!\n    street: String!\n    country: String!\n}\n\ntype Order {\n    id: Int!\n    date: Time!\n    amount: Float!\n    items: [Item!]\n}\n\ntype Item {\n    name: String!\n}\nscalar Time\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/scalars/schema.graphql",
+      "sha": "2bf00540ff559ddb3f2cd850be2bd8a595e749eb",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/scalars/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/2bf00540ff559ddb3f2cd850be2bd8a595e749eb",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/scalars/schema.graphql",
+      "content": "type Query {\n    user(id: ID!): User\n    search(input: SearchArgs = {location: \"37,144\", isBanned: false}): [User!]!\n}\n\ntype User {\n    id: ID!\n    name: String!\n    created: Timestamp\n    isBanned: Banned!\n    primitiveResolver: String!\n    customResolver: Point!\n    address: Address\n    tier: Tier\n}\n\ntype Address {\n    id: ID!\n    location: Point\n}\n\ninput SearchArgs {\n    location: Point\n    createdAfter: Timestamp\n    isBanned: Banned # TODO: This can be a Boolean again once multiple backing types are allowed\n}\n\nenum Tier {\n    A\n    B\n    C\n}\n\nscalar Timestamp\nscalar Point\nscalar Banned\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 8
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/todo/schema.graphql",
+      "sha": "8adac85147e1dec4779d5b488454c317b138e123",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/todo/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/8adac85147e1dec4779d5b488454c317b138e123",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/todo/schema.graphql",
+      "content": "schema {\n    query: MyQuery\n    mutation: MyMutation\n}\n\ntype MyQuery {\n    todo(id: ID!): Todo\n    lastTodo: Todo\n    todos: [Todo!]!\n}\n\ntype MyMutation {\n    createTodo(todo: TodoInput!): Todo!\n    updateTodo(id: ID!, changes: Map!): Todo\n}\n\ntype Todo {\n    id: ID!\n    text: String!\n    done: Boolean! @hasRole(role: OWNER) # only the owner can see if a todo is done\n}\n\n\"Passed to createTodo to create a new todo\"\ninput TodoInput {\n    \"The body text\"\n    text: String!\n    \"Is it done already?\"\n    done: Boolean\n}\n\nscalar Map\n\n\"Prevents access to a field if the user doesnt have the matching role\"\ndirective @hasRole(role: Role!) on FIELD_DEFINITION\n\nenum Role {\n    ADMIN\n    OWNER\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 8
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/fileupload/schema.graphql",
+      "sha": "891c61ec93bea1df704af860b0512f3ce3ca7c9b",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/fileupload/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/891c61ec93bea1df704af860b0512f3ce3ca7c9b",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/fileupload/schema.graphql",
+      "content": "\"The `Upload` scalar type represents a multipart file upload.\"\nscalar Upload\n\n\"The `File` type, represents the response of uploading a file.\"\ntype File {\n    id: Int!\n    name: String!\n    content: String!\n}\n\n\"The `UploadFile` type, represents the request for uploading a file with certain payload.\"\ninput UploadFile {\n    id: Int!\n    file: Upload!\n}\n\n\"The `Query` type, represents all of the entry points into our object graph.\"\ntype Query {\n    empty: String!\n}\n\n\"The `Mutation` type, represents all updates we can make to our data.\"\ntype Mutation {\n    singleUpload(file: Upload!): File!\n    singleUploadWithPayload(req: UploadFile!): File!\n    multipleUpload(files: [Upload!]!): [File!]!\n    multipleUploadWithPayload(req: [UploadFile!]!): [File!]!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "examples/config/schema.graphql",
+      "sha": "3485fb1c6731662ccb9e27c0191c614b7c254433",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/config/schema.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/3485fb1c6731662ccb9e27c0191c614b7c254433",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/config/schema.graphql",
+      "content": "type Query {\n  todos: [Todo!]!\n}\n\ntype Mutation {\n  createTodo(input: NewTodo!): Todo!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/config/schema.graphql:\ntype Query {\n  todos: [Todo!]!\n}\n\ntype Mutation {\n  createTodo(input: NewTodo!): Todo!\n}\n\n# https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/config/todo.graphql:\ntype Todo {\n  id: ID!\n  databaseId: Int!\n  text: String!\n  done: Boolean!\n  user: User!\n}\n\ninput NewTodo {\n  text: String!\n  userId: String!\n}\n\n\n# https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/config/user.graphql:\ntype User {\n  id: ID!\n  name: String!\n}\n",
+        "mergedPaths": [
+          "examples/config/todo.graphql",
+          "examples/config/user.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Todo",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "todo.graphql",
+      "path": "examples/config/todo.graphql",
+      "sha": "ccee3e44dc71b603cae1370d94c403f4cce13b6a",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/config/todo.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/ccee3e44dc71b603cae1370d94c403f4cce13b6a",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/config/todo.graphql",
+      "content": "type Todo {\n  id: ID!\n  databaseId: Int!\n  text: String!\n  done: Boolean!\n  user: User!\n}\n\ninput NewTodo {\n  text: String!\n  userId: String!\n}\n\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "user.graphql",
+      "path": "examples/config/user.graphql",
+      "sha": "321de95b1e7fcb59a0adccab19b05a4491ee2064",
+      "url": "https://api.github.com/repositories/187294088/contents/examples/config/user.graphql?ref=78dd0972768dba2edfba674b3684e0d3f7e8a448",
+      "git_url": "https://api.github.com/repositories/187294088/git/blobs/321de95b1e7fcb59a0adccab19b05a4491ee2064",
+      "html_url": "https://github.com/samlitowitz/graphqlc-gen-gqlgen/blob/78dd0972768dba2edfba674b3684e0d3f7e8a448/examples/config/user.graphql",
+      "content": "type User {\n  id: ID!\n  name: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-17T23:47:45Z",
+    "updated_at": "2019-05-20T04:12:02Z",
+    "pushed_at": "2019-05-20T04:12:00Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

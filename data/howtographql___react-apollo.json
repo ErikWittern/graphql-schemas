@@ -1,0 +1,39 @@
+{
+  "repo_name": "react-apollo",
+  "repo_full_name": "howtographql/react-apollo",
+  "repo_owner": "howtographql",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "53d45ae0b9846bf4c3cfc845b60d4f2d5d5677f7",
+      "url": "https://api.github.com/repositories/94114302/contents/server/src/schema.graphql?ref=384f1ec45c3b615b2f6c722dc80ff05a6532b853",
+      "git_url": "https://api.github.com/repositories/94114302/git/blobs/53d45ae0b9846bf4c3cfc845b60d4f2d5d5677f7",
+      "html_url": "https://github.com/howtographql/react-apollo/blob/384f1ec45c3b615b2f6c722dc80ff05a6532b853/server/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  info: String!\n  feed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): Feed!\n}\n\nenum LinkOrderByInput {\n  description_ASC\n  description_DESC\n  url_ASC\n  url_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\ntype Feed {\n  links: [Link!]!\n  count: Int!\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n  vote(linkId: ID!): Vote!\n}\n\ntype Subscription {\n  newLink: Link\n  newVote: Vote\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n\ntype Link {\n  id: ID!\n  createdAt: DateTime!\n  description: String!\n  url: String!\n  postedBy: User\n  votes: [Vote!]!\n}\n\ntype Vote {\n  id: ID!\n  link: Link!\n  user: User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-12T15:54:29Z",
+    "updated_at": "2019-07-17T18:26:30Z",
+    "pushed_at": "2019-04-17T15:26:30Z",
+    "issues": 55,
+    "watchers": 10,
+    "fork_count": 159,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 27,
+    "pull_requests_open": 5,
+    "pull_requests_closed": 11,
+    "pull_requests_merged": 11,
+    "releases": 0,
+    "stargazers": 367
+  }
+}

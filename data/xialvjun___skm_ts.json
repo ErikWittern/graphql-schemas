@@ -1,0 +1,42 @@
+{
+  "repo_name": "skm_ts",
+  "repo_full_name": "xialvjun/skm_ts",
+  "repo_owner": "xialvjun",
+  "repo_description": "Generate typescript types from your graphql schema gql files.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "common.gql",
+      "path": "test/common.gql",
+      "sha": "5e55eebd1492f91db973366321b495136ea75252",
+      "url": "https://api.github.com/repositories/185955223/contents/test/common.gql?ref=e9f553d98c9252bfbe0719189f1b699ac47a142c",
+      "git_url": "https://api.github.com/repositories/185955223/git/blobs/5e55eebd1492f91db973366321b495136ea75252",
+      "html_url": "https://github.com/xialvjun/skm_ts/blob/e9f553d98c9252bfbe0719189f1b699ac47a142c/test/common.gql",
+      "content": "scalar Date\nscalar Json\n\ntype User {\n  _id: ID!\n  username: String!\n}\n\ntype Query {\n  user(_id: ID!): User!\n}\n\ntype Mutation {\n  sign_up(username: String!, password: String!): User!\n  sign_in(username: String!, password: String!): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-10T08:59:27Z",
+    "updated_at": "2019-05-28T01:17:03Z",
+    "pushed_at": "2019-05-28T01:17:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

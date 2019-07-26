@@ -1,0 +1,42 @@
+{
+  "repo_name": "serverless-graphql-boilerplate",
+  "repo_full_name": "edjroz/serverless-graphql-boilerplate",
+  "repo_owner": "edjroz",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "node.graphql",
+      "path": "schema/types/node.graphql",
+      "sha": "dc01801fedfe6a120fec0002bd305ce97bd8bb8f",
+      "url": "https://api.github.com/repositories/133269380/contents/schema/types/node.graphql?ref=bba7c4e2f8d0b4442be3fbd59adc6d09eda99a65",
+      "git_url": "https://api.github.com/repositories/133269380/git/blobs/dc01801fedfe6a120fec0002bd305ce97bd8bb8f",
+      "html_url": "https://github.com/edjroz/serverless-graphql-boilerplate/blob/bba7c4e2f8d0b4442be3fbd59adc6d09eda99a65/schema/types/node.graphql",
+      "content": "type Node {\n  id: ID!\n  description: String!\n}\n\ntype Query {\n  nodes: [Node]\n  node(id: ID!): Node\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-13T19:50:22Z",
+    "updated_at": "2019-04-01T14:03:22Z",
+    "pushed_at": "2019-04-01T14:03:07Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "wix-kickstart-node",
+  "repo_full_name": "wix-playground/wix-kickstart-node",
+  "repo_owner": "wix-playground",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "day-2/graphql-api/api/schema.graphql",
+      "sha": "7b09293a47267bb7515b0123f53919a116755252",
+      "url": "https://api.github.com/repositories/170187865/contents/day-2/graphql-api/api/schema.graphql?ref=9ab57600ab68d05fc7bf302a6aeba2ae74e2017e",
+      "git_url": "https://api.github.com/repositories/170187865/git/blobs/7b09293a47267bb7515b0123f53919a116755252",
+      "html_url": "https://github.com/wix-playground/wix-kickstart-node/blob/9ab57600ab68d05fc7bf302a6aeba2ae74e2017e/day-2/graphql-api/api/schema.graphql",
+      "content": "\nschema {\n    query: Query\n    mutation: Mutation\n}\n\ntype Query {\n    book(id: ID!): Book\n    author(name: String!): Author\n}\n\ntype Mutation {\n    addAuthorToBook(authorName: String! bookId: [ID!]): Boolean\n}\n\ntype Book {\n\n    # Title of the book\n    title: String!\n\n    # Author of the book\n    author: Author!\n\n    # Year of the book\n    year: Int!\n\n}\n\ntype Author {\n\n    # Name of the author\n    name: String!\n\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-11T19:25:04Z",
+    "updated_at": "2019-04-10T08:47:15Z",
+    "pushed_at": "2019-04-10T08:47:13Z",
+    "issues": 0,
+    "watchers": 75,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

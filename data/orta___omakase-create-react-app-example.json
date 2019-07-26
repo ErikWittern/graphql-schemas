@@ -1,0 +1,42 @@
+{
+  "repo_name": "omakase-create-react-app-example",
+  "repo_full_name": "orta/omakase-create-react-app-example",
+  "repo_owner": "orta",
+  "repo_description": "Using CRA 2.1 to re-create a chunk the the omakase stack",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "9e5983e1d52f27b38e44c588889503c617e2610c",
+      "url": "https://api.github.com/repositories/155442332/contents/data/schema.graphql?ref=be92641a00be382d333d97df3da96aef8dc08e2b",
+      "git_url": "https://api.github.com/repositories/155442332/git/blobs/9e5983e1d52f27b38e44c588889503c617e2610c",
+      "html_url": "https://github.com/orta/omakase-create-react-app-example/blob/be92641a00be382d333d97df3da96aef8dc08e2b/data/schema.graphql",
+      "content": "type MyType {\n  id: ID\n}\n\ntype Query {\n  hello: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-30T19:12:28Z",
+    "updated_at": "2018-11-01T13:47:46Z",
+    "pushed_at": "2018-10-30T19:32:17Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 10
+  }
+}

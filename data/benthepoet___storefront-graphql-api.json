@@ -1,0 +1,80 @@
+{
+  "repo_name": "storefront-graphql-api",
+  "repo_full_name": "benthepoet/storefront-graphql-api",
+  "repo_owner": "benthepoet",
+  "repo_description": "A basic storefront API implementation using GraphQL.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.gql",
+      "path": "src/graphql/typedefs/types/Query.gql",
+      "sha": "eb0b5d290ef1a542f9a51e69efbd98233803cf48",
+      "url": "https://api.github.com/repositories/129537718/contents/src/graphql/typedefs/types/Query.gql?ref=4e69ceec0f4ff1f0fed49a9c46431b95c64000f4",
+      "git_url": "https://api.github.com/repositories/129537718/git/blobs/eb0b5d290ef1a542f9a51e69efbd98233803cf48",
+      "html_url": "https://github.com/benthepoet/storefront-graphql-api/blob/4e69ceec0f4ff1f0fed49a9c46431b95c64000f4/src/graphql/typedefs/types/Query.gql",
+      "content": "type Query {\n  user: User  \n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/benthepoet/storefront-graphql-api/blob/4e69ceec0f4ff1f0fed49a9c46431b95c64000f4/src/graphql/typedefs/types/Query.gql:\ntype Query {\n  user: User  \n}\n# https://github.com/benthepoet/storefront-graphql-api/blob/4e69ceec0f4ff1f0fed49a9c46431b95c64000f4/src/graphql/typedefs/types/User.gql:\ntype User {\n  profile: UserProfile\n}\n# https://github.com/benthepoet/storefront-graphql-api/blob/4e69ceec0f4ff1f0fed49a9c46431b95c64000f4/src/graphql/typedefs/types/UserProfile.gql:\ntype UserProfile {\n  email: String\n  firstName: String\n  lastName: String\n}",
+        "mergedPaths": [
+          "src/graphql/typedefs/types/User.gql",
+          "src/graphql/typedefs/types/UserProfile.gql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "UserProfile"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.gql",
+      "path": "src/graphql/typedefs/types/User.gql",
+      "sha": "5a53a01b55c5e6ebe3ab6129b4ef95e954193714",
+      "url": "https://api.github.com/repositories/129537718/contents/src/graphql/typedefs/types/User.gql?ref=4e69ceec0f4ff1f0fed49a9c46431b95c64000f4",
+      "git_url": "https://api.github.com/repositories/129537718/git/blobs/5a53a01b55c5e6ebe3ab6129b4ef95e954193714",
+      "html_url": "https://github.com/benthepoet/storefront-graphql-api/blob/4e69ceec0f4ff1f0fed49a9c46431b95c64000f4/src/graphql/typedefs/types/User.gql",
+      "content": "type User {\n  profile: UserProfile\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "UserProfile.gql",
+      "path": "src/graphql/typedefs/types/UserProfile.gql",
+      "sha": "a26fffa7690dbe0ed14e0136a6575ad4b1f5fe5e",
+      "url": "https://api.github.com/repositories/129537718/contents/src/graphql/typedefs/types/UserProfile.gql?ref=4e69ceec0f4ff1f0fed49a9c46431b95c64000f4",
+      "git_url": "https://api.github.com/repositories/129537718/git/blobs/a26fffa7690dbe0ed14e0136a6575ad4b1f5fe5e",
+      "html_url": "https://github.com/benthepoet/storefront-graphql-api/blob/4e69ceec0f4ff1f0fed49a9c46431b95c64000f4/src/graphql/typedefs/types/UserProfile.gql",
+      "content": "type UserProfile {\n  email: String\n  firstName: String\n  lastName: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-14T17:09:10Z",
+    "updated_at": "2018-04-25T02:46:32Z",
+    "pushed_at": "2018-04-25T02:46:30Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

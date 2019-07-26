@@ -1,0 +1,42 @@
+{
+  "repo_name": "jarvisviewer",
+  "repo_full_name": "zhs007/jarvisviewer",
+  "repo_owner": "zhs007",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "viewer.graphql",
+      "path": "viewerdb/viewer.graphql",
+      "sha": "65c145fb472ea83b63c350c2541f215d7965112a",
+      "url": "https://api.github.com/repositories/160517858/contents/viewerdb/viewer.graphql?ref=d24d84f005eba4f8bda37821b004a81cf6ba3b96",
+      "git_url": "https://api.github.com/repositories/160517858/git/blobs/65c145fb472ea83b63c350c2541f215d7965112a",
+      "html_url": "https://github.com/zhs007/jarvisviewer/blob/d24d84f005eba4f8bda37821b004a81cf6ba3b96/viewerdb/viewer.graphql",
+      "content": "type GraphNode {\n    id: Int!\n    name: String!\n    size: Int\n    category: String\n}\n\ntype GraphLink {\n    src: Int!\n    dest: Int!\n    size: Int\n}\n\ntype GraphData {\n    nodes: [GraphNode]!\n    links: [GraphLink]!\n}\n\ntype ViewerData {\n    type: Int!\n    title: String\n    token: ID!\n\n    graph: GraphData\n}\n\ntype Query {\n    viewerData(token: ID!): ViewerData!\n}\n\ntype Mutation {\n    updViewerData(dat: ViewerData!): ViewerData!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-05T12:52:33Z",
+    "updated_at": "2019-03-09T03:29:22Z",
+    "pushed_at": "2019-03-09T03:29:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

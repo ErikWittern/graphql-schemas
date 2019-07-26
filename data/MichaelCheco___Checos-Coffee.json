@@ -1,0 +1,42 @@
+{
+  "repo_name": "Checos-Coffee",
+  "repo_full_name": "michaelcheco/checos-coffee",
+  "repo_owner": "MichaelCheco",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/src/schema.graphql",
+      "sha": "ccbe1fa535966aa0985b64ebdb88047cf6314379",
+      "url": "https://api.github.com/repositories/170933232/contents/backend/src/schema.graphql?ref=348996b2a968cdb8a590929dc797a3e01f2adb1c",
+      "git_url": "https://api.github.com/repositories/170933232/git/blobs/ccbe1fa535966aa0985b64ebdb88047cf6314379",
+      "html_url": "https://github.com/MichaelCheco/Checos-Coffee/blob/348996b2a968cdb8a590929dc797a3e01f2adb1c/backend/src/schema.graphql",
+      "content": "type Query {\n\titems(skip: Int, first: Int, filter: String): Feed!\n\titem(id: ID!): Item\n}\ntype Feed {\n\titems: [Item!]!\n\tcount: Int!\n}\ntype Mutation {\n\tcreateItem(\n\t\ttitle: String\n\t\tdescription: String\n\t\tprice: Int\n\t\timage: String\n\t\tlargeImage: String\n\t): Item!\n\tupdateItem(id: ID!, title: String, description: String, price: Int): Item\n\tdeleteItem(id: ID!): Item\n\tsignup(email: String!, password: String!, name: String!): AuthPayload\n\tsignin(email: String!, password: String!): AuthPayload\n}\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\ntype Item {\n\tid: ID!\n\ttitle: String!\n\tdescription: String!\n\timage: String\n\tlargeImage: String\n\tprice: Int!\n}\ntype User {\n\tid: ID!\n\tname: String!\n\temail: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-15T21:54:32Z",
+    "updated_at": "2019-02-19T19:55:10Z",
+    "pushed_at": "2019-02-19T19:55:08Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

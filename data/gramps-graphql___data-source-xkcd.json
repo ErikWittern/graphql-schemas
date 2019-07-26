@@ -1,0 +1,42 @@
+{
+  "repo_name": "data-source-xkcd",
+  "repo_full_name": "gramps-graphql/data-source-xkcd",
+  "repo_owner": "gramps-graphql",
+  "repo_description": "A GrAMPS data source to load the latest xkcd comic, or look one up by its ID.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "100721f42ca3182a5731956e2d1b5c50257ef4b8",
+      "url": "https://api.github.com/repositories/107893008/contents/src/schema.graphql?ref=accebd3840ef5c02365e1f5380d38ad096052c4b",
+      "git_url": "https://api.github.com/repositories/107893008/git/blobs/100721f42ca3182a5731956e2d1b5c50257ef4b8",
+      "html_url": "https://github.com/gramps-graphql/data-source-xkcd/blob/accebd3840ef5c02365e1f5380d38ad096052c4b/src/schema.graphql",
+      "content": "\"The query/queries to access data MUST extend the Query type.\"\ntype Query {\n  \"Load info about the most recent xkcd comic.\"\n  getLatestComic: XKCD_Comic\n\n  \"Load info about the xkcd comic with a given ID.\"\n  getComicById(\n    \"\"\"\n    The ID of the given comic. The ID can be found using its URL.\n\n    Example: https://xkcd.com/619/ has the ID of 619.\n    \"\"\"\n    id: ID!\n  ): XKCD_Comic\n}\n\n\"Details about an xkcd comic.\"\ntype XKCD_Comic {\n  \"The unique ID of the comic.\"\n  num: ID!\n\n  \"The title of the comic.\"\n  title: String!\n\n  \"As far as I can tell, this is always the same as the title field.\"\n  safe_title: String!\n\n  \"Direct link to the comic image.\"\n  img: String!\n\n  \"Alt text (this is what shows on hover in comics on the site).\"\n  alt: String!\n\n  \"A transcript of what’s happening in the comic.\"\n  transcript: String\n\n  \"The year the comic was released.\"\n  year: String\n\n  \"The month the comic was released.\"\n  month: String\n\n  \"The day the comic was released.\"\n  day: String\n\n  \"A link to the comic on xkcd.com\"\n  link: String\n\n  \"Additional info, shown on the xkcd website in the banner.\"\n  news: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-22T18:45:52Z",
+    "updated_at": "2019-04-21T09:04:10Z",
+    "pushed_at": "2019-07-19T06:59:23Z",
+    "issues": 13,
+    "watchers": 0,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 26,
+    "pull_requests_open": 14,
+    "pull_requests_closed": 4,
+    "pull_requests_merged": 8,
+    "releases": 5,
+    "stargazers": 10
+  }
+}

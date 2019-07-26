@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-server-example",
+  "repo_full_name": "tgoldenberg/graphql-server-example",
+  "repo_owner": "tgoldenberg",
+  "repo_description": "Simple setup for graphql server with MongoDB",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "f61aa09bb8fc90a943f3d3ac8b7f9d69b8c0459b",
+      "url": "https://api.github.com/repositories/69783997/contents/data/schema.graphql?ref=339fc9f7b2099149df67c430cc9922fb8db48421",
+      "git_url": "https://api.github.com/repositories/69783997/git/blobs/f61aa09bb8fc90a943f3d3ac8b7f9d69b8c0459b",
+      "html_url": "https://github.com/tgoldenberg/graphql-server-example/blob/339fc9f7b2099149df67c430cc9922fb8db48421/data/schema.graphql",
+      "content": "type User {\n  email: String\n  firstName: String\n  lastName: String\n  fullName: String\n  id: String\n  posts(limit: Int, from: Int): [Post]\n}\n\ntype Post {\n  userId: String\n  id: String\n  title: String\n  text: String\n  comments(limit: Int, from: Int): [Comment]\n  user: User\n  createdAt: Int\n}\n\ntype Comment {\n  postId: String\n  id: String\n  text: String\n  userId: String\n  user: User\n  post: Post\n  createdAt: Int\n}\n\ntype Query {\n  user(email: String, id: String): User\n  users(limit: Int): [User]\n}\n\ntype Mutation {\n  submitPost(title: String!, text: String!, userId: String!): Post\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-02T07:07:38Z",
+    "updated_at": "2016-10-02T07:09:29Z",
+    "pushed_at": "2016-10-02T23:22:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

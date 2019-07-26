@@ -1,0 +1,42 @@
+{
+  "repo_name": "aws-amplify-serverless-plugin",
+  "repo_full_name": "awslabs/aws-amplify-serverless-plugin",
+  "repo_owner": "awslabs",
+  "repo_description": "Plugin for the Serverless Framework to output AWS Amplify configuration files.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "example/schema.graphql",
+      "sha": "aec44373f4288e551672d178941c4e2eccf79186",
+      "url": "https://api.github.com/repositories/149808447/contents/example/schema.graphql?ref=a2b083641bee82210e2dd34836c408fdb17543c6",
+      "git_url": "https://api.github.com/repositories/149808447/git/blobs/aec44373f4288e551672d178941c4e2eccf79186",
+      "html_url": "https://github.com/awslabs/aws-amplify-serverless-plugin/blob/a2b083641bee82210e2dd34836c408fdb17543c6/example/schema.graphql",
+      "content": "# Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.\n# SPDX-License-Identifier: Apache-2.0\n\ntype Note {\n  NoteId: ID!\n  title: String\n  content: String\n}\n\ntype PaginatedNotes {\n  notes: [Note!]!\n  nextToken: String\n}\n\ntype Query {\n  allNotes(limit: Int, nextToken: String): PaginatedNotes!\n  getNote(NoteId: ID!): Note\n}\n\ntype Mutation {\n  saveNote(NoteId: ID!, title: String!, content: String!): Note\n  deleteNote(NoteId: ID!): Note\n}\n\ntype Schema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-21T19:28:04Z",
+    "updated_at": "2019-07-16T13:59:44Z",
+    "pushed_at": "2019-06-21T14:55:30Z",
+    "issues": 31,
+    "watchers": 26,
+    "fork_count": 12,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 26,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 19,
+    "releases": 0,
+    "stargazers": 84
+  }
+}

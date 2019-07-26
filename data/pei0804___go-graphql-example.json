@@ -1,0 +1,41 @@
+{
+  "repo_name": "go-graphql-example",
+  "repo_full_name": "pei0804/go-graphql-example",
+  "repo_owner": "pei0804",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "p3/schema.graphql",
+      "sha": "93747e96beff9d3d22c3f04608c6a69ec0968ba7",
+      "url": "https://api.github.com/repositories/127374710/contents/p3/schema.graphql?ref=967f0c9baad470e3daeafd38585457a468c48559",
+      "git_url": "https://api.github.com/repositories/127374710/git/blobs/93747e96beff9d3d22c3f04608c6a69ec0968ba7",
+      "html_url": "https://github.com/pei0804/go-graphql-example/blob/967f0c9baad470e3daeafd38585457a468c48559/p3/schema.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n}\n\n# The query type, represents all of the entry points into our object graph\ntype Query {\n    getUser(id: ID!): User\n    getPet(id: ID!): Pet\n    getTag(title: String!): Tag\n    getAccount(id: ID!): Account\n}\n\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n    addPet(pet: PetInput!): Pet\n    updatePet(pet: PetInput!): Pet\n    deletePet(userID: ID!, petID: ID!): Boolean\n}\n\n# what is needed for a pet\ntype Pet {\n    id: ID\n    owner: User\n    name: String\n    tags: [Tag]\n}\n\n# Tag has everything needed for a tag\ntype Tag {\n    id: ID\n    title: String\n    pets: [Pet]\n}\n\ntype Account {\n  id: ID\n  name: String\n}\n\n# what is needed for a user\ntype User {\n    id: ID\n    name: String\n    # user pets exposed as a full list\n    pets: [Pet]\n    # user pets exposed as a connection with edges\n    petsConnection(first: Int, after: ID): UserPetConnection!\n}\n\ntype UserPetConnection {\n    totalCount: Int!\n    edges: [UserPetEdge]\n    pageInfo: PageInfo!\n}\n\ntype UserPetEdge {\n    cursor: ID!\n    node: Pet\n}\n\ntype PageInfo {\n    startCursor: ID\n    endCursor: ID\n    hasNextPage: Boolean!\n    hasPreviousPage: Boolean!\n}\n\ninput PetInput {\n    id: ID!\n    ownerID: ID!\n    name: String!\n    tagIDs: [Int]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-30T03:05:22Z",
+    "updated_at": "2018-04-09T22:56:19Z",
+    "pushed_at": "2018-04-09T22:56:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

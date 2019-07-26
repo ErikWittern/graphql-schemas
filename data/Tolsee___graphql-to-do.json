@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-to-do",
+  "repo_full_name": "tolsee/graphql-to-do",
+  "repo_owner": "Tolsee",
+  "repo_description": "Todo Application made with node.js, apollo, react.js",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "item.gql",
+      "path": "server/src/types/item/item.gql",
+      "sha": "fa36d5dff4bc4166d1dd905f821aca83e9e6f931",
+      "url": "https://api.github.com/repositories/174834198/contents/server/src/types/item/item.gql?ref=7b24f67a5487bae1da1c00ea15ea3542156db512",
+      "git_url": "https://api.github.com/repositories/174834198/git/blobs/fa36d5dff4bc4166d1dd905f821aca83e9e6f931",
+      "html_url": "https://github.com/Tolsee/graphql-to-do/blob/7b24f67a5487bae1da1c00ea15ea3542156db512/server/src/types/item/item.gql",
+      "content": "scalar Date\n\ntype Item {\n    _id: ID!\n    title: String!\n    body: String\n    state: String\n    startedAt: Date\n    completeDate: Date\n    createdAt: Date!\n    updatedAt: Date!\n}\n\ntype Query {\n    item(id: ID!): Item\n    items(state: String): [Item]\n}\n\ninput NewItemInput {\n    title: String!\n    body: String\n    startedAt: Date\n    completeDate: Date\n}\n\ninput UpdateItemInput {\n    title: String\n    body: String\n    state: String\n    startedAt: Date\n    completeDate: Date\n}\n\ntype Mutation {\n    newItem(input: NewItemInput): Item!\n    updateItem(id: ID!, input: UpdateItemInput): Item!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-10T14:23:53Z",
+    "updated_at": "2019-06-30T13:20:21Z",
+    "pushed_at": "2019-03-17T07:52:42Z",
+    "issues": 5,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

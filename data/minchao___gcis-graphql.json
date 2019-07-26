@@ -1,0 +1,42 @@
+{
+  "repo_name": "gcis-graphql",
+  "repo_full_name": "minchao/gcis-graphql",
+  "repo_owner": "minchao",
+  "repo_description": "經濟部商工行政資料查詢 GraphQL, Build with AppSync and Lambda resolvers",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "2428753999d641efcd02edb3955c8b43acbc5842",
+      "url": "https://api.github.com/repositories/162015687/contents/schema.graphql?ref=94c5e5aa1ff5075c3931bf0efabb6327b7e170c0",
+      "git_url": "https://api.github.com/repositories/162015687/git/blobs/2428753999d641efcd02edb3955c8b43acbc5842",
+      "html_url": "https://github.com/minchao/gcis-graphql/blob/94c5e5aa1ff5075c3931bf0efabb6327b7e170c0/schema.graphql",
+      "content": "type Company {\n    id: ID!\n    name: String!\n}\n\ntype Query {\n    company(id: ID!): Company\n    search(keyword: String!, status: String, offset: Int, limit: Int): [Company]!\n}\n\nschema {\n    query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-16T15:39:48Z",
+    "updated_at": "2019-07-15T07:38:16Z",
+    "pushed_at": "2019-01-12T01:25:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "bsd-3-clause",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

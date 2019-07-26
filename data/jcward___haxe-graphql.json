@@ -1,0 +1,71 @@
+{
+  "repo_name": "haxe-graphql",
+  "repo_full_name": "jcward/haxe-graphql",
+  "repo_owner": "jcward",
+  "repo_description": "Utilities for working with Haxe and GraphQL.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "basic_schema.gql",
+      "path": "test/manual_debug/basic_schema.gql",
+      "sha": "831def60e77d72661e2f15f08139ce311bec5677",
+      "url": "https://api.github.com/repositories/134640433/contents/test/manual_debug/basic_schema.gql?ref=986944f6e5698fb251180ceace4457ee550e940d",
+      "git_url": "https://api.github.com/repositories/134640433/git/blobs/831def60e77d72661e2f15f08139ce311bec5677",
+      "html_url": "https://github.com/jcward/haxe-graphql/blob/986944f6e5698fb251180ceace4457ee550e940d/test/manual_debug/basic_schema.gql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  people:[Person]!\n}\n\ntype Mutation {\n  insert(p:Person):InsertResult\n}\n\nenum InsertResult {\n  Foo\n  Bar\n}\n\ntype Person {\n  id:    ID!\n  name : String!\n  friends: [Person!]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "StarWarsTest.gql",
+      "path": "attic/gql2ts_test/StarWarsTest.gql",
+      "sha": "f15879f70d323d8fcbc45307bb04ccd58b6fba77",
+      "url": "https://api.github.com/repositories/134640433/contents/attic/gql2ts_test/StarWarsTest.gql?ref=986944f6e5698fb251180ceace4457ee550e940d",
+      "git_url": "https://api.github.com/repositories/134640433/git/blobs/f15879f70d323d8fcbc45307bb04ccd58b6fba77",
+      "html_url": "https://github.com/jcward/haxe-graphql/blob/986944f6e5698fb251180ceace4457ee550e940d/attic/gql2ts_test/StarWarsTest.gql",
+      "content": "\tschema {\n\t\tquery: Query\n\t\tmutation: Mutation\n\t}\n\n\t# The query type, represents all of the entry points into our object graph\n\ttype Query {\n\t\thero(episode: Episode = NEWHOPE): Character\n\t\treviews(episode: Episode!): [Review]!\n\t\tsearch(text: String!): [SearchResult]!\n\t\tcharacter(id: ID!): Character\n\t\tdroid(id: ID!): Droid\n\t\thuman(id: ID!): Human\n\t\tstarship(id: ID!): Starship\n\t}\n\n\t# The mutation type, represents all updates we can make to our data\n\ttype Mutation {\n\t\tcreateReview(episode: Episode!): Review\n\t}\n\n\n\t# The episodes in the Star Wars trilogy\n\tenum Episode {\n\t\t# Star Wars Episode IV: A New Hope, released in 1977.\n\t\tNEWHOPE\n\t\t# Star Wars Episode V: The Empire Strikes Back, released in 1980.\n\t\tEMPIRE\n\t\t# Star Wars Episode VI: Return of the Jedi, released in 1983.\n\t\tJEDI\n\t}\n\n\tinterface IName {\n\t\tname: String!\n  }\n\n\t# A character from the Star Wars universe\n\tinterface Character {\n\t\t# The ID of the character\n\t\tid: ID!\n\t\t# The name of the character\n\t\tname: String!\n\t\t# The friends of the character, or an empty list if they have none\n\t\tfriends: [Character]\n\t\t# The friends of the character exposed as a connection with edges\n\t\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\t\t# The movies this character appears in\n\t\tappearsIn: [Episode!]!\n\t}\n\n\t# Units of height\n\tenum LengthUnit {\n\t\t# The standard unit around the world\n\t\tMETER\n\t\t# Primarily used in the United States\n\t\tFOOT\n\t}\n\n\t# A humanoid creature from the Star Wars universe\n\ttype Human implements Character & IName {\n\t\t# The ID of the human\n\t\tid: ID!\n\t\t# What this human calls themselves\n\t\tname: String!\n\t\t# Height in the preferred unit, default is meters\n\t\theight(unit: LengthUnit = METER): Float!\n\t\t# Mass in kilograms, or null if unknown\n\t\tmass: Float\n\t\t# This human's friends, or an empty list if they have none\n\t\tfriends: [Character]\n\t\t# The friends of the human exposed as a connection with edges\n\t\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\t\t# The movies this human appears in\n\t\tappearsIn: [Episode!]!\n\t\t# A list of starships this person has piloted, or an empty list if none\n\t\tstarships: [Starship]\n\t}\n\n\t# An autonomous mechanical character in the Star Wars universe\n\ttype Droid implements Character & IName {\n\t\t# The ID of the droid\n\t\tid: ID!\n\t\t# What others call this droid\n\t\tname: String!\n\t\t# This droid's friends, or an empty list if they have none\n\t\tfriends: [Character]\n\t\t# The friends of the droid exposed as a connection with edges\n\t\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\t\t# The movies this droid appears in\n\t\tappearsIn: [Episode!]!\n\t\t# This droid's primary function\n\t\tprimaryFunction: String\n\t}\n\n\t# A connection object for a character's friends\n\ttype FriendsConnection {\n\t\t# The total number of friends\n\t\ttotalCount: Int!\n\t\t# The edges for each of the character's friends.\n\t\tedges: [FriendsEdge]\n\t\t# A list of the friends, as a convenience when edges are not needed.\n\t\tfriends: [Character]\n\t\t# Information for paginating this connection\n\t\tpageInfo: PageInfo!\n\t}\n\n\t# An edge object for a character's friends\n\ttype FriendsEdge {\n\t\t# A cursor used for pagination\n\t\tcursor: ID!\n\t\t# The character represented by this friendship edge\n\t\tnode: Character\n\t}\n\n\t# Information for paginating this connection\n\ttype PageInfo {\n\t\tstartCursor: ID\n\t\tendCursor: ID\n\t\thasNextPage: Boolean!\n\t}\n\n\t# Represents a review for a movie\n\ttype Review {\n\t\t# The number of stars this review gave, 1-5\n\t\tstars: Int!\n\t\t# Comment about the movie\n\t\tcommentary: String\n\t}\n\n\ttype Starship {\n\t\t# The ID of the starship\n\t\tid: ID!\n\t\t# The name of the starship\n\t\tname: String!\n\t\t# Length of the starship, along the longest axis\n\t\tlength(unit: LengthUnit = METER): Float!\n\t}\n\n\tunion SearchResult = Human | Droid | Starship\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 15
+    },
+    {
+      "name": "StarWarsTest.gql",
+      "path": "test/buddy/tests/star_wars/StarWarsTest.gql",
+      "sha": "8daeed6751818d0f14414670ebf97ea3b340f9be",
+      "url": "https://api.github.com/repositories/134640433/contents/test/buddy/tests/star_wars/StarWarsTest.gql?ref=986944f6e5698fb251180ceace4457ee550e940d",
+      "git_url": "https://api.github.com/repositories/134640433/git/blobs/8daeed6751818d0f14414670ebf97ea3b340f9be",
+      "html_url": "https://github.com/jcward/haxe-graphql/blob/986944f6e5698fb251180ceace4457ee550e940d/test/buddy/tests/star_wars/StarWarsTest.gql",
+      "content": "\n\tschema {\n\t\tquery: Query\n\t\tmutation: Mutation\n\t}\n\n\t# The query type, represents all of the entry points into our object graph\n\ttype Query {\n\t\thero(episode: Episode = NEWHOPE): Character\n\t\treviews(episode: Episode!): [Review]!\n\t\tsearch(text: String!): [SearchResult]!\n\t\tcharacter(id: ID!): Character\n\t\tdroid(id: ID!): Droid\n\t\thuman(id: ID!): Human\n\t\tstarship(id: ID!): Starship\n\t}\n\n### No input support yet, gah!\nscalar ReviewInput\n##  input ReviewInput {\n##    stars: Int!\n##    commentary: String\n##  }\n\n\t# The mutation type, represents all updates we can make to our data\n\ttype Mutation {\n\t\tcreateReview(episode: Episode!, review: ReviewInput!): Review\n\t}\n\n\n\t# The episodes in the Star Wars trilogy\n\tenum Episode {\n\t\t# Star Wars Episode IV: A New Hope, released in 1977.\n\t\tNEWHOPE\n\t\t# Star Wars Episode V: The Empire Strikes Back, released in 1980.\n\t\tEMPIRE\n\t\t# Star Wars Episode VI: Return of the Jedi, released in 1983.\n\t\tJEDI\n\t}\n\n\tinterface IName {\n\t\tname: String!\n  }\n\n\t# A character from the Star Wars universe\n\tinterface Character {\n\t\t# The ID of the character\n\t\tid: ID!\n\t\t# The name of the character\n\t\tname: String!\n\t\t# The friends of the character, or an empty list if they have none\n\t\tfriends: [Character]\n\t\t# The friends of the character exposed as a connection with edges\n\t\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\t\t# The movies this character appears in\n\t\tappearsIn: [Episode!]!\n\t}\n\n\t# Units of height\n\tenum LengthUnit {\n\t\t# The standard unit around the world\n\t\tMETER\n\t\t# Primarily used in the United States\n\t\tFOOT\n\t}\n\n\t# A humanoid creature from the Star Wars universe\n\ttype Human implements Character & IName {\n\t\t# The ID of the human\n\t\tid: ID!\n\t\t# What this human calls themselves\n\t\tname: String!\n\t\t# Height in the preferred unit, default is meters\n\t\theight(unit: LengthUnit = METER): Float!\n\t\t# Mass in kilograms, or null if unknown\n\t\tmass: Float\n\t\t# This human's friends, or an empty list if they have none\n\t\tfriends: [Character]\n\t\t# The friends of the human exposed as a connection with edges\n\t\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\t\t# The movies this human appears in\n\t\tappearsIn: [Episode!]!\n\t\t# A list of starships this person has piloted, or an empty list if none\n\t\tstarships: [Starship]\n\t}\n\n\t# An autonomous mechanical character in the Star Wars universe\n\ttype Droid implements Character & IName {\n\t\t# The ID of the droid\n\t\tid: ID!\n\t\t# What others call this droid\n\t\tname: String!\n\t\t# This droid's friends, or an empty list if they have none\n\t\tfriends: [Character]\n\t\t# The friends of the droid exposed as a connection with edges\n\t\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\t\t# The movies this droid appears in\n\t\tappearsIn: [Episode!]!\n\t\t# This droid's primary function\n\t\tprimaryFunction: String\n\t}\n\n\t# A connection object for a character's friends\n\ttype FriendsConnection {\n\t\t# The total number of friends\n\t\ttotalCount: Int!\n\t\t# The edges for each of the character's friends.\n\t\tedges: [FriendsEdge]\n\t\t# A list of the friends, as a convenience when edges are not needed.\n\t\tfriends: [Character]\n\t\t# Information for paginating this connection\n\t\tpageInfo: PageInfo!\n\t}\n\n\t# An edge object for a character's friends\n\ttype FriendsEdge {\n\t\t# A cursor used for pagination\n\t\tcursor: ID!\n\t\t# The character represented by this friendship edge\n\t\tnode: Character\n\t}\n\n\t# Information for paginating this connection\n\ttype PageInfo {\n\t\tstartCursor: ID\n\t\tendCursor: ID\n\t\thasNextPage: Boolean!\n\t}\n\n\t# Represents a review for a movie\n\ttype Review {\n\t\t# The number of stars this review gave, 1-5\n\t\tstars: Int!\n\t\t# Comment about the movie\n\t\tcommentary: String\n\t}\n\n\ttype Starship {\n\t\t# The ID of the starship\n\t\tid: ID!\n\t\t# The name of the starship\n\t\tname: String!\n\t\t# Length of the starship, along the longest axis\n\t\tlength(unit: LengthUnit = METER): Float!\n\t}\n\n\tunion SearchResult = Human | Droid | Starship\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-24T00:34:57Z",
+    "updated_at": "2019-05-08T17:07:23Z",
+    "pushed_at": "2019-05-08T17:07:22Z",
+    "issues": 38,
+    "watchers": 5,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 12
+  }
+}

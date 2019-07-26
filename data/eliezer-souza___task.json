@@ -1,0 +1,42 @@
+{
+  "repo_name": "task",
+  "repo_full_name": "eliezer-souza/task",
+  "repo_owner": "eliezer-souza",
+  "repo_description": "📑 List of tasks to be performed",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "task.graphql",
+      "path": "src/modules/task/task.graphql",
+      "sha": "cb95b488448c16043757474689d754115bec8ee9",
+      "url": "https://api.github.com/repositories/168626660/contents/src/modules/task/task.graphql?ref=d2e510e870201c4e2bf7a0fd92cb07fb159764b5",
+      "git_url": "https://api.github.com/repositories/168626660/git/blobs/cb95b488448c16043757474689d754115bec8ee9",
+      "html_url": "https://github.com/eliezer-souza/task/blob/d2e510e870201c4e2bf7a0fd92cb07fb159764b5/src/modules/task/task.graphql",
+      "content": "type Task {\n  _id: String!\n  subject: String!\n  description: String!\n  user: String!\n}\n\ntype Query {\n  tasks(idUser: String!): [Task!]!\n}\n\ntype Mutation {\n  createTask(subject: String!, description: String!, user: String!): Task!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-01T01:57:12Z",
+    "updated_at": "2019-06-06T11:31:40Z",
+    "pushed_at": "2019-06-06T11:31:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "repo_name": "joyspot-api",
+  "repo_full_name": "vkouk/joyspot-api",
+  "repo_owner": "vkouk",
+  "repo_description": "The most advantage gaming experience on the web",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/gql/schema.graphql",
+      "sha": "7fbb5eb4a409d0f4ab6a084e35c6910053b777f7",
+      "url": "https://api.github.com/repositories/176822468/contents/app/graphql/gql/schema.graphql?ref=05b27a36b91c17031cd891837960a70ba805c596",
+      "git_url": "https://api.github.com/repositories/176822468/git/blobs/7fbb5eb4a409d0f4ab6a084e35c6910053b777f7",
+      "html_url": "https://github.com/vkouk/joyspot-api/blob/05b27a36b91c17031cd891837960a70ba805c596/app/graphql/gql/schema.graphql",
+      "content": "# import * from 'user.graphql'\n\ntype Query {\n  me: User!\n  users: [User!]!\n}\n\ntype Mutation {\n  signup(\n    email: String!\n    password: String!\n    name: String!\n    avatar: String\n  ): User!\n  signin(email: String!, password: String!): User!\n  signout: Boolean!\n  updateUser(email: String, name: String, avatar: String): User!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/vkouk/joyspot-api/blob/05b27a36b91c17031cd891837960a70ba805c596/app/graphql/gql/schema.graphql:\n# import * from 'user.graphql'\n\ntype Query {\n  me: User!\n  users: [User!]!\n}\n\ntype Mutation {\n  signup(\n    email: String!\n    password: String!\n    name: String!\n    avatar: String\n  ): User!\n  signin(email: String!, password: String!): User!\n  signout: Boolean!\n  updateUser(email: String, name: String, avatar: String): User!\n}\n\n# https://github.com/vkouk/joyspot-api/blob/05b27a36b91c17031cd891837960a70ba805c596/app/graphql/gql/user.graphql:\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  password: String!\n  avatar: String\n}\n",
+        "mergedPaths": [
+          "app/graphql/gql/user.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "user.graphql",
+      "path": "app/graphql/gql/user.graphql",
+      "sha": "c0de09e631e5857b569be3835eca39e84b2ad4d6",
+      "url": "https://api.github.com/repositories/176822468/contents/app/graphql/gql/user.graphql?ref=05b27a36b91c17031cd891837960a70ba805c596",
+      "git_url": "https://api.github.com/repositories/176822468/git/blobs/c0de09e631e5857b569be3835eca39e84b2ad4d6",
+      "html_url": "https://github.com/vkouk/joyspot-api/blob/05b27a36b91c17031cd891837960a70ba805c596/app/graphql/gql/user.graphql",
+      "content": "type User {\n  id: ID!\n  name: String!\n  email: String!\n  password: String!\n  avatar: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-20T21:50:01Z",
+    "updated_at": "2019-07-18T19:54:43Z",
+    "pushed_at": "2019-07-18T19:54:41Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

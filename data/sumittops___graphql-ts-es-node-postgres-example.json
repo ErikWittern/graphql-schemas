@@ -1,0 +1,98 @@
+{
+  "repo_name": "graphql-ts-es-node-postgres-example",
+  "repo_full_name": "sumittops/graphql-ts-es-node-postgres-example",
+  "repo_owner": "sumittops",
+  "repo_description": "Playing around with a combination of Node with Typescript backend using Postgres and Elasticsearch data stores and exposing data through GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/user-analytics/schema.graphql",
+      "sha": "832a86f34a50bc7a922ce05abf354b8178766e23",
+      "url": "https://api.github.com/repositories/185455249/contents/src/modules/user-analytics/schema.graphql?ref=a7bb8bbddb7ffe9de5526f6c056554507f0483f1",
+      "git_url": "https://api.github.com/repositories/185455249/git/blobs/832a86f34a50bc7a922ce05abf354b8178766e23",
+      "html_url": "https://github.com/sumittops/graphql-ts-es-node-postgres-example/blob/a7bb8bbddb7ffe9de5526f6c056554507f0483f1/src/modules/user-analytics/schema.graphql",
+      "content": "scalar DateTime\n\ntype UserEvent {\n    id: ID!,\n    type: String!,\n    timestamp: DateTime!\n    data: String\n}\n\ntype Query {\n    userAnalytics(type: String, from: DateTime, to: DateTime): [UserEvent!]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "667c686c8145864e65277052d4da5a7a6b09ce25",
+      "url": "https://api.github.com/repositories/185455249/contents/src/schema.graphql?ref=e31e319250c4e08d995c4eb8e75ced2de77c91f1",
+      "git_url": "https://api.github.com/repositories/185455249/git/blobs/667c686c8145864e65277052d4da5a7a6b09ce25",
+      "html_url": "https://github.com/sumittops/graphql-ts-es-node-postgres-example/blob/e31e319250c4e08d995c4eb8e75ced2de77c91f1/src/schema.graphql",
+      "content": "type User { \r\n    id: String!\r\n    name: String!\r\n    email: String!\r\n    password: String!\r\n}\r\n\r\ntype Query {\r\n    hello(name: String): String!\r\n    user(email: String!): User\r\n    users: [User!]!\r\n}\r\n\r\ntype Mutation {\r\n    register(email: String!, password: String!, name: String!): Boolean\r\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/user/schema.graphql",
+      "sha": "132ed7056078776727e832e2d7ed4e5b322ac397",
+      "url": "https://api.github.com/repositories/185455249/contents/src/modules/user/schema.graphql?ref=a7bb8bbddb7ffe9de5526f6c056554507f0483f1",
+      "git_url": "https://api.github.com/repositories/185455249/git/blobs/132ed7056078776727e832e2d7ed4e5b322ac397",
+      "html_url": "https://github.com/sumittops/graphql-ts-es-node-postgres-example/blob/a7bb8bbddb7ffe9de5526f6c056554507f0483f1/src/modules/user/schema.graphql",
+      "content": "# import * as shared from \"../../../shared.graphql\" \n\ntype User { \n    id: String!\n    name: String!\n    email: String!\n    password: String!\n}\n\ntype Query {\n    user(email: String!): User\n    users: [User!]!\n}\n\ntype Mutation {\n    register(email: String!, password: String!, name: String!): [ResponseError!]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/sumittops/graphql-ts-es-node-postgres-example/blob/a7bb8bbddb7ffe9de5526f6c056554507f0483f1/src/modules/user/schema.graphql:\n# import * as shared from \"../../../shared.graphql\" \n\ntype User { \n    id: String!\n    name: String!\n    email: String!\n    password: String!\n}\n\ntype Query {\n    user(email: String!): User\n    users: [User!]!\n}\n\ntype Mutation {\n    register(email: String!, password: String!, name: String!): [ResponseError!]\n}\n# https://github.com/sumittops/graphql-ts-es-node-postgres-example/blob/a7bb8bbddb7ffe9de5526f6c056554507f0483f1/shared.graphql:\ntype ResponseError {\n    path: String!\n    message: String!\n}",
+        "mergedPaths": [
+          "shared.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "ResponseError"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "shared.graphql",
+      "path": "shared.graphql",
+      "sha": "106e79e6a2689f3b2df91150b62c840b028a19b9",
+      "url": "https://api.github.com/repositories/185455249/contents/shared.graphql?ref=a7bb8bbddb7ffe9de5526f6c056554507f0483f1",
+      "git_url": "https://api.github.com/repositories/185455249/git/blobs/106e79e6a2689f3b2df91150b62c840b028a19b9",
+      "html_url": "https://github.com/sumittops/graphql-ts-es-node-postgres-example/blob/a7bb8bbddb7ffe9de5526f6c056554507f0483f1/shared.graphql",
+      "content": "type ResponseError {\n    path: String!\n    message: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-07T18:14:01Z",
+    "updated_at": "2019-05-28T17:32:25Z",
+    "pushed_at": "2019-05-28T17:36:56Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

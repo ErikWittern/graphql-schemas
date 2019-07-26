@@ -1,0 +1,42 @@
+{
+  "repo_name": "microservice-tournaments",
+  "repo_full_name": "the-bid/microservice-tournaments",
+  "repo_owner": "the-bid",
+  "repo_description": "The tournaments microservice",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schemas/schema.graphql",
+      "sha": "a7f26aa41912153dd6e22428568368437038113f",
+      "url": "https://api.github.com/repositories/133595509/contents/src/schemas/schema.graphql?ref=f4f48238faf16eb3b5dfb36fd7879e637495ad79",
+      "git_url": "https://api.github.com/repositories/133595509/git/blobs/a7f26aa41912153dd6e22428568368437038113f",
+      "html_url": "https://github.com/the-bid/microservice-tournaments/blob/f4f48238faf16eb3b5dfb36fd7879e637495ad79/src/schemas/schema.graphql",
+      "content": "type Query {\n  tournament(year:Int!):Tournament\n  team(id:ID!,year:Int):Team\n}\n\ntype Tournament @cacheControl(maxAge: 3000000){\n  id: ID!\n  name: String!\n  status: TournamentStatus!\n  startDate: Date!\n  endDate: Date!\n  brackets: [Bracket!]!\n}\n\nenum TournamentStatus{\n  CLOSED\n  IN_PROGRESS\n}\n\ntype Bracket @cacheControl(maxAge: 3000000){\n  id: ID!\n  name: String!\n  teams: [Team!]!\n}\n\ntype Team @cacheControl(maxAge: 3000000){\n  id: ID!\n  name: String!\n  school: String!\n  seed: Int!\n}\n\ndirective @cacheControl(\n  maxAge: Int,\n  scope: CacheControlScope\n) on OBJECT | FIELD_DEFINITION\n\nenum CacheControlScope {\n  PUBLIC\n  PRIVATE\n}\n\nscalar Date\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-16T01:53:29Z",
+    "updated_at": "2019-04-26T15:43:37Z",
+    "pushed_at": "2019-04-26T15:43:35Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

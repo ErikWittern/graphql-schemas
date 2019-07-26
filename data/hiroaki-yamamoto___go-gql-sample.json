@@ -1,0 +1,39 @@
+{
+  "repo_name": "go-gql-sample",
+  "repo_full_name": "hiroaki-yamamoto/go-gql-sample",
+  "repo_owner": "hiroaki-yamamoto",
+  "repo_description": "Go GraphQL API sample",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "generated.graphql",
+      "path": "backend/schemata/generated.graphql",
+      "sha": "a139cfce325cf606c08dfec9d4c4ac883e4efd1a",
+      "url": "https://api.github.com/repositories/170480829/contents/backend/schemata/generated.graphql?ref=cc67add0769d674a733e0f6620c9ef2d3325359f",
+      "git_url": "https://api.github.com/repositories/170480829/git/blobs/a139cfce325cf606c08dfec9d4c4ac883e4efd1a",
+      "html_url": "https://github.com/hiroaki-yamamoto/go-gql-sample/blob/cc67add0769d674a733e0f6620c9ef2d3325359f/backend/schemata/generated.graphql",
+      "content": "type AggregateUser {\n  count: Int!\n}\n\ntype BatchPayload {\n  count: Long!\n}\n\nscalar Long\n\ntype Mutation {\n  createUser(data: UserCreateInput!): User!\n  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User\n  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!\n  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!\n  deleteUser(where: UserWhereUniqueInput!): User\n  deleteManyUsers(where: UserWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  user(where: UserWhereUniqueInput!): User\n  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!\n  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!\n  node(id: ID!): Node\n}\n\ntype Subscription {\n  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload\n}\n\ntype User {\n  id: ID!\n  username: String!\n  password: String!\n}\n\ntype UserConnection {\n  pageInfo: PageInfo!\n  edges: [UserEdge]!\n  aggregate: AggregateUser!\n}\n\ninput UserCreateInput {\n  id: ID\n  username: String!\n  password: String!\n}\n\ntype UserEdge {\n  node: User!\n  cursor: String!\n}\n\nenum UserOrderByInput {\n  id_ASC\n  id_DESC\n  username_ASC\n  username_DESC\n  password_ASC\n  password_DESC\n}\n\ntype UserPreviousValues {\n  id: ID!\n  username: String!\n  password: String!\n}\n\ntype UserSubscriptionPayload {\n  mutation: MutationType!\n  node: User\n  updatedFields: [String!]\n  previousValues: UserPreviousValues\n}\n\ninput UserSubscriptionWhereInput {\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: UserWhereInput\n  AND: [UserSubscriptionWhereInput!]\n  OR: [UserSubscriptionWhereInput!]\n  NOT: [UserSubscriptionWhereInput!]\n}\n\ninput UserUpdateInput {\n  username: String\n  password: String\n}\n\ninput UserUpdateManyMutationInput {\n  username: String\n  password: String\n}\n\ninput UserWhereInput {\n  id: ID\n  id_not: ID\n  id_in: [ID!]\n  id_not_in: [ID!]\n  id_lt: ID\n  id_lte: ID\n  id_gt: ID\n  id_gte: ID\n  id_contains: ID\n  id_not_contains: ID\n  id_starts_with: ID\n  id_not_starts_with: ID\n  id_ends_with: ID\n  id_not_ends_with: ID\n  username: String\n  username_not: String\n  username_in: [String!]\n  username_not_in: [String!]\n  username_lt: String\n  username_lte: String\n  username_gt: String\n  username_gte: String\n  username_contains: String\n  username_not_contains: String\n  username_starts_with: String\n  username_not_starts_with: String\n  username_ends_with: String\n  username_not_ends_with: String\n  password: String\n  password_not: String\n  password_in: [String!]\n  password_not_in: [String!]\n  password_lt: String\n  password_lte: String\n  password_gt: String\n  password_gte: String\n  password_contains: String\n  password_not_contains: String\n  password_starts_with: String\n  password_not_starts_with: String\n  password_ends_with: String\n  password_not_ends_with: String\n  AND: [UserWhereInput!]\n  OR: [UserWhereInput!]\n  NOT: [UserWhereInput!]\n}\n\ninput UserWhereUniqueInput {\n  id: ID\n  username: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-13T09:38:24Z",
+    "updated_at": "2019-05-09T03:04:54Z",
+    "pushed_at": "2019-05-09T03:04:52Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

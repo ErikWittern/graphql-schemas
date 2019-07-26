@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql_sequelize",
+  "repo_full_name": "neal5580/graphql_sequelize",
+  "repo_owner": "Neal5580",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "68dfde3afe5b0f8044426153f9c4387104b19cc5",
+      "url": "https://api.github.com/repositories/154787074/contents/server/schema.graphql?ref=3579c41ac2cac92ef672c5963f3b977986acbfec",
+      "git_url": "https://api.github.com/repositories/154787074/git/blobs/68dfde3afe5b0f8044426153f9c4387104b19cc5",
+      "html_url": "https://github.com/Neal5580/graphql_sequelize/blob/3579c41ac2cac92ef672c5963f3b977986acbfec/server/schema.graphql",
+      "content": "type Query {\n    job(id: ID!): Job\n    jobs: [Job]\n    company(id: ID!): Company\n}\n\ntype Mutation{\n    createJob(input: CreateJobInput): Job\n}\n\ntype Company {\n    id: ID!\n    name: String\n    description: String\n    jobs:[Job]\n}\n\ntype Job {\n    id: ID!\n    title: String\n    company: Company\n    description: String\n}\n\ninput CreateJobInput {\n    companyId:ID\n    title: String\n    description: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-26T06:24:29Z",
+    "updated_at": "2018-10-26T06:24:59Z",
+    "pushed_at": "2018-10-26T06:24:58Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

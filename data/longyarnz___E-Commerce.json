@@ -1,0 +1,41 @@
+{
+  "repo_name": "E-Commerce",
+  "repo_full_name": "longyarnz/e-commerce",
+  "repo_owner": "longyarnz",
+  "repo_description": "This is an open source E-Ccommerce template designed with ReactJS and NodeJS.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "498f2038fcefaa2143295639f7d1038d35ba8f2a",
+      "url": "https://api.github.com/repositories/103965614/contents/schema.graphql?ref=69f108aff9277e7c4a8aa99d1f22362e74a6c00a",
+      "git_url": "https://api.github.com/repositories/103965614/git/blobs/498f2038fcefaa2143295639f7d1038d35ba8f2a",
+      "html_url": "https://github.com/longyarnz/E-Commerce/blob/69f108aff9277e7c4a8aa99d1f22362e74a6c00a/schema.graphql",
+      "content": "input ClientOptions {\n  # Name of Customer\n  _name: String\n\n  # Email of Customer\n  email: String\n\n  # Phone number of Customer\n  phone: String\n\n  # Address of customer\n  address: String\n\n  # City of delivery\n  city: String\n\n  # Picture Sample of Work Order\n  picture_file: String\n\n  # Description of Work Order\n  work_order: String\n}\n\n# This is the Client Information Object\ntype ClientOutput {\n  # Name of Customer\n  _name: String\n\n  # Email of Customer\n  email: String\n\n  # Phone number of Customer\n  phone: String\n\n  # Address of customer\n  address: String\n\n  # City of delivery\n  city: String\n\n  # Picture Sample of Work Order\n  picture_file: String\n\n  # Description of Work Order\n  work_order: String\n}\n\ninput CreateItemsInput {\n  # Input fields for new Items\n  items: [ItemInput]\n  clientMutationId: String\n}\n\ntype CreateItemsPayload {\n  # Input fields for new Items\n  items: [ItemOutput]\n  clientMutationId: String\n}\n\n# This is a graphql table for Welfurnish customers\ninput InvoiceInput {\n  # Invoice Number\n  invoice_number: Int!\n\n  # Cost of Items Purchased\n  cost: Int!\n\n  # Purchased Items\n  items: String!\n}\n\ninput InvoiceOptions {\n  # Invoice Number\n  invoice_number: Int\n\n  # Cost of Items Purchased\n  cost: Int\n\n  # Purchased Items\n  items: String\n\n  # User ID\n  user: String\n}\n\n# This is a graphql table for Welfurnish customers\ntype InvoiceOutput {\n  # Invoice Number\n  invoice_number: Int\n\n  # Cost of Items Purchased\n  cost: Int\n\n  # Purchased Items\n  items: String\n  user: User\n}\n\n# This is an input type for Items\ninput ItemInput {\n  # RealID Field\n  realID: String\n\n  # KeyID Field\n  keyID: Int\n\n  # Name of Item\n  title: String!\n\n  # Category of Item\n  category: String!\n\n  # Price of Item\n  price: Int!\n\n  # Information on Item\n  description: String!\n\n  # Path to image\n  src_file: String!\n\n  # Path to image\n  sub: String!\n\n  # State of Purchase\n  purchased: Boolean!\n}\n\ninput ItemOptions {\n  # RealID Field\n  realID: String\n\n  # KeyID Field\n  keyID: Int\n\n  # Name of Item\n  title: String\n\n  # Category of Item\n  category: String\n\n  # Price of Item\n  price: Int\n\n  # Information on Item\n  description: String\n\n  # Path to image\n  src_file: String\n\n  # Path to image\n  sub: String\n\n  # State of Purchase\n  purchased: Boolean\n}\n\n# This is a graphql table for Welfurnish works\ntype ItemOutput {\n  # RealID Field\n  realID: String\n\n  # KeyID Field\n  keyID: Int\n\n  # Name of Item\n  title: String\n\n  # Category of Item\n  category: String\n\n  # Price of Item\n  price: Int\n\n  # Information on Item\n  description: String\n\n  # Path to image\n  src_file: String\n\n  # Path to image\n  sub: String\n\n  # State of Purchase\n  purchased: Boolean\n}\n\ninput MakeCustomOrderInput {\n  # Name of Customer\n  _name: String!\n\n  # Email of Customer\n  email: String!\n\n  # Phone number of Customer\n  phone: String!\n\n  # City of delivery\n  city: String!\n\n  # Picture Sample of Work Order\n  picture_file: String\n\n  # Description of Work Order\n  work_order: String!\n  clientMutationId: String\n}\n\ntype MakeCustomOrderPayload {\n  # Result from order\n  customer: ClientOutput\n  clientMutationId: String\n}\n\ninput MakeRegularOrderInput {\n  # Input fields for customer order\n  customer: UserInput\n\n  # Input fields for Invoice\n  invoice: InvoiceInput\n  clientMutationId: String\n}\n\ntype MakeRegularOrderPayload {\n  # Result from order\n  customer: ClientOutput\n\n  # New Invoice\n  invoice: InvoiceOutput\n  clientMutationId: String\n}\n\n# Root Mutation\ntype Mutation {\n  # Customer can make custom orders\n  customOrder(input: MakeCustomOrderInput!): MakeCustomOrderPayload\n\n  # Customer can make regular orders\n  regularOrder(input: MakeRegularOrderInput!): MakeRegularOrderPayload\n\n  # New Items can be added\n  createItems(input: CreateItemsInput!): CreateItemsPayload\n\n  # Item properties can be updated\n  updateItems(input: UpdateItemsInput!): UpdateItemsPayload\n}\n\n# This is the root query\ntype Query {\n  items(options: ItemOptions, limits: Int, sort: String): [ItemOutput]\n  users(options: UserOptions, limits: Int, sort: String): [User]\n  clients(options: ClientOptions, limits: Int, sort: String): [ClientOutput]\n  invoices(options: InvoiceOptions, limits: Int, sort: String): [InvoiceOutput]\n}\n\n# This is a graphql table for Welfurnish works\ninput UpdateItemInput {\n  # RealID Field\n  realID: String\n\n  # KeyID Field\n  keyID: Int!\n\n  # Name of Item\n  title: String\n\n  # Category of Item\n  category: String\n\n  # Price of Item\n  price: Int\n\n  # Information on Item\n  description: String\n\n  # Path to image\n  src_file: String\n\n  # Path to image\n  sub: String\n\n  # State of Purchase\n  purchased: Boolean\n}\n\ninput UpdateItemsInput {\n  # Item update field\n  items: UpdateItemInput\n  clientMutationId: String\n}\n\ntype UpdateItemsPayload {\n  # Input fields for new Items\n  items: ItemOutput\n  clientMutationId: String\n}\n\n# This is a graphql table for Welfurnish customers\ntype User {\n  # KeyID Field\n  keyID: String\n\n  # Name of Customer\n  _name: String\n\n  # Email of Customer\n  email: String\n\n  # Phone number of Customer\n  phone: String\n\n  # Address of customer\n  address: String\n\n  # City of delivery\n  city: String\n\n  # Picture Sample of Work Order\n  picture_file: String\n\n  # Description of Work Order\n  work_order: String\n  invoices: [InvoiceOutput]\n}\n\n# This is the Client Information Object\ninput UserInput {\n  # Name of Customer\n  _name: String!\n\n  # Email of Customer\n  email: String!\n\n  # Phone number of Customer\n  phone: String!\n\n  # Address of customer\n  address: String!\n\n  # City of delivery\n  city: String!\n}\n\ninput UserOptions {\n  # Name of Customer\n  _name: String\n\n  # Email of Customer\n  email: String\n\n  # Phone number of Customer\n  phone: String\n\n  # Address of customer\n  address: String\n\n  # City of delivery\n  city: String\n\n  # Picture Sample of Work Order\n  picture_file: String\n\n  # Description of Work Order\n  work_order: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": true,
+      "numDefinitions": 22
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-18T16:45:00Z",
+    "updated_at": "2018-01-13T16:15:14Z",
+    "pushed_at": "2017-12-03T09:55:52Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

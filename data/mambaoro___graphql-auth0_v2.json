@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-auth0_v2",
+  "repo_full_name": "mambaoro/graphql-auth0_v2",
+  "repo_owner": "mambaoro",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema/schema.graphql",
+      "sha": "f90a727fff2b8ede6606f34e0c52fa8001abde70",
+      "url": "https://api.github.com/repositories/186285476/contents/server/schema/schema.graphql?ref=9a389314d752ee5a641c04b81b2631ef8a2392d4",
+      "git_url": "https://api.github.com/repositories/186285476/git/blobs/f90a727fff2b8ede6606f34e0c52fa8001abde70",
+      "html_url": "https://github.com/mambaoro/graphql-auth0_v2/blob/9a389314d752ee5a641c04b81b2631ef8a2392d4/server/schema/schema.graphql",
+      "content": "type Query {\n    user(id: ID!): User \n    books: [Book!]!\n    book(id: ID!): Book! \n}\n\ntype Mutation {\n    addUser(data: adduserInput!): User!\n    addBook(data: addBookInput! ): Book!\n}\n\ntype User {\n    id: ID!\n    name: String!\n    password: String!\n    books: [Book!]\n}\n\ntype Book {\n    id: ID!\n    title: String!\n    cover_image_url: String!\n    average_rating: Float!\n    author: User!\n}\n\ninput adduserInput {\n    name: String!\n    password: String!\n}\n\ninput addBookInput {\n    title: String!\n    cover_image_url: String!\n    average_rating: Float!\n    author: ID!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-12T17:42:22Z",
+    "updated_at": "2019-05-12T17:49:49Z",
+    "pushed_at": "2019-05-12T17:49:47Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

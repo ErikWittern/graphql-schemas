@@ -1,0 +1,42 @@
+{
+  "repo_name": "express-grapql-server",
+  "repo_full_name": "maria-san/express-grapql-server",
+  "repo_owner": "maria-san",
+  "repo_description": "Express GraphQL server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "greet.graphql",
+      "path": "src/schema/greet.graphql",
+      "sha": "1e4810945ae2ebef6e508336f880f58413d6796c",
+      "url": "https://api.github.com/repositories/179230040/contents/src/schema/greet.graphql?ref=a594b61aa4550f9f03347265a6d2a0909616ec7c",
+      "git_url": "https://api.github.com/repositories/179230040/git/blobs/1e4810945ae2ebef6e508336f880f58413d6796c",
+      "html_url": "https://github.com/maria-san/express-grapql-server/blob/a594b61aa4550f9f03347265a6d2a0909616ec7c/src/schema/greet.graphql",
+      "content": "\ntype Greet {\n\n    message: String\n\n}\n\ntype Query {\n\n    hello: Greet\n\n}\n\ntype Mutation {\n\n    hi(\n        name: String\n    ): Greet\n\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-03T07:01:34Z",
+    "updated_at": "2019-04-15T06:05:40Z",
+    "pushed_at": "2019-04-03T07:04:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

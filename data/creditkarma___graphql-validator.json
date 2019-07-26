@@ -1,0 +1,132 @@
+{
+  "repo_name": "graphql-validator",
+  "repo_full_name": "creditkarma/graphql-validator",
+  "repo_owner": "creditkarma",
+  "repo_description": "A CLI tool to validate queries against a GraphQL Schema.  The primary use case for this tool is to validate schema changes against an existing query store.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootQuery.graphql",
+      "path": "fixtures/schema/rootQuery.graphql",
+      "sha": "5905511992a11f11270eeb892100ecde06d3dd09",
+      "url": "https://api.github.com/repositories/66574997/contents/fixtures/schema/rootQuery.graphql?ref=97af6892b1d688f7cbcd682a2644c7321839c495",
+      "git_url": "https://api.github.com/repositories/66574997/git/blobs/5905511992a11f11270eeb892100ecde06d3dd09",
+      "html_url": "https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/rootQuery.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype RootQuery {\n  allFilms(offset: Int, limit: Int): [Film]\n  film(id: ID, filmID: ID): Film\n  allPeople(offset: Int, limit: Int): [Person]\n  person(id: ID, personID: ID): Person\n  allPlanets(offset: Int, limit: Int): [Planet]\n  planet(id: ID, planetID: ID): Planet\n  allSpecies(offset: Int, limit: Int): [Species]\n  species(id: ID, speciesID: ID): Species\n  allStarships(offset: Int, limit: Int): [Starship]\n  starship(id: ID, starshipID: ID): Starship\n  allVehicles(offset: Int, limit: Int): [Vehicle]\n  vehicle(id: ID, vehicleID: ID): Vehicle\n  node(id: ID!): Node\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/rootQuery.graphql:\ninterface Node {\n  id: ID!\n}\n\ntype RootQuery {\n  allFilms(offset: Int, limit: Int): [Film]\n  film(id: ID, filmID: ID): Film\n  allPeople(offset: Int, limit: Int): [Person]\n  person(id: ID, personID: ID): Person\n  allPlanets(offset: Int, limit: Int): [Planet]\n  planet(id: ID, planetID: ID): Planet\n  allSpecies(offset: Int, limit: Int): [Species]\n  species(id: ID, speciesID: ID): Species\n  allStarships(offset: Int, limit: Int): [Starship]\n  starship(id: ID, starshipID: ID): Starship\n  allVehicles(offset: Int, limit: Int): [Vehicle]\n  vehicle(id: ID, vehicleID: ID): Vehicle\n  node(id: ID!): Node\n}\n\n# https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/film.graphql:\ntype Film implements Node {\n  title: String\n  episodeID: Int\n  openingCrawl: String\n  director: String\n  producers: [String]\n  releaseDate: String\n  species: [Species]\n  starships: [Starship]\n  vehicles: [Vehicle]\n  characters: [Person]\n  planets: [Planet]\n  created: String\n  edited: String\n  id: ID!\n}\n\n# https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/characters/people.graphql:\ntype Person implements Node {\n  name: String\n  birthYear: String\n  eyeColor: String\n  gender: String\n  hairColor: String\n  height: Int\n  mass: Int\n  skinColor: String\n  homeworld: Planet\n  films: [Film]\n  species: [Species]\n  starships: [Starship]\n  vehicles: [Vehicle]\n  created: String\n  edited: String\n  id: ID!\n}\n\n# https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/planet.graphql:\ntype Planet implements Node {\n  name: String\n  diameter: Int\n  rotationPeriod: Int\n  orbitalPeriod: Int\n  gravity: String\n  population: Int\n  climates: [String]\n  terrains: [String]\n  surfaceWater: Float\n  residents: [Person]\n  films: [Film]\n  created: String\n  edited: String\n  id: ID!\n}\n\n# https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/characters/species.graphql:\ntype Species implements Node {\n  name: String\n  classification: String\n  designation: String\n  averageHeight: Float\n  averageLifespan: Int\n  eyeColors: [String]\n  hairColors: [String]\n  skinColors: [String]\n  language: String\n  homeworld: Planet\n  people: [Person]\n  films: [Film]\n  created: String\n  edited: String\n  id: ID!\n}\n\n# https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/ships/starship.graphql:\ntype Starship implements Node {\n  name: String\n  model: String\n  starshipClass: String\n  manufacturers: [String]\n  costInCredits: Float\n  length: Float\n  crew: String\n  passengers: String\n  maxAtmospheringSpeed: Int\n  hyperdriveRating: Float\n  MGLT: Int\n  cargoCapacity: Float\n  consumables: String\n  pilots: [Person]\n  films: [Film]\n  created: String\n  edited: String\n  id: ID!\n}\n\n# https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/ships/vehicle.graphql:\ntype Vehicle implements Node {\n  name: String\n  model: String\n  vehicleClass: String\n  manufacturers: [String]\n  costInCredits: Int\n  length: Float\n  crew: String\n  passengers: String\n  maxAtmospheringSpeed: Int\n  cargoCapacity: Int\n  consumables: String\n  pilots: [Person]\n  films: [Film]\n  created: String\n  edited: String\n  id: ID!\n}\n",
+        "mergedPaths": [
+          "fixtures/schema/dataTypes/film.graphql",
+          "fixtures/schema/dataTypes/characters/people.graphql",
+          "fixtures/schema/dataTypes/planet.graphql",
+          "fixtures/schema/dataTypes/characters/species.graphql",
+          "fixtures/schema/dataTypes/ships/starship.graphql",
+          "fixtures/schema/dataTypes/ships/vehicle.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Film",
+          "Person",
+          "Planet",
+          "Species",
+          "Starship",
+          "Vehicle"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 8
+      },
+      "validSchema": false
+    },
+    {
+      "name": "planet.graphql",
+      "path": "fixtures/schema/dataTypes/planet.graphql",
+      "sha": "f1cdbf2c07ce878641dc0db349fa39be4a792d90",
+      "url": "https://api.github.com/repositories/66574997/contents/fixtures/schema/dataTypes/planet.graphql?ref=97af6892b1d688f7cbcd682a2644c7321839c495",
+      "git_url": "https://api.github.com/repositories/66574997/git/blobs/f1cdbf2c07ce878641dc0db349fa39be4a792d90",
+      "html_url": "https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/planet.graphql",
+      "content": "type Planet implements Node {\n  name: String\n  diameter: Int\n  rotationPeriod: Int\n  orbitalPeriod: Int\n  gravity: String\n  population: Int\n  climates: [String]\n  terrains: [String]\n  surfaceWater: Float\n  residents: [Person]\n  films: [Film]\n  created: String\n  edited: String\n  id: ID!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "film.graphql",
+      "path": "fixtures/schema/dataTypes/film.graphql",
+      "sha": "608668cdee822f01300936c38eba289c337a6f53",
+      "url": "https://api.github.com/repositories/66574997/contents/fixtures/schema/dataTypes/film.graphql?ref=97af6892b1d688f7cbcd682a2644c7321839c495",
+      "git_url": "https://api.github.com/repositories/66574997/git/blobs/608668cdee822f01300936c38eba289c337a6f53",
+      "html_url": "https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/film.graphql",
+      "content": "type Film implements Node {\n  title: String\n  episodeID: Int\n  openingCrawl: String\n  director: String\n  producers: [String]\n  releaseDate: String\n  species: [Species]\n  starships: [Starship]\n  vehicles: [Vehicle]\n  characters: [Person]\n  planets: [Planet]\n  created: String\n  edited: String\n  id: ID!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "people.graphql",
+      "path": "fixtures/schema/dataTypes/characters/people.graphql",
+      "sha": "4a8e888aaa74d5aff0248f5c7e9135071dafbdcb",
+      "url": "https://api.github.com/repositories/66574997/contents/fixtures/schema/dataTypes/characters/people.graphql?ref=97af6892b1d688f7cbcd682a2644c7321839c495",
+      "git_url": "https://api.github.com/repositories/66574997/git/blobs/4a8e888aaa74d5aff0248f5c7e9135071dafbdcb",
+      "html_url": "https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/characters/people.graphql",
+      "content": "type Person implements Node {\n  name: String\n  birthYear: String\n  eyeColor: String\n  gender: String\n  hairColor: String\n  height: Int\n  mass: Int\n  skinColor: String\n  homeworld: Planet\n  films: [Film]\n  species: [Species]\n  starships: [Starship]\n  vehicles: [Vehicle]\n  created: String\n  edited: String\n  id: ID!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "species.graphql",
+      "path": "fixtures/schema/dataTypes/characters/species.graphql",
+      "sha": "e545565e7f93fc9490ef2a455543fcf2e32f1b27",
+      "url": "https://api.github.com/repositories/66574997/contents/fixtures/schema/dataTypes/characters/species.graphql?ref=97af6892b1d688f7cbcd682a2644c7321839c495",
+      "git_url": "https://api.github.com/repositories/66574997/git/blobs/e545565e7f93fc9490ef2a455543fcf2e32f1b27",
+      "html_url": "https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/characters/species.graphql",
+      "content": "type Species implements Node {\n  name: String\n  classification: String\n  designation: String\n  averageHeight: Float\n  averageLifespan: Int\n  eyeColors: [String]\n  hairColors: [String]\n  skinColors: [String]\n  language: String\n  homeworld: Planet\n  people: [Person]\n  films: [Film]\n  created: String\n  edited: String\n  id: ID!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "vehicle.graphql",
+      "path": "fixtures/schema/dataTypes/ships/vehicle.graphql",
+      "sha": "8ad1193c530158931a5820efffae235bde629bdc",
+      "url": "https://api.github.com/repositories/66574997/contents/fixtures/schema/dataTypes/ships/vehicle.graphql?ref=97af6892b1d688f7cbcd682a2644c7321839c495",
+      "git_url": "https://api.github.com/repositories/66574997/git/blobs/8ad1193c530158931a5820efffae235bde629bdc",
+      "html_url": "https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/ships/vehicle.graphql",
+      "content": "type Vehicle implements Node {\n  name: String\n  model: String\n  vehicleClass: String\n  manufacturers: [String]\n  costInCredits: Int\n  length: Float\n  crew: String\n  passengers: String\n  maxAtmospheringSpeed: Int\n  cargoCapacity: Int\n  consumables: String\n  pilots: [Person]\n  films: [Film]\n  created: String\n  edited: String\n  id: ID!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "starship.graphql",
+      "path": "fixtures/schema/dataTypes/ships/starship.graphql",
+      "sha": "9742c324daf7984f366b9d5486e7bf691f13b697",
+      "url": "https://api.github.com/repositories/66574997/contents/fixtures/schema/dataTypes/ships/starship.graphql?ref=97af6892b1d688f7cbcd682a2644c7321839c495",
+      "git_url": "https://api.github.com/repositories/66574997/git/blobs/9742c324daf7984f366b9d5486e7bf691f13b697",
+      "html_url": "https://github.com/creditkarma/graphql-validator/blob/97af6892b1d688f7cbcd682a2644c7321839c495/fixtures/schema/dataTypes/ships/starship.graphql",
+      "content": "type Starship implements Node {\n  name: String\n  model: String\n  starshipClass: String\n  manufacturers: [String]\n  costInCredits: Float\n  length: Float\n  crew: String\n  passengers: String\n  maxAtmospheringSpeed: Int\n  hyperdriveRating: Float\n  MGLT: Int\n  cargoCapacity: Float\n  consumables: String\n  pilots: [Person]\n  films: [Film]\n  created: String\n  edited: String\n  id: ID!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-08-25T16:28:38Z",
+    "updated_at": "2019-06-25T13:07:40Z",
+    "pushed_at": "2017-07-28T13:18:27Z",
+    "issues": 7,
+    "watchers": 18,
+    "fork_count": 10,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 6,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 6,
+    "releases": 0,
+    "stargazers": 73
+  }
+}

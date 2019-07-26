@@ -1,0 +1,66 @@
+{
+  "repo_name": "create-native-graphql-app",
+  "repo_full_name": "luandro/create-native-graphql-app",
+  "repo_owner": "luandro",
+  "repo_description": "Fastest way to start building a React-Native GraphQL application and server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "project.faker.graphql",
+      "path": "native-graphql-scripts/template/graphql/project.faker.graphql",
+      "sha": "c0aeafd659020ba3b6484f6b1d66696b2b8df1db",
+      "url": "https://api.github.com/repositories/101516470/contents/native-graphql-scripts/template/graphql/project.faker.graphql?ref=03c735753a45c74ee8a5bd56cddccc31cd35f5d7",
+      "git_url": "https://api.github.com/repositories/101516470/git/blobs/c0aeafd659020ba3b6484f6b1d66696b2b8df1db",
+      "html_url": "https://github.com/luandro/create-native-graphql-app/blob/03c735753a45c74ee8a5bd56cddccc31cd35f5d7/native-graphql-scripts/template/graphql/project.faker.graphql",
+      "content": "type User {\n  name: String @fake(type: firstName)\n  email: String @fake(type: email)\n}\n\ntype Company {\n  name: String @fake(type:companyName)\n  industry: String @examples(values: [\"IT\", \"Manufacturing\", \"Medicine\", \"Media\"])\n  employees: [Employee!]\n}\n\ntype Employee {\n  firstName: String @fake(type: firstName, locale:en_CA)\n  lastName: String @fake(type: lastName, locale:en_CA)\n  address: String @fake(type:streetAddress, options: { useFullAddress: true })\n  subordinates: [Employee!]\n  company: Company\n}\n\ntype Query {\n  user(id: ID): User\n  employee(id: ID): Employee\n  company(id: ID): Company\n  allCompanies: [Company!]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/luandro/create-native-graphql-app/blob/03c735753a45c74ee8a5bd56cddccc31cd35f5d7/native-graphql-scripts/template/graphql/project.faker.graphql:\ntype User {\n  name: String @fake(type: firstName)\n  email: String @fake(type: email)\n}\n\ntype Company {\n  name: String @fake(type:companyName)\n  industry: String @examples(values: [\"IT\", \"Manufacturing\", \"Medicine\", \"Media\"])\n  employees: [Employee!]\n}\n\ntype Employee {\n  firstName: String @fake(type: firstName, locale:en_CA)\n  lastName: String @fake(type: lastName, locale:en_CA)\n  address: String @fake(type:streetAddress, options: { useFullAddress: true })\n  subordinates: [Employee!]\n  company: Company\n}\n\ntype Query {\n  user(id: ID): User\n  employee(id: ID): Employee\n  company(id: ID): Company\n  allCompanies: [Company!]\n}\n# https://github.com/luandro/create-native-graphql-app/blob/03c735753a45c74ee8a5bd56cddccc31cd35f5d7/graphql-faker-programmatic/src/fake_definition.graphql:\nenum fake__Locale {\n  az\n  cz\n  de\n  de_AT\n  de_CH\n  en\n  en_AU\n  en_BORK\n  en_CA\n  en_GB\n  en_IE\n  en_IND\n  en_US\n  en_au_ocker\n  es\n  es_MX\n  fa\n  fr\n  fr_CA\n  ge\n  id_ID\n  it\n  ja\n  ko\n  nb_NO\n  nep\n  nl\n  pl\n  pt_BR\n  ru\n  sk\n  sv\n  tr\n  uk\n  vi\n  zh_CN\n  zh_TW\n}\n\nenum fake__Types {\n  zipCode\n  city\n  streetName\n  # Configure address with option `useFullAddress`\n  streetAddress\n  secondaryAddress\n  county\n  country\n  countryCode\n  state\n  stateAbbr\n  latitude\n  longitude\n\n  colorName\n  productCategory\n  productName\n  # Sum of money. Configure with options `minMoney` and `maxMoney`\n  money\n  productMaterial\n  product\n\n  companyName\n  companyCatchPhrase\n  companyBS\n\n  dbColumn\n  dbType\n  dbCollation\n  dbEngine\n\n  pastDate\n  futureDate\n  recentDate\n\n  financeAccountName\n  financeTransactionType\n  currencyCode\n  currencyName\n  currencySymbol\n  bitcoinAddress\n  internationalBankAccountNumber\n  bankIdentifierCode\n\n  hackerAbbr\n  hackerPhrase\n\n  # An image url. Configure image with options: `imageCategory`,\n  # `imageWidth`, `imageHeight` and `randomizeImageUrl`\n  imageUrl\n  # An URL for an avatar\n  avatarUrl\n  # Configure email provider with option: `emailProvider`\n  email\n  url\n  domainName\n  ipv4Address\n  ipv6Address\n  userAgent\n  colorHex\n  macAddress\n  # Configure password with option `passwordLength`\n  password\n\n  # Lorem Ipsum text. Configure size with option `loremSize`\n  lorem\n\n  firstName\n  lastName\n  fullName\n  jobTitle\n\n  uuid\n  word\n  words\n  locale\n\n  filename\n  mimeType\n  fileExtension\n  semver\n}\n\nenum fake__imageCategory {\n  abstract\n  animals\n  business\n  cats\n  city\n  food\n  nightlife\n  fashion\n  people\n  nature\n  sports\n  technics\n  transport\n}\n\nenum fake__loremSize {\n  word\n  words\n  sentence\n  sentences\n  paragraph\n  paragraphs\n}\n\ninput fake__options {\n  # Only for `type: streetAddress`\n  useFullAddress: Boolean\n  # Only for type `money`\n  minMoney: Float\n  # Only for type `money`\n  maxMoney: Float\n  # Only for type `imageUrl`\n  imageWidth: Int\n  # Only for type `imageUrl`\n  imageHeight: Int\n  # Only for type `imageUrl`\n  imageCategory: fake__imageCategory\n  # Only for type `imageUrl`\n  randomizeImageUrl: Boolean\n  # Only for type `email`\n  emailProvider: String\n  # Only for type `password`\n  passwordLength: Int\n  # Only for type `lorem`\n  loremSize: fake__loremSize\n}\n\ndirective @fake(type:fake__Types!, options: fake__options = {}, locale:fake__Locale) on FIELD_DEFINITION | SCALAR\n\n\nscalar examples__JSON\ndirective @examples(values: [examples__JSON]!) on FIELD_DEFINITION | SCALAR\n",
+        "mergedPaths": [
+          "graphql-faker-programmatic/src/fake_definition.graphql"
+        ],
+        "typesDefinedByMerge": [],
+        "directivesDefinedByMerge": [
+          "fake",
+          "examples"
+        ],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": true,
+        "numDefinitions": 12
+      },
+      "validSchema": false
+    },
+    {
+      "name": "fake_definition.graphql",
+      "path": "graphql-faker-programmatic/src/fake_definition.graphql",
+      "sha": "f84ef92a582819fdff6276e1b671a59d9d6a05db",
+      "url": "https://api.github.com/repositories/101516470/contents/graphql-faker-programmatic/src/fake_definition.graphql?ref=03c735753a45c74ee8a5bd56cddccc31cd35f5d7",
+      "git_url": "https://api.github.com/repositories/101516470/git/blobs/f84ef92a582819fdff6276e1b671a59d9d6a05db",
+      "html_url": "https://github.com/luandro/create-native-graphql-app/blob/03c735753a45c74ee8a5bd56cddccc31cd35f5d7/graphql-faker-programmatic/src/fake_definition.graphql",
+      "content": "enum fake__Locale {\n  az\n  cz\n  de\n  de_AT\n  de_CH\n  en\n  en_AU\n  en_BORK\n  en_CA\n  en_GB\n  en_IE\n  en_IND\n  en_US\n  en_au_ocker\n  es\n  es_MX\n  fa\n  fr\n  fr_CA\n  ge\n  id_ID\n  it\n  ja\n  ko\n  nb_NO\n  nep\n  nl\n  pl\n  pt_BR\n  ru\n  sk\n  sv\n  tr\n  uk\n  vi\n  zh_CN\n  zh_TW\n}\n\nenum fake__Types {\n  zipCode\n  city\n  streetName\n  # Configure address with option `useFullAddress`\n  streetAddress\n  secondaryAddress\n  county\n  country\n  countryCode\n  state\n  stateAbbr\n  latitude\n  longitude\n\n  colorName\n  productCategory\n  productName\n  # Sum of money. Configure with options `minMoney` and `maxMoney`\n  money\n  productMaterial\n  product\n\n  companyName\n  companyCatchPhrase\n  companyBS\n\n  dbColumn\n  dbType\n  dbCollation\n  dbEngine\n\n  pastDate\n  futureDate\n  recentDate\n\n  financeAccountName\n  financeTransactionType\n  currencyCode\n  currencyName\n  currencySymbol\n  bitcoinAddress\n  internationalBankAccountNumber\n  bankIdentifierCode\n\n  hackerAbbr\n  hackerPhrase\n\n  # An image url. Configure image with options: `imageCategory`,\n  # `imageWidth`, `imageHeight` and `randomizeImageUrl`\n  imageUrl\n  # An URL for an avatar\n  avatarUrl\n  # Configure email provider with option: `emailProvider`\n  email\n  url\n  domainName\n  ipv4Address\n  ipv6Address\n  userAgent\n  colorHex\n  macAddress\n  # Configure password with option `passwordLength`\n  password\n\n  # Lorem Ipsum text. Configure size with option `loremSize`\n  lorem\n\n  firstName\n  lastName\n  fullName\n  jobTitle\n\n  uuid\n  word\n  words\n  locale\n\n  filename\n  mimeType\n  fileExtension\n  semver\n}\n\nenum fake__imageCategory {\n  abstract\n  animals\n  business\n  cats\n  city\n  food\n  nightlife\n  fashion\n  people\n  nature\n  sports\n  technics\n  transport\n}\n\nenum fake__loremSize {\n  word\n  words\n  sentence\n  sentences\n  paragraph\n  paragraphs\n}\n\ninput fake__options {\n  # Only for `type: streetAddress`\n  useFullAddress: Boolean\n  # Only for type `money`\n  minMoney: Float\n  # Only for type `money`\n  maxMoney: Float\n  # Only for type `imageUrl`\n  imageWidth: Int\n  # Only for type `imageUrl`\n  imageHeight: Int\n  # Only for type `imageUrl`\n  imageCategory: fake__imageCategory\n  # Only for type `imageUrl`\n  randomizeImageUrl: Boolean\n  # Only for type `email`\n  emailProvider: String\n  # Only for type `password`\n  passwordLength: Int\n  # Only for type `lorem`\n  loremSize: fake__loremSize\n}\n\ndirective @fake(type:fake__Types!, options: fake__options = {}, locale:fake__Locale) on FIELD_DEFINITION | SCALAR\n\n\nscalar examples__JSON\ndirective @examples(values: [examples__JSON]!) on FIELD_DEFINITION | SCALAR\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-26T22:24:44Z",
+    "updated_at": "2018-10-29T03:00:25Z",
+    "pushed_at": "2017-08-30T14:41:41Z",
+    "issues": 3,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "bsd-3-clause",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

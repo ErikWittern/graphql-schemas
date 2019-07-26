@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-mongoose-authentication-server-example",
+  "repo_full_name": "nikorudnas/graphql-mongoose-authentication-server-example",
+  "repo_owner": "nikorudnas",
+  "repo_description": "Short demonstration how to create server with latest Apollo-Server-Express, GraphQL and authentication + utilities",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "1e6f6ebb7c0b151b3d3a466b6e774f5feb7e090b",
+      "url": "https://api.github.com/repositories/150086284/contents/src/schema.graphql?ref=68b9521e5d1f7a4a6824b7a9aa015e3a68eee242",
+      "git_url": "https://api.github.com/repositories/150086284/git/blobs/1e6f6ebb7c0b151b3d3a466b6e774f5feb7e090b",
+      "html_url": "https://github.com/nikorudnas/graphql-mongoose-authentication-server-example/blob/68b9521e5d1f7a4a6824b7a9aa015e3a68eee242/src/schema.graphql",
+      "content": "# Schema model\n\n# Another workaround is to send the _id as string\nscalar ObjectID\n\n### Types\n\n# Auth requires token\ntype AuthPayload {\n  token: String!\n  user: User\n}\n\n# User requires _id\ntype User {\n  _id: ObjectID!\n  email: String\n  todos: [Todo!]\n}\n\n# Input used to validate Create Todo mutation\ninput CreateTodoInput {\n  title: String!\n  description: String\n  completed: Boolean\n}\n\n# Input used to validate Update Todo mutations\ninput UpdateTodoInput {\n  _id: ObjectID!\n  title: String!\n  description: String\n  completed: Boolean\n}\n\n# Todo requires _id and title. Optional description and completed\ntype Todo {\n  _id: ObjectID!\n  title: String!\n  description: String\n  completed: Boolean\n}\n\n# The query root type, used to define all queries\ntype Query {\n  allTodos: [Todo!]!\n  Todo(_id: ObjectID!): Todo!\n}\n\n# The mutation root type, used to define all mutations\ntype Mutation {\n  signup(email: String!, password: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n  createTodo(todo: CreateTodoInput!): Boolean\n  updateTodo(todo: UpdateTodoInput!): Boolean\n  deleteTodo(_id: ObjectID!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-24T10:27:49Z",
+    "updated_at": "2019-03-05T20:24:24Z",
+    "pushed_at": "2019-03-05T20:24:23Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

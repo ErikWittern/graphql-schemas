@@ -1,0 +1,39 @@
+{
+  "repo_name": "vue-graphql-todo",
+  "repo_full_name": "vivijind/vue-graphql-todo",
+  "repo_owner": "vivijind",
+  "repo_description": "使用express-graphql和vue-appollo的tododemo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "0d61cf3088bba818af38237eb9ee23f968d576aa",
+      "url": "https://api.github.com/repositories/128860964/contents/server/schema.graphql?ref=dfc2fdcac646b2b2a8e0b81cd34b3204b6a6da00",
+      "git_url": "https://api.github.com/repositories/128860964/git/blobs/0d61cf3088bba818af38237eb9ee23f968d576aa",
+      "html_url": "https://github.com/vivijind/vue-graphql-todo/blob/dfc2fdcac646b2b2a8e0b81cd34b3204b6a6da00/server/schema.graphql",
+      "content": "type Todo {\n  id: Int!\n  title: String\n  completed: Boolean\n}\n\ntype Query {\n  todos: [Todo]\n  todo(id: Int!): Todo\n  hello(name: String!): String\n}\n\ntype Mutation {\n  addTodo(title: String!): Todo,\n  deleteTodo(index: Int!): Todo,\n  editTodo(id: Int!, title: String, completed: Boolean): Todo\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-10T02:22:04Z",
+    "updated_at": "2018-04-11T01:33:13Z",
+    "pushed_at": "2018-04-11T01:33:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

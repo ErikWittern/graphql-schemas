@@ -1,0 +1,42 @@
+{
+  "repo_name": "explorook",
+  "repo_full_name": "rookout/explorook",
+  "repo_owner": "Rookout",
+  "repo_description": "Rookout's site addon to support local files and folders",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "85a2520faecfa21a85af8d6da57ddafd23ef0432",
+      "url": "https://api.github.com/repositories/137325986/contents/graphql/schema.graphql?ref=702d52fc563fe6be27861849564e50d219a24613",
+      "git_url": "https://api.github.com/repositories/137325986/git/blobs/85a2520faecfa21a85af8d6da57ddafd23ef0432",
+      "html_url": "https://github.com/Rookout/explorook/blob/702d52fc563fe6be27861849564e50d219a24613/graphql/schema.graphql",
+      "content": "type Repository {\n  fullpath: String!\n  repoName: String!\n  id: String!\n  indexDone: Boolean\n  lastCommitDescription: CommitDescription\n}\n\ntype FileInfo {\n  path: String!\n  name: String!\n  isFolder: Boolean!\n  size: Int\n}\n\ntype Author {\n  name: String!\n  email: String!\n  timestamp: Int!\n}\n\ntype CommitDescription {\n  message: String!\n  author: Author!\n  oid: String!\n}\n\ntype Query {\n  dir(repoId: String!, path: String!): [FileInfo]!\n  file(repoId: String!, path: String!): String!\n  listTree(repoId: String!): [String]!\n  listRepos: [Repository!]!\n  refreshIndex(repoId: String!): Boolean\n  repository(repoId: String!): Repository!\n}\n\ntype Mutation {\n  addRepository(fullpath: String): Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-14T08:01:45Z",
+    "updated_at": "2019-07-18T12:48:56Z",
+    "pushed_at": "2019-07-18T13:40:53Z",
+    "issues": 5,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 80,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 4,
+    "pull_requests_merged": 76,
+    "releases": 62,
+    "stargazers": 8
+  }
+}

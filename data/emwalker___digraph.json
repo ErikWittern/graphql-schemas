@@ -1,0 +1,41 @@
+{
+  "repo_name": "digraph",
+  "repo_full_name": "emwalker/digraph",
+  "repo_owner": "emwalker",
+  "repo_description": "Never lose track of an article, blog post or reference again",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "462152a6c390d2c81a8e07767551efaf8ede65fc",
+      "url": "https://api.github.com/repositories/61340244/contents/schema.graphql?ref=7146f4063113da6133aa08ec592750f4f9dbeb4b",
+      "git_url": "https://api.github.com/repositories/61340244/git/blobs/462152a6c390d2c81a8e07767551efaf8ede65fc",
+      "html_url": "https://github.com/emwalker/digraph/blob/7146f4063113da6133aa08ec592750f4f9dbeb4b/schema.graphql",
+      "content": "type ActivityLineItem {\n  description: String!\n  createdAt: DateTime!\n}\n\ntype ActivityLineItemEdge {\n  cursor: String!\n  node: ActivityLineItem!\n}\n\ntype ActivityLineItemConnection {\n  edges: [ActivityLineItemEdge]\n  pageInfo: PageInfo!\n}\n\ntype Alert {\n  text: String!\n  type: AlertType!\n  id: String!\n}\n\ninterface Alertable {\n  alerts: [Alert!]!\n}\n\nenum AlertType {\n  SUCCESS\n  WARN\n  ERROR\n}\n\nscalar Color\n\nscalar DateTime\n\ninput DeleteLinkInput {\n  clientMutationId: String\n  linkId: ID!\n}\n\ntype DeleteLinkPayload {\n  clientMutationId: String\n  deletedLinkId: ID!\n}\n\ninput DeleteTopicInput {\n  clientMutationId: String\n  topicId: ID!\n}\n\ntype DeleteTopicPayload {\n  clientMutationId: String\n  deletedTopicId: ID!\n}\n\ntype Link implements ResourceIdentifiable & Namespaceable {\n  availableParentTopics(\n    searchString: String,\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): TopicConnection!\n  createdAt: DateTime!\n  id: ID!\n  loading: Boolean!\n  newlyAdded: Boolean!\n  organization: Organization!\n  parentTopics(\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): TopicConnection!\n  repository: Repository!\n  resourcePath: String!\n  sha1: String!\n  title: String!\n  updatedAt: DateTime!\n  url: String!\n}\n\ntype LinkEdge {\n  cursor: String!\n  node: Link!\n}\n\ntype LinkConnection {\n  edges: [LinkEdge]\n  pageInfo: PageInfo!\n}\n\ntype Mutation {\n  deleteLink(input: DeleteLinkInput!): DeleteLinkPayload\n  deleteTopic(input: DeleteTopicInput!): DeleteTopicPayload\n  selectRepository(input: SelectRepositoryInput!): SelectRepositoryPayload\n  updateLinkTopics(input: UpdateLinkTopicsInput!): UpdateLinkTopicsPayload\n  updateTopic(input: UpdateTopicInput!): UpdateTopicPayload\n  updateTopicParentTopics(input: UpdateTopicParentTopicsInput!): UpdateTopicParentTopicsPayload\n  upsertLink(input: UpsertLinkInput!): UpsertLinkPayload\n  upsertTopic(input: UpsertTopicInput!): UpsertTopicPayload\n}\n\ninterface Namespaceable {\n  organization: Organization!\n}\n\ntype Organization implements ResourceIdentifiable {\n  createdAt: DateTime!\n  defaultRepository: Repository!\n  id: ID\n  login: String!\n  name: String!\n  public: Boolean!\n  resourcePath: String!\n  updatedAt: DateTime!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  # Workaround for Relay Modern weirdness\n  alerts: [Alert!]\n  defaultOrganization: Organization!\n  fakeError: String\n  viewer: User!\n  view(\n    currentOrganizationLogin: String!,\n    currentRepositoryName: String,\n    repositoryIds: [ID!],\n    viewerId: ID\n  ): View!\n}\n\ntype Repository {\n  displayColor: Color!\n  displayName: String!\n  fullName: String!\n  id: ID\n  isPrivate: Boolean!\n  name: String!\n  organization: Organization!\n  owner: User!\n  rootTopic: Topic!\n}\n\ntype RepositoryConnection {\n  edges: [RepositoryEdge]\n}\n\ntype RepositoryEdge {\n  cursor: String!\n  node: Repository!\n  isSelected: Boolean!\n}\n\ninterface ResourceIdentifiable {\n  resourcePath: String!\n}\n\nunion SearchResultItem = Topic | Link\n\ntype SearchResultItemEdge {\n  node: SearchResultItem\n}\n\ntype SearchResultItemConnection {\n  edges: [SearchResultItemEdge]\n}\n\ninput SelectRepositoryInput {\n  clientMutationId: String\n  repositoryId: ID\n}\n\ntype SelectRepositoryPayload {\n  repository: Repository\n  viewer: User!\n}\n\ntype Topic implements ResourceIdentifiable & Namespaceable {\n  availableParentTopics(\n    searchString: String,\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): TopicConnection!\n  childTopics(\n    searchString: String,\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): TopicConnection!\n  createdAt: DateTime!\n  description: String\n  id: ID!\n  links(\n    searchString: String,\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): LinkConnection!\n  loading: Boolean!\n  name: String!\n  newlyAdded: Boolean!\n  organization: Organization!\n  parentTopics(\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): TopicConnection!\n  repository: Repository!\n  resourcePath: String!\n  search(\n    searchString: String!,\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): SearchResultItemConnection!\n  updatedAt: DateTime!\n}\n\ntype TopicEdge {\n  cursor: String!\n  node: Topic!\n}\n\ntype TopicConnection {\n  edges: [TopicEdge]\n  pageInfo: PageInfo!\n}\n\ntype User {\n  avatarUrl: String!\n  createdAt: DateTime!\n  defaultRepository: Repository\n  id: ID\n  isGuest: Boolean!\n  name: String!\n  primaryEmail: String!\n  repositories(\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): RepositoryConnection!\n  selectedRepository: Repository\n  updatedAt: DateTime!\n}\n\ninput UpdateTopicInput {\n  clientMutationId: String\n  description: String\n  id: ID!\n  name: String!\n  topicIds: [ID!]\n}\n\ntype UpdateTopicPayload {\n  alerts: [Alert!]!\n  topic: Topic!\n}\n\ninput UpdateLinkTopicsInput {\n  clientMutationId: String\n  linkId: ID!\n  parentTopicIds: [ID!]\n}\n\ntype UpdateLinkTopicsPayload {\n  link: Link!\n}\n\ninput UpdateTopicParentTopicsInput {\n  clientMutationId: String\n  topicId: ID!\n  parentTopicIds: [ID!]\n}\n\ntype UpdateTopicParentTopicsPayload implements Alertable {\n  alerts: [Alert!]!\n  topic: Topic!\n}\n\ninput UpsertLinkInput {\n  addParentTopicIds: [String!]\n  clientMutationId: String\n  organizationLogin: String!\n  repositoryName: String!\n  title: String\n  url: String!\n}\n\ntype UpsertLinkPayload implements Alertable {\n  alerts: [Alert!]!\n  linkEdge: LinkEdge\n}\n\ninput UpsertTopicInput {\n  clientMutationId: String\n  description: String\n  name: String!\n  organizationLogin: String!\n  repositoryName: String!\n  topicIds: [String!]\n}\n\ntype UpsertTopicPayload implements Alertable {\n  alerts: [Alert!]!\n  topicEdge: TopicEdge\n}\n\ntype View {\n  activity(\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): ActivityLineItemConnection!\n  link(id: ID!): Link\n  linkCount: Int!\n  links(\n    searchString: String,\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): LinkConnection!\n  currentRepository: Repository\n  topic(id: ID!): Topic\n  topicCount: Int!\n  topicGraph: String\n  topics(\n    searchString: String,\n    first: Int,\n    after: String,\n    last: Int,\n    before: String\n  ): TopicConnection!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 29,
+      "containsCycle": true,
+      "numDefinitions": 44
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-06-17T02:37:34Z",
+    "updated_at": "2019-07-14T18:28:00Z",
+    "pushed_at": "2019-07-14T18:27:58Z",
+    "issues": 29,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 13
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "dnd-dm-graphql-schema",
+  "repo_full_name": "ramsaylanier/dnd-dm-graphql-schema",
+  "repo_owner": "ramsaylanier",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/defs/schema.gql",
+      "sha": "2cb46456c9ea8932f37d086c5eaf1ba0cfaad312",
+      "url": "https://api.github.com/repositories/157875827/contents/src/defs/schema.gql?ref=ea8549c75763c0c2d5ab55f9467c377af708ac30",
+      "git_url": "https://api.github.com/repositories/157875827/git/blobs/2cb46456c9ea8932f37d086c5eaf1ba0cfaad312",
+      "html_url": "https://github.com/ramsaylanier/dnd-dm-graphql-schema/blob/ea8549c75763c0c2d5ab55f9467c377af708ac30/src/defs/schema.gql",
+      "content": "interface Character{\n  name: String!\n  level: Int!\n  weapons: [Weapon]\n  attacks: [Attack]\n  armor: Armor\n  equipment: [Item]\n  initiative: Int!\n  hitpointDice: String!\n  hitpoints: Int!\n  attributes: Attributes\n  speed: Int!\n}\n\ninterface Item{\n  name: String!\n  type: itemType\n  cost: String!\n  weight: Int!\n  description: String!\n  tags: [String]\n}\n\ntype Monster implements Character{\n  name: String!\n  level: Int!\n  weapons: [Weapon]\n  attacks: [Attack]\n  armor: Armor\n  equipment: [Item]\n  initiative: Int!\n  hitpointDice: String!\n  hitpoints: Int!\n  attributes: Attributes\n  speed: Int!\n  locations: [String!]\n}\n\ntype Npc implements Character{\n  name: String!\n  level: Int!\n  weapons: [Weapon]\n  attacks: [Attack]\n  armor: Armor\n  equipment: [Item]\n  initiative: Int!\n  hitpointDice: String!\n  hitpoints: Int!\n  attributes: Attributes\n  speed: Int!\n  occupation: String!\n  hometown: String!\n}\n\ntype Attack{\n  name: String!\n  item: Item\n  hitDice: String!\n  damageDice: String!\n}\n\ntype Attributes{\n  str: Int!\n  dex: Int!\n  con: Int!\n  int: Int!\n  wis: Int!\n  cha: Int!\n  hitpoints: Int!\n  hitpointDice: String!\n}\n\ntype Weapon implements Item{\n  name: String!\n  type: itemType\n  cost: String!\n  description: String!\n  damageDice: String!\n  damageType: damageType\n  weight: Int!\n  range: String\n  handedness: handedness\n  tags: [String]\n}\n\ntype Armor implements Item{\n  name: String!\n  type: itemType\n  cost: String!\n  description: String!\n  weight: Int!\n  armorClass: Int!\n  resistance: damageType\n  tags: [String]\n}\n\ntype Encounter{\n  xpThreshold: Int!\n}\n\ntype Conversion{\n  CP: Float!\n  SP: Float!\n  EC: Float!\n  GP: Float!\n  PP: Float!\n}\n\nenum itemType{\n  ADVENTURINGGEAR\n  AMMUNITION\n  AXE\n  HEAVYARMOR\n  LIGHTARMOR\n  MEDIUMARMOR\n  MELEEWEAPON\n  MUNDANE\n  RANGEDWEAPON\n  RING\n  SCROLL\n  SHIELD\n  SWORD\n  WAND\n  WONDROUS\n}\n\nenum damageType{\n  ACID\n  BLUDGEONING\n  COLD\n  FIRE\n  FORCE\n  LIGHTNING\n  NECTROTIC\n  PIERCING\n  POISONG\n  PSYCHIC\n  RADIANT\n  SLASHING\n  THUNDER\n}\n\nenum environment{\n  ALL\n  PLAINS\n  FOREST\n  HILLS\n  MOUNTAINS\n  MARSH\n  DESERT\n  UNDERGROUND\n  AQUATIC\n  UNDERDARK\n  ABYSS\n}\n\nenum handedness{\n  ONEHANDED\n  TWOHANDED\n  VERSATILE\n}\n\nenum encounterDifficulty{\n  EASY\n  MEDIUM\n  HARD\n  DEADLY\n}\n\nenum currency{\n  CP\n  SP\n  EC\n  GD\n  PP\n}\n\ntype Query{\n  encounter(playerLevels: [Int!], difficulty: encounterDifficulty!): Encounter\n  exchangeRate(amount: Int!, currency: currency!): Conversion\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 17
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-16T14:07:53Z",
+    "updated_at": "2019-02-06T17:01:55Z",
+    "pushed_at": "2018-11-24T01:17:30Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

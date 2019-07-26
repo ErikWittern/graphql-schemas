@@ -1,0 +1,85 @@
+{
+  "repo_name": "lisk-graphql",
+  "repo_full_name": "ciocan/lisk-graphql",
+  "repo_owner": "ciocan",
+  "repo_description": "Lisk GraphQL Server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema.graphql",
+      "sha": "b3a0b9ec26896806fc602838bfa0d64288d50435",
+      "url": "https://api.github.com/repositories/122393657/contents/src/data/schema.graphql?ref=cdce095b4595a23deb6169173ca28ec75210c641",
+      "git_url": "https://api.github.com/repositories/122393657/git/blobs/b3a0b9ec26896806fc602838bfa0d64288d50435",
+      "html_url": "https://github.com/ciocan/lisk-graphql/blob/cdce095b4595a23deb6169173ca28ec75210c641/src/data/schema.graphql",
+      "content": "# import Balance from \"./types/account.graphql\"\n# import Account from \"./types/account.graphql\"\n# import TopAccounts from \"./types/account.graphql\"\n# import Delegates from \"./types/account.graphql\"\n# import Transaction from \"./types/transaction.graphql\"\n# import Transactions from \"./types/transaction.graphql\"\n\ntype Query {\n  getBalance(address: String): Balance\n  getAccount(address: String): Account\n  getTopAccounts: TopAccounts\n  getDelegates(address: String): Delegates\n  getTransaction(id: String): Transaction\n  getTransactions(limit: String): Transactions\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ciocan/lisk-graphql/blob/cdce095b4595a23deb6169173ca28ec75210c641/src/data/schema.graphql:\n# import Balance from \"./types/account.graphql\"\n# import Account from \"./types/account.graphql\"\n# import TopAccounts from \"./types/account.graphql\"\n# import Delegates from \"./types/account.graphql\"\n# import Transaction from \"./types/transaction.graphql\"\n# import Transactions from \"./types/transaction.graphql\"\n\ntype Query {\n  getBalance(address: String): Balance\n  getAccount(address: String): Account\n  getTopAccounts: TopAccounts\n  getDelegates(address: String): Delegates\n  getTransaction(id: String): Transaction\n  getTransactions(limit: String): Transactions\n}\n\n# https://github.com/ciocan/lisk-graphql/blob/cdce095b4595a23deb6169173ca28ec75210c641/src/data/types/account.graphql:\ntype Balance {\n  success: Boolean\n  balance: Float\n  unconfirmedBalance: Float\n  error: String\n}\n\ntype Account {\n  success: String\n  error: String\n  address: String\n  unconfirmedBalance: Float\n  balance: Float\n  publicKey: String\n  unconfirmedSignature: String\n  secondSignature: String\n  secondPublicKey: String\n  multisignatures: [String]\n  u_multisignatures: [String]\n}\n\ntype TopAccounts {\n  success: Boolean\n  error: String\n  accounts: [TopAcount]\n}\n\ntype TopAcount {\n  address: String\n  balance: Float\n  publicKey: String\n}\n\ntype Delegates {\n  success: Boolean\n  error: String\n  delegates: [Delegate]\n}\n\ntype Delegate {\n  username: String\n  address: String\n  publicKey: String\n  vote: String\n  producedblocks: Float\n  missedblocks: Float\n  rate: Float\n  approval: Float\n  productivity: Float\n}\n\n# https://github.com/ciocan/lisk-graphql/blob/cdce095b4595a23deb6169173ca28ec75210c641/src/data/types/transaction.graphql:\ntype TransactionData {\n  id: String\n  blockid: String\n  type: String\n  timestamp: String\n  amount: String\n  fee: String\n  senderId: String\n  recipientId: String\n  senderPublicKey: String\n  signature: String\n  asset: String\n  confirmations: Int\n}\n\ntype Transaction {\n  success: Boolean\n  error: String\n  transaction: TransactionData\n}\n\ntype Transactions {\n  success: Boolean\n  error: String\n  transactions: [TransactionData]\n  count: String\n}\n",
+        "mergedPaths": [
+          "src/data/types/account.graphql",
+          "src/data/types/transaction.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Balance",
+          "Account",
+          "TopAccounts",
+          "Delegates",
+          "Transaction",
+          "Transactions"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 10,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "transaction.graphql",
+      "path": "src/data/types/transaction.graphql",
+      "sha": "57dbcc5360e69e49709b7702e8e1033f7cb4fd62",
+      "url": "https://api.github.com/repositories/122393657/contents/src/data/types/transaction.graphql?ref=cdce095b4595a23deb6169173ca28ec75210c641",
+      "git_url": "https://api.github.com/repositories/122393657/git/blobs/57dbcc5360e69e49709b7702e8e1033f7cb4fd62",
+      "html_url": "https://github.com/ciocan/lisk-graphql/blob/cdce095b4595a23deb6169173ca28ec75210c641/src/data/types/transaction.graphql",
+      "content": "type TransactionData {\n  id: String\n  blockid: String\n  type: String\n  timestamp: String\n  amount: String\n  fee: String\n  senderId: String\n  recipientId: String\n  senderPublicKey: String\n  signature: String\n  asset: String\n  confirmations: Int\n}\n\ntype Transaction {\n  success: Boolean\n  error: String\n  transaction: TransactionData\n}\n\ntype Transactions {\n  success: Boolean\n  error: String\n  transactions: [TransactionData]\n  count: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "account.graphql",
+      "path": "src/data/types/account.graphql",
+      "sha": "0dc4a3fccabfee00fc11f2a4de8bf890adfcd0d9",
+      "url": "https://api.github.com/repositories/122393657/contents/src/data/types/account.graphql?ref=cdce095b4595a23deb6169173ca28ec75210c641",
+      "git_url": "https://api.github.com/repositories/122393657/git/blobs/0dc4a3fccabfee00fc11f2a4de8bf890adfcd0d9",
+      "html_url": "https://github.com/ciocan/lisk-graphql/blob/cdce095b4595a23deb6169173ca28ec75210c641/src/data/types/account.graphql",
+      "content": "type Balance {\n  success: Boolean\n  balance: Float\n  unconfirmedBalance: Float\n  error: String\n}\n\ntype Account {\n  success: String\n  error: String\n  address: String\n  unconfirmedBalance: Float\n  balance: Float\n  publicKey: String\n  unconfirmedSignature: String\n  secondSignature: String\n  secondPublicKey: String\n  multisignatures: [String]\n  u_multisignatures: [String]\n}\n\ntype TopAccounts {\n  success: Boolean\n  error: String\n  accounts: [TopAcount]\n}\n\ntype TopAcount {\n  address: String\n  balance: Float\n  publicKey: String\n}\n\ntype Delegates {\n  success: Boolean\n  error: String\n  delegates: [Delegate]\n}\n\ntype Delegate {\n  username: String\n  address: String\n  publicKey: String\n  vote: String\n  producedblocks: Float\n  missedblocks: Float\n  rate: Float\n  approval: Float\n  productivity: Float\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-21T21:06:30Z",
+    "updated_at": "2018-02-22T12:55:07Z",
+    "pushed_at": "2018-02-21T21:50:51Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

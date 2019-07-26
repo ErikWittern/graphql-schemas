@@ -1,0 +1,78 @@
+{
+  "repo_name": "apulum-graphql-api",
+  "repo_full_name": "civictechro/apulum-graphql-api",
+  "repo_owner": "civictechro",
+  "repo_description": ":rocket: Kármán GraphQL API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/logout/schema.graphql",
+      "sha": "93aba0c1249544218fe2039a9673bf0b16fb7175",
+      "url": "https://api.github.com/repositories/132780834/contents/src/modules/logout/schema.graphql?ref=3e9b87b6b904e02ca029f27b4844584315b1a5dd",
+      "git_url": "https://api.github.com/repositories/132780834/git/blobs/93aba0c1249544218fe2039a9673bf0b16fb7175",
+      "html_url": "https://github.com/civictechro/apulum-graphql-api/blob/3e9b87b6b904e02ca029f27b4844584315b1a5dd/src/modules/logout/schema.graphql",
+      "content": "# import User from \"../user/schema.graphql\"\n\ntype Query {\n  dummy: String\n}\n\ntype Mutation {\n  logout: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/user/schema.graphql",
+      "sha": "2f3b847b681e58892219be4a52b811c49444060d",
+      "url": "https://api.github.com/repositories/132780834/contents/src/modules/user/schema.graphql?ref=c8d594f7b8498fd59d28dad87cd8aaeafc787e11",
+      "git_url": "https://api.github.com/repositories/132780834/git/blobs/2f3b847b681e58892219be4a52b811c49444060d",
+      "html_url": "https://github.com/civictechro/apulum-graphql-api/blob/c8d594f7b8498fd59d28dad87cd8aaeafc787e11/src/modules/user/schema.graphql",
+      "content": "# import Error, Node from \"../shared/schema.graphql\"\n\ntype User implements Node {\n  id: ID!\n  creator: User!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n\n  email: String!\n  firstName: String\n  lastName: String\n}\n\ntype Query {\n  users: [User!]\n  user(id: ID!): User\n}\n\nunion MaybeUser = Error | User\n\ntype Mutation {\n  updateUser(id: ID!, firstName: String, lastName: String): [MaybeUser!]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/civictechro/apulum-graphql-api/blob/c8d594f7b8498fd59d28dad87cd8aaeafc787e11/src/modules/user/schema.graphql:\n# import Error, Node from \"../shared/schema.graphql\"\n\ntype User implements Node {\n  id: ID!\n  creator: User!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n\n  email: String!\n  firstName: String\n  lastName: String\n}\n\ntype Query {\n  users: [User!]\n  user(id: ID!): User\n}\n\nunion MaybeUser = Error | User\n\ntype Mutation {\n  updateUser(id: ID!, firstName: String, lastName: String): [MaybeUser!]\n}\n\n# https://github.com/civictechro/apulum-graphql-api/blob/c8d594f7b8498fd59d28dad87cd8aaeafc787e11/src/modules/shared/schema.graphql:\n# import User from \"../user/schema.graphql\"\n\nscalar DateTime\n\ntype Error {\n    path: String!\n    message: String!\n}\n\n\"\"\"\nAny connected entity in the graph is represented by a Node.\n\"\"\"\ninterface Node {\n  \"Node ID, a unique uuid-v4 value\"\n  id: ID!\n  \"Every object should be created by a registered User\"\n  creator: User!\n  \"When was this node initially created?\"\n  createdAt: DateTime!\n  \"When was this node last updated?\"\n  updatedAt: DateTime!\n}\n",
+        "mergedPaths": [
+          "src/modules/shared/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "DateTime"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/shared/schema.graphql",
+      "sha": "7e7e4ddf294735446d9380da6312c593ded0594b",
+      "url": "https://api.github.com/repositories/132780834/contents/src/modules/shared/schema.graphql?ref=c8d594f7b8498fd59d28dad87cd8aaeafc787e11",
+      "git_url": "https://api.github.com/repositories/132780834/git/blobs/7e7e4ddf294735446d9380da6312c593ded0594b",
+      "html_url": "https://github.com/civictechro/apulum-graphql-api/blob/c8d594f7b8498fd59d28dad87cd8aaeafc787e11/src/modules/shared/schema.graphql",
+      "content": "# import User from \"../user/schema.graphql\"\n\nscalar DateTime\n\ntype Error {\n    path: String!\n    message: String!\n}\n\n\"\"\"\nAny connected entity in the graph is represented by a Node.\n\"\"\"\ninterface Node {\n  \"Node ID, a unique uuid-v4 value\"\n  id: ID!\n  \"Every object should be created by a registered User\"\n  creator: User!\n  \"When was this node initially created?\"\n  createdAt: DateTime!\n  \"When was this node last updated?\"\n  updatedAt: DateTime!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-09T15:57:47Z",
+    "updated_at": "2018-10-31T18:41:56Z",
+    "pushed_at": "2019-05-06T03:00:23Z",
+    "issues": 3,
+    "watchers": 5,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 11,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 6,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

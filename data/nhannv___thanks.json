@@ -1,0 +1,42 @@
+{
+  "repo_name": "thanks",
+  "repo_full_name": "nhannv/thanks",
+  "repo_owner": "nhannv",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "1622530a2d66d70426aadce46f6013f532cf59d4",
+      "url": "https://api.github.com/repositories/77265652/contents/server/data/schema.graphql?ref=571aa5a656ddb210a09e6f559c67863e7a9581ec",
+      "git_url": "https://api.github.com/repositories/77265652/git/blobs/1622530a2d66d70426aadce46f6013f532cf59d4",
+      "html_url": "https://github.com/nhannv/thanks/blob/571aa5a656ddb210a09e6f559c67863e7a9581ec/server/data/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutation\n}\n\ninput LoginInput {\n  email: String!\n  password: String!\n  id: String!\n  clientMutationId: String\n}\n\ntype LoginPayload {\n  user: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  login(input: LoginInput!): LoginPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype Root {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: Viewer\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: String\n\n  # user id for current viewer\n  userId: String\n\n  # the user name\n  userName: String\n\n  # the users email address\n  email: String\n\n  # the users first name\n  firstName: String\n\n  # the users last name\n  lastName: String\n\n  # the users role\n  role: String\n}\n\ntype Viewer {\n  user: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-24T04:28:10Z",
+    "updated_at": "2016-12-24T08:41:22Z",
+    "pushed_at": "2016-12-30T09:12:03Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

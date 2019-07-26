@@ -1,0 +1,42 @@
+{
+  "repo_name": "estate-bidding",
+  "repo_full_name": "abhayprakashtiwari/estate-bidding",
+  "repo_owner": "abhayprakashtiwari",
+  "repo_description": "go-graphql-mongodb application for second price auction bidding system on real estates",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gql/schema.graphql",
+      "sha": "452843f6101a64be2c8574534babbf47fc3ceead",
+      "url": "https://api.github.com/repositories/180041108/contents/gql/schema.graphql?ref=c089176fff043bcf0c8b1a56feecb9be0c80ab63",
+      "git_url": "https://api.github.com/repositories/180041108/git/blobs/452843f6101a64be2c8574534babbf47fc3ceead",
+      "html_url": "https://github.com/abhayprakashtiwari/estate-bidding/blob/c089176fff043bcf0c8b1a56feecb9be0c80ab63/gql/schema.graphql",
+      "content": "type Bid {\n    id: ID!\n    amount: Float!\n    bidder: String!\n    createdAt: Timestamp!\n}\n\ntype Estate {\n    id : ID!\n    name: String!\n    description: String\n    registeredAt: Timestamp!\n    openForBidTill: Timestamp!\n    bids: [Bid!]\n}\n\ninput NewEstate {\n    name: String!\n    description: String!\n}\n\ninput ChangedEstate {\n    id: ID!\n    name: String\n    description: String\n}\n\ninput DeleteEstate {\n    id: ID!\n}\n\ninput NewBid {\n    estateID: String!\n    amount: Float!\n    bidder: String!\n}\n\n\ntype Mutation {\n    createEstate(input: NewEstate!) : Estate!\n    updateEstate(input: ChangedEstate!) : Estate!\n    deleteEstate(input: DeleteEstate!) : String!\n    createBid(input: NewBid!) : Bid!\n}\n\ntype Query {\n    estate(id: ID!): Estate!\n    topBid(estateID : ID!) : Bid!\n}\n\nscalar Timestamp\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-08T00:28:49Z",
+    "updated_at": "2019-04-08T12:11:12Z",
+    "pushed_at": "2019-04-08T12:11:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

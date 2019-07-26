@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-sw-api",
+  "repo_full_name": "jgfidelis/graphql-sw-api",
+  "repo_owner": "jgfidelis",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "d4330518c8d676017b6dda6dd48751a342f7b196",
+      "url": "https://api.github.com/repositories/117451256/contents/data/schema.graphql?ref=1a6dc7c2fd0065e179c5159514aeef7f3b278789",
+      "git_url": "https://api.github.com/repositories/117451256/git/blobs/d4330518c8d676017b6dda6dd48751a342f7b196",
+      "html_url": "https://github.com/jgfidelis/graphql-sw-api/blob/1a6dc7c2fd0065e179c5159514aeef7f3b278789/data/schema.graphql",
+      "content": "type Person {\n  name: String\n  hairColor: String\n  birthYear: String\n  gender: String\n  mass: Int\n  height: Int\n  homeworld: String\n  films: [String]\n  species: String\n}\n\ntype Query {\n  allPeople: [Person]\n  peoplePage(page: Int): [Person]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-14T17:28:28Z",
+    "updated_at": "2018-01-19T16:04:00Z",
+    "pushed_at": "2018-01-18T15:43:07Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

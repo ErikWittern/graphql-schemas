@@ -1,0 +1,41 @@
+{
+  "repo_name": "MN01-02-Job",
+  "repo_full_name": "chilin89117/mn01-02-job",
+  "repo_owner": "chilin89117",
+  "repo_description": "Project code from Udemy course \"GraphQL by Example\" by Mirko Nasato",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "37fae33e21b811bb05c0a2b772834e6958556eb6",
+      "url": "https://api.github.com/repositories/158640833/contents/server/schema.graphql?ref=393af5fd3fd2b94dbce27e05faee267c8e07a62e",
+      "git_url": "https://api.github.com/repositories/158640833/git/blobs/37fae33e21b811bb05c0a2b772834e6958556eb6",
+      "html_url": "https://github.com/chilin89117/MN01-02-Job/blob/393af5fd3fd2b94dbce27e05faee267c8e07a62e/server/schema.graphql",
+      "content": "type Query {\r\n  job(id:ID!): Job\r\n  jobs: [Job]\r\n  company(id:ID!): Company\r\n}\r\ntype Job {\r\n  id: ID!\r\n  title: String!\r\n  description: String!\r\n  company: Company!\r\n}\r\ntype Company {\r\n  id: ID!\r\n  name: String!\r\n  description: String!\r\n  jobs: [Job]\r\n}\r\ntype Mutation {\r\n  createJob(data:CreateJobInput!): Job!\r\n}\r\ninput CreateJobInput {\r\n  title: String!\r\n  description: String!\r\n}\r\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-22T04:05:40Z",
+    "updated_at": "2018-11-25T04:13:17Z",
+    "pushed_at": "2018-11-25T04:13:15Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

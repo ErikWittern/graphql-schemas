@@ -1,0 +1,42 @@
+{
+  "repo_name": "makeen",
+  "repo_full_name": "makeen-project/makeen",
+  "repo_owner": "makeen-project",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "packages/makeen-graphql/src/graphql/typeDefs.graphql",
+      "sha": "b4a06b079b9abf962ec5ef1aaf5392853a525805",
+      "url": "https://api.github.com/repositories/94978736/contents/packages/makeen-graphql/src/graphql/typeDefs.graphql?ref=ef8e05b06a9f18888256985f65313b3b5185da61",
+      "git_url": "https://api.github.com/repositories/94978736/git/blobs/b4a06b079b9abf962ec5ef1aaf5392853a525805",
+      "html_url": "https://github.com/makeen-project/makeen/blob/ef8e05b06a9f18888256985f65313b3b5185da61/packages/makeen-graphql/src/graphql/typeDefs.graphql",
+      "content": "type Query {\n  hello: String\n}\n\ntype Mutation {\n  ping: String\n}\n\nscalar Date\n\nscalar JSON\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-21T07:59:31Z",
+    "updated_at": "2018-04-21T21:08:36Z",
+    "pushed_at": "2018-02-26T19:35:30Z",
+    "issues": 11,
+    "watchers": 6,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

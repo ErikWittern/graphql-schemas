@@ -1,0 +1,52 @@
+{
+  "repo_name": "prisma-client-lib",
+  "repo_full_name": "tomthornton/prisma-client-lib",
+  "repo_owner": "tomthornton",
+  "repo_description": "A modified version of prisma client for react native. Removes standard node packages. Thanks to vko-online for the fix https://github.com/vko-online/prisma",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "testSchemaA.graphql",
+      "path": "src/fixtures/testSchemaA.graphql",
+      "sha": "465ddfaea2fdfb2fb27d118bbe063e47cf7fb956",
+      "url": "https://api.github.com/repositories/187283247/contents/src/fixtures/testSchemaA.graphql?ref=5d731ff7eb7aff3e35b6037d3485b57044542ba3",
+      "git_url": "https://api.github.com/repositories/187283247/git/blobs/465ddfaea2fdfb2fb27d118bbe063e47cf7fb956",
+      "html_url": "https://github.com/tomthornton/prisma-client-lib/blob/5d731ff7eb7aff3e35b6037d3485b57044542ba3/src/fixtures/testSchemaA.graphql",
+      "content": "type Query {\n  a: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "testSchemaB.graphql",
+      "path": "src/fixtures/testSchemaB.graphql",
+      "sha": "b49d397106343a14e878afa0f9546aa57c5c8115",
+      "url": "https://api.github.com/repositories/187283247/contents/src/fixtures/testSchemaB.graphql?ref=5d731ff7eb7aff3e35b6037d3485b57044542ba3",
+      "git_url": "https://api.github.com/repositories/187283247/git/blobs/b49d397106343a14e878afa0f9546aa57c5c8115",
+      "html_url": "https://github.com/tomthornton/prisma-client-lib/blob/5d731ff7eb7aff3e35b6037d3485b57044542ba3/src/fixtures/testSchemaB.graphql",
+      "content": "type Query {\n  b: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-17T21:24:12Z",
+    "updated_at": "2019-05-24T15:08:12Z",
+    "pushed_at": "2019-05-24T15:08:10Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

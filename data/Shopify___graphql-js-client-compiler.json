@@ -1,0 +1,68 @@
+{
+  "repo_name": "graphql-js-client-compiler",
+  "repo_full_name": "shopify/graphql-js-client-compiler",
+  "repo_owner": "Shopify",
+  "repo_description": "Converts GraphQL files and schema definitions into ES Modules for use with the graphql-js-client",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/cli-integration/queries-with-fragments/schema.graphql",
+      "sha": "a7dabc2183b4b436ec489c9327ad6f6ca478eb22",
+      "url": "https://api.github.com/repositories/96558223/contents/test/fixtures/cli-integration/queries-with-fragments/schema.graphql?ref=fa7cf017aead4ca657d4812e09ea20966b2b0821",
+      "git_url": "https://api.github.com/repositories/96558223/git/blobs/a7dabc2183b4b436ec489c9327ad6f6ca478eb22",
+      "html_url": "https://github.com/Shopify/graphql-js-client-compiler/blob/fa7cf017aead4ca657d4812e09ea20966b2b0821/test/fixtures/cli-integration/queries-with-fragments/schema.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype Product implements Node {\n  id: ID!\n  name: String!\n  price: Float!\n}\n\ntype Shop {\n  name: String!\n  address: String!\n}\n\ntype Collection {\n  name: String!\n  products: [Product!]!\n}\n\ntype Query {\n  node(id: ID!): Node\n  shop: Shop!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/cli-integration/queries/schema.graphql",
+      "sha": "a7dabc2183b4b436ec489c9327ad6f6ca478eb22",
+      "url": "https://api.github.com/repositories/96558223/contents/test/fixtures/cli-integration/queries/schema.graphql?ref=fa7cf017aead4ca657d4812e09ea20966b2b0821",
+      "git_url": "https://api.github.com/repositories/96558223/git/blobs/a7dabc2183b4b436ec489c9327ad6f6ca478eb22",
+      "html_url": "https://github.com/Shopify/graphql-js-client-compiler/blob/fa7cf017aead4ca657d4812e09ea20966b2b0821/test/fixtures/cli-integration/queries/schema.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype Product implements Node {\n  id: ID!\n  name: String!\n  price: Float!\n}\n\ntype Shop {\n  name: String!\n  address: String!\n}\n\ntype Collection {\n  name: String!\n  products: [Product!]!\n}\n\ntype Query {\n  node(id: ID!): Node\n  shop: Shop!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/schema.graphql",
+      "sha": "a7dabc2183b4b436ec489c9327ad6f6ca478eb22",
+      "url": "https://api.github.com/repositories/96558223/contents/test/fixtures/schema.graphql?ref=fa7cf017aead4ca657d4812e09ea20966b2b0821",
+      "git_url": "https://api.github.com/repositories/96558223/git/blobs/a7dabc2183b4b436ec489c9327ad6f6ca478eb22",
+      "html_url": "https://github.com/Shopify/graphql-js-client-compiler/blob/fa7cf017aead4ca657d4812e09ea20966b2b0821/test/fixtures/schema.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype Product implements Node {\n  id: ID!\n  name: String!\n  price: Float!\n}\n\ntype Shop {\n  name: String!\n  address: String!\n}\n\ntype Collection {\n  name: String!\n  products: [Product!]!\n}\n\ntype Query {\n  node(id: ID!): Node\n  shop: Shop!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-07T16:50:38Z",
+    "updated_at": "2019-07-03T20:50:10Z",
+    "pushed_at": "2018-06-18T20:30:45Z",
+    "issues": 2,
+    "watchers": 129,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 7,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

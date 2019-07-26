@@ -1,0 +1,41 @@
+{
+  "repo_name": "humanhybrids-api",
+  "repo_full_name": "humanhybrids/humanhybrids-api",
+  "repo_owner": "humanhybrids",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graph/schema.graphql",
+      "sha": "fd5c654edc2726f503e25460a2b595bcac0803ab",
+      "url": "https://api.github.com/repositories/94507001/contents/src/graph/schema.graphql?ref=7b94fd0682b40d0b3078bebaa2cfb5e07828ebc2",
+      "git_url": "https://api.github.com/repositories/94507001/git/blobs/fd5c654edc2726f503e25460a2b595bcac0803ab",
+      "html_url": "https://github.com/humanhybrids/humanhybrids-api/blob/7b94fd0682b40d0b3078bebaa2cfb5e07828ebc2/src/graph/schema.graphql",
+      "content": "type Query {\r\n  user(name: String!): User\r\n}\r\n\r\ntype Tweet {\r\n  created: String\r\n  favoriteCount: Int\r\n  id: ID\r\n  retweetCount: Int\r\n  text: String\r\n  user: User\r\n}\r\n\r\ntype User {\r\n  description: String\r\n  followers(cursor: ID, count: Int): UserGroup\r\n  following(cursor: ID, count: Int): UserGroup\r\n  id: ID\r\n  screenName: String\r\n  status: Tweet\r\n  timeline(from: ID, count: Int): [Tweet]\r\n}\r\n\r\ntype UserGroup {\r\n  nextCursor: ID\r\n  previousCursor: ID\r\n  users: [User]\r\n}\r\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-16T05:07:26Z",
+    "updated_at": "2017-06-19T03:13:58Z",
+    "pushed_at": "2017-11-14T06:43:06Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

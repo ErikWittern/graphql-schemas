@@ -1,0 +1,39 @@
+{
+  "repo_name": "stallion",
+  "repo_full_name": "arxpoetica/stallion",
+  "repo_owner": "arxpoetica",
+  "repo_description": "Headless CMS written in Svelte.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "_queries.gql",
+      "path": "src/_server/graphql-api/models/_queries.gql",
+      "sha": "d0a3c5bf5d6d10dcd3fd4660aaa56d8857e37fb6",
+      "url": "https://api.github.com/repositories/176408341/contents/src/_server/graphql-api/models/_queries.gql?ref=e9705c6d4659d9e305ef2b84046c3581ec0260de",
+      "git_url": "https://api.github.com/repositories/176408341/git/blobs/d0a3c5bf5d6d10dcd3fd4660aaa56d8857e37fb6",
+      "html_url": "https://github.com/arxpoetica/stallion/blob/e9705c6d4659d9e305ef2b84046c3581ec0260de/src/_server/graphql-api/models/_queries.gql",
+      "content": "type Query {\n\t# FIXME: this shouldn't be here:\n\tdataset(id: String!): String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-19T02:37:53Z",
+    "updated_at": "2019-07-19T17:26:20Z",
+    "pushed_at": "2019-04-08T03:45:11Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 10
+  }
+}

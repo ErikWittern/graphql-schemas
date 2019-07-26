@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-phones-guide",
+  "repo_full_name": "pt-br/relay-phones-guide",
+  "repo_owner": "pt-br",
+  "repo_description": "A start point for my relay-mutations-guide",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "77499e37394d608babdd28fdbd598377cd8e434f",
+      "url": "https://api.github.com/repositories/81693593/contents/data/schema.graphql?ref=9db14cf70286055c8d001e5cefb5002e47de7b70",
+      "git_url": "https://api.github.com/repositories/81693593/git/blobs/77499e37394d608babdd28fdbd598377cd8e434f",
+      "html_url": "https://github.com/pt-br/relay-phones-guide/blob/9db14cf70286055c8d001e5cefb5002e47de7b70/data/schema.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Phone {\n  id: ID!\n  phoneId: String!\n  model: String!\n  image: String\n}\n\ntype PhoneConnection {\n  pageInfo: PageInfo!\n  edges: [PhoneEdge]\n}\n\ntype PhoneEdge {\n  node: Phone\n  cursor: String!\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n}\n\ntype User implements Node {\n  id: ID!\n  userId: String!\n  phones(after: String, first: Int, before: String, last: Int): PhoneConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-12T00:54:16Z",
+    "updated_at": "2017-02-12T15:38:31Z",
+    "pushed_at": "2017-02-12T02:35:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

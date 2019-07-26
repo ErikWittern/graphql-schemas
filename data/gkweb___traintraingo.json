@@ -1,0 +1,42 @@
+{
+  "repo_name": "traintraingo",
+  "repo_full_name": "gkweb/traintraingo",
+  "repo_owner": "gkweb",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typedefs.gql",
+      "path": "api/src/typedefs.gql",
+      "sha": "b1a359a9e573543d0226050c527cb1ec50d363bd",
+      "url": "https://api.github.com/repositories/181846417/contents/api/src/typedefs.gql?ref=7f6cc746683d2cbf2ea0f2d7f662efc8a53f79c4",
+      "git_url": "https://api.github.com/repositories/181846417/git/blobs/b1a359a9e573543d0226050c527cb1ec50d363bd",
+      "html_url": "https://github.com/gkweb/traintraingo/blob/7f6cc746683d2cbf2ea0f2d7f662efc8a53f79c4/api/src/typedefs.gql",
+      "content": "type Stop {\n  stop_id: ID!\n  stop_suburb: String\n  route_type: Int\n  stop_longitude: Float\n  stop_latitude: Float\n  departures: [Departure]\n  stop_name: String\n  directions: [Direction]\n}\n\ntype Stops {\n  stops: [Stop]\n}\n\ntype Direction {\n  direction_id: Int\n  direction_name: String\n  route_id: String\n  route_type: String\n}\n\ntype Directions {\n  directions: [Direction]\n}\n\ntype Disruption {\n  disruption_id: Int\n  sid: String\n  title: String\n  url: String\n  description: String\n  disruption_status: String\n  disruption_type: String\n  published_on: String\n  last_updated: String\n  from_date: String\n  to_date: String\n  colour: String\n  display_on_board: Boolean\n  display_status: Boolean\n}\n\ntype Departure {\n  stop_id: ID!\n  route_id: Int\n  route_type: Int\n  stop_suburb: String\n  stop_name: String\n  run_id: Int\n  direction_id: Int\n  departure_sequence: Int\n  disruptions: [Disruption]\n  scheduled_departure_utc: String\n  estimated_departure_utc: String\n  platform_number: Int\n  direction_name: String\n}\n\ntype Departures {\n  stop: Stop\n  departures: [Departure]\n  directions: [Direction]\n}\n\ntype Query {\n  stops(search_term: String): [Stop]\n  stop(stop_id: Int): Stop\n  departures(stop_id: Int): [Departure]\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-17T08:11:14Z",
+    "updated_at": "2019-05-23T11:34:41Z",
+    "pushed_at": "2019-05-23T11:34:39Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

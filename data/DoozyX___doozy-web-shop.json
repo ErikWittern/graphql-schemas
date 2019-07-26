@@ -1,0 +1,39 @@
+{
+  "repo_name": "doozy-web-shop",
+  "repo_full_name": "doozyx/doozy-web-shop",
+  "repo_owner": "DoozyX",
+  "repo_description": "doozy-web-shop",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "modules/core/server-ts/api/rootSchema.graphql",
+      "sha": "71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "url": "https://api.github.com/repositories/152958604/contents/modules/core/server-ts/api/rootSchema.graphql?ref=9f84d059e8469b513e3d85660a35eb83da431648",
+      "git_url": "https://api.github.com/repositories/152958604/git/blobs/71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "html_url": "https://github.com/DoozyX/doozy-web-shop/blob/9f84d059e8469b513e3d85660a35eb83da431648/modules/core/server-ts/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-14T09:32:17Z",
+    "updated_at": "2019-05-14T16:59:29Z",
+    "pushed_at": "2019-07-07T09:05:56Z",
+    "issues": 8,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 11,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 10,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

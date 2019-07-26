@@ -1,0 +1,41 @@
+{
+  "repo_name": "io-app-backend",
+  "repo_full_name": "io-app/io-app-backend",
+  "repo_owner": "io-app",
+  "repo_description": "Backend for the IO app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/services/graphql/schema.graphql",
+      "sha": "73455987313cb3a3c6a2300218913ce8a17d08f0",
+      "url": "https://api.github.com/repositories/86485611/contents/src/services/graphql/schema.graphql?ref=bab633677141b69c3415706048342870ec6c29c8",
+      "git_url": "https://api.github.com/repositories/86485611/git/blobs/73455987313cb3a3c6a2300218913ce8a17d08f0",
+      "html_url": "https://github.com/io-app/io-app-backend/blob/bab633677141b69c3415706048342870ec6c29c8/src/services/graphql/schema.graphql",
+      "content": "enum Category {\n  FEE\n  DONATION\n}\n\ntype Office {\n  id: String!\n  name: String!\n  currency: String!\n  users: [User]\n  # maybe transactions?\n}\n\ntype User {\n  id: String!\n  firstName: String\n  lastName: String\n  email: String!\n  office: Office\n  transactions: [Transaction]\n}\n\ntype Transaction {\n  id: String!\n  date: String\n  currency: String\n  amount: Int\n  office: Office\n  comment: String\n  user: User\n}\n\ntype AuthPayload {\n  token: String # JSON Web Token\n  data: User\n}\n\ninput transactionInput {\n  date: String\n  currency: String\n  amount: Int\n  officeId: String #do we need this? get office from user? or only admin can use this field?\n  comment: String\n  userId: String #regular user should not be allowed to use this, only admin!\n  category: Category\n}\n\n# the schema allows the following queries:\ntype RootQuery {\n  viewer: User\n  user(email: String!): User\n  users: [User]\n  # - maybe list transactions by user\n  # - we need transactions by source office or by target office, but only if the user is assigned to that office\n  # you should only be able to see transactions if either your office is target or source office\n  # - transactions by reporting year or combination of reporting year and period number (even though the transaction only has a date field)\n  # - not really necessary now: transactions by certain calendar year, month or day\n  # - get all/valid/voided transactions\n  transactions(category: Category, officeId: String): [Transaction]\n  transaction(id: String!) : Transaction\n}\n\n# this schema allows the following mutations:\ntype RootMutation {\n  signUp (\n    email: String!\n    password: String!\n    firstName: String!\n    lastName: String!\n    officeId: String!\n  ): User\n\n  logIn (\n    email: String!\n    password: String!\n  ): AuthPayload\n\n  createTransaction (\n    transaction: transactionInput\n  ): Transaction\n\n  removeTransaction (\n    id: String! # id of post to remove\n  ): Transaction\n\n  createOffice (\n    name: String!\n    currency: String!\n  ): Office\n\n}\n\n# we need to tell the server which types represent the root query\n# and root mutation types. We call them RootQuery and RootMutation by convention.\nschema {\n  query: RootQuery\n  mutation: RootMutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-28T17:01:00Z",
+    "updated_at": "2017-05-23T11:05:33Z",
+    "pushed_at": "2017-06-17T20:13:03Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

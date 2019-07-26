@@ -1,0 +1,39 @@
+{
+  "repo_name": "GraphQL-Server.Node",
+  "repo_full_name": "singhrahulnet/graphql-server.node",
+  "repo_owner": "singhrahulnet",
+  "repo_description": "Sample code: GraphQL server on top of REST API using 'graphql-yoga' in Node.js.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql-server/schema.graphql",
+      "sha": "4d1045e601af420d2b81de34008d1f784b7c7dfa",
+      "url": "https://api.github.com/repositories/164060220/contents/graphql-server/schema.graphql?ref=0fd2e7b69c9e6a91890f0e7102693696a1b99ef8",
+      "git_url": "https://api.github.com/repositories/164060220/git/blobs/4d1045e601af420d2b81de34008d1f784b7c7dfa",
+      "html_url": "https://github.com/singhrahulnet/GraphQL-Server.Node/blob/0fd2e7b69c9e6a91890f0e7102693696a1b99ef8/graphql-server/schema.graphql",
+      "content": "type Query {\n  posts: [Post!]!\n  getPost(id: Int!): Post\n}\n\ntype Post {\n  id: ID!\n  userId: String!\n  title: String!\n  body: String!\n  user: User!\n}\n\ntype User {\n  id: ID!\n  name: String!\n  username: String!\n  email: String!\n  website: String\n  posts: [Post]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-04T05:02:08Z",
+    "updated_at": "2019-01-05T06:34:44Z",
+    "pushed_at": "2019-01-05T06:34:43Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 1,
+    "stargazers": 0
+  }
+}

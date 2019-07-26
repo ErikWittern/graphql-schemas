@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-boilerplate",
+  "repo_full_name": "kyleawang/react-boilerplate",
+  "repo_owner": "KyleAWang",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "101b79817bd9078f7afb58c2bfac7d9a0df6b1c9",
+      "url": "https://api.github.com/repositories/86191024/contents/data/schema.graphql?ref=0e709a3a1d43c207a620dc03b883db89282143b0",
+      "git_url": "https://api.github.com/repositories/86191024/git/blobs/101b79817bd9078f7afb58c2bfac7d9a0df6b1c9",
+      "html_url": "https://github.com/KyleAWang/react-boilerplate/blob/0e709a3a1d43c207a620dc03b883db89282143b0/data/schema.graphql",
+      "content": "# order items\ntype Item {\n  _id: ID!\n  name: String\n  price: Float\n  quantity: Int\n}\n\ninput ItemInput {\n  itemId: Int\n  name: String\n  price: Float\n  quantity: Int\n  url: String\n}\n\ntype Mutation {\n  orderMutation(input: OrderMutationInput!): OrderMutationPayload\n}\n\n# an order\ntype Order {\n  _id: ID!\n  items: [Item]\n  subtotal: Float\n  orderId: String\n}\n\ninput OrderMutationInput {\n  orderId: String!\n  subtotal: Float!\n  items: [ItemInput]\n  clientMutationId: String\n}\n\ntype OrderMutationPayload {\n  order: Order\n  orders: Orders\n  clientMutationId: String\n}\n\n# a list of orders \ntype Orders {\n  # The ID of an object\n  id: ID!\n\n  # orders\n  orders: [Order]\n}\n\ntype Query {\n  orders: [Order]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-25T21:56:49Z",
+    "updated_at": "2017-03-25T21:57:23Z",
+    "pushed_at": "2017-04-17T11:57:05Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

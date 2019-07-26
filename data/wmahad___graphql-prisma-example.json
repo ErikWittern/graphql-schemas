@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-prisma-example",
+  "repo_full_name": "wmahad/graphql-prisma-example",
+  "repo_owner": "wmahad",
+  "repo_description": "qraphql-prisma example",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schemas/schema.graphql",
+      "sha": "a7c37c5d0ed22eecb729805feaea758fe698ddf6",
+      "url": "https://api.github.com/repositories/167755175/contents/server/schemas/schema.graphql?ref=4e40d3481309adb71d56715c98435740c3e57233",
+      "git_url": "https://api.github.com/repositories/167755175/git/blobs/a7c37c5d0ed22eecb729805feaea758fe698ddf6",
+      "html_url": "https://github.com/wmahad/graphql-prisma-example/blob/4e40d3481309adb71d56715c98435740c3e57233/server/schemas/schema.graphql",
+      "content": "type Query {\n    publishedPosts: [Post]!\n    post(postId: ID!): Post\n    postsByUser(userId: ID!): [Post]!\n}\n\ntype Mutation {\n    createUser(name: String!, email: String!): User\n    createDraft(title: String!, userId: ID!): Post\n    publish(postId: ID!): Post\n}\n\ntype User {\n    id: ID!\n    email: String\n    name: String!\n    posts: [Post]!\n}\n\ntype Post {\n    id: ID!\n    title: String!\n    published: Boolean!\n    author: User\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-27T00:48:51Z",
+    "updated_at": "2019-01-27T20:56:01Z",
+    "pushed_at": "2019-01-27T20:56:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

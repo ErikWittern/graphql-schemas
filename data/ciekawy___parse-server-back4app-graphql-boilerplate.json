@@ -1,0 +1,42 @@
+{
+  "repo_name": "parse-server-back4app-graphql-boilerplate",
+  "repo_full_name": "ciekawy/parse-server-back4app-graphql-boilerplate",
+  "repo_owner": "ciekawy",
+  "repo_description": "setup GraphQL server env to be used with back4app parse-server could code ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/cloud/graphql/schema.graphql",
+      "sha": "c568e1536403f9f4b3ff65d463b7f7b8d540dd2f",
+      "url": "https://api.github.com/repositories/135071120/contents/src/cloud/graphql/schema.graphql?ref=025ef31df07cdd0a14dbc0132ff9e624ef70e837",
+      "git_url": "https://api.github.com/repositories/135071120/git/blobs/c568e1536403f9f4b3ff65d463b7f7b8d540dd2f",
+      "html_url": "https://github.com/ciekawy/parse-server-back4app-graphql-boilerplate/blob/025ef31df07cdd0a14dbc0132ff9e624ef70e837/src/cloud/graphql/schema.graphql",
+      "content": "schema {\n    query: Query\n#    mutation: Mutation\n}\n\n# The query type, represents all of the entry points into our object graph\ntype Query {\n    hello: String!\n#    hero(episode: Episode): Character\n}\n\n## The mutation type, represents all updates we can make to our data\n#type Mutation {\n#    createReview(episode: Episode, review: ReviewInput!): Review\n#}\n## The episodes in the Star Wars trilogy\n#enum Episode {\n#    # Star Wars Episode IV: A New Hope, released in 1977.\n#    NEWHOPE\n#    # Star Wars Episode V: The Empire Strikes Back, released in 1980.\n#    EMPIRE\n#    # Star Wars Episode VI: Return of the Jedi, released in 1983.\n#    JEDI\n#}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-27T18:23:30Z",
+    "updated_at": "2019-02-25T14:24:49Z",
+    "pushed_at": "2018-05-27T18:30:31Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

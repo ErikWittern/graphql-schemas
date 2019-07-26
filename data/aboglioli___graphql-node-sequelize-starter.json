@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql-node-sequelize-starter",
+  "repo_full_name": "aboglioli/graphql-node-sequelize-starter",
+  "repo_owner": "aboglioli",
+  "repo_description": "Base project using Node + GraphQL Yoga + Sequelize ORM (Postgres) + GraphQL Shield",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/meta/schema.graphql",
+      "sha": "b40939ec396222704fb01276460d3a317db72234",
+      "url": "https://api.github.com/repositories/172799475/contents/src/modules/meta/schema.graphql?ref=e8d88f6979a4c2b40382845d4a3a78cccb1c24b4",
+      "git_url": "https://api.github.com/repositories/172799475/git/blobs/b40939ec396222704fb01276460d3a317db72234",
+      "html_url": "https://github.com/aboglioli/graphql-node-sequelize-starter/blob/e8d88f6979a4c2b40382845d4a3a78cccb1c24b4/src/modules/meta/schema.graphql",
+      "content": "type MetaInformation {\n  version: String!\n  author: String!\n  uptime: String!\n}\n\ntype Query {\n  meta: MetaInformation!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/configuration/schema.graphql",
+      "sha": "62e1b58b0b85944df811c21f8d28b14f1e7e7999",
+      "url": "https://api.github.com/repositories/172799475/contents/src/modules/configuration/schema.graphql?ref=e8d88f6979a4c2b40382845d4a3a78cccb1c24b4",
+      "git_url": "https://api.github.com/repositories/172799475/git/blobs/62e1b58b0b85944df811c21f8d28b14f1e7e7999",
+      "html_url": "https://github.com/aboglioli/graphql-node-sequelize-starter/blob/e8d88f6979a4c2b40382845d4a3a78cccb1c24b4/src/modules/configuration/schema.graphql",
+      "content": "type Query {\n  getConfiguration(key: String!): String!\n}\n\ntype Mutation {\n  setConfiguration(key: String!, value: String!): Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-26T22:17:19Z",
+    "updated_at": "2019-05-31T21:15:14Z",
+    "pushed_at": "2019-05-31T21:15:12Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

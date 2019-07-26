@@ -1,0 +1,66 @@
+{
+  "repo_name": "graphql-apollo-boilerplate",
+  "repo_full_name": "lablancas/graphql-apollo-boilerplate",
+  "repo_owner": "lablancas",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "src/graphql/schema/types/query.graphql",
+      "sha": "aeea3575834536533982a902386afdb0fc54079a",
+      "url": "https://api.github.com/repositories/150489630/contents/src/graphql/schema/types/query.graphql?ref=3983a18d207c69d8586aaff01baed7bf8cc86e0b",
+      "git_url": "https://api.github.com/repositories/150489630/git/blobs/aeea3575834536533982a902386afdb0fc54079a",
+      "html_url": "https://github.com/lablancas/graphql-apollo-boilerplate/blob/3983a18d207c69d8586aaff01baed7bf8cc86e0b/src/graphql/schema/types/query.graphql",
+      "content": "type Query {\n    account(name: String): Account\n}\n\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/lablancas/graphql-apollo-boilerplate/blob/3983a18d207c69d8586aaff01baed7bf8cc86e0b/src/graphql/schema/types/query.graphql:\ntype Query {\n    account(name: String): Account\n}\n\n\n# https://github.com/lablancas/graphql-apollo-boilerplate/blob/3983a18d207c69d8586aaff01baed7bf8cc86e0b/src/graphql/schema/types/account.graphql:\ntype Account {\n    _id: ID\n    name: String\n}\n",
+        "mergedPaths": [
+          "src/graphql/schema/types/account.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Account"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "account.graphql",
+      "path": "src/graphql/schema/types/account.graphql",
+      "sha": "5ee630f5926d341cef0bae01524fa7b04a5b0177",
+      "url": "https://api.github.com/repositories/150489630/contents/src/graphql/schema/types/account.graphql?ref=3983a18d207c69d8586aaff01baed7bf8cc86e0b",
+      "git_url": "https://api.github.com/repositories/150489630/git/blobs/5ee630f5926d341cef0bae01524fa7b04a5b0177",
+      "html_url": "https://github.com/lablancas/graphql-apollo-boilerplate/blob/3983a18d207c69d8586aaff01baed7bf8cc86e0b/src/graphql/schema/types/account.graphql",
+      "content": "type Account {\n    _id: ID\n    name: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-26T21:00:25Z",
+    "updated_at": "2018-09-26T21:30:03Z",
+    "pushed_at": "2018-09-26T21:29:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

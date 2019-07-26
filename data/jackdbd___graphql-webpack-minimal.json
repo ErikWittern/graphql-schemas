@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-webpack-minimal",
+  "repo_full_name": "jackdbd/graphql-webpack-minimal",
+  "repo_owner": "jackdbd",
+  "repo_description": "A super-simple GraphQL server with a basic configuration for webpack 4",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "src/graphql/typeDefs.graphql",
+      "sha": "752e33956d252a97037d8caaecf0931cdcb0cc83",
+      "url": "https://api.github.com/repositories/131508580/contents/src/graphql/typeDefs.graphql?ref=4d0f66b7d267b0f0990674776cbf823fe95245f1",
+      "git_url": "https://api.github.com/repositories/131508580/git/blobs/752e33956d252a97037d8caaecf0931cdcb0cc83",
+      "html_url": "https://github.com/jackdbd/graphql-webpack-minimal/blob/4d0f66b7d267b0f0990674776cbf823fe95245f1/src/graphql/typeDefs.graphql",
+      "content": "type Query {\n  books: [Book]\n  getFortuneCookie: String\n}\n\ntype Book {\n  title: String!\n  author: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-29T16:01:08Z",
+    "updated_at": "2018-04-29T17:07:57Z",
+    "pushed_at": "2018-04-29T17:07:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

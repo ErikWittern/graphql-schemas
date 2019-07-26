@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-express-postgres",
+  "repo_full_name": "matt-sm/graphql-express-postgres",
+  "repo_owner": "matt-sm",
+  "repo_description": "A reference graphql api.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "41194c149782bd37e3766ae7ccba498e64bea2e7",
+      "url": "https://api.github.com/repositories/118412757/contents/schema/schema.graphql?ref=2b95618933b4bb428bb74c9a7b7e678d15e5a3f2",
+      "git_url": "https://api.github.com/repositories/118412757/git/blobs/41194c149782bd37e3766ae7ccba498e64bea2e7",
+      "html_url": "https://github.com/matt-sm/graphql-express-postgres/blob/2b95618933b4bb428bb74c9a7b7e678d15e5a3f2/schema/schema.graphql",
+      "content": "type User {\n  id: Int!\n  name: String\n  email: String\n  posts(id: Int): [Post]\n  comments: [Comment]\n}\n\ntype Post {\n  id: Int!\n  title: String\n  body: String\n  user: User\n  comments: [Comment]\n}\n\ntype Comment {\n  id: Int!\n  body: String\n  user: User\n  post: Post\n}\n\ntype Query {\n  viewer: User\n}\n\ntype Mutation {\n  createToken(email: String!, password: String!): String\n  addUser(name: String!, email: String!, password: String!): User\n  addPost(title: String!, body: String!): Post\n  addComment(body: String!, post_id: Int!): Comment\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-22T05:53:55Z",
+    "updated_at": "2019-06-26T14:30:28Z",
+    "pushed_at": "2018-10-01T22:14:08Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

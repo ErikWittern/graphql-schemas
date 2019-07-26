@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-metrics-proxy",
+  "repo_full_name": "mpicard/graphql-metrics-proxy",
+  "repo_owner": "mpicard",
+  "repo_description": "Code for tutorial on how to make your own graphQL metrics dashboard",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "9bacb09f1013b6af2bd1bc9689df145e3d30ab50",
+      "url": "https://api.github.com/repositories/132778802/contents/src/schema.graphql?ref=e34749993d972dd9ce84b8a23ef6fa7436d994ea",
+      "git_url": "https://api.github.com/repositories/132778802/git/blobs/9bacb09f1013b6af2bd1bc9689df145e3d30ab50",
+      "html_url": "https://github.com/mpicard/graphql-metrics-proxy/blob/e34749993d972dd9ce84b8a23ef6fa7436d994ea/src/schema.graphql",
+      "content": "type Query {\n  me: User\n  fn(a: String, b: Int): User\n}\n\ntype User {\n  name: String\n  email: String\n  age: Int\n  parent: User\n  other: Other\n  codes: [Int]\n}\n\ntype Other {\n  thing: Float\n  isBoolean: Boolean\n  nested: Nested\n}\n\ntype Nested {\n  name: String\n  deep: Deep\n}\n\ntype Deep {\n  id: ID\n  isBoolean: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-09T15:41:12Z",
+    "updated_at": "2019-02-24T22:07:21Z",
+    "pushed_at": "2018-05-24T12:25:39Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "Listing-of-details",
+  "repo_full_name": "wellers0n/listing-of-details",
+  "repo_owner": "Wellers0n",
+  "repo_description": "making available data with graphql and consuming with relay",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/web/data/schema.graphql",
+      "sha": "fdde8b23c3ac2acd6d015714769aefd7836cd231",
+      "url": "https://api.github.com/repositories/182004688/contents/packages/web/data/schema.graphql?ref=ecb80e08215ea3a6fb7ed26586dea55be83085fd",
+      "git_url": "https://api.github.com/repositories/182004688/git/blobs/fdde8b23c3ac2acd6d015714769aefd7836cd231",
+      "html_url": "https://github.com/Wellers0n/Listing-of-details/blob/ecb80e08215ea3a6fb7ed26586dea55be83085fd/packages/web/data/schema.graphql",
+      "content": "schema {\n  query: Planets\n  mutation: Mutation\n}\n\ntype Mutation {\n  signInMutation(input: UserLoginWithEmailInput!): UserLoginWithEmailPayload\n}\n\n\"\"\"Get planets\"\"\"\ntype Planets {\n  planet(id: ID!): PlanetsType\n  planets: [PlanetsType]\n}\n\ntype PlanetsType {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  _id: ID\n  name: String\n  img: String\n  intro: String\n  description: String\n}\n\ninput UserLoginWithEmailInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype UserLoginWithEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-18T02:48:49Z",
+    "updated_at": "2019-07-11T14:23:16Z",
+    "pushed_at": "2019-07-11T14:23:14Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 15,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 14,
+    "releases": 0,
+    "stargazers": 15
+  }
+}

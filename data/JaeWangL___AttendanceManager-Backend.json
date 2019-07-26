@@ -1,0 +1,93 @@
+{
+  "repo_name": "AttendanceManager-Backend",
+  "repo_full_name": "jaewangl/attendancemanager-backend",
+  "repo_owner": "JaeWangL",
+  "repo_description": "A back-end project for AttendanceManager",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "getTimeTables.graphql",
+      "path": "src/modules/timeTable/getTimeTables/getTimeTables.graphql",
+      "sha": "9b939a3f367487b6db1cab76d3a7f2b0a7fd1a2f",
+      "url": "https://api.github.com/repositories/154865349/contents/src/modules/timeTable/getTimeTables/getTimeTables.graphql?ref=ee9c817d2e86c80effcbbc9154c6a9b8ef898d97",
+      "git_url": "https://api.github.com/repositories/154865349/git/blobs/9b939a3f367487b6db1cab76d3a7f2b0a7fd1a2f",
+      "html_url": "https://github.com/JaeWangL/AttendanceManager-Backend/blob/ee9c817d2e86c80effcbbc9154c6a9b8ef898d97/src/modules/timeTable/getTimeTables/getTimeTables.graphql",
+      "content": "type GetTimeTablesResponse {\n    isOk: Boolean!\n    error: String\n    timeTables: [TimeTable]\n}\n\ntype Query {\n    getTimeTables(userId: Int!): GetTimeTablesResponse!\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/JaeWangL/AttendanceManager-Backend/blob/ee9c817d2e86c80effcbbc9154c6a9b8ef898d97/src/modules/timeTable/getTimeTables/getTimeTables.graphql:\ntype GetTimeTablesResponse {\n    isOk: Boolean!\n    error: String\n    timeTables: [TimeTable]\n}\n\ntype Query {\n    getTimeTables(userId: Int!): GetTimeTablesResponse!\n}\n# https://github.com/JaeWangL/AttendanceManager-Backend/blob/ee9c817d2e86c80effcbbc9154c6a9b8ef898d97/src/modules/timeTable/shared/timeTable.graphql:\ntype TimeTable {\n    id: Int!\n    userId: Int!\n    day: Int!\n    period: Int!\n    user: User!\n}\n# https://github.com/JaeWangL/AttendanceManager-Backend/blob/ee9c817d2e86c80effcbbc9154c6a9b8ef898d97/src/modules/user/shared/user.graphql:\ntype User {\n    id: Int!\n    email: String\n    password: String\n    timeTables: [TimeTable]\n}\n",
+        "mergedPaths": [
+          "src/modules/timeTable/shared/timeTable.graphql",
+          "src/modules/user/shared/user.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "TimeTable",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": true,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "timeTable.graphql",
+      "path": "src/modules/timeTable/shared/timeTable.graphql",
+      "sha": "9226dd00bc8f3fb14cf529849fb88ce733173202",
+      "url": "https://api.github.com/repositories/154865349/contents/src/modules/timeTable/shared/timeTable.graphql?ref=ee9c817d2e86c80effcbbc9154c6a9b8ef898d97",
+      "git_url": "https://api.github.com/repositories/154865349/git/blobs/9226dd00bc8f3fb14cf529849fb88ce733173202",
+      "html_url": "https://github.com/JaeWangL/AttendanceManager-Backend/blob/ee9c817d2e86c80effcbbc9154c6a9b8ef898d97/src/modules/timeTable/shared/timeTable.graphql",
+      "content": "type TimeTable {\n    id: Int!\n    userId: Int!\n    day: Int!\n    period: Int!\n    user: User!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/modules/user/shared/user.graphql",
+      "sha": "514334ccba4588c66b219714d99e383cc549358f",
+      "url": "https://api.github.com/repositories/154865349/contents/src/modules/user/shared/user.graphql?ref=ee9c817d2e86c80effcbbc9154c6a9b8ef898d97",
+      "git_url": "https://api.github.com/repositories/154865349/git/blobs/514334ccba4588c66b219714d99e383cc549358f",
+      "html_url": "https://github.com/JaeWangL/AttendanceManager-Backend/blob/ee9c817d2e86c80effcbbc9154c6a9b8ef898d97/src/modules/user/shared/user.graphql",
+      "content": "type User {\n    id: Int!\n    email: String\n    password: String\n    timeTables: [TimeTable]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "d6a593d1fa74af081a179ed73db082375b565e93",
+      "url": "https://api.github.com/repositories/154865349/contents/src/schema.graphql?ref=ee9c817d2e86c80effcbbc9154c6a9b8ef898d97",
+      "git_url": "https://api.github.com/repositories/154865349/git/blobs/d6a593d1fa74af081a179ed73db082375b565e93",
+      "html_url": "https://github.com/JaeWangL/AttendanceManager-Backend/blob/ee9c817d2e86c80effcbbc9154c6a9b8ef898d97/src/schema.graphql",
+      "content": "type CreateTimeTableResponse {\n  isOk: Boolean!\n  error: String\n}\n\ntype Mutation {\n  createTimeTable(userId: Int!, day: Int!, period: Int!): CreateTimeTableResponse!\n  createUser(email: String!, password: String!): CreateUserResponse!\n  login(email: String!, password: String!): LoginResponse!\n}\n\ntype GetTimeTablesResponse {\n  isOk: Boolean!\n  error: String\n  timeTables: [TimeTable]\n}\n\ntype Query {\n  getTimeTables(userId: Int!): GetTimeTablesResponse!\n  getUser(id: Int!): GetUserResponse!\n}\n\ntype TimeTable {\n  id: Int!\n  userId: Int!\n  day: Int!\n  period: Int!\n  user: User!\n}\n\ntype CreateUserResponse {\n  isOk: Boolean!\n  error: String\n  token: String\n}\n\ntype GetUserResponse {\n  isOk: Boolean!\n  error: String\n  user: User\n}\n\ntype LoginResponse {\n  isOk: Boolean!\n  error: String\n  userId: Int\n  token: String\n}\n\ntype User {\n  id: Int!\n  email: String\n  password: String\n  timeTables: [TimeTable]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-26T16:45:35Z",
+    "updated_at": "2018-10-26T16:48:30Z",
+    "pushed_at": "2018-10-26T16:48:28Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "repo_name": "egg-simple-blog-demo",
+  "repo_full_name": "haro00/egg-simple-blog-demo",
+  "repo_owner": "haro00",
+  "repo_description": "一个使用eggjs作后台的简单博客示例",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/schema/schema.graphql",
+      "sha": "ad46e6d5e0de482b58ac0751dcad20e6b883b634",
+      "url": "https://api.github.com/repositories/118737044/contents/app/graphql/schema/schema.graphql?ref=fc81f4309b2642f380b0153b0fea5d7b00b5dcdc",
+      "git_url": "https://api.github.com/repositories/118737044/git/blobs/ad46e6d5e0de482b58ac0751dcad20e6b883b634",
+      "html_url": "https://github.com/haro00/egg-simple-blog-demo/blob/fc81f4309b2642f380b0153b0fea5d7b00b5dcdc/app/graphql/schema/schema.graphql",
+      "content": "# 只传入id\ninput IdIpt{\n    id: Int!\n}\n\n# 列表搜索基本参数\ninput PageIpt{\n    page: Int\n    pageSize: Int\n    search: String\n}\n\n# 查询\ntype Query {\n\n    # 用户登录\n    userLogin(\n        data: UserLoginIpt\n    ): User\n\n    # 获取用户列表\n    userList(\n        data: PageIpt\n    ): UserList\n\n    # 获取用户\n    user(\n        data: IdIpt\n    ): User\n\n    # 获取文章列表\n    articleList(\n        data: ArticleListIpt\n    ): ArticleList\n\n    # 获取文章\n    article(\n        data: IdIpt\n    ): Article\n\n    # 获取文章归档日期\n    createDate: [ArticleDate]\n\n    # 获取文章分类列表\n    typeList(\n        data: PageIpt\n    ): TypeList\n\n}\n\n# 增删改\ntype Mutation {\n\n    # 添加/编辑用户\n    user(\n        data: UserUpdateIpt\n    ): User\n\n    # 添加/编辑文章\n    article(\n        data: ArticleUpdateIpt\n    ): Article\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/haro00/egg-simple-blog-demo/blob/fc81f4309b2642f380b0153b0fea5d7b00b5dcdc/app/graphql/schema/schema.graphql:\n# 只传入id\ninput IdIpt{\n    id: Int!\n}\n\n# 列表搜索基本参数\ninput PageIpt{\n    page: Int\n    pageSize: Int\n    search: String\n}\n\n# 查询\ntype Query {\n\n    # 用户登录\n    userLogin(\n        data: UserLoginIpt\n    ): User\n\n    # 获取用户列表\n    userList(\n        data: PageIpt\n    ): UserList\n\n    # 获取用户\n    user(\n        data: IdIpt\n    ): User\n\n    # 获取文章列表\n    articleList(\n        data: ArticleListIpt\n    ): ArticleList\n\n    # 获取文章\n    article(\n        data: IdIpt\n    ): Article\n\n    # 获取文章归档日期\n    createDate: [ArticleDate]\n\n    # 获取文章分类列表\n    typeList(\n        data: PageIpt\n    ): TypeList\n\n}\n\n# 增删改\ntype Mutation {\n\n    # 添加/编辑用户\n    user(\n        data: UserUpdateIpt\n    ): User\n\n    # 添加/编辑文章\n    article(\n        data: ArticleUpdateIpt\n    ): Article\n}\n# https://github.com/haro00/egg-simple-blog-demo/blob/fc81f4309b2642f380b0153b0fea5d7b00b5dcdc/app/graphql/user/schema.graphql:\n# 用户\ntype User {\n    id: Int!\n    name: String!\n    password: String\n    roleId: Int\n    email: String\n    state: Int\n    createTime: String,\n    token: String\n}\n\n# 用户登录参数\ninput UserLoginIpt{\n    name: String!\n    password: String!\n    save: Boolean\n}\n\ninput UserUpdateIpt{\n    id: Int\n    name: String\n    password: String\n    email: String\n    roleId: Int\n    state: Int\n}\n\n# 用户列表\ntype UserList{\n    total: Int\n    list: [User]!\n}\n\n# https://github.com/haro00/egg-simple-blog-demo/blob/fc81f4309b2642f380b0153b0fea5d7b00b5dcdc/app/graphql/article/schema.graphql:\n# 文章\ntype Article {\n    id: Int\n    title: String\n    creator: String\n    creatorId: Int\n    content: String\n    editor: Int\n    intro: String\n    typeId: String\n    state: Int\n    views: Int\n    createTime: String\n    updateTime: String\n}\n\n# 添加/编辑文章参数\ninput ArticleUpdateIpt{\n    id: Int\n    title: String\n    creatorId: Int\n    content: String\n    editor: Int\n    intro: String\n    typeId: String\n    state: Int\n    createTime: String\n    updateTime: String\n}\n\n# 文章列表\ntype ArticleList{\n    total: Int\n    list: [Article]!\n}\n\n# 文章列表查询参数\ninput ArticleListIpt{\n    page: Int\n    pageSize: Int\n    search: String\n    state: Int\n    creatorId: Int\n    date: String\n    typeId: Int\n}\n\n# 文章归档日期列表\ntype ArticleDate {\n    date: String\n    total: Int\n}\n# https://github.com/haro00/egg-simple-blog-demo/blob/fc81f4309b2642f380b0153b0fea5d7b00b5dcdc/app/graphql/type/schema.graphql:\ntype Type {\n    id: Int\n    name: String\n    total: Int\n}\n\ntype TypeList{\n    total: Int\n    list: [Type]!\n}\n",
+        "mergedPaths": [
+          "app/graphql/user/schema.graphql",
+          "app/graphql/article/schema.graphql",
+          "app/graphql/type/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "UserList",
+          "Article",
+          "ArticleList",
+          "ArticleDate",
+          "TypeList"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 15
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/type/schema.graphql",
+      "sha": "4cce9f11456316d1a8f4d5ba161bd481e75621f6",
+      "url": "https://api.github.com/repositories/118737044/contents/app/graphql/type/schema.graphql?ref=fc81f4309b2642f380b0153b0fea5d7b00b5dcdc",
+      "git_url": "https://api.github.com/repositories/118737044/git/blobs/4cce9f11456316d1a8f4d5ba161bd481e75621f6",
+      "html_url": "https://github.com/haro00/egg-simple-blog-demo/blob/fc81f4309b2642f380b0153b0fea5d7b00b5dcdc/app/graphql/type/schema.graphql",
+      "content": "type Type {\n    id: Int\n    name: String\n    total: Int\n}\n\ntype TypeList{\n    total: Int\n    list: [Type]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/user/schema.graphql",
+      "sha": "f7e18dab8994c0d7485ffb63a2ebd861dbddac84",
+      "url": "https://api.github.com/repositories/118737044/contents/app/graphql/user/schema.graphql?ref=fc81f4309b2642f380b0153b0fea5d7b00b5dcdc",
+      "git_url": "https://api.github.com/repositories/118737044/git/blobs/f7e18dab8994c0d7485ffb63a2ebd861dbddac84",
+      "html_url": "https://github.com/haro00/egg-simple-blog-demo/blob/fc81f4309b2642f380b0153b0fea5d7b00b5dcdc/app/graphql/user/schema.graphql",
+      "content": "# 用户\ntype User {\n    id: Int!\n    name: String!\n    password: String\n    roleId: Int\n    email: String\n    state: Int\n    createTime: String,\n    token: String\n}\n\n# 用户登录参数\ninput UserLoginIpt{\n    name: String!\n    password: String!\n    save: Boolean\n}\n\ninput UserUpdateIpt{\n    id: Int\n    name: String\n    password: String\n    email: String\n    roleId: Int\n    state: Int\n}\n\n# 用户列表\ntype UserList{\n    total: Int\n    list: [User]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 4
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/article/schema.graphql",
+      "sha": "944bb99ad594133347bd293a02ade52b0fb0490e",
+      "url": "https://api.github.com/repositories/118737044/contents/app/graphql/article/schema.graphql?ref=fc81f4309b2642f380b0153b0fea5d7b00b5dcdc",
+      "git_url": "https://api.github.com/repositories/118737044/git/blobs/944bb99ad594133347bd293a02ade52b0fb0490e",
+      "html_url": "https://github.com/haro00/egg-simple-blog-demo/blob/fc81f4309b2642f380b0153b0fea5d7b00b5dcdc/app/graphql/article/schema.graphql",
+      "content": "# 文章\ntype Article {\n    id: Int\n    title: String\n    creator: String\n    creatorId: Int\n    content: String\n    editor: Int\n    intro: String\n    typeId: String\n    state: Int\n    views: Int\n    createTime: String\n    updateTime: String\n}\n\n# 添加/编辑文章参数\ninput ArticleUpdateIpt{\n    id: Int\n    title: String\n    creatorId: Int\n    content: String\n    editor: Int\n    intro: String\n    typeId: String\n    state: Int\n    createTime: String\n    updateTime: String\n}\n\n# 文章列表\ntype ArticleList{\n    total: Int\n    list: [Article]!\n}\n\n# 文章列表查询参数\ninput ArticleListIpt{\n    page: Int\n    pageSize: Int\n    search: String\n    state: Int\n    creatorId: Int\n    date: String\n    typeId: Int\n}\n\n# 文章归档日期列表\ntype ArticleDate {\n    date: String\n    total: Int\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-24T08:38:46Z",
+    "updated_at": "2018-08-28T12:52:11Z",
+    "pushed_at": "2018-01-25T03:10:34Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

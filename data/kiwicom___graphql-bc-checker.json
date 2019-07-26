@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql-bc-checker",
+  "repo_full_name": "kiwicom/graphql-bc-checker",
+  "repo_owner": "kiwicom",
+  "repo_description": ":vertical_traffic_light: Detect breaking changes in GraphQL schema with ability to log these changes.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "testSchemaSnapshot.graphql",
+      "path": "src/__tests__/testSchemaSnapshot.graphql",
+      "sha": "c9c2025fbe3e951db1a7424fafa88c885dc609c4",
+      "url": "https://api.github.com/repositories/180231498/contents/src/__tests__/testSchemaSnapshot.graphql?ref=e194eea02fee49eb3e89c4303677740cde34076c",
+      "git_url": "https://api.github.com/repositories/180231498/git/blobs/c9c2025fbe3e951db1a7424fafa88c885dc609c4",
+      "html_url": "https://github.com/kiwicom/graphql-bc-checker/blob/e194eea02fee49eb3e89c4303677740cde34076c/src/__tests__/testSchemaSnapshot.graphql",
+      "content": "# @generated SignedSource<<dccf304bbbd7b28234e3a47e4800f661>>\n\n# <BREAKING-CHANGES-LOG>\n# </BREAKING-CHANGES-LOG>\n\nschema {\n  query: RootQuery\n}\n\ntype RootQuery {\n  test: Test\n}\n\ntype Test {\n  id: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "testSchemaSnapshotPolluted.graphql",
+      "path": "src/__tests__/testSchemaSnapshotPolluted.graphql",
+      "sha": "4368bd6427a754c358ac6b4b2945f9f2b59df6aa",
+      "url": "https://api.github.com/repositories/180231498/contents/src/__tests__/testSchemaSnapshotPolluted.graphql?ref=e194eea02fee49eb3e89c4303677740cde34076c",
+      "git_url": "https://api.github.com/repositories/180231498/git/blobs/4368bd6427a754c358ac6b4b2945f9f2b59df6aa",
+      "html_url": "https://github.com/kiwicom/graphql-bc-checker/blob/e194eea02fee49eb3e89c4303677740cde34076c/src/__tests__/testSchemaSnapshotPolluted.graphql",
+      "content": "# @generated SignedSource<<dccf304bbbd7b28234e3a47e4800f661>>\n\n# This file was polluted with manual changes.\n# This file was polluted with manual changes.\n# This file was polluted with manual changes.\n\nschema {\n  query: RootQuery\n}\n\ntype RootQuery {\n  test: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-08T20:55:49Z",
+    "updated_at": "2019-07-16T18:01:57Z",
+    "pushed_at": "2019-07-16T18:01:55Z",
+    "issues": 0,
+    "watchers": 12,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

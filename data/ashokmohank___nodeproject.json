@@ -1,0 +1,42 @@
+{
+  "repo_name": "nodeproject",
+  "repo_full_name": "ashokmohank/nodeproject",
+  "repo_owner": "ashokmohank",
+  "repo_description": "Hybrid API framework with Graphql and REST",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "f71d5c8057bf0ed1ca0b23c9af198be2d265d6c0",
+      "url": "https://api.github.com/repositories/97294830/contents/data/schema.graphql?ref=084ae055f23018a038ddbaeecfda40379c544485",
+      "git_url": "https://api.github.com/repositories/97294830/git/blobs/f71d5c8057bf0ed1ca0b23c9af198be2d265d6c0",
+      "html_url": "https://github.com/ashokmohank/nodeproject/blob/084ae055f23018a038ddbaeecfda40379c544485/data/schema.graphql",
+      "content": "type accessToken implements Node {\n  # The ID of an object\n  id: ID!\n  userId: [User]\n  token: String\n  clientId: String\n  users(after: String, first: Int, before: String, last: Int, search: String): UserConnection\n}\n\ntype Mutation {\n  addUser(data: UserInputType!): Boolean\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  user(id: String): User\n  users(userId: String): [User]\n  test(userId: String): accessToken\n  tests(userId: String): [accessToken]\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  _id: String\n  hashedPassword: String\n  username: String\n}\n\n# A connection to a list of items.\ntype UserConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [UserEdge]\n  count: Int\n}\n\n# An edge in a connection.\ntype UserEdge {\n  # The item at the end of the edge\n  node: User\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput UserInputType {\n  _id: String\n  hashedPassword: String\n  username: String\n  salt: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-15T05:39:32Z",
+    "updated_at": "2018-07-03T05:40:13Z",
+    "pushed_at": "2018-07-03T05:40:11Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

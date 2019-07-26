@@ -1,0 +1,41 @@
+{
+  "repo_name": "answerfamily-api",
+  "repo_full_name": "answerfamily/answerfamily-api",
+  "repo_owner": "answerfamily",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "src/typeDefs.graphql",
+      "sha": "b51e54df324f35cba3f8da15286a997622305894",
+      "url": "https://api.github.com/repositories/155485380/contents/src/typeDefs.graphql?ref=ddb5630948200b4c4dd121c0310eea9febc4f5c3",
+      "git_url": "https://api.github.com/repositories/155485380/git/blobs/b51e54df324f35cba3f8da15286a997622305894",
+      "html_url": "https://github.com/answerfamily/answerfamily-api/blob/ddb5630948200b4c4dd121c0310eea9febc4f5c3/src/typeDefs.graphql",
+      "content": "type Query {\n  # List all articles that meet the filter\n  articles(\n    filter: TextSearchFilter\n    sort: [TextSearchSort]\n    first: Int\n    skip: Int\n  ): [Article]\n\n  # List all paragraphs that meet the filter\n  paragraphs(\n    filter: TextSearchFilter\n    sort: [TextSearchSort]\n    first: Int\n    skip: Int\n  ): [Paragraph]\n\n  # List all paragraphReplies\n  paragraphReplies(\n    first: Int\n    skip: Int\n  ): [ParagraphReply]\n\n  replies(\n    filter: TextSearchFilter\n    sort: [TextSearchSort]\n    first: Int\n    skip: Int\n  ): [Reply]\n\n  # Matches UrlFetchRecord in given text\n  hyperlinks(inText: String!): [UrlFetchRecord]\n\n  # Get single aritcle\n  article(id: String!): Article\n\n  # Get single paragraph\n  paragraph(id: String!): Paragraph\n\n  # Get single reply\n  reply(id: String!): Reply\n\n  # Get currently logged-in user. null if not logged in.\n  me: CurrentUser\n}\n\ntype Mutation {\n  createArticle(article: ArticleInput): Article\n  deleteArticle(articleId: String!): Boolean\n\n  addParagraphToArticle(articleId: String!, paragraph: ParagraphInput!): Article\n  addSourceToArticle(articleId: String!, source: ArticleSourceInput!): Article\n\n  # Deletes paragraph and all its paragraphReplies. Reply would remain.\n  deleteParagraph(paragraphId: String!): Article\n\n  deleteSource(sourceId: ObjectId!): Article\n\n  # Connects existing reply with a paragraph\n  connectReplyWithParagraph(replyId: String!, paragraphId: String!): Paragraph\n  disconnectReplyAndParagraph(replyId: String!, paragraphId: String!): Paragraph\n\n  addReplyToParagraph(paragraphId: String!, reply: ReplyInput!): Paragraph\n}\n\n\"\"\"\nActual article text being circulated.\nMay be LINE messages, text from flyers, etc.\n\"\"\"\ntype Article {\n  id: String\n  text: String\n  paragraphs: [Paragraph]\n  sources: [ArticleSource]\n  createdAt: String\n  user: User\n\n  # Extracts hyperlinks inside text and return the matching UrlFetchRecords\n  hyperlinks: [UrlFetchRecord]\n\n  # When used as search result, may contain this field that marks search hits in <HIGHLIGHT></HIGHLIGHT>\n  _highlight: String\n\n  # If the current user can delete this article\n  canDelete: Boolean\n}\n\ninput ArticleInput {\n  text: String!\n  paragraphs: [ParagraphInput]\n  sources: [ArticleSourceInput]\n}\n\n\"\"\"\nReplied paragraph from an article\n\"\"\"\ntype Paragraph {\n  id: String\n  text: String\n  createdAt: String\n  article: Article\n  paragraphReplies: [ParagraphReply]\n  user: User\n\n  # If the current user can delete this paragraph\n  canDelete: Boolean\n\n  # When used as search result, may contain this field that marks search hits in <HIGHLIGHT></HIGHLIGHT>\n  _highlight: String\n}\n\ninput ParagraphInput {\n  text: String!,\n\n  # Re-use existing replies\n  replyIds: [String]\n}\n\n\"\"\"\nConnection between paragraphs and replies.\nOne paragraph may have multiple replies, and a reply can be used in multiple paragraphs.\n\"\"\"\ntype ParagraphReply {\n  id: ObjectId\n  paragraph: Paragraph\n  reply: Reply\n  user: User\n  createdAt: String\n\n  # If the current user can delete this paragraphReply\n  canDelete: Boolean\n}\n\n\"\"\"\nReply to a paragraph\n\"\"\"\ntype Reply {\n  id: String\n  text: String\n  user: User\n\n  # author's note, for other editors to see\n  note: String\n\n  createdAt: String\n\n  paragraphReplies: [ParagraphReply]\n\n  # Extracts hyperlinks inside text and return the matching UrlFetchRecords\n  hyperlinks: [UrlFetchRecord]\n\n  # When used as search result, may contain this field that marks search hits in <HIGHLIGHT></HIGHLIGHT>\n  _highlight: String\n}\n\ninput ReplyInput {\n  text: String!\n  note: String\n}\n\n\"\"\"\nWhere the article is from\n\"\"\"\ntype ArticleSource {\n  id: ObjectId\n\n  article: Article\n\n  # author's note of this source for other editors, probably indicating how the article can be retrieved\n  note: String\n  url: String\n\n  # The person that reports such occurrence\n  user: User\n\n  canDelete: Boolean\n\n  createdAt: String\n\n  # UrlFetchRecord for the given url\n  hyperlink: UrlFetchRecord\n}\n\ninput ArticleSourceInput {\n  # author's note of this source for other editors, probably indicating how the article can be retrieved\n  note: String\n  url: String\n}\n\n\"\"\"\nUser object from Auth0 JWT\n\"\"\"\ntype CurrentUser {\n  # openid sub claim; user_id on auth0\n  id: String\n  picture: String\n  name: String\n  email: String\n}\n\n\"\"\"\nPublic user profile from auth0\n\"\"\"\ntype User {\n  # user in DB\n  id: String\n  picture: String\n  name: String\n}\n\ntype UrlFetchRecord {\n  url: String\n  canonical: String\n  title: String\n  summary: String\n  topImageUrl: String\n  error: String\n\n  # ArticleSource that has matching URL or canonical URLs\n  articleSources: [ArticleSource]\n}\n\ninput TextSearchFilter {\n  # matches only text that is inside the given text. more_like_this query is used behind the hood.\n  inText: String,\n\n  # If set to true and `inText` contains URLs, will fetch the content of URL and add to search\n  resolveUrlsInText: Boolean,\n\n  # matches only text that contains these terms\n  contain: String,\n\n  # If set to true, each search result would contain highlight results\n  includeHighlight: Boolean,\n}\n\n\"\"\"\nSort order for search results\n\"\"\"\nenum SortOrder {\n  DESC\n  ASC\n}\n\nenum TextSearchSortBy {\n  createdAt\n\n  # Search result relevance\n  _score\n}\n\ninput TextSearchSort {\n  by: TextSearchSortBy!\n  order: SortOrder\n}\n\n\"\"\"\nThis scalar uses MongoDB object ID on server side\nand coerce to string on client slide.\n\"\"\"\nscalar ObjectId\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": true,
+      "numDefinitions": 19
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-31T02:20:13Z",
+    "updated_at": "2019-03-09T06:16:50Z",
+    "pushed_at": "2019-03-09T06:16:48Z",
+    "issues": 3,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

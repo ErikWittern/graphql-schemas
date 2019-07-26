@@ -1,0 +1,42 @@
+{
+  "repo_name": "nestjs-talk",
+  "repo_full_name": "axaguildev/nestjs-talk",
+  "repo_owner": "AxaGuilDEv",
+  "repo_description": "NestJS 🚀",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "cfp.types.graphql",
+      "path": "demo/src/cfp/cfp.types.graphql",
+      "sha": "ad6ade5f02d7370c6bc2c16c8d9b864570e8b284",
+      "url": "https://api.github.com/repositories/145580335/contents/demo/src/cfp/cfp.types.graphql?ref=6bfb33075f0771db497c304ef95f46037b226e2c",
+      "git_url": "https://api.github.com/repositories/145580335/git/blobs/ad6ade5f02d7370c6bc2c16c8d9b864570e8b284",
+      "html_url": "https://github.com/AxaGuilDEv/nestjs-talk/blob/6bfb33075f0771db497c304ef95f46037b226e2c/demo/src/cfp/cfp.types.graphql",
+      "content": "type Query {\n  callForPapers: [CallForPaper]\n  callForPaperById(id: String!): CallForPaper\n}\n\ntype CallForPaper {\n  id: String\n  endDate: String\n  url: String\n  conference: Conference\n}\n\ntype Conference {\n  name: String\n  location: String\n  startDate: String\n  endDate: String\n  url: String\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-21T15:04:22Z",
+    "updated_at": "2019-03-15T07:53:27Z",
+    "pushed_at": "2018-11-26T13:23:18Z",
+    "issues": 25,
+    "watchers": 0,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

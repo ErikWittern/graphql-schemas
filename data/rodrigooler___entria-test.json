@@ -1,0 +1,39 @@
+{
+  "repo_name": "entria-test",
+  "repo_full_name": "rodrigooler/entria-test",
+  "repo_owner": "rodrigooler",
+  "repo_description": "Code Challenge Entria",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "109684514830543c4f4be8c6ffeb1444be41dda5",
+      "url": "https://api.github.com/repositories/80076498/contents/data/schema.graphql?ref=31b5c5c948309cace8ae0e2b6b758422cc589afe",
+      "git_url": "https://api.github.com/repositories/80076498/git/blobs/109684514830543c4f4be8c6ffeb1444be41dda5",
+      "html_url": "https://github.com/rodrigooler/entria-test/blob/31b5c5c948309cace8ae0e2b6b758422cc589afe/data/schema.graphql",
+      "content": "input ChangePasswordInput {\n  oldPassword: String!\n\n  # user new password\n  password: String!\n  clientMutationId: String\n}\n\ntype ChangePasswordPayload {\n  error: String\n  me: Me\n  clientMutationId: String\n}\n\ninput LoginEmailInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype LoginEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\n# Object with data related and only available to the logged user\ntype Me implements Node {\n  # The ID of an object\n  id: ID!\n  _id: String\n  name: String\n  email: String\n  active: Boolean\n}\n\ntype Mutation {\n  LoginEmail(input: LoginEmailInput!): LoginEmailPayload\n  RegisterEmail(input: RegisterEmailInput!): RegisterEmailPayload\n  ChangePassword(input: ChangePasswordInput!): ChangePasswordPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# The root of all... queries\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: Viewer\n}\n\ninput RegisterEmailInput {\n  name: String!\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype RegisterEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\n# User data\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  _id: String\n  name: String\n  email: String\n  active: Boolean\n}\n\n# A connection to a list of items.\ntype UserConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [UserEdge]\n  count: Int\n}\n\n# An edge in a connection.\ntype UserEdge {\n  # The item at the end of the edge\n  node: User\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# ...\ntype Viewer implements Node {\n  # The ID of an object\n  id: ID!\n  me: Me\n  user(id: ID!): User\n  users(after: String, first: Int, before: String, last: Int, search: String): UserConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-26T01:39:49Z",
+    "updated_at": "2017-01-28T13:33:07Z",
+    "pushed_at": "2017-01-28T04:58:43Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

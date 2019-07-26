@@ -1,0 +1,45 @@
+{
+  "repo_name": "phs-graphql",
+  "repo_full_name": "yun-mu/phs-graphql",
+  "repo_owner": "yun-mu",
+  "repo_description": "写了吗小程序后台graphql版",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "dc5f7dca860a506f4dd1a4e740f8dc853463d340",
+      "url": "https://api.github.com/repositories/163145102/contents/schema.graphql?ref=89022b1372fa3b3dd742133687802d95a12aa867",
+      "git_url": "https://api.github.com/repositories/163145102/git/blobs/dc5f7dca860a506f4dd1a4e740f8dc853463d340",
+      "html_url": "https://github.com/yun-mu/phs-graphql/blob/89022b1372fa3b3dd742133687802d95a12aa867/schema.graphql",
+      "content": "schema {\n  query: query\n  mutation: mutation\n}\r\n\n# 获取类型\r\nenum getNoticesEnum {\n  # 获取全部\r\n  GetAll @deprecated\n  # 按照圈子获取提醒\r\n  GetByGroupCode @deprecated\n}\r\n\n# group\r\ntype group {\n  # 用户头像\r\n  avatarUrl: String @deprecated\n  # 圈子code -> 邀请码, unique\r\n  code: ID @deprecated\n  # 创建时间毫秒时间戳\r\n  createTime: Int @deprecated\n  # id\r\n  id: ID @deprecated\n  # 管理员\r\n  managers: [user] @deprecated\n  # 成员\r\n  members: [user] @deprecated\n  # 昵称\r\n  nickname: String @deprecated\n  # 创建者信息\r\n  owner: user @deprecated\n  # 总人数：1 + 管理员人数 + 成员人数\r\n  personNum: Int @deprecated\n  # 状态\r\n  status: groupStatusEnum @deprecated\n  # 二维码\r\n  ticket: ticket @deprecated\n  # 用户的状态\r\n  userStatus: groupUserStatusEnum @deprecated\n}\r\n\n# 圈子状态\r\nenum groupStatusEnum {\n  # 正常状态\r\n  common @deprecated\n  # 解散状态\r\n  delete @deprecated\n}\r\n\n# 圈子状态\r\nenum groupUserStatusEnum {\n  # 创建者状态\r\n  owner @deprecated\n  # 管理员状态\r\n  manager @deprecated\n  # 成员状态\r\n  member @deprecated\n}\r\n\n# img\r\ntype img {\n  # microUrl\r\n  microUrl: String @deprecated\n  # url\r\n  url: String @deprecated\n}\r\n\n# imgArgs\r\ninput imgArgs {\n  # url\r\n  url: String\n  # microUrl\r\n  microUrl: String\n}\r\n\ntype mutation {\n  # 创建反馈\r\n  createFeedback(\n    # 内容\r\n    content: String\n    # 图片\r\n    imgs: [imgArgs]\n    # 联系方式\r\n    contactWay: String\n  ): Boolean @deprecated\n  # 创建群组\r\n  createGroup(\n    # 昵称\r\n    nickname: String!\n    # 圈子头像\r\n    avatarUrl: String = \"http://<image hostname>/mp/head/logo1_%E6%96%B9.png\"\n  ): group @deprecated\n  # 创建提醒\r\n  createNotices(\n    # 提醒\r\n    notices: [noticeArgs]\n  ): Boolean @deprecated\n  # 删除提醒\r\n  deleteNotice(\n    # id\r\n    id: ID\n  ): Boolean @deprecated\n  # 判断健康情况\r\n  health: String @deprecated\n  # 加入群组\r\n  joinGroup(\n    # 圈子code\r\n    code: String!\n  ): Boolean @deprecated\n  # 离开群组\r\n  leaveGroup(\n    # 圈子code\r\n    code: String!\n  ): Boolean @deprecated\n  # 更新群组成员, 按照权限限制: 创建者 > 管理员 > 成员, 如：管理员可以删除成员\r\n  updateGroupMembers(\n    # 群组id\r\n    groupID: String\n    #  用户unionid数组, type=1时 数组长度为1, type=2时 数组长度为0\r\n    userIDs: [String]\n    # 更新类型\r\n    type: updateGroupMembersEnum!\n  ): Boolean @deprecated\n  # 更新提醒\r\n  updateNotice(\n    # 更新类型\r\n    type: updateNoticeEnum!\n    # 群组id\r\n    groupID: String\n    # 作业标题\r\n    title: String\n    # 作业文字内容\r\n    content: String\n    # 图片\r\n    imgs: [imgArgs]\n    # 注释\r\n    note: String\n    # 提醒时间毫秒时间戳\r\n    noticeTime: Int\n    # id\r\n    id: ID\n  ): Boolean @deprecated\n}\r\n\n# 通知\r\ntype notice {\n  # 内容\r\n  content: String @deprecated\n  # 创建时间毫秒时间戳\r\n  createTime: Int @deprecated\n  # 创建者 unionid\r\n  creatorID: ID @deprecated\n  # 群组 _id\r\n  groupID: ID @deprecated\n  # 群组信息\r\n  groupInfo: group @deprecated\n  # id\r\n  id: ID @deprecated\n  # 图片\r\n  imgs: [img] @deprecated\n  # 点赞人数\r\n  likeNum: Int @deprecated\n  # 备注\r\n  note: String @deprecated\n  # 提醒时间毫秒时间戳\r\n  noticeTime: Int @deprecated\n  #  状态\r\n  status: noticeStatusEnum @deprecated\n  # 标题\r\n  title: String @deprecated\n  # 类型：1表示前一天发送通知，2表示前两天发送通知\r\n  type: Int @deprecated\n  # 查看人数\r\n  watchNum: Int @deprecated\n}\r\n\n# noticeArgs\r\ninput noticeArgs {\n  # 作业标题\r\n  title: String\n  # 作业文字内容\r\n  content: String\n  # 图片\r\n  imgs: [imgArgs]\n  # 注释\r\n  note: String\n  # 提醒时间毫秒时间戳\r\n  noticeTime: Int\n  # id\r\n  id: ID\n  # 更新类型\r\n  type: updateNoticeEnum\n  # 群组id\r\n  groupID: String\n}\r\n\n# 通知状态\r\nenum noticeStatusEnum {\n  # 过期状态\r\n  expire @deprecated\n  # 发布状态\r\n  publish @deprecated\n  # 删除状态\r\n  delete @deprecated\n}\r\n\n# qiniuToken\r\ntype qiniuToken {\n  # img\r\n  img: img! @deprecated\n  # key\r\n  key: String! @deprecated\n  # uploadToken\r\n  uploadToken: String! @deprecated\n}\r\n\n# 七牛Token类型\r\nenum qiniuTokenTypeEnum {\n  # 作业图片\r\n  homework @deprecated\n  # 头像\r\n  head @deprecated\n  # 反馈图片\r\n  feedback @deprecated\n}\r\n\ntype query {\n  # 获取圈子信息\r\n  group(\n    # 圈子code\r\n    code: String!\n  ): group @deprecated\n  # 判断健康情况\r\n  health: String @deprecated\n  # 获取通知信息\r\n  notice(\n    # id\r\n    id: ID\n  ): notice @deprecated\n  # 获取通知列表\r\n  notices(\n    # 圈子code\r\n    code: String\n    # 页数, 从1开始\r\n    page: Int!\n    # 一页数量，限制范围: 1~20\r\n    perPage: Int!\n    # 类型\r\n    type: getNoticesEnum!\n  ): [notice] @deprecated\n  # 获取上传图片的七牛云upload-token 链接：https://developer.qiniu.com/kodo/manual/1208/upload-token\r\n  qiniuToken(\n    # 类型\r\n    type: qiniuTokenTypeEnum!\n    # 后缀，如：.jpg\r\n    suffix: String = \".jpg\"\n  ): qiniuToken @deprecated\n  # 获取模板信息\r\n  template(\n    # id\r\n    id: ID\n  ): template @deprecated\n  # 获取用户信息\r\n  user(\n    # 用户id，即unionid\r\n    userID: ID\n  ): user @deprecated\n}\r\n\n# 模板\r\ntype template {\n  # 创建时间毫秒时间戳\r\n  createTime: Int @deprecated\n  # 创建者 unionid\r\n  creatorID: ID @deprecated\n  # id\r\n  id: ID @deprecated\n  # 模板内容\r\n  notices: [String] @deprecated\n  # 状态\r\n  status: Int @deprecated\n  # 类型\r\n  type: Int @deprecated\n}\r\n\n# 二维码\r\ntype ticket {\n  # 二维码图片链接\r\n  ticketUrl: String @deprecated\n  # 二维码图片解析后的地址，开发者可根据该地址自行生成需要的二维码图片\r\n  url: String @deprecated\n}\r\n\n# 更新类型\r\nenum updateGroupMembersEnum {\n  # 更新拥有者(转让群组，且只能转给管理员)\r\n  UpdateOwner @deprecated\n  # 删除拥有者，即解散群组\r\n  DelOwner @deprecated\n  # 设置管理者\r\n  SetManager @deprecated\n  # 取消管理员权限\r\n  UnSetManager @deprecated\n  # 删除管理员\r\n  DelManager @deprecated\n  # 删除成员\r\n  DelMember @deprecated\n}\r\n\n# 更新类型\r\nenum updateNoticeEnum {\n  # 更新content\r\n  UpdateContent @deprecated\n  # 更新imgs\r\n  UpdateImgs @deprecated\n  # 更新标题\r\n  UpdateTitle @deprecated\n  # 更新note\r\n  UpdateNote @deprecated\n  # 更新noticeTime\r\n  UpdateNoticeTime @deprecated\n  # 更新groupID\r\n  UpdateGroupID @deprecated\n  # 大更新(空值自动过滤，更新不包含groupID)\r\n  Update @deprecated\n}\r\n\n# user\r\ntype user {\n  # 用户头像\r\n  avatarUrl: String @deprecated\n  # 城市\r\n  city: String @deprecated\n  # 国家\r\n  country: String @deprecated\n  # 性别 0：未知、1：男、2：女\r\n  gender: Int @deprecated\n  # id\r\n  id: ID @deprecated\n  # 是否关注了服务号\r\n  isFollow: Boolean @deprecated\n  # 加入的群组\r\n  joinGroups: [group] @deprecated\n  # 语言\r\n  language: String @deprecated\n  # 管理的群组\r\n  manageGroups: [group] @deprecated\n  # 昵称\r\n  nickname: String @deprecated\n  # openid\r\n  openid: ID @deprecated\n  # 创建/拥有的群组\r\n  ownGroups: [group] @deprecated\n  # 省份\r\n  province: String @deprecated\n  # 状态\r\n  status: userStatusEnum @deprecated\n  # unionid\r\n  unionid: ID @deprecated\n}\r\n\n# 用户状态\r\nenum userStatusEnum {\n  # 被删除\r\n  delete @deprecated\n  # 没有关注公众号\r\n  unFollow @deprecated\n  # 已经关注公众号的普通用户\r\n  follow @deprecated\n}\r\n\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-26T06:33:02Z",
+    "updated_at": "2019-03-31T10:03:49Z",
+    "pushed_at": "2019-01-08T08:28:52Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

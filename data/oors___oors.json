@@ -1,0 +1,42 @@
+{
+  "repo_name": "oors",
+  "repo_full_name": "oors/oors",
+  "repo_owner": "oors",
+  "repo_description": "Modular node.js framework for makers.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "packages/oors-graphql/src/graphql/typeDefs.graphql",
+      "sha": "fa987f5fdb93ef56fb36484ed2782df68add3188",
+      "url": "https://api.github.com/repositories/106275516/contents/packages/oors-graphql/src/graphql/typeDefs.graphql?ref=75f6ff3952ce0aaee2eddc15acdd759825b20a82",
+      "git_url": "https://api.github.com/repositories/106275516/git/blobs/fa987f5fdb93ef56fb36484ed2782df68add3188",
+      "html_url": "https://github.com/oors/oors/blob/75f6ff3952ce0aaee2eddc15acdd759825b20a82/packages/oors-graphql/src/graphql/typeDefs.graphql",
+      "content": "directive @cacheControl(\n  maxAge: Int\n  scope: CacheControlScope\n) on FIELD_DEFINITION | OBJECT | INTERFACE\n\ndirective @cost(\n  complexity: Int\n  useMultipliers: Boolean\n  multipliers: [String]\n) on FIELD_DEFINITION | OBJECT | INTERFACE\n\ndirective @constraint(\n  # String constraints\n  minLength: Int\n  maxLength: Int\n  startsWith: String\n  endsWith: String\n  notContains: String\n  pattern: String\n  format: String\n\n  # Number constraints\n  min: Int\n  max: Int\n  exclusiveMin: Int\n  exclusiveMax: Int\n  multipleOf: Int\n) on INPUT_FIELD_DEFINITION\n\nscalar ConstraintString\n\nscalar ConstraintNumber\n\ntype Query {\n  hello: String\n}\n\ntype Mutation {\n  ping: String\n}\n\nscalar DateTime\n\nscalar Date\n\nscalar JSON\n\nscalar Upload\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\nenum CacheControlScope {\n  PUBLIC\n  PRIVATE\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-09T11:34:51Z",
+    "updated_at": "2019-07-19T15:06:40Z",
+    "pushed_at": "2019-07-19T15:06:38Z",
+    "issues": 70,
+    "watchers": 2,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 15
+  }
+}

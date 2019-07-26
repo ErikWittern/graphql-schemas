@@ -1,0 +1,63 @@
+{
+  "repo_name": "full-stack-graphql-LvlUpTuts",
+  "repo_full_name": "zac-l/full-stack-graphql-lvluptuts",
+  "repo_owner": "Zac-L",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Resolutions.graphql",
+      "path": "apollo/imports/api/resolutions/Resolutions.graphql",
+      "sha": "f2dd85e86e633b2d04ac73a4d28b6e3c02dfcae5",
+      "url": "https://api.github.com/repositories/124700870/contents/apollo/imports/api/resolutions/Resolutions.graphql?ref=fc5b629db38bd07527284d71ce0d353018f98855",
+      "git_url": "https://api.github.com/repositories/124700870/git/blobs/f2dd85e86e633b2d04ac73a4d28b6e3c02dfcae5",
+      "html_url": "https://github.com/Zac-L/full-stack-graphql-LvlUpTuts/blob/fc5b629db38bd07527284d71ce0d353018f98855/apollo/imports/api/resolutions/Resolutions.graphql",
+      "content": "\ntype Resolution {\n  _id: String!\n  name: String!\n  goals: [Goal]\n  completed: Boolean\n}\n\ntype Query {\n  resolutions: [Resolution]\n}\n\ntype Mutation{\n  createResolution(name: String!): Resolution\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Zac-L/full-stack-graphql-LvlUpTuts/blob/fc5b629db38bd07527284d71ce0d353018f98855/apollo/imports/api/resolutions/Resolutions.graphql:\n\ntype Resolution {\n  _id: String!\n  name: String!\n  goals: [Goal]\n  completed: Boolean\n}\n\ntype Query {\n  resolutions: [Resolution]\n}\n\ntype Mutation{\n  createResolution(name: String!): Resolution\n}\n# https://github.com/Zac-L/full-stack-graphql-LvlUpTuts/blob/fc5b629db38bd07527284d71ce0d353018f98855/apollo/imports/api/goals/Goal.graphql:\n\ntype Goal {\n  _id: String\n  name: String\n  completed: Boolean\n}\n\nextend type Mutation{\n  createGoal(name: String!, resolutionId: String!): Goal\n  toggleGoal(_id: String!): Goal\n}",
+        "mergedPaths": [
+          "apollo/imports/api/goals/Goal.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Goal"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Goal.graphql",
+      "path": "apollo/imports/api/goals/Goal.graphql",
+      "sha": "02ca58dcc098c750ab5c932f8892834b40264ae6",
+      "url": "https://api.github.com/repositories/124700870/contents/apollo/imports/api/goals/Goal.graphql?ref=fc5b629db38bd07527284d71ce0d353018f98855",
+      "git_url": "https://api.github.com/repositories/124700870/git/blobs/02ca58dcc098c750ab5c932f8892834b40264ae6",
+      "html_url": "https://github.com/Zac-L/full-stack-graphql-LvlUpTuts/blob/fc5b629db38bd07527284d71ce0d353018f98855/apollo/imports/api/goals/Goal.graphql",
+      "content": "\ntype Goal {\n  _id: String\n  name: String\n  completed: Boolean\n}\n\nextend type Mutation{\n  createGoal(name: String!, resolutionId: String!): Goal\n  toggleGoal(_id: String!): Goal\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-10T21:42:47Z",
+    "updated_at": "2018-04-15T11:23:32Z",
+    "pushed_at": "2018-04-15T11:23:30Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

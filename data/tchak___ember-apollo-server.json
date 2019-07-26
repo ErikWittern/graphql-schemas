@@ -1,0 +1,39 @@
+{
+  "repo_name": "ember-apollo-server",
+  "repo_full_name": "tchak/ember-apollo-server",
+  "repo_owner": "tchak",
+  "repo_description": "Apollo Server inside Ember CLI",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.gql",
+      "path": "blueprints/ember-apollo-server/files/__root__/types/Query.gql",
+      "sha": "6ae991f681b7e854d8cf4844bf9a3af8382a6f05",
+      "url": "https://api.github.com/repositories/134952341/contents/blueprints/ember-apollo-server/files/__root__/types/Query.gql?ref=53e23d44e9a22de881271aa7b1be48d129f62f36",
+      "git_url": "https://api.github.com/repositories/134952341/git/blobs/6ae991f681b7e854d8cf4844bf9a3af8382a6f05",
+      "html_url": "https://github.com/tchak/ember-apollo-server/blob/53e23d44e9a22de881271aa7b1be48d129f62f36/blueprints/ember-apollo-server/files/__root__/types/Query.gql",
+      "content": "type Query {\n  hello: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-26T10:37:02Z",
+    "updated_at": "2018-09-04T14:28:40Z",
+    "pushed_at": "2018-07-01T15:00:58Z",
+    "issues": 5,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 7
+  }
+}

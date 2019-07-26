@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-relay",
+  "repo_full_name": "benfarhat/graphql-relay",
+  "repo_owner": "Benfarhat",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "646e0bba5918ad71c110d803857de5be3caef208",
+      "url": "https://api.github.com/repositories/121718511/contents/data/schema.graphql?ref=05d4ea9ccfd8e09c8cef8e46717a7671bc4dc69c",
+      "git_url": "https://api.github.com/repositories/121718511/git/blobs/646e0bba5918ad71c110d803857de5be3caef208",
+      "html_url": "https://github.com/Benfarhat/graphql-relay/blob/05d4ea9ccfd8e09c8cef8e46717a7671bc4dc69c/data/schema.graphql",
+      "content": "type Friend {\n  # The ID of an object\n  id: ID!\n  firstName: String\n  lastName: String\n  gender: String\n  language: String\n  email: String\n  image: String\n}\n\n# A connection to a list of items.\ntype FriendConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [FriendEdge]\n}\n\n# An edge in a connection.\ntype FriendEdge {\n  # The item at the end of the edge\n  node: Friend\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: User\n}\n\ntype User {\n  # The ID of an object\n  id: ID!\n  friends(after: String, first: Int, before: String, last: Int): FriendConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-16T05:37:53Z",
+    "updated_at": "2018-02-16T06:36:43Z",
+    "pushed_at": "2018-02-17T02:17:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

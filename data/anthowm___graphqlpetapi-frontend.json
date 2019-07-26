@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphqlpetapi-frontend",
+  "repo_full_name": "anthowm/graphqlpetapi-frontend",
+  "repo_owner": "anthowm",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "c1d986c11da2866128bfefa6cfb7f34ad0210ef2",
+      "url": "https://api.github.com/repositories/172065391/contents/schema.graphql?ref=412d2acf8733b2a884665d088eb5a6bda6b7b13f",
+      "git_url": "https://api.github.com/repositories/172065391/git/blobs/c1d986c11da2866128bfefa6cfb7f34ad0210ef2",
+      "html_url": "https://github.com/anthowm/graphqlpetapi-frontend/blob/412d2acf8733b2a884665d088eb5a6bda6b7b13f/schema.graphql",
+      "content": "type Query {\n        login(email: String!, password: String!): AuthData!\n        user: User!\n        pets(page: Int, name: String, type: String): PetData!\n        pet(id: ID!): Pet!\n}\n\ntype Mutation {\n        createUser(userInput: UserInputData): User!\n        deletePet(id: ID!): Boolean\n}\n\ntype User {\n        id: ID!\n        name: String!\n        email: String!\n        password: String!\n        status: String!\n        pets: [Pet!]!\n}\n\ntype AuthData {\n        token: String!\n        userId: String!\n}\n\ninput UserInputData {\n        email: String!\n        name: String!\n        password: String!\n}\n\ntype Pet {\n        id: ID!\n        name: String!\n        type: String!\n        imageUrls: [File!]!\n        creator: UserPet!\n        createdAt: String!\n        updatedAt: String!\n}\n\ntype PetData {\n        pets: [Pet!]!\n        totalPets: Int!\n        filterData: FilterDataPet!\n}\n\ntype File {\n        id: String!\n        path: String!\n        filename: String!\n        mimetype: String!\n}\n\ntype UserPet {\n        id: ID!\n        name: String!\n        email: String!\n        pets: [Pet!]!\n}\n\ntype FilterDataPet {\n        isFilterData: Boolean!\n        currentPage: Int!\n        queryParams: QueryParamsPet\n}\n\ntype QueryParamsPet {\n        name: String\n        type: String\n}\n\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-22T12:48:48Z",
+    "updated_at": "2019-02-27T11:26:10Z",
+    "pushed_at": "2019-02-27T11:26:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "repo_name": "wsurvey-server",
+  "repo_full_name": "walmor/wsurvey-server",
+  "repo_owner": "walmor",
+  "repo_description": "The backend of a survey app built with Node.js, GraphQL and MongoDB.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.graphql",
+      "path": "src/graphql/type-defs/root.graphql",
+      "sha": "a0af4a508aed087281188feeffdf6299ac89c7b1",
+      "url": "https://api.github.com/repositories/123005825/contents/src/graphql/type-defs/root.graphql?ref=6d04585cf212d081660665a49a6fcb0852b4fe24",
+      "git_url": "https://api.github.com/repositories/123005825/git/blobs/a0af4a508aed087281188feeffdf6299ac89c7b1",
+      "html_url": "https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/root.graphql",
+      "content": "scalar JSON\n\nscalar DateTime\n\ntype Query {\n  viewer: User\n  isEmailAvailable(email: String!): Boolean\n  form(formId: ID!): Form\n  forms(input: SearchFormInput!): FormConnection\n}\n\ntype Mutation {\n  signup(name: String!, email: String!, password: String!): String\n  signin(email: String!, password: String!): String\n  signinWithFacebook(accessToken: String!): String\n  signinWithGoogle(idToken: String!): String\n  createForm(form: FormInput!): Form\n  updateForm(form: FormInput!): Form\n  deleteForm(formId: ID!): DeleteFormPayload\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/root.graphql:\nscalar JSON\n\nscalar DateTime\n\ntype Query {\n  viewer: User\n  isEmailAvailable(email: String!): Boolean\n  form(formId: ID!): Form\n  forms(input: SearchFormInput!): FormConnection\n}\n\ntype Mutation {\n  signup(name: String!, email: String!, password: String!): String\n  signin(email: String!, password: String!): String\n  signinWithFacebook(accessToken: String!): String\n  signinWithGoogle(idToken: String!): String\n  createForm(form: FormInput!): Form\n  updateForm(form: FormInput!): Form\n  deleteForm(formId: ID!): DeleteFormPayload\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n\n# https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/user.graphql:\ntype User {\n  id: String\n  name: String\n  email: String\n}\n\n# https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/form.graphql:\ntype Form {\n  id: ID!\n  title: String!\n  description: String\n  enabled: Boolean\n  createdAt: DateTime\n  questions: [Question]\n}\n\ninput FormInput {\n  id: ID\n  title: String!\n  description: String\n  enabled: Boolean\n  questions: [QuestionInput]\n}\n\n# https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/forms.graphql:\ntype FormConnection {\n  totalCount: Int!\n  nodes: [Form]\n}\n\ninput SearchFormInput {\n  page: Int!\n  pageSize: Int!\n  search: String\n}\n\ntype DeleteFormPayload {\n  formId: ID\n  success: Boolean\n}\n\n# https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/question.graphql:\ntype Question {\n  id: ID!\n  kind: String!\n  title: String!\n  description: String\n  required: Boolean\n  options: JSON\n}\n\ninput QuestionInput {\n  id: ID\n  kind: String!\n  title: String!\n  description: String\n  required: Boolean\n  options: JSON\n}\n",
+        "mergedPaths": [
+          "src/graphql/type-defs/user.graphql",
+          "src/graphql/type-defs/form.graphql",
+          "src/graphql/type-defs/forms.graphql",
+          "src/graphql/type-defs/question.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Form",
+          "FormConnection",
+          "DeleteFormPayload",
+          "Question",
+          "QuestionInput"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 7,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 13
+      },
+      "validSchema": false
+    },
+    {
+      "name": "forms.graphql",
+      "path": "src/graphql/type-defs/forms.graphql",
+      "sha": "f0a50ba221ce72ed7ac6fe90b8350043a1cd0a3a",
+      "url": "https://api.github.com/repositories/123005825/contents/src/graphql/type-defs/forms.graphql?ref=6d04585cf212d081660665a49a6fcb0852b4fe24",
+      "git_url": "https://api.github.com/repositories/123005825/git/blobs/f0a50ba221ce72ed7ac6fe90b8350043a1cd0a3a",
+      "html_url": "https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/forms.graphql",
+      "content": "type FormConnection {\n  totalCount: Int!\n  nodes: [Form]\n}\n\ninput SearchFormInput {\n  page: Int!\n  pageSize: Int!\n  search: String\n}\n\ntype DeleteFormPayload {\n  formId: ID\n  success: Boolean\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 3
+    },
+    {
+      "name": "form.graphql",
+      "path": "src/graphql/type-defs/form.graphql",
+      "sha": "951b507b10495558f7eb44f222f85a482e9a3782",
+      "url": "https://api.github.com/repositories/123005825/contents/src/graphql/type-defs/form.graphql?ref=6d04585cf212d081660665a49a6fcb0852b4fe24",
+      "git_url": "https://api.github.com/repositories/123005825/git/blobs/951b507b10495558f7eb44f222f85a482e9a3782",
+      "html_url": "https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/form.graphql",
+      "content": "type Form {\n  id: ID!\n  title: String!\n  description: String\n  enabled: Boolean\n  createdAt: DateTime\n  questions: [Question]\n}\n\ninput FormInput {\n  id: ID\n  title: String!\n  description: String\n  enabled: Boolean\n  questions: [QuestionInput]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "question.graphql",
+      "path": "src/graphql/type-defs/question.graphql",
+      "sha": "f7d30d51bacc4bdefc5f64d52b430e35b42731c5",
+      "url": "https://api.github.com/repositories/123005825/contents/src/graphql/type-defs/question.graphql?ref=6d04585cf212d081660665a49a6fcb0852b4fe24",
+      "git_url": "https://api.github.com/repositories/123005825/git/blobs/f7d30d51bacc4bdefc5f64d52b430e35b42731c5",
+      "html_url": "https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/question.graphql",
+      "content": "type Question {\n  id: ID!\n  kind: String!\n  title: String!\n  description: String\n  required: Boolean\n  options: JSON\n}\n\ninput QuestionInput {\n  id: ID\n  kind: String!\n  title: String!\n  description: String\n  required: Boolean\n  options: JSON\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/graphql/type-defs/user.graphql",
+      "sha": "650cc3f2191f5ffea8c0f4682c3226f6112f5f0c",
+      "url": "https://api.github.com/repositories/123005825/contents/src/graphql/type-defs/user.graphql?ref=6d04585cf212d081660665a49a6fcb0852b4fe24",
+      "git_url": "https://api.github.com/repositories/123005825/git/blobs/650cc3f2191f5ffea8c0f4682c3226f6112f5f0c",
+      "html_url": "https://github.com/walmor/wsurvey-server/blob/6d04585cf212d081660665a49a6fcb0852b4fe24/src/graphql/type-defs/user.graphql",
+      "content": "type User {\n  id: String\n  name: String\n  email: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-26T17:44:00Z",
+    "updated_at": "2019-04-25T12:48:38Z",
+    "pushed_at": "2019-04-25T12:48:36Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

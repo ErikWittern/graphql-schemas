@@ -1,0 +1,41 @@
+{
+  "repo_name": "vimes",
+  "repo_full_name": "dogpawhat/vimes",
+  "repo_owner": "DogPawHat",
+  "repo_description": "Learning project for React, GraphQL, Apollo, Serverless and Auth",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/backend/src/api/schema.graphql",
+      "sha": "9dbb407ad597f04ac42f105405d096322fa9f2d8",
+      "url": "https://api.github.com/repositories/122331986/contents/packages/backend/src/api/schema.graphql?ref=66ef3ac8499ee9ff3d9537fda6f36c17e5b761e5",
+      "git_url": "https://api.github.com/repositories/122331986/git/blobs/9dbb407ad597f04ac42f105405d096322fa9f2d8",
+      "html_url": "https://github.com/DogPawHat/vimes/blob/66ef3ac8499ee9ff3d9537fda6f36c17e5b761e5/packages/backend/src/api/schema.graphql",
+      "content": "type Post {\n  id: Int!\n  author: User\n  title: String\n}\n\ntype User {\n  id: String!\n  firstName: String\n  lastName: String\n  posts: [Post]\n}\n\ntype Query {\n  user(id: String!): User\n}\n\nschema {\n  query: Query\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-21T12:12:36Z",
+    "updated_at": "2018-02-21T12:41:38Z",
+    "pushed_at": "2018-03-03T22:48:04Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

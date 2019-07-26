@@ -1,0 +1,42 @@
+{
+  "repo_name": "race-manager",
+  "repo_full_name": "mattpocock/race-manager",
+  "repo_owner": "mattpocock",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "serverSchema.graphql",
+      "path": "serverSchema.graphql",
+      "sha": "2916d38eb871e0dd9cf08f136e86993af9b7bf50",
+      "url": "https://api.github.com/repositories/163454478/contents/serverSchema.graphql?ref=d7e6d26cc596c0a213d505a8744ae61882276591",
+      "git_url": "https://api.github.com/repositories/163454478/git/blobs/2916d38eb871e0dd9cf08f136e86993af9b7bf50",
+      "html_url": "https://github.com/mattpocock/race-manager/blob/d7e6d26cc596c0a213d505a8744ae61882276591/serverSchema.graphql",
+      "content": "# source: http://localhost:4001/graphql\n# timestamp: Fri Dec 28 2018 22:14:24 GMT+0000 (Greenwich Mean Time)\n\ndirective @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE\n\nenum CacheControlScope {\n  PUBLIC\n  PRIVATE\n}\n\ntype Lap {\n  _id: ID!\n  number: Int!\n  time: Int!\n}\n\ntype Mutation {\n  addRacer(raceId: ID!, sailNumber: String!): Racer!\n  deleteRacer(raceId: ID!, racerId: ID!): Boolean\n  updateRacer(id: ID!, sailNumber: String!): Racer!\n  addRace: Race!\n  updateRace(id: ID!, startTime: Int, currentTime: Int): Race!\n  deleteAllRacers: Boolean\n  deleteAllRaces: Boolean\n  addLap(racerId: ID!, time: Int!, number: Int!): Lap!\n  removeLap(racerId: ID!, lapId: ID!): String!\n  undoLap(racerId: ID!): Racer!\n}\n\ntype Query {\n  raceById(id: ID!): Race!\n  racerById(id: ID!): Racer!\n  allRacers: [Racer]!\n  allRaces: [Race]!\n  mostRecentRace: Race!\n}\n\ntype Race {\n  _id: ID!\n  racerIds: [ID]!\n  racers: [Racer]!\n  startTime: Int\n  currentTime: Int\n  timeAdded: Float!\n}\n\ntype Racer {\n  _id: ID!\n  sailNumber: String!\n  lapIds: [ID]!\n  laps: [Lap]!\n  mostRecentLap: RecentLap!\n}\n\ntype RecentLap {\n  number: Int!\n  time: Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-28T22:27:55Z",
+    "updated_at": "2018-12-29T10:12:32Z",
+    "pushed_at": "2018-12-29T10:12:31Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

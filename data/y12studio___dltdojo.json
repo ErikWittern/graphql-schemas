@@ -1,0 +1,39 @@
+{
+  "repo_name": "dltdojo",
+  "repo_full_name": "y12studio/dltdojo",
+  "repo_owner": "y12studio",
+  "repo_description": "DLTDOJO Distributed Ledger Technology Dojo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "apps/ng2bitcoin/src/app/schema.graphql",
+      "sha": "167cd7d794f311ae38ea60f85369456c934e7cd5",
+      "url": "https://api.github.com/repositories/78068555/contents/apps/ng2bitcoin/src/app/schema.graphql?ref=d01d437005b131c7badb880c9d4ffaf282a30a0d",
+      "git_url": "https://api.github.com/repositories/78068555/git/blobs/167cd7d794f311ae38ea60f85369456c934e7cd5",
+      "html_url": "https://github.com/y12studio/dltdojo/blob/d01d437005b131c7badb880c9d4ffaf282a30a0d/apps/ng2bitcoin/src/app/schema.graphql",
+      "content": "type Author {\n  id: Int! # the ! means that every author object _must_ have an id\n  firstName: String\n  lastName: String\n  posts: [Post] # the list of Posts by this author\n}\ntype Post {\n  id: Int!\n  title: String\n  author: Author\n  votes: Int\n}\n# the schema allows the following query:\ntype Query {\n  posts: [Post]\n  author(id: Int!): Author\n}\n# this schema allows the following mutation:\ntype Mutation {\n  upvotePost (\n    postId: Int!\n  ): Post\n}\ntype Subscription {\n  postUpvoted: Post\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-05T01:45:13Z",
+    "updated_at": "2018-12-20T14:12:18Z",
+    "pushed_at": "2017-12-09T06:41:06Z",
+    "issues": 0,
+    "watchers": 8,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 16
+  }
+}

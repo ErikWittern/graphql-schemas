@@ -1,0 +1,42 @@
+{
+  "repo_name": "apollo-server-douban-moive",
+  "repo_full_name": "w1301625107/apollo-server-douban-moive",
+  "repo_owner": "w1301625107",
+  "repo_description": "ApolloServer 基于豆瓣开放Movie API 的 GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.graphql",
+      "path": "src/gql/schema/root.graphql",
+      "sha": "2cbc18769374e2f335f143727316b0fd0ea0eb30",
+      "url": "https://api.github.com/repositories/179304925/contents/src/gql/schema/root.graphql?ref=6514434875ae7de408503928847181631168f65b",
+      "git_url": "https://api.github.com/repositories/179304925/git/blobs/2cbc18769374e2f335f143727316b0fd0ea0eb30",
+      "html_url": "https://github.com/w1301625107/apollo-server-douban-moive/blob/6514434875ae7de408503928847181631168f65b/src/gql/schema/root.graphql",
+      "content": "# 查询\ntype Query {\n\tdummy: Boolean\n}\n\n# 变更\ntype Mutation {\n\tdummy: Boolean\n}\n\ntype PageInfo {\n  \"是否有下一頁\"\n  hasNextPage: Boolean!\n  \"是否有上一頁\"\n  hasPreviousPage: Boolean!\n  \"總頁數\"\n  totalPageCount: Int\n\n  startCursor:String!\n\n  endCursor:String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-03T14:15:24Z",
+    "updated_at": "2019-05-10T06:51:51Z",
+    "pushed_at": "2019-05-10T06:51:49Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "ginghql",
+  "repo_full_name": "satoukick/ginghql",
+  "repo_owner": "satoukick",
+  "repo_description": "Me playing with Gin",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "f6e1bac5662f46ff3987fbf54fd2bfbe4a4088c8",
+      "url": "https://api.github.com/repositories/182540324/contents/schema.graphql?ref=294fde97f2c50722967524e858da58bc6e4ddd2a",
+      "git_url": "https://api.github.com/repositories/182540324/git/blobs/f6e1bac5662f46ff3987fbf54fd2bfbe4a4088c8",
+      "html_url": "https://github.com/satoukick/ginghql/blob/294fde97f2c50722967524e858da58bc6e4ddd2a/schema.graphql",
+      "content": "# GraphQL schema example\n#\n# https://gqlgen.com/getting-started/\n\ntype Todo {\n  id: ID!\n  text: String!\n  done: Boolean!\n  user: User!\n}\n\ntype User {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  todos: [Todo!]!\n}\n\ninput NewTodo {\n  text: String!\n  userId: String!\n}\n\ntype Mutation {\n  createTodo(input: NewTodo!): Todo!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-21T13:58:18Z",
+    "updated_at": "2019-04-21T13:58:28Z",
+    "pushed_at": "2019-04-21T13:58:26Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

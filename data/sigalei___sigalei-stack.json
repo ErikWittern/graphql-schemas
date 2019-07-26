@@ -1,0 +1,110 @@
+{
+  "repo_name": "sigalei-stack",
+  "repo_full_name": "sigalei/sigalei-stack",
+  "repo_owner": "sigalei",
+  "repo_description": "A project to test our project structure and try new things.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "UserQuery.graphql",
+      "path": "api/src/graphql/user/query/UserQuery.graphql",
+      "sha": "0b18f318b065345fdf90e5119c293c4c5336d65b",
+      "url": "https://api.github.com/repositories/158829771/contents/api/src/graphql/user/query/UserQuery.graphql?ref=fc98e4756151d59c1e009ea69241c444afd28b0f",
+      "git_url": "https://api.github.com/repositories/158829771/git/blobs/0b18f318b065345fdf90e5119c293c4c5336d65b",
+      "html_url": "https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/api/src/graphql/user/query/UserQuery.graphql",
+      "content": "\"User Queries\"\ntype Query {\n  \"\"\"\n  Get a user\n  \"\"\"\n  user(id: String!): User\n  \"\"\"\n  Get a user\n  \"\"\"\n  users: [User]\n  \"\"\"\n  Get user credentials\n  \"\"\"\n  login(email: String!, password: String!): AuthToken\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/api/src/graphql/user/query/UserQuery.graphql:\n\"User Queries\"\ntype Query {\n  \"\"\"\n  Get a user\n  \"\"\"\n  user(id: String!): User\n  \"\"\"\n  Get a user\n  \"\"\"\n  users: [User]\n  \"\"\"\n  Get user credentials\n  \"\"\"\n  login(email: String!, password: String!): AuthToken\n}\n\n# https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/api/src/graphql/user/types/User.graphql:\n\"\"\"\nUser: represents a user\n\"\"\"\ntype User {\n  \"\"\"\n  User id\n  \"\"\"\n  id: ID!\n  \"\"\"\n  User email\n  \"\"\"\n  email: String\n  \"\"\"\n  User password\n  \"\"\"\n  password: String\n  \"\"\"\n  the user tasks\n  \"\"\"\n  Tasks: [Task]\n}\n\n# https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/api/src/graphql/user/types/AuthToken.graphql:\n\"\"\"\nAuthToken: represents a users authentication token\n\"\"\"\ntype AuthToken {\n  \"\"\"\n  Token\n  \"\"\"\n  token: String!\n  \"\"\"\n  User\n  \"\"\"\n  user: User!\n}\n\n# https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/api/src/graphql/task/types/Task.graphql:\n\"\"\"\nTask: represents a task\n\"\"\"\ntype Task {\n  \"\"\"\n  Task id\n  \"\"\"\n  id: ID!\n  \"\"\"\n  Task content\n  \"\"\"\n  content: String\n  \"\"\"\n  The completed status of a task\n  \"\"\"\n  completed: Boolean\n}\n",
+        "mergedPaths": [
+          "api/src/graphql/user/types/User.graphql",
+          "api/src/graphql/user/types/AuthToken.graphql",
+          "api/src/graphql/task/types/Task.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "AuthToken",
+          "Task"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "AuthToken.graphql",
+      "path": "api/src/graphql/user/types/AuthToken.graphql",
+      "sha": "f26cc3c89c9b8df698087d152f10d4f4e62c1735",
+      "url": "https://api.github.com/repositories/158829771/contents/api/src/graphql/user/types/AuthToken.graphql?ref=fc98e4756151d59c1e009ea69241c444afd28b0f",
+      "git_url": "https://api.github.com/repositories/158829771/git/blobs/f26cc3c89c9b8df698087d152f10d4f4e62c1735",
+      "html_url": "https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/api/src/graphql/user/types/AuthToken.graphql",
+      "content": "\"\"\"\nAuthToken: represents a users authentication token\n\"\"\"\ntype AuthToken {\n  \"\"\"\n  Token\n  \"\"\"\n  token: String!\n  \"\"\"\n  User\n  \"\"\"\n  user: User!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Task.graphql",
+      "path": "api/src/graphql/task/types/Task.graphql",
+      "sha": "edc994e9674cf4e975f91489cb4d67acfaa8172e",
+      "url": "https://api.github.com/repositories/158829771/contents/api/src/graphql/task/types/Task.graphql?ref=fc98e4756151d59c1e009ea69241c444afd28b0f",
+      "git_url": "https://api.github.com/repositories/158829771/git/blobs/edc994e9674cf4e975f91489cb4d67acfaa8172e",
+      "html_url": "https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/api/src/graphql/task/types/Task.graphql",
+      "content": "\"\"\"\nTask: represents a task\n\"\"\"\ntype Task {\n  \"\"\"\n  Task id\n  \"\"\"\n  id: ID!\n  \"\"\"\n  Task content\n  \"\"\"\n  content: String\n  \"\"\"\n  The completed status of a task\n  \"\"\"\n  completed: Boolean\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "User.graphql",
+      "path": "api/src/graphql/user/types/User.graphql",
+      "sha": "6958460f27c8e7758a17fe4e8f5e361c5559b9d4",
+      "url": "https://api.github.com/repositories/158829771/contents/api/src/graphql/user/types/User.graphql?ref=fc98e4756151d59c1e009ea69241c444afd28b0f",
+      "git_url": "https://api.github.com/repositories/158829771/git/blobs/6958460f27c8e7758a17fe4e8f5e361c5559b9d4",
+      "html_url": "https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/api/src/graphql/user/types/User.graphql",
+      "content": "\"\"\"\nUser: represents a user\n\"\"\"\ntype User {\n  \"\"\"\n  User id\n  \"\"\"\n  id: ID!\n  \"\"\"\n  User email\n  \"\"\"\n  email: String\n  \"\"\"\n  User password\n  \"\"\"\n  password: String\n  \"\"\"\n  the user tasks\n  \"\"\"\n  Tasks: [Task]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "react/schema.graphql",
+      "sha": "9f0c335c7d9da8a988ae6b1ea1f1459f792abb91",
+      "url": "https://api.github.com/repositories/158829771/contents/react/schema.graphql?ref=fc98e4756151d59c1e009ea69241c444afd28b0f",
+      "git_url": "https://api.github.com/repositories/158829771/git/blobs/9f0c335c7d9da8a988ae6b1ea1f1459f792abb91",
+      "html_url": "https://github.com/sigalei/sigalei-stack/blob/fc98e4756151d59c1e009ea69241c444afd28b0f/react/schema.graphql",
+      "content": "\"\"\"AuthToken: represents a users authentication token\"\"\"\ntype AuthToken {\n  \"\"\"Token\"\"\"\n  token: String!\n\n  \"\"\"User\"\"\"\n  user: User!\n}\n\n\"\"\"Task mutations\"\"\"\ntype Mutation {\n  \"\"\"Sign up a new user\"\"\"\n  signUp(email: String!, password: String!): User\n\n  \"\"\"Create a task\"\"\"\n  createTask(content: String!, userId: String!): Task\n}\n\n\"\"\"Task queries\"\"\"\ntype Query {\n  \"\"\"Get a task\"\"\"\n  task(id: String!): Task\n\n  \"\"\"Get a user\"\"\"\n  user(id: String!): User\n\n  \"\"\"Get a user\"\"\"\n  users: [User]\n\n  \"\"\"Get user credentials\"\"\"\n  login(email: String!, password: String!): AuthToken\n}\n\n\"\"\"Task: represents a task\"\"\"\ntype Task {\n  \"\"\"Task id\"\"\"\n  id: ID!\n\n  \"\"\"Task content\"\"\"\n  content: String\n\n  \"\"\"The completed status of a task\"\"\"\n  completed: Boolean\n}\n\n\"\"\"User: represents a user\"\"\"\ntype User {\n  \"\"\"User id\"\"\"\n  id: ID!\n\n  \"\"\"User email\"\"\"\n  email: String\n\n  \"\"\"User password\"\"\"\n  password: String\n\n  \"\"\"the user tasks\"\"\"\n  Tasks: [Task]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-23T12:26:42Z",
+    "updated_at": "2019-07-02T22:35:54Z",
+    "pushed_at": "2019-07-11T19:50:22Z",
+    "issues": 28,
+    "watchers": 5,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 34,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 29,
+    "releases": 0,
+    "stargazers": 11
+  }
+}

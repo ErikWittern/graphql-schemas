@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-relay-mk",
+  "repo_full_name": "vadimgoncharov/graphql-relay-mk",
+  "repo_owner": "vadimgoncharov",
+  "repo_description": "React GraphQL and Relay MK",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "be20bd85f5925f4634cb9faad6a266f276105b00",
+      "url": "https://api.github.com/repositories/61424096/contents/src/schema.graphql?ref=90e8f6a4b03e22fa0e386aeb3cdeaeaf0431f043",
+      "git_url": "https://api.github.com/repositories/61424096/git/blobs/be20bd85f5925f4634cb9faad6a266f276105b00",
+      "html_url": "https://github.com/vadimgoncharov/graphql-relay-mk/blob/90e8f6a4b03e22fa0e386aeb3cdeaeaf0431f043/src/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n  mutation: RootMutation\n}\n\ninput LikeInput {\n  postId: ID\n  weight: Int\n  clientMutationId: String!\n}\n\ntype LikePayload {\n  post: Post\n  clientMutationId: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Post implements Node {\n  id: ID!\n  title: String\n  likeCount: Int\n}\n\ntype PostConnection {\n  pageInfo: PageInfo!\n  edges: [PostEdge]\n}\n\ntype PostEdge {\n  node: Post\n  cursor: String!\n}\n\ntype RootMutation {\n  like(input: LikeInput!): LikePayload\n}\n\ntype RootQuery {\n  node(id: ID!): Node\n  viewer: Viewer\n}\n\ntype User implements Node {\n  id: ID!\n  username: String\n  email: String\n  posts: [Post]\n}\n\ntype Viewer {\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n  users: [User]\n  post(id: ID): Post\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-06-18T08:19:21Z",
+    "updated_at": "2016-06-18T08:27:08Z",
+    "pushed_at": "2016-06-18T14:22:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

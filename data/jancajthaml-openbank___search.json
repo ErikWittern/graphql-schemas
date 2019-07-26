@@ -1,0 +1,78 @@
+{
+  "repo_name": "search",
+  "repo_full_name": "jancajthaml-openbank/search",
+  "repo_owner": "jancajthaml-openbank",
+  "repo_description": "graphql reporting service",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "services/search-rest/src/schema.graphql",
+      "sha": "c5ab7085edfeb5f9f18b333d1e1e2e02b9fb9788",
+      "url": "https://api.github.com/repositories/127003664/contents/services/search-rest/src/schema.graphql?ref=63398b6adbebeb4f245bfc92cd28d84757d175d5",
+      "git_url": "https://api.github.com/repositories/127003664/git/blobs/c5ab7085edfeb5f9f18b333d1e1e2e02b9fb9788",
+      "html_url": "https://github.com/jancajthaml-openbank/search/blob/63398b6adbebeb4f245bfc92cd28d84757d175d5/services/search-rest/src/schema.graphql",
+      "content": "\ntype Transaction {\n    tenant: String!\n    id: String\n    status: String\n    transfers: [Transfer]!\n}\n\ntype Transfer {\n    tenant: String!\n    transaction: String\n    id: String\n    status: String\n    credit: Account\n    debit: Account\n    valueDate: Date\n    amount: Money\n    currency: String\n}\n\ntype Account {\n    tenant: String!\n    name: String!\n    currency: String\n    isBalanceCheck: Boolean\n}\n\nscalar Date\nscalar Money\n\nenum SortOrder {\n  ASC\n  DESC\n}\n\ntype Query {\n\n    Account(\n        tenant: String!,\n        name: String!\n    ): Account\n\n    Accounts(\n        tenant: String!,\n        currency: String,\n        isBalanceCheck: Boolean,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Account]\n\n    Transaction(\n        tenant: String!,\n        transaction: String!\n    ): Transaction\n\n    Transactions(\n        tenant: String!,\n        credit: String,\n        debit: String,\n        status: String,\n        currency: String,\n        amount: Money,\n        minAmount: Money,\n        maxAmount: Money,\n        valueDate: Date,\n        toValueDate: Date,\n        fromValueDate: Date,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Transaction]\n\n    Transfer(\n        tenant: String!,\n        transaction: String!,\n        transfer: String!\n    ): Transfer\n\n    Transfers(\n        tenant: String!,\n        transaction: String,\n        credit: String,  # FIXME account\n        debit: String,   # FIXME account\n        status: String,  # FIXME enum\n        currency: String,\n        amount: Money,\n        minAmount: Money,\n        maxAmount: Money,\n        valueDate: Date,\n        toValueDate: Date,\n        fromValueDate: Date,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Transfer]\n\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packaging/debian_amd64/openbank/services/search-rest/src/schema.graphql",
+      "sha": "c5ab7085edfeb5f9f18b333d1e1e2e02b9fb9788",
+      "url": "https://api.github.com/repositories/127003664/contents/packaging/debian_amd64/openbank/services/search-rest/src/schema.graphql?ref=c1a5b9a6438be694d9c57121c57a3c19f3d9a1b7",
+      "git_url": "https://api.github.com/repositories/127003664/git/blobs/c5ab7085edfeb5f9f18b333d1e1e2e02b9fb9788",
+      "html_url": "https://github.com/jancajthaml-openbank/search/blob/c1a5b9a6438be694d9c57121c57a3c19f3d9a1b7/packaging/debian_amd64/openbank/services/search-rest/src/schema.graphql",
+      "content": "\ntype Transaction {\n    tenant: String!\n    id: String\n    status: String\n    transfers: [Transfer]!\n}\n\ntype Transfer {\n    tenant: String!\n    transaction: String\n    id: String\n    status: String\n    credit: Account\n    debit: Account\n    valueDate: Date\n    amount: Money\n    currency: String\n}\n\ntype Account {\n    tenant: String!\n    name: String!\n    currency: String\n    isBalanceCheck: Boolean\n}\n\nscalar Date\nscalar Money\n\nenum SortOrder {\n  ASC\n  DESC\n}\n\ntype Query {\n\n    Account(\n        tenant: String!,\n        name: String!\n    ): Account\n\n    Accounts(\n        tenant: String!,\n        currency: String,\n        isBalanceCheck: Boolean,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Account]\n\n    Transaction(\n        tenant: String!,\n        transaction: String!\n    ): Transaction\n\n    Transactions(\n        tenant: String!,\n        credit: String,\n        debit: String,\n        status: String,\n        currency: String,\n        amount: Money,\n        minAmount: Money,\n        maxAmount: Money,\n        valueDate: Date,\n        toValueDate: Date,\n        fromValueDate: Date,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Transaction]\n\n    Transfer(\n        tenant: String!,\n        transaction: String!,\n        transfer: String!\n    ): Transfer\n\n    Transfers(\n        tenant: String!,\n        transaction: String,\n        credit: String,  # FIXME account\n        debit: String,   # FIXME account\n        status: String,  # FIXME enum\n        currency: String,\n        amount: Money,\n        minAmount: Money,\n        maxAmount: Money,\n        valueDate: Date,\n        toValueDate: Date,\n        fromValueDate: Date,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Transfer]\n\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packaging/debian_arm64/openbank/services/search-rest/src/schema.graphql",
+      "sha": "c5ab7085edfeb5f9f18b333d1e1e2e02b9fb9788",
+      "url": "https://api.github.com/repositories/127003664/contents/packaging/debian_arm64/openbank/services/search-rest/src/schema.graphql?ref=c1a5b9a6438be694d9c57121c57a3c19f3d9a1b7",
+      "git_url": "https://api.github.com/repositories/127003664/git/blobs/c5ab7085edfeb5f9f18b333d1e1e2e02b9fb9788",
+      "html_url": "https://github.com/jancajthaml-openbank/search/blob/c1a5b9a6438be694d9c57121c57a3c19f3d9a1b7/packaging/debian_arm64/openbank/services/search-rest/src/schema.graphql",
+      "content": "\ntype Transaction {\n    tenant: String!\n    id: String\n    status: String\n    transfers: [Transfer]!\n}\n\ntype Transfer {\n    tenant: String!\n    transaction: String\n    id: String\n    status: String\n    credit: Account\n    debit: Account\n    valueDate: Date\n    amount: Money\n    currency: String\n}\n\ntype Account {\n    tenant: String!\n    name: String!\n    currency: String\n    isBalanceCheck: Boolean\n}\n\nscalar Date\nscalar Money\n\nenum SortOrder {\n  ASC\n  DESC\n}\n\ntype Query {\n\n    Account(\n        tenant: String!,\n        name: String!\n    ): Account\n\n    Accounts(\n        tenant: String!,\n        currency: String,\n        isBalanceCheck: Boolean,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Account]\n\n    Transaction(\n        tenant: String!,\n        transaction: String!\n    ): Transaction\n\n    Transactions(\n        tenant: String!,\n        credit: String,\n        debit: String,\n        status: String,\n        currency: String,\n        amount: Money,\n        minAmount: Money,\n        maxAmount: Money,\n        valueDate: Date,\n        toValueDate: Date,\n        fromValueDate: Date,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Transaction]\n\n    Transfer(\n        tenant: String!,\n        transaction: String!,\n        transfer: String!\n    ): Transfer\n\n    Transfers(\n        tenant: String!,\n        transaction: String,\n        credit: String,  # FIXME account\n        debit: String,   # FIXME account\n        status: String,  # FIXME enum\n        currency: String,\n        amount: Money,\n        minAmount: Money,\n        maxAmount: Money,\n        valueDate: Date,\n        toValueDate: Date,\n        fromValueDate: Date,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Transfer]\n\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packaging/debian_armhf/openbank/services/search-rest/src/schema.graphql",
+      "sha": "c5ab7085edfeb5f9f18b333d1e1e2e02b9fb9788",
+      "url": "https://api.github.com/repositories/127003664/contents/packaging/debian_armhf/openbank/services/search-rest/src/schema.graphql?ref=c1a5b9a6438be694d9c57121c57a3c19f3d9a1b7",
+      "git_url": "https://api.github.com/repositories/127003664/git/blobs/c5ab7085edfeb5f9f18b333d1e1e2e02b9fb9788",
+      "html_url": "https://github.com/jancajthaml-openbank/search/blob/c1a5b9a6438be694d9c57121c57a3c19f3d9a1b7/packaging/debian_armhf/openbank/services/search-rest/src/schema.graphql",
+      "content": "\ntype Transaction {\n    tenant: String!\n    id: String\n    status: String\n    transfers: [Transfer]!\n}\n\ntype Transfer {\n    tenant: String!\n    transaction: String\n    id: String\n    status: String\n    credit: Account\n    debit: Account\n    valueDate: Date\n    amount: Money\n    currency: String\n}\n\ntype Account {\n    tenant: String!\n    name: String!\n    currency: String\n    isBalanceCheck: Boolean\n}\n\nscalar Date\nscalar Money\n\nenum SortOrder {\n  ASC\n  DESC\n}\n\ntype Query {\n\n    Account(\n        tenant: String!,\n        name: String!\n    ): Account\n\n    Accounts(\n        tenant: String!,\n        currency: String,\n        isBalanceCheck: Boolean,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Account]\n\n    Transaction(\n        tenant: String!,\n        transaction: String!\n    ): Transaction\n\n    Transactions(\n        tenant: String!,\n        credit: String,\n        debit: String,\n        status: String,\n        currency: String,\n        amount: Money,\n        minAmount: Money,\n        maxAmount: Money,\n        valueDate: Date,\n        toValueDate: Date,\n        fromValueDate: Date,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Transaction]\n\n    Transfer(\n        tenant: String!,\n        transaction: String!,\n        transfer: String!\n    ): Transfer\n\n    Transfers(\n        tenant: String!,\n        transaction: String,\n        credit: String,  # FIXME account\n        debit: String,   # FIXME account\n        status: String,  # FIXME enum\n        currency: String,\n        amount: Money,\n        minAmount: Money,\n        maxAmount: Money,\n        valueDate: Date,\n        toValueDate: Date,\n        fromValueDate: Date,\n        take: Int,\n        skip: Int,\n        sortField: String,\n        sortOrder: SortOrder\n    ): [Transfer]\n\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-27T14:58:52Z",
+    "updated_at": "2019-07-19T20:06:07Z",
+    "pushed_at": "2019-07-19T20:06:09Z",
+    "issues": 12,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 199,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 31,
+    "pull_requests_merged": 168,
+    "releases": 17,
+    "stargazers": 1
+  }
+}

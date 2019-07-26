@@ -1,0 +1,42 @@
+{
+  "repo_name": "gollery",
+  "repo_full_name": "liyingzhen/gollery",
+  "repo_owner": "LIYINGZHEN",
+  "repo_description": "🌁 A photo gallery application built with React, GraphQL and Go",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "c060d64e7012dca3fb958e2fd03cadad1d27c6db",
+      "url": "https://api.github.com/repositories/177098308/contents/schema.graphql?ref=a75b774f85bbf813271dba8bfc89194f7d66b86f",
+      "git_url": "https://api.github.com/repositories/177098308/git/blobs/c060d64e7012dca3fb958e2fd03cadad1d27c6db",
+      "html_url": "https://github.com/LIYINGZHEN/gollery/blob/a75b774f85bbf813271dba8bfc89194f7d66b86f/schema.graphql",
+      "content": "input NewUser {\n  name: String!\n  email: String!\n  password: String!\n}\n\ntype UserToken {\n  Token: String!\n}\n\ntype IsLogin {\n  isLogin: Boolean!\n}\n\ninput User {\n  email: String!\n  password: String!\n}\n\ninput NewGalleryInput {\n  title: String!\n}\n\ninput UpdateGalleryInput {\n  id: Int!\n  title: String!\n}\n\ninput DeleteImageInput {\n  id: Int!\n  fileName: String!\n}\n\ninput DeleteGalleryInput {\n  id: Int!\n}\n\ninput GalleryID {\n  id: Int!\n}\n\ntype Image {\n  galleryID: Int!\n  fileName: String!\n  path: String!\n}\n\ntype Gallery {\n  id: Int!\n  title: String!\n  images: [Image]\n}\n\ntype Mutation {\n  signup(input: NewUser!): UserToken!\n  login(input: User!): UserToken!\n  logout: UserToken!\n  createGallery(input: NewGalleryInput!): Gallery!\n  updateGallery(input: UpdateGalleryInput!): Gallery!\n  deleteImage(input: DeleteImageInput!): Gallery!\n  deleteGallery(input: DeleteGalleryInput!): Boolean!\n}\n\ntype Query {\n  isLogin: IsLogin!\n  listGalleries: [Gallery]!\n  showGallery(input: GalleryID!): Gallery!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-22T08:09:39Z",
+    "updated_at": "2019-07-08T09:33:30Z",
+    "pushed_at": "2019-04-11T05:36:37Z",
+    "issues": 2,
+    "watchers": 3,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 12,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 11
+  }
+}

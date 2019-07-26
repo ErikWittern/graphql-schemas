@@ -1,0 +1,42 @@
+{
+  "repo_name": "appsync-resource",
+  "repo_full_name": "telia-oss/appsync-resource",
+  "repo_owner": "telia-oss",
+  "repo_description": "A Concourse resource to update AppSync schema and resolvers.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "a76acc0e890572e092a755f1a530887210289995",
+      "url": "https://api.github.com/repositories/156383521/contents/schema.graphql?ref=ba207954d91881fee100b35aebe28e4b82435920",
+      "git_url": "https://api.github.com/repositories/156383521/git/blobs/a76acc0e890572e092a755f1a530887210289995",
+      "html_url": "https://github.com/telia-oss/appsync-resource/blob/ba207954d91881fee100b35aebe28e4b82435920/schema.graphql",
+      "content": "type Query {\n\tgetTodos: [Todo]\n}\n\ntype Todo {\n\tid: ID!\n\tname: String\n\tdescription: Int\n\tpriority: Int\n}\n\nschema {\n\tquery: Query\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-06T12:54:04Z",
+    "updated_at": "2019-05-16T10:55:35Z",
+    "pushed_at": "2019-05-03T07:30:06Z",
+    "issues": 1,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 1,
+    "releases": 2,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "repo_name": "laisky-blog-graphql",
+  "repo_full_name": "laisky/laisky-blog-graphql",
+  "repo_owner": "Laisky",
+  "repo_description": "graphql backend for laisky-blog",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "9c3c57296d4d7e4217537f61bad392306b0dd716",
+      "url": "https://api.github.com/repositories/181858406/contents/schema.graphql?ref=cc2b11fe6bc762d113e1f212718d25e62503ce8c",
+      "git_url": "https://api.github.com/repositories/181858406/git/blobs/9c3c57296d4d7e4217537f61bad392306b0dd716",
+      "html_url": "https://github.com/Laisky/laisky-blog-graphql/blob/cc2b11fe6bc762d113e1f212718d25e62503ce8c/schema.graphql",
+      "content": "scalar Date\n\ninput Pagination {\n    page: Int!\n    size: Int!\n}\n\ntype Query {\n  benchmark: String!\n  tweets(page: Pagination = {page: 0, size: 20},\n    topic: String! = \"\",\n    regexp: String! = \"\"): [Tweet]!\n  posts(page: Pagination = {page: 0, size: 10},\n    tag: String! = \"\",\n    category: String! = \"\",\n    length: Int! = 0,  # content length, 0 means total\n    name: String! = \"\",\n    regexp: String! = \"\"): [BlogPost]!\n}\n\n\ninput NewBlogPost {\n  name: String!\n  title: String!\n  markdown: String!\n  type: String!\n}\n\ntype Mutation {\n  createBlogPost(post: NewBlogPost!): BlogPost!\n  login(account: String!, password: String!): BlogUser!\n  amendBlogPost(name: String!, title: String!, markdown: String!, type: String! = \"markdown\"): BlogPost!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Laisky/laisky-blog-graphql/blob/cc2b11fe6bc762d113e1f212718d25e62503ce8c/schema.graphql:\nscalar Date\n\ninput Pagination {\n    page: Int!\n    size: Int!\n}\n\ntype Query {\n  benchmark: String!\n  tweets(page: Pagination = {page: 0, size: 20},\n    topic: String! = \"\",\n    regexp: String! = \"\"): [Tweet]!\n  posts(page: Pagination = {page: 0, size: 10},\n    tag: String! = \"\",\n    category: String! = \"\",\n    length: Int! = 0,  # content length, 0 means total\n    name: String! = \"\",\n    regexp: String! = \"\"): [BlogPost]!\n}\n\n\ninput NewBlogPost {\n  name: String!\n  title: String!\n  markdown: String!\n  type: String!\n}\n\ntype Mutation {\n  createBlogPost(post: NewBlogPost!): BlogPost!\n  login(account: String!, password: String!): BlogUser!\n  amendBlogPost(name: String!, title: String!, markdown: String!, type: String! = \"markdown\"): BlogPost!\n}\n\n# https://github.com/Laisky/laisky-blog-graphql/blob/cc2b11fe6bc762d113e1f212718d25e62503ce8c/twitter/schema.graphql:\ntype Tweet {\n    # mongo_id: String!\n    tweet_id: Int!\n    created_at: Date!\n    text: String!\n    topics: [String!]\n    user: TwitterUser\n}\n\ntype TwitterUser {\n    id: Int!\n    screen_name: String!\n    name: String!\n    description: String\n}\n\n# https://github.com/Laisky/laisky-blog-graphql/blob/cc2b11fe6bc762d113e1f212718d25e62503ce8c/blog/schema.graphql:\ntype BlogPost {\n    # mongo_id: String!\n    author: BlogUser!\n    created_at: Date!\n    modified_at: Date!\n    type: String!\n    title: String!\n    content: String!\n    name: String!\n    markdown: String\n    tags: [String!]!\n    category: BlogCategory\n}\n\ntype BlogUser {\n    id: String!\n    username: String!\n}\n\ntype BlogCategory {\n    name: String!\n    url: String!\n}\n",
+        "mergedPaths": [
+          "twitter/schema.graphql",
+          "blog/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Tweet",
+          "BlogPost",
+          "BlogUser"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 7,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "twitter/schema.graphql",
+      "sha": "e04306ac1107d8517285e051f106975467add2ad",
+      "url": "https://api.github.com/repositories/181858406/contents/twitter/schema.graphql?ref=cc2b11fe6bc762d113e1f212718d25e62503ce8c",
+      "git_url": "https://api.github.com/repositories/181858406/git/blobs/e04306ac1107d8517285e051f106975467add2ad",
+      "html_url": "https://github.com/Laisky/laisky-blog-graphql/blob/cc2b11fe6bc762d113e1f212718d25e62503ce8c/twitter/schema.graphql",
+      "content": "type Tweet {\n    # mongo_id: String!\n    tweet_id: Int!\n    created_at: Date!\n    text: String!\n    topics: [String!]\n    user: TwitterUser\n}\n\ntype TwitterUser {\n    id: Int!\n    screen_name: String!\n    name: String!\n    description: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "blog/schema.graphql",
+      "sha": "97ce07752826ad787525ed1840e61b06cce44e67",
+      "url": "https://api.github.com/repositories/181858406/contents/blog/schema.graphql?ref=cc2b11fe6bc762d113e1f212718d25e62503ce8c",
+      "git_url": "https://api.github.com/repositories/181858406/git/blobs/97ce07752826ad787525ed1840e61b06cce44e67",
+      "html_url": "https://github.com/Laisky/laisky-blog-graphql/blob/cc2b11fe6bc762d113e1f212718d25e62503ce8c/blog/schema.graphql",
+      "content": "type BlogPost {\n    # mongo_id: String!\n    author: BlogUser!\n    created_at: Date!\n    modified_at: Date!\n    type: String!\n    title: String!\n    content: String!\n    name: String!\n    markdown: String\n    tags: [String!]!\n    category: BlogCategory\n}\n\ntype BlogUser {\n    id: String!\n    username: String!\n}\n\ntype BlogCategory {\n    name: String!\n    url: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-17T09:20:51Z",
+    "updated_at": "2019-07-16T09:57:12Z",
+    "pushed_at": "2019-07-19T10:03:08Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

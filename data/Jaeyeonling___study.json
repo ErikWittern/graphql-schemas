@@ -1,0 +1,39 @@
+{
+  "repo_name": "study",
+  "repo_full_name": "jaeyeonling/study",
+  "repo_owner": "Jaeyeonling",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "nodejs/graphql-server/graphql/schema.graphql",
+      "sha": "5026a1cb958a82bf78d4879fbe2345df755f6f60",
+      "url": "https://api.github.com/repositories/149835821/contents/nodejs/graphql-server/graphql/schema.graphql?ref=4e513c1716e0857c112295747c9c7eea0b328318",
+      "git_url": "https://api.github.com/repositories/149835821/git/blobs/5026a1cb958a82bf78d4879fbe2345df755f6f60",
+      "html_url": "https://github.com/Jaeyeonling/study/blob/4e513c1716e0857c112295747c9c7eea0b328318/nodejs/graphql-server/graphql/schema.graphql",
+      "content": "\ntype Movie {\n  id: Int!\n  name: String!\n  score: Int!\n}\n\ntype Query {\n  movies: [Movie]\n  movie(id: Int): Movie!\n}\n\ntype Mutation {\n  addMovie(\n    name: String = \"zzz\"\n    score: Int = 20\n  ): Movie!\n  deleteMovie(\n    id: Int!\n  ): Movie\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-22T01:40:09Z",
+    "updated_at": "2019-07-11T11:42:45Z",
+    "pushed_at": "2019-07-11T11:42:45Z",
+    "issues": 2,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "angular-console",
+  "repo_full_name": "nrwl/angular-console",
+  "repo_owner": "nrwl",
+  "repo_description": "Angular Console is the user interface for the Angular CLI.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "libs/server/src/assets/schema.graphql",
+      "sha": "35e429bc5e09754e71b9d6d0c0dde571c03782bf",
+      "url": "https://api.github.com/repositories/137811219/contents/libs/server/src/assets/schema.graphql?ref=56afb95d10f5f5d0e54195ce23fd761a7d84dcff",
+      "git_url": "https://api.github.com/repositories/137811219/git/blobs/35e429bc5e09754e71b9d6d0c0dde571c03782bf",
+      "html_url": "https://github.com/nrwl/angular-console/blob/56afb95d10f5f5d0e54195ce23fd761a7d84dcff/libs/server/src/assets/schema.graphql",
+      "content": "type Architect {\n  name: String!\n  project: String!\n  builder: String!\n  description: String!\n  options: Options!,\n  configurations: [ArchitectConfigurations!]!\n  schema: [Schema!]!\n}\n\ntype Options {\n  defaultValues: [FieldValue!]!\n}\n\ntype ArchitectConfigurations {\n  name: String!\n  defaultValues: [FieldValue!]!\n}\n\ntype CommandResponse {\n  id: String!\n  workspace: String\n  command: String!\n  status: String!\n  detailedStatus: String\n  outChunk: String!\n  out: String!\n}\n\ntype CommandStarted {\n  id: String!\n}\n\ntype CompletionResultType {\n  value: String!\n  display: String\n}\n\ntype CompletionsTypes {\n  files(input: String!): [CompletionResultType!]!\n  projects(input: String!): [CompletionResultType!]!\n  localModules(input: String!): [CompletionResultType!]!\n  absoluteModules(input: String!): [CompletionResultType!]!\n}\n\ntype InstallNodeJsStatus {\n  downloadPercentage: Float\n  downloadSpeed: Float\n  success: Boolean\n  cancelled: Boolean\n  error: String\n}\n\ntype Query {\n  settings: Settings!\n  schematicCollections: [SchematicCollectionForNgNew!]!\n  workspace(path: String!): Workspace!\n  editors: [EditorSupport!]!\n  availableExtensions(name: String): [Extension!]!\n  installNodeJsStatus: InstallNodeJsStatus\n  isNodejsInstalled: IsNodeInstalledResult\n  directory(\n    path: String\n    onlyDirectories: Boolean\n    showHidden: Boolean\n  ): FilesType!\n  commands(id: String, cols: Int): [CommandResponse!]!\n}\n\ntype Dependencies {\n  name: String!\n  version: String!\n}\n\ntype EditorSupport {\n  name: String!\n  icon: String!\n}\n\ntype Extension {\n  name: String!\n  description: String!\n  detailedDescription: String\n  installed: Boolean\n}\n\ntype FileListType {\n  name: String!\n  type: FileType!\n}\n\ntype FilesType {\n  path: String!\n  exists: Boolean!\n  files: [FileListType!]!\n}\n\nenum FileType {\n  file\n  directory\n  angularDirectory\n}\n\ntype IsNodeInstalledResult {\n  result: Boolean!\n}\n\ntype OpenInBrowserResult {\n  result: Boolean!\n}\n\ntype ShowItemInFolderResult {\n  result: Boolean!\n}\n\ntype OpenDocResult {\n  result: Boolean!\n}\n\ntype Mutation {\n  ngAdd(path: String!, name: String!): CommandStarted\n  ngNew(\n    path: String!\n    name: String!\n    collection: String!\n    newCommand: [String!]!\n  ): CommandStarted\n  generate(\n    path: String!\n    genCommand: [String!]!\n    dryRun: Boolean!\n  ): CommandStarted\n  generateUsingNpm(\n    path: String!\n    npmClient: String\n    genCommand: [String!]!\n    dryRun: Boolean!\n  ): CommandStarted\n  runNg(path: String!, runCommand: [String!]!): CommandStarted\n  runNpm(\n    path: String!\n    npmClient: String\n    runCommand: [String!]!\n  ): CommandStarted\n  stopCommand(id: String!): StopResult\n  removeCommand(id: String!): RemoveResult\n  removeAllCommands: RemoveResult\n  restartCommand(id: String!): RemoveResult\n  openInEditor(editor: String!, path: String!): OpenInEditor\n  updateSettings(data: String!): Settings!\n  saveRecentAction(\n    workspacePath: String!\n    projectName: String!\n    actionName: String!\n    schematicName: String\n  ): [RecentAction!]!\n  installNodeJs: InstallNodeJsStatus\n  openInBrowser(url: String!): OpenInBrowserResult\n  selectDirectory(\n    dialogTitle: String!\n    dialogButtonLabel: String!\n    angularWorkspace: Boolean!\n  ): SelectDirectoryResult\n  showItemInFolder(item: String!): ShowItemInFolderResult\n  openDoc(id: String!): OpenDocResult\n}\n\ntype SelectDirectoryResult {\n  selectedDirectoryPath: String\n  error: String\n}\n\ntype NpmScript {\n  name: String!\n  npmClient: String\n  schema: [Schema!]!\n}\n\ntype OpenInEditor {\n  response: String!\n}\n\ntype Project {\n  name: String!\n  root: String!\n  projectType: String!\n  architect(name: String): [Architect!]!\n  recentActions: [RecentAction!]!\n}\n\ntype RecentAction {\n  actionName: String!\n  schematicName: String\n}\n\ntype Schematic {\n  collection: String!\n  name: String!\n  description: String!\n  npmClient: String\n  npmScript: String\n  schema: [Schema!]!\n}\n\ntype SchematicCollection {\n  name: String!\n  schematics(name: String): [Schematic!]!\n}\n\ntype SchematicCollectionForNgNew {\n  name: String!\n  description: String!\n  schema: [Schema!]!\n}\n\ntype FieldValue {\n  name: String!\n  defaultValue: String\n}\n\ntype Schema {\n  name: String!\n  type: String!\n  description: String!\n  defaultValue: String\n  important: Boolean\n  completion: String\n  required: Boolean!\n  positional: Boolean!\n  enum: [String!]\n}\n\ntype StopResult {\n  result: Boolean\n}\n\ntype RemoveResult {\n  result: Boolean\n}\n\ntype WorkspaceDefinition {\n  path: String!\n  name: String!\n  favorite: Boolean\n  pinnedProjectNames: [String!]!\n}\n\ntype Settings {\n  canCollectData: Boolean!\n  isConnectUser: Boolean\n  disableAnimations: Boolean\n  showSupportPlugin: Boolean\n  installNodeManually: Boolean\n  enableDetailedStatus: Boolean\n  channel: String\n  workspaceSchematicsDirectory: String\n  workspaceSchematicsNpmScript: String\n  recent: [WorkspaceDefinition!]!\n  isWsl: Boolean\n  useNvm: Boolean\n}\n\ntype Workspace {\n  name: String!\n  path: String!\n  dependencies: [Dependencies!]!\n  extensions: [Extension!]!\n  schematicCollections(name: String): [SchematicCollection!]!\n  npmScripts(name: String): [NpmScript!]!\n  projects(name: String): [Project!]!\n  docs: Docs!\n  completions: CompletionsTypes\n}\n\ntype Docs {\n  workspaceDocs: [Doc!]!\n  schematicDocs(\n    collectionName: String!\n    collectionVersion: String\n    name: String!\n  ): [Doc!]!\n}\n\ntype Doc {\n  prop: String\n  description: String\n  id: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 36,
+      "containsCycle": false,
+      "polynomialLevel": 4,
+      "numDefinitions": 37
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-18T22:02:01Z",
+    "updated_at": "2019-07-19T21:05:26Z",
+    "pushed_at": "2019-07-19T22:35:39Z",
+    "issues": 252,
+    "watchers": 27,
+    "fork_count": 110,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 514,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 101,
+    "pull_requests_merged": 410,
+    "releases": 13,
+    "stargazers": 674
+  }
+}

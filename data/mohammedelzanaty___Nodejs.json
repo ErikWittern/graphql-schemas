@@ -1,0 +1,39 @@
+{
+  "repo_name": "Nodejs",
+  "repo_full_name": "mohammedelzanaty/nodejs",
+  "repo_owner": "mohammedelzanaty",
+  "repo_description": "Take your NodeJs skills to the next level and find out what it's fully capable of.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.graphql",
+      "path": "REST_GraphQL_API_Design/src/api/resources/user/user.graphql",
+      "sha": "c9d161c479b99a1a26253ff8d672ee3cb4c862c9",
+      "url": "https://api.github.com/repositories/156878572/contents/REST_GraphQL_API_Design/src/api/resources/user/user.graphql?ref=da78733f3ac6abe811caf50325e77a04ab676276",
+      "git_url": "https://api.github.com/repositories/156878572/git/blobs/c9d161c479b99a1a26253ff8d672ee3cb4c862c9",
+      "html_url": "https://github.com/mohammedelzanaty/Nodejs/blob/da78733f3ac6abe811caf50325e77a04ab676276/REST_GraphQL_API_Design/src/api/resources/user/user.graphql",
+      "content": "type User {\n  id: ID!\n  username: String!\n  createdAt: String!\n  updatedAt: String!\n}\n\ninput UpdatedUser {\n  username: String!\n}\n\ntype Query {\n  getMe: User!\n}\n\ntype Mutation {\n  updateMe(input: UpdatedUser!): User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-09T15:10:28Z",
+    "updated_at": "2019-01-31T11:25:43Z",
+    "pushed_at": "2019-01-31T08:35:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

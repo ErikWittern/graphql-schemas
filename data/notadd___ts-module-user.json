@@ -1,0 +1,285 @@
+{
+  "repo_name": "ts-module-user",
+  "repo_full_name": "notadd/ts-module-user",
+  "repo_owner": "notadd",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "organization.types.graphql",
+      "path": "package/type/organization.types.graphql",
+      "sha": "9f63f886e2403005db68882225836de2f99b0023",
+      "url": "https://api.github.com/repositories/128041290/contents/package/type/organization.types.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/9f63f886e2403005db68882225836de2f99b0023",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/organization.types.graphql",
+      "content": "type Query{\n    #get all of root organization \n    roots:RootsData\n    #get all of organization \n    organizations:OrganizationsData\n    #get children organization of specify organization \n    children(id:Int!):ChildrenData\n    #get users of specify organization \n    usersInOrganization(id:Int!):UsersInOrganizationData\n}\n\ntype Mutation{\n    #create organization with name , the parentId is optional\n    createOrganization(name:String!,parentId:Int):UserModuleCommonData\n    #update organization with name , the parentId is optional\n    updateOrganization(id:Int!,name:String!,parentId:Int):UserModuleCommonData\n    #delete  specify id organization\n    deleteOrganization(id:Int!):UserModuleCommonData\n    #add user to organization\n    addUserToOrganization(id:Int!,userId:Int!):UserModuleCommonData\n    #add users to organization\n    addUsersToOrganization(id:Int!,userIds:[Int!]!):UserModuleCommonData\n    #remove user from organization\n    removeUserFromOrganization(id:Int!,userId:Int!):UserModuleCommonData\n    #remove users from organization\n    removeUsersFromOrganization(id:Int!,userIds:[Int!]!):UserModuleCommonData\n}\n\n#return data\ntype OrganizationsData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    organizations:[Organization]\n}\n\n\n#return data\ntype RootsData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    roots:[Organization]\n}\n\n#return data\ntype ChildrenData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    children:[Organization]\n}\n\n#Organization type \ntype Organization{\n    id:Int\n    name:String\n}\n\n#return data\ntype UsersInOrganizationData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of users\n    users:[User]\n}\n\ntype User{\n    id:Int\n    userName:String\n    status:Boolean\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/organization.types.graphql:\ntype Query{\n    #get all of root organization \n    roots:RootsData\n    #get all of organization \n    organizations:OrganizationsData\n    #get children organization of specify organization \n    children(id:Int!):ChildrenData\n    #get users of specify organization \n    usersInOrganization(id:Int!):UsersInOrganizationData\n}\n\ntype Mutation{\n    #create organization with name , the parentId is optional\n    createOrganization(name:String!,parentId:Int):UserModuleCommonData\n    #update organization with name , the parentId is optional\n    updateOrganization(id:Int!,name:String!,parentId:Int):UserModuleCommonData\n    #delete  specify id organization\n    deleteOrganization(id:Int!):UserModuleCommonData\n    #add user to organization\n    addUserToOrganization(id:Int!,userId:Int!):UserModuleCommonData\n    #add users to organization\n    addUsersToOrganization(id:Int!,userIds:[Int!]!):UserModuleCommonData\n    #remove user from organization\n    removeUserFromOrganization(id:Int!,userId:Int!):UserModuleCommonData\n    #remove users from organization\n    removeUsersFromOrganization(id:Int!,userIds:[Int!]!):UserModuleCommonData\n}\n\n#return data\ntype OrganizationsData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    organizations:[Organization]\n}\n\n\n#return data\ntype RootsData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    roots:[Organization]\n}\n\n#return data\ntype ChildrenData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    children:[Organization]\n}\n\n#Organization type \ntype Organization{\n    id:Int\n    name:String\n}\n\n#return data\ntype UsersInOrganizationData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of users\n    users:[User]\n}\n\ntype User{\n    id:Int\n    userName:String\n    status:Boolean\n}\n# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/common.types.graphql:\n#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+        "mergedPaths": [
+          "package/type/common.types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonData"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "common.types.graphql",
+      "path": "package/type/common.types.graphql",
+      "sha": "751b07c198add1a33026b3f1dc745c7852037fca",
+      "url": "https://api.github.com/repositories/128041290/contents/package/type/common.types.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/751b07c198add1a33026b3f1dc745c7852037fca",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/common.types.graphql",
+      "content": "#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "organization.original.graphql",
+      "path": "src/type/organization.original.graphql",
+      "sha": "9f63f886e2403005db68882225836de2f99b0023",
+      "url": "https://api.github.com/repositories/128041290/contents/src/type/organization.original.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/9f63f886e2403005db68882225836de2f99b0023",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/organization.original.graphql",
+      "content": "type Query{\n    #get all of root organization \n    roots:RootsData\n    #get all of organization \n    organizations:OrganizationsData\n    #get children organization of specify organization \n    children(id:Int!):ChildrenData\n    #get users of specify organization \n    usersInOrganization(id:Int!):UsersInOrganizationData\n}\n\ntype Mutation{\n    #create organization with name , the parentId is optional\n    createOrganization(name:String!,parentId:Int):UserModuleCommonData\n    #update organization with name , the parentId is optional\n    updateOrganization(id:Int!,name:String!,parentId:Int):UserModuleCommonData\n    #delete  specify id organization\n    deleteOrganization(id:Int!):UserModuleCommonData\n    #add user to organization\n    addUserToOrganization(id:Int!,userId:Int!):UserModuleCommonData\n    #add users to organization\n    addUsersToOrganization(id:Int!,userIds:[Int!]!):UserModuleCommonData\n    #remove user from organization\n    removeUserFromOrganization(id:Int!,userId:Int!):UserModuleCommonData\n    #remove users from organization\n    removeUsersFromOrganization(id:Int!,userIds:[Int!]!):UserModuleCommonData\n}\n\n#return data\ntype OrganizationsData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    organizations:[Organization]\n}\n\n\n#return data\ntype RootsData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    roots:[Organization]\n}\n\n#return data\ntype ChildrenData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    children:[Organization]\n}\n\n#Organization type \ntype Organization{\n    id:Int\n    name:String\n}\n\n#return data\ntype UsersInOrganizationData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of users\n    users:[User]\n}\n\ntype User{\n    id:Int\n    userName:String\n    status:Boolean\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/organization.original.graphql:\ntype Query{\n    #get all of root organization \n    roots:RootsData\n    #get all of organization \n    organizations:OrganizationsData\n    #get children organization of specify organization \n    children(id:Int!):ChildrenData\n    #get users of specify organization \n    usersInOrganization(id:Int!):UsersInOrganizationData\n}\n\ntype Mutation{\n    #create organization with name , the parentId is optional\n    createOrganization(name:String!,parentId:Int):UserModuleCommonData\n    #update organization with name , the parentId is optional\n    updateOrganization(id:Int!,name:String!,parentId:Int):UserModuleCommonData\n    #delete  specify id organization\n    deleteOrganization(id:Int!):UserModuleCommonData\n    #add user to organization\n    addUserToOrganization(id:Int!,userId:Int!):UserModuleCommonData\n    #add users to organization\n    addUsersToOrganization(id:Int!,userIds:[Int!]!):UserModuleCommonData\n    #remove user from organization\n    removeUserFromOrganization(id:Int!,userId:Int!):UserModuleCommonData\n    #remove users from organization\n    removeUsersFromOrganization(id:Int!,userIds:[Int!]!):UserModuleCommonData\n}\n\n#return data\ntype OrganizationsData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    organizations:[Organization]\n}\n\n\n#return data\ntype RootsData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    roots:[Organization]\n}\n\n#return data\ntype ChildrenData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of organization \n    children:[Organization]\n}\n\n#Organization type \ntype Organization{\n    id:Int\n    name:String\n}\n\n#return data\ntype UsersInOrganizationData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #array of users\n    users:[User]\n}\n\ntype User{\n    id:Int\n    userName:String\n    status:Boolean\n}\n# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/common.original.graphql:\n#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+        "mergedPaths": [
+          "src/type/common.original.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonData"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "common.original.graphql",
+      "path": "src/type/common.original.graphql",
+      "sha": "751b07c198add1a33026b3f1dc745c7852037fca",
+      "url": "https://api.github.com/repositories/128041290/contents/src/type/common.original.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/751b07c198add1a33026b3f1dc745c7852037fca",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/common.original.graphql",
+      "content": "#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "score.types.graphql",
+      "path": "package/type/score.types.graphql",
+      "sha": "5998ee17ade498c2e6a942438e23b73bd4eb6ea8",
+      "url": "https://api.github.com/repositories/128041290/contents/package/type/score.types.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/5998ee17ade498c2e6a942438e23b73bd4eb6ea8",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/score.types.graphql",
+      "content": "type Query{\n    #get socre with specified user and specified ScoreType \n    getScore(userId:Int!,scoreTypeId:Int!):ScoreData\n}\n\ntype Mutation{\n    #set score add value with specified user and specified ScoreType \n    setScore(userId:Int!,scoreTypeId:Int!,add:Float!):UserModuleCommonData\n}\n\ntype ScoreData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #score value\n    score:Float\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/score.types.graphql:\ntype Query{\n    #get socre with specified user and specified ScoreType \n    getScore(userId:Int!,scoreTypeId:Int!):ScoreData\n}\n\ntype Mutation{\n    #set score add value with specified user and specified ScoreType \n    setScore(userId:Int!,scoreTypeId:Int!,add:Float!):UserModuleCommonData\n}\n\ntype ScoreData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #score value\n    score:Float\n}\n\n# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/common.types.graphql:\n#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+        "mergedPaths": [
+          "package/type/common.types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonData"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "score.original.graphql",
+      "path": "src/type/score.original.graphql",
+      "sha": "5998ee17ade498c2e6a942438e23b73bd4eb6ea8",
+      "url": "https://api.github.com/repositories/128041290/contents/src/type/score.original.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/5998ee17ade498c2e6a942438e23b73bd4eb6ea8",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/score.original.graphql",
+      "content": "type Query{\n    #get socre with specified user and specified ScoreType \n    getScore(userId:Int!,scoreTypeId:Int!):ScoreData\n}\n\ntype Mutation{\n    #set score add value with specified user and specified ScoreType \n    setScore(userId:Int!,scoreTypeId:Int!,add:Float!):UserModuleCommonData\n}\n\ntype ScoreData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #score value\n    score:Float\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/score.original.graphql:\ntype Query{\n    #get socre with specified user and specified ScoreType \n    getScore(userId:Int!,scoreTypeId:Int!):ScoreData\n}\n\ntype Mutation{\n    #set score add value with specified user and specified ScoreType \n    setScore(userId:Int!,scoreTypeId:Int!,add:Float!):UserModuleCommonData\n}\n\ntype ScoreData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #score value\n    score:Float\n}\n\n# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/common.original.graphql:\n#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+        "mergedPaths": [
+          "src/type/common.original.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonData"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "module.types.graphql",
+      "path": "package/type/module.types.graphql",
+      "sha": "836d354093dff0cb1b0869c27c23b7a3d8cbdcb8",
+      "url": "https://api.github.com/repositories/128041290/contents/package/type/module.types.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/836d354093dff0cb1b0869c27c23b7a3d8cbdcb8",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/module.types.graphql",
+      "content": "type Query{\n    #get all of modules and roles permissions funcs\n    modules:ModulesData\n}\n\ntype ModulesData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    modules:[Module]\n}\n\ntype Module{\n    token:String\n    roles:[Role]\n    funcs:[Func]\n    permissions:[Permission]\n}\n\ntype Permission{\n    id:Int\n    name:String\n    description:String\n}\n\ntype Func{\n    id:Int\n    name:String\n}\n\ntype Role{\n    id:Int\n    name:String\n    score:Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 6
+    },
+    {
+      "name": "module.original.graphql",
+      "path": "src/type/module.original.graphql",
+      "sha": "836d354093dff0cb1b0869c27c23b7a3d8cbdcb8",
+      "url": "https://api.github.com/repositories/128041290/contents/src/type/module.original.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/836d354093dff0cb1b0869c27c23b7a3d8cbdcb8",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/module.original.graphql",
+      "content": "type Query{\n    #get all of modules and roles permissions funcs\n    modules:ModulesData\n}\n\ntype ModulesData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    modules:[Module]\n}\n\ntype Module{\n    token:String\n    roles:[Role]\n    funcs:[Func]\n    permissions:[Permission]\n}\n\ntype Permission{\n    id:Int\n    name:String\n    description:String\n}\n\ntype Func{\n    id:Int\n    name:String\n}\n\ntype Role{\n    id:Int\n    name:String\n    score:Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    },
+    {
+      "name": "scopetype.types.graphql",
+      "path": "package/type/scopetype.types.graphql",
+      "sha": "8744e73f07f2f91a6143778e4799280f85059598",
+      "url": "https://api.github.com/repositories/128041290/contents/package/type/scopetype.types.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/8744e73f07f2f91a6143778e4799280f85059598",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/scopetype.types.graphql",
+      "content": "type Query{\n    #get all of ScoreType\n    scoreTypes:ScoreTypesData\n}\n\ntype Mutation{\n    #create new ScoreType\n    createScoreType(name:String!,type:ScoreValueType!,description:String):UserModuleCommonData\n    #update ScoreType\n    updateScoreType(id:Int!,name:String!,type:ScoreValueType!,description:String!):UserModuleCommonData\n    #delete ScoreType\n    deleteScoreType(id:Int!):UserModuleCommonData\n    #batch delete \n    deleteScoreTypes(ids:[Int!]!):UserModuleCommonData\n}\n\n\nenum ScoreValueType{\n    float\n    int\n}\n\n#scoreTypes return data\ntype ScoreTypesData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #scoreTypes\n    scoreTypes:[ScoreType]\n}\n\n#ScoreType type\ntype ScoreType{\n    id:Int\n    name:String\n    type:String\n    default:Boolean\n    description:String\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/scopetype.types.graphql:\ntype Query{\n    #get all of ScoreType\n    scoreTypes:ScoreTypesData\n}\n\ntype Mutation{\n    #create new ScoreType\n    createScoreType(name:String!,type:ScoreValueType!,description:String):UserModuleCommonData\n    #update ScoreType\n    updateScoreType(id:Int!,name:String!,type:ScoreValueType!,description:String!):UserModuleCommonData\n    #delete ScoreType\n    deleteScoreType(id:Int!):UserModuleCommonData\n    #batch delete \n    deleteScoreTypes(ids:[Int!]!):UserModuleCommonData\n}\n\n\nenum ScoreValueType{\n    float\n    int\n}\n\n#scoreTypes return data\ntype ScoreTypesData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #scoreTypes\n    scoreTypes:[ScoreType]\n}\n\n#ScoreType type\ntype ScoreType{\n    id:Int\n    name:String\n    type:String\n    default:Boolean\n    description:String\n}\n# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/common.types.graphql:\n#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+        "mergedPaths": [
+          "package/type/common.types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonData"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "scopetype.original.graphql",
+      "path": "src/type/scopetype.original.graphql",
+      "sha": "8744e73f07f2f91a6143778e4799280f85059598",
+      "url": "https://api.github.com/repositories/128041290/contents/src/type/scopetype.original.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/8744e73f07f2f91a6143778e4799280f85059598",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/scopetype.original.graphql",
+      "content": "type Query{\n    #get all of ScoreType\n    scoreTypes:ScoreTypesData\n}\n\ntype Mutation{\n    #create new ScoreType\n    createScoreType(name:String!,type:ScoreValueType!,description:String):UserModuleCommonData\n    #update ScoreType\n    updateScoreType(id:Int!,name:String!,type:ScoreValueType!,description:String!):UserModuleCommonData\n    #delete ScoreType\n    deleteScoreType(id:Int!):UserModuleCommonData\n    #batch delete \n    deleteScoreTypes(ids:[Int!]!):UserModuleCommonData\n}\n\n\nenum ScoreValueType{\n    float\n    int\n}\n\n#scoreTypes return data\ntype ScoreTypesData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #scoreTypes\n    scoreTypes:[ScoreType]\n}\n\n#ScoreType type\ntype ScoreType{\n    id:Int\n    name:String\n    type:String\n    default:Boolean\n    description:String\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/scopetype.original.graphql:\ntype Query{\n    #get all of ScoreType\n    scoreTypes:ScoreTypesData\n}\n\ntype Mutation{\n    #create new ScoreType\n    createScoreType(name:String!,type:ScoreValueType!,description:String):UserModuleCommonData\n    #update ScoreType\n    updateScoreType(id:Int!,name:String!,type:ScoreValueType!,description:String!):UserModuleCommonData\n    #delete ScoreType\n    deleteScoreType(id:Int!):UserModuleCommonData\n    #batch delete \n    deleteScoreTypes(ids:[Int!]!):UserModuleCommonData\n}\n\n\nenum ScoreValueType{\n    float\n    int\n}\n\n#scoreTypes return data\ntype ScoreTypesData{\n    #error code\n    code:Int\n    #error message\n    message:String\n    #scoreTypes\n    scoreTypes:[ScoreType]\n}\n\n#ScoreType type\ntype ScoreType{\n    id:Int\n    name:String\n    type:String\n    default:Boolean\n    description:String\n}\n# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/common.original.graphql:\n#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+        "mergedPaths": [
+          "src/type/common.original.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonData"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "infogroup.types.graphql",
+      "path": "package/type/infogroup.types.graphql",
+      "sha": "889d8b5c8a7c415ea7b00b1de25aea0eea5c8856",
+      "url": "https://api.github.com/repositories/128041290/contents/package/type/infogroup.types.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/889d8b5c8a7c415ea7b00b1de25aea0eea5c8856",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/infogroup.types.graphql",
+      "content": "type Query{\n    #get all info group\n    infoGroups:InfoGroupsData\n    #get info item\n    infoItems(id:Int!):InfoItemsData\n}\n\ntype Mutation{\n    #create InfoGroup\n    createInfoGroup(name:String!):UserModuleCommonData\n    #update  InfoGroup\n    updateInfoGroup(id:Int!,name:String!):UserModuleCommonData\n    #delete InfoGroup\n    deleteInfoGroup(id:Int!):UserModuleCommonData\n    #add info item to group\n    addInfoItem(id:Int!,infoItemId:Int!):UserModuleCommonData\n    #remove info item from group\n    removeInfoItem(id:Int!,infoItemId:Int!):UserModuleCommonData\n}\n\n\n#infoGroups return data\ntype InfoGroupsData{\n    code:Int\n    message:String\n    infoGroups:[InfoGroup]\n}\n\ntype InfoGroup{\n    id:Int\n    name:String\n    default:Boolean\n    status:Boolean\n}\n\n#infoItems return data\ntype InfoItemsData{\n    code:Int\n    message:String\n    infoItems:[InfoItem]\n}\n\ntype InfoItem{\n    id:Int\n    name:String\n    default:Boolean\n    description:String\n    type:String\n    necessary:Boolean\n    order:Int\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/infogroup.types.graphql:\ntype Query{\n    #get all info group\n    infoGroups:InfoGroupsData\n    #get info item\n    infoItems(id:Int!):InfoItemsData\n}\n\ntype Mutation{\n    #create InfoGroup\n    createInfoGroup(name:String!):UserModuleCommonData\n    #update  InfoGroup\n    updateInfoGroup(id:Int!,name:String!):UserModuleCommonData\n    #delete InfoGroup\n    deleteInfoGroup(id:Int!):UserModuleCommonData\n    #add info item to group\n    addInfoItem(id:Int!,infoItemId:Int!):UserModuleCommonData\n    #remove info item from group\n    removeInfoItem(id:Int!,infoItemId:Int!):UserModuleCommonData\n}\n\n\n#infoGroups return data\ntype InfoGroupsData{\n    code:Int\n    message:String\n    infoGroups:[InfoGroup]\n}\n\ntype InfoGroup{\n    id:Int\n    name:String\n    default:Boolean\n    status:Boolean\n}\n\n#infoItems return data\ntype InfoItemsData{\n    code:Int\n    message:String\n    infoItems:[InfoItem]\n}\n\ntype InfoItem{\n    id:Int\n    name:String\n    default:Boolean\n    description:String\n    type:String\n    necessary:Boolean\n    order:Int\n}\n\n# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/package/type/common.types.graphql:\n#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+        "mergedPaths": [
+          "package/type/common.types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonData"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 7,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "infogroup.original.graphql",
+      "path": "src/type/infogroup.original.graphql",
+      "sha": "889d8b5c8a7c415ea7b00b1de25aea0eea5c8856",
+      "url": "https://api.github.com/repositories/128041290/contents/src/type/infogroup.original.graphql?ref=16a01792419f309dad8b6b5f462a5aadb17deb1e",
+      "git_url": "https://api.github.com/repositories/128041290/git/blobs/889d8b5c8a7c415ea7b00b1de25aea0eea5c8856",
+      "html_url": "https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/infogroup.original.graphql",
+      "content": "type Query{\n    #get all info group\n    infoGroups:InfoGroupsData\n    #get info item\n    infoItems(id:Int!):InfoItemsData\n}\n\ntype Mutation{\n    #create InfoGroup\n    createInfoGroup(name:String!):UserModuleCommonData\n    #update  InfoGroup\n    updateInfoGroup(id:Int!,name:String!):UserModuleCommonData\n    #delete InfoGroup\n    deleteInfoGroup(id:Int!):UserModuleCommonData\n    #add info item to group\n    addInfoItem(id:Int!,infoItemId:Int!):UserModuleCommonData\n    #remove info item from group\n    removeInfoItem(id:Int!,infoItemId:Int!):UserModuleCommonData\n}\n\n\n#infoGroups return data\ntype InfoGroupsData{\n    code:Int\n    message:String\n    infoGroups:[InfoGroup]\n}\n\ntype InfoGroup{\n    id:Int\n    name:String\n    default:Boolean\n    status:Boolean\n}\n\n#infoItems return data\ntype InfoItemsData{\n    code:Int\n    message:String\n    infoItems:[InfoItem]\n}\n\ntype InfoItem{\n    id:Int\n    name:String\n    default:Boolean\n    description:String\n    type:String\n    necessary:Boolean\n    order:Int\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/infogroup.original.graphql:\ntype Query{\n    #get all info group\n    infoGroups:InfoGroupsData\n    #get info item\n    infoItems(id:Int!):InfoItemsData\n}\n\ntype Mutation{\n    #create InfoGroup\n    createInfoGroup(name:String!):UserModuleCommonData\n    #update  InfoGroup\n    updateInfoGroup(id:Int!,name:String!):UserModuleCommonData\n    #delete InfoGroup\n    deleteInfoGroup(id:Int!):UserModuleCommonData\n    #add info item to group\n    addInfoItem(id:Int!,infoItemId:Int!):UserModuleCommonData\n    #remove info item from group\n    removeInfoItem(id:Int!,infoItemId:Int!):UserModuleCommonData\n}\n\n\n#infoGroups return data\ntype InfoGroupsData{\n    code:Int\n    message:String\n    infoGroups:[InfoGroup]\n}\n\ntype InfoGroup{\n    id:Int\n    name:String\n    default:Boolean\n    status:Boolean\n}\n\n#infoItems return data\ntype InfoItemsData{\n    code:Int\n    message:String\n    infoItems:[InfoItem]\n}\n\ntype InfoItem{\n    id:Int\n    name:String\n    default:Boolean\n    description:String\n    type:String\n    necessary:Boolean\n    order:Int\n}\n\n# https://github.com/notadd/ts-module-user/blob/16a01792419f309dad8b6b5f462a5aadb17deb1e/src/type/common.original.graphql:\n#commom return data\ntype UserModuleCommonData{\n    #error code\n    code:Int\n    #error message\n    message:String\n}\n",
+        "mergedPaths": [
+          "src/type/common.original.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonData"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-04T09:40:40Z",
+    "updated_at": "2018-09-28T08:46:39Z",
+    "pushed_at": "2018-05-29T18:59:32Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

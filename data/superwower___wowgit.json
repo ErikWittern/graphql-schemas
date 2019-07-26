@@ -1,0 +1,95 @@
+{
+  "repo_name": "wowgit",
+  "repo_full_name": "superwower/wowgit",
+  "repo_owner": "superwower",
+  "repo_description": "Git web client that wows you ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "index.graphql",
+      "path": "server/interfaces/schema/index.graphql",
+      "sha": "9ab8790ce967f84e7fecdbbf18836ba4f392241c",
+      "url": "https://api.github.com/repositories/139388055/contents/server/interfaces/schema/index.graphql?ref=f92eef6dfb8ef7a1fcc05d7f7d406d5ec1b63b33",
+      "git_url": "https://api.github.com/repositories/139388055/git/blobs/9ab8790ce967f84e7fecdbbf18836ba4f392241c",
+      "html_url": "https://github.com/superwower/wowgit/blob/f92eef6dfb8ef7a1fcc05d7f7d406d5ec1b63b33/server/interfaces/schema/index.graphql",
+      "content": "# import Branch from 'branch.graphql'\n# import Status from 'status.graphql'\n\ntype Query {\n  status(path: String): Status\n  isGitRepository(path: String): Boolean\n  getLocalBranches(path: String): [Branch!]!\n}\n\ntype Mutation {\n  changeConfig: Boolean\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/superwower/wowgit/blob/f92eef6dfb8ef7a1fcc05d7f7d406d5ec1b63b33/server/interfaces/schema/index.graphql:\n# import Branch from 'branch.graphql'\n# import Status from 'status.graphql'\n\ntype Query {\n  status(path: String): Status\n  isGitRepository(path: String): Boolean\n  getLocalBranches(path: String): [Branch!]!\n}\n\ntype Mutation {\n  changeConfig: Boolean\n}\n\n# https://github.com/superwower/wowgit/blob/b834f87c7b0e6de7f2afce37800f8fda4d5e1e61/server/interfaces/schema/status.graphql:\n# import File from 'file.graphql'\n\ntype Status {\n  untracked: [File]\n  modified: [File]\n  deleted: [File]\n}\n\n# https://github.com/superwower/wowgit/blob/f92eef6dfb8ef7a1fcc05d7f7d406d5ec1b63b33/server/interfaces/schema/branch.graphql:\ntype Branch {\n  name: String!\n  # TODO: add commit pointed by this branch\n}\n\n# https://github.com/superwower/wowgit/blob/c73e93b8e4e5d6b476a2d6e692ddb4f6cb6010df/server/interfaces/schema/file.graphql:\ntype File {\n  path: String!\n}\n",
+        "mergedPaths": [
+          "server/interfaces/schema/status.graphql",
+          "server/interfaces/schema/branch.graphql",
+          "server/interfaces/schema/file.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Status",
+          "Branch",
+          "File"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "status.graphql",
+      "path": "server/interfaces/schema/status.graphql",
+      "sha": "24b0644c6795a8eb0d04a04ed51e84f89619e634",
+      "url": "https://api.github.com/repositories/139388055/contents/server/interfaces/schema/status.graphql?ref=b834f87c7b0e6de7f2afce37800f8fda4d5e1e61",
+      "git_url": "https://api.github.com/repositories/139388055/git/blobs/24b0644c6795a8eb0d04a04ed51e84f89619e634",
+      "html_url": "https://github.com/superwower/wowgit/blob/b834f87c7b0e6de7f2afce37800f8fda4d5e1e61/server/interfaces/schema/status.graphql",
+      "content": "# import File from 'file.graphql'\n\ntype Status {\n  untracked: [File]\n  modified: [File]\n  deleted: [File]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "file.graphql",
+      "path": "server/interfaces/schema/file.graphql",
+      "sha": "c5df9c16389fddf955cce27c8ee27b406a842649",
+      "url": "https://api.github.com/repositories/139388055/contents/server/interfaces/schema/file.graphql?ref=c73e93b8e4e5d6b476a2d6e692ddb4f6cb6010df",
+      "git_url": "https://api.github.com/repositories/139388055/git/blobs/c5df9c16389fddf955cce27c8ee27b406a842649",
+      "html_url": "https://github.com/superwower/wowgit/blob/c73e93b8e4e5d6b476a2d6e692ddb4f6cb6010df/server/interfaces/schema/file.graphql",
+      "content": "type File {\n  path: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "branch.graphql",
+      "path": "server/interfaces/schema/branch.graphql",
+      "sha": "af6414aa976cb6423a4f34a451d9046f20a0647e",
+      "url": "https://api.github.com/repositories/139388055/contents/server/interfaces/schema/branch.graphql?ref=f92eef6dfb8ef7a1fcc05d7f7d406d5ec1b63b33",
+      "git_url": "https://api.github.com/repositories/139388055/git/blobs/af6414aa976cb6423a4f34a451d9046f20a0647e",
+      "html_url": "https://github.com/superwower/wowgit/blob/f92eef6dfb8ef7a1fcc05d7f7d406d5ec1b63b33/server/interfaces/schema/branch.graphql",
+      "content": "type Branch {\n  name: String!\n  # TODO: add commit pointed by this branch\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-02T03:50:20Z",
+    "updated_at": "2018-12-07T09:21:29Z",
+    "pushed_at": "2019-07-13T12:00:56Z",
+    "issues": 42,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 100,
+    "pull_requests_open": 20,
+    "pull_requests_closed": 6,
+    "pull_requests_merged": 74,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "ReactNativeRelayGraphQL",
+  "repo_full_name": "isaacboratino/reactnativerelaygraphql",
+  "repo_owner": "isaacboratino",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "89b20dba8ccce8248635199ad495628c039eafb6",
+      "url": "https://api.github.com/repositories/106598627/contents/src/schema.graphql?ref=968f3c743b5928ee76de1d336a1f62fcf7c758b1",
+      "git_url": "https://api.github.com/repositories/106598627/git/blobs/89b20dba8ccce8248635199ad495628c039eafb6",
+      "html_url": "https://github.com/isaacboratino/ReactNativeRelayGraphQL/blob/968f3c743b5928ee76de1d336a1f62fcf7c758b1/src/schema.graphql",
+      "content": "input ChangePasswordInput {\n    oldPassword: String!\n  \n    # user new password\n    password: String!\n    clientMutationId: String\n  }\n  \n  type ChangePasswordPayload {\n    error: String\n    me: User\n    clientMutationId: String\n  }\n  \n  input LoginEmailInput {\n    email: String!\n    password: String!\n    clientMutationId: String\n  }\n  \n  type LoginEmailPayload {\n    token: String\n    error: String\n    clientMutationId: String\n  }\n  \n  type Mutation {\n    LoginEmail(input: LoginEmailInput!): LoginEmailPayload\n    RegisterEmail(input: RegisterEmailInput!): RegisterEmailPayload\n    ChangePassword(input: ChangePasswordInput!): ChangePasswordPayload\n  }\n  \n  # An object with an ID\n  interface Node {\n    # The id of the object.\n    id: ID!\n  }\n  \n  # Information about pagination in a connection.\n  type PageInfo {\n    # When paginating forwards, are there more items?\n    hasNextPage: Boolean!\n  \n    # When paginating backwards, are there more items?\n    hasPreviousPage: Boolean!\n  \n    # When paginating backwards, the cursor to continue.\n    startCursor: String\n  \n    # When paginating forwards, the cursor to continue.\n    endCursor: String\n  }\n  \n  # The root of all... queries\n  type Query implements Node {\n    # The ID of an object\n    id: ID!\n    me: User\n    user(id: ID!): User\n    users(after: String, first: Int, before: String, last: Int, search: String): UserConnection\n  }\n  \n  input RegisterEmailInput {\n    name: String!\n    email: String!\n    password: String!\n    clientMutationId: String\n  }\n  \n  type RegisterEmailPayload {\n    token: String\n    error: String\n    clientMutationId: String\n  }\n  \n  # User data\n  type User implements Node {\n    # The ID of an object\n    id: ID!\n    _id: String\n    name: String\n    email: String\n    active: Boolean\n  }\n  \n  # A connection to a list of items.\n  type UserConnection {\n    # Information to aid in pagination.\n    pageInfo: PageInfo!\n  \n    # A list of edges.\n    edges: [UserEdge]\n    count: Int\n  }\n  \n  # An edge in a connection.\n  type UserEdge {\n    # The item at the end of the edge\n    node: User\n  \n    # A cursor for use in pagination\n    cursor: String!\n  }",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-11T19:17:08Z",
+    "updated_at": "2017-10-25T16:03:40Z",
+    "pushed_at": "2017-10-14T15:48:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

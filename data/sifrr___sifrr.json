@@ -1,0 +1,41 @@
+{
+  "repo_name": "sifrr",
+  "repo_full_name": "sifrr/sifrr",
+  "repo_owner": "sifrr",
+  "repo_description": ":zap: Set of tiny, independent libraries for creating modern and fast webapps with javascript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "correct.graphql",
+      "path": "packages/server/sifrr-api/test/browser/correct.graphql",
+      "sha": "3f7b21dd9345582fe66650e10cc34ac3ced3292a",
+      "url": "https://api.github.com/repositories/122309703/contents/packages/server/sifrr-api/test/browser/correct.graphql?ref=3de5b426d2b0b1c89673ee2251f0915123507d92",
+      "git_url": "https://api.github.com/repositories/122309703/git/blobs/3f7b21dd9345582fe66650e10cc34ac3ced3292a",
+      "html_url": "https://github.com/sifrr/sifrr/blob/3de5b426d2b0b1c89673ee2251f0915123507d92/packages/server/sifrr-api/test/browser/correct.graphql",
+      "content": "type Query {\n  \"\"\"Get one Pet.\"\"\"\n  getPet(id: Int, where: SequelizeJSON, limit: Int, order: String, offset: Int): [Pet]\n  \"\"\"Pet connection\"\"\"\n  petConn(after: String, first: Int, before: String, last: Int, orderBy: [[String]] = [[\"name\", \"ASC\"]]): PetConnection\n  User(id: Int, where: SequelizeJSON, limit: Int, order: String, offset: Int): [User]\n}\n\ntype Mutation {\n  createPet(name: String!, ownerId: Int!): Pet\n  createPetAndOwner(name: String!, owner__name: String!): Pet\n  updatePet(id: Int!): Pet\n  upsertPet(id: Int!): Pet\n  deletePet(id: Int!): Int\n  createUser(name: String!): User\n}\n\nscalar SequelizeJSON\nscalar Date\nscalar Random\n\n\"\"\"A pet\"\"\"\ntype Pet {\n  id: Int!\n  name: String!\n  ownerId: Int!\n  \"\"\"Random attribute\"\"\"\n  type(type: String): String\n  owner: User\n}\n\ntype User {\n  id: Int!\n  name: String\n  createdAt: Date!\n  updatedAt: Date!\n  \"\"\"pets of user\"\"\"\n  pets(after: String, first: Int, before: String, last: Int, orderBy: [[String]] = [[\"name\", \"ASC\"]]): PetConnection\n}\n\n\"\"\"Pet connection\"\"\"\ntype PetConnection {\n  edges: [PetConnectionEdge]\n  \"\"\"Total pets\"\"\"\n  total: Int\n}\n\ntype PetConnectionEdge {\n  node: Pet\n  cursor: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-21T08:24:15Z",
+    "updated_at": "2019-07-19T04:06:54Z",
+    "pushed_at": "2019-07-19T04:06:52Z",
+    "issues": 73,
+    "watchers": 2,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 141,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 29,
+    "pull_requests_merged": 112,
+    "releases": 5,
+    "stargazers": 30
+  }
+}

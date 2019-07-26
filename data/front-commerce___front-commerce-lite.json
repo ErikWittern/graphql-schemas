@@ -1,0 +1,151 @@
+{
+  "repo_name": "front-commerce-lite",
+  "repo_full_name": "front-commerce/front-commerce-lite",
+  "repo_owner": "front-commerce",
+  "repo_description": "Prototype your next eCommerce experiences using modern web technologies.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/server/modules/fake-shop/schema.gql",
+      "sha": "13946f3780b15c9d424271032acf0f14f40c0e94",
+      "url": "https://api.github.com/repositories/126829053/contents/src/server/modules/fake-shop/schema.gql?ref=ed95a7c965beecaa7f309f8618533408abe6dcbd",
+      "git_url": "https://api.github.com/repositories/126829053/git/blobs/13946f3780b15c9d424271032acf0f14f40c0e94",
+      "html_url": "https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/modules/fake-shop/schema.gql",
+      "content": "#import \"../../graphql-specs/front-commerce-lite.gql\"\n\ntype Query implements CatalogQueries & CartQueries {\n  category(id: Int!): Category\n  product(sku: String!): Product\n  cart: Cart\n}\n\ntype Mutation implements CartMutations {\n  addItemToCart(sku: String!): CartPayload\n  removeItemFromCart(item_id: Int!): CartPayload\n}\n\ntype FakeCart implements Cart {\n  id: Int\n  items_qty: Int\n  items: [CartItem]\n  totals: CartTotals\n}\n\ntype FakeCartItem implements CartItem {\n  name: String\n  qty: Int\n  item_id: Int\n  sku: String\n  product: Product\n  priceInfo: CartItemPriceInfo\n}\n\ntype FakeCartItemPriceInfo implements CartItemPriceInfo {\n  rowTotalInclTax: Price\n}\n\ntype FakeCartTotals implements CartTotals {\n  subtotalInclTax: Price\n}\n\ntype FakeCategory implements Category {\n  name: String\n  layer(params: QueryInput!): Layer\n}\n\ntype FakeLayer implements Layer {\n  products: [Product]\n}\n\ntype FakeProduct implements Product {\n  sku: String\n  name: String\n  description: String\n  imageUrl: String\n  prices: ProductPrices\n}\n\ntype FakeProductPrices implements ProductPrices {\n  finalPrice: BothInclAndExclTaxesPrice\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/modules/fake-shop/schema.gql:\n#import \"../../graphql-specs/front-commerce-lite.gql\"\n\ntype Query implements CatalogQueries & CartQueries {\n  category(id: Int!): Category\n  product(sku: String!): Product\n  cart: Cart\n}\n\ntype Mutation implements CartMutations {\n  addItemToCart(sku: String!): CartPayload\n  removeItemFromCart(item_id: Int!): CartPayload\n}\n\ntype FakeCart implements Cart {\n  id: Int\n  items_qty: Int\n  items: [CartItem]\n  totals: CartTotals\n}\n\ntype FakeCartItem implements CartItem {\n  name: String\n  qty: Int\n  item_id: Int\n  sku: String\n  product: Product\n  priceInfo: CartItemPriceInfo\n}\n\ntype FakeCartItemPriceInfo implements CartItemPriceInfo {\n  rowTotalInclTax: Price\n}\n\ntype FakeCartTotals implements CartTotals {\n  subtotalInclTax: Price\n}\n\ntype FakeCategory implements Category {\n  name: String\n  layer(params: QueryInput!): Layer\n}\n\ntype FakeLayer implements Layer {\n  products: [Product]\n}\n\ntype FakeProduct implements Product {\n  sku: String\n  name: String\n  description: String\n  imageUrl: String\n  prices: ProductPrices\n}\n\ntype FakeProductPrices implements ProductPrices {\n  finalPrice: BothInclAndExclTaxesPrice\n}\n\n# https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/graphql-specs/catalog.gql:\ninterface CatalogQueries {\n  category(id: Int!): Category\n  product(sku: String!): Product\n}\n\ninterface Category {\n  name: String\n  layer(params: QueryInput!): Layer\n}\n\ninterface Layer {\n  products: [Product]\n}\n\ninterface Product {\n  sku: String\n  name: String\n  description: String\n  imageUrl: String\n  prices: ProductPrices\n}\n\ninterface ProductPrices {\n  finalPrice: BothInclAndExclTaxesPrice\n}\n\ninput QueryInput {\n  size: Int!\n  from: Int!\n}\n\ntype BothInclAndExclTaxesPrice {\n  priceInclTax: Price\n  priceExclTax: Price\n}\n\n# https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/graphql-specs/cart.gql:\ninterface CartQueries {\n  cart: Cart\n}\n\ninterface CartMutations {\n  addItemToCart(sku: String!): CartPayload\n  removeItemFromCart(item_id: Int!): CartPayload\n}\n\ninterface Cart {\n  id: Int\n  items_qty: Int\n  items: [CartItem]\n  totals: CartTotals\n}\n\ninterface CartItem {\n  name: String\n  qty: Int\n  item_id: Int\n  sku: String\n  product: Product\n  priceInfo: CartItemPriceInfo\n}\n\ninterface CartItemPriceInfo {\n  rowTotalInclTax: Price\n}\n\ninterface CartTotals {\n  subtotalInclTax: Price\n}\n\ntype CartPayload {\n  success: Boolean\n  errorMessage: String\n  cart: Cart\n}\n\n# https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/graphql-specs/core-types.gql:\ntype Price {\n  value: Money\n  includeTax: Boolean\n}\n\ntype Money {\n  amount: Float\n  currency: String\n}\n",
+        "mergedPaths": [
+          "src/server/graphql-specs/catalog.gql",
+          "src/server/graphql-specs/cart.gql",
+          "src/server/graphql-specs/core-types.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Category",
+          "Layer",
+          "Product",
+          "ProductPrices",
+          "BothInclAndExclTaxesPrice",
+          "Cart",
+          "CartItem",
+          "CartItemPriceInfo",
+          "CartTotals",
+          "CartPayload",
+          "Price"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 14,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 26
+      },
+      "validSchema": false
+    },
+    {
+      "name": "core-types.gql",
+      "path": "src/server/graphql-specs/core-types.gql",
+      "sha": "b211750b999bd375170192a7278fc673fc6a298b",
+      "url": "https://api.github.com/repositories/126829053/contents/src/server/graphql-specs/core-types.gql?ref=ed95a7c965beecaa7f309f8618533408abe6dcbd",
+      "git_url": "https://api.github.com/repositories/126829053/git/blobs/b211750b999bd375170192a7278fc673fc6a298b",
+      "html_url": "https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/graphql-specs/core-types.gql",
+      "content": "type Price {\n  value: Money\n  includeTax: Boolean\n}\n\ntype Money {\n  amount: Float\n  currency: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "catalog.gql",
+      "path": "src/server/graphql-specs/catalog.gql",
+      "sha": "5143f22dcf7755c8233aafdc348d542c4cb6d8a6",
+      "url": "https://api.github.com/repositories/126829053/contents/src/server/graphql-specs/catalog.gql?ref=ed95a7c965beecaa7f309f8618533408abe6dcbd",
+      "git_url": "https://api.github.com/repositories/126829053/git/blobs/5143f22dcf7755c8233aafdc348d542c4cb6d8a6",
+      "html_url": "https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/graphql-specs/catalog.gql",
+      "content": "interface CatalogQueries {\n  category(id: Int!): Category\n  product(sku: String!): Product\n}\n\ninterface Category {\n  name: String\n  layer(params: QueryInput!): Layer\n}\n\ninterface Layer {\n  products: [Product]\n}\n\ninterface Product {\n  sku: String\n  name: String\n  description: String\n  imageUrl: String\n  prices: ProductPrices\n}\n\ninterface ProductPrices {\n  finalPrice: BothInclAndExclTaxesPrice\n}\n\ninput QueryInput {\n  size: Int!\n  from: Int!\n}\n\ntype BothInclAndExclTaxesPrice {\n  priceInclTax: Price\n  priceExclTax: Price\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 7
+    },
+    {
+      "name": "cart.gql",
+      "path": "src/server/graphql-specs/cart.gql",
+      "sha": "15292c4a8df008790f7ea1fb295d1e2e7731aeae",
+      "url": "https://api.github.com/repositories/126829053/contents/src/server/graphql-specs/cart.gql?ref=ed95a7c965beecaa7f309f8618533408abe6dcbd",
+      "git_url": "https://api.github.com/repositories/126829053/git/blobs/15292c4a8df008790f7ea1fb295d1e2e7731aeae",
+      "html_url": "https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/graphql-specs/cart.gql",
+      "content": "interface CartQueries {\n  cart: Cart\n}\n\ninterface CartMutations {\n  addItemToCart(sku: String!): CartPayload\n  removeItemFromCart(item_id: Int!): CartPayload\n}\n\ninterface Cart {\n  id: Int\n  items_qty: Int\n  items: [CartItem]\n  totals: CartTotals\n}\n\ninterface CartItem {\n  name: String\n  qty: Int\n  item_id: Int\n  sku: String\n  product: Product\n  priceInfo: CartItemPriceInfo\n}\n\ninterface CartItemPriceInfo {\n  rowTotalInclTax: Price\n}\n\ninterface CartTotals {\n  subtotalInclTax: Price\n}\n\ntype CartPayload {\n  success: Boolean\n  errorMessage: String\n  cart: Cart\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 7
+    },
+    {
+      "name": "schema.gql",
+      "path": "src/server/modules/store-information/schema.gql",
+      "sha": "f2e33123d183f61150fdca72b38f3fe2f8ba5183",
+      "url": "https://api.github.com/repositories/126829053/contents/src/server/modules/store-information/schema.gql?ref=7815df556afb5a5a20d328d55abff267e15654d0",
+      "git_url": "https://api.github.com/repositories/126829053/git/blobs/f2e33123d183f61150fdca72b38f3fe2f8ba5183",
+      "html_url": "https://github.com/front-commerce/front-commerce-lite/blob/7815df556afb5a5a20d328d55abff267e15654d0/src/server/modules/store-information/schema.gql",
+      "content": "type Query {\n  \"General information about this store\"\n  store: StoreInformation\n}\n\n\"General information about a store\"\ntype StoreInformation {\n  \"Store name\"\n  name: String!\n  \"Support phone number\"\n  phone: String\n  \"Store owner\"\n  owner: StoreOwner\n}\n\n\"\"\"\nThe Owner of a store, with contact and personal\ninformation to make the store more human\n\"\"\"\ntype StoreOwner {\n  gender: Gender\n  displayName: String!\n  email: String!\n  picture(size: ImageSize = medium): String!\n}\n\nenum Gender {\n  FEMALE\n  MALE\n  NONBINARY\n}\n\nenum ImageSize {\n  large\n  medium\n  thumbnail\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.gql",
+      "path": "src/server/modules/moltin-integration/schema.gql",
+      "sha": "53736fc88768601c8a83009dc4094fbafeec386c",
+      "url": "https://api.github.com/repositories/126829053/contents/src/server/modules/moltin-integration/schema.gql?ref=ed95a7c965beecaa7f309f8618533408abe6dcbd",
+      "git_url": "https://api.github.com/repositories/126829053/git/blobs/53736fc88768601c8a83009dc4094fbafeec386c",
+      "html_url": "https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/modules/moltin-integration/schema.gql",
+      "content": "#import \"../../graphql-specs/core-types.gql\"\n#import \"../../graphql-specs/catalog.gql\"\n\ntype Query implements CatalogQueries {\n  category(id: Int!): Category\n  product(sku: String!): Product\n}\n\ntype MoltinCategory implements Category {\n  name: String\n  layer(params: QueryInput!): Layer\n}\n\ntype MoltinPaginatedProducts implements Layer {\n  products: [Product]\n}\n\ntype MoltinProduct implements Product {\n  sku: String\n  name: String\n  description: String\n  imageUrl: String\n  prices: ProductPrices\n\n  # Additional fields only in Moltin\n  commodityType: MoltinCommodityType\n}\n\nenum MoltinCommodityType {\n  physical\n  digital\n}\n\ntype MoltinPrices implements ProductPrices {\n  finalPrice: BothInclAndExclTaxesPrice\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/modules/moltin-integration/schema.gql:\n#import \"../../graphql-specs/core-types.gql\"\n#import \"../../graphql-specs/catalog.gql\"\n\ntype Query implements CatalogQueries {\n  category(id: Int!): Category\n  product(sku: String!): Product\n}\n\ntype MoltinCategory implements Category {\n  name: String\n  layer(params: QueryInput!): Layer\n}\n\ntype MoltinPaginatedProducts implements Layer {\n  products: [Product]\n}\n\ntype MoltinProduct implements Product {\n  sku: String\n  name: String\n  description: String\n  imageUrl: String\n  prices: ProductPrices\n\n  # Additional fields only in Moltin\n  commodityType: MoltinCommodityType\n}\n\nenum MoltinCommodityType {\n  physical\n  digital\n}\n\ntype MoltinPrices implements ProductPrices {\n  finalPrice: BothInclAndExclTaxesPrice\n}\n\n# https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/graphql-specs/catalog.gql:\ninterface CatalogQueries {\n  category(id: Int!): Category\n  product(sku: String!): Product\n}\n\ninterface Category {\n  name: String\n  layer(params: QueryInput!): Layer\n}\n\ninterface Layer {\n  products: [Product]\n}\n\ninterface Product {\n  sku: String\n  name: String\n  description: String\n  imageUrl: String\n  prices: ProductPrices\n}\n\ninterface ProductPrices {\n  finalPrice: BothInclAndExclTaxesPrice\n}\n\ninput QueryInput {\n  size: Int!\n  from: Int!\n}\n\ntype BothInclAndExclTaxesPrice {\n  priceInclTax: Price\n  priceExclTax: Price\n}\n\n# https://github.com/front-commerce/front-commerce-lite/blob/ed95a7c965beecaa7f309f8618533408abe6dcbd/src/server/graphql-specs/core-types.gql:\ntype Price {\n  value: Money\n  includeTax: Boolean\n}\n\ntype Money {\n  amount: Float\n  currency: String\n}\n",
+        "mergedPaths": [
+          "src/server/graphql-specs/catalog.gql",
+          "src/server/graphql-specs/core-types.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Category",
+          "Layer",
+          "Product",
+          "ProductPrices",
+          "BothInclAndExclTaxesPrice",
+          "Price"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 8,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 15
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-26T12:57:36Z",
+    "updated_at": "2019-07-01T05:52:23Z",
+    "pushed_at": "2019-07-01T05:52:25Z",
+    "issues": 7,
+    "watchers": 3,
+    "fork_count": 7,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 91,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 89,
+    "releases": 0,
+    "stargazers": 32
+  }
+}

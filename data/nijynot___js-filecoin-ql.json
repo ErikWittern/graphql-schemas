@@ -1,0 +1,42 @@
+{
+  "repo_name": "js-filecoin-ql",
+  "repo_full_name": "nijynot/js-filecoin-ql",
+  "repo_owner": "nijynot",
+  "repo_description": "Serverless GraphQL client for Filecoin.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema/schema.graphql",
+      "sha": "b388f51fae06db69338217827c2dd224fb2dd0a8",
+      "url": "https://api.github.com/repositories/181553493/contents/src/schema/schema.graphql?ref=f8808e77fffa7d771ea55cfc5d6316184785e33a",
+      "git_url": "https://api.github.com/repositories/181553493/git/blobs/b388f51fae06db69338217827c2dd224fb2dd0a8",
+      "html_url": "https://github.com/nijynot/js-filecoin-ql/blob/f8808e77fffa7d771ea55cfc5d6316184785e33a/src/schema/schema.graphql",
+      "content": "\"\"\"Address is a single Filecoin address.\"\"\"\ntype Address {\n  address: String!\n  balance: Int!\n}\n\ntype Block {\n  miner: String!\n  parents: [CID]!\n  parentWeight: Int\n  height: Int\n  nonce: Int\n  stateRoot: CID\n  proof: [Int]!\n  messages: [MeteredMessage]\n}\n\n\"\"\"CID is a self-describing content-addressed identifier.\"\"\"\ntype CID {\n  version: Int!\n  codec: String!\n  multibaseName: String!\n  multihash: String!\n}\n\n\"\"\"CID as a GraphQLScalarType.\"\"\"\nscalar CIDScalar\n\n\"\"\"Message\"\"\"\ntype Message {\n  to: String\n  from: String\n  nonce: Int\n  value: String\n  method: String\n  params: String\n}\n\n\"\"\"Wrapper type of Message that includes additional information.\"\"\"\ntype MeteredMessage {\n  message: Message\n  gasPrice: Int\n  gasLimit: Int\n  signature: String\n}\n\n\"\"\"Multiaddr is a standard way to represent addresses.\"\"\"\ntype Multiaddr {\n  multiaddr: String\n}\n\n\"\"\"Mutations that can be called from this schema.\"\"\"\ntype Mutation {\n  updateLogLevelMutation(input: UpdateLogLevelInput): String\n}\n\ntype Query {\n  block(cid: CIDScalar!): Block!\n  chain(height: Int): [Block]\n  defaultAddress: Address\n  wallet: [Address]\n  bootstrap: [Multiaddr]\n  version: String\n  peer(id: String): [Multiaddr]\n  log: [String]\n  stats: Stats\n}\n\n\"\"\"Stats shows bandwidth usage statistics.\"\"\"\ntype Stats {\n  totalIn: Int\n  totalOut: Int\n  rateIn: Int\n  rateOut: Int\n}\n\ninput UpdateLogLevelInput {\n  level: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-15T19:37:02Z",
+    "updated_at": "2019-04-15T19:40:11Z",
+    "pushed_at": "2019-04-15T19:37:26Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "apollo_node_simple",
+  "repo_full_name": "mbabauer/apollo_node_simple",
+  "repo_owner": "mbabauer",
+  "repo_description": "Simple GraphQL Example using Apollo Stack and Node",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "a4e56b0a7c34acf94261c95adff2e404efb2ea5c",
+      "url": "https://api.github.com/repositories/71956584/contents/data/schema.graphql?ref=252707efaebf53cc9876f27ea43c3ac0aa3be685",
+      "git_url": "https://api.github.com/repositories/71956584/git/blobs/a4e56b0a7c34acf94261c95adff2e404efb2ea5c",
+      "html_url": "https://github.com/mbabauer/apollo_node_simple/blob/252707efaebf53cc9876f27ea43c3ac0aa3be685/data/schema.graphql",
+      "content": "type Task {\n  id: Int!\n  text: String!\n  isComplete: Boolean\n}\n\ntype Query {\n  tasks: [Task]\n  task(id: Int!): Task\n}\n\ntype Mutation {\n  createTask(\n    text: String!\n  ): Task\n}\n\ntype Subscription {\n  taskCreated: Task\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-26T02:06:26Z",
+    "updated_at": "2016-10-26T02:12:07Z",
+    "pushed_at": "2016-10-26T15:52:32Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

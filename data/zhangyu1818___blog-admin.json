@@ -1,0 +1,42 @@
+{
+  "repo_name": "blog-admin",
+  "repo_full_name": "zhangyu1818/blog-admin",
+  "repo_owner": "zhangyu1818",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "36545011e4f7a8d9df95c97cdf4fd86795783fa7",
+      "url": "https://api.github.com/repositories/180550233/contents/schema.graphql?ref=0a907092b3fb0c2522900cf9a299e132ba6a7003",
+      "git_url": "https://api.github.com/repositories/180550233/git/blobs/36545011e4f7a8d9df95c97cdf4fd86795783fa7",
+      "html_url": "https://github.com/zhangyu1818/blog-admin/blob/0a907092b3fb0c2522900cf9a299e132ba6a7003/schema.graphql",
+      "content": "# This file was generated based on \".graphqlconfig\". Do not edit manually.\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Categories {\n  _id: ID!\n  name: String!\n  posts: [Post!]!\n}\n\ntype LimitPost {\n  pagination: Pagination!\n  posts: [Post!]!\n}\n\ntype Mutation {\n  \"create a new category\"\n  addCategory(name: String!): Categories\n  \"add new post\"\n  addPost(data: AddPostInput!): Post!\n  \"create a new tag\"\n  addTag(name: String!): Tags\n  \"change category name\"\n  changeCategoryName(id: String!, name: String!): Categories!\n  \"change tag name\"\n  changeTagName(id: String!, name: String!): Tags!\n  \"delete category by id\"\n  deleteCategory(id: String!): Categories!\n  \"delete post by id\"\n  deletePost(id: String!): Post!\n  \"delete tag by id\"\n  deleteTag(id: String!): Tags!\n  \"update post by id\"\n  updatePost(data: UpdatePostInput!, id: String!): Post!\n}\n\ntype Pagination {\n  currentPage: Int!\n  pageSize: Int!\n  total: Int!\n}\n\ntype Post {\n  _id: ID!\n  categories: [String]!\n  content: String!\n  markdown: String!\n  postedTime: DateTime!\n  revisionCount: Int!\n  tags: [String]!\n  title: String!\n  type: String!\n  updateTime: DateTime\n}\n\ntype Query {\n  \"query categories\"\n  categories(type: String = \"published\"): [Categories!]!\n  \"query category by id\"\n  category(id: String!): Categories!\n  \"query draft posts\"\n  draft: [Post!]!\n  \"query posts by pagination\"\n  limitPosts(pagination: PaginationInput!, type: String = \"published\"): LimitPost!\n  \"query post by id\"\n  post(id: String!): Post!\n  \"query published posts\"\n  posts: [Post!]!\n  \"query tag by id\"\n  tag(id: String!): Tags!\n  \"query tags\"\n  tags(type: String = \"published\"): [Tags!]!\n  \"query trash posts\"\n  trash: [Post!]!\n}\n\n\"post tags\"\ntype Tags {\n  _id: ID!\n  name: String!\n  posts: [Post!]!\n}\n\n\"post input type\"\ninput AddPostInput {\n  categories: [String!]\n  content: String!\n  markdown: String!\n  tags: [String!]\n  title: String!\n  type: String = \"draft\"\n}\n\n\"pagination input\"\ninput PaginationInput {\n  currentPage: Int = 1\n  pageSize: Int = 10\n}\n\n\"post update input type\"\ninput UpdatePostInput {\n  categories: [String!]\n  content: String\n  markdown: String\n  tags: [String!]\n  title: String\n  type: String\n}\n\n\"The javascript `Date` as string. Type represents date and time as the ISO Date string.\"\nscalar DateTime\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-10T09:38:37Z",
+    "updated_at": "2019-05-09T00:42:32Z",
+    "pushed_at": "2019-05-09T00:42:30Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

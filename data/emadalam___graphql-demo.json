@@ -1,0 +1,78 @@
+{
+  "repo_name": "graphql-demo",
+  "repo_full_name": "emadalam/graphql-demo",
+  "repo_owner": "emadalam",
+  "repo_description": "A demo GraphQL application server with presentation slides",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "queries.gql",
+      "path": "graphql-server/src/types/queries.gql",
+      "sha": "28e9f668c0c19c236d39024e4e53e968ecd4347e",
+      "url": "https://api.github.com/repositories/120468958/contents/graphql-server/src/types/queries.gql?ref=85d07eb2fb831ce746a4710357952a886b871b9e",
+      "git_url": "https://api.github.com/repositories/120468958/git/blobs/28e9f668c0c19c236d39024e4e53e968ecd4347e",
+      "html_url": "https://github.com/emadalam/graphql-demo/blob/85d07eb2fb831ce746a4710357952a886b871b9e/graphql-server/src/types/queries.gql",
+      "content": "type Query {\n\n    # List of available movies\n    movies: [Movie!]\n\n    # Get movie by Id\n    movie(id: ID!): Movie\n\n    # List of available casts\n    casts: [Cast!]\n\n    # Get cast by Id\n    cast(id: ID!): Cast\n\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/emadalam/graphql-demo/blob/85d07eb2fb831ce746a4710357952a886b871b9e/graphql-server/src/types/queries.gql:\ntype Query {\n\n    # List of available movies\n    movies: [Movie!]\n\n    # Get movie by Id\n    movie(id: ID!): Movie\n\n    # List of available casts\n    casts: [Cast!]\n\n    # Get cast by Id\n    cast(id: ID!): Cast\n\n}\n\n# https://github.com/emadalam/graphql-demo/blob/85d07eb2fb831ce746a4710357952a886b871b9e/graphql-server/src/types/movie.gql:\n# Defines the movie type\ntype Movie {\n\n    # Id of the movie\n    id: ID!\n\n    # Name of the movie\n    name: String!\n\n    # Casts associated with the movie\n    cast: [Cast!]\n\n    # Year of release\n    year: Int\n\n}\n\n# https://github.com/emadalam/graphql-demo/blob/85d07eb2fb831ce746a4710357952a886b871b9e/graphql-server/src/types/cast.gql:\n# Defines the cast\ntype Cast {\n\n    # Id of the cast\n    id: ID!\n\n    # Name of the cast\n    name: String!\n\n    # Movies related to the cast\n    movies: [Movie!]\n\n}\n",
+        "mergedPaths": [
+          "graphql-server/src/types/movie.gql",
+          "graphql-server/src/types/cast.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Movie",
+          "Cast"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "cast.gql",
+      "path": "graphql-server/src/types/cast.gql",
+      "sha": "e86fc4ba81093e0b0263508357d48c644d64f6f4",
+      "url": "https://api.github.com/repositories/120468958/contents/graphql-server/src/types/cast.gql?ref=85d07eb2fb831ce746a4710357952a886b871b9e",
+      "git_url": "https://api.github.com/repositories/120468958/git/blobs/e86fc4ba81093e0b0263508357d48c644d64f6f4",
+      "html_url": "https://github.com/emadalam/graphql-demo/blob/85d07eb2fb831ce746a4710357952a886b871b9e/graphql-server/src/types/cast.gql",
+      "content": "# Defines the cast\ntype Cast {\n\n    # Id of the cast\n    id: ID!\n\n    # Name of the cast\n    name: String!\n\n    # Movies related to the cast\n    movies: [Movie!]\n\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "movie.gql",
+      "path": "graphql-server/src/types/movie.gql",
+      "sha": "b955e1d92b692f3496f97700e32edde33b69eb81",
+      "url": "https://api.github.com/repositories/120468958/contents/graphql-server/src/types/movie.gql?ref=85d07eb2fb831ce746a4710357952a886b871b9e",
+      "git_url": "https://api.github.com/repositories/120468958/git/blobs/b955e1d92b692f3496f97700e32edde33b69eb81",
+      "html_url": "https://github.com/emadalam/graphql-demo/blob/85d07eb2fb831ce746a4710357952a886b871b9e/graphql-server/src/types/movie.gql",
+      "content": "# Defines the movie type\ntype Movie {\n\n    # Id of the movie\n    id: ID!\n\n    # Name of the movie\n    name: String!\n\n    # Casts associated with the movie\n    cast: [Cast!]\n\n    # Year of release\n    year: Int\n\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-06T14:21:38Z",
+    "updated_at": "2019-03-28T15:47:26Z",
+    "pushed_at": "2018-02-08T10:56:56Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

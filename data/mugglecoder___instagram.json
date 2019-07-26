@@ -1,0 +1,180 @@
+{
+  "repo_name": "instagram",
+  "repo_full_name": "mugglecoder/instagram",
+  "repo_owner": "mugglecoder",
+  "repo_description": "공부를 시작해보자!!",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "me.graphql",
+      "path": "src/api/User/me/me.graphql",
+      "sha": "69fda3d517d0ab90ccde1b7b7075859e7e89dfb5",
+      "url": "https://api.github.com/repositories/185781225/contents/src/api/User/me/me.graphql?ref=b2da7ed380f780f6659c50be7aed5ae5fc813814",
+      "git_url": "https://api.github.com/repositories/185781225/git/blobs/69fda3d517d0ab90ccde1b7b7075859e7e89dfb5",
+      "html_url": "https://github.com/mugglecoder/instagram/blob/b2da7ed380f780f6659c50be7aed5ae5fc813814/src/api/User/me/me.graphql",
+      "content": "type Query {\n  me: UserProfile!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/mugglecoder/instagram/blob/b2da7ed380f780f6659c50be7aed5ae5fc813814/src/api/User/me/me.graphql:\ntype Query {\n  me: UserProfile!\n}\n\n# https://github.com/mugglecoder/instagram/blob/e80fcf1b11faea6035ab02d606782982a135728d/src/api/models.graphql:\ntype User {\n  id: ID!\n  username: String!\n  email: String!\n  firstName: String\n  lastName: String\n  fullName: String\n  isFollowing: Boolean!\n  isSelf: Boolean!\n  bio: String\n  following: [User!]!\n  followers: [User!]!\n  posts: [Post!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  rooms: [Room!]!\n  loginSecret: String\n  createdAt: String\n  updatedAt: String\n}\n\ntype Post {\n  id: ID!\n  location: String\n  caption: String!\n  user: User!\n  files: [File!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  isLiked: Boolean!\n  likeCount: Int!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Like {\n  id: ID!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype File {\n  id: ID!\n  url: String!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Room {\n  id: ID!\n  paticipants: [User!]!\n  messages: [Messages!]!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Messages {\n  id: ID!\n  text: String!\n  from: User!\n  to: User!\n  room: Room!\n  createdAt: String\n  updatedAt: String\n}\n\ntype UserProfile {\n  user: User!\n  posts: [Post!]!\n  createdAt: String\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserProfile"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "models.graphql",
+      "path": "src/api/models.graphql",
+      "sha": "3fb1fa4416b2e54dbc958f453c0a2132f197e97f",
+      "url": "https://api.github.com/repositories/185781225/contents/src/api/models.graphql?ref=e80fcf1b11faea6035ab02d606782982a135728d",
+      "git_url": "https://api.github.com/repositories/185781225/git/blobs/3fb1fa4416b2e54dbc958f453c0a2132f197e97f",
+      "html_url": "https://github.com/mugglecoder/instagram/blob/e80fcf1b11faea6035ab02d606782982a135728d/src/api/models.graphql",
+      "content": "type User {\n  id: ID!\n  username: String!\n  email: String!\n  firstName: String\n  lastName: String\n  fullName: String\n  isFollowing: Boolean!\n  isSelf: Boolean!\n  bio: String\n  following: [User!]!\n  followers: [User!]!\n  posts: [Post!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  rooms: [Room!]!\n  loginSecret: String\n  createdAt: String\n  updatedAt: String\n}\n\ntype Post {\n  id: ID!\n  location: String\n  caption: String!\n  user: User!\n  files: [File!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  isLiked: Boolean!\n  likeCount: Int!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Like {\n  id: ID!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype File {\n  id: ID!\n  url: String!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Room {\n  id: ID!\n  paticipants: [User!]!\n  messages: [Messages!]!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Messages {\n  id: ID!\n  text: String!\n  from: User!\n  to: User!\n  room: Room!\n  createdAt: String\n  updatedAt: String\n}\n\ntype UserProfile {\n  user: User!\n  posts: [Post!]!\n  createdAt: String\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 8
+    },
+    {
+      "name": "seeFullPost.graphql",
+      "path": "src/api/Post/seeFullPost/seeFullPost.graphql",
+      "sha": "66c35ec6996f4ef2e4de058569aaccac7324c9cf",
+      "url": "https://api.github.com/repositories/185781225/contents/src/api/Post/seeFullPost/seeFullPost.graphql?ref=c2711a4df4ec9e4ae9550afede9004a85f28842a",
+      "git_url": "https://api.github.com/repositories/185781225/git/blobs/66c35ec6996f4ef2e4de058569aaccac7324c9cf",
+      "html_url": "https://github.com/mugglecoder/instagram/blob/c2711a4df4ec9e4ae9550afede9004a85f28842a/src/api/Post/seeFullPost/seeFullPost.graphql",
+      "content": "type Query {\n  seeFullPost(id: String!): Post!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/mugglecoder/instagram/blob/c2711a4df4ec9e4ae9550afede9004a85f28842a/src/api/Post/seeFullPost/seeFullPost.graphql:\ntype Query {\n  seeFullPost(id: String!): Post!\n}\n\n# https://github.com/mugglecoder/instagram/blob/e80fcf1b11faea6035ab02d606782982a135728d/src/api/models.graphql:\ntype User {\n  id: ID!\n  username: String!\n  email: String!\n  firstName: String\n  lastName: String\n  fullName: String\n  isFollowing: Boolean!\n  isSelf: Boolean!\n  bio: String\n  following: [User!]!\n  followers: [User!]!\n  posts: [Post!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  rooms: [Room!]!\n  loginSecret: String\n  createdAt: String\n  updatedAt: String\n}\n\ntype Post {\n  id: ID!\n  location: String\n  caption: String!\n  user: User!\n  files: [File!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  isLiked: Boolean!\n  likeCount: Int!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Like {\n  id: ID!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype File {\n  id: ID!\n  url: String!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Room {\n  id: ID!\n  paticipants: [User!]!\n  messages: [Messages!]!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Messages {\n  id: ID!\n  text: String!\n  from: User!\n  to: User!\n  room: Room!\n  createdAt: String\n  updatedAt: String\n}\n\ntype UserProfile {\n  user: User!\n  posts: [Post!]!\n  createdAt: String\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "searchPost.graphql",
+      "path": "src/api/Post/searchPost/searchPost.graphql",
+      "sha": "3e831f02202911d7cd967321d74d033062c75e17",
+      "url": "https://api.github.com/repositories/185781225/contents/src/api/Post/searchPost/searchPost.graphql?ref=fafc9130ab1b2d75015bafe19bf6acd4848d8d64",
+      "git_url": "https://api.github.com/repositories/185781225/git/blobs/3e831f02202911d7cd967321d74d033062c75e17",
+      "html_url": "https://github.com/mugglecoder/instagram/blob/fafc9130ab1b2d75015bafe19bf6acd4848d8d64/src/api/Post/searchPost/searchPost.graphql",
+      "content": "type Query {\n  searchPost(term: String!): [Post!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/mugglecoder/instagram/blob/fafc9130ab1b2d75015bafe19bf6acd4848d8d64/src/api/Post/searchPost/searchPost.graphql:\ntype Query {\n  searchPost(term: String!): [Post!]!\n}\n\n# https://github.com/mugglecoder/instagram/blob/e80fcf1b11faea6035ab02d606782982a135728d/src/api/models.graphql:\ntype User {\n  id: ID!\n  username: String!\n  email: String!\n  firstName: String\n  lastName: String\n  fullName: String\n  isFollowing: Boolean!\n  isSelf: Boolean!\n  bio: String\n  following: [User!]!\n  followers: [User!]!\n  posts: [Post!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  rooms: [Room!]!\n  loginSecret: String\n  createdAt: String\n  updatedAt: String\n}\n\ntype Post {\n  id: ID!\n  location: String\n  caption: String!\n  user: User!\n  files: [File!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  isLiked: Boolean!\n  likeCount: Int!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Like {\n  id: ID!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype File {\n  id: ID!\n  url: String!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Room {\n  id: ID!\n  paticipants: [User!]!\n  messages: [Messages!]!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Messages {\n  id: ID!\n  text: String!\n  from: User!\n  to: User!\n  room: Room!\n  createdAt: String\n  updatedAt: String\n}\n\ntype UserProfile {\n  user: User!\n  posts: [Post!]!\n  createdAt: String\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "searchUser.graphql",
+      "path": "src/api/User/searchUser/searchUser.graphql",
+      "sha": "8907f4311ce0b87b1469ea705d934406aa606255",
+      "url": "https://api.github.com/repositories/185781225/contents/src/api/User/searchUser/searchUser.graphql?ref=fafc9130ab1b2d75015bafe19bf6acd4848d8d64",
+      "git_url": "https://api.github.com/repositories/185781225/git/blobs/8907f4311ce0b87b1469ea705d934406aa606255",
+      "html_url": "https://github.com/mugglecoder/instagram/blob/fafc9130ab1b2d75015bafe19bf6acd4848d8d64/src/api/User/searchUser/searchUser.graphql",
+      "content": "type Query {\n  searchUser(term: String!): [User!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/mugglecoder/instagram/blob/fafc9130ab1b2d75015bafe19bf6acd4848d8d64/src/api/User/searchUser/searchUser.graphql:\ntype Query {\n  searchUser(term: String!): [User!]!\n}\n\n# https://github.com/mugglecoder/instagram/blob/e80fcf1b11faea6035ab02d606782982a135728d/src/api/models.graphql:\ntype User {\n  id: ID!\n  username: String!\n  email: String!\n  firstName: String\n  lastName: String\n  fullName: String\n  isFollowing: Boolean!\n  isSelf: Boolean!\n  bio: String\n  following: [User!]!\n  followers: [User!]!\n  posts: [Post!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  rooms: [Room!]!\n  loginSecret: String\n  createdAt: String\n  updatedAt: String\n}\n\ntype Post {\n  id: ID!\n  location: String\n  caption: String!\n  user: User!\n  files: [File!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  isLiked: Boolean!\n  likeCount: Int!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Like {\n  id: ID!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype File {\n  id: ID!\n  url: String!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Room {\n  id: ID!\n  paticipants: [User!]!\n  messages: [Messages!]!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Messages {\n  id: ID!\n  text: String!\n  from: User!\n  to: User!\n  room: Room!\n  createdAt: String\n  updatedAt: String\n}\n\ntype UserProfile {\n  user: User!\n  posts: [Post!]!\n  createdAt: String\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "seeUser.graphql",
+      "path": "src/api/User/seeUser/seeUser.graphql",
+      "sha": "c2c19720e592f2834afdfed7166d41bc2675c459",
+      "url": "https://api.github.com/repositories/185781225/contents/src/api/User/seeUser/seeUser.graphql?ref=b2da7ed380f780f6659c50be7aed5ae5fc813814",
+      "git_url": "https://api.github.com/repositories/185781225/git/blobs/c2c19720e592f2834afdfed7166d41bc2675c459",
+      "html_url": "https://github.com/mugglecoder/instagram/blob/b2da7ed380f780f6659c50be7aed5ae5fc813814/src/api/User/seeUser/seeUser.graphql",
+      "content": "type Query {\n  seeUser(id: String!): UserProfile!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/mugglecoder/instagram/blob/b2da7ed380f780f6659c50be7aed5ae5fc813814/src/api/User/seeUser/seeUser.graphql:\ntype Query {\n  seeUser(id: String!): UserProfile!\n}\n\n# https://github.com/mugglecoder/instagram/blob/e80fcf1b11faea6035ab02d606782982a135728d/src/api/models.graphql:\ntype User {\n  id: ID!\n  username: String!\n  email: String!\n  firstName: String\n  lastName: String\n  fullName: String\n  isFollowing: Boolean!\n  isSelf: Boolean!\n  bio: String\n  following: [User!]!\n  followers: [User!]!\n  posts: [Post!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  rooms: [Room!]!\n  loginSecret: String\n  createdAt: String\n  updatedAt: String\n}\n\ntype Post {\n  id: ID!\n  location: String\n  caption: String!\n  user: User!\n  files: [File!]!\n  likes: [Like!]!\n  comments: [Comment!]!\n  isLiked: Boolean!\n  likeCount: Int!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Like {\n  id: ID!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  user: User!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype File {\n  id: ID!\n  url: String!\n  post: Post!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Room {\n  id: ID!\n  paticipants: [User!]!\n  messages: [Messages!]!\n  createdAt: String\n  updatedAt: String\n}\n\ntype Messages {\n  id: ID!\n  text: String!\n  from: User!\n  to: User!\n  room: Room!\n  createdAt: String\n  updatedAt: String\n}\n\ntype UserProfile {\n  user: User!\n  posts: [Post!]!\n  createdAt: String\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserProfile"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "requestSecret.graphql",
+      "path": "src/api/User/requestSecret/requestSecret.graphql",
+      "sha": "1f2210724b957749b11453f2fe4acf15dfd7a57f",
+      "url": "https://api.github.com/repositories/185781225/contents/src/api/User/requestSecret/requestSecret.graphql?ref=5a8134b633b5620c47e22c1cf5a72e60f74162c3",
+      "git_url": "https://api.github.com/repositories/185781225/git/blobs/1f2210724b957749b11453f2fe4acf15dfd7a57f",
+      "html_url": "https://github.com/mugglecoder/instagram/blob/5a8134b633b5620c47e22c1cf5a72e60f74162c3/src/api/User/requestSecret/requestSecret.graphql",
+      "content": "type Mutation {\n  requestSecret(email: String): Boolean!\n}\n\ntype Query {\n  somethings: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-09T10:53:04Z",
+    "updated_at": "2019-07-19T22:16:22Z",
+    "pushed_at": "2019-07-19T22:16:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

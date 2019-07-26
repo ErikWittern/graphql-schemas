@@ -1,0 +1,42 @@
+{
+  "repo_name": "playing-today",
+  "repo_full_name": "johnmunsch/playing-today",
+  "repo_owner": "JohnMunsch",
+  "repo_description": "This is a quick app I've thrown together to find out who can play games at lunch where I work. It has that specific task, but it's also a chance for me to play with LitElement, GraphQL, and a little bit of D3.js.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "921f30b02ec85847d956c18c53a8121143218849",
+      "url": "https://api.github.com/repositories/60868986/contents/src/schema.graphql?ref=3ea27119fe262d45bfbb9f41a7948f621158f9f5",
+      "git_url": "https://api.github.com/repositories/60868986/git/blobs/921f30b02ec85847d956c18c53a8121143218849",
+      "html_url": "https://github.com/JohnMunsch/playing-today/blob/3ea27119fe262d45bfbb9f41a7948f621158f9f5/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  me: Player!\n  games: [Game!]!\n  players: [Player!]!\n}\n\ntype Mutation {\n  signup(email: String!, password: String!): AuthPayload\n  leave(_id: String!): Boolean\n  login(email: String!, password: String!): AuthPayload\n\n  playing(_id: String!, playingToday: Boolean!): Player!\n  reset: Boolean!\n}\n\ntype Subscription {\n  statusChange: [Player]!\n}\n\ntype AuthPayload {\n  token: String\n  player: Player\n}\n\ntype Game {\n  _id: String!\n  name: String!\n  notes: String\n  players: [Recommendation!]\n}\n\ntype Recommendation {\n  num: Int!\n  best: Float!\n  not: Float!\n  recommended: Float!\n}\n\ninput RecommendationInput {\n  num: Int!\n  best: Float!\n  not: Float!\n  recommended: Float!\n}\n\ntype Player {\n  _id: String!\n  email: String!\n  playingToday: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-06-10T18:30:43Z",
+    "updated_at": "2019-07-14T15:31:02Z",
+    "pushed_at": "2019-07-14T15:31:00Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "Graphql-and-Prisma",
+  "repo_full_name": "mutuba/graphql-and-prisma",
+  "repo_owner": "Mutuba",
+  "repo_description": "This repo implements an API using Prisma as a data layer that turns a database into a GraphQL API. Prisma can be a kind of ORM but more powerful than traditional ORMs. Prisma client simplifies database access. It lets you read and write data to your database using your favorite programming language.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "task-manager/src/schema.graphql",
+      "sha": "a0cdcc94fa7637f291744a8529fb379716c1b4ed",
+      "url": "https://api.github.com/repositories/174107651/contents/task-manager/src/schema.graphql?ref=aff792d3ec92ef9c9ec179fb026662f1d5552caa",
+      "git_url": "https://api.github.com/repositories/174107651/git/blobs/a0cdcc94fa7637f291744a8529fb379716c1b4ed",
+      "html_url": "https://github.com/Mutuba/Graphql-and-Prisma/blob/aff792d3ec92ef9c9ec179fb026662f1d5552caa/task-manager/src/schema.graphql",
+      "content": "# src/schema.graphql\n\ntype Query {\n  projectById(projectId: ID!): Project\n  completedTasks: [Task!]!\n}\n\ntype Mutation {\n  createProject(name: String!): Project\n  createTask(title: String!, projectId: ID!): Task\n  markTaskAsCompleted(taskId: ID!): Task\n}\n\ntype Project {\n  id: ID!\n  name: String!\n  tasks: [Task!]!\n}\n\ntype Task {\n  id: ID!\n  title: String!\n  project: Project!\n  isCompleted: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-06T08:52:14Z",
+    "updated_at": "2019-03-06T09:05:12Z",
+    "pushed_at": "2019-03-06T09:05:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

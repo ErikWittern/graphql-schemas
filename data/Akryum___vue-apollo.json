@@ -1,0 +1,42 @@
+{
+  "repo_name": "vue-apollo",
+  "repo_full_name": "akryum/vue-apollo",
+  "repo_owner": "Akryum",
+  "repo_description": "🚀 Apollo/GraphQL integration for VueJS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "tests/demo/apollo-server/schema.graphql",
+      "sha": "1b18a99bb1d93d6ae9053fc1ee9fe56ed57382f7",
+      "url": "https://api.github.com/repositories/68540295/contents/tests/demo/apollo-server/schema.graphql?ref=72f40100a7629464e370311ad8b13eac6db0b254",
+      "git_url": "https://api.github.com/repositories/68540295/git/blobs/1b18a99bb1d93d6ae9053fc1ee9fe56ed57382f7",
+      "html_url": "https://github.com/Akryum/vue-apollo/blob/72f40100a7629464e370311ad8b13eac6db0b254/tests/demo/apollo-server/schema.graphql",
+      "content": "scalar JSON\n\ndirective @private on FIELD_DEFINITION\n\ntype User {\n  id: ID!\n  nickname: String!\n  email: String!\n}\n\ninput UserRegister {\n  email: String!\n  nickname: String!\n  password: String!\n}\n\ntype UserToken {\n  id: ID!\n  userId: ID!\n  expiration: JSON\n}\n\ntype UserLogin {\n  user: User\n  token: UserToken\n}\n\n# Channel of messages\ntype Channel {\n  id: ID!\n  name: String!\n  messages: [Message]\n}\n\n# User messages\ntype Message {\n  id: ID!\n  content: String!\n  # Author of the message\n  user: User\n  dateAdded: JSON\n  dateUpdated: JSON\n}\n\ninput MessageAdd {\n  channelId: ID!\n  content: String!\n}\n\ninput MessageUpdate {\n  id: ID!\n  content: String!\n}\n\ntype MessageChanged {\n  type: MessageChangedType!\n  message: Message!\n}\n\nenum MessageChangedType {\n  added\n  updated\n  removed\n}\n\ntype Query {\n  userCurrent: User @private\n  channels: [Channel] @private\n  channel (id: ID!): Channel @private\n}\n\ntype Mutation {\n  userRegister (input: UserRegister!): Boolean\n  userLogin (email: String!, password: String!): UserLogin\n  userLogout: Boolean @private\n  messageAdd (input: MessageAdd!): Message! @private\n  messageUpdate (input: MessageUpdate!): Message! @private\n  messageRemove (id: ID!): Message! @private\n  mockMessageSend: Boolean\n}\n\ntype Subscription {\n  messageChanged (channelId: ID!): MessageChanged! @private\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-18T18:44:06Z",
+    "updated_at": "2019-07-19T18:01:01Z",
+    "pushed_at": "2019-07-19T04:25:25Z",
+    "issues": 495,
+    "watchers": 95,
+    "fork_count": 290,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 212,
+    "pull_requests_open": 17,
+    "pull_requests_closed": 97,
+    "pull_requests_merged": 98,
+    "releases": 51,
+    "stargazers": 3862
+  }
+}

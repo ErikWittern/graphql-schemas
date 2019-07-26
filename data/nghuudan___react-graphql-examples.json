@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-graphql-examples",
+  "repo_full_name": "nghuudan/react-graphql-examples",
+  "repo_owner": "nghuudan",
+  "repo_description": "Examples of React with GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typedefs.graphql",
+      "path": "src/server/graphql/typedefs.graphql",
+      "sha": "bbf0d29e88a64547c2bb0dadacd97db5840dd0ed",
+      "url": "https://api.github.com/repositories/123521164/contents/src/server/graphql/typedefs.graphql?ref=e4d64dd8e4407d08e6072ab976f5b24fe1b89a16",
+      "git_url": "https://api.github.com/repositories/123521164/git/blobs/bbf0d29e88a64547c2bb0dadacd97db5840dd0ed",
+      "html_url": "https://github.com/nghuudan/react-graphql-examples/blob/e4d64dd8e4407d08e6072ab976f5b24fe1b89a16/src/server/graphql/typedefs.graphql",
+      "content": "type Hello {\n  message: String\n}\n\ntype Color {\n  id: Int!\n  name: String!\n}\n\ninput ColorInput {\n  name: String!\n}\n\ntype Query {\n  hello: Hello\n  color(id: Int!): Color\n  colorList: [Color]\n}\n\ntype Mutation {\n  addColor(color: ColorInput!): Color\n  removeColor(id: Int!): Int\n  updateColor(id: Int!, color: ColorInput!): Color\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-02T02:46:15Z",
+    "updated_at": "2018-03-05T00:32:35Z",
+    "pushed_at": "2018-03-10T05:53:33Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

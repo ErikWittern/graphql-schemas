@@ -1,0 +1,39 @@
+{
+  "repo_name": "foodagram",
+  "repo_full_name": "peepitkm/foodagram",
+  "repo_owner": "peepitkm",
+  "repo_description": "Apollo Universal Starter Kit is a GraphQL-based JavaScript starter application for mobile, web, and server development. The code for each platform is built with Webpack to enable ultimate code reuse. The stack includes Apollo, GraphQL, React, React Native, Expo, Node.js, Express, Knex, SQLite, Bootstrap, Babel, SpinJS, Webpack, and other tools.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "packages/server/src/api/rootSchema.graphql",
+      "sha": "71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "url": "https://api.github.com/repositories/153787991/contents/packages/server/src/api/rootSchema.graphql?ref=1e7b44d767a6b61e25a5c8e11c6a9d13a5c9b83d",
+      "git_url": "https://api.github.com/repositories/153787991/git/blobs/71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "html_url": "https://github.com/peepitkm/foodagram/blob/1e7b44d767a6b61e25a5c8e11c6a9d13a5c9b83d/packages/server/src/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-19T13:35:36Z",
+    "updated_at": "2019-01-18T03:30:45Z",
+    "pushed_at": "2018-10-19T13:39:05Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "lego-webapp",
+  "repo_full_name": "webkom/lego-webapp",
+  "repo_owner": "webkom",
+  "repo_description": "LEGO Frontend",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "readme-as-a-function.graphql",
+      "path": "schema/readme-as-a-function.graphql",
+      "sha": "e97be75d8aa4704cf8017d8fe920c270ea6f18b5",
+      "url": "https://api.github.com/repositories/25264897/contents/schema/readme-as-a-function.graphql?ref=ce85b764d7d06f075d7ae3b75943bffe309271c9",
+      "git_url": "https://api.github.com/repositories/25264897/git/blobs/e97be75d8aa4704cf8017d8fe920c270ea6f18b5",
+      "html_url": "https://github.com/webkom/lego-webapp/blob/ce85b764d7d06f075d7ae3b75943bffe309271c9/schema/readme-as-a-function.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Query {\n  readmeUtgaver(year: Int, utgave: Int): [ReadmeUtgave!]!\n  latestReadme: ReadmeUtgave\n}\n\ntype ReadmeUtgave {\n  title: String!\n  image: String!\n  pdf: String!\n  year: Int!\n  utgave: Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2014-10-15T17:11:11Z",
+    "updated_at": "2019-07-11T16:41:49Z",
+    "pushed_at": "2019-07-14T18:15:47Z",
+    "issues": 0,
+    "watchers": 14,
+    "fork_count": 14,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1156,
+    "pull_requests_open": 31,
+    "pull_requests_closed": 166,
+    "pull_requests_merged": 959,
+    "releases": 4,
+    "stargazers": 33
+  }
+}

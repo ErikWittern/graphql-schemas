@@ -1,0 +1,39 @@
+{
+  "repo_name": "edel_movieql",
+  "repo_full_name": "semicolonjungwon/edel_movieql",
+  "repo_owner": "SemicolonJungwon",
+  "repo_description": "create Movie API(Graphql) with nomad",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "252c6ef8b8b6060877b45d1d362d15a1bb2b2ad0",
+      "url": "https://api.github.com/repositories/139931320/contents/graphql/schema.graphql?ref=51d1061251e458747ec3e15f3ce38781f153277b",
+      "git_url": "https://api.github.com/repositories/139931320/git/blobs/252c6ef8b8b6060877b45d1d362d15a1bb2b2ad0",
+      "html_url": "https://github.com/SemicolonJungwon/edel_movieql/blob/51d1061251e458747ec3e15f3ce38781f153277b/graphql/schema.graphql",
+      "content": "type Movie{\n    id: Int!\n    title: String!\n    rating: Float!\n    summmary: String\n    language: String\n    medium_cover_image: String\n}\n\ntype Query {\n    movies(limit: Int, rating: Float): [Movie]!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-06T04:00:52Z",
+    "updated_at": "2018-07-09T15:53:45Z",
+    "pushed_at": "2018-07-09T15:53:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

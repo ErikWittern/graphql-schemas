@@ -1,0 +1,42 @@
+{
+  "repo_name": "wordpress-experiment",
+  "repo_full_name": "nickeblewis/wordpress-experiment",
+  "repo_owner": "nickeblewis",
+  "repo_description": "An exploration of GraphQL, Relay, React and the Wordpress API powered by Node/Express",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "5f58cf565d3a944d08fb22639728e8d6f45a5b82",
+      "url": "https://api.github.com/repositories/55342428/contents/server/data/schema.graphql?ref=b897d293b00064f31d5e1bbf1d157d9515b7817a",
+      "git_url": "https://api.github.com/repositories/55342428/git/blobs/5f58cf565d3a944d08fb22639728e8d6f45a5b82",
+      "html_url": "https://github.com/nickeblewis/wordpress-experiment/blob/b897d293b00064f31d5e1bbf1d157d9515b7817a/server/data/schema.graphql",
+      "content": "type Excerpt {\n  rendered: String\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Post implements Node {\n  id: ID!\n  title: Title\n  excerpt: Excerpt\n  slug: String\n  link: String\n  type: String\n}\n\ntype PostConnection {\n  pageInfo: PageInfo!\n  edges: [PostEdge]\n}\n\ntype PostEdge {\n  node: Post\n  cursor: String!\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n}\n\ntype Title {\n  rendered: String\n}\n\ntype User implements Node {\n  id: ID!\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n  username: String\n  website: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-04-03T11:06:14Z",
+    "updated_at": "2016-06-27T05:08:40Z",
+    "pushed_at": "2016-04-03T22:04:54Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

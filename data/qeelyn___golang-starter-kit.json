@@ -1,0 +1,80 @@
+{
+  "repo_name": "golang-starter-kit",
+  "repo_full_name": "qeelyn/golang-starter-kit",
+  "repo_owner": "qeelyn",
+  "repo_description": "A web api application boilerplate in Go taking best practices and utilizing best available packages and tools",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gateway/schema/schema.graphql",
+      "sha": "8e2b7e8bc8d436af6afbe3da5e76dac7810d07e7",
+      "url": "https://api.github.com/repositories/136638732/contents/gateway/schema/schema.graphql?ref=a29dd5c810c3d31c006565d13ea1362afd623665",
+      "git_url": "https://api.github.com/repositories/136638732/git/blobs/8e2b7e8bc8d436af6afbe3da5e76dac7810d07e7",
+      "html_url": "https://github.com/qeelyn/golang-starter-kit/blob/a29dd5c810c3d31c006565d13ea1362afd623665/gateway/schema/schema.graphql",
+      "content": "schema {\n    query: Query\n#    mutation: Mutation\n}\n\ntype Query {\n    # 查询\n    hello(name: String!):Greeter\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/qeelyn/golang-starter-kit/blob/a29dd5c810c3d31c006565d13ea1362afd623665/gateway/schema/schema.graphql:\nschema {\n    query: Query\n#    mutation: Mutation\n}\n\ntype Query {\n    # 查询\n    hello(name: String!):Greeter\n}\n# https://github.com/qeelyn/golang-starter-kit/blob/a29dd5c810c3d31c006565d13ea1362afd623665/gateway/schema/type/greeter.graphql:\ntype Greeter implements Node {\n    # 访问id\n    id: ID!\n    # 消息\n    msg: String!\n    # 访问时间\n    date: Time\n}\n\n# https://github.com/qeelyn/golang-starter-kit/blob/a29dd5c810c3d31c006565d13ea1362afd623665/gateway/schema/type/base.graphql:\n# An object with an ID\ninterface Node {\n    # The id of the object.\n    id: ID!\n}\n\n# paginate request parameter\ninput Pagination {\n    # Returns the first n elements from the list.\n    first: Int,\n    # Returns the elements in the list that come after the specified global ID.\n    after: String,\n    # Returns the last n elements from the list.\n    last: Int,\n    # Returns the elements in the list that come before the specified global ID.\n    before: String\n}\n\n# 分页信息\ntype PageInfo {\n    # When paginating backwards, the cursor to continue.\n    startCursor: ID\n    # When paginating forwards, the cursor to continue.\n    endCursor: ID\n    # When paginating forwards, are there more items?\n    hasNextPage: Boolean!\n    # When paginating backwards, are there more items?\n    hasPreviousPage: Boolean!\n}\n# 时间\nscalar Time",
+        "mergedPaths": [
+          "gateway/schema/type/greeter.graphql",
+          "gateway/schema/type/base.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Greeter",
+          "Time"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "greeter.graphql",
+      "path": "gateway/schema/type/greeter.graphql",
+      "sha": "77dca0b5d00852b5a526fe3e2b2c02aa1365c03d",
+      "url": "https://api.github.com/repositories/136638732/contents/gateway/schema/type/greeter.graphql?ref=a29dd5c810c3d31c006565d13ea1362afd623665",
+      "git_url": "https://api.github.com/repositories/136638732/git/blobs/77dca0b5d00852b5a526fe3e2b2c02aa1365c03d",
+      "html_url": "https://github.com/qeelyn/golang-starter-kit/blob/a29dd5c810c3d31c006565d13ea1362afd623665/gateway/schema/type/greeter.graphql",
+      "content": "type Greeter implements Node {\n    # 访问id\n    id: ID!\n    # 消息\n    msg: String!\n    # 访问时间\n    date: Time\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "base.graphql",
+      "path": "gateway/schema/type/base.graphql",
+      "sha": "c8306601d8e5c79c22e81086e3e485e6c60a729c",
+      "url": "https://api.github.com/repositories/136638732/contents/gateway/schema/type/base.graphql?ref=a29dd5c810c3d31c006565d13ea1362afd623665",
+      "git_url": "https://api.github.com/repositories/136638732/git/blobs/c8306601d8e5c79c22e81086e3e485e6c60a729c",
+      "html_url": "https://github.com/qeelyn/golang-starter-kit/blob/a29dd5c810c3d31c006565d13ea1362afd623665/gateway/schema/type/base.graphql",
+      "content": "# An object with an ID\ninterface Node {\n    # The id of the object.\n    id: ID!\n}\n\n# paginate request parameter\ninput Pagination {\n    # Returns the first n elements from the list.\n    first: Int,\n    # Returns the elements in the list that come after the specified global ID.\n    after: String,\n    # Returns the last n elements from the list.\n    last: Int,\n    # Returns the elements in the list that come before the specified global ID.\n    before: String\n}\n\n# 分页信息\ntype PageInfo {\n    # When paginating backwards, the cursor to continue.\n    startCursor: ID\n    # When paginating forwards, the cursor to continue.\n    endCursor: ID\n    # When paginating forwards, are there more items?\n    hasNextPage: Boolean!\n    # When paginating backwards, are there more items?\n    hasPreviousPage: Boolean!\n}\n# 时间\nscalar Time",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-08T15:50:15Z",
+    "updated_at": "2019-07-16T08:56:39Z",
+    "pushed_at": "2019-06-16T04:31:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 7,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 32
+  }
+}

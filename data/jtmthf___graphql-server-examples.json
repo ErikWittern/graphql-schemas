@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql-server-examples",
+  "repo_full_name": "jtmthf/graphql-server-examples",
+  "repo_owner": "jtmthf",
+  "repo_description": "A collection of graphql server implementations all sharing the same schema",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "prisma-pg/src/schema.graphql",
+      "sha": "bc959b7ad4b77f9ac392093d1bb8a89a2f3d33ae",
+      "url": "https://api.github.com/repositories/133597357/contents/prisma-pg/src/schema.graphql?ref=8dd819ef44cb0112227b8facac527de575107169",
+      "git_url": "https://api.github.com/repositories/133597357/git/blobs/bc959b7ad4b77f9ac392093d1bb8a89a2f3d33ae",
+      "html_url": "https://github.com/jtmthf/graphql-server-examples/blob/8dd819ef44cb0112227b8facac527de575107169/prisma-pg/src/schema.graphql",
+      "content": "type User {\n  id: String!\n  email: String!\n  token: String!\n  username: String!\n  bio: String\n  image: String\n}\n\ntype Profile {\n  id: String!\n  username: String!\n  bio: String\n  image: String\n  following: Boolean\n}\n\ntype Article {\n  id: String!\n  slug: String!\n  title: String!\n  description: String!\n  body: String!\n  tags(first: Int, last: Int, before: String, after: String): [Tag!]!\n  createdAt: String!\n  updatedAt: String!\n  favorited: Boolean\n  favoritesCount: Int!\n  author: Profile!\n  comments(first: Int, last: Int, before: String, after: String): [Comment!]!\n}\n\ntype Comment {\n  id: String!\n  createdAt: String!\n  updatedAt: String!\n  body: String!\n  author: Profile!\n}\n\ntype Tag {\n  id: String!\n  name: String!\n}\n\ntype Query {\n  me: User!\n  profile(username: String!): Profile\n  articles(\n    tag: String\n    author: String\n    favorited: Boolean\n    first: Int\n    last: Int\n    before: String\n    after: String\n  ): [Article!]!\n  feed(first: Int, last: Int, before: String, after: String): [Article!]!\n  article(slug: String!): Article\n  tags(first: Int, last: Int, before: String, after: String): [Tag!]!\n}\n\ntype Mutation {\n  # No authentication required\n  login(input: LoginPayload!): User!\n  # No authentication required\n  register(input: RegisterPayload!): User!\n  # Requires authentication\n  updateMe(input: UpdateMePayload!): User!\n  # Requires authentication\n  followUser(username: String!): Profile!\n  # Requires authentication\n  unfollowUser(username: String!): Profile!\n  # Requires authentication\n  createArticle(input: CreateArticlePayload!): Article!\n  # Requires authentication\n  updateArticle(input: UpdateArticlePayload!): Article!\n  # Requires authentication\n  deleteArticle(slug: String!): Article!\n  # Requires authentication\n  addComment(slug: String!, body: String!): Comment!\n  # Requires authentication\n  deleteComment(id: String!): Comment!\n  # Requires authentication\n  favoriteArticle(slug: String!): Article!\n  # Requires authentication\n  unfavoriteArticle(slug: String!): Article!\n}\n\ninput LoginPayload {\n  email: String!\n  password: String!\n}\n\ninput RegisterPayload {\n  username: String!\n  email: String!\n  password: String!\n}\n\ninput UpdateMePayload {\n  email: String\n  username: String\n  password: String\n  bio: String\n  image: String\n}\n\ninput CreateArticlePayload {\n  title: String!\n  description: String!\n  body: String!\n  tags: [String!]!\n}\n\ninput UpdateArticlePayload {\n  slug: String!\n  title: String\n  description: String\n  body: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 12
+    },
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "97f686862a69e4d5a4f36f2222ea2f8569742f5e",
+      "url": "https://api.github.com/repositories/133597357/contents/schema.graphql?ref=8dd819ef44cb0112227b8facac527de575107169",
+      "git_url": "https://api.github.com/repositories/133597357/git/blobs/97f686862a69e4d5a4f36f2222ea2f8569742f5e",
+      "html_url": "https://github.com/jtmthf/graphql-server-examples/blob/8dd819ef44cb0112227b8facac527de575107169/schema.graphql",
+      "content": "# For authentication\ntype User {\n  # Unique\n  id: String!\n  # Unique\n  email: String!\n  # A JWT token\n  token: String!\n  # Unique\n  username: String!\n  bio: String\n  # URL\n  image: String\n}\n\ntype Profile {\n  # Unique\n  id: String!\n  # Unique\n  username: String!\n  bio: String\n  # URL\n  image: String\n  # Requires authentication\n  following: Boolean\n}\n\ntype Article {\n  # Unqiue\n  id: String!\n  # Unique URL safe string\n  slug: String!\n  title: String!\n  description: String!\n  body: String!\n  tags(first: Int, last: Int, before: String, after: String): [Tag!]!\n  # ISO 8601\n  createdAt: String!\n  # ISO 8601\n  updatedAt: String!\n  # Requires authentication\n  favorited: Boolean\n  favoritesCount: Int!\n  author: Profile!\n  comments(first: Int, last: Int, before: String, after: String): [Comment!]!\n}\n\ntype Comment {\n  # Unique\n  id: String!\n  # ISO 8601\n  createdAt: String!\n  # ISO 8601\n  updatedAt: String!\n  body: String!\n  author: Profile!\n}\n\ntype Tag {\n  # Unique\n  id: String!\n  # Unique\n  name: String!\n}\n\n# Optional\ntype ArticleFeed {\n  added: [Article!]!\n  updated: [ArticleUpdate!]!\n  removed: [Article!]!\n}\n\n# Optional\ntype ArticleUpdate {\n  article: Article!\n  tagsAdded: [Tag!]!\n}\n\ntype Query {\n  # Requires authentication\n  me: User!\n  # No authentication required\n  profile(username: String!): Profile\n  # No authentication required\n  articles(\n    tag: String\n    author: String\n    favorited: Boolean\n    first: Int\n    last: Int\n    before: String\n    after: String\n  ): [Article!]!\n  # Requires authentication\n  feed(first: Int, last: Int, before: String, after: String): [Article!]!\n  # No authentication required\n  article(slug: String!): Article\n  # No authentication required\n  tags(first: Int, last: Int, before: String, after: String): [Tag!]!\n}\n\ntype Mutation {\n  # No authentication required\n  login(input: LoginPayload!): User!\n  # No authentication required\n  register(input: RegisterPayload!): User!\n  # Requires authentication\n  updateMe(input: UpdateMePayload!): User!\n  # Requires authentication\n  followUser(username: String!): Profile!\n  # Requires authentication\n  unfollowUser(username: String!): Profile!\n  # Requires authentication\n  createArticle(input: CreateArticlePayload!): Article!\n  # Requires authentication\n  updateArticle(input: UpdateArticlePayload!): Article!\n  # Requires authentication\n  deleteArticle(slug: String!): Article!\n  # Requires authentication\n  addComment(slug: String!, body: String!): Comment!\n  # Requires authentication\n  deleteComment(id: String!): Comment!\n  # Requires authentication\n  favoriteArticle(slug: String!): Article!\n  # Requires authentication\n  unfavoriteArticle(slug: String!): Article!\n}\n\n# Optional\ntype Subscription {\n  profileUpdated(id: String!): Profile!\n  followingUpdated: Profile!\n  newFollower: Profile!\n  lostFollower: Profile!\n  updateFeed(first: Int, last: Int, before: String, after: String): ArticleFeed!\n  updatedArticles(\n    tag: String\n    author: String\n    favorited: Boolean\n    first: Int\n    last: Int\n    before: String\n    after: String\n  ): ArticleFeed!\n  updatedArticle(id: String!): ArticleUpdate!\n  commentAdded(articleId: String!): Comment!\n  commentUpdated(articleId: String!): Comment!\n  commentRemoved(articleId: String!): Comment!\n}\n\ninput LoginPayload {\n  email: String!\n  password: String!\n}\n\ninput RegisterPayload {\n  username: String!\n  email: String!\n  password: String!\n}\n\ninput UpdateMePayload {\n  email: String\n  username: String\n  password: String\n  bio: String\n  image: String\n}\n\ninput CreateArticlePayload {\n  title: String!\n  description: String!\n  body: String!\n  tags: [String!]!\n}\n\ninput UpdateArticlePayload {\n  slug: String!\n  title: String\n  description: String\n  body: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-16T02:11:24Z",
+    "updated_at": "2018-05-16T04:41:20Z",
+    "pushed_at": "2018-05-16T04:41:18Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

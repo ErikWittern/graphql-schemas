@@ -1,0 +1,42 @@
+{
+  "repo_name": "ms-business-management",
+  "repo_full_name": "nebulae-pyxis/ms-business-management",
+  "repo_owner": "nebulae-pyxis",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "api/emi-gateway/graphql/business-management/schema.gql",
+      "sha": "57fc5d734b2c822308ec56a76125f47a29523b8c",
+      "url": "https://api.github.com/repositories/142623367/contents/api/emi-gateway/graphql/business-management/schema.gql?ref=e9d1b15cbf4e2d8340d07b7ea9158872be1f7659",
+      "git_url": "https://api.github.com/repositories/142623367/git/blobs/57fc5d734b2c822308ec56a76125f47a29523b8c",
+      "html_url": "https://github.com/nebulae-pyxis/ms-business-management/blob/e9d1b15cbf4e2d8340d07b7ea9158872be1f7659/api/emi-gateway/graphql/business-management/schema.gql",
+      "content": "input BusinessPersistInput {\n  \"Business general info\"\n  generalInfo: BusinessGeneralInfoInput\n  \"Business attributes\"\n  attributes: [BusinessAttributeInput],\n  \"Business status\"\n  state: Boolean!\n}\n\ninput BusinessGeneralInfoInput {\n  \"Document Type (FOREIGN ID, CITIZENSHIP_CARD, VAT, ...)\"\n  documentType: String!,\n  \"Document ID\"\n  documentId: String!,\n  \"Business name\"\n  name: String!,\n  \"Business type (NATURAL, LEGAL)\"\n  type: BusinessType!,\n  \"Business email\"\n  email: String,\n  \"Business contact info\"\n  contactInfo: String\n}\n\ninput BusinessAttributeListInput {\n  attributes: [BusinessAttributeInput],\n}\n\ninput BusinessAttributeInput {\n  \"Key\"\n  key: String,\n  \"Value\"\n  value: String\n}\n\n\"Business info\"\ntype Business {\n  \"Business id\"\n  _id: ID\n  \"Business general info\"\n  generalInfo: GeneralInfo\n  \"Business attributes\"\n  attributes: [BusinessAttributes],\n  \"Business status\"\n  state: Boolean\n}\n\ntype GeneralInfo {\n  \"Document Type (FOREIGN ID, CITIZENSHIP_CARD, VAT, ...)\"\n  documentType: BusinessDocumentType!\n  \"document ID\"\n  documentId: String!,\n  \"Business name\"\n  name: String!,\n  \"Business type (NATURAL, LEGAL)\"\n  type: BusinessType,\n  \"Business email\"\n  email: String,\n  \"Business contact info\"\n  contactInfo: String\n}\n\ntype BusinessAttributes {\n  \"Key\"\n  key: String,\n  \"Value\"\n  value: String\n}\n\n\nenum BusinessDocumentType {\n  CITIZENSHIP_CARD\n  PASSPORT\n  FOREIGNER_ID\n  VAT\n}\n\nenum BusinessType {\n  NATURAL\n  LEGAL\n}\n\ntype CommandResponse {\n  \"Response code\"\n  code: Int\n  \"Response message\"\n  message: String\n}\n\ntype Query {\n  \"Get business filtered by the business id\"\n  getBusiness(id: String!): Business\n  \"Get all businesses filtered\"\n  getBusinesses(page: Int!, count: Int!, filter: String, sortColumn: String, sortOrder: String): [Business]\n  \"Gets the amount of businesses\"\n  getBusinessCount: Int\n  \"Gets the businesses by id or name. If limit is applied the query will be limited to the amount defined\"\n  getBusinessByFilterText(filterText: String, limit: Int): [Business]\n  \"Returns the business to which the user belongs\"\n  myBusiness: Business\n}\n\ntype Mutation {\n  \"Create a new business\"\n  persistBusiness(input: BusinessPersistInput): CommandResponse\n\n  \"Updates the business general info\"\n  updateBusinessGeneralInfo(id:ID, input: BusinessGeneralInfoInput): CommandResponse\n\n\n  \"Updates the business attributes\"\n  updateBusinessAttributes(id:ID, input: BusinessAttributeListInput): CommandResponse\n\n  \"Updates the business state\"\n  updateBusinessState(id:ID, state: Boolean): CommandResponse\n}\n\ntype Subscription {\n  \"This events is triggered when a business is created or updated\"\n  BusinessUpdatedSubscription: Business\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-27T21:02:51Z",
+    "updated_at": "2019-04-30T22:08:08Z",
+    "pushed_at": "2019-04-11T22:06:49Z",
+    "issues": 1,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

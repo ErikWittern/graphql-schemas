@@ -1,0 +1,58 @@
+{
+  "repo_name": "gear",
+  "repo_full_name": "the-gear/gear",
+  "repo_owner": "the-gear",
+  "repo_description": "WORK IN PROGRESS: The ⚙️ Gear: Monorepo of high quality tools and utilities for GraphQL and React in TypeScript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "samples/rollup-server-simple/src/schema.graphql",
+      "sha": "13294380df6955aec9e8ab2e3719fa7851c1a2f5",
+      "url": "https://api.github.com/repositories/186098997/contents/samples/rollup-server-simple/src/schema.graphql?ref=48cd8e38aac982eab081c2d0d86347f30ad5ffb1",
+      "git_url": "https://api.github.com/repositories/186098997/git/blobs/13294380df6955aec9e8ab2e3719fa7851c1a2f5",
+      "html_url": "https://github.com/the-gear/gear/blob/48cd8e38aac982eab081c2d0d86347f30ad5ffb1/samples/rollup-server-simple/src/schema.graphql",
+      "content": "\"\"\"\nRoot query type 3\n\"\"\"\ntype Query {\n  \"\"\"\n  Say hello! 2\n  \"\"\"\n  hello: String!\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "samples/standalone/src/schema.graphql",
+      "sha": "bbffdb6307c803c949b6aa83f57a8cafdaeecfdd",
+      "url": "https://api.github.com/repositories/186098997/contents/samples/standalone/src/schema.graphql?ref=48cd8e38aac982eab081c2d0d86347f30ad5ffb1",
+      "git_url": "https://api.github.com/repositories/186098997/git/blobs/bbffdb6307c803c949b6aa83f57a8cafdaeecfdd",
+      "html_url": "https://github.com/the-gear/gear/blob/48cd8e38aac982eab081c2d0d86347f30ad5ffb1/samples/standalone/src/schema.graphql",
+      "content": "type QueryType {\n  hello: String!\n}\n\nschema {\n  query: QueryType\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-11T06:57:51Z",
+    "updated_at": "2019-06-04T09:50:32Z",
+    "pushed_at": "2019-06-04T09:50:31Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

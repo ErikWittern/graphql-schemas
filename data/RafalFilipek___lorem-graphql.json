@@ -1,0 +1,42 @@
+{
+  "repo_name": "lorem-graphql",
+  "repo_full_name": "rafalfilipek/lorem-graphql",
+  "repo_owner": "RafalFilipek",
+  "repo_description": "Simple GraphQL example. Grab informations about single paragraph of lorem ipsum text.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "lorem.gql",
+      "path": "src/lorem.gql",
+      "sha": "3596c0563886a4256b3277288064550d1c586e46",
+      "url": "https://api.github.com/repositories/71810944/contents/src/lorem.gql?ref=4b0532f96f09584e2a48270527d2a0dc0bf4cf49",
+      "git_url": "https://api.github.com/repositories/71810944/git/blobs/3596c0563886a4256b3277288064550d1c586e46",
+      "html_url": "https://github.com/RafalFilipek/lorem-graphql/blob/4b0532f96f09584e2a48270527d2a0dc0bf4cf49/src/lorem.gql",
+      "content": "type Letter {\n  value: String\n  code: Int\n}\n\ntype Word {\n  value: String\n  letters: [Letter]\n  letter(index: Int = 0): Letter\n}\n\ntype Sentence {\n  value: String\n  words: [Word]\n  word(index: Int = 0): Word\n  letters: [Letter]\n}\n\ntype Lorem {\n  value: String\n  sentences: [Sentence]\n  sentence(index: Int = 0): Sentence\n  words: [Word]\n  letters: [Letter]\n}\n\ntype Query {\n  lorem: Lorem\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-24T16:53:26Z",
+    "updated_at": "2016-12-06T22:53:44Z",
+    "pushed_at": "2016-10-25T06:37:13Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

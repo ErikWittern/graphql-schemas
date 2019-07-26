@@ -1,0 +1,42 @@
+{
+  "repo_name": "gqlSlides",
+  "repo_full_name": "valerybugakov/gqlslides",
+  "repo_owner": "valerybugakov",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "assets/schema.graphql",
+      "sha": "25f2959b52ded5c429c2e05e56980eaf30be48b5",
+      "url": "https://api.github.com/repositories/110740276/contents/assets/schema.graphql?ref=7ca310b222738673abbecbfa7345acd316b28008",
+      "git_url": "https://api.github.com/repositories/110740276/git/blobs/25f2959b52ded5c429c2e05e56980eaf30be48b5",
+      "html_url": "https://github.com/valerybugakov/gqlSlides/blob/7ca310b222738673abbecbfa7345acd316b28008/assets/schema.graphql",
+      "content": "type Query {\n  viewer: User\n}\n\ntype User {\n  id: ID!\n  name: String\n  address: Location\n}\n\ntype Location {\n  id: ID!\n  city: String\n  street: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-14T20:20:17Z",
+    "updated_at": "2017-11-25T07:16:05Z",
+    "pushed_at": "2017-11-25T13:27:27Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

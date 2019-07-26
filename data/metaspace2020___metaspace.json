@@ -1,0 +1,42 @@
+{
+  "repo_name": "metaspace",
+  "repo_full_name": "metaspace2020/metaspace",
+  "repo_owner": "metaspace2020",
+  "repo_description": "Engine for metabolite annotation for imaging mass spectrometry",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "system.graphql",
+      "path": "metaspace/graphql/schemas/system.graphql",
+      "sha": "8607542a372e3f07dd3588decb7e515c6854f4e2",
+      "url": "https://api.github.com/repositories/138977979/contents/metaspace/graphql/schemas/system.graphql?ref=d0b0ec4b094ea18f534f2c44979c06129763c596",
+      "git_url": "https://api.github.com/repositories/138977979/git/blobs/8607542a372e3f07dd3588decb7e515c6854f4e2",
+      "html_url": "https://github.com/metaspace2020/metaspace/blob/d0b0ec4b094ea18f534f2c44979c06129763c596/metaspace/graphql/schemas/system.graphql",
+      "content": "type SystemHealth {\n  canMutate: Boolean!\n  canProcessDatasets: Boolean!\n  message: String\n}\n\ninput UpdateSystemHealthInput {\n  canMutate: Boolean!\n  canProcessDatasets: Boolean!\n  message: String\n}\n\ntype Query {\n  systemHealth: SystemHealth!\n}\n\ntype Mutation {\n  updateSystemHealth(health: UpdateSystemHealthInput!): Boolean\n}\n\ntype Subscription {\n  systemHealthUpdated: SystemHealth!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-28T06:49:14Z",
+    "updated_at": "2019-07-10T14:59:27Z",
+    "pushed_at": "2019-07-12T14:38:13Z",
+    "issues": 128,
+    "watchers": 5,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 243,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 12,
+    "pull_requests_merged": 231,
+    "releases": 0,
+    "stargazers": 10
+  }
+}

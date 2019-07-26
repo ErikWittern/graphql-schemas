@@ -1,0 +1,39 @@
+{
+  "repo_name": "vgbh-vid",
+  "repo_full_name": "vgbhfive/vgbh-vid",
+  "repo_owner": "vgbhfive",
+  "repo_description": "Distribute sender",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "vid/src/main/resources/graphql/schema.graphql",
+      "sha": "6f3ffda4525503fef6bebaf31e4f88d2685f4a0e",
+      "url": "https://api.github.com/repositories/142563357/contents/vid/src/main/resources/graphql/schema.graphql?ref=1f31cb9fc161b2b61de3f3b926ab57cb7c131e10",
+      "git_url": "https://api.github.com/repositories/142563357/git/blobs/6f3ffda4525503fef6bebaf31e4f88d2685f4a0e",
+      "html_url": "https://github.com/vgbhfive/vgbh-vid/blob/1f31cb9fc161b2b61de3f3b926ab57cb7c131e10/vid/src/main/resources/graphql/schema.graphql",
+      "content": "type Query {\n    hello: String\n    # vid(): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-27T10:26:06Z",
+    "updated_at": "2019-06-23T06:32:34Z",
+    "pushed_at": "2019-06-23T06:32:32Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

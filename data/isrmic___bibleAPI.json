@@ -1,0 +1,42 @@
+{
+  "repo_name": "bibleAPI",
+  "repo_full_name": "isrmic/bibleapi",
+  "repo_owner": "isrmic",
+  "repo_description": "a simple bible API based on the version NVT",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.gql",
+      "path": "schemas/Query.gql",
+      "sha": "bf889b6f4f8fe3fe23c95683ad8d1e4eea3ed85d",
+      "url": "https://api.github.com/repositories/173743722/contents/schemas/Query.gql?ref=4fa03b4b2d28970bef005d11ed3c21086e16a330",
+      "git_url": "https://api.github.com/repositories/173743722/git/blobs/bf889b6f4f8fe3fe23c95683ad8d1e4eea3ed85d",
+      "html_url": "https://github.com/isrmic/bibleAPI/blob/4fa03b4b2d28970bef005d11ed3c21086e16a330/schemas/Query.gql",
+      "content": "#query example\ntype Query {\n    books(bookname: String, chapter: Int, versicle: Int, content: String): [Book!]!\n    randomversicle (bookname: String, chapter: Int): RandVerse!\n}\n\ntype Book {\n    bookname: String!\n    abbrev: String!\n    author: String!\n    testament: String!\n    group: String!\n    chaptersnumber: Int!\n    chapters: [Chapter!]!\n}\n\ntype Chapter {\n    chapternumber: Int!\n    versiclesnumber: Int!\n    versicles: [Versicle!]!    \n}\n\ntype Versicle {\n    versiclenumber: Int!    \n    content: String!\n}\n\ntype RandVerse {\n    bookname: String!\n    chapternumber: Int!\n    versiclenumber: Int!\n    content: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-04T12:48:21Z",
+    "updated_at": "2019-03-12T11:11:29Z",
+    "pushed_at": "2019-03-12T11:11:28Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-relay-map-example",
+  "repo_full_name": "taxigy/react-relay-map-example",
+  "repo_owner": "taxigy",
+  "repo_description": "🍴🗺",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "68c88fcf9c6046745d23b10b773330a2123df5df",
+      "url": "https://api.github.com/repositories/75988399/contents/server/data/schema.graphql?ref=45641ac0d8b691c582879526ac6531f17f89fc1c",
+      "git_url": "https://api.github.com/repositories/75988399/git/blobs/68c88fcf9c6046745d23b10b773330a2123df5df",
+      "html_url": "https://github.com/taxigy/react-relay-map-example/blob/45641ac0d8b691c582879526ac6531f17f89fc1c/server/data/schema.graphql",
+      "content": "# A container going as part of shipment\ntype Container {\n  # Type of the container\n  type: String\n\n  # Container number\n  number: String\n}\n\n# A customer whose containers we are transporting\ntype Customer {\n  id: String\n\n  # Full name of the customer\n  name: String\n\n  # Company name of the customer\n  company: String\n}\n\n# Location represented by latitude and longitude\ntype Location {\n  # Human-friendly name of the location\n  name: String\n\n  # Latitude of a tracking event\n  latitude: Float\n\n  # Longitude of a tracking event\n  longitude: Float\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: Shipments\n}\n\n# Conjunction of point and time and location, point of a route\ntype RoutePoint {\n  # Point in time\n  date: String\n  latitude: Float\n  longitude: Float\n}\n\n# An actual shipment that consists of one or many containers\ntype Shipment {\n  id: String\n  containers: [Container]\n\n  # Customer who ordered this container\n  customer: Customer\n\n  # Location of shipment origin\n  origin: Location\n\n  # Location of shipment destination\n  destination: Location\n  route: [RoutePoint]\n}\n\n# A shipment with its route represented by tracking events\ntype Shipments {\n  shipments: [Shipment]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-09T01:02:23Z",
+    "updated_at": "2016-12-09T01:02:54Z",
+    "pushed_at": "2016-12-14T08:30:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

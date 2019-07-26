@@ -1,0 +1,39 @@
+{
+  "repo_name": "react-native-relay-graphql-example",
+  "repo_full_name": "jgcmarins/react-native-relay-graphql-example",
+  "repo_owner": "jgcmarins",
+  "repo_description": "React Native + Relay Modern + GraphQL: an app to display information about top UFC fighters",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "8c7d78730de2ebb90233dbe0c6830521b736498b",
+      "url": "https://api.github.com/repositories/92704655/contents/data/schema.graphql?ref=23e9218728c17abdcf077114d03e54835da82c85",
+      "git_url": "https://api.github.com/repositories/92704655/git/blobs/8c7d78730de2ebb90233dbe0c6830521b736498b",
+      "html_url": "https://github.com/jgcmarins/react-native-relay-graphql-example/blob/23e9218728c17abdcf077114d03e54835da82c85/data/schema.graphql",
+      "content": "type Fighter {\n  # The ID of an object\n  id: ID!\n  _id: Int\n  profileImage: String\n  firstName: String\n  lastName: String\n  nickname: String\n  weightClass: String\n  wins: Int\n  losses: Int\n  draws: Int\n  beltThumbnail: String\n  link: String\n}\n\ntype Query {\n  allFighters: [Fighter]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-29T03:52:52Z",
+    "updated_at": "2019-05-07T12:54:52Z",
+    "pushed_at": "2018-01-18T00:53:47Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 25
+  }
+}

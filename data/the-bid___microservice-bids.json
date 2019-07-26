@@ -1,0 +1,42 @@
+{
+  "repo_name": "microservice-bids",
+  "repo_full_name": "the-bid/microservice-bids",
+  "repo_owner": "the-bid",
+  "repo_description": "This is a microservice accociated with The Bid that handles bids",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "prisma.graphql",
+      "path": "src/generated/prisma.graphql",
+      "sha": "9fb406f7b726392233a0dd76e79a2ea0eda536c2",
+      "url": "https://api.github.com/repositories/136380078/contents/src/generated/prisma.graphql?ref=7d51ec07be8b712c7532dea2b2d41dbf653f1cfd",
+      "git_url": "https://api.github.com/repositories/136380078/git/blobs/9fb406f7b726392233a0dd76e79a2ea0eda536c2",
+      "html_url": "https://github.com/the-bid/microservice-bids/blob/7d51ec07be8b712c7532dea2b2d41dbf653f1cfd/src/generated/prisma.graphql",
+      "content": "type AggregateBid {\n  count: Int!\n}\n\ntype BatchPayload {\n  count: Long!\n}\n\ntype Bid {\n  id: ID!\n  createdAt: DateTime!\n  userId: String!\n  auctionId: String!\n  teamId: String!\n  amount: Float!\n}\n\ntype BidConnection {\n  pageInfo: PageInfo!\n  edges: [BidEdge]!\n  aggregate: AggregateBid!\n}\n\ninput BidCreateInput {\n  id: ID\n  userId: String!\n  auctionId: String!\n  teamId: String!\n  amount: Float!\n}\n\ntype BidEdge {\n  node: Bid!\n  cursor: String!\n}\n\nenum BidOrderByInput {\n  id_ASC\n  id_DESC\n  createdAt_ASC\n  createdAt_DESC\n  userId_ASC\n  userId_DESC\n  auctionId_ASC\n  auctionId_DESC\n  teamId_ASC\n  teamId_DESC\n  amount_ASC\n  amount_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n}\n\ntype BidPreviousValues {\n  id: ID!\n  createdAt: DateTime!\n  userId: String!\n  auctionId: String!\n  teamId: String!\n  amount: Float!\n}\n\ntype BidSubscriptionPayload {\n  mutation: MutationType!\n  node: Bid\n  updatedFields: [String!]\n  previousValues: BidPreviousValues\n}\n\ninput BidSubscriptionWhereInput {\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: BidWhereInput\n  AND: [BidSubscriptionWhereInput!]\n  OR: [BidSubscriptionWhereInput!]\n  NOT: [BidSubscriptionWhereInput!]\n}\n\ninput BidUpdateInput {\n  userId: String\n  auctionId: String\n  teamId: String\n  amount: Float\n}\n\ninput BidUpdateManyMutationInput {\n  userId: String\n  auctionId: String\n  teamId: String\n  amount: Float\n}\n\ninput BidWhereInput {\n  id: ID\n  id_not: ID\n  id_in: [ID!]\n  id_not_in: [ID!]\n  id_lt: ID\n  id_lte: ID\n  id_gt: ID\n  id_gte: ID\n  id_contains: ID\n  id_not_contains: ID\n  id_starts_with: ID\n  id_not_starts_with: ID\n  id_ends_with: ID\n  id_not_ends_with: ID\n  createdAt: DateTime\n  createdAt_not: DateTime\n  createdAt_in: [DateTime!]\n  createdAt_not_in: [DateTime!]\n  createdAt_lt: DateTime\n  createdAt_lte: DateTime\n  createdAt_gt: DateTime\n  createdAt_gte: DateTime\n  userId: String\n  userId_not: String\n  userId_in: [String!]\n  userId_not_in: [String!]\n  userId_lt: String\n  userId_lte: String\n  userId_gt: String\n  userId_gte: String\n  userId_contains: String\n  userId_not_contains: String\n  userId_starts_with: String\n  userId_not_starts_with: String\n  userId_ends_with: String\n  userId_not_ends_with: String\n  auctionId: String\n  auctionId_not: String\n  auctionId_in: [String!]\n  auctionId_not_in: [String!]\n  auctionId_lt: String\n  auctionId_lte: String\n  auctionId_gt: String\n  auctionId_gte: String\n  auctionId_contains: String\n  auctionId_not_contains: String\n  auctionId_starts_with: String\n  auctionId_not_starts_with: String\n  auctionId_ends_with: String\n  auctionId_not_ends_with: String\n  teamId: String\n  teamId_not: String\n  teamId_in: [String!]\n  teamId_not_in: [String!]\n  teamId_lt: String\n  teamId_lte: String\n  teamId_gt: String\n  teamId_gte: String\n  teamId_contains: String\n  teamId_not_contains: String\n  teamId_starts_with: String\n  teamId_not_starts_with: String\n  teamId_ends_with: String\n  teamId_not_ends_with: String\n  amount: Float\n  amount_not: Float\n  amount_in: [Float!]\n  amount_not_in: [Float!]\n  amount_lt: Float\n  amount_lte: Float\n  amount_gt: Float\n  amount_gte: Float\n  AND: [BidWhereInput!]\n  OR: [BidWhereInput!]\n  NOT: [BidWhereInput!]\n}\n\ninput BidWhereUniqueInput {\n  id: ID\n}\n\nscalar DateTime\n\nscalar Long\n\ntype Mutation {\n  createBid(data: BidCreateInput!): Bid!\n  updateBid(data: BidUpdateInput!, where: BidWhereUniqueInput!): Bid\n  updateManyBids(data: BidUpdateManyMutationInput!, where: BidWhereInput): BatchPayload!\n  upsertBid(where: BidWhereUniqueInput!, create: BidCreateInput!, update: BidUpdateInput!): Bid!\n  deleteBid(where: BidWhereUniqueInput!): Bid\n  deleteManyBids(where: BidWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  bid(where: BidWhereUniqueInput!): Bid\n  bids(where: BidWhereInput, orderBy: BidOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Bid]!\n  bidsConnection(where: BidWhereInput, orderBy: BidOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): BidConnection!\n  node(id: ID!): Node\n}\n\ntype Subscription {\n  bid(where: BidSubscriptionWhereInput): BidSubscriptionPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 22
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-06T20:01:11Z",
+    "updated_at": "2019-04-30T20:09:43Z",
+    "pushed_at": "2019-07-03T22:06:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

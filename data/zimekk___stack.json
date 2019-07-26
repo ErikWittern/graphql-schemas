@@ -1,0 +1,42 @@
+{
+  "repo_name": "stack",
+  "repo_full_name": "zimekk/stack",
+  "repo_owner": "zimekk",
+  "repo_description": "JavaScript Full-Stack Development",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "packages/web/schema.gql",
+      "sha": "7f51b43188f84bec0bfc4d32e7e0aeda75ff755b",
+      "url": "https://api.github.com/repositories/155715176/contents/packages/web/schema.gql?ref=b53ac964c0b81ddf92d36fc1320559a7bfcc3cfe",
+      "git_url": "https://api.github.com/repositories/155715176/git/blobs/7f51b43188f84bec0bfc4d32e7e0aeda75ff755b",
+      "html_url": "https://github.com/zimekk/stack/blob/b53ac964c0b81ddf92d36fc1320559a7bfcc3cfe/packages/web/schema.gql",
+      "content": "type Query {\n  hello: String\n  contacts: [Contact]\n  messages: [Message]\n}\ntype Contact {\n  id: String!\n  name: String!\n}\ninput CreateContactInput {\n  name: String!\n}\ninput UpdateContactInput {\n  id: String!\n  name: String!\n}\ninput RemoveContactInput {\n  id: String!\n}\ninput NotifyContactInput {\n  subject: String!\n  message: String!\n}\ntype ContactOps {\n  create(input: CreateContactInput!): Contact\n  update(input: UpdateContactInput!): Contact\n  remove(input: RemoveContactInput!): Boolean\n  notify(input: NotifyContactInput!): Boolean\n}\ntype Message {\n  text: String!\n}\ninput MessageInput {\n  text: String!\n}\ntype MessageOps {\n  add(input: MessageInput!): [Message]\n  clear: Boolean\n}\ntype Mutation {\n  Contact: ContactOps\n  Message: MessageOps\n}\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-01T12:58:03Z",
+    "updated_at": "2019-02-02T18:08:21Z",
+    "pushed_at": "2019-02-02T18:08:19Z",
+    "issues": 1,
+    "watchers": 4,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

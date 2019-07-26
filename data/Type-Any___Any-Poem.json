@@ -1,0 +1,257 @@
+{
+  "repo_name": "Any-Poem",
+  "repo_full_name": "type-any/any-poem",
+  "repo_owner": "Type-Any",
+  "repo_description": " 누구나 쓰는 시(부제:누구도 쓰지 못하는 나의 시)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "GetPoem.graphql",
+      "path": "backend/src/resolvers/Poem/Query/GetPoem/GetPoem.graphql",
+      "sha": "71a6aa3ebbdde9914f9ea871c6b0415091f435ea",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/Poem/Query/GetPoem/GetPoem.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/71a6aa3ebbdde9914f9ea871c6b0415091f435ea",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/Query/GetPoem/GetPoem.graphql",
+      "content": "type GetPoemResponse {\n  ok: Boolean!\n  error: String\n  poem: Poem\n}\n\ntype Query {\n  GetPoem(poemId: Int!): GetPoemResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/Query/GetPoem/GetPoem.graphql:\ntype GetPoemResponse {\n  ok: Boolean!\n  error: String\n  poem: Poem\n}\n\ntype Query {\n  GetPoem(poemId: Int!): GetPoemResponse!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/shared/Poem.graphql:\ntype Poem {\n  id: Int!\n  poet: User!\n  title: String!\n  text: String!\n  comments: [Comment]\n  likes: [User]\n  isPublished: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String!\n  password: String\n  oauthId: String\n  fullName: String!\n  penName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String\n  poems: [Poem]\n  comments: [Comment]\n  followers: [User]\n  following: [User]\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/shared/Comment.graphql:\ntype Comment {\n  id: Int!\n  commenter: User!\n  poem: Poem!\n  parent: Comment\n  children: [Comment]\n  text: String!\n  likes: [User]\n  createdAt: String!\n  updatedAt: String!\n}\n",
+        "mergedPaths": [
+          "backend/src/resolvers/Poem/shared/Poem.graphql",
+          "backend/src/resolvers/User/shared/User.graphql",
+          "backend/src/resolvers/Comment/shared/Comment.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Poem",
+          "User",
+          "Comment"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Comment.graphql",
+      "path": "backend/src/resolvers/Comment/shared/Comment.graphql",
+      "sha": "455e6cad89fd2d8a52e9b9d9ccf1840ca5b2faa0",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/Comment/shared/Comment.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/455e6cad89fd2d8a52e9b9d9ccf1840ca5b2faa0",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/shared/Comment.graphql",
+      "content": "type Comment {\n  id: Int!\n  commenter: User!\n  poem: Poem!\n  parent: Comment\n  children: [Comment]\n  text: String!\n  likes: [User]\n  createdAt: String!\n  updatedAt: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Poem.graphql",
+      "path": "backend/src/resolvers/Poem/shared/Poem.graphql",
+      "sha": "e33b6188f80b07d6e6605eea530f6135ca1b88bf",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/Poem/shared/Poem.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/e33b6188f80b07d6e6605eea530f6135ca1b88bf",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/shared/Poem.graphql",
+      "content": "type Poem {\n  id: Int!\n  poet: User!\n  title: String!\n  text: String!\n  comments: [Comment]\n  likes: [User]\n  isPublished: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "User.graphql",
+      "path": "backend/src/resolvers/User/shared/User.graphql",
+      "sha": "c6590c6e19fa0fce7871bce911d74bdf278fd7d7",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/User/shared/User.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/c6590c6e19fa0fce7871bce911d74bdf278fd7d7",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/shared/User.graphql",
+      "content": "type User {\n  id: Int!\n  email: String!\n  password: String\n  oauthId: String\n  fullName: String!\n  penName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String\n  poems: [Poem]\n  comments: [Comment]\n  followers: [User]\n  following: [User]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "GetMyProfile.graphql",
+      "path": "backend/src/resolvers/User/Query/GetMyProfile/GetMyProfile.graphql",
+      "sha": "e75d9cbed1c1a98fa4097257bcf5d44168d95dd9",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/User/Query/GetMyProfile/GetMyProfile.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/e75d9cbed1c1a98fa4097257bcf5d44168d95dd9",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/Query/GetMyProfile/GetMyProfile.graphql",
+      "content": "type GetMyProfileResponse {\n  ok: Boolean!\n  error: String\n  profile: User\n}\n\ntype Query {\n  GetMyProfile: GetMyProfileResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/Query/GetMyProfile/GetMyProfile.graphql:\ntype GetMyProfileResponse {\n  ok: Boolean!\n  error: String\n  profile: User\n}\n\ntype Query {\n  GetMyProfile: GetMyProfileResponse!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String!\n  password: String\n  oauthId: String\n  fullName: String!\n  penName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String\n  poems: [Poem]\n  comments: [Comment]\n  followers: [User]\n  following: [User]\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/shared/Poem.graphql:\ntype Poem {\n  id: Int!\n  poet: User!\n  title: String!\n  text: String!\n  comments: [Comment]\n  likes: [User]\n  isPublished: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/shared/Comment.graphql:\ntype Comment {\n  id: Int!\n  commenter: User!\n  poem: Poem!\n  parent: Comment\n  children: [Comment]\n  text: String!\n  likes: [User]\n  createdAt: String!\n  updatedAt: String!\n}\n",
+        "mergedPaths": [
+          "backend/src/resolvers/User/shared/User.graphql",
+          "backend/src/resolvers/Poem/shared/Poem.graphql",
+          "backend/src/resolvers/Comment/shared/Comment.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Poem",
+          "Comment"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "GetMyPoems.graphql",
+      "path": "backend/src/resolvers/Poem/Query/GetMyPoems/GetMyPoems.graphql",
+      "sha": "828522bfe8127df5d558646d26f52b041be320e5",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/Poem/Query/GetMyPoems/GetMyPoems.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/828522bfe8127df5d558646d26f52b041be320e5",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/Query/GetMyPoems/GetMyPoems.graphql",
+      "content": "type GetMyPoemsResponse {\n  ok: Boolean!\n  error: String\n  poems: [Poem]\n}\n\ntype Query {\n  GetMyPoems(skip: Int!, take: Int!): GetMyPoemsResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/Query/GetMyPoems/GetMyPoems.graphql:\ntype GetMyPoemsResponse {\n  ok: Boolean!\n  error: String\n  poems: [Poem]\n}\n\ntype Query {\n  GetMyPoems(skip: Int!, take: Int!): GetMyPoemsResponse!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/shared/Poem.graphql:\ntype Poem {\n  id: Int!\n  poet: User!\n  title: String!\n  text: String!\n  comments: [Comment]\n  likes: [User]\n  isPublished: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String!\n  password: String\n  oauthId: String\n  fullName: String!\n  penName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String\n  poems: [Poem]\n  comments: [Comment]\n  followers: [User]\n  following: [User]\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/shared/Comment.graphql:\ntype Comment {\n  id: Int!\n  commenter: User!\n  poem: Poem!\n  parent: Comment\n  children: [Comment]\n  text: String!\n  likes: [User]\n  createdAt: String!\n  updatedAt: String!\n}\n",
+        "mergedPaths": [
+          "backend/src/resolvers/Poem/shared/Poem.graphql",
+          "backend/src/resolvers/User/shared/User.graphql",
+          "backend/src/resolvers/Comment/shared/Comment.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Poem",
+          "User",
+          "Comment"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "GetPoems.graphql",
+      "path": "backend/src/resolvers/Poem/Query/GetPoems/GetPoems.graphql",
+      "sha": "c493be02f68ab52d37c3f843813c1ded6b30d24e",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/Poem/Query/GetPoems/GetPoems.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/c493be02f68ab52d37c3f843813c1ded6b30d24e",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/Query/GetPoems/GetPoems.graphql",
+      "content": "type GetPoemsResponse {\n  ok: Boolean!\n  error: String\n  poems: [Poem]\n}\n\ntype Query {\n  GetPoems(skip: Int!, take: Int!, search: String): GetPoemsResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/Query/GetPoems/GetPoems.graphql:\ntype GetPoemsResponse {\n  ok: Boolean!\n  error: String\n  poems: [Poem]\n}\n\ntype Query {\n  GetPoems(skip: Int!, take: Int!, search: String): GetPoemsResponse!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/shared/Poem.graphql:\ntype Poem {\n  id: Int!\n  poet: User!\n  title: String!\n  text: String!\n  comments: [Comment]\n  likes: [User]\n  isPublished: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String!\n  password: String\n  oauthId: String\n  fullName: String!\n  penName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String\n  poems: [Poem]\n  comments: [Comment]\n  followers: [User]\n  following: [User]\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/shared/Comment.graphql:\ntype Comment {\n  id: Int!\n  commenter: User!\n  poem: Poem!\n  parent: Comment\n  children: [Comment]\n  text: String!\n  likes: [User]\n  createdAt: String!\n  updatedAt: String!\n}\n",
+        "mergedPaths": [
+          "backend/src/resolvers/Poem/shared/Poem.graphql",
+          "backend/src/resolvers/User/shared/User.graphql",
+          "backend/src/resolvers/Comment/shared/Comment.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Poem",
+          "User",
+          "Comment"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "CheckUserExists.graphql",
+      "path": "backend/src/resolvers/User/Query/CheckUserExists/CheckUserExists.graphql",
+      "sha": "085b44546205477b5c5b27839058ea68f3c00f84",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/User/Query/CheckUserExists/CheckUserExists.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/085b44546205477b5c5b27839058ea68f3c00f84",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/Query/CheckUserExists/CheckUserExists.graphql",
+      "content": "type CheckUserExistsResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n\ntype Query {\n  CheckUserExists(email: String, oauthId: String): CheckUserExistsResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/Query/CheckUserExists/CheckUserExists.graphql:\ntype CheckUserExistsResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n\ntype Query {\n  CheckUserExists(email: String, oauthId: String): CheckUserExistsResponse!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String!\n  password: String\n  oauthId: String\n  fullName: String!\n  penName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String\n  poems: [Poem]\n  comments: [Comment]\n  followers: [User]\n  following: [User]\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/shared/Poem.graphql:\ntype Poem {\n  id: Int!\n  poet: User!\n  title: String!\n  text: String!\n  comments: [Comment]\n  likes: [User]\n  isPublished: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/shared/Comment.graphql:\ntype Comment {\n  id: Int!\n  commenter: User!\n  poem: Poem!\n  parent: Comment\n  children: [Comment]\n  text: String!\n  likes: [User]\n  createdAt: String!\n  updatedAt: String!\n}\n",
+        "mergedPaths": [
+          "backend/src/resolvers/User/shared/User.graphql",
+          "backend/src/resolvers/Poem/shared/Poem.graphql",
+          "backend/src/resolvers/Comment/shared/Comment.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Poem",
+          "Comment"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "GetComments.graphql",
+      "path": "backend/src/resolvers/Comment/Query/GetComments/GetComments.graphql",
+      "sha": "4dd17d4e305b43ce96a75ef7086e6cace0541438",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/resolvers/Comment/Query/GetComments/GetComments.graphql?ref=02ae140c9874e941913eaa44f515c52f3eed3a76",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/4dd17d4e305b43ce96a75ef7086e6cace0541438",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/Query/GetComments/GetComments.graphql",
+      "content": "type GetCommentsResponse {\n  ok: Boolean!\n  error: String\n  comments: [Comment]\n}\n\ntype Query {\n  GetComments(poemId: Int!, skip: Int!, take: Int!): GetCommentsResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/Query/GetComments/GetComments.graphql:\ntype GetCommentsResponse {\n  ok: Boolean!\n  error: String\n  comments: [Comment]\n}\n\ntype Query {\n  GetComments(poemId: Int!, skip: Int!, take: Int!): GetCommentsResponse!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Comment/shared/Comment.graphql:\ntype Comment {\n  id: Int!\n  commenter: User!\n  poem: Poem!\n  parent: Comment\n  children: [Comment]\n  text: String!\n  likes: [User]\n  createdAt: String!\n  updatedAt: String!\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String!\n  password: String\n  oauthId: String\n  fullName: String!\n  penName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String\n  poems: [Poem]\n  comments: [Comment]\n  followers: [User]\n  following: [User]\n}\n\n# https://github.com/Type-Any/Any-Poem/blob/02ae140c9874e941913eaa44f515c52f3eed3a76/backend/src/resolvers/Poem/shared/Poem.graphql:\ntype Poem {\n  id: Int!\n  poet: User!\n  title: String!\n  text: String!\n  comments: [Comment]\n  likes: [User]\n  isPublished: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n",
+        "mergedPaths": [
+          "backend/src/resolvers/Comment/shared/Comment.graphql",
+          "backend/src/resolvers/User/shared/User.graphql",
+          "backend/src/resolvers/Poem/shared/Poem.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Comment",
+          "User",
+          "Poem"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "backend/src/schema.graphql",
+      "sha": "a7ea3396395e5f075f6e11b2d44709ab3c6ec165",
+      "url": "https://api.github.com/repositories/165338143/contents/backend/src/schema.graphql?ref=bf0ef6b5b12478ba15ff8e46d749a406596940a1",
+      "git_url": "https://api.github.com/repositories/165338143/git/blobs/a7ea3396395e5f075f6e11b2d44709ab3c6ec165",
+      "html_url": "https://github.com/Type-Any/Any-Poem/blob/bf0ef6b5b12478ba15ff8e46d749a406596940a1/backend/src/schema.graphql",
+      "content": "type DeleteCommentResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype Mutation {\n  DeleteComment(commentId: Int!): DeleteCommentResponse!\n  SaveComment(poemId: Int!, parentId: Int, text: String!): SaveCommentResponse!\n  UpdateComment(commentId: Int!, text: String): UpdateCommentResponse!\n  LikeComment(commentId: Int!): UpdateCommentResponse!\n  DeletePoem(poemId: Int!): DeletePoemResponse!\n  SavePoem(title: String!, text: String!): SavePoemResponse!\n  UpdatePoem(poemId: Int!, title: String, text: String, isPublished: Boolean): SavePoemResponse!\n  LikePoem(poemId: Int!): UpdatePoemResponse!\n  ChangeProfile(penName: String, bio: String, avatar: String): ChangeProfileResponse!\n  EmailSignIn(email: String!, password: String, oauthId: String): EmailSignInResponse!\n  EmailSignUp(email: String!, password: String, oauthId: String, fullName: String!, penName: String!): EmailSignUpResponse!\n}\n\ntype SaveCommentResponse {\n  ok: Boolean!\n  error: String\n  comment: Comment\n}\n\ntype UpdateCommentResponse {\n  ok: Boolean!\n  error: String\n  comment: Comment\n}\n\ntype GetCommentsResponse {\n  ok: Boolean!\n  error: String\n  comments: [Comment]\n}\n\ntype Query {\n  GetComments(poemId: Int!, skip: Int!, take: Int!): GetCommentsResponse!\n  GetMyPoems(skip: Int!, take: Int!): GetMyPoemsResponse!\n  GetPoem(poemId: Int!): GetPoemResponse!\n  GetPoems(skip: Int!, take: Int!, search: String): GetPoemsResponse!\n  CheckUserExists(email: String, oauthId: String): CheckUserExistsResponse!\n  GetMyProfile: GetMyProfileResponse!\n}\n\ntype Comment {\n  id: Int!\n  commenter: User!\n  poem: Poem!\n  parent: Comment\n  children: [Comment]\n  text: String!\n  likes: [User]\n  createdAt: String!\n  updatedAt: String!\n}\n\ntype DeletePoemResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype SavePoemResponse {\n  ok: Boolean!\n  error: String\n  poem: Poem\n}\n\ntype UpdatePoemResponse {\n  ok: Boolean!\n  error: String\n  poem: Poem\n}\n\ntype GetMyPoemsResponse {\n  ok: Boolean!\n  error: String\n  poems: [Poem]\n}\n\ntype GetPoemResponse {\n  ok: Boolean!\n  error: String\n  poem: Poem\n}\n\ntype GetPoemsResponse {\n  ok: Boolean!\n  error: String\n  poems: [Poem]\n}\n\ntype Poem {\n  id: Int!\n  poet: User!\n  title: String!\n  text: String!\n  comments: [Comment]\n  likes: [User]\n  isPublished: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n\ntype ChangeProfileResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n\ntype EmailSignInResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype EmailSignUpResponse {\n  ok: Boolean!\n  error: String\n  user: User\n  token: String\n}\n\ntype CheckUserExistsResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n\ntype GetMyProfileResponse {\n  ok: Boolean!\n  error: String\n  profile: User\n}\n\ntype User {\n  id: Int!\n  email: String!\n  password: String\n  oauthId: String\n  fullName: String!\n  penName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String\n  poems: [Poem]\n  comments: [Comment]\n  followers: [User]\n  following: [User]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 20,
+      "containsCycle": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-12T02:40:15Z",
+    "updated_at": "2019-07-15T23:06:06Z",
+    "pushed_at": "2019-07-12T19:37:06Z",
+    "issues": 2,
+    "watchers": 7,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "wtfpl",
+    "pull_requests": 27,
+    "pull_requests_open": 5,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 22,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

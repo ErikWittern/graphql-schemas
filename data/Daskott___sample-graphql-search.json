@@ -1,0 +1,42 @@
+{
+  "repo_name": "sample-graphql-search",
+  "repo_full_name": "daskott/sample-graphql-search",
+  "repo_owner": "Daskott",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/schema.graphql",
+      "sha": "7a6046e9269d07fd6cc5f20ff7d0be801c56127f",
+      "url": "https://api.github.com/repositories/137690455/contents/app/schema.graphql?ref=1310cd25740de9b1f59fedf04a1b62938b02debb",
+      "git_url": "https://api.github.com/repositories/137690455/git/blobs/7a6046e9269d07fd6cc5f20ff7d0be801c56127f",
+      "html_url": "https://github.com/Daskott/sample-graphql-search/blob/1310cd25740de9b1f59fedf04a1b62938b02debb/app/schema.graphql",
+      "content": "# From schema.graphql\n# https://github.com/relayjs/relay-examples/blob/master/todo/data/schema.graphql\n\ntype Query {\n  books: [Book!]!\n  book(id: ID!): Book\n  searchBooks(filter: String, first: Int, after: Int): BookConnection\n}\n\ntype Book {\n  id: ID!\n  title: String\n  author: String\n}\n\ntype BookEdge {\n  cursor: String!\n  node: Book\n}\n\ntype BookConnection {\n  edges: [BookEdge!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-17T22:13:12Z",
+    "updated_at": "2018-06-18T19:29:51Z",
+    "pushed_at": "2018-06-18T19:29:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "get-gql",
+  "repo_full_name": "detrohutt/get-gql",
+  "repo_owner": "detrohutt",
+  "repo_description": "Read local graphql file (on server) or fetch remote graphql file (in browser)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "__fixtures__/graphql/schema.graphql",
+      "sha": "883690ffc816d38d05b524953a40a3225ff101d5",
+      "url": "https://api.github.com/repositories/129678293/contents/__fixtures__/graphql/schema.graphql?ref=ade5c9d95bdeb93fa2192e6368cbcc6263fa1b6b",
+      "git_url": "https://api.github.com/repositories/129678293/git/blobs/883690ffc816d38d05b524953a40a3225ff101d5",
+      "html_url": "https://github.com/detrohutt/get-gql/blob/ade5c9d95bdeb93fa2192e6368cbcc6263fa1b6b/__fixtures__/graphql/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Query {\n  test: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-16T03:16:40Z",
+    "updated_at": "2018-07-23T12:18:00Z",
+    "pushed_at": "2018-04-28T04:44:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

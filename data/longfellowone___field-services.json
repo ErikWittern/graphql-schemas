@@ -1,0 +1,42 @@
+{
+  "repo_name": "field-services",
+  "repo_full_name": "longfellowone/field-services",
+  "repo_owner": "longfellowone",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "supply/graphql/schema.graphql",
+      "sha": "c0669cadc80198a8d396b7e3d9eb9feaf9e8e99e",
+      "url": "https://api.github.com/repositories/163557224/contents/supply/graphql/schema.graphql?ref=72a781c78aa0b3d6e0141a6b3d81df25794ac5e6",
+      "git_url": "https://api.github.com/repositories/163557224/git/blobs/c0669cadc80198a8d396b7e3d9eb9feaf9e8e99e",
+      "html_url": "https://github.com/longfellowone/field-services/blob/72a781c78aa0b3d6e0141a6b3d81df25794ac5e6/supply/graphql/schema.graphql",
+      "content": "type Mutation {\n    # Orders\n    createOrder(input: CreateOrder!): Order!\n    sendOrder(input: SendOrder!): Order!\n    addOrderItem(input: AddOrderItem!): Order!\n    removeOrderItem(input: RemoveOrderItem!): Order!\n    receiveOrderItem(input: ModifyQuantity!): Order!\n    modifyRequestedQuantity(input: ModifyQuantity!): Order!\n    # Projects\n    createProject(input: CreateProject!): Project!\n    closeProject(input: CloseProject!): Project!\n}\n\ninput CreateOrder {\n    id: ID!\n    projectID: String!\n    name: String!\n}\n\ninput SendOrder {\n    id: ID!\n    comments: String!\n}\n\ninput AddOrderItem {\n    id: ID!\n    productID: String!\n    name: String!\n    uom: String!\n}\n\ninput RemoveOrderItem {\n    id: ID!\n    productID: String!\n}\n\ninput ModifyQuantity {\n    id: ID!\n    productID: String!\n    quantity: Int!\n}\n\ninput CreateProject {\n    id: ID!\n    name: String!\n}\n\ninput CloseProject {\n    id: ID!\n}\n\ntype Query {\n    # Orders\n    order(id: ID!): Order!\n    projectOrders(id: ID!): [ProjectOrder!]!\n    products(name: String!): [Result!]!\n    # Projects\n    projects(foremanID: ID!): [Project!]!\n}\n\ntype Result {\n    id: ID!\n    name: String!\n    uom: String!\n    matchedIndexes: [Int!]!\n}\n\ntype Product {\n    id: ID!\n    category: String!\n    name: String!\n    uom: String!\n}\n\ntype ProjectOrder {\n    id: ID!\n    sentDate: Int!\n    #    status: String!\n}\n\ntype Order {\n    id: ID!\n    project: Project!\n    items: [Item!]!\n    sentDate: Int!\n    comments: String!\n    #    status: String!\n}\n\ntype Item {\n    id: ID!\n    name: String!\n    uom: String!\n    quantityRequested: Int!\n    quantityReceived: Int!\n    quantityRemaining: Int!\n    #    ItemStatus: ItemStatus!\n    poNumber: String!\n    dateAdded: Int!\n}\n\ntype Project {\n    id: ID!\n    name: String!\n}\n\n#enum ItemStatus {\n#    Waiting\n#    Filled\n#    BackOrdered\n#    OrderExceeded\n#    NotOrdered\n#}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-30T03:00:27Z",
+    "updated_at": "2019-07-03T07:38:05Z",
+    "pushed_at": "2019-05-20T21:52:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 1,
+    "releases": 1,
+    "stargazers": 10
+  }
+}

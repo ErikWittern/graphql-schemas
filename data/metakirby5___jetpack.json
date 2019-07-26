@@ -1,0 +1,42 @@
+{
+  "repo_name": "jetpack",
+  "repo_full_name": "metakirby5/jetpack",
+  "repo_owner": "metakirby5",
+  "repo_description": ":rocket: Webpack + Coffeescript + Stylus + React boilerplate.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "libs.gql",
+      "path": "graphql/schema/libs.gql",
+      "sha": "7548f6f92373166b881fb38f2fc956c34b6b6022",
+      "url": "https://api.github.com/repositories/67692341/contents/graphql/schema/libs.gql?ref=536626c275639954223845a68dc19846b9ba513e",
+      "git_url": "https://api.github.com/repositories/67692341/git/blobs/7548f6f92373166b881fb38f2fc956c34b6b6022",
+      "html_url": "https://github.com/metakirby5/jetpack/blob/536626c275639954223845a68dc19846b9ba513e/graphql/schema/libs.gql",
+      "content": "type Lib {\n  name: String!\n  url: String\n}\n\ntype Query {\n  libs: [Lib]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-08T10:14:17Z",
+    "updated_at": "2019-01-09T02:03:58Z",
+    "pushed_at": "2018-01-12T06:01:56Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

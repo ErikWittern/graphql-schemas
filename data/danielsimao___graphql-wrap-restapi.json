@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-wrap-restapi",
+  "repo_full_name": "danielsimao/graphql-wrap-restapi",
+  "repo_owner": "danielsimao",
+  "repo_description": "This application wraps a REST API with GraphQL. The API is owned by marvel - https://developer.marvel.com/",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "0a9521e7eea121f1853c507156f5a8833e744ba6",
+      "url": "https://api.github.com/repositories/170107140/contents/server/src/schema.graphql?ref=6dc2b6f639d917c21d720e9a451e65f28e143846",
+      "git_url": "https://api.github.com/repositories/170107140/git/blobs/0a9521e7eea121f1853c507156f5a8833e744ba6",
+      "html_url": "https://github.com/danielsimao/graphql-wrap-restapi/blob/6dc2b6f639d917c21d720e9a451e65f28e143846/server/src/schema.graphql",
+      "content": "type Query {\n  getCharacters(limit: Int): CharacterDataWrapper\n}\n\nscalar Date\n\ntype CharacterDataWrapper {\n  code: Int\n  status: String\n  copyright: String\n  attributionText: String\n  attributionHTML: String\n  data: CharacterDataContainer\n  etag: String\n}\n\ntype CharacterDataContainer {\n  offset: Int\n  limit: Int\n  total: Int\n  count: Int\n  results: [Character]\n}\n\ntype Character {\n  id: Int\n  name: String\n  description: String\n  modified: Date\n  resourceURI: String\n  urls: [Url]\n  thumbnail: Image\n  comics: ComicList\n  stories: StoryList\n  events: EventList\n  series: SeriesList\n}\n\ntype Url {\n  type: String\n  url: String\n}\n\ntype Image {\n  path: String\n  extension: String\n}\n\ntype ComicList {\n  available: Int\n  returned: Int\n  collectionURI: String\n  items: [ComicSummary]\n}\n\ntype ComicSummary {\n  resourceURI: String\n  name: String\n}\n\ntype StoryList {\n  available: Int\n  returned: Int\n  collectionURI: String\n  items: [StorySummary]\n}\n\ntype StorySummary {\n  resourceURI: String\n  name: String\n  type: String\n}\n\ntype EventList {\n  available: Int\n  returned: Int\n  collectionURI: String\n  items: [EventSummary]\n}\n\ntype EventSummary {\n  resourceURI: String\n  name: String\n}\n\ntype SeriesList {\n  available: Int\n  returned: Int\n  collectionURI: String\n  items: [SeriesSummary]\n}\n\ntype SeriesSummary {\n  resourceURI: String\n  name: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-11T10:07:31Z",
+    "updated_at": "2019-02-27T11:30:35Z",
+    "pushed_at": "2019-02-27T11:30:34Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

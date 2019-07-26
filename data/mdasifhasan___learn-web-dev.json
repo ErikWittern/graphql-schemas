@@ -1,0 +1,52 @@
+{
+  "repo_name": "learn-web-dev",
+  "repo_full_name": "mdasifhasan/learn-web-dev",
+  "repo_owner": "mdasifhasan",
+  "repo_description": "This repo is for all the tutorials and trials on the road of learning modern web development tool chain.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "relay-examples-master/TodoMVC/data/schema.graphql",
+      "sha": "bcdf1e3f06c4357a64461d34e92f562e6a516a2b",
+      "url": "https://api.github.com/repositories/93706969/contents/relay-examples-master/TodoMVC/data/schema.graphql?ref=927efb736345ba36b2e5a9008f74b389d63d9044",
+      "git_url": "https://api.github.com/repositories/93706969/git/blobs/bcdf1e3f06c4357a64461d34e92f562e6a516a2b",
+      "html_url": "https://github.com/mdasifhasan/learn-web-dev/blob/927efb736345ba36b2e5a9008f74b389d63d9044/relay-examples-master/TodoMVC/data/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutation\n}\n\ninput AddTodoInput {\n  text: String!\n  clientMutationId: String!\n}\n\ntype AddTodoPayload {\n  todoEdge: TodoEdge\n  viewer: User\n  clientMutationId: String!\n}\n\ninput ChangeTodoStatusInput {\n  complete: Boolean!\n  id: ID!\n  clientMutationId: String!\n}\n\ntype ChangeTodoStatusPayload {\n  todo: Todo\n  viewer: User\n  clientMutationId: String!\n}\n\ninput MarkAllTodosInput {\n  complete: Boolean!\n  clientMutationId: String!\n}\n\ntype MarkAllTodosPayload {\n  changedTodos: [Todo]\n  viewer: User\n  clientMutationId: String!\n}\n\ntype Mutation {\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  changeTodoStatus(input: ChangeTodoStatusInput!): ChangeTodoStatusPayload\n  markAllTodos(input: MarkAllTodosInput!): MarkAllTodosPayload\n  removeCompletedTodos(input: RemoveCompletedTodosInput!): RemoveCompletedTodosPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n  renameTodo(input: RenameTodoInput!): RenameTodoPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ninput RemoveCompletedTodosInput {\n  clientMutationId: String!\n}\n\ntype RemoveCompletedTodosPayload {\n  deletedTodoIds: [String]\n  viewer: User\n  clientMutationId: String!\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String!\n}\n\ntype RemoveTodoPayload {\n  deletedTodoId: ID\n  viewer: User\n  clientMutationId: String!\n}\n\ninput RenameTodoInput {\n  id: ID!\n  text: String!\n  clientMutationId: String!\n}\n\ntype RenameTodoPayload {\n  todo: Todo\n  clientMutationId: String!\n}\n\ntype Root {\n  viewer: User\n  node(id: ID!): Node\n}\n\ntype Todo implements Node {\n  id: ID!\n  text: String\n  complete: Boolean\n}\n\ntype TodoConnection {\n  pageInfo: PageInfo!\n  edges: [TodoEdge]\n}\n\ntype TodoEdge {\n  node: Todo\n  cursor: String!\n}\n\ntype User implements Node {\n  id: ID!\n  todos(status: String = \"any\", after: String, first: Int, before: String, last: Int): TodoConnection\n  totalCount: Int\n  completedCount: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 21
+    },
+    {
+      "name": "schema.graphql",
+      "path": "relay-examples-master/todo-modern/data/schema.graphql",
+      "sha": "b5553e085988bfad68b02d828eb6c36e882e4fca",
+      "url": "https://api.github.com/repositories/93706969/contents/relay-examples-master/todo-modern/data/schema.graphql?ref=927efb736345ba36b2e5a9008f74b389d63d9044",
+      "git_url": "https://api.github.com/repositories/93706969/git/blobs/b5553e085988bfad68b02d828eb6c36e882e4fca",
+      "html_url": "https://github.com/mdasifhasan/learn-web-dev/blob/927efb736345ba36b2e5a9008f74b389d63d9044/relay-examples-master/todo-modern/data/schema.graphql",
+      "content": "input AddTodoInput {\n  text: String!\n  clientMutationId: String\n}\n\ntype AddTodoPayload {\n  todoEdge: TodoEdge\n  viewer: User\n  clientMutationId: String\n}\n\ninput ChangeTodoStatusInput {\n  complete: Boolean!\n  id: ID!\n  clientMutationId: String\n}\n\ntype ChangeTodoStatusPayload {\n  todo: Todo\n  viewer: User\n  clientMutationId: String\n}\n\ninput MarkAllTodosInput {\n  complete: Boolean!\n  clientMutationId: String\n}\n\ntype MarkAllTodosPayload {\n  changedTodos: [Todo]\n  viewer: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  changeTodoStatus(input: ChangeTodoStatusInput!): ChangeTodoStatusPayload\n  markAllTodos(input: MarkAllTodosInput!): MarkAllTodosPayload\n  removeCompletedTodos(input: RemoveCompletedTodosInput!): RemoveCompletedTodosPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n  renameTodo(input: RenameTodoInput!): RenameTodoPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  viewer: User\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ninput RemoveCompletedTodosInput {\n  clientMutationId: String\n}\n\ntype RemoveCompletedTodosPayload {\n  deletedTodoIds: [String]\n  viewer: User\n  clientMutationId: String\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype RemoveTodoPayload {\n  deletedTodoId: ID\n  viewer: User\n  clientMutationId: String\n}\n\ninput RenameTodoInput {\n  id: ID!\n  text: String!\n  clientMutationId: String\n}\n\ntype RenameTodoPayload {\n  todo: Todo\n  clientMutationId: String\n}\n\ntype Todo implements Node {\n  # The ID of an object\n  id: ID!\n  text: String\n  complete: Boolean\n}\n\n# A connection to a list of items.\ntype TodoConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TodoEdge]\n}\n\n# An edge in a connection.\ntype TodoEdge {\n  # The item at the end of the edge\n  node: Todo\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  todos(status: String = \"any\", after: String, first: Int, before: String, last: Int): TodoConnection\n  totalCount: Int\n  completedCount: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-08T04:21:21Z",
+    "updated_at": "2018-02-12T07:17:41Z",
+    "pushed_at": "2017-12-25T23:22:31Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

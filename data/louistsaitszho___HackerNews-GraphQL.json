@@ -1,0 +1,41 @@
+{
+  "repo_name": "HackerNews-GraphQL",
+  "repo_full_name": "louistsaitszho/hackernews-graphql",
+  "repo_owner": "louistsaitszho",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "dcdd0bbe25531b94f2f554575f6c4b5a85c8ade9",
+      "url": "https://api.github.com/repositories/175976739/contents/schema.graphql?ref=2a3a54a052d72dac6bd9cde81e18226c75ade4aa",
+      "git_url": "https://api.github.com/repositories/175976739/git/blobs/dcdd0bbe25531b94f2f554575f6c4b5a85c8ade9",
+      "html_url": "https://github.com/louistsaitszho/HackerNews-GraphQL/blob/2a3a54a052d72dac6bd9cde81e18226c75ade4aa/schema.graphql",
+      "content": "type Query {\n    item(id: ID!): Item!\n    # story(id: ID!): Story!\n    # comment(id: ID!): Comment!\n    # ask(id: ID!): Ask!\n    # job(id: ID!): Job!\n    # poll(id: ID!): Poll!\n    # pollopt(id: ID!): PollOpt!\n    user(id: String!): User!\n\n    topStories: [Story!]!\n    newStories: [Story!]!\n    bestStories: [Story!]!\n\n    askStories: [Ask!]!\n    showStories: [Story!]!  # TODO: not very sure about this\n    jobStories: [Job!]!\n\n    updatedItems: [Item!]!\n    updatedProfiles: [User!]!\n}\n\ninterface Item {\n    id: ID!\n    by: User!\n    time: Timestamp!\n}\n\ntype Story implements Item {\n    id: ID!\n    by: User!\n    time: Timestamp!\n    # end of Item\n    descendants: Int!\n    kids: [Comment!]!\n    score: Int!\n    title: String!\n    url: String!\n}\n\ntype Comment implements Item {\n    id: ID!\n    by: User!\n    time: Timestamp!\n    # end of Item\n    kids: [Comment!]!\n    parent: Item!\n    text: String!\n}\n\ntype Ask implements Item {\n    id: ID!\n    by: User!\n    time: Timestamp!\n    # end of Item\n    descendants: Int!\n    kids: [Comment!]!\n    score: Int!\n    text: String!   # TODO: specify this is html?\n    title: String!\n    url: String!\n}\n\ntype Job implements Item {\n    id: ID!\n    by: User!\n    time: Timestamp!\n    # end of Item\n    score: Int!\n    text: String!\n    title: String!\n    url: String!\n}\n\ntype Poll implements Item {\n    id: ID!\n    by: User!\n    time: Timestamp!\n    # end of Item\n    descendants: Int!\n    kids: [Comment!]!\n    parts: [PollOpt!]!\n    score: Int!\n    text: String!\n    title: String!\n}\n\ntype PollOpt implements Item {\n    id: ID!\n    by: User!\n    time: Timestamp!\n    # end of Item\n    poll: Poll!\n    score: Int!\n    text: String!\n}\n\ntype User {\n    id: ID!\n    about: String\n    created: Timestamp!\n    karma: Int\n    delay: Int\n    submitted: [Item!]!\n}\n\ntype Timestamp {\n    epoch: Int!\n    iso8601: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-16T13:40:22Z",
+    "updated_at": "2019-07-14T14:19:57Z",
+    "pushed_at": "2019-07-14T14:19:56Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

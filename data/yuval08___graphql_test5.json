@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql_test5",
+  "repo_full_name": "yuval08/graphql_test5",
+  "repo_owner": "yuval08",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "3e22578a80dcd8a652952236f6523f276c091454",
+      "url": "https://api.github.com/repositories/182896425/contents/schema.graphql?ref=788d89fbf592ba3fc15bf81b2e4c4b9088193f4c",
+      "git_url": "https://api.github.com/repositories/182896425/git/blobs/3e22578a80dcd8a652952236f6523f276c091454",
+      "html_url": "https://github.com/yuval08/graphql_test5/blob/788d89fbf592ba3fc15bf81b2e4c4b9088193f4c/schema.graphql",
+      "content": "type User {\n    id: ID\n    email: String!\n    post(id: ID!): Post\n    posts: [Post!]!\n    follower(id: ID!): User\n    followers: [User!]!\n    folowee(id: ID!): User\n    followees: [User!]!\n}\n\ntype Post {\n    id: ID\n    user: User!\n    title: String!\n    body: String!\n    comment(id: ID!): Comment\n    comments: [Comment!]!\n}\n\ntype Comment {\n    id: ID\n    user: User!\n    post: Post!\n    title: String\n    body: String!\n}\n\ntype Query {\n    user(id: ID!): User\n    posts(id: ID!): [Post!]!\n}\n\ntype Mutation {\n    createUser(email: String!): User\n    removeUser(id: ID!): Boolean\n    follow(follower: ID!, folowee: ID!): Boolean\n    unfollow(follower: ID!, folowee: ID!): Boolean\n    createPost(user: ID!, title: String!, body: String!): Post\n    removePost(id: ID!): Boolean\n    createComment(user: ID!, post: ID!, title: String!, body: String!): Comment\n    removeComment(id: ID!): Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-23T01:22:55Z",
+    "updated_at": "2019-04-23T01:27:21Z",
+    "pushed_at": "2019-04-23T01:27:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

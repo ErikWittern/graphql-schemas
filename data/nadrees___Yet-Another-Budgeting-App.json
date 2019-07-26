@@ -1,0 +1,42 @@
+{
+  "repo_name": "Yet-Another-Budgeting-App",
+  "repo_full_name": "nadrees/yet-another-budgeting-app",
+  "repo_owner": "nadrees",
+  "repo_description": "Free, open source, personal budgeting app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "YABA.API/schema.graphql",
+      "sha": "0a9b1037677a32462b19f8a8868041639db25655",
+      "url": "https://api.github.com/repositories/163762776/contents/YABA.API/schema.graphql?ref=f5d0f53b01e0eb487195765d0602fd2fc76be64c",
+      "git_url": "https://api.github.com/repositories/163762776/git/blobs/0a9b1037677a32462b19f8a8868041639db25655",
+      "html_url": "https://github.com/nadrees/Yet-Another-Budgeting-App/blob/f5d0f53b01e0eb487195765d0602fd2fc76be64c/YABA.API/schema.graphql",
+      "content": "# source: http://localhost:5000/graphql\n# timestamp: Sat Jan 05 2019 16:26:25 GMT-0600 (Central Standard Time)\n\nschema {\n  query: YABAQueryRoot\n  mutation: YABAMutationRoot\n}\n\ntype Account {\n  id: Int!\n  name: String!\n}\n\ninput AccountCreateInput {\n  name: String!\n}\n\n\"\"\"\nThe `Date` scalar type represents a year, month and day in accordance with the\n[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.\n\"\"\"\nscalar Date\n\n\"\"\"\nThe `DateTime` scalar type represents a date and time. `DateTime` expects\ntimestamps to be formatted in accordance with the\n[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.\n\"\"\"\nscalar DateTime\n\n\"\"\"\nThe `DateTimeOffset` scalar type represents a date, time and offset from UTC.\n`DateTimeOffset` expects timestamps to be formatted in accordance with the\n[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.\n\"\"\"\nscalar DateTimeOffset\n\nscalar Decimal\n\n\"\"\"\nThe `Milliseconds` scalar type represents a period of time represented as the total number of milliseconds.\n\"\"\"\nscalar Milliseconds\n\n\"\"\"\nThe `Seconds` scalar type represents a period of time represented as the total number of seconds.\n\"\"\"\nscalar Seconds\n\ntype YABAMutationRoot {\n  createAccount(account: AccountCreateInput!): Account\n}\n\ntype YABAQueryRoot {\n  accounts: [Account]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-30T23:17:16Z",
+    "updated_at": "2019-06-06T00:38:07Z",
+    "pushed_at": "2019-06-06T00:38:05Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

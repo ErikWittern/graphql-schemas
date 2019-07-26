@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-redis-realtime-chat",
+  "repo_full_name": "naoki-kishi/graphql-redis-realtime-chat",
+  "repo_owner": "naoki-kishi",
+  "repo_description": "Realtime Chat Server using GraphQL Subscriptions and Redis PubSub",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "24e7dd7c624e83c693868a13b7e1c6af294977c4",
+      "url": "https://api.github.com/repositories/170244224/contents/graphql/schema.graphql?ref=71763a5d74f2514a09cb63329cfaf3a88cb36343",
+      "git_url": "https://api.github.com/repositories/170244224/git/blobs/24e7dd7c624e83c693868a13b7e1c6af294977c4",
+      "html_url": "https://github.com/naoki-kishi/graphql-redis-realtime-chat/blob/71763a5d74f2514a09cb63329cfaf3a88cb36343/graphql/schema.graphql",
+      "content": "type Message {\n\tuser: String!\n\tmessage: String!\n}\n\ntype Mutation {\n\tpostMessage(user: String!, message: String!): Message\n\tcreateUser(user: String!): String!\n}\n\ntype Query {\n\tusers: [String!]!\n}\n\ntype Subscription {\n\tmessagePosted(user: String!): Message!\n\tuserJoined(user: String!): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-12T03:20:23Z",
+    "updated_at": "2019-07-16T13:07:55Z",
+    "pushed_at": "2019-07-16T13:08:02Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "repo_name": "AF",
+  "repo_full_name": "mrebai/af",
+  "repo_owner": "Mrebai",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Clothes.graphql",
+      "path": "imports/api/clothes/Clothes.graphql",
+      "sha": "1a6aa2598f3cee80088f13e89c0307bff1cce216",
+      "url": "https://api.github.com/repositories/141787431/contents/imports/api/clothes/Clothes.graphql?ref=19ab3753d21965c08930746da3899add649ec054",
+      "git_url": "https://api.github.com/repositories/141787431/git/blobs/1a6aa2598f3cee80088f13e89c0307bff1cce216",
+      "html_url": "https://github.com/Mrebai/AF/blob/19ab3753d21965c08930746da3899add649ec054/imports/api/clothes/Clothes.graphql",
+      "content": "type cloth {\n    _id: ID!\n    name: String!\n    gender: String!\n    tags: [String]\n    description: String!\n    video:String\n    img:[String]\n    mainImg:String\n    size:[String]\n    colors:[String]\n    reviews: [Review]\n    sold: Int\n    likes: Int\n    productId: String!\n    oldPrice: Float\n    price: Float!\n    comingSoon: Boolean\n    newArrival: Boolean\n    availability:Boolean!\n    likesByUser: Boolean\n    totalRate: Float\n\n}\n\n\ntype Query {\n    clothes(info:String, _id:String): [cloth]\n\n}\n\n type Mutation {\n     addClothes(\n         name: String!\n         gender: String!\n         tags: [String]\n         description: String!\n         video:String\n         img:[String]\n         mainImg:String\n         size:[String]\n         colors:[String]\n         reviews:[String]\n         sold: Int\n         likes: Int\n         productId: String!\n         oldPrice: Float\n         price: Float!\n         comingSoon: Boolean\n         newArrival: Boolean\n         availability:Boolean!\n     ): cloth\n\n     updateClothes(\n         updateId: String!\n         name: String!\n         gender: String!\n         tags: [String]\n         description: String!\n         video:String\n         img:[String]\n         mainImg:String\n         size:[String]\n         colors:[String]\n         reviews:[String]\n         sold: Int\n         likes: Int\n         productId: String!\n         oldPrice: Float\n         price: Float!\n         comingSoon: Boolean\n         newArrival: Boolean\n         availability:Boolean!\n     ): cloth\n\n     deleteClothes(\n         _id: String!\n     ): cloth\n }",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Mrebai/AF/blob/19ab3753d21965c08930746da3899add649ec054/imports/api/clothes/Clothes.graphql:\ntype cloth {\n    _id: ID!\n    name: String!\n    gender: String!\n    tags: [String]\n    description: String!\n    video:String\n    img:[String]\n    mainImg:String\n    size:[String]\n    colors:[String]\n    reviews: [Review]\n    sold: Int\n    likes: Int\n    productId: String!\n    oldPrice: Float\n    price: Float!\n    comingSoon: Boolean\n    newArrival: Boolean\n    availability:Boolean!\n    likesByUser: Boolean\n    totalRate: Float\n\n}\n\n\ntype Query {\n    clothes(info:String, _id:String): [cloth]\n\n}\n\n type Mutation {\n     addClothes(\n         name: String!\n         gender: String!\n         tags: [String]\n         description: String!\n         video:String\n         img:[String]\n         mainImg:String\n         size:[String]\n         colors:[String]\n         reviews:[String]\n         sold: Int\n         likes: Int\n         productId: String!\n         oldPrice: Float\n         price: Float!\n         comingSoon: Boolean\n         newArrival: Boolean\n         availability:Boolean!\n     ): cloth\n\n     updateClothes(\n         updateId: String!\n         name: String!\n         gender: String!\n         tags: [String]\n         description: String!\n         video:String\n         img:[String]\n         mainImg:String\n         size:[String]\n         colors:[String]\n         reviews:[String]\n         sold: Int\n         likes: Int\n         productId: String!\n         oldPrice: Float\n         price: Float!\n         comingSoon: Boolean\n         newArrival: Boolean\n         availability:Boolean!\n     ): cloth\n\n     deleteClothes(\n         _id: String!\n     ): cloth\n }\n# https://github.com/Mrebai/AF/blob/19ab3753d21965c08930746da3899add649ec054/imports/api/reviews/Reviews.graphql:\ntype Review{\n    _id : String\n    content:String\n    userEmail: String\n    userID: String\n    rate: Int\n    date: String\n}\n\nextend type Mutation{\n    setReview(\n        prodId: String!\n        review: String!\n        rate: Int!\n    ): Review\n}\n",
+        "mergedPaths": [
+          "imports/api/reviews/Reviews.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Review"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Reviews.graphql",
+      "path": "imports/api/reviews/Reviews.graphql",
+      "sha": "3b1a3d1adec2b2135913ae4cfe8366848cd28e95",
+      "url": "https://api.github.com/repositories/141787431/contents/imports/api/reviews/Reviews.graphql?ref=19ab3753d21965c08930746da3899add649ec054",
+      "git_url": "https://api.github.com/repositories/141787431/git/blobs/3b1a3d1adec2b2135913ae4cfe8366848cd28e95",
+      "html_url": "https://github.com/Mrebai/AF/blob/19ab3753d21965c08930746da3899add649ec054/imports/api/reviews/Reviews.graphql",
+      "content": "type Review{\n    _id : String\n    content:String\n    userEmail: String\n    userID: String\n    rate: Int\n    date: String\n}\n\nextend type Mutation{\n    setReview(\n        prodId: String!\n        review: String!\n        rate: Int!\n    ): Review\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-21T06:30:05Z",
+    "updated_at": "2018-07-21T06:30:46Z",
+    "pushed_at": "2018-07-21T06:30:45Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

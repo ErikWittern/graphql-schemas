@@ -1,0 +1,55 @@
+{
+  "repo_name": "entria-fullstack",
+  "repo_full_name": "entria/entria-fullstack",
+  "repo_owner": "entria",
+  "repo_description": "Monorepo Playground with GraphQL, React, React Native, Relay Modern, TypeScript and Jest",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/app/data/schema.graphql",
+      "sha": "74bd23111cda347c53bd4af254b1f32b1661e253",
+      "url": "https://api.github.com/repositories/155462094/contents/packages/app/data/schema.graphql?ref=12005ecd4c5374231b2b65a1dbe1ceaff71d8687",
+      "git_url": "https://api.github.com/repositories/155462094/git/blobs/74bd23111cda347c53bd4af254b1f32b1661e253",
+      "html_url": "https://github.com/entria/entria-fullstack/blob/12005ecd4c5374231b2b65a1dbe1ceaff71d8687/packages/app/data/schema.graphql",
+      "content": "type Mutation {\n  UserChangePassword(input: UserChangePasswordInput!): UserChangePasswordPayload\n  UserLoginWithEmail(input: UserLoginWithEmailInput!): UserLoginWithEmailPayload\n  UserRegisterWithEmail(input: UserRegisterWithEmailInput!): UserRegisterWithEmailPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfoExtended {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\n\"\"\"The root of all... queries\"\"\"\ntype Query {\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n  me: User\n  user(id: ID!): User\n  users(after: String, first: Int, before: String, last: Int, search: String): UserConnection\n}\n\ntype Subscription {\n  UserAdded: UserAddedPayload\n}\n\n\"\"\"User data\"\"\"\ntype User implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  _id: String\n  name: String\n  email: String\n  active: Boolean\n}\n\ntype UserAddedPayload {\n  userEdge: UserEdge\n}\n\ninput UserChangePasswordInput {\n  oldPassword: String!\n\n  \"\"\"user new password\"\"\"\n  password: String!\n  clientMutationId: String\n}\n\ntype UserChangePasswordPayload {\n  error: String\n  me: User\n  clientMutationId: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype UserConnection {\n  \"\"\"Number of items in this connection\"\"\"\n  count: Int!\n\n  \"\"\"\n  A count of the total number of objects in this connection, ignoring pagination.\n    This allows a client to fetch the first five objects by passing \"5\" as the\n    argument to \"first\", then fetch the total count so it could display \"5 of 83\",\n    for example.\n  \"\"\"\n  totalCount: Int!\n\n  \"\"\"Offset from start\"\"\"\n  startCursorOffset: Int!\n\n  \"\"\"Offset till end\"\"\"\n  endCursorOffset: Int!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfoExtended!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [UserEdge]!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype UserEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: User!\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ninput UserLoginWithEmailInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype UserLoginWithEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\ninput UserRegisterWithEmailInput {\n  name: String!\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype UserRegisterWithEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 15
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/data/schema.graphql",
+      "sha": "74bd23111cda347c53bd4af254b1f32b1661e253",
+      "url": "https://api.github.com/repositories/155462094/contents/packages/server/data/schema.graphql?ref=12005ecd4c5374231b2b65a1dbe1ceaff71d8687",
+      "git_url": "https://api.github.com/repositories/155462094/git/blobs/74bd23111cda347c53bd4af254b1f32b1661e253",
+      "html_url": "https://github.com/entria/entria-fullstack/blob/12005ecd4c5374231b2b65a1dbe1ceaff71d8687/packages/server/data/schema.graphql",
+      "content": "type Mutation {\n  UserChangePassword(input: UserChangePasswordInput!): UserChangePasswordPayload\n  UserLoginWithEmail(input: UserLoginWithEmailInput!): UserLoginWithEmailPayload\n  UserRegisterWithEmail(input: UserRegisterWithEmailInput!): UserRegisterWithEmailPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfoExtended {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\n\"\"\"The root of all... queries\"\"\"\ntype Query {\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n  me: User\n  user(id: ID!): User\n  users(after: String, first: Int, before: String, last: Int, search: String): UserConnection\n}\n\ntype Subscription {\n  UserAdded: UserAddedPayload\n}\n\n\"\"\"User data\"\"\"\ntype User implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  _id: String\n  name: String\n  email: String\n  active: Boolean\n}\n\ntype UserAddedPayload {\n  userEdge: UserEdge\n}\n\ninput UserChangePasswordInput {\n  oldPassword: String!\n\n  \"\"\"user new password\"\"\"\n  password: String!\n  clientMutationId: String\n}\n\ntype UserChangePasswordPayload {\n  error: String\n  me: User\n  clientMutationId: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype UserConnection {\n  \"\"\"Number of items in this connection\"\"\"\n  count: Int!\n\n  \"\"\"\n  A count of the total number of objects in this connection, ignoring pagination.\n    This allows a client to fetch the first five objects by passing \"5\" as the\n    argument to \"first\", then fetch the total count so it could display \"5 of 83\",\n    for example.\n  \"\"\"\n  totalCount: Int!\n\n  \"\"\"Offset from start\"\"\"\n  startCursorOffset: Int!\n\n  \"\"\"Offset till end\"\"\"\n  endCursorOffset: Int!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfoExtended!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [UserEdge]!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype UserEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: User!\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ninput UserLoginWithEmailInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype UserLoginWithEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\ninput UserRegisterWithEmailInput {\n  name: String!\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype UserRegisterWithEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-30T22:03:33Z",
+    "updated_at": "2019-07-16T04:15:34Z",
+    "pushed_at": "2019-07-04T18:49:15Z",
+    "issues": 45,
+    "watchers": 24,
+    "fork_count": 24,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 44,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 38,
+    "releases": 0,
+    "stargazers": 157
+  }
+}

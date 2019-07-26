@@ -1,0 +1,94 @@
+{
+  "repo_name": "ecommerce-react",
+  "repo_full_name": "alejogs4/ecommerce-react",
+  "repo_owner": "alejogs4",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.schema.graphql",
+      "path": "backend/api/query.schema.graphql",
+      "sha": "4cb04d3817124cef7d09a3149c82c703433dd2eb",
+      "url": "https://api.github.com/repositories/173339691/contents/backend/api/query.schema.graphql?ref=a1779c38645a6c7cc196c8feffb44a12eef46580",
+      "git_url": "https://api.github.com/repositories/173339691/git/blobs/4cb04d3817124cef7d09a3149c82c703433dd2eb",
+      "html_url": "https://github.com/alejogs4/ecommerce-react/blob/a1779c38645a6c7cc196c8feffb44a12eef46580/backend/api/query.schema.graphql",
+      "content": "# Defining queries schemas.\n\ntype Query {\n  users: [Users]\n  user(id: Int!): Users!\n  products: [Product]\n  product(id: Int!): Product!\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/alejogs4/ecommerce-react/blob/a1779c38645a6c7cc196c8feffb44a12eef46580/backend/api/query.schema.graphql:\n# Defining queries schemas.\n\ntype Query {\n  users: [Users]\n  user(id: Int!): Users!\n  products: [Product]\n  product(id: Int!): Product!\n}\n# https://github.com/alejogs4/ecommerce-react/blob/a1779c38645a6c7cc196c8feffb44a12eef46580/backend/api/users/user.schema.graphql:\n# Defining user schema.\n\ntype Users {\n  id: Int!\n  name: String!\n  lastname: String!\n  email: String!\n  password: String!\n  admin: Boolean!\n  cart: [Cart]!\n}\n# https://github.com/alejogs4/ecommerce-react/blob/a1779c38645a6c7cc196c8feffb44a12eef46580/backend/api/products/product.schema.graphql:\n# Defining product schema.\n\ntype Product {\n  id: Int!\n  name: String!\n  description: String\n  price: Float!\n  image: String!\n}\n# https://github.com/alejogs4/ecommerce-react/blob/a1779c38645a6c7cc196c8feffb44a12eef46580/backend/api/cart/cart.schema.graphql:\n# Defining cart schema.\n\ntype Cart {\n  id: Int!\n  id_user: Int!\n  product_id: String!\n  product: Product\n}",
+        "mergedPaths": [
+          "backend/api/users/user.schema.graphql",
+          "backend/api/products/product.schema.graphql",
+          "backend/api/cart/cart.schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Users",
+          "Product",
+          "Cart"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "cart.schema.graphql",
+      "path": "backend/api/cart/cart.schema.graphql",
+      "sha": "2c90d60841fe24c9cb0b5fc33482b7d07d91865e",
+      "url": "https://api.github.com/repositories/173339691/contents/backend/api/cart/cart.schema.graphql?ref=a1779c38645a6c7cc196c8feffb44a12eef46580",
+      "git_url": "https://api.github.com/repositories/173339691/git/blobs/2c90d60841fe24c9cb0b5fc33482b7d07d91865e",
+      "html_url": "https://github.com/alejogs4/ecommerce-react/blob/a1779c38645a6c7cc196c8feffb44a12eef46580/backend/api/cart/cart.schema.graphql",
+      "content": "# Defining cart schema.\n\ntype Cart {\n  id: Int!\n  id_user: Int!\n  product_id: String!\n  product: Product\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "product.schema.graphql",
+      "path": "backend/api/products/product.schema.graphql",
+      "sha": "39dc1afd08b8da6f1ad0c76729ec142b6988522d",
+      "url": "https://api.github.com/repositories/173339691/contents/backend/api/products/product.schema.graphql?ref=a1779c38645a6c7cc196c8feffb44a12eef46580",
+      "git_url": "https://api.github.com/repositories/173339691/git/blobs/39dc1afd08b8da6f1ad0c76729ec142b6988522d",
+      "html_url": "https://github.com/alejogs4/ecommerce-react/blob/a1779c38645a6c7cc196c8feffb44a12eef46580/backend/api/products/product.schema.graphql",
+      "content": "# Defining product schema.\n\ntype Product {\n  id: Int!\n  name: String!\n  description: String\n  price: Float!\n  image: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "user.schema.graphql",
+      "path": "backend/api/users/user.schema.graphql",
+      "sha": "49fa5d93b36ed0448a77f18ae22917bfb149c4d0",
+      "url": "https://api.github.com/repositories/173339691/contents/backend/api/users/user.schema.graphql?ref=a1779c38645a6c7cc196c8feffb44a12eef46580",
+      "git_url": "https://api.github.com/repositories/173339691/git/blobs/49fa5d93b36ed0448a77f18ae22917bfb149c4d0",
+      "html_url": "https://github.com/alejogs4/ecommerce-react/blob/a1779c38645a6c7cc196c8feffb44a12eef46580/backend/api/users/user.schema.graphql",
+      "content": "# Defining user schema.\n\ntype Users {\n  id: Int!\n  name: String!\n  lastname: String!\n  email: String!\n  password: String!\n  admin: Boolean!\n  cart: [Cart]!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-01T17:09:06Z",
+    "updated_at": "2019-05-11T00:09:54Z",
+    "pushed_at": "2019-05-11T00:09:52Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

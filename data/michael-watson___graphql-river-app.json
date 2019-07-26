@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-river-app",
+  "repo_full_name": "michael-watson/graphql-river-app",
+  "repo_owner": "michael-watson",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "c3ecd9559f0f95a50088b156014cec4ec950152e",
+      "url": "https://api.github.com/repositories/174485391/contents/src/schema.graphql?ref=4f188b4947676a31db0c527a7351ae6d26d26fd9",
+      "git_url": "https://api.github.com/repositories/174485391/git/blobs/c3ecd9559f0f95a50088b156014cec4ec950152e",
+      "html_url": "https://github.com/michael-watson/graphql-river-app/blob/4f188b4947676a31db0c527a7351ae6d26d26fd9/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n    myFavoriteSites(email: String! period: String): [Site]\n    sites(stateCode: String siteType: String status:SiteStatus siteCode: String period: String) : [Site]\n    whyThisHere: Site\n    notFoundEndpoint: Site\n}\n\ntype Mutation {\n    favoriteSite(email: String! siteCode: String! isFavorite:Boolean!): FavoriteMutationResponse\n}\n\ntype FavoriteMutationResponse {\n    email: String\n    siteCode: String\n    isFavorite: Boolean\n    createdAt: Float\n}\n\ntype Site {\n    \"\"\"\n    Name of site where the sensor is located\n    \"\"\"\n    name: String\n    \"\"\"\n    Unique identifier for the sensor\n    \"\"\"\n    id: ID!\n    \"\"\"\n    Latitude GPS coordinates for the site/sensor\n    \"\"\"\n    latitude: Float\n    \"\"\"\n    Longitude GPS coordinates for the site/sensor\n    \"\"\"\n    longitude: Float\n    \"\"\"\n    Measurement readings from sensors\n    \"\"\"\n    sensors: [Sensor]\n    isFavorite: Boolean!\n}\n\ntype Sensor {\n    \"\"\"\n    Unique identifier for the sensor\n    \"\"\"\n    id: ID!\n    \"\"\"\n    The unit you would typically see right after the reading\n    \"\"\"\n    unit: String\n    \"\"\"\n    Describes the unit and what it means\n    \"\"\"\n    unitDescription: String\n    \"\"\"\n    These are the various sensor readings over the given timeframe\n    \"\"\"\n    measurements: [Measurement]\n}\n\ntype Measurement {\n    \"\"\"\n    Measurement reading from the sensor\n    \"\"\"\n    measuredValue: String\n    \"\"\"\n    Date and time the measurement was taken on the sensor\n    \"\"\"\n    dateMeasured: String\n}\n\nenum SiteStatus {\n    ALL\n    ACTIVE\n    INACTIVE\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-08T06:57:03Z",
+    "updated_at": "2019-07-08T20:45:47Z",
+    "pushed_at": "2019-07-08T20:53:39Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-awesome-meetups",
+  "repo_full_name": "wessouza/graphql-awesome-meetups",
+  "repo_owner": "WesSouza",
+  "repo_description": "Example GraphQL application",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/graphql/schema.graphql",
+      "sha": "4f49b6aed166b058e9455c38c68b2b551043c6f2",
+      "url": "https://api.github.com/repositories/104014235/contents/server/graphql/schema.graphql?ref=707f18013f2a9532b9804420b8e7194ad7ede040",
+      "git_url": "https://api.github.com/repositories/104014235/git/blobs/4f49b6aed166b058e9455c38c68b2b551043c6f2",
+      "html_url": "https://github.com/WesSouza/graphql-awesome-meetups/blob/707f18013f2a9532b9804420b8e7194ad7ede040/server/graphql/schema.graphql",
+      "content": "type Meetup {\n    id: ID!\n    name: String!\n    description: String!\n    price: Int!\n    priceFormatted: String!\n    isAvailable: Boolean!\n}\n\ntype Wishlist {\n    meetups: [Meetup!]!\n}\n\ntype RootQuery {\n    meetup(id: ID!): Meetup\n    meetups: [Meetup!]!\n    wishlist: Wishlist\n}\n\nschema {\n    query: RootQuery\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-19T02:11:05Z",
+    "updated_at": "2019-06-14T20:21:30Z",
+    "pushed_at": "2019-03-14T19:12:22Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

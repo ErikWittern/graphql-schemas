@@ -1,0 +1,41 @@
+{
+  "repo_name": "LSU-CSSA-Offcial-WebSite",
+  "repo_full_name": "lsucssa/lsu-cssa-offcial-website",
+  "repo_owner": "LSUCSSA",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/plugins/graphql/config/generated/schema.graphql",
+      "sha": "c64dfbc0d372bcb41a580a18581426b3573e7f31",
+      "url": "https://api.github.com/repositories/186889339/contents/server/plugins/graphql/config/generated/schema.graphql?ref=b6ae1fa4b16d715b4c56f8cad8d0a8ad394fbef0",
+      "git_url": "https://api.github.com/repositories/186889339/git/blobs/c64dfbc0d372bcb41a580a18581426b3573e7f31",
+      "html_url": "https://github.com/LSUCSSA/LSU-CSSA-Offcial-WebSite/blob/b6ae1fa4b16d715b4c56f8cad8d0a8ad394fbef0/server/plugins/graphql/config/generated/schema.graphql",
+      "content": "type Backgroundimage {\n  id: ID!\n  created_at: DateTime!\n  updated_at: DateTime!\n  BgImages: UploadFile\n}\n\ninput BackgroundimageInput {\n  BgImages: ID\n}\n\ninput createBackgroundimageInput {\n  data: BackgroundimageInput\n}\n\ntype createBackgroundimagePayload {\n  backgroundimage: Backgroundimage\n}\n\ninput createRoleInput {\n  data: RoleInput\n}\n\ntype createRolePayload {\n  role: UsersPermissionsRole\n}\n\ninput createUserInput {\n  data: UserInput\n}\n\ntype createUserPayload {\n  user: UsersPermissionsUser\n}\n\n\"\"\"\nThe `DateTime` scalar represents a date and time following the ISO 8601 standard\n\"\"\"\nscalar DateTime\n\ninput deleteBackgroundimageInput {\n  where: InputID\n}\n\ntype deleteBackgroundimagePayload {\n  backgroundimage: Backgroundimage\n}\n\ninput deleteRoleInput {\n  where: InputID\n}\n\ntype deleteRolePayload {\n  role: UsersPermissionsRole\n}\n\ninput deleteUserInput {\n  where: InputID\n}\n\ntype deleteUserPayload {\n  user: UsersPermissionsUser\n}\n\ninput editBackgroundimageInput {\n  BgImages: ID\n}\n\ninput editFileInput {\n  name: String\n  hash: String\n  sha256: String\n  ext: String\n  mime: String\n  size: String\n  url: String\n  provider: String\n  public_id: String\n  related: [ID]\n}\n\ninput editRoleInput {\n  name: String\n  description: String\n  type: String\n  permissions: [ID]\n  users: [ID]\n}\n\ninput editUserInput {\n  username: String\n  email: String\n  provider: String\n  password: String\n  resetPasswordToken: String\n  confirmed: Boolean\n  blocked: Boolean\n  role: ID\n}\n\ninput FileInput {\n  name: String!\n  hash: String!\n  sha256: String\n  ext: String\n  mime: String!\n  size: String!\n  url: String!\n  provider: String!\n  public_id: String\n  related: [ID]\n}\n\ninput InputID {\n  id: ID!\n}\n\n\"\"\"\nThe `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).\n\"\"\"\nscalar JSON\n\nunion Morph = UsersPermissionsMe | UsersPermissionsMeRole | Backgroundimage | createBackgroundimagePayload | updateBackgroundimagePayload | deleteBackgroundimagePayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload\n\ntype Mutation {\n  createBackgroundimage(input: createBackgroundimageInput): createBackgroundimagePayload\n  updateBackgroundimage(input: updateBackgroundimageInput): updateBackgroundimagePayload\n  deleteBackgroundimage(input: deleteBackgroundimageInput): deleteBackgroundimagePayload\n\n  \"\"\"Create a new role\"\"\"\n  createRole(input: createRoleInput): createRolePayload\n\n  \"\"\"Update an existing role\"\"\"\n  updateRole(input: updateRoleInput): updateRolePayload\n\n  \"\"\"Delete an existing role\"\"\"\n  deleteRole(input: deleteRoleInput): deleteRolePayload\n\n  \"\"\"Create a new user\"\"\"\n  createUser(input: createUserInput): createUserPayload\n\n  \"\"\"Update an existing user\"\"\"\n  updateUser(input: updateUserInput): updateUserPayload\n\n  \"\"\"Delete an existing user\"\"\"\n  deleteUser(input: deleteUserInput): deleteUserPayload\n  upload(refId: ID, ref: String, source: String, file: Upload!): UploadFile!\n}\n\ntype Query {\n  backgroundimage(id: ID!): Backgroundimage\n  backgroundimages(sort: String, limit: Int, start: Int, where: JSON): [Backgroundimage]\n  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]\n  role(id: ID!): UsersPermissionsRole\n\n  \"\"\"\n  Retrieve all the existing roles. You can't apply filters on this query.\n  \"\"\"\n  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]\n  user(id: ID!): UsersPermissionsUser\n  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]\n  me: UsersPermissionsMe\n}\n\ninput RoleInput {\n  name: String!\n  description: String\n  type: String\n  permissions: [ID]\n  users: [ID]\n}\n\ninput updateBackgroundimageInput {\n  where: InputID\n  data: editBackgroundimageInput\n}\n\ntype updateBackgroundimagePayload {\n  backgroundimage: Backgroundimage\n}\n\ninput updateRoleInput {\n  where: InputID\n  data: editRoleInput\n}\n\ntype updateRolePayload {\n  role: UsersPermissionsRole\n}\n\ninput updateUserInput {\n  where: InputID\n  data: editUserInput\n}\n\ntype updateUserPayload {\n  user: UsersPermissionsUser\n}\n\n\"\"\"The `Upload` scalar type represents a file upload.\"\"\"\nscalar Upload\n\ntype UploadFile {\n  id: ID!\n  created_at: DateTime!\n  updated_at: DateTime!\n  name: String!\n  hash: String!\n  sha256: String\n  ext: String\n  mime: String!\n  size: String!\n  url: String!\n  provider: String!\n  public_id: String\n  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]\n}\n\ninput UserInput {\n  username: String!\n  email: String!\n  provider: String\n  password: String\n  resetPasswordToken: String\n  confirmed: Boolean\n  blocked: Boolean\n  role: ID\n}\n\ntype UsersPermissionsMe {\n  _id: ID!\n  username: String!\n  email: String!\n  confirmed: Boolean\n  blocked: Boolean\n  role: UsersPermissionsMeRole\n}\n\ntype UsersPermissionsMeRole {\n  _id: ID!\n  name: String!\n  description: String\n  type: String\n}\n\ntype UsersPermissionsPermission {\n  id: ID!\n  type: String!\n  controller: String!\n  action: String!\n  enabled: Boolean!\n  policy: String\n  role: UsersPermissionsRole\n}\n\ntype UsersPermissionsRole {\n  id: ID!\n  name: String!\n  description: String\n  type: String\n  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]\n  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]\n}\n\ntype UsersPermissionsUser {\n  id: ID!\n  username: String!\n  email: String!\n  provider: String\n  confirmed: Boolean\n  blocked: Boolean\n  role: UsersPermissionsRole\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": true,
+      "numDefinitions": 40
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-15T19:22:16Z",
+    "updated_at": "2019-05-21T01:58:01Z",
+    "pushed_at": "2019-05-21T01:57:54Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

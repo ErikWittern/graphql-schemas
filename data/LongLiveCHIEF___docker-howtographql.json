@@ -1,0 +1,39 @@
+{
+  "repo_name": "docker-howtographql",
+  "repo_full_name": "longlivechief/docker-howtographql",
+  "repo_owner": "LongLiveCHIEF",
+  "repo_description": "dockerized version of howtographql.com ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "a31f17ed5ab7084dec62f95960af298501be066e",
+      "url": "https://api.github.com/repositories/168414875/contents/src/schema.graphql?ref=04abfe996dce40b19d971f861691cf1eea640142",
+      "git_url": "https://api.github.com/repositories/168414875/git/blobs/a31f17ed5ab7084dec62f95960af298501be066e",
+      "html_url": "https://github.com/LongLiveCHIEF/docker-howtographql/blob/04abfe996dce40b19d971f861691cf1eea640142/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  feed: [Link!]!\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n  postedBy: User\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-30T21:02:46Z",
+    "updated_at": "2019-07-12T14:48:29Z",
+    "pushed_at": "2019-07-12T14:48:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

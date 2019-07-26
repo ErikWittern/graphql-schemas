@@ -1,0 +1,42 @@
+{
+  "repo_name": "express-graphql-graphdb-server",
+  "repo_full_name": "maria-san/express-graphql-graphdb-server",
+  "repo_owner": "maria-san",
+  "repo_description": "Express GraphQL server with Neo4j",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "task.graphql",
+      "path": "src/schema/task.graphql",
+      "sha": "82dbe0229ab66b7b517163c355659ea59c7a0b51",
+      "url": "https://api.github.com/repositories/180731652/contents/src/schema/task.graphql?ref=993eb300871a88dddd603866efbb8787a76b0af3",
+      "git_url": "https://api.github.com/repositories/180731652/git/blobs/82dbe0229ab66b7b517163c355659ea59c7a0b51",
+      "html_url": "https://github.com/maria-san/express-graphql-graphdb-server/blob/993eb300871a88dddd603866efbb8787a76b0af3/src/schema/task.graphql",
+      "content": "type Task {\n    id: ID!\n    start: String!\n    end: String!\n    status: TaskStatus!\n    subject: String!\n    description: String!\n}\n\nenum TaskStatus {\n    PENDING\n    COMPLETED\n}\n\ntype Query {\n    tasks(\n        token: String!\n        start: String \n        end: String\n    ): [Task]\n\n    task(\n        token: String!\n        id: ID!\n    ): Task\n}\n\ntype Mutation {\n    task_create(\n        token: String!\n        start: String!\n        end: String!\n        subject: String!\n        description: String!\n    ): Task\n\n    task_update(\n        token: String!\n        id: ID!\n        start: String \n        end: String\n        subject: String \n        description: String \n        status: TaskStatus\n    ): Task\n\n    task_delete(\n        token: String!\n        id: ID!\n    ): Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-11T06:47:10Z",
+    "updated_at": "2019-04-15T06:06:29Z",
+    "pushed_at": "2019-04-11T06:47:35Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

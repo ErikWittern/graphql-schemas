@@ -1,0 +1,197 @@
+{
+  "repo_name": "rufrontgen",
+  "repo_full_name": "rubenbase/rufrontgen",
+  "repo_owner": "rubenbase",
+  "repo_description": "🚀Boilerplate for React, React Native, Nodejs, Graphql and Postgres for building fast web and mobile apps using yarn workspaces.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/graphql/message/find/schema.graphql",
+      "sha": "09129c0d1d1bbebb4239dc87e80e908c5da6a1dc",
+      "url": "https://api.github.com/repositories/137225936/contents/packages/server/src/graphql/message/find/schema.graphql?ref=bc1d2f5054e2f000b72f625bde840964c0726067",
+      "git_url": "https://api.github.com/repositories/137225936/git/blobs/09129c0d1d1bbebb4239dc87e80e908c5da6a1dc",
+      "html_url": "https://github.com/rubenbase/rufrontgen/blob/bc1d2f5054e2f000b72f625bde840964c0726067/packages/server/src/graphql/message/find/schema.graphql",
+      "content": "type Message {\n  text: String!\n  user: User!\n  listingId: String!\n}\ntype Query {\n  messages(listingId: String!): [Message!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/rubenbase/rufrontgen/blob/bc1d2f5054e2f000b72f625bde840964c0726067/packages/server/src/graphql/message/find/schema.graphql:\ntype Message {\n  text: String!\n  user: User!\n  listingId: String!\n}\ntype Query {\n  messages(listingId: String!): [Message!]!\n}\n\n# https://github.com/rubenbase/rufrontgen/blob/d3f34ee639f783de942c7a9fdf8788cb0254b3ee/packages/server/src/graphql/shared/User.graphql:\ntype Billing {\n  id: ID!\n  price: Int\n  stripeId: String\n  plan: String\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  lastname: String!\n  roles: [String!]!\n  billing: Billing!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/graphql/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "packages/server/src/graphql/shared/User.graphql",
+      "sha": "eb31d8f0ab9ec9fc731af340f7dbb1d2a92859d3",
+      "url": "https://api.github.com/repositories/137225936/contents/packages/server/src/graphql/shared/User.graphql?ref=d3f34ee639f783de942c7a9fdf8788cb0254b3ee",
+      "git_url": "https://api.github.com/repositories/137225936/git/blobs/eb31d8f0ab9ec9fc731af340f7dbb1d2a92859d3",
+      "html_url": "https://github.com/rubenbase/rufrontgen/blob/d3f34ee639f783de942c7a9fdf8788cb0254b3ee/packages/server/src/graphql/shared/User.graphql",
+      "content": "type Billing {\n  id: ID!\n  price: Int\n  stripeId: String\n  plan: String\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  lastname: String!\n  roles: [String!]!\n  billing: Billing!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/graphql/listing/find/schema.graphql",
+      "sha": "90aa001d11a5252e482786d560e8bb2e51422b34",
+      "url": "https://api.github.com/repositories/137225936/contents/packages/server/src/graphql/listing/find/schema.graphql?ref=c7250f130d82287b93a967c02db4dadd6dc1a760",
+      "git_url": "https://api.github.com/repositories/137225936/git/blobs/90aa001d11a5252e482786d560e8bb2e51422b34",
+      "html_url": "https://github.com/rubenbase/rufrontgen/blob/c7250f130d82287b93a967c02db4dadd6dc1a760/packages/server/src/graphql/listing/find/schema.graphql",
+      "content": "type Listing {\n  id: ID!\n  name: String!\n  category: String!\n  description: String!\n  price: Int!\n  latitude: Float!\n  longitude: Float!\n  amenities: [String!]!\n  pictureUrl: String\n  owner: User!\n}\ntype Query {\n  findListings: [Listing!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/rubenbase/rufrontgen/blob/c7250f130d82287b93a967c02db4dadd6dc1a760/packages/server/src/graphql/listing/find/schema.graphql:\ntype Listing {\n  id: ID!\n  name: String!\n  category: String!\n  description: String!\n  price: Int!\n  latitude: Float!\n  longitude: Float!\n  amenities: [String!]!\n  pictureUrl: String\n  owner: User!\n}\ntype Query {\n  findListings: [Listing!]!\n}\n\n# https://github.com/rubenbase/rufrontgen/blob/d3f34ee639f783de942c7a9fdf8788cb0254b3ee/packages/server/src/graphql/shared/User.graphql:\ntype Billing {\n  id: ID!\n  price: Int\n  stripeId: String\n  plan: String\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  lastname: String!\n  roles: [String!]!\n  billing: Billing!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/graphql/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/graphql/user/me/schema.graphql",
+      "sha": "34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "url": "https://api.github.com/repositories/137225936/contents/packages/server/src/graphql/user/me/schema.graphql?ref=7850b3d84b87fbb3ff06b1de1ba53b609764f1fb",
+      "git_url": "https://api.github.com/repositories/137225936/git/blobs/34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "html_url": "https://github.com/rubenbase/rufrontgen/blob/7850b3d84b87fbb3ff06b1de1ba53b609764f1fb/packages/server/src/graphql/user/me/schema.graphql",
+      "content": "type Query {\n  me: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/rubenbase/rufrontgen/blob/7850b3d84b87fbb3ff06b1de1ba53b609764f1fb/packages/server/src/graphql/user/me/schema.graphql:\ntype Query {\n  me: User\n}\n\n# https://github.com/rubenbase/rufrontgen/blob/d3f34ee639f783de942c7a9fdf8788cb0254b3ee/packages/server/src/graphql/shared/User.graphql:\ntype Billing {\n  id: ID!\n  price: Int\n  stripeId: String\n  plan: String\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  lastname: String!\n  roles: [String!]!\n  billing: Billing!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/graphql/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/dist/graphql/user/me/schema.graphql",
+      "sha": "34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "url": "https://api.github.com/repositories/137225936/contents/packages/server/dist/graphql/user/me/schema.graphql?ref=775ad3423fca18dd8bfd3a3816cab21e8acac523",
+      "git_url": "https://api.github.com/repositories/137225936/git/blobs/34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "html_url": "https://github.com/rubenbase/rufrontgen/blob/775ad3423fca18dd8bfd3a3816cab21e8acac523/packages/server/dist/graphql/user/me/schema.graphql",
+      "content": "type Query {\n  me: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/rubenbase/rufrontgen/blob/775ad3423fca18dd8bfd3a3816cab21e8acac523/packages/server/dist/graphql/user/me/schema.graphql:\ntype Query {\n  me: User\n}\n\n# https://github.com/rubenbase/rufrontgen/blob/775ad3423fca18dd8bfd3a3816cab21e8acac523/packages/server/dist/graphql/shared/User.graphql:\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  lastname: String!\n}\n",
+        "mergedPaths": [
+          "packages/server/dist/graphql/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "packages/server/dist/graphql/shared/User.graphql",
+      "sha": "6f87d715331f44736dc8c455c14ae76eb0ca89ab",
+      "url": "https://api.github.com/repositories/137225936/contents/packages/server/dist/graphql/shared/User.graphql?ref=775ad3423fca18dd8bfd3a3816cab21e8acac523",
+      "git_url": "https://api.github.com/repositories/137225936/git/blobs/6f87d715331f44736dc8c455c14ae76eb0ca89ab",
+      "html_url": "https://github.com/rubenbase/rufrontgen/blob/775ad3423fca18dd8bfd3a3816cab21e8acac523/packages/server/dist/graphql/shared/User.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  lastname: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/graphql/user/userInfo/schema.graphql",
+      "sha": "28b1b7fc73ab1e516f58053652d320939b6c6bd1",
+      "url": "https://api.github.com/repositories/137225936/contents/packages/server/src/graphql/user/userInfo/schema.graphql?ref=d3f34ee639f783de942c7a9fdf8788cb0254b3ee",
+      "git_url": "https://api.github.com/repositories/137225936/git/blobs/28b1b7fc73ab1e516f58053652d320939b6c6bd1",
+      "html_url": "https://github.com/rubenbase/rufrontgen/blob/d3f34ee639f783de942c7a9fdf8788cb0254b3ee/packages/server/src/graphql/user/userInfo/schema.graphql",
+      "content": "type Query {\n  getUser: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/rubenbase/rufrontgen/blob/d3f34ee639f783de942c7a9fdf8788cb0254b3ee/packages/server/src/graphql/user/userInfo/schema.graphql:\ntype Query {\n  getUser: User\n}\n\n# https://github.com/rubenbase/rufrontgen/blob/d3f34ee639f783de942c7a9fdf8788cb0254b3ee/packages/server/src/graphql/shared/User.graphql:\ntype Billing {\n  id: ID!\n  price: Int\n  stripeId: String\n  plan: String\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  lastname: String!\n  roles: [String!]!\n  billing: Billing!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/graphql/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "squema.graphql",
+      "path": "packages/server/src/graphql/categories/find/squema.graphql",
+      "sha": "764587853eebcca44405e2847abbc7883a4d277b",
+      "url": "https://api.github.com/repositories/137225936/contents/packages/server/src/graphql/categories/find/squema.graphql?ref=c1dfb0313699feceea0be1ab2de488528394d220",
+      "git_url": "https://api.github.com/repositories/137225936/git/blobs/764587853eebcca44405e2847abbc7883a4d277b",
+      "html_url": "https://github.com/rubenbase/rufrontgen/blob/c1dfb0313699feceea0be1ab2de488528394d220/packages/server/src/graphql/categories/find/squema.graphql",
+      "content": "type Categories {\n    id: ID!\n    name: String!\n}\n\ntype Query {\n    findCategories: [Categories!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-13T14:19:57Z",
+    "updated_at": "2019-07-18T15:24:40Z",
+    "pushed_at": "2019-07-02T16:56:47Z",
+    "issues": 18,
+    "watchers": 5,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 38,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 7,
+    "pull_requests_merged": 30,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

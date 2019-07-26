@@ -1,0 +1,41 @@
+{
+  "repo_name": "hackernews-gql",
+  "repo_full_name": "thecylax/hackernews-gql",
+  "repo_owner": "thecylax",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "0a7421b7c47b1f629d6d82b392d48369b4b72a69",
+      "url": "https://api.github.com/repositories/168245133/contents/schema.graphql?ref=ef362e30fb1dac5e1677419edeba6c4eeba36320",
+      "git_url": "https://api.github.com/repositories/168245133/git/blobs/0a7421b7c47b1f629d6d82b392d48369b4b72a69",
+      "html_url": "https://github.com/thecylax/hackernews-gql/blob/ef362e30fb1dac5e1677419edeba6c4eeba36320/schema.graphql",
+      "content": "input CreateLinkInput {\n  \"\"\"URL a ser incluída\"\"\"\n  url: String\n\n  \"\"\"Descrição da URL\"\"\"\n  description: String\n  clientMutationId: String\n}\n\ntype CreateLinkPayload {\n  link: LinkNode\n  clientMutationId: String\n}\n\ntype CreateUser {\n  user: UserType\n}\n\ninput CreateVoteInput {\n  \"\"\"ID do link a ser votado.\"\"\"\n  linkId: ID\n  clientMutationId: String\n}\n\ntype CreateVotePayload {\n  user: UserType\n  link: LinkNode\n  clientMutationId: String\n}\n\n\"\"\"\nThe `DateTime` scalar type represents a DateTime\nvalue as specified by\n[iso8601](https://en.wikipedia.org/wiki/ISO_8601).\n\"\"\"\nscalar DateTime\n\n\"\"\"\nThe `GenericScalar` scalar type represents a generic\nGraphQL scalar value that could be:\nString, Boolean, Int, Float, List or Object.\n\"\"\"\nscalar GenericScalar\n\ntype LinkConnection {\n  pageInfo: PageInfo!\n  edges: [LinkEdge]!\n}\n\ntype LinkEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: LinkNode\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\n\"\"\"Model que representa links.\"\"\"\ntype LinkNode implements Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  url: String!\n  description: String!\n  postedBy: UserType\n  votes(before: String, after: String, first: Int, last: Int): VoteNodeConnection\n}\n\ntype LinkNodeConnection {\n  pageInfo: PageInfo!\n  edges: [LinkNodeEdge]!\n}\n\ntype LinkNodeEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: LinkNode\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype Mutation {\n  createUser(\n    \"\"\"Email do usuário\"\"\"\n    email: String!\n\n    \"\"\"Senha do usuário\"\"\"\n    password: String!\n\n    \"\"\"Nome do usuário\"\"\"\n    username: String!\n  ): CreateUser\n\n  \"\"\"Adiciona um novo link.\"\"\"\n  createLink(input: CreateLinkInput!): CreateLinkPayload\n\n  \"\"\"Vota num link.\"\"\"\n  createVote(input: CreateVoteInput!): CreateVotePayload\n  tokenAuth(username: String!, password: String!): ObtainJSONWebToken\n  verifyToken(token: String!): Verify\n  refreshToken(token: String!): Refresh\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Obtain JSON Web Token mutation\"\"\"\ntype ObtainJSONWebToken {\n  token: String\n}\n\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Query {\n  \"\"\"Função viewer.\"\"\"\n  viewer: UserType\n\n  \"\"\"Função users.\"\"\"\n  users: [UserType]\n\n  \"\"\"The ID of the object\"\"\"\n  link(id: ID!): LinkNode\n\n  \"\"\"Função links.\"\"\"\n  links(before: String, after: String, first: Int, last: Int): LinkConnection\n}\n\ntype Refresh {\n  token: String\n  payload: GenericScalar\n}\n\n\"\"\"Modelo de usuários\"\"\"\ntype UserType {\n  id: ID!\n  password: String!\n  lastLogin: DateTime\n\n  \"\"\"\n  Designates that this user has all permissions without explicitly assigning them.\n  \"\"\"\n  isSuperuser: Boolean!\n\n  \"\"\"\n  Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.\n  \"\"\"\n  username: String!\n  firstName: String!\n  lastName: String!\n  email: String!\n\n  \"\"\"Designates whether the user can log into this admin site.\"\"\"\n  isStaff: Boolean!\n\n  \"\"\"\n  Designates whether this user should be treated as active. Unselect this instead of deleting accounts.\n  \"\"\"\n  isActive: Boolean!\n  dateJoined: DateTime!\n  linkSet(before: String, after: String, first: Int, last: Int): LinkNodeConnection\n  voteSet(before: String, after: String, first: Int, last: Int): VoteNodeConnection\n}\n\ntype Verify {\n  payload: GenericScalar\n}\n\n\"\"\"Model que representa votos.\"\"\"\ntype VoteNode implements Node {\n  \"\"\"The ID of the object.\"\"\"\n  id: ID!\n  user: UserType!\n  link: LinkNode!\n}\n\ntype VoteNodeConnection {\n  pageInfo: PageInfo!\n  edges: [VoteNodeEdge]!\n}\n\ntype VoteNodeEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: VoteNode\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": true,
+      "numDefinitions": 23
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-29T23:19:06Z",
+    "updated_at": "2019-02-14T13:02:11Z",
+    "pushed_at": "2019-02-14T13:02:10Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "bsd-2-clause",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

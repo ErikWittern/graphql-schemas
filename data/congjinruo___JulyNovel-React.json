@@ -1,0 +1,41 @@
+{
+  "repo_name": "JulyNovel-React",
+  "repo_full_name": "congjinruo/julynovel-react",
+  "repo_owner": "congjinruo",
+  "repo_description": "July Novel Web Front ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "63ea7c48148e383c87a8f2a19b5ceea98d8166d9",
+      "url": "https://api.github.com/repositories/125961804/contents/schema.graphql?ref=5b16625d192e6956db3b0d6bc5a93a8ada2ea40f",
+      "git_url": "https://api.github.com/repositories/125961804/git/blobs/63ea7c48148e383c87a8f2a19b5ceea98d8166d9",
+      "html_url": "https://github.com/congjinruo/JulyNovel-React/blob/5b16625d192e6956db3b0d6bc5a93a8ada2ea40f/schema.graphql",
+      "content": "scalar DateTime\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Book implements Node{\n  #Book node\n\n  bookId: ID!\n  bookName: String\n  summary: String\n  bookTypeId: Int\n  author: String\n  cover: String\n  banner: String\n  clickTimes: Int\n  wordNumbers: Int\n  status: Int\n  tags: String\n  siteId: Int\n  xbookId: String\n  fileUrl: String\n  lastupdate: DateTime\n  createtime: DateTime\n  id: ID!\n  bookType: BookType\n  chapterList(totalCount: Int): [Chapter]\n}\n\ntype Chapter implements Node{\n  #Chapter node\n\n  chapterId: ID!\n  chapterName: String\n  bookId: Int\n  wordNumbers: Int\n  volumeId: Int\n  xchapterId: String\n  free: Int\n  sort: Int\n  updatetime: DateTime\n  createtime: DateTime\n  id: ID!\n  content: Content\n  book: Book\n  prevChapterId: ID\n  nextChapterId: ID\n}\n\ntype Content implements Node{\n  #Content node\n\n  contentId: ID!\n  chapterId: Int\n  text: String\n  bookId: Int\n  wordNumbers: Int\n  createtime: DateTime\n  id: ID!\n}\n\n\ntype BookType implements Node {\n  #BookType node.\n\n  typeId: ID!\n  typeName: String\n  summary: String\n  parentTypeId: Int\n  state: Int\n  createtime: DateTime\n  id: ID!\n  children(totalCount: Int): [BookTypeChildren]\n  recommends(bookId: ID): [Book]\n  totalBookCount: Int\n}\n\ntype BookTypeChildren implements Node{\n  #BookTypeChildren node.\n\n  typeId: ID!\n  typeName: String\n  summary: String\n  parentTypeId: Int\n  state: Int\n  createtime: DateTime\n  id: ID!\n  bookCount: Int  \n}\n\ntype Rank{\n  #Rank Node\n\n  rankId: ID!\n  bookId: Int\n  rankTypeId: Int\n  sort: Int\n  siteId: Int\n  state: Int\n  createtime: DateTime\n  id: ID!\n  book: Book\n}\n\ntype RankType implements Node{\n  #RankType Node\n\n  typeId: ID!\n  typeName: String\n  siteId: Int\n  state: Int\n  createtime: DateTime\n  id: ID!\n  rankList(totalCount: Int): [Rank]\n}\n\ntype BookConnection{\n  pageInfo: PageInfo!\n  edges: [BookEdge]!\n}\n\ntype BookEdge{\n  node: Book\n  cursor: String!\n}\n\ntype Query {\n  #The query root of JulyNovel's GraphQL interface.\n\n  node(id: ID!): Node\n  book(bookId: ID): Book\n  bookList(bookTypeId: ID, search: String, before: String, after: String, first: Int, last: Int): BookConnection\n  bookType(typeId: ID): BookType\n  chapter(chapterId: ID): Chapter\n  content(chapterId: Int): Content\n\n  bookTypeList(parentTypeId: Int): [BookType]\n  rank(rankId: ID): Rank\n  rankType(rankTypeId: ID): RankType\n  homeRankList: [RankType]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": true,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-20T04:43:35Z",
+    "updated_at": "2019-05-15T01:29:32Z",
+    "pushed_at": "2019-02-21T06:23:26Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 11
+  }
+}

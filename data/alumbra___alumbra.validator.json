@@ -1,0 +1,42 @@
+{
+  "repo_name": "alumbra.validator",
+  "repo_full_name": "alumbra/alumbra.validator",
+  "repo_owner": "alumbra",
+  "repo_description": "A Validator for GraphQL ASTs",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "TestSchema.graphql",
+      "path": "test/alumbra/validator/TestSchema.graphql",
+      "sha": "0d36750ae9e32362cd0805223c055fe072df00e6",
+      "url": "https://api.github.com/repositories/72926886/contents/test/alumbra/validator/TestSchema.graphql?ref=17f69ab6851169494a2b227197c1a67dc7cad7fa",
+      "git_url": "https://api.github.com/repositories/72926886/git/blobs/0d36750ae9e32362cd0805223c055fe072df00e6",
+      "html_url": "https://github.com/alumbra/alumbra.validator/blob/17f69ab6851169494a2b227197c1a67dc7cad7fa/test/alumbra/validator/TestSchema.graphql",
+      "content": "enum DogCommand { SIT, DOWN, HEEL }\n\ntype Dog implements Pet {\n  name: String!\n  nickname: String\n  barkVolume: Int\n  doesKnowCommand(dogCommand: DogCommand!): Boolean!\n  isHousetrained(atOtherHomes: Boolean): Boolean!\n  owner: Human\n}\n\ninterface Sentient {\n  name: String!\n}\n\ninterface Pet {\n  name: String!\n}\n\ntype Alien implements Sentient {\n  name: String!\n  homePlanet: String\n}\n\ntype Human implements Sentient {\n  name: String!\n  pets: [Pet!]!\n}\n\nenum CatCommand { JUMP }\n\ntype Cat implements Pet {\n  name: String!\n  nickname: String\n  doesKnowCommand(catCommand: CatCommand!): Boolean!\n  meowVolume: Int\n}\n\nunion CatOrDog = Cat | Dog\nunion DogOrHuman = Dog | Human\nunion HumanOrAlien = Human | Alien\n\ntype QueryRoot {\n  dog: Dog\n}\n\ntype MutationRoot {\n  callDog(name: String!): Dog\n}\n\nschema {\n  query: QueryRoot\n  mutation: MutationRoot\n}\n\n# Extensions from Section 5.2.3\n\nextend type QueryRoot {\n  human: Human\n  pet: Pet\n  catOrDog: CatOrDog\n}\n\n# Extensions from Section 5.3.1\n\ntype Arguments {\n  multipleReqs(x: Int!, y: Int!): Int!\n  booleanArgField(booleanArg: Boolean): Boolean\n  floatArgField(floatArg: Float): Float\n  intArgField(intArg: Int): Int\n  nonNullBooleanArgField(nonNullBooleanArg: Boolean!): Boolean!\n  booleanListArgField(booleanListArg: [Boolean]!): [Boolean]\n  nonNullBooleanListArgField(nonNullBooleanListArg: [Boolean]!): [Boolean]\n}\n\nextend type QueryRoot {\n  arguments: Arguments\n}\n\n# Extensions from Section 5.6.2\n\ndirective @unordered on MUTATION\n\n# Extensions from Section 5.7.3\n\ninput ComplexInput { name: String!, owner: String, child: ComplexInput }\n\nextend type QueryRoot {\n  findDog(complex: ComplexInput): Dog\n  booleanList(booleanListArg: [Boolean!]): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-11-05T13:09:56Z",
+    "updated_at": "2016-12-11T11:01:01Z",
+    "pushed_at": "2017-04-25T10:11:41Z",
+    "issues": 3,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 4,
+    "stargazers": 0
+  }
+}

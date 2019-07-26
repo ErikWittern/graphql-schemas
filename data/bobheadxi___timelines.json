@@ -1,0 +1,42 @@
+{
+  "repo_name": "timelines",
+  "repo_full_name": "bobheadxi/timelines",
+  "repo_owner": "bobheadxi",
+  "repo_description": "historical analysis of git repositories and associated metadata - wip",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "b4094c49c1e12d36147d6d3571ae8e0b2e9f08bb",
+      "url": "https://api.github.com/repositories/173181541/contents/graphql/schema.graphql?ref=5e6f81ac0d6a18de289993323e257534e59bfd63",
+      "git_url": "https://api.github.com/repositories/173181541/git/blobs/b4094c49c1e12d36147d6d3571ae8e0b2e9f08bb",
+      "html_url": "https://github.com/bobheadxi/timelines/blob/5e6f81ac0d6a18de289993323e257534e59bfd63/graphql/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\nscalar Time\n\n#########\n# Query #\n#########\n\ntype Query {\n  # Query for specific repository and associated analytics\n  repo(\n    owner: String!,\n    name: String!,\n    host: RepositoryHost = GITHUB,\n  ): RepositoryAnalytics\n\n  # Query for repositories by owner\n  repos(\n    owner: String!,\n    host: RepositoryHost = GITHUB,\n  ): [Repository!]\n\n  # Query for current service status\n  serviceStatus: ServiceStatus!\n}\n\n###########\n# Service #\n###########\n\ntype ServiceStatus {\n  build: String!\n  deployed: Time!\n}\n\n################\n# Repositories #\n################\n\ntype Repository {\n  id: Int!\n  owner: String!\n  name: String!\n  description: String!\n}\n\ntype RepositoryAnalytics {\n  repository: Repository!\n\n  burndown(\n    type: BurndownType = GLOBAL,\n  ): Burndown\n}\n\nenum RepositoryHost {\n  GITHUB\n  GITLAB\n  BITBUCKET\n}\n\n#############\n# Burndowns #\n#############\n\nenum BurndownType {\n  GLOBAL\n  FILE\n  AUTHOR\n  ALERT\n}\n\ntype GlobalBurndown {\n  repoID: Int!\n  type: BurndownType!\n  entries: [BurndownEntry!]\n}\n\ntype AuthorBurndown {\n  repoID: Int!\n  type: BurndownType!\n  author(\n    author: String!,\n  ): [BurndownEntry!]\n}\n\ntype FileBurndown {\n  repoID: Int!\n  type: BurndownType!\n  file(\n    # if filename is provided, return burndown for single file, otherwise return\n    # per file\n    filename: String,\n  ): [FileBurndownEntry!]\n}\n\ntype BurndownAlert {\n  repoID: Int!\n  type: BurndownType!\n  alert: String!\n}\n\nunion Burndown = GlobalBurndown | AuthorBurndown | FileBurndown | BurndownAlert\n\ntype BurndownEntry {\n  start: Time!\n\n  # TODO: add Long type? tbh not sure if int64 is really justified at all here\n  # https://gqlgen.com/reference/scalars/#custom-scalars-for-types-you-don-t-control\n  bands: [Int!]!\n}\n\ntype FileBurndownEntry {\n  file: String!\n  entry: BurndownEntry!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-28T20:20:30Z",
+    "updated_at": "2019-05-26T17:27:46Z",
+    "pushed_at": "2019-05-26T17:27:44Z",
+    "issues": 60,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

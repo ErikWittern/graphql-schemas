@@ -1,0 +1,42 @@
+{
+  "repo_name": "sample-graphql-answerer",
+  "repo_full_name": "swashcap/sample-graphql-answerer",
+  "repo_owner": "swashcap",
+  "repo_description": "A sample GraphQL question/answer service.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "schema.gql",
+      "sha": "84f5f962bed6ff629f8b4a8a5376eab3633848c6",
+      "url": "https://api.github.com/repositories/158746274/contents/schema.gql?ref=aeedadcf81b0bc45c9d5cb8d247fa2d84ab06c99",
+      "git_url": "https://api.github.com/repositories/158746274/git/blobs/84f5f962bed6ff629f8b4a8a5376eab3633848c6",
+      "html_url": "https://github.com/swashcap/sample-graphql-answerer/blob/aeedadcf81b0bc45c9d5cb8d247fa2d84ab06c99/schema.gql",
+      "content": "interface BaseInput {\n  disabled: Boolean\n  label: String\n  name: String!\n  value: String\n}\n\ntype DateInput implements BaseInput {\n  disabled: Boolean\n  label: String\n  name: String!\n  value: String\n}\n\ntype SelectableInputOptions {\n  disabled: Boolean\n  name: String!\n  value: String!\n}\n\ntype SelectableInput implements BaseInput {\n  disabled: Boolean\n  label: String\n  name: String!\n  options: [SelectableInputOptions]!\n  value: String\n}\n\ntype TextInput {\n  disabled: Boolean\n  label: String\n  name: String!\n  placeholder: String\n  value: String\n}\n\nenum InputTypes {\n  DATE\n  SELECTABLE\n  TEXT\n}\n\nunion Input = DateInput | SelectableInput | TextInput\n\ntype Query {\n  hello: String!,\n  input(type: InputTypes): Input\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-22T20:13:38Z",
+    "updated_at": "2018-12-10T17:10:50Z",
+    "pushed_at": "2018-12-10T17:10:48Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

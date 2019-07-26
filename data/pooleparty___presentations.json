@@ -1,0 +1,42 @@
+{
+  "repo_name": "presentations",
+  "repo_full_name": "pooleparty/presentations",
+  "repo_owner": "pooleparty",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "react-graphql/backend/src/schema.graphql",
+      "sha": "8744a90ad5973ec9767cbd24c1982d2d6775568b",
+      "url": "https://api.github.com/repositories/109973179/contents/react-graphql/backend/src/schema.graphql?ref=2a581df6a1245cc52f04e4803bbd1106aeb140fe",
+      "git_url": "https://api.github.com/repositories/109973179/git/blobs/8744a90ad5973ec9767cbd24c1982d2d6775568b",
+      "html_url": "https://github.com/pooleparty/presentations/blob/2a581df6a1245cc52f04e4803bbd1106aeb140fe/react-graphql/backend/src/schema.graphql",
+      "content": "type Query {\n  books: [Book!]\n  book(title: String!): Book\n}\n\ntype Mutation {\n  createBook(title: String!, author: String!): Book\n}\n\ntype Book {\n  title: String!\n  author: String!\n  link: String\n  year: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-08T12:30:10Z",
+    "updated_at": "2019-03-05T19:54:51Z",
+    "pushed_at": "2019-03-05T19:54:49Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 11,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 11,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

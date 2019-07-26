@@ -1,0 +1,98 @@
+{
+  "repo_name": "graphql-inspector",
+  "repo_full_name": "kamilkisiela/graphql-inspector",
+  "repo_owner": "kamilkisiela",
+  "repo_description": "🕵️‍♀️ Tooling for GraphQL. Compare schemas, validate documents, find breaking changes, find similar types, schema coverage",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "old.graphql",
+      "path": "packages/cli/__tests__/assets/old.graphql",
+      "sha": "17214d38807c83882030e242795575afaee7a101",
+      "url": "https://api.github.com/repositories/157776824/contents/packages/cli/__tests__/assets/old.graphql?ref=0e718e8f047c545e62ae5e26596e5ae5f9a78b42",
+      "git_url": "https://api.github.com/repositories/157776824/git/blobs/17214d38807c83882030e242795575afaee7a101",
+      "html_url": "https://github.com/kamilkisiela/graphql-inspector/blob/0e718e8f047c545e62ae5e26596e5ae5f9a78b42/packages/cli/__tests__/assets/old.graphql",
+      "content": "type Post {\n  id: ID\n  title: String\n  createdAt: String\n  modifiedAt: String\n}\n\ntype Query {\n  post: Post!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "example/schemas/schema.graphql",
+      "sha": "1de3bf1864bc3611c96b40560b03d2e59904b127",
+      "url": "https://api.github.com/repositories/157776824/contents/example/schemas/schema.graphql?ref=048374df1cc6763b23281c4d3ce6ca14b2acbfa0",
+      "git_url": "https://api.github.com/repositories/157776824/git/blobs/1de3bf1864bc3611c96b40560b03d2e59904b127",
+      "html_url": "https://github.com/kamilkisiela/graphql-inspector/blob/048374df1cc6763b23281c4d3ce6ca14b2acbfa0/example/schemas/schema.graphql",
+      "content": "type Post {\n  id: ID\n  title: String @deprecated(reason: \"No more used\")\n  createdAt: String\n  modifiedAt: String\n}\n\ntype Query {\n  post: Post!\n  posts: [Post!]\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "similar.graphql",
+      "path": "example/schemas/similar.graphql",
+      "sha": "e52f552ea08ff02faf69850adfc2bd895181a63c",
+      "url": "https://api.github.com/repositories/157776824/contents/example/schemas/similar.graphql?ref=4abb8736f90ad55bb38e15b3f9c5f6e33fc14cdf",
+      "git_url": "https://api.github.com/repositories/157776824/git/blobs/e52f552ea08ff02faf69850adfc2bd895181a63c",
+      "html_url": "https://github.com/kamilkisiela/graphql-inspector/blob/4abb8736f90ad55bb38e15b3f9c5f6e33fc14cdf/example/schemas/similar.graphql",
+      "content": "type Post {\n  id: ID\n  title: String\n  createdAt: String\n  modifiedAt: String\n}\n\ntype BlogPost {\n  title: String\n  createdAt: String\n  id: ID\n}\n\ntype MailPost {\n  title: String\n  createdAt: String\n}\n\ntype EmailPost {\n  title: String\n  createdAt: String\n  modifiedAt: String\n}\n\ntype Comment {\n  id: ID\n}\n\ntype Query {\n  post: Post!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 6
+    },
+    {
+      "name": "new.graphql",
+      "path": "example/schemas/new.graphql",
+      "sha": "3371a9865212b3f239b52dc7f9bc5a0885260f1c",
+      "url": "https://api.github.com/repositories/157776824/contents/example/schemas/new.graphql?ref=74abe2acc550cae8f22daec8788838b7f236b25b",
+      "git_url": "https://api.github.com/repositories/157776824/git/blobs/3371a9865212b3f239b52dc7f9bc5a0885260f1c",
+      "html_url": "https://github.com/kamilkisiela/graphql-inspector/blob/74abe2acc550cae8f22daec8788838b7f236b25b/example/schemas/new.graphql",
+      "content": "type Post {\n  id: ID!\n  title: String!\n  createdAt: String!\n}\n\ntype Query {\n  post: Post!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "new.graphql",
+      "path": "packages/cli/__tests__/assets/new.graphql",
+      "sha": "3371a9865212b3f239b52dc7f9bc5a0885260f1c",
+      "url": "https://api.github.com/repositories/157776824/contents/packages/cli/__tests__/assets/new.graphql?ref=0e718e8f047c545e62ae5e26596e5ae5f9a78b42",
+      "git_url": "https://api.github.com/repositories/157776824/git/blobs/3371a9865212b3f239b52dc7f9bc5a0885260f1c",
+      "html_url": "https://github.com/kamilkisiela/graphql-inspector/blob/0e718e8f047c545e62ae5e26596e5ae5f9a78b42/packages/cli/__tests__/assets/new.graphql",
+      "content": "type Post {\n  id: ID!\n  title: String!\n  createdAt: String!\n}\n\ntype Query {\n  post: Post!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-15T21:46:59Z",
+    "updated_at": "2019-07-19T19:47:55Z",
+    "pushed_at": "2019-07-19T05:15:17Z",
+    "issues": 59,
+    "watchers": 11,
+    "fork_count": 22,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 385,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 63,
+    "pull_requests_merged": 322,
+    "releases": 29,
+    "stargazers": 408
+  }
+}

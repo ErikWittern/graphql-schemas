@@ -1,0 +1,42 @@
+{
+  "repo_name": "Woof",
+  "repo_full_name": "nanmon/woof",
+  "repo_owner": "nanmon",
+  "repo_description": "React Native App + Expo that only sends a notification to your friends that says \"Woof\"",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "5aa1efc4603e046e804df20f91bde23b92d79434",
+      "url": "https://api.github.com/repositories/150798627/contents/schema.graphql?ref=af2be618b9dfe7a6330c24c1ca98c69cd3e83cf6",
+      "git_url": "https://api.github.com/repositories/150798627/git/blobs/5aa1efc4603e046e804df20f91bde23b92d79434",
+      "html_url": "https://github.com/nanmon/Woof/blob/af2be618b9dfe7a6330c24c1ca98c69cd3e83cf6/schema.graphql",
+      "content": "# Relay\n\ninterface Node {\n    id: ID!\n}\n\ntype PageInfo {\n    hasPreviousPage: Boolean!\n    hasNextPage: Boolean!\n    startCursor: Cursor\n    endCursor: Cursor\n}\n\nscalar Cursor\nscalar Timestamp\n\n# Root types\n\ntype Query {\n    viewer: Viewer\n    node(id: ID!): Node\n}\n\n\ntype Mutation {\n    logIn(input: LogInInput!): LogInPayload\n    woof(input: WoofInput!): WoofPayload\n}\n\ntype Viewer {\n    me: User\n}\n\n# Business\n\ntype User implements Node {\n    id: ID!\n    username: String!\n}\n\n# Connections\n\n# Inputs & Payloads\n\ninput LogInInput {\n    username: String!\n    device: String!\n    clientMutationId: String\n}\n\ntype LogInPayload {\n    user: User!\n    token: String!\n    exp: Timestamp!\n    clientMutationId: String\n}\n\ninput WoofInput {\n    username: String!\n    clientMutationId: String\n}\n\ntype WoofPayload {\n    ok: Boolean!\n    clientMutationId: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-28T22:00:00Z",
+    "updated_at": "2018-11-02T23:56:35Z",
+    "pushed_at": "2018-09-28T22:04:33Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

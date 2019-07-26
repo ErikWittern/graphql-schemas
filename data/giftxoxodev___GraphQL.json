@@ -1,0 +1,42 @@
+{
+  "repo_name": "GraphQL",
+  "repo_full_name": "giftxoxodev/graphql",
+  "repo_owner": "giftxoxodev",
+  "repo_description": "This project is for better understanding  of GraphQL blog series.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "f9a5a4e5172bfd8047b35028cac3961809478f5c",
+      "url": "https://api.github.com/repositories/182961264/contents/schema.graphql?ref=bfb93fce7d106fe605bc476bce811ea3159769e7",
+      "git_url": "https://api.github.com/repositories/182961264/git/blobs/f9a5a4e5172bfd8047b35028cac3961809478f5c",
+      "html_url": "https://github.com/giftxoxodev/GraphQL/blob/bfb93fce7d106fe605bc476bce811ea3159769e7/schema.graphql",
+      "content": "type Query {\n    getUsers:[User]\n    getUser(user_id:Int!):User\n}\ntype Mutation{\n    addUser(first_name:String!,last_name:String,pic:String):Boolean\n    deleteUser(user_id:Int!):Boolean\n}\ntype User{\n    first_name:String\n    last_name:String\n    pic:String\n    full_name:String\n    user_id:Int!\n    designation:String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-23T07:40:44Z",
+    "updated_at": "2019-04-23T08:55:04Z",
+    "pushed_at": "2019-04-23T08:55:02Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphqlviz",
+  "repo_full_name": "sheerun/graphqlviz",
+  "repo_owner": "sheerun",
+  "repo_description": "GraphQL Server schema visualizer",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "complex-input.graphql",
+      "path": "test/complex-input.graphql",
+      "sha": "82a5b51a84ffab57b1ff51c510a094e26147961a",
+      "url": "https://api.github.com/repositories/54353510/contents/test/complex-input.graphql?ref=dc1585cfcf0b1f9c3f4bf6348a5e448e057e8dd6",
+      "git_url": "https://api.github.com/repositories/54353510/git/blobs/82a5b51a84ffab57b1ff51c510a094e26147961a",
+      "html_url": "https://github.com/sheerun/graphqlviz/blob/dc1585cfcf0b1f9c3f4bf6348a5e448e057e8dd6/test/complex-input.graphql",
+      "content": "enum Episode {\n  NEWHOPE\n  EMPIRE\n  JEDI\n}\n\nenum LengthUnit {\n  METER\n  FEET\n}\n\ninterface Character {\n  id: ID!\n  name: String!\n  friends: [Character]\n  appearsIn: [Episode]!\n}\n\ntype Human implements Character {\n  id: ID!\n  name: String!\n  friends: [Character!]\n  appearsIn: [Episode]!\n  starships: [Starship]\n  totalCredits: Int\n}\n\ntype Droid implements Character {\n  id: ID!\n  name: String!\n  friends: [Character]\n  appearsIn: [Episode]!\n  primaryFunction: String\n  hasVisited(star: [Star!]!): [Boolean]\n}\n\ntype Starship {\n  id: ID!\n  name: String!\n  length(unit: LengthUnit = METER): Float\n}\n\ntype Query {\n  hero(episode: Episode): Character\n  droid(id: ID!): Droid\n  search(input: SearchInput): SearchResult\n}\n\nunion SearchResult = Human | Droid | Starship\n\ninput SearchInput {\n  text: String!\n  episodes: [Episode]\n}\n\ninput Galaxy {\n  name: String\n}\n\ninput Star {\n  name: String\n  galaxy: Galaxy\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-03-21T02:22:06Z",
+    "updated_at": "2019-07-17T19:29:08Z",
+    "pushed_at": "2019-07-17T19:29:06Z",
+    "issues": 12,
+    "watchers": 13,
+    "fork_count": 34,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 460
+  }
+}

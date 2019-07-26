@@ -1,0 +1,42 @@
+{
+  "repo_name": "crmservice",
+  "repo_full_name": "mindhells/crmservice",
+  "repo_owner": "mindhells",
+  "repo_description": "Synthetic GraphQL API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "70dfaaa2054a1c1262361129942aff753d17abfa",
+      "url": "https://api.github.com/repositories/167677658/contents/schema.graphql?ref=cb6491b44a35a505f725aa1cad84c6b9b2126938",
+      "git_url": "https://api.github.com/repositories/167677658/git/blobs/70dfaaa2054a1c1262361129942aff753d17abfa",
+      "html_url": "https://github.com/mindhells/crmservice/blob/cb6491b44a35a505f725aa1cad84c6b9b2126938/schema.graphql",
+      "content": "directive @requireAuth(\n  role: UserRole! = USER,\n) on FIELD_DEFINITION\n\nscalar Upload\n\ntype Query {\n    customer(id: String!): Customer @requireAuth(role: USER)\n    customers: [Customer!]! @requireAuth(role: USER)\n    user(id: String!): User @requireAuth(role: ADMIN)\n    users: [User!]! @requireAuth(role: ADMIN)\n    login(email:String!, password:String!): String\n}\n\ntype Mutation {\n    addCustomer(input: CustomerInput!): Customer @requireAuth(role: USER)\n    editCustomer(id: String!, input: CustomerInput!): Customer @requireAuth(role: USER)\n    deleteCustomer(id: String!): Customer @requireAuth(role: USER)\n    addUser(input: UserInput!): User @requireAuth(role: ADMIN)\n    editUser(id: String!, input: UserInput!): User @requireAuth(role: ADMIN)\n    deleteUser(id: String!): User @requireAuth(role: ADMIN)\n}\n\ninput CustomerInput {\n    name: String\n    surname: String\n    photo: Upload\n}\n\ntype Customer {\n    id: ID!\n    name: String!\n    surname: String!\n    photo: File\n    createdBy: User!\n    updatedBy: User!\n}\n\nenum UserRole {\n    USER,\n    ADMIN\n}\n\ntype User {\n    id: ID!\n    email: String!\n    role: UserRole!\n}\n\ninput UserInput {\n    email: String\n    password: String\n    role: UserRole = USER\n}\n\ntype File {\n    filename: String\n    mimetype: String\n    data: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-26T10:44:09Z",
+    "updated_at": "2019-01-28T17:23:58Z",
+    "pushed_at": "2019-01-28T17:23:57Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

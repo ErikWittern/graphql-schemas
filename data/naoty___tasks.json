@@ -1,0 +1,78 @@
+{
+  "repo_name": "tasks",
+  "repo_full_name": "naoty/tasks",
+  "repo_owner": "naoty",
+  "repo_description": "An experimental kanban application",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "graphql/query.graphql",
+      "sha": "d9b8aaba450f7c28960f5111388edced06e0ae8d",
+      "url": "https://api.github.com/repositories/176620435/contents/graphql/query.graphql?ref=d4f98919b68a82faa698896e939258f3fb98a1c8",
+      "git_url": "https://api.github.com/repositories/176620435/git/blobs/d9b8aaba450f7c28960f5111388edced06e0ae8d",
+      "html_url": "https://github.com/naoty/tasks/blob/d4f98919b68a82faa698896e939258f3fb98a1c8/graphql/query.graphql",
+      "content": "type Query {\n  statuses: [Status!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/naoty/tasks/blob/d4f98919b68a82faa698896e939258f3fb98a1c8/graphql/query.graphql:\ntype Query {\n  statuses: [Status!]!\n}\n\n# https://github.com/naoty/tasks/blob/d4f98919b68a82faa698896e939258f3fb98a1c8/graphql/status.graphql:\ntype Status {\n  id: ID!\n  name: String!\n  position: Int!\n  tasks: [Task!]!\n}\n\n# https://github.com/naoty/tasks/blob/e222c2957a801e00a0bbc1af0abf65b4930cd203/graphql/task.graphql:\ntype Task {\n  id: ID!\n  status: Status!\n  title: String!\n  position: Int!\n}\n",
+        "mergedPaths": [
+          "graphql/status.graphql",
+          "graphql/task.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Status",
+          "Task"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "status.graphql",
+      "path": "graphql/status.graphql",
+      "sha": "1ef61fde8e583c0840b71ec959a434319cd07281",
+      "url": "https://api.github.com/repositories/176620435/contents/graphql/status.graphql?ref=d4f98919b68a82faa698896e939258f3fb98a1c8",
+      "git_url": "https://api.github.com/repositories/176620435/git/blobs/1ef61fde8e583c0840b71ec959a434319cd07281",
+      "html_url": "https://github.com/naoty/tasks/blob/d4f98919b68a82faa698896e939258f3fb98a1c8/graphql/status.graphql",
+      "content": "type Status {\n  id: ID!\n  name: String!\n  position: Int!\n  tasks: [Task!]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "task.graphql",
+      "path": "graphql/task.graphql",
+      "sha": "de610030504c5a0fd6b44880b965d50c5de929b5",
+      "url": "https://api.github.com/repositories/176620435/contents/graphql/task.graphql?ref=e222c2957a801e00a0bbc1af0abf65b4930cd203",
+      "git_url": "https://api.github.com/repositories/176620435/git/blobs/de610030504c5a0fd6b44880b965d50c5de929b5",
+      "html_url": "https://github.com/naoty/tasks/blob/e222c2957a801e00a0bbc1af0abf65b4930cd203/graphql/task.graphql",
+      "content": "type Task {\n  id: ID!\n  status: Status!\n  title: String!\n  position: Int!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-20T00:29:20Z",
+    "updated_at": "2019-04-28T07:14:55Z",
+    "pushed_at": "2019-04-28T07:14:54Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

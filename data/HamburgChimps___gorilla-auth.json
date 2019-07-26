@@ -1,0 +1,68 @@
+{
+  "repo_name": "gorilla-auth",
+  "repo_full_name": "hamburgchimps/gorilla-auth",
+  "repo_owner": "HamburgChimps",
+  "repo_description": "General purpose authentication service with a GraphQL interface and plugin interface.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.gql",
+      "path": "src/types/query.gql",
+      "sha": "a544b34290c7d6a8e1910f9976b94ab88dd75910",
+      "url": "https://api.github.com/repositories/125649290/contents/src/types/query.gql?ref=4b078a132d66c03ea526094ab80d17d0132b2a57",
+      "git_url": "https://api.github.com/repositories/125649290/git/blobs/a544b34290c7d6a8e1910f9976b94ab88dd75910",
+      "html_url": "https://github.com/HamburgChimps/gorilla-auth/blob/4b078a132d66c03ea526094ab80d17d0132b2a57/src/types/query.gql",
+      "content": "type Query {\n  user(namespace: String, name: String): User\n  allUsers: [User]\n\n  group(namespace: String, name: String): Group\n  allGroups: [Group]\n\n  grant(id: Int): Grant\n  allGrants: [Grant]\n\n  token(id: Int): Token\n  allTokens: [Token]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/HamburgChimps/gorilla-auth/blob/4b078a132d66c03ea526094ab80d17d0132b2a57/src/types/query.gql:\ntype Query {\n  user(namespace: String, name: String): User\n  allUsers: [User]\n\n  group(namespace: String, name: String): Group\n  allGroups: [Group]\n\n  grant(id: Int): Grant\n  allGrants: [Grant]\n\n  token(id: Int): Token\n  allTokens: [Token]\n}\n\n# https://github.com/HamburgChimps/gorilla-auth/blob/4b078a132d66c03ea526094ab80d17d0132b2a57/src/types/schema.gql:\ntype User {\n  id: Int!\n  namespace: String!\n  name: String!\n  groups: [Group]\n  tokens: [Token]\n}\n\ntype Token {\n  id: Int\n  owner: User\n  payload: String\n  createdAt: String\n  expireAt: String\n}\n\ntype Group {\n  id: Int\n  namespace: String\n  name: String\n  grants: [Grant]\n  members: [User]\n}\nenum GrantType {\n  MQTT\n  API\n}\n\ntype Grant {\n  id: Int\n  owner: Group\n  grant_type: GrantType!\n  permission: String!\n  resource: String\n}\n",
+        "mergedPaths": [
+          "src/types/schema.gql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Token",
+          "Group",
+          "Grant"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.gql",
+      "path": "src/types/schema.gql",
+      "sha": "6987484e4815eeac156a4d2d1b80398e1b83fe4d",
+      "url": "https://api.github.com/repositories/125649290/contents/src/types/schema.gql?ref=4b078a132d66c03ea526094ab80d17d0132b2a57",
+      "git_url": "https://api.github.com/repositories/125649290/git/blobs/6987484e4815eeac156a4d2d1b80398e1b83fe4d",
+      "html_url": "https://github.com/HamburgChimps/gorilla-auth/blob/4b078a132d66c03ea526094ab80d17d0132b2a57/src/types/schema.gql",
+      "content": "type User {\n  id: Int!\n  namespace: String!\n  name: String!\n  groups: [Group]\n  tokens: [Token]\n}\n\ntype Token {\n  id: Int\n  owner: User\n  payload: String\n  createdAt: String\n  expireAt: String\n}\n\ntype Group {\n  id: Int\n  namespace: String\n  name: String\n  grants: [Grant]\n  members: [User]\n}\nenum GrantType {\n  MQTT\n  API\n}\n\ntype Grant {\n  id: Int\n  owner: Group\n  grant_type: GrantType!\n  permission: String!\n  resource: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-17T16:39:18Z",
+    "updated_at": "2019-01-27T14:17:04Z",
+    "pushed_at": "2018-05-26T13:43:56Z",
+    "issues": 18,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

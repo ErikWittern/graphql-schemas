@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-study-01",
+  "repo_full_name": "shingidad/graphql-study-01",
+  "repo_owner": "shingidad",
+  "repo_description": "graphql 개발 공부 1",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "3a0a10249a81fc8ec7a5a0084ff6da4562aae0be",
+      "url": "https://api.github.com/repositories/140073341/contents/src/graphql/schema.graphql?ref=b48d89efa018781aa9551172c8fbbea01bafe7bf",
+      "git_url": "https://api.github.com/repositories/140073341/git/blobs/3a0a10249a81fc8ec7a5a0084ff6da4562aae0be",
+      "html_url": "https://github.com/shingidad/graphql-study-01/blob/b48d89efa018781aa9551172c8fbbea01bafe7bf/src/graphql/schema.graphql",
+      "content": "type Query {\n name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-07T10:06:45Z",
+    "updated_at": "2018-07-08T13:56:36Z",
+    "pushed_at": "2018-07-08T13:56:34Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

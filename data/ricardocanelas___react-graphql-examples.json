@@ -1,0 +1,55 @@
+{
+  "repo_name": "react-graphql-examples",
+  "repo_full_name": "ricardocanelas/react-graphql-examples",
+  "repo_owner": "ricardocanelas",
+  "repo_description": "Examples using React + GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend-01/src/graphql/schema.graphql",
+      "sha": "01019ab2b90b03f68c15cd861180b3926214f9eb",
+      "url": "https://api.github.com/repositories/158940459/contents/backend-01/src/graphql/schema.graphql?ref=b08694eb01405749c4cb653020bcb5a0d5ea82e1",
+      "git_url": "https://api.github.com/repositories/158940459/git/blobs/01019ab2b90b03f68c15cd861180b3926214f9eb",
+      "html_url": "https://github.com/ricardocanelas/react-graphql-examples/blob/b08694eb01405749c4cb653020bcb5a0d5ea82e1/backend-01/src/graphql/schema.graphql",
+      "content": "type PageInfo {\n    hasNextPage: Boolean!\n    endCursor: String!\n}\n\ntype ProductPagination {\n    totalCount: Int!\n    edges: [Product!]!\n    pageInfo: PageInfo!\n}\n\ntype Product {\n    id: String\n    name: String\n    description: String\n    image: String\n    price: Float\n}\n\ntype ProductMessage {\n    message: Product!\n}\n\ntype Query {\n    product(id: String): Product\n    products: [Product]\n    productsPagination(cursor: String, limit: Int): ProductPagination\n}\n\ntype Mutation {\n    createProduct(name: String!, description: String, image: String, price: String): Product\n    updateProduct(id: ID!, name: String, description: String, image: String, price: String): Product\n    deleteProduct(id: ID!): Product\n}\n\ntype Subscription {\n    productCreated: ProductMessage!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    },
+    {
+      "name": "schema.graphql",
+      "path": "backend-02/src/schema.graphql",
+      "sha": "004c1f408dc63077f5de490d1b9d9db703b922bb",
+      "url": "https://api.github.com/repositories/158940459/contents/backend-02/src/schema.graphql?ref=f94e6200cd4b19cfa43e6086f9a3cf5e34bc9bc3",
+      "git_url": "https://api.github.com/repositories/158940459/git/blobs/004c1f408dc63077f5de490d1b9d9db703b922bb",
+      "html_url": "https://github.com/ricardocanelas/react-graphql-examples/blob/f94e6200cd4b19cfa43e6086f9a3cf5e34bc9bc3/backend-02/src/schema.graphql",
+      "content": "type Query {\n    hello: String\n    product(id: String): Product\n    products: [Product]\n    productsPagination(cursor: String, limit: Int): ProductPagination\n}\n\ntype Mutation {\n    createProduct(name: String!, description: String, image: String, price: String): Product\n    updateProduct(id: ID!, name: String, description: String, image: String, price: String): Product\n    deleteProduct(id: ID!): Product\n}\n\ntype Subscription {\n    productCreated: ProductMessage!\n}\n\ntype ProductMessage {\n    message: Product!\n}\n\ntype PageInfo {\n    hasNextPage: Boolean!\n    endCursor: String!\n}\n\ntype ProductPagination {\n    totalCount: Int!\n    edges: [Product!]!\n    pageInfo: PageInfo!\n}\n\ntype Product {\n    id: String\n    name: String\n    description: String\n    image: String\n    price: Float\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-24T13:46:03Z",
+    "updated_at": "2019-07-15T17:48:30Z",
+    "pushed_at": "2019-07-15T17:48:28Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

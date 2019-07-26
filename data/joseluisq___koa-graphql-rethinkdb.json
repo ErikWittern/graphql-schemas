@@ -1,0 +1,41 @@
+{
+  "repo_name": "koa-graphql-rethinkdb",
+  "repo_full_name": "joseluisq/koa-graphql-rethinkdb",
+  "repo_owner": "joseluisq",
+  "repo_description": "GraphQL API Server example using Koa, Apollo GraphQL Server & RethinkDB. :rocket:",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/graphql/schema.gql",
+      "sha": "a5d9da52c8ab42f8786e20bcf12654b10027d5ec",
+      "url": "https://api.github.com/repositories/98931050/contents/src/graphql/schema.gql?ref=b307f234391cd64a4f24419cabf7a29d5783cf2d",
+      "git_url": "https://api.github.com/repositories/98931050/git/blobs/a5d9da52c8ab42f8786e20bcf12654b10027d5ec",
+      "html_url": "https://github.com/joseluisq/koa-graphql-rethinkdb/blob/b307f234391cd64a4f24419cabf7a29d5783cf2d/src/graphql/schema.gql",
+      "content": "type Author {\n  id: String!\n  firstName: String\n  lastName: String\n  posts: [Post]\n  createdAt: String\n  updatedAt: String\n}\n\ntype Post {\n  id: String!\n  title: String\n  author: Author\n  votes: Int\n  createdAt: String\n  updatedAt: String\n}\n\ntype Query {\n  author(id: String!): Author\n  authors: [Author]\n  post(id: String!): Post\n  posts: [Post]\n}\n\ntype Mutation {\n  createAuthor(firstName: String!, lastName: String!): Author\n  updateAuthor(id: String!, firstName: String!, lastName: String!): Author\n  createPost(title: String!, votes: Int!, authorId: String!): Post\n  updatePost(id: String!, title: String, votes: Int, authorId: String): Post\n  deletePost(id: String!): Post\n  deleteAuthor(id: String!): Author\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-31T21:22:25Z",
+    "updated_at": "2019-02-24T03:49:20Z",
+    "pushed_at": "2018-06-21T22:17:24Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

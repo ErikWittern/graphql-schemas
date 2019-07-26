@@ -1,0 +1,42 @@
+{
+  "repo_name": "3g-todo-fullstack",
+  "repo_full_name": "mvp-express/3g-todo-fullstack",
+  "repo_owner": "mvp-eXpress",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "core-internal/fe/gqlgen-core/schema.graphql",
+      "sha": "053f17ffce72dd4127ad4d7972d26e62f090564b",
+      "url": "https://api.github.com/repositories/169942693/contents/core-internal/fe/gqlgen-core/schema.graphql?ref=23df63d020fd6f8cb31a6b3881a5969b2f9e6bbe",
+      "git_url": "https://api.github.com/repositories/169942693/git/blobs/053f17ffce72dd4127ad4d7972d26e62f090564b",
+      "html_url": "https://github.com/mvp-eXpress/3g-todo-fullstack/blob/23df63d020fd6f8cb31a6b3881a5969b2f9e6bbe/core-internal/fe/gqlgen-core/schema.graphql",
+      "content": "type Query {\n  getCollections: [Collection]\n}\n\ntype Mutation {\n  createCollection(input: CreateCollectionInput!): Collection\n}\n\ntype Collection {\n  id: ID!\n  name: String!\n  status: Boolean!\n  host: String!\n  fieldValues: [FieldValue]\n}\n\ntype FieldValue {\n  valueType: VALUE_TYPE\n  fieldName: String\n  isUnique: Boolean\n  isIndexed: Boolean\n}\n\nenum VALUE_TYPE {\n  BOOLEAN\n  DOUBLE\n  INT32\n  INT64\n  STRING\n  TIMESTAMP\n}\n\ninput FieldValueInput {\n  valueType: VALUE_TYPE\n  fieldName: String\n  isUnique: Boolean\n  isIndexed: Boolean\n}\n\ninput CreateCollectionInput {\n  name: String!\n  host: String!\n  fieldValues: [FieldValueInput]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-10T04:26:22Z",
+    "updated_at": "2019-03-05T15:31:22Z",
+    "pushed_at": "2019-03-05T15:31:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

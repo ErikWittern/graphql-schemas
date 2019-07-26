@@ -1,0 +1,41 @@
+{
+  "repo_name": "introduction-to-graphql",
+  "repo_full_name": "estrada9166/introduction-to-graphql",
+  "repo_owner": "estrada9166",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema/schema.gql",
+      "sha": "577101009062e296c12f0cfc8d51350f38bcf85f",
+      "url": "https://api.github.com/repositories/143662477/contents/src/schema/schema.gql?ref=1f334af968cb82a66d700031b9a1a880f8e7fa03",
+      "git_url": "https://api.github.com/repositories/143662477/git/blobs/577101009062e296c12f0cfc8d51350f38bcf85f",
+      "html_url": "https://github.com/estrada9166/introduction-to-graphql/blob/1f334af968cb82a66d700031b9a1a880f8e7fa03/src/schema/schema.gql",
+      "content": "type Student {\n  id: ID!\n  email: String!\n  username: String!\n  career: Career!\n}\n\ntype Career {\n  id: ID!\n  name: String!\n  students: [Student]\n}\n\n# MUTATIONS\n# Create a new Student\ninput StudentInput {\n  email: String!\n  username: String!\n  careerId: ID!\n}\n\n# Career\ninput CareerInput {\n  name: String!\n}\n\ntype Query {\n  geAllStudents: [Student]\n  getStudentById(studentId: ID!): Student\n  getAllCareers: [Career]\n  getCareerById(careerID: ID!): Career\n}\n\ntype Mutation {\n  createStudent(input: StudentInput!): Student\n  createCareer(input: CareerInput!): Career\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-06T01:42:56Z",
+    "updated_at": "2018-08-06T23:55:48Z",
+    "pushed_at": "2018-08-06T01:56:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

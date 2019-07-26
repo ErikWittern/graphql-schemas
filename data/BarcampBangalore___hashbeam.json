@@ -1,0 +1,42 @@
+{
+  "repo_name": "hashbeam",
+  "repo_full_name": "barcampbangalore/hashbeam",
+  "repo_owner": "BarcampBangalore",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "64461cba08ba518f5c9d56ae5b8b2e397cc2c12a",
+      "url": "https://api.github.com/repositories/103949734/contents/server/src/schema.graphql?ref=211d7231cec4ab265d6dfc5838de93d02cccf7fc",
+      "git_url": "https://api.github.com/repositories/103949734/git/blobs/64461cba08ba518f5c9d56ae5b8b2e397cc2c12a",
+      "html_url": "https://github.com/BarcampBangalore/hashbeam/blob/211d7231cec4ab265d6dfc5838de93d02cccf7fc/server/src/schema.graphql",
+      "content": "type AuthResponse {\n  token: String!\n}\n\ntype Announcement {\n  id: ID!\n  timestampISO8601: String!\n  message: String!\n}\n\ntype Tweet {\n  tweetId: ID!\n  authorId: String!\n  timestampISO8601: String!\n  reviewRequired: Boolean!\n  originalTweetJson: String!\n}\n\ntype Query {\n  announcements: [Announcement!]!\n  tweetsToDisplay: [Tweet!]!\n  tweetToReview: Tweet\n}\n\ntype Mutation {\n  authenticate(username: String!, password: String!): AuthResponse!\n  subscribeToNotifications(fcmToken: String!): Boolean!\n  makeAnnouncement(message: String!): Announcement!\n  whitelistTweeter(twitterAuthorID: String!): Boolean!\n  muteTweeter(twitterAuthorID: String!): Boolean!\n}\n\ntype Subscription {\n  newAnnouncement: Announcement!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-18T14:28:39Z",
+    "updated_at": "2019-02-01T07:25:44Z",
+    "pushed_at": "2019-02-01T07:25:42Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

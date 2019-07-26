@@ -1,0 +1,56 @@
+{
+  "repo_name": "PhoneFly",
+  "repo_full_name": "juresotosek/phonefly",
+  "repo_owner": "JureSotosek",
+  "repo_description": "A Facebook Instant throwing game",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "webhook/src/generated/schema.graphql",
+      "sha": "087e86c6a3b61b53ebaeda0b50147342b3049780",
+      "url": "https://api.github.com/repositories/164919803/contents/webhook/src/generated/schema.graphql?ref=3e79105f9d9293f5043630bfee9a802c64e0cd27",
+      "git_url": "https://api.github.com/repositories/164919803/git/blobs/087e86c6a3b61b53ebaeda0b50147342b3049780",
+      "html_url": "https://github.com/JureSotosek/PhoneFly/blob/3e79105f9d9293f5043630bfee9a802c64e0cd27/webhook/src/generated/schema.graphql",
+      "content": "# source: http://localhost:4000\n# timestamp: Wed Nov 14 2018 16:26:12 GMT+0100 (CET)\n\ntype Channel {\n  id: ID!\n  slackId: String!\n  workspace: Workspace!\n  competition: CompetitionConfig\n  engagement: EngagementConfig\n  kudos: [Kudo!]!\n}\n\ntype ChannelStatsPayload {\n  kudosExchanged: Int!\n  mostKudosReceivedBy: [MemberWithCount!]!\n  mostKudosSentBy: [MemberWithCount!]!\n  timePeriod: TimePeriod!\n}\n\ntype CompetitionConfig {\n  id: ID!\n  channel: Channel!\n  startedAt: String!\n  endsAt: String!\n  timePeriod: TimePeriod!\n}\n\ntype EngagementConfig {\n  id: ID!\n  channel: Channel!\n  timePeriod: TimePeriod!\n}\n\ntype Kudo {\n  id: ID!\n  workspace: Workspace!\n  channel: Channel!\n  sentBy: Member!\n  receivedBy: Member!\n}\n\ntype LeaderboardPayload {\n  mostKudosReceivedBy: [MemberWithCount!]!\n  mostKudosSentBy: [MemberWithCount!]!\n  competitionConfig: CompetitionConfig!\n}\n\ntype Member {\n  id: ID!\n  slackId: String!\n  workspace: Workspace!\n  kudosSent: [Kudo!]!\n  kudosReceived: [Kudo!]!\n}\n\ntype MemberStatsPayload {\n  kudosExchanged: Int!\n  kudosSent: Int!\n  kudosReceived: Int!\n  mostKudosReceivedFrom: [MemberWithCount!]!\n  mostKudosSentTo: [MemberWithCount!]!\n  timePeriod: TimePeriod!\n}\n\ntype MemberWithCount {\n  member: Member!\n  count: Int!\n}\n\ntype Mutation {\n  giveKudo(senderId: String!, recepientId: String!, channelId: String!, workspaceId: String!): Kudo!\n  startCompetition(channelId: String!, memberId: String!, workspaceId: String!, timePeriod: TimePeriod!): Boolean!\n  toggleEngagement(channelId: String!, memberId: String!, workspaceId: String): Boolean!\n}\n\ntype Query {\n  kudo(id: ID!): Kudo\n  leaderboard(channelId: String!): LeaderboardPayload\n  channelStats(channelId: String!, timePeriod: TimePeriod!): ChannelStatsPayload\n  memberStats(memberId: String!, timePeriod: TimePeriod!): MemberStatsPayload\n}\n\nenum TimePeriod {\n  DAY\n  WEEK\n  MONTH\n  HALF_YEAR\n  YEAR\n  ALL_TIME\n}\n\ntype Workspace {\n  id: ID!\n  slackId: String!\n  channels: [Channel!]!\n  members: [Member!]!\n  kudos: [Kudo!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": true,
+      "numDefinitions": 13
+    },
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "17a5e7807bc26d297e1ca0b65e05a0933463fb5f",
+      "url": "https://api.github.com/repositories/164919803/contents/server/src/schema.graphql?ref=930290ff2300e6ba871ddc30420e488345c50bf9",
+      "git_url": "https://api.github.com/repositories/164919803/git/blobs/17a5e7807bc26d297e1ca0b65e05a0933463fb5f",
+      "html_url": "https://github.com/JureSotosek/PhoneFly/blob/930290ff2300e6ba871ddc30420e488345c50bf9/server/src/schema.graphql",
+      "content": "type Query {\n  pendingChallenges(signature: String!): [Challenge!]!\n}\n\ntype Mutation {\n  sendChallenge(\n    receiverId: String!\n    score: Float!\n    signature: String!\n  ): Challenge!\n  answerChallenge(\n    challengeId: String!\n    score: Float!\n    signature: String!\n  ): Challenge!\n}\n\ntype Challenge {\n  id: ID!\n\n  score: Float!\n  challengeSender: Player\n  challengeReceivers: [Player!]!\n  answered: Boolean!\n}\n\ntype Player {\n  id: ID!\n\n  FacebookID: String!\n  highScore: Float\n  sentChallenges: [Challenge!]!\n  pendingChallenges: [Challenge!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-09T18:53:38Z",
+    "updated_at": "2019-05-06T18:20:15Z",
+    "pushed_at": "2019-06-30T18:35:31Z",
+    "issues": 3,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

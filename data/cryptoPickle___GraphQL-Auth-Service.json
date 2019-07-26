@@ -1,0 +1,120 @@
+{
+  "repo_name": "GraphQL-Auth-Service",
+  "repo_full_name": "cryptopickle/graphql-auth-service",
+  "repo_owner": "cryptoPickle",
+  "repo_description": "An GraphQL Auth Microservice",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "queries.graphql",
+      "path": "dist/queries.graphql",
+      "sha": "a5e502bebdce9155ee8b4e347e550ba74c6dfffd",
+      "url": "https://api.github.com/repositories/143497427/contents/dist/queries.graphql?ref=11b3925fd33ad01040be15ebbbdf281be75b6e03",
+      "git_url": "https://api.github.com/repositories/143497427/git/blobs/a5e502bebdce9155ee8b4e347e550ba74c6dfffd",
+      "html_url": "https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/dist/queries.graphql",
+      "content": "type Query {\n  getUserById(id: ID!) : User!\n  getTokens: Token!\n  getProfile: User!\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/dist/queries.graphql:\ntype Query {\n  getUserById(id: ID!) : User!\n  getTokens: Token!\n  getProfile: User!\n}\n# https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/ffd2beb4b467058f21c3efdb2dbfe87d51b4174c/dist/user.schema.graphql:\nenum Gender {\n  male\n  female\n  other\n}\n\ntype User {\n  id: ID!\n  email: String!\n  password: String\n  name: String!\n  surname: String!\n  age: Int\n  birthday: String\n  gender: Gender\n  google_profile_id: String\n  google_verified: Boolean\n  facebook_profile_id: String\n  facebook_verified: Boolean\n  isCompleted: Boolean\n  email_verified: Boolean\n  isFrozen: Boolean\n  created_at: String\n  updated_at: String\n  delete_at: String\n}\n\n\n# https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/dist/token.schema.graphql:\ntype Token {\n  id: ID!\n  user_id: ID!\n  google_access_token: String\n  facebook_access_token: String\n  jwt_refresh_token: String\n  jwt_access_token: String\n  created_at: String\n  updated_at: String\n}\n\n\n",
+        "mergedPaths": [
+          "dist/user.schema.graphql",
+          "dist/token.schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Token"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "token.schema.graphql",
+      "path": "dist/token.schema.graphql",
+      "sha": "e36055c770415c34b51e9e576dc621ac860794f8",
+      "url": "https://api.github.com/repositories/143497427/contents/dist/token.schema.graphql?ref=11b3925fd33ad01040be15ebbbdf281be75b6e03",
+      "git_url": "https://api.github.com/repositories/143497427/git/blobs/e36055c770415c34b51e9e576dc621ac860794f8",
+      "html_url": "https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/dist/token.schema.graphql",
+      "content": "type Token {\n  id: ID!\n  user_id: ID!\n  google_access_token: String\n  facebook_access_token: String\n  jwt_refresh_token: String\n  jwt_access_token: String\n  created_at: String\n  updated_at: String\n}\n\n\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "user.schema.graphql",
+      "path": "dist/user.schema.graphql",
+      "sha": "cd6b9f66a808135bed9342f8eced9833ffbc04f3",
+      "url": "https://api.github.com/repositories/143497427/contents/dist/user.schema.graphql?ref=ffd2beb4b467058f21c3efdb2dbfe87d51b4174c",
+      "git_url": "https://api.github.com/repositories/143497427/git/blobs/cd6b9f66a808135bed9342f8eced9833ffbc04f3",
+      "html_url": "https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/ffd2beb4b467058f21c3efdb2dbfe87d51b4174c/dist/user.schema.graphql",
+      "content": "enum Gender {\n  male\n  female\n  other\n}\n\ntype User {\n  id: ID!\n  email: String!\n  password: String\n  name: String!\n  surname: String!\n  age: Int\n  birthday: String\n  gender: Gender\n  google_profile_id: String\n  google_verified: Boolean\n  facebook_profile_id: String\n  facebook_verified: Boolean\n  isCompleted: Boolean\n  email_verified: Boolean\n  isFrozen: Boolean\n  created_at: String\n  updated_at: String\n  delete_at: String\n}\n\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "queries.graphql",
+      "path": "src/graphql/Queries/queries.graphql",
+      "sha": "a5e502bebdce9155ee8b4e347e550ba74c6dfffd",
+      "url": "https://api.github.com/repositories/143497427/contents/src/graphql/Queries/queries.graphql?ref=11b3925fd33ad01040be15ebbbdf281be75b6e03",
+      "git_url": "https://api.github.com/repositories/143497427/git/blobs/a5e502bebdce9155ee8b4e347e550ba74c6dfffd",
+      "html_url": "https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/src/graphql/Queries/queries.graphql",
+      "content": "type Query {\n  getUserById(id: ID!) : User!\n  getTokens: Token!\n  getProfile: User!\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/src/graphql/Queries/queries.graphql:\ntype Query {\n  getUserById(id: ID!) : User!\n  getTokens: Token!\n  getProfile: User!\n}\n# https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/src/graphql/User/user.schema.graphql:\nenum Gender {\n  male\n  female\n  other\n}\n\ntype User {\n  id: ID!\n  email: String!\n  password: String\n  name: String!\n  surname: String!\n  age: Int\n  birthday: String\n  gender: Gender\n  google_profile_id: String\n  google_verified: Boolean\n  facebook_profile_id: String\n  facebook_verified: Boolean\n  isCompleted: Boolean\n  email_verified: Boolean\n  isFrozen: Boolean\n  created_at: String\n  updated_at: String\n  delete_at: String\n}\n\n\n# https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/dist/token.schema.graphql:\ntype Token {\n  id: ID!\n  user_id: ID!\n  google_access_token: String\n  facebook_access_token: String\n  jwt_refresh_token: String\n  jwt_access_token: String\n  created_at: String\n  updated_at: String\n}\n\n\n",
+        "mergedPaths": [
+          "src/graphql/User/user.schema.graphql",
+          "dist/token.schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Token"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "user.schema.graphql",
+      "path": "src/graphql/User/user.schema.graphql",
+      "sha": "cd6b9f66a808135bed9342f8eced9833ffbc04f3",
+      "url": "https://api.github.com/repositories/143497427/contents/src/graphql/User/user.schema.graphql?ref=11b3925fd33ad01040be15ebbbdf281be75b6e03",
+      "git_url": "https://api.github.com/repositories/143497427/git/blobs/cd6b9f66a808135bed9342f8eced9833ffbc04f3",
+      "html_url": "https://github.com/cryptoPickle/GraphQL-Auth-Service/blob/11b3925fd33ad01040be15ebbbdf281be75b6e03/src/graphql/User/user.schema.graphql",
+      "content": "enum Gender {\n  male\n  female\n  other\n}\n\ntype User {\n  id: ID!\n  email: String!\n  password: String\n  name: String!\n  surname: String!\n  age: Int\n  birthday: String\n  gender: Gender\n  google_profile_id: String\n  google_verified: Boolean\n  facebook_profile_id: String\n  facebook_verified: Boolean\n  isCompleted: Boolean\n  email_verified: Boolean\n  isFrozen: Boolean\n  created_at: String\n  updated_at: String\n  delete_at: String\n}\n\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-04T04:25:45Z",
+    "updated_at": "2018-08-21T01:47:30Z",
+    "pushed_at": "2018-08-21T01:47:28Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

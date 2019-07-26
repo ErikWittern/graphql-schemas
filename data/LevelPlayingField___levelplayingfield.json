@@ -1,0 +1,41 @@
+{
+  "repo_name": "levelplayingfield",
+  "repo_full_name": "levelplayingfield/levelplayingfield",
+  "repo_owner": "LevelPlayingField",
+  "repo_description": "The core site. Built in NodeJS with React, Seqeulize, and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema.graphql",
+      "sha": "b6936a7216d912264a63415e4ae9207b2ff2f420",
+      "url": "https://api.github.com/repositories/73237674/contents/src/data/schema.graphql?ref=a56647f27bef2e2d3c1119762dd144cd4bf04251",
+      "git_url": "https://api.github.com/repositories/73237674/git/blobs/b6936a7216d912264a63415e4ae9207b2ff2f420",
+      "html_url": "https://github.com/LevelPlayingField/levelplayingfield/blob/a56647f27bef2e2d3c1119762dd144cd4bf04251/src/data/schema.graphql",
+      "content": "# A connection to a list of items.\ntype attorneysConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [attorneysEdge]\n  total: Int\n}\n\nenum attorneysConnectionOrder {\n  ID\n}\n\n# An edge in a connection.\ntype attorneysEdge {\n  # The item at the end of the edge\n  node: Party\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Case {\n  id: String!\n  case_id: Int\n  import_date: String\n  unique_value: String\n  case_number: String\n  arbitration_board: String\n  initiating_party: String\n  source_of_authority: String\n  dispute_type: String\n  dispute_subtype: String\n  salary_range: String\n  prevailing_party: String\n  filing_date: String\n  close_date: String\n  type_of_disposition: String\n  claim_amount_business: String\n  fee_allocation_business: String\n  fees_business: String\n  award_amount_business: Int\n  attorney_fees_business: Int\n  other_relief_business: String\n  claim_amount_consumer: String\n  fee_allocation_consumer: String\n  fees_consumer: String\n  award_amount_consumer: Int\n  attorney_fees_consumer: Int\n  other_relief_consumer: String\n  consumer_rep_state: String\n  consumer_self_represented: Boolean\n  document_only_proceeding: Boolean\n  type_of_hearing: String\n  hearing_addr1: String\n  hearing_addr2: String\n  hearing_city: String\n  hearing_state: String\n  hearing_zip: String\n  arb_count: Int\n  med_count: Int\n  arb_or_cca_count: Int\n  adr_process: String\n  created_at: String!\n  updated_at: String!\n  Parties(after: String, first: Int, before: String, last: Int, orderBy: [casePartyConnectionOrder]): casePartyConnection\n}\n\ntype CaseParty {\n  type: String\n  case_id: String!\n  party_id: Int!\n  firm_id: Int\n  party_name: String\n  firm_name: String\n  party_slug: String\n  firm_slug: String\n  date: String\n  fees: Int\n  created_at: String!\n  updated_at: String!\n  Case: Case\n  Party: Party\n  Firm: Party\n}\n\n# A connection to a list of items.\ntype casePartyConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [casePartyEdge]\n  total: Int\n}\n\nenum casePartyConnectionOrder {\n  ID\n}\n\n# An edge in a connection.\ntype casePartyEdge {\n  # The item at the end of the edge\n  node: CaseParty\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# A connection to a list of items.\ntype casesConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [casesEdge]\n  total: Int\n}\n\nenum casesConnectionOrder {\n  ID\n}\n\n# An edge in a connection.\ntype casesEdge {\n  # The item at the end of the edge\n  node: CaseParty\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# A connection to a list of items.\ntype firmCasesConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [firmCasesEdge]\n  total: Int\n}\n\nenum firmCasesConnectionOrder {\n  ID\n}\n\n# An edge in a connection.\ntype firmCasesEdge {\n  # The item at the end of the edge\n  node: CaseParty\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# A connection to a list of items.\ntype firmsConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [firmsEdge]\n  total: Int\n}\n\nenum firmsConnectionOrder {\n  ID\n}\n\n# An edge in a connection.\ntype firmsEdge {\n  # The item at the end of the edge\n  node: Party\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# The `JSON` scalar type represents raw JSON as values.\nscalar JSON\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Party {\n  id: Int!\n  type: String\n  name: String\n  slug: String\n  aggregate_data: JSON\n  created_at: String!\n  updated_at: String!\n  Cases(after: String, first: Int, before: String, last: Int, orderBy: [casesConnectionOrder]): casesConnection\n  FirmCases(after: String, first: Int, before: String, last: Int, orderBy: [firmCasesConnectionOrder]): firmCasesConnection\n  Attorneys(after: String, first: Int, before: String, last: Int, orderBy: [attorneysConnectionOrder]): attorneysConnection\n  Firms(after: String, first: Int, before: String, last: Int, orderBy: [firmsConnectionOrder]): firmsConnection\n}\n\ntype Query {\n  Summary(name: String!): Summary\n  Search(query: String!): Search\n  Cases(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [Case]\n  Parties(\n    limit: Int\n    order: String\n\n    # A JSON object conforming the the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\n    where: JSON\n    offset: Int\n  ): [Party]\n  Case(case_id: ID!): Case\n  Party(id: ID, slug: String): Party\n}\n\ntype ResultEdge {\n  cursor: String\n  node: ResultNode\n}\n\ntype ResultNode {\n  type: String!\n  id: Int!\n  slug: String\n  document: JSON\n  vector: String\n  index: String\n}\n\ntype Results {\n  total: Int\n  page: Int\n  pages: Int\n  perPage: Int\n  hasPrevPage: Boolean\n  hasNextPage: Boolean\n  edges: [ResultEdge]\n}\n\ntype Search {\n  query: String\n  Results(page: Int = 1, perPage: Int = 20, sortBy: String, sortDir: SortDir = ASC): Results\n}\n\nenum SortDir {\n  ASC\n  DESC\n}\n\ntype Summary {\n  name: String!\n  data: JSON\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 20,
+      "containsCycle": true,
+      "numDefinitions": 27
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-11-08T23:57:07Z",
+    "updated_at": "2019-06-21T17:35:25Z",
+    "pushed_at": "2019-06-21T17:35:23Z",
+    "issues": 8,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

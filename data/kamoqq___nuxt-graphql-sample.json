@@ -1,0 +1,42 @@
+{
+  "repo_name": "nuxt-graphql-sample",
+  "repo_full_name": "kamoqq/nuxt-graphql-sample",
+  "repo_owner": "kamoqq",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/graphql/schema.graphql",
+      "sha": "d6274fed37abca3dbbb66f7b7d35826ae17d6780",
+      "url": "https://api.github.com/repositories/183879749/contents/server/graphql/schema.graphql?ref=afb339e362e27946d1b3a43e8cbf72bd8e1d1413",
+      "git_url": "https://api.github.com/repositories/183879749/git/blobs/d6274fed37abca3dbbb66f7b7d35826ae17d6780",
+      "html_url": "https://github.com/kamoqq/nuxt-graphql-sample/blob/afb339e362e27946d1b3a43e8cbf72bd8e1d1413/server/graphql/schema.graphql",
+      "content": "type Query {\n  releases(org: String!, repo: String!): Releases!\n  tags(org: String!, repo: String!): Tags!\n}\n\ntype Releases {\n  title: String!\n  link: String!\n  items: [Item]!\n}\n\ntype Tags {\n  title: String!\n  link: String!\n  items: [Item]!\n}\n\ntype Item {\n  title: String!\n  link: String!\n  pubDate: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-28T08:29:45Z",
+    "updated_at": "2019-05-03T21:11:30Z",
+    "pushed_at": "2019-04-28T13:11:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

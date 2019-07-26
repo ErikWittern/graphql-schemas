@@ -1,0 +1,41 @@
+{
+  "repo_name": "store-supply-tracker",
+  "repo_full_name": "mario-jerkovic/store-supply-tracker",
+  "repo_owner": "mario-jerkovic",
+  "repo_description": "Simple React, Relay and GraphQL Application",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "667604637ab8e285d4ded2a8231b3ebc7912e243",
+      "url": "https://api.github.com/repositories/69028263/contents/server/data/schema.graphql?ref=3da138323d3b5aec0bf78f881e9b6635d43ede32",
+      "git_url": "https://api.github.com/repositories/69028263/git/blobs/667604637ab8e285d4ded2a8231b3ebc7912e243",
+      "html_url": "https://github.com/mario-jerkovic/store-supply-tracker/blob/3da138323d3b5aec0bf78f881e9b6635d43ede32/server/data/schema.graphql",
+      "content": "# Single article\ntype article implements Node {\n  id: ID!\n  articleId: Int!\n  name: String!\n  quantity: Int!\n  receiptArticle: [receiptArticle]\n  created: String!\n  updated: String\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: Viewer\n}\n\n# Single receipt\ntype receipt implements Node {\n  id: ID!\n  receiptId: Int!\n  number: String!\n  total: Int!\n  receiptArticle: [receiptArticle]\n  receiptArticleConnection(after: String, first: Int): receiptArticleConnection\n  created: String!\n  updated: String\n}\n\n# Mapping between receipt and article type\ntype receiptArticle implements Node {\n  id: ID!\n  receiptId: Int!\n  articleId: Int!\n  receipt: receipt\n  article: article\n}\n\n# A connection to a list of items.\ntype receiptArticleConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [receiptArticleEdge]\n}\n\n# An edge in a connection.\ntype receiptArticleEdge {\n  # The item at the end of the edge\n  node: receiptArticle\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Viewer implements Node {\n  # The ID of an object\n  id: ID!\n  personId: String\n  token: String\n  receipt(id: ID!): receipt\n  article(id: ID!): article\n  receiptArticle(id: ID!): receiptArticle\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-23T13:40:29Z",
+    "updated_at": "2016-12-21T20:41:17Z",
+    "pushed_at": "2017-01-10T06:35:06Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

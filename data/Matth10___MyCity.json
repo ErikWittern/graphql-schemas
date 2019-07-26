@@ -1,0 +1,42 @@
+{
+  "repo_name": "MyCity",
+  "repo_full_name": "matth10/mycity",
+  "repo_owner": "Matth10",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "Backend/Api/graphql/schema.graphql",
+      "sha": "af4953b195e580d0ebf0cf4bd2c140fcb3aabfa0",
+      "url": "https://api.github.com/repositories/161315821/contents/Backend/Api/graphql/schema.graphql?ref=6214ecfee45772327040cbfd7f1ce547e79f08d6",
+      "git_url": "https://api.github.com/repositories/161315821/git/blobs/af4953b195e580d0ebf0cf4bd2c140fcb3aabfa0",
+      "html_url": "https://github.com/Matth10/MyCity/blob/6214ecfee45772327040cbfd7f1ce547e79f08d6/Backend/Api/graphql/schema.graphql",
+      "content": "type Event {\n  _id: ID!\n  nom: String\n  image: String\n  informations: String\n  description: String\n  nbpersonnes: Int\n  organisateur: String\n  date: String\n  participants: [String]\n}\n\ntype Query {\n  events: [Event]\n  event(_id: ID!): Event\n}\n\ntype Mutation {\n  createEvent(\n    nom: String\n    image: String\n    informations: String\n    description: String\n    nbpersonnes: Int\n    organisateur: String\n    date: String\n    participants: [String]\n  ): Event!\n\n  updateEvent(\n    _id: ID!\n    nom: String\n    image: String\n    informations: String\n    description: String\n    nbpersonnes: Int\n    organisateur: String\n    date: String\n    participants: [String]\n  ): Event!\n\n  addParticipant(_id_event: ID, username: String): Event!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-11T10:18:39Z",
+    "updated_at": "2019-02-06T22:40:48Z",
+    "pushed_at": "2019-01-29T10:25:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "bsd-3-clause",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

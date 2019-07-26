@@ -1,0 +1,42 @@
+{
+  "repo_name": "babel-plugin-import-graphql",
+  "repo_full_name": "detrohutt/babel-plugin-import-graphql",
+  "repo_owner": "detrohutt",
+  "repo_description": "Enables import syntax for .graphql and .gql files",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "tests/fixtures/shared/schema.graphql",
+      "sha": "883690ffc816d38d05b524953a40a3225ff101d5",
+      "url": "https://api.github.com/repositories/90192988/contents/tests/fixtures/shared/schema.graphql?ref=2ac816b4acbc4ada238c95f3dcad2210e2219860",
+      "git_url": "https://api.github.com/repositories/90192988/git/blobs/883690ffc816d38d05b524953a40a3225ff101d5",
+      "html_url": "https://github.com/detrohutt/babel-plugin-import-graphql/blob/2ac816b4acbc4ada238c95f3dcad2210e2219860/tests/fixtures/shared/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Query {\n  test: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-03T21:00:01Z",
+    "updated_at": "2019-07-18T15:16:50Z",
+    "pushed_at": "2019-03-03T19:14:46Z",
+    "issues": 44,
+    "watchers": 3,
+    "fork_count": 17,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 12,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 4,
+    "pull_requests_merged": 8,
+    "releases": 12,
+    "stargazers": 218
+  }
+}

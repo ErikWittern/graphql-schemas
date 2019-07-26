@@ -1,0 +1,39 @@
+{
+  "repo_name": "relay-fullstack",
+  "repo_full_name": "lvarayut/relay-fullstack",
+  "repo_owner": "lvarayut",
+  "repo_description": ":point_up::running: Modern Relay Starter Kit - Integrated with Relay, GraphQL, Express, ES6/ES7, JSX, Webpack, Babel, Material Design Lite, and PostCSS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "5c5c0d9c3e1c7c430119abc150000ca0cde6727a",
+      "url": "https://api.github.com/repositories/51304999/contents/server/data/schema.graphql?ref=904d83e8036961ca16dc7e83cc21e4fa1aa4056a",
+      "git_url": "https://api.github.com/repositories/51304999/git/blobs/5c5c0d9c3e1c7c430119abc150000ca0cde6727a",
+      "html_url": "https://github.com/lvarayut/relay-fullstack/blob/904d83e8036961ca16dc7e83cc21e4fa1aa4056a/server/data/schema.graphql",
+      "content": "input AddFeatureInput {\n  name: String!\n  description: String!\n  url: String!\n  clientMutationId: String\n}\n\ntype AddFeaturePayload {\n  featureEdge: FeatureEdge\n  viewer: User\n  clientMutationId: String\n}\n\n# Feature integrated in our starter kit\ntype Feature implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Name of the feature\n  name: String\n\n  # Description of the feature\n  description: String\n\n  # Url of the feature\n  url: String\n}\n\n# A connection to a list of items.\ntype FeatureConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [FeatureEdge]\n}\n\n# An edge in a connection.\ntype FeatureEdge {\n  # The item at the end of the edge\n  node: Feature\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Mutation {\n  addFeature(input: AddFeatureInput!): AddFeaturePayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: User\n}\n\n# A person who uses our app\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Features that I have\n  features(after: String, first: Int, before: String, last: Int): FeatureConnection\n\n  # Users's username\n  username: String\n\n  # User's website\n  website: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-02-08T15:11:00Z",
+    "updated_at": "2019-07-17T17:51:15Z",
+    "pushed_at": "2017-11-25T13:04:27Z",
+    "issues": 63,
+    "watchers": 35,
+    "fork_count": 139,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 46,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 9,
+    "pull_requests_merged": 36,
+    "releases": 2,
+    "stargazers": 967
+  }
+}

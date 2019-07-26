@@ -1,0 +1,66 @@
+{
+  "repo_name": "form-data-mongo",
+  "repo_full_name": "worldofcode22/form-data-mongo",
+  "repo_owner": "WorldOfCode22",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "graphql/query.graphql",
+      "sha": "795febeea2fee8f19b6ed2039380e412b73f89d2",
+      "url": "https://api.github.com/repositories/141385619/contents/graphql/query.graphql?ref=f7b341f2bd56b5d58e7693bb7dfc3e4a12eec5f5",
+      "git_url": "https://api.github.com/repositories/141385619/git/blobs/795febeea2fee8f19b6ed2039380e412b73f89d2",
+      "html_url": "https://github.com/WorldOfCode22/form-data-mongo/blob/f7b341f2bd56b5d58e7693bb7dfc3e4a12eec5f5/graphql/query.graphql",
+      "content": "# import * from './chingu-application-form/chingu-application-form.graphql'\ntype Query {\n  getChinguApplicationForm(userId: Int): ChinguApplicationForm\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/WorldOfCode22/form-data-mongo/blob/f7b341f2bd56b5d58e7693bb7dfc3e4a12eec5f5/graphql/query.graphql:\n# import * from './chingu-application-form/chingu-application-form.graphql'\ntype Query {\n  getChinguApplicationForm(userId: Int): ChinguApplicationForm\n}\n# https://github.com/WorldOfCode22/form-data-mongo/blob/cf399f62077ac4ef3193279eabbfb68fe72324a2/graphql/chingu-application-form/chingu-application-form.graphql:\ntype ChinguApplicationForm {\n  excitingAboutChingu: [String],\n  valueOfChinguToUser: String\n}",
+        "mergedPaths": [
+          "graphql/chingu-application-form/chingu-application-form.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "ChinguApplicationForm"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "chingu-application-form.graphql",
+      "path": "graphql/chingu-application-form/chingu-application-form.graphql",
+      "sha": "90904835d06dc3803c65f19b353a01bd6f2ce7c6",
+      "url": "https://api.github.com/repositories/141385619/contents/graphql/chingu-application-form/chingu-application-form.graphql?ref=cf399f62077ac4ef3193279eabbfb68fe72324a2",
+      "git_url": "https://api.github.com/repositories/141385619/git/blobs/90904835d06dc3803c65f19b353a01bd6f2ce7c6",
+      "html_url": "https://github.com/WorldOfCode22/form-data-mongo/blob/cf399f62077ac4ef3193279eabbfb68fe72324a2/graphql/chingu-application-form/chingu-application-form.graphql",
+      "content": "type ChinguApplicationForm {\n  excitingAboutChingu: [String],\n  valueOfChinguToUser: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-18T05:34:39Z",
+    "updated_at": "2018-07-18T22:40:30Z",
+    "pushed_at": "2018-07-18T22:40:29Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-binding-openapi",
+  "repo_full_name": "graphql-binding/graphql-binding-openapi",
+  "repo_owner": "graphql-binding",
+  "repo_description": "GraphQL binding implementation for OpenAPI/Swagger endpoints",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "petstore.graphql",
+      "path": "example/petstore.graphql",
+      "sha": "7d59c0bcc659d06c84f48517af071c402e220c8c",
+      "url": "https://api.github.com/repositories/118899263/contents/example/petstore.graphql?ref=77b38b4b479e1dc82e123418f3bd10f3b6fc4065",
+      "git_url": "https://api.github.com/repositories/118899263/git/blobs/7d59c0bcc659d06c84f48517af071c402e220c8c",
+      "html_url": "https://github.com/graphql-binding/graphql-binding-openapi/blob/77b38b4b479e1dc82e123418f3bd10f3b6fc4065/example/petstore.graphql",
+      "content": "# source: \n# timestamp: Mon Jan 29 2018 16:16:30 GMT+0100 (W. Europe Standard Time)\n\ntype addPet {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype createUser {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype createUsersWithArrayInput {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype createUsersWithListInput {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype deleteOrder {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype deletePet {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype deleteUser {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype findPetsByStatus_items {\n  id: String\n  category: findPetsByStatus_items_category\n  name: String\n  photoUrls: [String]\n  tags: [findPetsByStatus_items_tags_items]\n\n  \"\"\"pet status in the store\"\"\"\n  status: String\n}\n\ntype findPetsByStatus_items_category {\n  id: String\n  name: String\n}\n\ntype findPetsByStatus_items_tags_items {\n  id: String\n  name: String\n}\n\ntype findPetsByTags_items {\n  id: String\n  category: findPetsByTags_items_category\n  name: String\n  photoUrls: [String]\n  tags: [findPetsByTags_items_tags_items]\n\n  \"\"\"pet status in the store\"\"\"\n  status: String\n}\n\ntype findPetsByTags_items_category {\n  id: String\n  name: String\n}\n\ntype findPetsByTags_items_tags_items {\n  id: String\n  name: String\n}\n\ntype getInventory {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype getOrderById {\n  id: String\n  petId: String\n  quantity: Int\n  shipDate: String\n\n  \"\"\"Order Status\"\"\"\n  status: String\n  complete: Boolean\n}\n\ntype getPetById {\n  id: String\n  category: getPetById_category\n  name: String\n  photoUrls: [String]\n  tags: [getPetById_tags_items]\n\n  \"\"\"pet status in the store\"\"\"\n  status: String\n}\n\ntype getPetById_category {\n  id: String\n  name: String\n}\n\ntype getPetById_tags_items {\n  id: String\n  name: String\n}\n\ntype getUserByName {\n  id: String\n  username: String\n  firstName: String\n  lastName: String\n  email: String\n  password: String\n  phone: String\n\n  \"\"\"User Status\"\"\"\n  userStatus: Int\n}\n\ntype loginUser {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype logoutUser {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype Mutation {\n  addPet(body: param_addPet_body): addPet\n  updatePet(body: param_updatePet_body): updatePet\n  updatePetWithForm(petId: String, name: String, status: String): updatePetWithForm\n  deletePet(api_key: String, petId: String): deletePet\n  placeOrder(body: param_placeOrder_body): placeOrder\n\n  \"\"\"\n  For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors\n  \"\"\"\n  deleteOrder(orderId: String): deleteOrder\n\n  \"\"\"This can only be done by the logged in user.\"\"\"\n  createUser(body: param_createUser_body): createUser\n  createUsersWithArrayInput(body: param_createUsersWithArrayInput_body): createUsersWithArrayInput\n  createUsersWithListInput(body: param_createUsersWithListInput_body): createUsersWithListInput\n\n  \"\"\"This can only be done by the logged in user.\"\"\"\n  updateUser(username: String, body: param_updateUser_body): updateUser\n\n  \"\"\"This can only be done by the logged in user.\"\"\"\n  deleteUser(username: String): deleteUser\n}\n\n\"\"\"Pet object that needs to be added to the store\"\"\"\ninput param_addPet_body {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\n\"\"\"Created user object\"\"\"\ninput param_createUser_body {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\n\"\"\"List of user object\"\"\"\ninput param_createUsersWithArrayInput_body {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\n\"\"\"List of user object\"\"\"\ninput param_createUsersWithListInput_body {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\n\"\"\"order placed for purchasing the pet\"\"\"\ninput param_placeOrder_body {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\n\"\"\"Pet object that needs to be added to the store\"\"\"\ninput param_updatePet_body {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\n\"\"\"Updated user object\"\"\"\ninput param_updateUser_body {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype placeOrder {\n  id: String\n  petId: String\n  quantity: Int\n  shipDate: String\n\n  \"\"\"Order Status\"\"\"\n  status: String\n  complete: Boolean\n}\n\ntype Query {\n  \"\"\"Multiple status values can be provided with comma separated strings\"\"\"\n  findPetsByStatus(status: [String]): [findPetsByStatus_items]\n\n  \"\"\"\n  Muliple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.\n  \"\"\"\n  findPetsByTags(tags: [String]): [findPetsByTags_items]\n\n  \"\"\"Returns a single pet\"\"\"\n  getPetById(petId: String): getPetById\n\n  \"\"\"Returns a map of status codes to quantities\"\"\"\n  getInventory: getInventory\n\n  \"\"\"\n  For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions\n  \"\"\"\n  getOrderById(orderId: String): getOrderById\n  loginUser(username: String, password: String): loginUser\n  logoutUser: logoutUser\n  getUserByName(username: String): getUserByName\n}\n\ntype updatePet {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype updatePetWithForm {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n\ntype updateUser {\n  \"\"\"default field\"\"\"\n  empty: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 27,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 34
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-25T10:32:36Z",
+    "updated_at": "2019-07-07T17:54:26Z",
+    "pushed_at": "2019-07-13T04:53:47Z",
+    "issues": 4,
+    "watchers": 7,
+    "fork_count": 7,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 17,
+    "pull_requests_open": 9,
+    "pull_requests_closed": 5,
+    "pull_requests_merged": 3,
+    "releases": 6,
+    "stargazers": 109
+  }
+}

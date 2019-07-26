@@ -1,0 +1,92 @@
+{
+  "repo_name": "liszt",
+  "repo_full_name": "liszt-code/liszt",
+  "repo_owner": "liszt-code",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.gql",
+      "path": "assets/schema/root.gql",
+      "sha": "61ed3846875b3f3aa78728da6460b5ed80af417b",
+      "url": "https://api.github.com/repositories/90604667/contents/assets/schema/root.gql?ref=2d2b7852589e5fbf6fe2afd6fc6ad941558bca85",
+      "git_url": "https://api.github.com/repositories/90604667/git/blobs/61ed3846875b3f3aa78728da6460b5ed80af417b",
+      "html_url": "https://github.com/liszt-code/liszt/blob/2d2b7852589e5fbf6fe2afd6fc6ad941558bca85/assets/schema/root.gql",
+      "content": "schema {\n    query: Query\n}\n\ntype Query {\n    Buildings: [Building]!\n    Building(BuildingID: ID!): Building!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/liszt-code/liszt/blob/2d2b7852589e5fbf6fe2afd6fc6ad941558bca85/assets/schema/root.gql:\nschema {\n    query: Query\n}\n\ntype Query {\n    Buildings: [Building]!\n    Building(BuildingID: ID!): Building!\n}\n\n# https://github.com/liszt-code/liszt/blob/2d2b7852589e5fbf6fe2afd6fc6ad941558bca85/assets/schema/building.gql:\ntype Building {\n    id: ID!\n    name: String!\n    address: String!\n    units: [Unit]!\n}\n\n# https://github.com/liszt-code/liszt/blob/2d2b7852589e5fbf6fe2afd6fc6ad941558bca85/assets/schema/unit.gql:\ntype Unit {\n    id: ID!\n    name: String!\n    building: Building!\n    residents: [Resident]!\n}\n\n# https://github.com/liszt-code/liszt/blob/2d2b7852589e5fbf6fe2afd6fc6ad941558bca85/assets/schema/resident.gql:\ntype Resident {\n    id: ID!\n    name: String!\n    unit: Unit!\n}\n",
+        "mergedPaths": [
+          "assets/schema/building.gql",
+          "assets/schema/unit.gql",
+          "assets/schema/resident.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Building",
+          "Unit",
+          "Resident"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "resident.gql",
+      "path": "assets/schema/resident.gql",
+      "sha": "5452bb4896a40d839912d807c2129c46e857bba1",
+      "url": "https://api.github.com/repositories/90604667/contents/assets/schema/resident.gql?ref=2d2b7852589e5fbf6fe2afd6fc6ad941558bca85",
+      "git_url": "https://api.github.com/repositories/90604667/git/blobs/5452bb4896a40d839912d807c2129c46e857bba1",
+      "html_url": "https://github.com/liszt-code/liszt/blob/2d2b7852589e5fbf6fe2afd6fc6ad941558bca85/assets/schema/resident.gql",
+      "content": "type Resident {\n    id: ID!\n    name: String!\n    unit: Unit!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "building.gql",
+      "path": "assets/schema/building.gql",
+      "sha": "8d2cc0ed64c96054e740cede2a2a1c0621ac7af2",
+      "url": "https://api.github.com/repositories/90604667/contents/assets/schema/building.gql?ref=2d2b7852589e5fbf6fe2afd6fc6ad941558bca85",
+      "git_url": "https://api.github.com/repositories/90604667/git/blobs/8d2cc0ed64c96054e740cede2a2a1c0621ac7af2",
+      "html_url": "https://github.com/liszt-code/liszt/blob/2d2b7852589e5fbf6fe2afd6fc6ad941558bca85/assets/schema/building.gql",
+      "content": "type Building {\n    id: ID!\n    name: String!\n    address: String!\n    units: [Unit]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "unit.gql",
+      "path": "assets/schema/unit.gql",
+      "sha": "a23dc015ef7fdd9c51ea34746e7fb9739d894c69",
+      "url": "https://api.github.com/repositories/90604667/contents/assets/schema/unit.gql?ref=2d2b7852589e5fbf6fe2afd6fc6ad941558bca85",
+      "git_url": "https://api.github.com/repositories/90604667/git/blobs/a23dc015ef7fdd9c51ea34746e7fb9739d894c69",
+      "html_url": "https://github.com/liszt-code/liszt/blob/2d2b7852589e5fbf6fe2afd6fc6ad941558bca85/assets/schema/unit.gql",
+      "content": "type Unit {\n    id: ID!\n    name: String!\n    building: Building!\n    residents: [Resident]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-08T08:32:22Z",
+    "updated_at": "2017-05-11T06:50:07Z",
+    "pushed_at": "2017-07-09T10:42:18Z",
+    "issues": 2,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

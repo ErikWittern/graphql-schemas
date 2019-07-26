@@ -1,0 +1,42 @@
+{
+  "repo_name": "correla-api",
+  "repo_full_name": "davidhartsough/correla-api",
+  "repo_owner": "davidhartsough",
+  "repo_description": "The API for Correla",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "4bb82601b4479d13b97a905f5c632660129e8661",
+      "url": "https://api.github.com/repositories/128836079/contents/graphql/schema.graphql?ref=5c58ed833d470dd754d700fe1493c525f59789ac",
+      "git_url": "https://api.github.com/repositories/128836079/git/blobs/4bb82601b4479d13b97a905f5c632660129e8661",
+      "html_url": "https://github.com/davidhartsough/correla-api/blob/5c58ed833d470dd754d700fe1493c525f59789ac/graphql/schema.graphql",
+      "content": "# Queries\ntype Query {\n  person(id: ID!): Person\n  people: [Person]\n}\n\n# Mutations\ntype Mutation {\n  createPerson(input: PersonInput!): Person\n  updatePerson(id: ID!, input: PersonInput!): Person\n  deletePerson(id: ID!): ID\n}\n\n# Types\ntype Person {\n  id: ID!\n  username: String!\n  name: Name!\n  birthday: Birthday\n  gender: Gender\n  email: String\n  languages: [String]\n  links: [Link]\n  identities: [String!]!\n  values: [String!]!\n  missions: [Mission]\n  residences: [Residence]\n  roles: [Role]\n  projects: [Project]\n}\n\ntype Name {\n  first: String!\n  last: String\n}\n\ntype Birthday {\n  year: Int!\n  month: Int!\n  day: Int!\n}\n\nenum Gender {\n  Male\n  Female\n}\n\ntype Link {\n  name: String!\n  link: String!\n}\n\ntype Mission {\n  contribution: String!\n  impact: String!\n  keywords: [String]\n}\n\ntype Residence {\n  locale: Locale!\n  timeframe: Timeframe!\n}\n\ntype Locale {\n  city: String!\n  state: String!\n}\n\ntype Timeframe {\n  start: Int!\n  end: Int\n}\n\ntype Role {\n  name: String!\n  organization: String!\n  timeframe: Timeframe\n  description: String\n}\n\ntype Project {\n  name: String!\n  type: String!\n  description: String\n  timeframe: Timeframe!\n  links: [Link]\n  mission: Mission\n  tools: [String]\n}\n\n# Inputs\ninput PersonInput {\n  username: String!\n  name: NameInput!\n  birthday: BirthdayInput!\n  gender: Gender\n  email: String\n  languages: [String]\n  links: [LinkInput]\n  identities: [String!]!\n  values: [String!]!\n  missions: [MissionInput]\n  residences: [ResidenceInput]\n  roles: [RoleInput]\n  projects: [ProjectInput]\n}\n\ninput NameInput {\n  first: String!\n  last: String\n}\n\ninput BirthdayInput {\n  year: Int!\n  month: Int!\n  day: Int!\n}\n\ninput LinkInput {\n  name: String!\n  link: String!\n}\n\ninput MissionInput {\n  contribution: String!\n  impact: String!\n  keywords: [String]\n}\n\ninput ResidenceInput {\n  locale: LocaleInput!\n  timeframe: TimeframeInput!\n}\n\ninput LocaleInput {\n  city: String!\n  state: String!\n}\n\ninput TimeframeInput {\n  start: Int!\n  end: Int\n}\n\ninput RoleInput {\n  name: String!\n  organization: String!\n  timeframe: TimeframeInput\n  description: String\n}\n\ninput ProjectInput {\n  name: String!\n  type: String!\n  description: String\n  timeframe: TimeframeInput!\n  links: [LinkInput]\n  mission: MissionInput\n  tools: [String]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 23
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-09T21:29:49Z",
+    "updated_at": "2018-04-15T18:06:15Z",
+    "pushed_at": "2018-04-15T18:06:14Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

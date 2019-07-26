@@ -1,0 +1,41 @@
+{
+  "repo_name": "appsync-resolvers-example",
+  "repo_full_name": "sbstjn/appsync-resolvers-example",
+  "repo_owner": "sbstjn",
+  "repo_description": "Example project for AppSync, GraphQL, and AWS Lambda resolvers using Go.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "ada6d7e003ebc3df078f1040dbc47fdee3dc66a8",
+      "url": "https://api.github.com/repositories/136127727/contents/schema.graphql?ref=b95a2fe158dfd5cbd058a827a1961e935fe53cf6",
+      "git_url": "https://api.github.com/repositories/136127727/git/blobs/ada6d7e003ebc3df078f1040dbc47fdee3dc66a8",
+      "html_url": "https://github.com/sbstjn/appsync-resolvers-example/blob/b95a2fe158dfd5cbd058a827a1961e935fe53cf6/schema.graphql",
+      "content": "type Person {\n\tid: Int!\n\tname: String!\n\tage: Int!\n\n\tfriends: [Person!]!\n}\n\ntype Query {\n\tpeople: [Person!]!\n\tperson(id: Int): Person!\n}\n\nschema {\n\tquery: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-05T06:01:12Z",
+    "updated_at": "2019-07-17T13:12:47Z",
+    "pushed_at": "2018-09-18T17:42:06Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 7,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 37
+  }
+}

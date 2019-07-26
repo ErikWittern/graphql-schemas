@@ -1,0 +1,42 @@
+{
+  "repo_name": "saldotuc",
+  "repo_full_name": "nerdify/saldotuc",
+  "repo_owner": "nerdify",
+  "repo_description": "Saldo TUC web app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "modules/saldotuc-website/schema.graphql",
+      "sha": "e774ddea01a9a9c3caae70f816230da3c17b0328",
+      "url": "https://api.github.com/repositories/93349733/contents/modules/saldotuc-website/schema.graphql?ref=3c1fbdfe1747ab10a266a60e3cf745dd6fd82af8",
+      "git_url": "https://api.github.com/repositories/93349733/git/blobs/e774ddea01a9a9c3caae70f816230da3c17b0328",
+      "html_url": "https://github.com/nerdify/saldotuc/blob/3c1fbdfe1747ab10a266a60e3cf745dd6fd82af8/modules/saldotuc-website/schema.graphql",
+      "content": "# Represents a Card\ntype Card implements Node {\n  # The ID of an object\n  id: ID!\n\n  # The balance of the card.\n  balance: Float\n\n  # Identifies the date and time when the object was created.\n  createdAt: String\n\n  # The name of the card.\n  name: String\n\n  # The number of the card.\n  number: String\n\n  # Identifies the date and time when the object was updated.\n  updatedAt: String\n}\n\n# A connection to a list of items.\ntype CardConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [CardEdge]\n}\n\n# An edge in a connection.\ntype CardEdge {\n  # The item at the end of the edge\n  node: Card\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput CreateCardInput {\n  # The name of card.\n  name: String!\n\n  # The number of the card.\n  number: String!\n  clientMutationId: String\n}\n\ntype CreateCardPayload {\n  # The edge from the user's card connection.\n  cardEdge: CardEdge\n  clientMutationId: String\n}\n\ninput DeleteCardInput {\n  # The Node ID of the card object.\n  cardId: ID!\n  clientMutationId: String\n}\n\ntype DeleteCardPayload {\n  # The deleted card ID.\n  deletedCardId: ID!\n  clientMutationId: String\n}\n\n# The root query for implementing GraphQL mutations.\ntype Mutation {\n  # Creates a new card.\n  createCard(input: CreateCardInput!): CreateCardPayload\n\n  # Delete a card.\n  deleteCard(input: DeleteCardInput!): DeleteCardPayload\n\n  # Update the balance of the given card.\n  updateCardBalance(input: UpdateCardBalanceInput!): UpdateCardBalancePayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# The query root of Saldo TUC's GraphQL interface.\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: User\n}\n\ninput UpdateCardBalanceInput {\n  # The Node ID of the card object.\n  cardId: ID!\n  clientMutationId: String\n}\n\ntype UpdateCardBalancePayload {\n  # The updated card.\n  card: Card\n  clientMutationId: String\n}\n\n# A user is an individual's account on Saldo TUC.\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n\n  # The user's email.\n  email: String\n\n  # A list of cards that the user owns.\n  cards(after: String, first: Int, before: String, last: Int): CardConnection\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-05T00:20:51Z",
+    "updated_at": "2017-07-13T16:25:13Z",
+    "pushed_at": "2017-07-10T21:08:06Z",
+    "issues": 3,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

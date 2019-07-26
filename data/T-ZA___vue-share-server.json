@@ -1,0 +1,41 @@
+{
+  "repo_name": "vue-share-server",
+  "repo_full_name": "t-za/vue-share-server",
+  "repo_owner": "T-ZA",
+  "repo_description": "Server-side project for the Full-Stack Vue with GraphQL course on Udemy",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.gql",
+      "path": "typeDefs.gql",
+      "sha": "948023926d4b419f938e9033e96875f6b8b4d9d7",
+      "url": "https://api.github.com/repositories/171373811/contents/typeDefs.gql?ref=aed237a13dba093d35d69350fd63800f7095429a",
+      "git_url": "https://api.github.com/repositories/171373811/git/blobs/948023926d4b419f938e9033e96875f6b8b4d9d7",
+      "html_url": "https://github.com/T-ZA/vue-share-server/blob/aed237a13dba093d35d69350fd63800f7095429a/typeDefs.gql",
+      "content": "# Definition of the databse type in GraphQL,\n# derived from the Mongoose object models.\n# !     = required\n# []    = collection of a type\ntype User {\n  _id: ID\n  username: String!\n  email: String!\n  password: String!\n  avatar: String\n  joinDate: String\n  favorites: [Post]\n}\n\ntype Post {\n  _id: ID\n  title: String!\n  imageUrl: String!\n  categories: [String]!\n  description: String!\n  createdDate: String\n  likes: Int\n  createdBy: User!\n  messages: [Message]\n}\n\ntype Message {\n  _id: ID\n  messageBody: String!\n  messageDate: String\n  messageUser: User!\n}\n\ntype Token {\n  token: String!\n}\n\n# Data type for holding posts to be retrieved for infinite scrolling\ntype PostsPage {\n  posts: [Post]\n  hasMore: Boolean\n}\n\n# Likes refers to the number of likes on a post\n# Favorites refers to the posts that the user has favorited\ntype LikesFaves {\n  likes: Int\n  favorites: [Post]\n}\n\ntype Query {\n  getPosts: [Post]\n  getPost(postId: ID): Post!\n  getUserPosts(userId: ID!): [Post]\n  getCurrentUser: User\n  searchPosts(searchTerm: String): [Post]\n  infiniteScrollPosts(pageNum: Int!, pageSize: Int!): PostsPage\n}\n\ntype Mutation {\n  signinUser(username: String!, password: String!): Token\n  signupUser(username: String!, email: String!, password: String!): Token\n  addPost(\n    title: String!\n    imageUrl: String!\n    categories: [String]!\n    description: String!\n    creatorId: ID!\n  ): Post!\n  addPostMessage(messageBody: String!, userId: ID!, postId: ID!): Message!\n  likePost(postId: ID!, username: String!): LikesFaves\n  unlikePost(postId: ID!, username: String!): LikesFaves\n  updateUserPost(\n    postId: ID!\n    userId: ID!\n    title: String!\n    imageUrl: String!\n    categories: [String]!\n    description: String!\n  ): Post!\n  deleteUserPost(postId: ID!): Post!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-18T23:54:29Z",
+    "updated_at": "2019-02-19T06:23:06Z",
+    "pushed_at": "2019-02-19T06:23:04Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 7,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 7,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "CommuniTii",
+  "repo_full_name": "communitii/communitii",
+  "repo_owner": "CommuniTii",
+  "repo_description": "The Game of Life is better Together",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "apps/api/schemas/Query.graphql",
+      "sha": "a2b82bd0c17f6333466d8dc5dc32666f17e818db",
+      "url": "https://api.github.com/repositories/157011082/contents/apps/api/schemas/Query.graphql?ref=77be7881b67b4a8cf2d4d9eb958bf314d776f11f",
+      "git_url": "https://api.github.com/repositories/157011082/git/blobs/a2b82bd0c17f6333466d8dc5dc32666f17e818db",
+      "html_url": "https://github.com/CommuniTii/CommuniTii/blob/77be7881b67b4a8cf2d4d9eb958bf314d776f11f/apps/api/schemas/Query.graphql",
+      "content": "type Query {\n  _empty: String\n  hello: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-10T18:48:04Z",
+    "updated_at": "2019-02-03T03:50:05Z",
+    "pushed_at": "2019-02-08T02:26:24Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

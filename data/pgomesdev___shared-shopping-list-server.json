@@ -1,0 +1,41 @@
+{
+  "repo_name": "shared-shopping-list-server",
+  "repo_full_name": "pgomesdev/shared-shopping-list-server",
+  "repo_owner": "pgomesdev",
+  "repo_description": "Server side of the project Shared Shopping List.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "4049c142fa8b46f591dfa26905571d2b05199a4d",
+      "url": "https://api.github.com/repositories/169318308/contents/src/schema.graphql?ref=8674e46764a5865547ca19992e248b05613ed25b",
+      "git_url": "https://api.github.com/repositories/169318308/git/blobs/4049c142fa8b46f591dfa26905571d2b05199a4d",
+      "html_url": "https://github.com/pgomesdev/shared-shopping-list-server/blob/8674e46764a5865547ca19992e248b05613ed25b/src/schema.graphql",
+      "content": "# types\ntype ShoppingList {\n  id: ID!\n  name: String!\n  items: [Item!]\n}\n\ntype Item {\n  id: ID!\n  name: String!\n  quantity: Float\n  price: Float\n  shoppingList: ShoppingList!\n}\n\n# inputs\ninput ItemInput {\n  name: String!\n  quantity: Float\n  price: Float\n  shoppingListId: ID!\n}\n\ninput ItemWhereInput {\n  id: ID!\n}\n\n# operations\ntype Query {\n  info: String!\n  listShoppingLists: [ShoppingList!]!\n  shoppingList(id: ID!): ShoppingList!\n}\n\ntype Mutation {\n  createShoppingList(name: String!): ShoppingList!\n  updateShoppingList(id: ID!, name: String!): ShoppingList!\n  deleteShoppingList(id: ID!): ShoppingList!\n  createItem(data: ItemInput): Item!\n  updateItem(data: ItemInput!, where: ItemWhereInput!): Item!\n  deleteItem(where: ItemWhereInput!): Item!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-05T21:46:45Z",
+    "updated_at": "2019-03-18T23:50:56Z",
+    "pushed_at": "2019-03-18T23:50:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

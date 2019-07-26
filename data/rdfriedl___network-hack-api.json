@@ -1,0 +1,121 @@
+{
+  "repo_name": "network-hack-api",
+  "repo_full_name": "rdfriedl/network-hack-api",
+  "repo_owner": "rdfriedl",
+  "repo_description": "The starting point of an API for a potential game",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e53e8e74e37899c8f99cce322be2a7af9d13df54",
+      "url": "https://api.github.com/repositories/123927902/contents/src/schema.graphql?ref=8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58",
+      "git_url": "https://api.github.com/repositories/123927902/git/blobs/e53e8e74e37899c8f99cce322be2a7af9d13df54",
+      "html_url": "https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/schema.graphql",
+      "content": "# import User from \"types/User.graphql\"\n# import Computer, ComputerMutations from \"types/Computer.graphql\"\n# import Network from \"types/Network.graphql\"\n# import BankAccount from \"types/BankAccount.graphql\"\n# import AuthPayload from \"types/Auth.graphql\"\n\ntype Query {\n\tusers: [User]!\n\tuser(id: ID!): User!\n\tme: User!\n\tcomputer(id: ID!): Computer!\n\tnetwork(id: ID!): Network!\n\tbankAccount(id: ID!): BankAccount!\n}\n\ntype Mutation {\n\tsignup(email: String!, password: String!): AuthPayload!\n\tlogin(email: String!, password: String!): AuthPayload!\n\tsendResetPasswordToken(email: String!): Boolean!\n\n\tupdateProfile(data: UpdateProfileInput!): User!\n\n\tupdateComputerState(id: ID!, state: PowerState): Computer!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/schema.graphql:\n# import User from \"types/User.graphql\"\n# import Computer, ComputerMutations from \"types/Computer.graphql\"\n# import Network from \"types/Network.graphql\"\n# import BankAccount from \"types/BankAccount.graphql\"\n# import AuthPayload from \"types/Auth.graphql\"\n\ntype Query {\n\tusers: [User]!\n\tuser(id: ID!): User!\n\tme: User!\n\tcomputer(id: ID!): Computer!\n\tnetwork(id: ID!): Network!\n\tbankAccount(id: ID!): BankAccount!\n}\n\ntype Mutation {\n\tsignup(email: String!, password: String!): AuthPayload!\n\tlogin(email: String!, password: String!): AuthPayload!\n\tsendResetPasswordToken(email: String!): Boolean!\n\n\tupdateProfile(data: UpdateProfileInput!): User!\n\n\tupdateComputerState(id: ID!, state: PowerState): Computer!\n}\n\n# https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/User.graphql:\n# import Computer from \"Computer.graphql\"\n# import Network from \"Network.graphql\"\n# import BankAccount from \"BankAccount.graphql\"\n\ntype UserProfile {\n\tname: String\n\twebsite: String\n\tbio: String\n}\n\ninput UpdateProfileInput {\n\tname: String\n\twebsite: String\n\tbio: String\n}\n\ntype User {\n\tid: ID!\n\temail: String\n\tprofile: UserProfile\n\tcreatedAt: String!\n\tupdatedAt: String!\n\n\tbankAccount: BankAccount!\n\tnetworks: [Network]!\n}\n\n# https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/Computer.graphql:\n# import User from \"User.graphql\"\n# import Network from \"Network.graphql\"\n\ntype Computer {\n\tid: ID!\n\towner: User!\n\tname: String\n\tstate: ComputerState!\n\tnetwork: Network!\n}\n\ntype ComputerState {\n\tcurrent: PowerState!\n\tupdatedAt: String!\n}\n\nenum PowerState {\n\tBOOT\n\tON\n\tSHUTDOWN\n\tOFF\n}\n\n# https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/Network.graphql:\n# import User from \"User.graphql\"\n# import Computer from \"Computer.graphql\"\n\ntype Network {\n\tid: ID!\n\towner: User!\n\tcomputers: [Computer]!\n}\n\n# https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/BankAccount.graphql:\n# import User from \"User.graphql\"\n\ntype BankAccount {\n\tid: ID!\n\towner: User!\n\tamount: Float!\n}\n\n# https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/Auth.graphql:\n# import User from \"User.graphql\"\n\ntype AuthPayload {\n\ttoken: String!\n}\n",
+        "mergedPaths": [
+          "src/types/User.graphql",
+          "src/types/Computer.graphql",
+          "src/types/Network.graphql",
+          "src/types/BankAccount.graphql",
+          "src/types/Auth.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Computer",
+          "Network",
+          "BankAccount",
+          "AuthPayload"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 11
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Network.graphql",
+      "path": "src/types/Network.graphql",
+      "sha": "8f5210c605b99afce22268e8cd57cbfa444debb4",
+      "url": "https://api.github.com/repositories/123927902/contents/src/types/Network.graphql?ref=8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58",
+      "git_url": "https://api.github.com/repositories/123927902/git/blobs/8f5210c605b99afce22268e8cd57cbfa444debb4",
+      "html_url": "https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/Network.graphql",
+      "content": "# import User from \"User.graphql\"\n# import Computer from \"Computer.graphql\"\n\ntype Network {\n\tid: ID!\n\towner: User!\n\tcomputers: [Computer]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Computer.graphql",
+      "path": "src/types/Computer.graphql",
+      "sha": "935d1ca338bd41bd1956435fcb3dba017f2e5b4b",
+      "url": "https://api.github.com/repositories/123927902/contents/src/types/Computer.graphql?ref=8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58",
+      "git_url": "https://api.github.com/repositories/123927902/git/blobs/935d1ca338bd41bd1956435fcb3dba017f2e5b4b",
+      "html_url": "https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/Computer.graphql",
+      "content": "# import User from \"User.graphql\"\n# import Network from \"Network.graphql\"\n\ntype Computer {\n\tid: ID!\n\towner: User!\n\tname: String\n\tstate: ComputerState!\n\tnetwork: Network!\n}\n\ntype ComputerState {\n\tcurrent: PowerState!\n\tupdatedAt: String!\n}\n\nenum PowerState {\n\tBOOT\n\tON\n\tSHUTDOWN\n\tOFF\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 3
+    },
+    {
+      "name": "User.graphql",
+      "path": "src/types/User.graphql",
+      "sha": "453fd89140b96225d63044faf3f9e6f2fe33a095",
+      "url": "https://api.github.com/repositories/123927902/contents/src/types/User.graphql?ref=8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58",
+      "git_url": "https://api.github.com/repositories/123927902/git/blobs/453fd89140b96225d63044faf3f9e6f2fe33a095",
+      "html_url": "https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/User.graphql",
+      "content": "# import Computer from \"Computer.graphql\"\n# import Network from \"Network.graphql\"\n# import BankAccount from \"BankAccount.graphql\"\n\ntype UserProfile {\n\tname: String\n\twebsite: String\n\tbio: String\n}\n\ninput UpdateProfileInput {\n\tname: String\n\twebsite: String\n\tbio: String\n}\n\ntype User {\n\tid: ID!\n\temail: String\n\tprofile: UserProfile\n\tcreatedAt: String!\n\tupdatedAt: String!\n\n\tbankAccount: BankAccount!\n\tnetworks: [Network]!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 3
+    },
+    {
+      "name": "Auth.graphql",
+      "path": "src/types/Auth.graphql",
+      "sha": "f7a444ebcde4ec49cca18ffb017229ce23f3d4de",
+      "url": "https://api.github.com/repositories/123927902/contents/src/types/Auth.graphql?ref=8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58",
+      "git_url": "https://api.github.com/repositories/123927902/git/blobs/f7a444ebcde4ec49cca18ffb017229ce23f3d4de",
+      "html_url": "https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/Auth.graphql",
+      "content": "# import User from \"User.graphql\"\n\ntype AuthPayload {\n\ttoken: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "BankAccount.graphql",
+      "path": "src/types/BankAccount.graphql",
+      "sha": "05c89b57fbdabdaa2f5a005cef687a7b89439440",
+      "url": "https://api.github.com/repositories/123927902/contents/src/types/BankAccount.graphql?ref=8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58",
+      "git_url": "https://api.github.com/repositories/123927902/git/blobs/05c89b57fbdabdaa2f5a005cef687a7b89439440",
+      "html_url": "https://github.com/rdfriedl/network-hack-api/blob/8f75dd31fcf81d89e3734d11e4bc8b7fa64f3e58/src/types/BankAccount.graphql",
+      "content": "# import User from \"User.graphql\"\n\ntype BankAccount {\n\tid: ID!\n\towner: User!\n\tamount: Float!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-05T14:02:41Z",
+    "updated_at": "2018-07-06T00:38:40Z",
+    "pushed_at": "2018-07-06T00:38:39Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

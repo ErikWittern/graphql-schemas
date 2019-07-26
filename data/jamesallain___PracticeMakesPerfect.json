@@ -1,0 +1,39 @@
+{
+  "repo_name": "PracticeMakesPerfect",
+  "repo_full_name": "jamesallain/practicemakesperfect",
+  "repo_owner": "jamesallain",
+  "repo_description": "This is a projects collection includes some small practices I make in usual day to improve my code skills.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "reactNativeLearnings/f8app-master/server/schema/schema.graphql",
+      "sha": "e887211f43b7d7f9fbda4db8196a45b1b33af81d",
+      "url": "https://api.github.com/repositories/89852593/contents/reactNativeLearnings/f8app-master/server/schema/schema.graphql?ref=93ee92d69bd3f41b0b4b6652725f599473c76f43",
+      "git_url": "https://api.github.com/repositories/89852593/git/blobs/e887211f43b7d7f9fbda4db8196a45b1b33af81d",
+      "html_url": "https://github.com/jamesallain/PracticeMakesPerfect/blob/93ee92d69bd3f41b0b4b6652725f599473c76f43/reactNativeLearnings/f8app-master/server/schema/schema.graphql",
+      "content": "input AddToScheduleInput {\n  sessionId: ID!\n  clientMutationId: String!\n}\n\ntype AddToSchedulePayload {\n  session: Session\n  clientMutationId: String!\n}\n\ntype Config {\n  wifiNetwork: String\n  wifiPassword: String\n}\n\ntype FAQ implements Node {\n  id: ID!\n  question: String\n  answer: String\n}\n\ntype Friend {\n  id: ID\n  name: String\n  picture: String\n  schedule: [Session]\n}\n\ntype Map {\n  id: ID!\n  name: String\n  map: String\n}\n\ntype Mutation {\n  addToSchedule(input: AddToScheduleInput!): AddToSchedulePayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype Notification {\n  id: ID!\n  text: String\n  url: String\n  time: Float\n}\n\ntype Page implements Node {\n  id: ID!\n  title: String\n  url: String\n  logo: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n  schedule: [Session]\n}\n\ntype Session implements Node {\n  id: ID!\n  title: String\n  slug: String\n  day: Int\n  startTime: Float\n  endTime: Float\n  location: Map\n  description: String\n  speakers: [Speaker]\n  isAdded: Boolean\n  friends: [Friend]\n}\n\ntype Speaker implements Node {\n  id: ID!\n  name: String\n  title: String\n  picture: String\n}\n\ntype User implements Node {\n  id: ID!\n  name: String\n  friends: [Friend]\n  notifications: [Notification]\n  faqs: [FAQ]\n  pages: [Page]\n  config: Config\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-30T13:32:45Z",
+    "updated_at": "2018-03-19T06:49:10Z",
+    "pushed_at": "2017-04-30T13:07:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

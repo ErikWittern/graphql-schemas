@@ -1,0 +1,41 @@
+{
+  "repo_name": "multinet-girder",
+  "repo_full_name": "multinet-app/multinet-girder",
+  "repo_owner": "multinet-app",
+  "repo_description": "A Girder plugin proof-of-concept for a MultNet API / web application",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "multinet.gql",
+      "path": "multinet/multinet/multinet.gql",
+      "sha": "db6780b7fdf56043648c78464f6d21c6a18b3cd6",
+      "url": "https://api.github.com/repositories/173828291/contents/multinet/multinet/multinet.gql?ref=2c04384f1bc5d1bb4f0ab15ff276512135469514",
+      "git_url": "https://api.github.com/repositories/173828291/git/blobs/db6780b7fdf56043648c78464f6d21c6a18b3cd6",
+      "html_url": "https://github.com/multinet-app/multinet-girder/blob/2c04384f1bc5d1bb4f0ab15ff276512135469514/multinet/multinet/multinet.gql",
+      "content": "type Attribute {\n  # the key is the table name followed by the column name delimited by a slash, eg table/col\n  key: String!\n  # json representation of the value\n  value: String!\n}\n\n# type Property {\n#     label: String!\n#     key: String!\n# }\n\n# type EntityType {\n#     name: String!\n#     properties: [Property!]!\n# }\n\ninterface Entity {\n  # this is the id of the entity in all tables it's associated with\n  key: String!\n  type: String!\n  properties (keys: [String!]): [Attribute!]\n}\n\ntype Node implements Entity {\n  key: String!\n  type: String!\n  outgoing (limit: Int, offset: Int): EdgeList!\n  incoming (limit: Int, offset: Int): EdgeList!\n  properties (keys: [String!]): [Attribute!]\n}\n\ntype Edge implements Entity {\n  key: String!\n  type: String!\n  source: Node!\n  target: Node!\n  properties (keys: [String!]): [Attribute!]\n}\n\ntype Row {\n  key: String!\n  columns (keys: [String!]): [Attribute!]!\n}\n\ntype NodeList {\n  total: Int!\n  nodes (offset: Int, limit: Int): [Node!]!\n}\n\ntype EdgeList {\n  total: Int!\n  edges (offset: Int, limit: Int): [Edge!]!\n}\n\ntype RowList {\n  total: Int!\n  rows (offset: Int, limit: Int): [Row!]!\n}\n\ntype Table {\n  name: String!\n  primaryKey: String!\n  # a list of key strings as they would appear in Attribute\n  fields: [String!]!\n  rows: RowList!\n}\n\ntype Graph {\n  name: String!\n  nodeTypes: [String!]!\n  edgeTypes: [String!]!\n  nodes: NodeList!\n  edges: EdgeList!\n}\n\ntype Workspace {\n  name: String!\n  tables: [Table!]!\n  graphs: [Graph!]!\n}\n\ntype Query {\n  nodes (workspace: String!, graph: String!, nodeType: String, key: String, search: String): NodeList!\n  edges (workspace: String!, graph: String!, edgeType: String, key: String, search: String): EdgeList!\n  rows (workspace: String!, table: String!, key: String, search: String): RowList!\n\n  workspaces (name: String): [Workspace!]!\n  graphs (workspace: String!, name: String): [Graph!]!\n  tables (workspace: String!, name: String): [Table!]!\n}\n\ntype Mutation {\n  workspace (name: String!): String!\n  graph (workspace: String!, name: String!, nodeTypes: [String!]!, edgeTypes: [String!]!): Graph!\n  table (workspace: String!, name: String!, edges: Boolean!, fields: [String!]!, primaryKey: String): Table!\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": true,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-04T22:00:57Z",
+    "updated_at": "2019-07-19T12:51:01Z",
+    "pushed_at": "2019-07-19T15:57:15Z",
+    "issues": 38,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 55,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 54,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

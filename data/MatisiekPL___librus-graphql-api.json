@@ -1,0 +1,54 @@
+{
+  "repo_name": "librus-graphql-api",
+  "repo_full_name": "matisiekpl/librus-graphql-api",
+  "repo_owner": "MatisiekPL",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "ca1806916e35db239754d4f8000519106b301203",
+      "url": "https://api.github.com/repositories/154188990/contents/src/schema.graphql?ref=76ab9f5389b4ab77f207e7c40fb689a84adc7118",
+      "git_url": "https://api.github.com/repositories/154188990/git/blobs/ca1806916e35db239754d4f8000519106b301203",
+      "html_url": "https://github.com/MatisiekPL/librus-graphql-api/blob/76ab9f5389b4ab77f207e7c40fb689a84adc7118/src/schema.graphql",
+      "content": "type Color {\n\tid: String!\n\trgb: String\n\tname: String\n}\n\ntype Category {\n\tname: String\n\tadultsExtramural: Boolean\n\tadultsDaily: Boolean\n\tstandard: Boolean\n\tcountToTheAverage: Boolean\n\tweight: Int\n\tblockAnyGrades: Boolean\n\tobligationToPerform: Boolean\n\tcolor: Color\n}\n\ntype Grade {\n\tid: String!\n\tgrade: String!\n\tdate: String!\n\taddDate: String!\n\tsemester: Int!\n\tisConstituent: Boolean!\n\tisSemester: Boolean!\n\tisSemesterProposition: Boolean!\n\tisFinal: Boolean!\n\tisFinalProposition: Boolean!\n\tcategory: Category!\n\tsubject: Subject\n\taddedBy: Teacher\n}\n\ntype Teacher {\n\tid: String\n\tfirstName: String\n\tlastName: String\n}\n\ntype Subject {\n\tid: String\n\tname: String\n\tshort: String\n}\n\ntype TimetableDay {\n\tdate: String!\n\tlessons: [TimetableLesson!]!\n}\n\ntype Classroom {\n\tid: String\n\tsymbol: String\n\tname: String\n\tsize: Int\n}\n\ntype TimetableLesson {\n\tday: TimetableDay!\n\tdateFrom: String\n\tdateTo: String\n\tlessonNo: String\n\tdayNo: String\n\tisSubstitutionClass: Boolean\n\tisCanceled: Boolean\n\tsubstitutionNote: String\n\torgDate: String\n\torgLessonNo: String\n\thourFrom: String\n\thourTo: String\n\tnewDate: String\n\tsubject: Subject\n\tteacher: Teacher\n\tclassroom: Classroom\n}\n\ntype SynergiaAccount {\n\tid: String\n\tgroup: String\n\taccessToken: String\n\tlogin: String\n\tstudentName: String\n\tscopes: String\n\tstate: String\n}\n\ntype LoginResponse {\n\tlibrusToken: String\n\taccounts: [SynergiaAccount!]!\n}\n\ntype Mutation {\n\tlogin(email: String!, password: String!): LoginResponse!\n}\n\ntype Query {\n\tversion: String!\n\tgrades: [Grade!]!\n\ttimetable: [TimetableDay!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": true,
+      "numDefinitions": 12
+    },
+    {
+      "name": "schema.graphql",
+      "path": "lib/schema.graphql",
+      "sha": "ca1806916e35db239754d4f8000519106b301203",
+      "url": "https://api.github.com/repositories/154188990/contents/lib/schema.graphql?ref=722d100213ce849a3e3467369fdb300cf2da7c1e",
+      "git_url": "https://api.github.com/repositories/154188990/git/blobs/ca1806916e35db239754d4f8000519106b301203",
+      "html_url": "https://github.com/MatisiekPL/librus-graphql-api/blob/722d100213ce849a3e3467369fdb300cf2da7c1e/lib/schema.graphql",
+      "content": "type Color {\n\tid: String!\n\trgb: String\n\tname: String\n}\n\ntype Category {\n\tname: String\n\tadultsExtramural: Boolean\n\tadultsDaily: Boolean\n\tstandard: Boolean\n\tcountToTheAverage: Boolean\n\tweight: Int\n\tblockAnyGrades: Boolean\n\tobligationToPerform: Boolean\n\tcolor: Color\n}\n\ntype Grade {\n\tid: String!\n\tgrade: String!\n\tdate: String!\n\taddDate: String!\n\tsemester: Int!\n\tisConstituent: Boolean!\n\tisSemester: Boolean!\n\tisSemesterProposition: Boolean!\n\tisFinal: Boolean!\n\tisFinalProposition: Boolean!\n\tcategory: Category!\n\tsubject: Subject\n\taddedBy: Teacher\n}\n\ntype Teacher {\n\tid: String\n\tfirstName: String\n\tlastName: String\n}\n\ntype Subject {\n\tid: String\n\tname: String\n\tshort: String\n}\n\ntype TimetableDay {\n\tdate: String!\n\tlessons: [TimetableLesson!]!\n}\n\ntype Classroom {\n\tid: String\n\tsymbol: String\n\tname: String\n\tsize: Int\n}\n\ntype TimetableLesson {\n\tday: TimetableDay!\n\tdateFrom: String\n\tdateTo: String\n\tlessonNo: String\n\tdayNo: String\n\tisSubstitutionClass: Boolean\n\tisCanceled: Boolean\n\tsubstitutionNote: String\n\torgDate: String\n\torgLessonNo: String\n\thourFrom: String\n\thourTo: String\n\tnewDate: String\n\tsubject: Subject\n\tteacher: Teacher\n\tclassroom: Classroom\n}\n\ntype SynergiaAccount {\n\tid: String\n\tgroup: String\n\taccessToken: String\n\tlogin: String\n\tstudentName: String\n\tscopes: String\n\tstate: String\n}\n\ntype LoginResponse {\n\tlibrusToken: String\n\taccounts: [SynergiaAccount!]!\n}\n\ntype Mutation {\n\tlogin(email: String!, password: String!): LoginResponse!\n}\n\ntype Query {\n\tversion: String!\n\tgrades: [Grade!]!\n\ttimetable: [TimetableDay!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-22T17:46:16Z",
+    "updated_at": "2019-06-23T11:12:17Z",
+    "pushed_at": "2018-12-29T10:25:55Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

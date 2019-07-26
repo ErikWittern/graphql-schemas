@@ -1,0 +1,42 @@
+{
+  "repo_name": "gramps-express",
+  "repo_full_name": "gramps-graphql/gramps-express",
+  "repo_owner": "gramps-graphql",
+  "repo_description": "NOTE: The GrAMPS core has moved to https://github.com/gramps-graphql/gramps",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "src/rootSchema.graphql",
+      "sha": "3323154db96a46c0a7aad19dc09fcecb9473c8f2",
+      "url": "https://api.github.com/repositories/106711696/contents/src/rootSchema.graphql?ref=867c19b8625e40fabdeb547a0e8a2a01bef91fd6",
+      "git_url": "https://api.github.com/repositories/106711696/git/blobs/3323154db96a46c0a7aad19dc09fcecb9473c8f2",
+      "html_url": "https://github.com/gramps-graphql/gramps-express/blob/867c19b8625e40fabdeb547a0e8a2a01bef91fd6/src/rootSchema.graphql",
+      "content": "#\n# The root schema sets up a query that always returns true. Each data source\n# needs to add its query or queries using the following:\n#\n#    extend type Query {\n#      MyQuery(arg: String): MyResponseType\n#    }\n#\n#    extend type Mutation {\n#      MyMutation(input: MyInputType): MyResponseType\n#    }\n#\n# We declare the Query and Mutation below so that there's a type to extend; if\n# they’re left empty, GraphQL throws errors.\n#\n\ntype Query {\n  # Returns the current version of GrAMPS.\n  grampsVersion: String!\n}\n\ntype Mutation {\n  # Returns a charming message from GrAMPS.\n  grampsPing: String!\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-12T15:32:56Z",
+    "updated_at": "2019-06-08T14:50:58Z",
+    "pushed_at": "2019-07-19T07:07:54Z",
+    "issues": 33,
+    "watchers": 8,
+    "fork_count": 15,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 42,
+    "pull_requests_open": 24,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 15,
+    "releases": 6,
+    "stargazers": 159
+  }
+}

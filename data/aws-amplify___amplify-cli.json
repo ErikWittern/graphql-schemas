@@ -1,0 +1,67 @@
+{
+  "repo_name": "amplify-cli",
+  "repo_full_name": "aws-amplify/amplify-cli",
+  "repo_owner": "aws-amplify",
+  "repo_description": "A CLI toolchain for simplifying serverless web and mobile development.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/amplify-graphql-docs-generator/fixtures/schema.graphql",
+      "sha": "cb405f4a5f7defe3f09b228f80fbe5f40740ab57",
+      "url": "https://api.github.com/repositories/145880460/contents/packages/amplify-graphql-docs-generator/fixtures/schema.graphql?ref=27df5e109aa9ad653b8636d55ddd67afb2794f30",
+      "git_url": "https://api.github.com/repositories/145880460/git/blobs/cb405f4a5f7defe3f09b228f80fbe5f40740ab57",
+      "html_url": "https://github.com/aws-amplify/amplify-cli/blob/27df5e109aa9ad653b8636d55ddd67afb2794f30/packages/amplify-graphql-docs-generator/fixtures/schema.graphql",
+      "content": "interface Character {\n\tid: ID!\n\tname: String!\n\tfriends: [Character]\n\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\tappearsIn: [Episode]!\n}\n\ninput ColorInput {\n\tred: Int!\n\tgreen: Int!\n\tblue: Int!\n}\n\ntype Droid implements Character {\n\tid: ID!\n\tname: String!\n\tfriends: [Character]\n\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\tappearsIn: [Episode]!\n\tprimaryFunction: String\n}\n\nenum Episode {\n\tNEWHOPE\n\tEMPIRE\n\tJEDI\n}\n\ntype FriendsConnection {\n\ttotalCount: Int\n\tedges: [FriendsEdge]\n\tfriends: [Character]\n\tpageInfo: PageInfo!\n}\n\ntype FriendsEdge {\n\tcursor: ID!\n\tnode: Character\n}\n\n# A humanoid creature from the Star Wars universe\ntype Human implements Character {\n\tid: ID!\n\tname: String!\n\thomePlanet: String\n\theight(unit: LengthUnit = \"METER\"): Float\n\tmass: Float\n\tfriends: [Character]\n\tfriendsConnection(first: Int, after: ID): FriendsConnection!\n\tappearsIn: [Episode]!\n\tstarships: [Starship]\n}\n\n# Units of height\nenum LengthUnit {\n\tMETER\n\tFOOT\n}\n\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n\tcreateReview(episode: Episode, review: ReviewInput!): Review\n}\n\ntype PageInfo {\n\tstartCursor: ID\n\tendCursor: ID\n\thasNextPage: Boolean!\n}\n\ntype Query {\n\thero(episode: Episode): Character\n\treviews(episode: Episode!): [Review]\n\tsearch(text: String): [SearchResult]\n\tcharacter(id: ID!): Character\n\tdroid(id: ID!): Droid\n\thuman(id: ID!): Human\n\tstarship(id: ID!): Starship\n}\n\n# Represents a review for a movie\ntype Review {\n\tepisode: Episode\n\tstars: Int!\n\tcommentary: String\n}\n\ninput ReviewInput {\n\tstars: Int!\n\tcommentary: String\n\tfavorite_color: ColorInput\n}\n\nunion SearchResult = Human | Droid | Starship \n\ntype Starship {\n\tid: ID!\n\tname: String!\n\tlength(unit: LengthUnit = \"METER\"): Float\n\tcoordinates: [[Float!]!]\n}\n\n# The subscription type, represents all subscriptions we can make to our data\ntype Subscription {\n\treviewAdded(episode: Episode): Review\n}\n\nschema {\n\tquery: Query\n\tmutation: Mutation\n\tsubscription: Subscription\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": true,
+      "numDefinitions": 17
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/amplify-graphql-types-generator/test/fixtures/starwars/schema.graphql",
+      "sha": "2891a5fb5f1c9e86b01a8062bdb2c7f48a959480",
+      "url": "https://api.github.com/repositories/145880460/contents/packages/amplify-graphql-types-generator/test/fixtures/starwars/schema.graphql?ref=7dd72591f330450f8e638f4de7a9776b1fb5c068",
+      "git_url": "https://api.github.com/repositories/145880460/git/blobs/2891a5fb5f1c9e86b01a8062bdb2c7f48a959480",
+      "html_url": "https://github.com/aws-amplify/amplify-cli/blob/7dd72591f330450f8e638f4de7a9776b1fb5c068/packages/amplify-graphql-types-generator/test/fixtures/starwars/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n# The query type, represents all of the entry points into our object graph\ntype Query {\n  hero(episode: Episode): Character\n  reviews(episode: Episode!): [Review]\n  search(text: String): [SearchResult]\n  character(id: ID!): Character\n  droid(id: ID!): Droid\n  human(id: ID!): Human\n  starship(id: ID!): Starship\n}\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n  createReview(episode: Episode, review: ReviewInput!): Review\n}\n# The episodes in the Star Wars trilogy\nenum Episode {\n  # Star Wars Episode IV: A New Hope, released in 1977.\n  NEWHOPE\n  # Star Wars Episode V: The Empire Strikes Back, released in 1980.\n  EMPIRE\n  # Star Wars Episode VI: Return of the Jedi, released in 1983.\n  JEDI\n}\n# A character from the Star Wars universe\ninterface Character {\n  # The ID of the character\n  id: ID!\n  # The name of the character\n  name: String!\n  # The friends of the character, or an empty list if they have none\n  friends: [Character]\n  # The friends of the character exposed as a connection with edges\n  friendsConnection(first: Int, after: ID): FriendsConnection!\n  # The movies this character appears in\n  appearsIn: [Episode]!\n}\n# Units of height\nenum LengthUnit {\n  # The standard unit around the world\n  METER\n  # Primarily used in the United States\n  FOOT\n}\n# A humanoid creature from the Star Wars universe\ntype Human implements Character {\n  # The ID of the human\n  id: ID!\n  # What this human calls themselves\n  name: String!\n  # The home planet of the human, or null if unknown\n  homePlanet: String\n  # Height in the preferred unit, default is meters\n  height(unit: LengthUnit = METER): Float\n  # Mass in kilograms, or null if unknown\n  mass: Float\n  # This human's friends, or an empty list if they have none\n  friends: [Character]\n  # The friends of the human exposed as a connection with edges\n  friendsConnection(first: Int, after: ID): FriendsConnection!\n  # The movies this human appears in\n  appearsIn: [Episode]!\n  # A list of starships this person has piloted, or an empty list if none\n  starships: [Starship]\n}\n# An autonomous mechanical character in the Star Wars universe\ntype Droid implements Character {\n  # The ID of the droid\n  id: ID!\n  # What others call this droid\n  name: String!\n  # This droid's friends, or an empty list if they have none\n  friends: [Character]\n  # The friends of the droid exposed as a connection with edges\n  friendsConnection(first: Int, after: ID): FriendsConnection!\n  # The movies this droid appears in\n  appearsIn: [Episode]!\n  # This droid's primary function\n  primaryFunction: String\n}\n# A connection object for a character's friends\ntype FriendsConnection {\n  # The total number of friends\n  totalCount: Int\n  # The edges for each of the character's friends.\n  edges: [FriendsEdge]\n  # A list of the friends, as a convenience when edges are not needed.\n  friends: [Character]\n  # Information for paginating this connection\n  pageInfo: PageInfo!\n}\n# An edge object for a character's friends\ntype FriendsEdge {\n  # A cursor used for pagination\n  cursor: ID!\n  # The character represented by this friendship edge\n  node: Character\n}\n# Information for paginating this connection\ntype PageInfo {\n  startCursor: ID\n  endCursor: ID\n  hasNextPage: Boolean!\n}\n# Represents a review for a movie\ntype Review {\n  # The number of stars this review gave, 1-5\n  stars: Int!\n  # Comment about the movie\n  commentary: String\n}\n# The input object sent when someone is creating a new review\ninput ReviewInput {\n  # 0-5 stars\n  stars: Int!\n  # Comment about the movie, optional\n  commentary: String\n  # Favorite color, optional\n  favorite_color: ColorInput\n}\n# The input object sent when passing in a color\ninput ColorInput {\n  red: Int!\n  green: Int!\n  blue: Int!\n}\ntype Starship {\n  # The ID of the starship\n  id: ID!\n  # The name of the starship\n  name: String!\n  # Length of the starship, along the longest axis\n  length(unit: LengthUnit = METER): Float\n  coordinates: [[Float!]!]\n}\nunion SearchResult = Human | Droid | Starship",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 16
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/amplify-graphql-types-generator/test/fixtures/misc/schema.graphql",
+      "sha": "6dbe81116fa0accc5d39a17cafe451debc5257a8",
+      "url": "https://api.github.com/repositories/145880460/contents/packages/amplify-graphql-types-generator/test/fixtures/misc/schema.graphql?ref=7dd72591f330450f8e638f4de7a9776b1fb5c068",
+      "git_url": "https://api.github.com/repositories/145880460/git/blobs/6dbe81116fa0accc5d39a17cafe451debc5257a8",
+      "html_url": "https://github.com/aws-amplify/amplify-cli/blob/7dd72591f330450f8e638f4de7a9776b1fb5c068/packages/amplify-graphql-types-generator/test/fixtures/misc/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\nscalar Date\n\ntype doubleHump {\n  humpOne: String\n  humpTwo: String\n}\n\ntype OddType {\n  date: Date\n  camel: doubleHump\n}\n\n# This is a type to test comments\ntype CommentTest {\n  # This is a single-line comment\n  singleLine: String\n  # This is a multi-line\n  # comment.\n  multiLine: String\n  enumCommentTest: EnumCommentTestCase\n}\n\nenum EnumCommentTestCase {\n  # This is a single-line comment\n  first\n  # This is a multi-line\n  # comment.\n  second\n}\n\ninterface InterfaceTestCase {\n  prop: String!\n}\n\ntype ImplA implements InterfaceTestCase {\n  prop: String!\n  propA: String!\n}\n\ntype ImplB implements InterfaceTestCase {\n  prop: String!\n  propB: Int\n}\n\ntype PartialA {\n  prop: String!\n}\n\ntype PartialB {\n  prop: String!\n}\n\nunion UnionTestCase = PartialA | PartialB\n\ntype Query {\n  misc: OddType\n  commentTest: CommentTest\n  interfaceTest: InterfaceTestCase\n  unionTest: UnionTestCase\n  scalarTest: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-23T16:33:10Z",
+    "updated_at": "2019-07-19T03:34:29Z",
+    "pushed_at": "2019-07-19T19:02:27Z",
+    "issues": 1227,
+    "watchers": 68,
+    "fork_count": 172,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 617,
+    "pull_requests_open": 14,
+    "pull_requests_closed": 80,
+    "pull_requests_merged": 523,
+    "releases": 0,
+    "stargazers": 974
+  }
+}

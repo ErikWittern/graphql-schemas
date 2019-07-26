@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-job-board",
+  "repo_full_name": "lukefiji/graphql-job-board",
+  "repo_owner": "lukefiji",
+  "repo_description": "GraphQL practice - making a job board",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "server/schema.gql",
+      "sha": "39bf81495ba081905c76316633a3d1bc7396e0bc",
+      "url": "https://api.github.com/repositories/147271769/contents/server/schema.gql?ref=f24409d0246ecc440918ceec7e1c14a510200263",
+      "git_url": "https://api.github.com/repositories/147271769/git/blobs/39bf81495ba081905c76316633a3d1bc7396e0bc",
+      "html_url": "https://github.com/lukefiji/graphql-job-board/blob/f24409d0246ecc440918ceec7e1c14a510200263/server/schema.gql",
+      "content": "# Schemas require a top level type named `Query`\ntype Query {\n  # An array of Jobs\n  jobs: [Job]\n  # Adding arguments to a query\n  job(id: ID!): Job\n  company(id: ID!): Company\n}\n\n# A Mutation is a root type like Query\ntype Mutation {\n  # Mutations have arguments and also require return types\n  createJob(input: CreateJobInput): Job\n}\n\n# Output Types\ntype Job {\n  # IDs is a built-in type, similar to a string\n  # ! - Required field\n  id: ID!\n  title: String\n  # Associates `company` field with `Company` type\n  company: Company\n  description: String\n}\n\ntype Company {\n  id: ID!\n  name: String\n  description: String\n  jobs: [Job]\n}\n\n# Input Types - used to simplify arguments\ninput CreateJobInput {\n  title: String\n  description: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-04T01:34:17Z",
+    "updated_at": "2018-09-07T04:08:58Z",
+    "pushed_at": "2018-09-07T04:08:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

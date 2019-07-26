@@ -1,0 +1,52 @@
+{
+  "repo_name": "react-helsinki-2018-10-use-graphql",
+  "repo_full_name": "freiksenet/react-helsinki-2018-10-use-graphql",
+  "repo_owner": "freiksenet",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "node.graphql",
+      "path": "code/node.graphql",
+      "sha": "0b611b0d4a970b2aeeb2f2ef4fa7bd483c1d3960",
+      "url": "https://api.github.com/repositories/146615701/contents/code/node.graphql?ref=3115547e7433be67c2226716f31e4c889814d396",
+      "git_url": "https://api.github.com/repositories/146615701/git/blobs/0b611b0d4a970b2aeeb2f2ef4fa7bd483c1d3960",
+      "html_url": "https://github.com/freiksenet/react-helsinki-2018-10-use-graphql/blob/3115547e7433be67c2226716f31e4c889814d396/code/node.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype User implements Node {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  node(id: ID!): Node\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "nodeNew.graphql",
+      "path": "code/nodeNew.graphql",
+      "sha": "eb237f0aa1c695c31dd14153bda1970607010817",
+      "url": "https://api.github.com/repositories/146615701/contents/code/nodeNew.graphql?ref=3115547e7433be67c2226716f31e4c889814d396",
+      "git_url": "https://api.github.com/repositories/146615701/git/blobs/eb237f0aa1c695c31dd14153bda1970607010817",
+      "html_url": "https://github.com/freiksenet/react-helsinki-2018-10-use-graphql/blob/3115547e7433be67c2226716f31e4c889814d396/code/nodeNew.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype User implements Node {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  node(typename: String!, id: ID!): Node\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-29T14:52:33Z",
+    "updated_at": "2018-08-29T14:54:51Z",
+    "pushed_at": "2018-08-29T14:54:50Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

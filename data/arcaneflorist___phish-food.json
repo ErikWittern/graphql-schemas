@@ -1,0 +1,39 @@
+{
+  "repo_name": "phish-food",
+  "repo_full_name": "arcaneflorist/phish-food",
+  "repo_owner": "arcaneflorist",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "6ba8aa8fa55dcdd725023d7ea9bbee717d500c22",
+      "url": "https://api.github.com/repositories/182587595/contents/server/src/schema.graphql?ref=c382ed9bb5f99ec2ecce75edcb15cdbf20019a04",
+      "git_url": "https://api.github.com/repositories/182587595/git/blobs/6ba8aa8fa55dcdd725023d7ea9bbee717d500c22",
+      "html_url": "https://github.com/arcaneflorist/phish-food/blob/c382ed9bb5f99ec2ecce75edcb15cdbf20019a04/server/src/schema.graphql",
+      "content": "type Query {\n  feed: [Post!]!\n  airdrops: [Airdrop!]\n  subs: [Sub!]\n  drafts: [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String): Post\n  createAirdrop(name: String!): Airdrop\n  createSub(email: String!, content: String!): Sub\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n  like(id: ID!, count: Int): Post\n}\n\ntype Sub {\n  id: ID!  \n  email: String!\n  content: String!\n}\n\ntype Post {\n  id: ID!\n  published: Boolean!\n  title: String!\n  content: String!\n  likes: Int\n}\n\ntype Airdrop {\n  id: ID!\n  name: String!    \n  author: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  outgoingAirdrops: [Airdrop]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-21T22:14:12Z",
+    "updated_at": "2019-06-08T21:01:08Z",
+    "pushed_at": "2019-05-16T15:44:24Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

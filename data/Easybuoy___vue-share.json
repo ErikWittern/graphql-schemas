@@ -1,0 +1,41 @@
+{
+  "repo_name": "vue-share",
+  "repo_full_name": "easybuoy/vue-share",
+  "repo_owner": "Easybuoy",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.gql",
+      "path": "typeDefs.gql",
+      "sha": "f70a7774fd78bbcba33c4b76fa4194199ad6c959",
+      "url": "https://api.github.com/repositories/187499352/contents/typeDefs.gql?ref=ce5a3b950ac2e5dfcbdd4c723217a75acab9efad",
+      "git_url": "https://api.github.com/repositories/187499352/git/blobs/f70a7774fd78bbcba33c4b76fa4194199ad6c959",
+      "html_url": "https://github.com/Easybuoy/vue-share/blob/ce5a3b950ac2e5dfcbdd4c723217a75acab9efad/typeDefs.gql",
+      "content": "directive @unique on FIELD_DEFINITION\ntype User {\n  _id: ID\n  username: String! @unique\n  email: String!\n  password: String!\n  avatar: String\n  joinDate: String\n  favourites: [Post]\n}\n\ntype Post {\n  title: String!\n  imageUrl: String!\n  categories: [String]!\n  description: String!\n  createdDate: String\n  likes: Int\n  createdBy: User!\n  messages: [Message]\n}\n\ntype Message {\n  _id: ID\n  messageBody: String!\n  messageDate: String\n  messageUser: User!\n}\n\ntype Query {\n  post: [Post]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-19T16:10:24Z",
+    "updated_at": "2019-05-31T19:42:51Z",
+    "pushed_at": "2019-05-31T20:31:32Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 9,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

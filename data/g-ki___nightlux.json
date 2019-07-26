@@ -1,0 +1,41 @@
+{
+  "repo_name": "nightlux",
+  "repo_full_name": "g-ki/nightlux",
+  "repo_owner": "g-ki",
+  "repo_description": "Course project for Fullstack Application Development with Node.js + Express.js + React.js - 2017",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "index.graphql",
+      "path": "api/server/graphql/schema/index.graphql",
+      "sha": "0bd8037f8a407f30f98b8c3215759087b4d059d7",
+      "url": "https://api.github.com/repositories/84731277/contents/api/server/graphql/schema/index.graphql?ref=7df738678c1afe380eb12791146c58e7b5102901",
+      "git_url": "https://api.github.com/repositories/84731277/git/blobs/0bd8037f8a407f30f98b8c3215759087b4d059d7",
+      "html_url": "https://github.com/g-ki/nightlux/blob/7df738678c1afe380eb12791146c58e7b5102901/api/server/graphql/schema/index.graphql",
+      "content": "type Tag {\n  id: ID!\n  name: String!\n  services: [Service!]\n  isCategory: Boolean\n}\n\ninput TagInput {\n  name: String\n  isCategory: Boolean\n}\n\ntype Service {\n  id: ID!\n  name: String!\n  location: Location\n  tags: [Tag!]\n  description: String\n}\n\ninput ServiceInput {\n  name: String!\n  location: LocationInput!\n  tags: [String!]\n  description: String\n}\n\ntype Location {\n  address: String!\n  latitude: Float\n  longitude: Float\n}\n\ninput LocationInput {\n  address: String!\n  latitude: Float\n  longitude: Float\n}\n\ntype Query {\n  tags(categoriesOnly: Boolean, name: String, offset: Int, limit: Int): [Tag]\n  tag(id: ID!): Tag\n  service(id: ID!): Service\n  services(query: String, geoQuery: String, offset: Int, limit: Int): [Service]\n}\n\ntype Mutation {\n  # A mutation to add new Tag\n  createTag(input: TagInput): Tag\n  # A mutation to delete Tag\n  deleteTag(id: ID!): Tag\n  # A mutation to add new Service\n  createService(input: ServiceInput): Service\n  # A mutation to delete Serivice\n  deleteService(id: ID!): Service\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-12T14:20:26Z",
+    "updated_at": "2017-04-17T09:57:00Z",
+    "pushed_at": "2017-09-03T15:08:07Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

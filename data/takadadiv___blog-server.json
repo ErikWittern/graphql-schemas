@@ -1,0 +1,41 @@
+{
+  "repo_name": "blog-server",
+  "repo_full_name": "takadadiv/blog-server",
+  "repo_owner": "takadadiv",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "blog/plugins/graphql/config/generated/schema.graphql",
+      "sha": "d13c9c101eadd78d62377843a8fe84ee3ded097d",
+      "url": "https://api.github.com/repositories/185962414/contents/blog/plugins/graphql/config/generated/schema.graphql?ref=822620dbe64a4cb5daacecee73d3cab4fcbaa0a7",
+      "git_url": "https://api.github.com/repositories/185962414/git/blobs/d13c9c101eadd78d62377843a8fe84ee3ded097d",
+      "html_url": "https://github.com/takadadiv/blog-server/blob/822620dbe64a4cb5daacecee73d3cab4fcbaa0a7/blog/plugins/graphql/config/generated/schema.graphql",
+      "content": "type Article {\n  id: ID!\n  created_at: DateTime!\n  updated_at: DateTime!\n  title: String!\n  content: String!\n  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]\n}\n\ninput ArticleInput {\n  title: String!\n  content: String!\n  categories: [ID]\n}\n\ntype Category {\n  id: ID!\n  created_at: DateTime!\n  updated_at: DateTime!\n  name: String!\n  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]\n}\n\ninput CategoryInput {\n  name: String!\n  articles: [ID]\n}\n\ninput createArticleInput {\n  data: ArticleInput\n}\n\ntype createArticlePayload {\n  article: Article\n}\n\ninput createCategoryInput {\n  data: CategoryInput\n}\n\ntype createCategoryPayload {\n  category: Category\n}\n\ninput createRoleInput {\n  data: RoleInput\n}\n\ntype createRolePayload {\n  role: UsersPermissionsRole\n}\n\ninput createUserInput {\n  data: UserInput\n}\n\ntype createUserPayload {\n  user: UsersPermissionsUser\n}\n\n\"\"\"\nThe `DateTime` scalar represents a date and time following the ISO 8601 standard\n\"\"\"\nscalar DateTime\n\ninput deleteArticleInput {\n  where: InputID\n}\n\ntype deleteArticlePayload {\n  article: Article\n}\n\ninput deleteCategoryInput {\n  where: InputID\n}\n\ntype deleteCategoryPayload {\n  category: Category\n}\n\ninput deleteRoleInput {\n  where: InputID\n}\n\ntype deleteRolePayload {\n  role: UsersPermissionsRole\n}\n\ninput deleteUserInput {\n  where: InputID\n}\n\ntype deleteUserPayload {\n  user: UsersPermissionsUser\n}\n\ninput editArticleInput {\n  title: String\n  content: String\n  categories: [ID]\n}\n\ninput editCategoryInput {\n  name: String\n  articles: [ID]\n}\n\ninput editFileInput {\n  name: String\n  hash: String\n  sha256: String\n  ext: String\n  mime: String\n  size: String\n  url: String\n  provider: String\n  public_id: String\n  related: [ID]\n}\n\ninput editRoleInput {\n  name: String\n  description: String\n  type: String\n  permissions: [ID]\n  users: [ID]\n}\n\ninput editUserInput {\n  username: String\n  email: String\n  provider: String\n  password: String\n  resetPasswordToken: String\n  confirmed: Boolean\n  blocked: Boolean\n  role: ID\n}\n\ninput FileInput {\n  name: String!\n  hash: String!\n  sha256: String\n  ext: String\n  mime: String!\n  size: String!\n  url: String!\n  provider: String!\n  public_id: String\n  related: [ID]\n}\n\ninput InputID {\n  id: ID!\n}\n\n\"\"\"\nThe `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).\n\"\"\"\nscalar JSON\n\nunion Morph = UsersPermissionsMe | UsersPermissionsMeRole | Article | createArticlePayload | updateArticlePayload | deleteArticlePayload | Category | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload\n\ntype Mutation {\n  createArticle(input: createArticleInput): createArticlePayload\n  updateArticle(input: updateArticleInput): updateArticlePayload\n  deleteArticle(input: deleteArticleInput): deleteArticlePayload\n  createCategory(input: createCategoryInput): createCategoryPayload\n  updateCategory(input: updateCategoryInput): updateCategoryPayload\n  deleteCategory(input: deleteCategoryInput): deleteCategoryPayload\n\n  \"\"\"Create a new role\"\"\"\n  createRole(input: createRoleInput): createRolePayload\n\n  \"\"\"Update an existing role\"\"\"\n  updateRole(input: updateRoleInput): updateRolePayload\n\n  \"\"\"Delete an existing role\"\"\"\n  deleteRole(input: deleteRoleInput): deleteRolePayload\n\n  \"\"\"Create a new user\"\"\"\n  createUser(input: createUserInput): createUserPayload\n\n  \"\"\"Update an existing user\"\"\"\n  updateUser(input: updateUserInput): updateUserPayload\n\n  \"\"\"Delete an existing user\"\"\"\n  deleteUser(input: deleteUserInput): deleteUserPayload\n  upload(refId: ID, ref: String, source: String, file: Upload!): UploadFile!\n}\n\ntype Query {\n  article(id: ID!): Article\n  articles(sort: String, limit: Int, start: Int, where: JSON): [Article]\n  category(id: ID!): Category\n  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]\n  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]\n  role(id: ID!): UsersPermissionsRole\n\n  \"\"\"\n  Retrieve all the existing roles. You can't apply filters on this query.\n  \"\"\"\n  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]\n  user(id: ID!): UsersPermissionsUser\n  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]\n  me: UsersPermissionsMe\n}\n\ninput RoleInput {\n  name: String!\n  description: String\n  type: String\n  permissions: [ID]\n  users: [ID]\n}\n\ninput updateArticleInput {\n  where: InputID\n  data: editArticleInput\n}\n\ntype updateArticlePayload {\n  article: Article\n}\n\ninput updateCategoryInput {\n  where: InputID\n  data: editCategoryInput\n}\n\ntype updateCategoryPayload {\n  category: Category\n}\n\ninput updateRoleInput {\n  where: InputID\n  data: editRoleInput\n}\n\ntype updateRolePayload {\n  role: UsersPermissionsRole\n}\n\ninput updateUserInput {\n  where: InputID\n  data: editUserInput\n}\n\ntype updateUserPayload {\n  user: UsersPermissionsUser\n}\n\n\"\"\"The `Upload` scalar type represents a file upload.\"\"\"\nscalar Upload\n\ntype UploadFile {\n  id: ID!\n  created_at: DateTime!\n  updated_at: DateTime!\n  name: String!\n  hash: String!\n  sha256: String\n  ext: String\n  mime: String!\n  size: String!\n  url: String!\n  provider: String!\n  public_id: String\n  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]\n}\n\ninput UserInput {\n  username: String!\n  email: String!\n  provider: String\n  password: String\n  resetPasswordToken: String\n  confirmed: Boolean\n  blocked: Boolean\n  role: ID\n}\n\ntype UsersPermissionsMe {\n  _id: ID!\n  username: String!\n  email: String!\n  confirmed: Boolean\n  blocked: Boolean\n  role: UsersPermissionsMeRole\n}\n\ntype UsersPermissionsMeRole {\n  _id: ID!\n  name: String!\n  description: String\n  type: String\n}\n\ntype UsersPermissionsPermission {\n  id: ID!\n  type: String!\n  controller: String!\n  action: String!\n  enabled: Boolean!\n  policy: String\n  role: UsersPermissionsRole\n}\n\ntype UsersPermissionsRole {\n  id: ID!\n  name: String!\n  description: String\n  type: String\n  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]\n  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]\n}\n\ntype UsersPermissionsUser {\n  id: ID!\n  username: String!\n  email: String!\n  provider: String\n  confirmed: Boolean\n  blocked: Boolean\n  role: UsersPermissionsRole\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 22,
+      "containsCycle": true,
+      "numDefinitions": 49
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-10T09:43:57Z",
+    "updated_at": "2019-05-10T09:44:47Z",
+    "pushed_at": "2019-05-10T09:44:41Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

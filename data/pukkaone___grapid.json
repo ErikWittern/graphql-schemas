@@ -1,0 +1,55 @@
+{
+  "repo_name": "grapid",
+  "repo_full_name": "pukkaone/grapid",
+  "repo_owner": "pukkaone",
+  "repo_description": "Schema-first GraphQL server framework for Java",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Version.graphql",
+      "path": "grapid-core/src/main/resources/grapid/version/Version.graphql",
+      "sha": "8aa338e5f7054fc791457e7ca746bb2ad8b53dad",
+      "url": "https://api.github.com/repositories/172007940/contents/grapid-core/src/main/resources/grapid/version/Version.graphql?ref=6bce6565243cbe2d36599608ced6b0e50d7572c5",
+      "git_url": "https://api.github.com/repositories/172007940/git/blobs/8aa338e5f7054fc791457e7ca746bb2ad8b53dad",
+      "html_url": "https://github.com/pukkaone/grapid/blob/6bce6565243cbe2d36599608ced6b0e50d7572c5/grapid-core/src/main/resources/grapid/version/Version.graphql",
+      "content": "type Change {\n  description: String!\n}\n\ntype Version {\n  version: String!\n  changes: [Change]!\n}\n\ntype Query {\n  versions: [Version]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 3
+    },
+    {
+      "name": "Query.graphql",
+      "path": "integration-test/spring-boot/src/main/resources/graphql/v2019_01_01/Query.graphql",
+      "sha": "8aa338e5f7054fc791457e7ca746bb2ad8b53dad",
+      "url": "https://api.github.com/repositories/172007940/contents/integration-test/spring-boot/src/main/resources/graphql/v2019_01_01/Query.graphql?ref=6bce6565243cbe2d36599608ced6b0e50d7572c5",
+      "git_url": "https://api.github.com/repositories/172007940/git/blobs/8aa338e5f7054fc791457e7ca746bb2ad8b53dad",
+      "html_url": "https://github.com/pukkaone/grapid/blob/6bce6565243cbe2d36599608ced6b0e50d7572c5/integration-test/spring-boot/src/main/resources/graphql/v2019_01_01/Query.graphql",
+      "content": "type Change {\n  description: String!\n}\n\ntype Version {\n  version: String!\n  changes: [Change]!\n}\n\ntype Query {\n  versions: [Version]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-22T06:35:45Z",
+    "updated_at": "2019-07-04T16:35:57Z",
+    "pushed_at": "2019-07-04T16:35:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

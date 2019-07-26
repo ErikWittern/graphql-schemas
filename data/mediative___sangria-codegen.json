@@ -1,0 +1,75 @@
+{
+  "repo_name": "sangria-codegen",
+  "repo_full_name": "mediative/sangria-codegen",
+  "repo_owner": "mediative",
+  "repo_description": "Generate API code based on a GraphQL schema and queries",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "samples/blog/schema.graphql",
+      "sha": "0d31b639d73f62d5db060a1858e66410e310a39a",
+      "url": "https://api.github.com/repositories/97194410/contents/samples/blog/schema.graphql?ref=79791523ebd5a5724d7110bdedc2358ccd35e8be",
+      "git_url": "https://api.github.com/repositories/97194410/git/blobs/0d31b639d73f62d5db060a1858e66410e310a39a",
+      "html_url": "https://github.com/mediative/sangria-codegen/blob/79791523ebd5a5724d7110bdedc2358ccd35e8be/samples/blog/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  blogs(pagination: Pagination!, query: String): [Blog!]!\n  blog(id: ID!): Blog!\n  articles(query: ArticleQuery): [Article!]!\n  search(text: String!, pagination: Pagination!): [SearchResult!]!\n}\n\ninput Pagination {\n  first: Int!\n  count: Int!\n  order: PaginationOrder = ASC\n}\n\nenum PaginationOrder {\n  ASC\n  DESC\n}\n\ninput ArticleQuery {\n  ids: [ID!]\n  statuses: [ArticleStatus!]\n}\n\ninterface Identifiable {\n  id: ID!\n}\n\ntype Blog implements Identifiable {\n  id: ID!\n  title: String!\n  url: String! @deprecated(reason: \"Use `uri` instead\")\n  uri: String!\n  articles(pagination: Pagination!, statuses: [ArticleStatus!] = [PUBLISHED]): [Article!]!\n}\n\ntype Article implements Identifiable {\n  id: ID!\n  title: String!\n  body: String!\n  status: ArticleStatus!\n  author: Author!\n  tags: [String!]!\n}\n\nenum ArticleStatus {\n  DRAFT\n  PUBLISHED\n}\n\ntype Author implements Identifiable {\n  id: ID!\n  name: String!\n  articles(pagination: Pagination!): [Article!]!\n}\n\nunion SearchResult = Blog | Article | Author\n\ntype Mutation {\n  addBlog(title: String!, uri: String!): Blog!\n  addArticle(content: ArticleContent!): Article!\n  updateArticle(id: ID!, content: ArticleContent!): Article!\n  publishArticle(id: ID!): Article!\n}\n\ninput ArticleContent {\n  title: String!\n  body: String!\n  tags: [String!]\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 13
+    },
+    {
+      "name": "schema.graphql",
+      "path": "sbt-sangria-codegen/src/sbt-test/sangria-codegen/generate/src/main/resources/schema.graphql",
+      "sha": "3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "url": "https://api.github.com/repositories/97194410/contents/sbt-sangria-codegen/src/sbt-test/sangria-codegen/generate/src/main/resources/schema.graphql?ref=79791523ebd5a5724d7110bdedc2358ccd35e8be",
+      "git_url": "https://api.github.com/repositories/97194410/git/blobs/3fa59fe22d16bc5b39d438c7690df87829c5f3de",
+      "html_url": "https://github.com/mediative/sangria-codegen/blob/79791523ebd5a5724d7110bdedc2358ccd35e8be/sbt-sangria-codegen/src/sbt-test/sangria-codegen/generate/src/main/resources/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character!]!\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n}\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character! @deprecated(reason: \"Use `human` or `droid` fields instead\")\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "samples/starwars/schema.graphql",
+      "sha": "86d873454ac5a71c0ddfd1afebbd799daebc5b03",
+      "url": "https://api.github.com/repositories/97194410/contents/samples/starwars/schema.graphql?ref=79791523ebd5a5724d7110bdedc2358ccd35e8be",
+      "git_url": "https://api.github.com/repositories/97194410/git/blobs/86d873454ac5a71c0ddfd1afebbd799daebc5b03",
+      "html_url": "https://github.com/mediative/sangria-codegen/blob/79791523ebd5a5724d7110bdedc2358ccd35e8be/samples/starwars/schema.graphql",
+      "content": "# A character in the Star Wars Trilogy\ninterface Character {\n  # The id of the character.\n  id: String!\n\n  # The name of the character.\n  name: String\n\n  # The friends of the character, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\n# A mechanical creature in the Star Wars universe.\ntype Droid implements Character {\n  # The id of the droid.\n  id: String!\n\n  # The name of the droid.\n  name: String\n\n  # The friends of the droid, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The primary function of the droid.\n  primaryFunction: String\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\n# One of the films in the Star Wars Trilogy\nenum Episode {\n  # Released in 1977.\n  NEWHOPE\n\n  # Released in 1980.\n  EMPIRE\n\n  # Released in 1983.\n  JEDI\n}\n\n# A humanoid creature in the Star Wars universe.\ntype Human implements Character {\n  # The id of the human.\n  id: String!\n\n  # The name of the human.\n  name: String\n\n  # The friends of the human, or an empty list if they have none.\n  friends: [Character]\n\n  # Which movies they appear in.\n  appearsIn: [Episode]\n\n  # The home planet of the human, or null if unknown.\n  homePlanet: String\n\n  # Where are they from and how they came to be who they are.\n  secretBackstory: String\n}\n\ntype Query {\n  hero(\n    # If omitted, returns the hero of the whole saga. If provided, returns the hero of that particular episode.\n    episode: Episode): Character!\n  human(\n    # id of the character\n    id: String!): Human\n  droid(\n    # id of the character\n    id: String!): Droid!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-14T04:55:15Z",
+    "updated_at": "2018-11-25T05:13:11Z",
+    "pushed_at": "2017-09-19T11:05:04Z",
+    "issues": 3,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 17,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 17,
+    "releases": 0,
+    "stargazers": 10
+  }
+}

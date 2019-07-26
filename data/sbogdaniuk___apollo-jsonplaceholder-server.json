@@ -1,0 +1,123 @@
+{
+  "repo_name": "apollo-jsonplaceholder-server",
+  "repo_full_name": "sbogdaniuk/apollo-jsonplaceholder-server",
+  "repo_owner": "sbogdaniuk",
+  "repo_description": "Example of multiple Apollo Servers, that implements fake Online REST API JSONPlaceholder.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/servers/servers/users/modules/schema.graphql",
+      "sha": "5056387338ccb706e7ec19ce8a2513c061663611",
+      "url": "https://api.github.com/repositories/171425163/contents/src/servers/servers/users/modules/schema.graphql?ref=7eb74bf30df7950e0af974677054a7646faee958",
+      "git_url": "https://api.github.com/repositories/171425163/git/blobs/5056387338ccb706e7ec19ce8a2513c061663611",
+      "html_url": "https://github.com/sbogdaniuk/apollo-jsonplaceholder-server/blob/7eb74bf30df7950e0af974677054a7646faee958/src/servers/servers/users/modules/schema.graphql",
+      "content": "type Query {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Mutation {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/servers/servers/albums/modules/schema.graphql",
+      "sha": "b4421866af94ba9d21b4821a1cb522944e5392b6",
+      "url": "https://api.github.com/repositories/171425163/contents/src/servers/servers/albums/modules/schema.graphql?ref=6c1dbbff647a65c167e3f786242a18f6f0b83da1",
+      "git_url": "https://api.github.com/repositories/171425163/git/blobs/b4421866af94ba9d21b4821a1cb522944e5392b6",
+      "html_url": "https://github.com/sbogdaniuk/apollo-jsonplaceholder-server/blob/6c1dbbff647a65c167e3f786242a18f6f0b83da1/src/servers/servers/albums/modules/schema.graphql",
+      "content": "type Query {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Mutation {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Album {\n  userId: ID!\n  id: ID!\n  title: String!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/servers/servers/posts/modules/schema.graphql",
+      "sha": "c5a07784e6e0784673a6ed403d78e209c3c664f9",
+      "url": "https://api.github.com/repositories/171425163/contents/src/servers/servers/posts/modules/schema.graphql?ref=6c1dbbff647a65c167e3f786242a18f6f0b83da1",
+      "git_url": "https://api.github.com/repositories/171425163/git/blobs/c5a07784e6e0784673a6ed403d78e209c3c664f9",
+      "html_url": "https://github.com/sbogdaniuk/apollo-jsonplaceholder-server/blob/6c1dbbff647a65c167e3f786242a18f6f0b83da1/src/servers/servers/posts/modules/schema.graphql",
+      "content": "type Query {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Mutation {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Post {\n  userId: ID!\n  id: ID!\n  title: String!\n  body: String!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/servers/servers/comments/modules/schema.graphql",
+      "sha": "52eaeab315cf72cc1a9ab88ba2f4480201cb29ce",
+      "url": "https://api.github.com/repositories/171425163/contents/src/servers/servers/comments/modules/schema.graphql?ref=6c1dbbff647a65c167e3f786242a18f6f0b83da1",
+      "git_url": "https://api.github.com/repositories/171425163/git/blobs/52eaeab315cf72cc1a9ab88ba2f4480201cb29ce",
+      "html_url": "https://github.com/sbogdaniuk/apollo-jsonplaceholder-server/blob/6c1dbbff647a65c167e3f786242a18f6f0b83da1/src/servers/servers/comments/modules/schema.graphql",
+      "content": "type Query {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Mutation {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Comment {\n  postId: ID!\n  id: ID!\n  name: String!\n  email: String!\n  body: String!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/servers/servers/photos/modules/schema.graphql",
+      "sha": "89b26f505e0916aeffcbf904241e81b811acef3b",
+      "url": "https://api.github.com/repositories/171425163/contents/src/servers/servers/photos/modules/schema.graphql?ref=6c1dbbff647a65c167e3f786242a18f6f0b83da1",
+      "git_url": "https://api.github.com/repositories/171425163/git/blobs/89b26f505e0916aeffcbf904241e81b811acef3b",
+      "html_url": "https://github.com/sbogdaniuk/apollo-jsonplaceholder-server/blob/6c1dbbff647a65c167e3f786242a18f6f0b83da1/src/servers/servers/photos/modules/schema.graphql",
+      "content": "type Query {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Mutation {\n  _empty: String @deprecated(reason: \"Dummy field\")\n}\n\ntype Photo {\n  albumId: ID!\n  id: ID!\n  title: String!\n  url: String!\n  thumbnailUrl: String!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-19T07:19:12Z",
+    "updated_at": "2019-02-28T14:53:06Z",
+    "pushed_at": "2019-02-28T14:53:05Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "Practice",
+  "repo_full_name": "yannafaith/practice",
+  "repo_owner": "yannafaith",
+  "repo_description": "SQL+GraphQL+Prisma+Apollo+React Tech Stack Practice",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "hackernews-node/src/schema.graphql",
+      "sha": "899baffe77bdefe327618dde2667dd3ae6206f94",
+      "url": "https://api.github.com/repositories/176980669/contents/hackernews-node/src/schema.graphql?ref=0a9a898437464f718c652b4c5dd8874dbc247596",
+      "git_url": "https://api.github.com/repositories/176980669/git/blobs/899baffe77bdefe327618dde2667dd3ae6206f94",
+      "html_url": "https://github.com/yannafaith/Practice/blob/0a9a898437464f718c652b4c5dd8874dbc247596/hackernews-node/src/schema.graphql",
+      "content": "type Query {\n    info: String!\n    feed: [Link!]!\n    link(id: ID!): Link\n}\n\ntype Mutation {\n    post(url: String!, description: String!): Link!\n    updateLink(id: ID!, url: String, description: String): Link\n    deleteLink(id: ID!): String!\n}\n\ntype Link {\n    id: ID!\n    description: String!\n    url: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-21T16:07:33Z",
+    "updated_at": "2019-07-12T05:50:13Z",
+    "pushed_at": "2019-03-25T17:06:34Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

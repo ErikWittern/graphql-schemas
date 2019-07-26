@@ -1,0 +1,42 @@
+{
+  "repo_name": "node-graphql",
+  "repo_full_name": "dukegod/node-graphql",
+  "repo_owner": "dukegod",
+  "repo_description": "nodejs, expressjs, graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "hello.graphql",
+      "path": "graphqls/hello.graphql",
+      "sha": "1833ffd6332ee16bd224de3b3e94a212b5cdf050",
+      "url": "https://api.github.com/repositories/130940890/contents/graphqls/hello.graphql?ref=8658cb4294728a1cd8c99309e6989e8d09b05302",
+      "git_url": "https://api.github.com/repositories/130940890/git/blobs/1833ffd6332ee16bd224de3b3e94a212b5cdf050",
+      "html_url": "https://github.com/dukegod/node-graphql/blob/8658cb4294728a1cd8c99309e6989e8d09b05302/graphqls/hello.graphql",
+      "content": "\ntype Hello {\n  name: String\n}\n\ntype Query {\n  name: String\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-25T02:40:31Z",
+    "updated_at": "2018-09-09T02:17:11Z",
+    "pushed_at": "2018-09-09T02:17:10Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

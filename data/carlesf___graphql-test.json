@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-test",
+  "repo_full_name": "carlesf/graphql-test",
+  "repo_owner": "carlesf",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "f7fc1002b4feed16a7ab403d440d9f67c3fe5573",
+      "url": "https://api.github.com/repositories/85501882/contents/data/schema.graphql?ref=426e6c93224b4dee44512b14c304844c73b031b0",
+      "git_url": "https://api.github.com/repositories/85501882/git/blobs/f7fc1002b4feed16a7ab403d440d9f67c3fe5573",
+      "html_url": "https://github.com/carlesf/graphql-test/blob/426e6c93224b4dee44512b14c304844c73b031b0/data/schema.graphql",
+      "content": "type Query {\n  testString: String\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-19T19:16:06Z",
+    "updated_at": "2017-03-19T19:18:28Z",
+    "pushed_at": "2017-05-31T15:35:29Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

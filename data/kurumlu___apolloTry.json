@@ -1,0 +1,39 @@
+{
+  "repo_name": "apolloTry",
+  "repo_full_name": "kurumlu/apollotry",
+  "repo_owner": "kurumlu",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "f7fc1002b4feed16a7ab403d440d9f67c3fe5573",
+      "url": "https://api.github.com/repositories/90356743/contents/data/schema.graphql?ref=426e6c93224b4dee44512b14c304844c73b031b0",
+      "git_url": "https://api.github.com/repositories/90356743/git/blobs/f7fc1002b4feed16a7ab403d440d9f67c3fe5573",
+      "html_url": "https://github.com/kurumlu/apolloTry/blob/426e6c93224b4dee44512b14c304844c73b031b0/data/schema.graphql",
+      "content": "type Query {\n  testString: String\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-05T08:54:10Z",
+    "updated_at": "2017-05-05T08:59:04Z",
+    "pushed_at": "2017-05-05T08:59:02Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

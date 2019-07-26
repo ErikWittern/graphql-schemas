@@ -1,0 +1,41 @@
+{
+  "repo_name": "Project-Coddiwomple",
+  "repo_full_name": "nomadic4life/project-coddiwomple",
+  "repo_owner": "nomadic4life",
+  "repo_description": "Building a Project for Pioneer and Lambda collaboration competition",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "ba426b3e3d23eafc6dd92e7f672426167c370dcf",
+      "url": "https://api.github.com/repositories/177028575/contents/server/src/schema.graphql?ref=a4f1dcb69f42f1f15dc18a1b8819cfc91cabcfad",
+      "git_url": "https://api.github.com/repositories/177028575/git/blobs/ba426b3e3d23eafc6dd92e7f672426167c370dcf",
+      "html_url": "https://github.com/nomadic4life/Project-Coddiwomple/blob/a4f1dcb69f42f1f15dc18a1b8819cfc91cabcfad/server/src/schema.graphql",
+      "content": " type Query {\n  Users: [User!]!\n  User(id: ID! username: String): User!\n  Posts: [Post!]!\n}\n\ntype Mutation {\n  createUser(username: String!, password: String!): AuthPayload\n  connectUser(username: String!, password: String!): AuthPayload\n  post(userId: ID, username: String content: String!): Post\n  vote(postId: ID!): Vote\n}\n\ntype Subscription {\n  newPost: Post\n  newVote: Vote\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  username: String!\n  posts: [Post!]!\n  # password: String!\n}\n\n# type UserProfile {\n#   User: User\n#   Friends: [Friends!]!\n# }\n\ntype Post {\n  id: ID!\n  postedBy: User\n  content: String!\n  votes: [Vote!]!\n}\n\ntype Vote {\n  id: ID!\n  post: Post!\n  user: User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-21T21:47:17Z",
+    "updated_at": "2019-04-23T19:29:05Z",
+    "pushed_at": "2019-04-23T19:29:03Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

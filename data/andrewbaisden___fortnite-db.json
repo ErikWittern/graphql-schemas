@@ -1,0 +1,42 @@
+{
+  "repo_name": "fortnite-db",
+  "repo_full_name": "andrewbaisden/fortnite-db",
+  "repo_owner": "andrewbaisden",
+  "repo_description": "A Fortnite database app, for checking weapons and items.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend-graphql/src/schema.graphql",
+      "sha": "da24e53efcd0918abbcd812343fe6c9afbd0cfc7",
+      "url": "https://api.github.com/repositories/163670397/contents/backend-graphql/src/schema.graphql?ref=d779d8fcf9c908175eabcbedb8ba7cadb547293c",
+      "git_url": "https://api.github.com/repositories/163670397/git/blobs/da24e53efcd0918abbcd812343fe6c9afbd0cfc7",
+      "html_url": "https://github.com/andrewbaisden/fortnite-db/blob/d779d8fcf9c908175eabcbedb8ba7cadb547293c/backend-graphql/src/schema.graphql",
+      "content": "type Query {\n    fortniteweaponsfiltername(query: String): [Weapon!]!\n    fortniteweaponsfiltertype(query: String): [Weapon!]!\n    fortniteweaponsfilterweapontype(query: String): [Weapon!]!\n    fortniteweaponsfilterweaponitemrarity(query: String): [Weapon!]!\n}\n\ntype Weapon {\n    id: ID!\n    name: String!\n    type: String!\n    weaponType: String!\n    itemRarity: String!\n    img: String!\n    information: [Info!]!\n}\n\ntype Info {\n    damage: Int!\n    critialHitChance: String!\n    critialHitDamage: String!\n    fireRate: Float!\n    magazineSize: Int!\n    range: Int!\n    durabilty: String!\n    reloadTime: String!\n    ammoCost: Int!\n    impact: Float!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-31T13:16:19Z",
+    "updated_at": "2019-05-29T15:04:03Z",
+    "pushed_at": "2019-05-15T17:51:36Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

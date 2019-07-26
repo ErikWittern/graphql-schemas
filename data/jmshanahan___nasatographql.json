@@ -1,0 +1,39 @@
+{
+  "repo_name": "nasatographql",
+  "repo_full_name": "jmshanahan/nasatographql",
+  "repo_owner": "jmshanahan",
+  "repo_description": "Mirko Nasato Graphql course taken from udemy",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "984a7d6ccafed08a48f141b45328d4fb5b5f0f43",
+      "url": "https://api.github.com/repositories/134856407/contents/server/schema.graphql?ref=acb39e25ccaa83486d1ff49b22e89425b277840e",
+      "git_url": "https://api.github.com/repositories/134856407/git/blobs/984a7d6ccafed08a48f141b45328d4fb5b5f0f43",
+      "html_url": "https://github.com/jmshanahan/nasatographql/blob/acb39e25ccaa83486d1ff49b22e89425b277840e/server/schema.graphql",
+      "content": "type Query {\n    company(id: ID!): Company\n    job(id:ID): Job\n    jobs: [Job]\n}\ntype Mutation {\n    createJob(input: CreateJobInput): Job\n}\n\ntype Company {\n    id: ID!\n    name: String\n    description: String\n    jobs: [Job]\n}\n\ntype Job {\n    id:ID!\n    title: String\n    company: Company \n    description: String\n}\n\ninput CreateJobInput {\n    title: String\n    description: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-25T12:58:47Z",
+    "updated_at": "2018-05-29T16:20:33Z",
+    "pushed_at": "2018-05-29T16:20:33Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

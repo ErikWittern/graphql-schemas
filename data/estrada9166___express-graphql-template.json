@@ -1,0 +1,42 @@
+{
+  "repo_name": "express-graphql-template",
+  "repo_full_name": "estrada9166/express-graphql-template",
+  "repo_owner": "estrada9166",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema/schema.gql",
+      "sha": "bc8eab95e0fa49952f4e8f2c6649e81e8c1c3376",
+      "url": "https://api.github.com/repositories/140515737/contents/src/schema/schema.gql?ref=4818622b48df9be50b3ea5221cab4213ff05eafe",
+      "git_url": "https://api.github.com/repositories/140515737/git/blobs/bc8eab95e0fa49952f4e8f2c6649e81e8c1c3376",
+      "html_url": "https://github.com/estrada9166/express-graphql-template/blob/4818622b48df9be50b3ea5221cab4213ff05eafe/src/schema/schema.gql",
+      "content": "scalar JSON\n\ntype Me {\n  id: ID!\n  email: String!\n  username: String!\n  fullName: String!\n  apiKey: String! # This is going to be the id of the user on the front-end\n}\n\ntype User {\n  email: String!\n  username: String!\n  fullName: String!\n}\n\n# MUTATIONS\n\n# Create a new User\ninput UserInput {\n  email: String!\n  username: String!\n  fullName: String!\n  password: String!\n}\n# Login\ninput LoginInput {\n  email: String!\n  password: String!\n}\n# Update password\ninput UpdatePasswordInput {\n  oldPassword: String!\n  newPassword: String!\n}\n\ntype Query {\n  getMe: Me\n  getUserByUsername(username: String!): User\n}\n\ntype Mutation {\n  createUser(input: UserInput!): Me\n  login(input: LoginInput!): Me\n  updatePassword(input: UpdatePasswordInput!): Me\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-11T03:18:04Z",
+    "updated_at": "2018-07-11T03:47:11Z",
+    "pushed_at": "2018-07-11T03:47:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

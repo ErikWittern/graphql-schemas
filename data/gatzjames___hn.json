@@ -1,0 +1,41 @@
+{
+  "repo_name": "hn",
+  "repo_full_name": "gatzjames/hn",
+  "repo_owner": "gatzjames",
+  "repo_description": "Just another hacker news clone",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "19b0fd7aca53dd02111aa6e4118617bbaa5e343f",
+      "url": "https://api.github.com/repositories/137639794/contents/server/schema.graphql?ref=5c4ced404a405d61e96914a9ad13c20b1e040450",
+      "git_url": "https://api.github.com/repositories/137639794/git/blobs/19b0fd7aca53dd02111aa6e4118617bbaa5e343f",
+      "html_url": "https://github.com/gatzjames/hn/blob/5c4ced404a405d61e96914a9ad13c20b1e040450/server/schema.graphql",
+      "content": "type Query {\n  stories(type: StoryType!, page: Int!, count: Int!): [Story]\n  items(ids: [Int]): [Item]\n  user(id: ID!): User\n}\n\nenum StoryType {\n  top\n  new\n  best\n  ask\n  show\n  job\n}\n\ntype Story {\n  id: ID!\n  descendants: Int\n  kids: [Int]\n  score: Int\n  time: Int\n  text: String\n  title: String\n  type: String\n  url: String\n  by: String\n}\n\ntype Item {\n  id: ID!\n  descendants: Int\n  kids: [Int]\n  kidsItems: [Item]\n  score: Int\n  time: Int\n  text: String\n  title: String\n  type: String\n  url: String\n  by: String\n}\n\ntype User {\n  id: ID!\n  about: String\n  created: Int\n  karma: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-17T08:26:57Z",
+    "updated_at": "2018-06-17T12:33:14Z",
+    "pushed_at": "2018-06-17T12:33:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

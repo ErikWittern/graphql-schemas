@@ -1,0 +1,78 @@
+{
+  "repo_name": "Sample-GraphQl-TypeScript",
+  "repo_full_name": "felixbillon/sample-graphql-typescript",
+  "repo_owner": "felixbillon",
+  "repo_description": "Sample using GraphQl and TypeScript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "main.gql",
+      "path": "schema/main.gql",
+      "sha": "0f2436dd9bc2554d55c48d4c0590bcb5aab7bad4",
+      "url": "https://api.github.com/repositories/106433370/contents/schema/main.gql?ref=ef803b902155ecdd7b9a8d4c4fee704b14f24a63",
+      "git_url": "https://api.github.com/repositories/106433370/git/blobs/0f2436dd9bc2554d55c48d4c0590bcb5aab7bad4",
+      "html_url": "https://github.com/felixbillon/Sample-GraphQl-TypeScript/blob/ef803b902155ecdd7b9a8d4c4fee704b14f24a63/schema/main.gql",
+      "content": "type Query {\n    hello: String\n    users: [User]\n    user(id: Int): User\n}\n\ntype Mutation {\n    createUser(firstName: String!, lastName: String!): User!\n}\n\ntype Subscription {\n  userAdded: User\n}\n\nschema {\n    query: Query\n    mutation: Mutation,\n    subscription: Subscription\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/felixbillon/Sample-GraphQl-TypeScript/blob/ef803b902155ecdd7b9a8d4c4fee704b14f24a63/schema/main.gql:\ntype Query {\n    hello: String\n    users: [User]\n    user(id: Int): User\n}\n\ntype Mutation {\n    createUser(firstName: String!, lastName: String!): User!\n}\n\ntype Subscription {\n  userAdded: User\n}\n\nschema {\n    query: Query\n    mutation: Mutation,\n    subscription: Subscription\n}\n# https://github.com/felixbillon/Sample-GraphQl-TypeScript/blob/ef803b902155ecdd7b9a8d4c4fee704b14f24a63/schema/user.gql:\ntype User {\n    id: Int!\n    firstName: String!\n    lastName: String!\n    posts: [Post]\n}\n# https://github.com/felixbillon/Sample-GraphQl-TypeScript/blob/ef803b902155ecdd7b9a8d4c4fee704b14f24a63/schema/post.gql:\ntype Post {\n    id: Int!\n    title: String!\n    text: String!\n    author: User!\n}",
+        "mergedPaths": [
+          "schema/user.gql",
+          "schema/post.gql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": true,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "post.gql",
+      "path": "schema/post.gql",
+      "sha": "e83fc2544d8313bb4333f306250b04ca479822a7",
+      "url": "https://api.github.com/repositories/106433370/contents/schema/post.gql?ref=ef803b902155ecdd7b9a8d4c4fee704b14f24a63",
+      "git_url": "https://api.github.com/repositories/106433370/git/blobs/e83fc2544d8313bb4333f306250b04ca479822a7",
+      "html_url": "https://github.com/felixbillon/Sample-GraphQl-TypeScript/blob/ef803b902155ecdd7b9a8d4c4fee704b14f24a63/schema/post.gql",
+      "content": "type Post {\n    id: Int!\n    title: String!\n    text: String!\n    author: User!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "user.gql",
+      "path": "schema/user.gql",
+      "sha": "4a2b4afcbb4254797e872c5b614a9cabbd3e807d",
+      "url": "https://api.github.com/repositories/106433370/contents/schema/user.gql?ref=ef803b902155ecdd7b9a8d4c4fee704b14f24a63",
+      "git_url": "https://api.github.com/repositories/106433370/git/blobs/4a2b4afcbb4254797e872c5b614a9cabbd3e807d",
+      "html_url": "https://github.com/felixbillon/Sample-GraphQl-TypeScript/blob/ef803b902155ecdd7b9a8d4c4fee704b14f24a63/schema/user.gql",
+      "content": "type User {\n    id: Int!\n    firstName: String!\n    lastName: String!\n    posts: [Post]\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-10T15:09:08Z",
+    "updated_at": "2017-10-11T07:45:01Z",
+    "pushed_at": "2017-10-10T15:18:34Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

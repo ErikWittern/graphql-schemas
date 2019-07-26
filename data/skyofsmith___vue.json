@@ -1,0 +1,39 @@
+{
+  "repo_name": "vue",
+  "repo_full_name": "skyofsmith/vue",
+  "repo_owner": "skyofsmith",
+  "repo_description": "vue practice",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "vueLoader/hello-world/apollo-server/schema.graphql",
+      "sha": "e156b6c7c8c32eb6b340b0e2ec3fdccb99e76573",
+      "url": "https://api.github.com/repositories/153474957/contents/vueLoader/hello-world/apollo-server/schema.graphql?ref=9f42e704f34df2bd9c158c1e94eb4fb618a6103c",
+      "git_url": "https://api.github.com/repositories/153474957/git/blobs/e156b6c7c8c32eb6b340b0e2ec3fdccb99e76573",
+      "html_url": "https://github.com/skyofsmith/vue/blob/9f42e704f34df2bd9c158c1e94eb4fb618a6103c/vueLoader/hello-world/apollo-server/schema.graphql",
+      "content": "# Included scalars\nscalar JSON\nscalar Upload\n\n# Included directives\n\n# Cache control\ndirective @cacheControl(\n  maxAge: Int,\n  scope: CacheControlScope\n) on OBJECT | FIELD_DEFINITION\nenum CacheControlScope {\n  PUBLIC\n  PRIVATE\n}\n\n# It will increment!\ntype Counter {\n  # Number of increments\n  count: Int!\n  # Full message for testing\n  countStr: String\n}\n\n# A text message send by users\ntype Message {\n  id: ID!\n  # Message content\n  text: String!\n}\n\n# Input from user to create a message\ninput MessageInput {\n  # Message content\n  text: String!\n}\n\ntype File {\n  id: ID!\n  path: String!\n  filename: String!\n  mimetype: String!\n  encoding: String!\n}\n\n\ntype Query {\n  # Test query with a parameter\n  hello(name: String): String!\n  # List of messages sent by users\n  messages: [Message]\n  uploads: [File]\n\n}\n\ntype Mutation {\n  myMutation: String!\n  # Add a message and publish it on 'messages' subscription channel\n  messageAdd (input: MessageInput!): Message!\n  singleUpload (file: Upload!): File!\n  multipleUpload (files: [Upload!]!): [File!]!\n\n}\n\ntype Subscription {\n  mySub: String!\n  # This will update every 2 seconds\n  counter: Counter!\n  # When a new message is added\n  messageAdded: Message!\n\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-17T14:52:37Z",
+    "updated_at": "2019-07-06T15:00:32Z",
+    "pushed_at": "2019-07-06T15:00:31Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

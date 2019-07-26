@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-web-lib",
+  "repo_full_name": "fbfeix/graphql-web-lib",
+  "repo_owner": "fbfeix",
+  "repo_description": "A library for blog projects",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "source/graph/public/schema.graphql",
+      "sha": "052a1babb90e4c3d4a7cb2dd66fa925ccf8fe7c4",
+      "url": "https://api.github.com/repositories/65389684/contents/source/graph/public/schema.graphql?ref=94df91584b9e3b849e15121740351f4d5a6b9f4f",
+      "git_url": "https://api.github.com/repositories/65389684/git/blobs/052a1babb90e4c3d4a7cb2dd66fa925ccf8fe7c4",
+      "html_url": "https://github.com/fbfeix/graphql-web-lib/blob/94df91584b9e3b849e15121740351f4d5a6b9f4f/source/graph/public/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: mutation\n}\n\nscalar Date\n\ntype mutation {\n  login(email: String!, password: String!, permanent: Boolean): Token\n  logout(tokenValue: String!): Boolean\n  addUser(name: String!, email: String!, password: String!): User\n  changeUser(id: String!, name: String, email: String, password: String): Int\n}\n\ntype Post {\n  id: String\n  title: String\n  text: String\n  tags: [Tag]\n  owner: User\n}\n\ntype Query {\n  users(id: String): [User]\n  posts: [Post]\n}\n\ntype Tag {\n  id: String\n  title: String\n  description: String\n}\n\ntype Token {\n  value: String\n  expirationDate: Date\n}\n\ntype User {\n  id: String\n  name: String\n  password: String\n  authToken: String\n  email: String\n  posts: [Post]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-08-10T14:34:09Z",
+    "updated_at": "2016-08-21T11:09:56Z",
+    "pushed_at": "2016-08-21T14:37:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

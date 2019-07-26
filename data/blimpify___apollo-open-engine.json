@@ -1,0 +1,42 @@
+{
+  "repo_name": "apollo-open-engine",
+  "repo_full_name": "blimpify/apollo-open-engine",
+  "repo_owner": "blimpify",
+  "repo_description": "Alternative consumer of apollo-engine traces",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "35abd6712da5679361172a9500193fecafaaa6e8",
+      "url": "https://api.github.com/repositories/184271475/contents/schema.graphql?ref=f9d66afa0c14354b547e4332eabad374edcbf537",
+      "git_url": "https://api.github.com/repositories/184271475/git/blobs/35abd6712da5679361172a9500193fecafaaa6e8",
+      "html_url": "https://github.com/blimpify/apollo-open-engine/blob/f9d66afa0c14354b547e4332eabad374edcbf537/schema.graphql",
+      "content": "type TraceHeader {\n    hostname: String\n    agentVersion: String\n    runtimeVersion: String\n    uname: String\n    schemaTag: String\n    schemaHash: String\n}\n\ntype TraceStartTime {\n    seconds: String,\n    nanos: Int,\n}\n\ntype TraceEndTime {\n    seconds: String,\n    nanos: Int,\n}\n\ntype TraceRequestHeader {\n    key: String\n    value: String\n}\n\ntype TraceHttp {\n    method: String\n    requestHeaders: [TraceRequestHeader]\n}\n\ntype TraceChild {\n    index: Int\n    depth: Int\n    fieldName: String\n    type: String\n    startTime: String\n    endTime: String\n}\n\ntype Trace {\n    id: ID!\n    header: TraceHeader\n    queryId: String\n    startTime: TraceStartTime\n    endTime: TraceEndTime\n    clientName: String\n    clientVersion: String\n    http: TraceHttp\n    clientReferenceId: String\n    durationNs: String\n    child: [TraceChild]\n}\n\ntype Query {\n    traces: [Trace]\n    trace(id: ID!): Trace\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-30T13:54:45Z",
+    "updated_at": "2019-07-17T14:32:25Z",
+    "pushed_at": "2019-07-17T14:32:29Z",
+    "issues": 6,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

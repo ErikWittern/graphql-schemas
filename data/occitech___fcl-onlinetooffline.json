@@ -1,0 +1,42 @@
+{
+  "repo_name": "fcl-onlinetooffline",
+  "repo_full_name": "occitech/fcl-onlinetooffline",
+  "repo_owner": "occitech",
+  "repo_description": "The online to offline is giving consumers the possibility to combine both online and offline buying experiences, into one.  You can test this feature by pulling this project, docker-compose run npm install & docker-compose up and your good to go !",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/server/modules/store-information/schema.gql",
+      "sha": "af2b11c88075199786966d3807a52da533dae9b8",
+      "url": "https://api.github.com/repositories/131813183/contents/src/server/modules/store-information/schema.gql?ref=64f3b5427e5f3c3034151c6398f6f6f9956fa72e",
+      "git_url": "https://api.github.com/repositories/131813183/git/blobs/af2b11c88075199786966d3807a52da533dae9b8",
+      "html_url": "https://github.com/occitech/fcl-onlinetooffline/blob/64f3b5427e5f3c3034151c6398f6f6f9956fa72e/src/server/modules/store-information/schema.gql",
+      "content": "type Query {\n  \"General information about this store\"\n  stores: [StoreInformation]!\n}\n\n\"General information about a store\"\ntype StoreInformation {\n  \"Store name\"\n  name: String!\n  \"Support phone number\"\n  phone: String\n  \"Store address\"\n  address: String\n  \"Store owner\"\n  owner: StoreOwner\n  \"Store coordinate\"\n  coordinates: StoreCoordinates\n}\n\n\"\"\"\nThe Owner of a store, with contact and personal\ninformation to make the store more human\n\"\"\"\ntype StoreOwner {\n  gender: Gender\n  displayName: String!\n  email: String!\n  picture(size: ImageSize = medium): String!\n}\n\nenum Gender {\n  FEMALE\n  MALE\n  NONBINARY\n}\n\nenum ImageSize {\n  large\n  medium\n  thumbnail\n}\n\ntype StoreCoordinates {\n  latitude: Float\n  longitude: Float\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-02T07:17:15Z",
+    "updated_at": "2018-05-15T12:22:30Z",
+    "pushed_at": "2018-07-25T09:52:53Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 13,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

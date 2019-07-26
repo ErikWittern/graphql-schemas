@@ -1,0 +1,110 @@
+{
+  "repo_name": "graphql-role-based-auth",
+  "repo_full_name": "shaneu/graphql-role-based-auth",
+  "repo_owner": "shaneu",
+  "repo_description": "POC for auth directives",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "lib/schema/schema.graphql",
+      "sha": "4f4989ba7e6915e8853d41d773bc727e29fd61c5",
+      "url": "https://api.github.com/repositories/151515589/contents/lib/schema/schema.graphql?ref=ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb",
+      "git_url": "https://api.github.com/repositories/151515589/git/blobs/4f4989ba7e6915e8853d41d773bc727e29fd61c5",
+      "html_url": "https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/schema.graphql",
+      "content": "# import Contributor from './contributor.graphql'\n# import Person from './person.graphql'\n# import Repository from './repository.graphql'\n\ntype Query {\n  contributor(adsId: ID!): Contributor!\n  person(email: String!): Person\n  repository(name: String!): Repository\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/schema.graphql:\n# import Contributor from './contributor.graphql'\n# import Person from './person.graphql'\n# import Repository from './repository.graphql'\n\ntype Query {\n  contributor(adsId: ID!): Contributor!\n  person(email: String!): Person\n  repository(name: String!): Repository\n}\n\n# https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/contributor.graphql:\ntype Contributor {\n  employeeId: String!\n  name: String!\n  username: String!\n  email: String!\n  adsId: String! \n  totalCommits: Int!\n  image: String\n}\n\n# https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/person.graphql:\ntype Person {\n  email: String!\n  firstName: String!\n  lastName: String!\n  name: String!\n  roles: [String!]!\n}\n# https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/repository.graphql:\n# import Director from './director.graphql'\n# import Contributor from './contributor.graphql'\n\ntype Repository {\n  name: String!\n  director: Director\n  language: String!\n  license: String\n  totalCommits: Int!\n  contributors: [Contributor]\n}\n\n# https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/director.graphql:\ntype Director {\n  name: String\n}",
+        "mergedPaths": [
+          "lib/schema/contributor.graphql",
+          "lib/schema/person.graphql",
+          "lib/schema/repository.graphql",
+          "lib/schema/director.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Contributor",
+          "Person",
+          "Repository",
+          "Director"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "person.graphql",
+      "path": "lib/schema/person.graphql",
+      "sha": "fe11da7b5a3337f2f82e8a187fc0a95546dff34e",
+      "url": "https://api.github.com/repositories/151515589/contents/lib/schema/person.graphql?ref=ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb",
+      "git_url": "https://api.github.com/repositories/151515589/git/blobs/fe11da7b5a3337f2f82e8a187fc0a95546dff34e",
+      "html_url": "https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/person.graphql",
+      "content": "type Person {\n  email: String!\n  firstName: String!\n  lastName: String!\n  name: String!\n  roles: [String!]!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "contributor.graphql",
+      "path": "lib/schema/contributor.graphql",
+      "sha": "d412eb2c49796d6ce8cfec8351c1504fb24f6f3b",
+      "url": "https://api.github.com/repositories/151515589/contents/lib/schema/contributor.graphql?ref=ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb",
+      "git_url": "https://api.github.com/repositories/151515589/git/blobs/d412eb2c49796d6ce8cfec8351c1504fb24f6f3b",
+      "html_url": "https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/contributor.graphql",
+      "content": "type Contributor {\n  employeeId: String!\n  name: String!\n  username: String!\n  email: String!\n  adsId: String! \n  totalCommits: Int!\n  image: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "repository.graphql",
+      "path": "lib/schema/repository.graphql",
+      "sha": "5a68e2c89488d5d7f07868161262074c20aa861a",
+      "url": "https://api.github.com/repositories/151515589/contents/lib/schema/repository.graphql?ref=ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb",
+      "git_url": "https://api.github.com/repositories/151515589/git/blobs/5a68e2c89488d5d7f07868161262074c20aa861a",
+      "html_url": "https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/repository.graphql",
+      "content": "# import Director from './director.graphql'\n# import Contributor from './contributor.graphql'\n\ntype Repository {\n  name: String!\n  director: Director\n  language: String!\n  license: String\n  totalCommits: Int!\n  contributors: [Contributor]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "director.graphql",
+      "path": "lib/schema/director.graphql",
+      "sha": "67fb591ec111d66e31f0a628036a16b1997555f9",
+      "url": "https://api.github.com/repositories/151515589/contents/lib/schema/director.graphql?ref=ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb",
+      "git_url": "https://api.github.com/repositories/151515589/git/blobs/67fb591ec111d66e31f0a628036a16b1997555f9",
+      "html_url": "https://github.com/shaneu/graphql-role-based-auth/blob/ab4fa7bd9038b7972852ef6c040ce2b9d0afe8cb/lib/schema/director.graphql",
+      "content": "type Director {\n  name: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-04T03:51:55Z",
+    "updated_at": "2018-10-04T19:55:04Z",
+    "pushed_at": "2018-10-04T19:55:03Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

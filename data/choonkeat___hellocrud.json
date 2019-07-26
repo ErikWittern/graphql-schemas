@@ -1,0 +1,41 @@
+{
+  "repo_name": "hellocrud",
+  "repo_full_name": "choonkeat/hellocrud",
+  "repo_owner": "choonkeat",
+  "repo_description": "generate ORM, GraphQL backend and React JS frontend to CRUD against your database schema",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graph/schema.graphql",
+      "sha": "9b8cdf781ff4419a31f6bf2548bfd93c860d66f0",
+      "url": "https://api.github.com/repositories/125736465/contents/graph/schema.graphql?ref=98da0ec23c8161d30775dacc7299dc4acc02dbe0",
+      "git_url": "https://api.github.com/repositories/125736465/git/blobs/9b8cdf781ff4419a31f6bf2548bfd93c860d66f0",
+      "html_url": "https://github.com/choonkeat/hellocrud/blob/98da0ec23c8161d30775dacc7299dc4acc02dbe0/graph/schema.graphql",
+      "content": "\n\t\tschema {query: Query\nmutation: Mutation}type Query {searchComments(\n  sinceID: ID\n  pageNumber: Int\n  pageSize: Int\n  input: SearchCommentInput\n): CommentsCollection!\n\ncommentByID(\n  id: ID!\n): Comment!\n\nsearchPosts(\n  sinceID: ID\n  pageNumber: Int\n  pageSize: Int\n  input: SearchPostInput\n): PostsCollection!\n\npostByID(\n  id: ID!\n): Post!\n}\ntype Mutation {createComment(\n  input: CreateCommentInput!\n): Comment!\n\nupdateCommentByID(\n  id: ID!\n  input: UpdateCommentInput!\n): Comment!\n\ndeleteCommentByID(\n  id: ID!\n): Comment!\n\ncreatePost(\n  input: CreatePostInput!\n): Post!\n\nupdatePostByID(\n  id: ID!\n  input: UpdatePostInput!\n): Post!\n\ndeletePostByID(\n  id: ID!\n): Post!\n}\n# Comment is a resource type\ntype Comment {\n\n\t\t# Convenient GUID for ReactJS component @key attribute\n\t\trowId: String!\n\t\tid: ID!\n\t\tpostID: Int!\n\t\tauthor: String!\n\t\tbody: String!\n\t\tnotes: String\n\t\tcreatedAt: Time\n\t\tupdatedAt: Time\n\t\t# post has a foreign key pointing to Comment\n\t\tpost: Post\n}\n\ntype CommentsCollection {\n\tnodes: [Comment!]!\n}\n\n\n# CreateCommentInput is a create input type for Comment resource\ninput CreateCommentInput {\n\n\t  postID: Int!\n\t  author: String!\n\t  body: String!\n\t  notes: String\n}\n\n\ninput UpdateCommentInput {\n\t  postID: Int!\n\t  author: String!\n\t  body: String!\n\t  notes: String\n}\n\n\n# SearchCommentInput is a search input/arguments type for Comment resources\ninput SearchCommentInput {\n\n\t  postID: Int\n\t  author: String\n\t  body: String\n\t  notes: String\n}\n# Post is a resource type\ntype Post {\n\n\t\t# Convenient GUID for ReactJS component @key attribute\n\t\trowId: String!\n\t\tid: ID!\n\t\ttitle: String!\n\t\tauthor: String!\n\t\tbody: String!\n\t\tnotes: String\n\t\tcreatedAt: Time\n\t\tupdatedAt: Time\n\t\t# comments has a many-to-one relationship with Post\n\t\tcomments: CommentsCollection\n}\n\ntype PostsCollection {\n\tnodes: [Post!]!\n}\n\n\n# CreatePostInput is a create input type for Post resource\ninput CreatePostInput {\n\n\t  title: String!\n\t  author: String!\n\t  body: String!\n\t  notes: String\n}\n\n\ninput UpdatePostInput {\n\t  title: String!\n\t  author: String!\n\t  body: String!\n\t  notes: String\n}\n\n\n# SearchPostInput is a search input/arguments type for Post resources\ninput SearchPostInput {\n\n\t  title: String\n\t  author: String\n\t  body: String\n\t  notes: String\n}\nscalar Text\nscalar Time\nscalar Int64\nscalar Base64\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 17
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-18T15:01:57Z",
+    "updated_at": "2019-04-19T06:10:08Z",
+    "pushed_at": "2018-06-21T00:02:37Z",
+    "issues": 9,
+    "watchers": 5,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 19,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 19,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

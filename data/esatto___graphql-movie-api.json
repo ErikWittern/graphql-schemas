@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-movie-api",
+  "repo_full_name": "esatto/graphql-movie-api",
+  "repo_owner": "esatto",
+  "repo_description": "Example GraphQL API created as an intro to GraphQL and Apollo. Presented during the meetup React & GraphQL Sundsvall. (https://www.meetup.com/React-GraphQL-Sundsvall/)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "1869b518bc957e5d818db6fd00c64f8d59ee9a35",
+      "url": "https://api.github.com/repositories/158692729/contents/src/schema.graphql?ref=356ca471238d5b74632169a29c6caf05ebdb3ead",
+      "git_url": "https://api.github.com/repositories/158692729/git/blobs/1869b518bc957e5d818db6fd00c64f8d59ee9a35",
+      "html_url": "https://github.com/esatto/graphql-movie-api/blob/356ca471238d5b74632169a29c6caf05ebdb3ead/src/schema.graphql",
+      "content": "type Actor {\n  id: ID!\n  name: String!\n  birthday: String!\n  shortBio: String!\n  imageUrl: String!\n  rolesInMovies: [ActorRole!]!\n  nationality: String!\n}\n\ntype MovieRole {\n  actor: Actor!\n  roles: [String!]!\n}\n\ntype ActorRole {\n  roles: [String!]!\n  movie: Movie!\n}\n\ntype Review {\n  id: ID!\n  rating: Int!\n  title: String!\n  reviewer: String!\n  movie: Movie!\n}\n\n\"\"\"\nRating systems used in different countries\n\"\"\"\nenum Rating {\n  \"\"\"\n  Used in USA. PG, PG-13, R etc.\n  \"\"\"\n  MPAA\n  \"\"\"\n  Used in Sweden. 0, 7, 11, 15.\n  \"\"\"\n  SWEDISH\n}\n\ntype Movie {\n  id: ID!\n  title: String!\n  posterImageUrl: String!\n  description: String!\n  genres: [String!]!\n  releaseDate: String!\n  \"\"\"\n  Runtime in minutes\n  \"\"\"\n  runtime: Int!\n  \"\"\"\n  Age rating of the movie\n  \"\"\"\n  rating(type: Rating = MPAA): String!\n  roles: [MovieRole!]!\n  reviews: [Review!]!\n}\n\ntype Query {\n  movie(id: ID!): Movie\n  movies(first: Int, offset: Int): [Movie!]!\n  actor(id: ID!): Actor\n  actors(first: Int, offset: Int): [Actor!]!\n}\n\ninput ReviewInput {\n  movieId: ID!\n  rating: Int!\n  title: String!\n  reviewer: String!\n}\n\ntype Mutation {\n  addReview(review: ReviewInput!): Review!\n}\n\ntype Subscription {\n  reviewAdded: Review\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-22T11:58:59Z",
+    "updated_at": "2018-12-01T10:35:55Z",
+    "pushed_at": "2018-12-01T10:35:54Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

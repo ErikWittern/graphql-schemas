@@ -1,0 +1,52 @@
+{
+  "repo_name": "firebase-graphql",
+  "repo_full_name": "markers16123/firebase-graphql",
+  "repo_owner": "markers16123",
+  "repo_description": "firebase-express-graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backup/file_db/graphql/schema.graphql",
+      "sha": "98c427284739364808b8bdef9db4d0d489b286c3",
+      "url": "https://api.github.com/repositories/141032776/contents/backup/file_db/graphql/schema.graphql?ref=4f7bf8d8a8c5ca66f30ce1a78b8221dc99c38eea",
+      "git_url": "https://api.github.com/repositories/141032776/git/blobs/98c427284739364808b8bdef9db4d0d489b286c3",
+      "html_url": "https://github.com/markers16123/firebase-graphql/blob/4f7bf8d8a8c5ca66f30ce1a78b8221dc99c38eea/backup/file_db/graphql/schema.graphql",
+      "content": "type Person {\n    id: Int!\n    name: String!\n    age: Int!\n    gender: String!\n}\n\ntype Query {\n    people: [Person]!\n    person(id: Int!): Person\n}\n\ntype Mutation {\n    addPerson(name: String!, age: Int!, gender: String!): Person!\n    deletePerson(id: Int!): Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "functions/graphql/schema/schema.graphql",
+      "sha": "57ea6f54b497f9fde568895e2f18919a94114ef5",
+      "url": "https://api.github.com/repositories/141032776/contents/functions/graphql/schema/schema.graphql?ref=1a33033132fbdc0b75ff0d883905bc0c3c8cb273",
+      "git_url": "https://api.github.com/repositories/141032776/git/blobs/57ea6f54b497f9fde568895e2f18919a94114ef5",
+      "html_url": "https://github.com/markers16123/firebase-graphql/blob/1a33033132fbdc0b75ff0d883905bc0c3c8cb273/functions/graphql/schema/schema.graphql",
+      "content": "type Movie {\n    id: Int!\n    title: String!\n    rating: Float\n    description_intro: String\n    language: String\n    medium_cover_image: String\n    genres: [String]\n}\n\ntype Query {\n    movies(limit: Int, rating: Float): [Movie]!\n    movie(id: Int!): Movie\n    suggestions(id: Int!): [Movie]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-15T14:12:04Z",
+    "updated_at": "2018-07-18T09:17:58Z",
+    "pushed_at": "2018-07-18T09:17:56Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

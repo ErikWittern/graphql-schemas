@@ -1,0 +1,66 @@
+{
+  "repo_name": "graphql-apollo-bookshelf-boilerplate",
+  "repo_full_name": "ouarrtaha/graphql-apollo-bookshelf-boilerplate",
+  "repo_owner": "ouarrtaha",
+  "repo_description": "Graphql Apollo Express Backend w/ Webpack, babel, ES6, ESLint, Hot-Reload Template, With a ready bookshelf setup.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "post.gql",
+      "path": "src/graphql/types/post.gql",
+      "sha": "d4a7af78c4bbf8f80739aefb30145ec841d3d533",
+      "url": "https://api.github.com/repositories/163712106/contents/src/graphql/types/post.gql?ref=9234232534ccd12caa3f4a2b6db727c01cec94f7",
+      "git_url": "https://api.github.com/repositories/163712106/git/blobs/d4a7af78c4bbf8f80739aefb30145ec841d3d533",
+      "html_url": "https://github.com/ouarrtaha/graphql-apollo-bookshelf-boilerplate/blob/9234232534ccd12caa3f4a2b6db727c01cec94f7/src/graphql/types/post.gql",
+      "content": "type Post  {\n    id: ID!\n    title: String\n    status: String\n    comments: [Comment]\n}\n\n\ntype Query {\n    getPosts: [Post]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ouarrtaha/graphql-apollo-bookshelf-boilerplate/blob/9234232534ccd12caa3f4a2b6db727c01cec94f7/src/graphql/types/post.gql:\ntype Post  {\n    id: ID!\n    title: String\n    status: String\n    comments: [Comment]\n}\n\n\ntype Query {\n    getPosts: [Post]\n}\n\n# https://github.com/ouarrtaha/graphql-apollo-bookshelf-boilerplate/blob/9234232534ccd12caa3f4a2b6db727c01cec94f7/src/graphql/types/comment.gql:\ntype Comment  {\n    id: ID!\n    post_id: ID!\n    username: String\n    comment: String\n}\n",
+        "mergedPaths": [
+          "src/graphql/types/comment.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Comment"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "comment.gql",
+      "path": "src/graphql/types/comment.gql",
+      "sha": "b2ef0500fb44c0ba30427828b539b1f5a093de0d",
+      "url": "https://api.github.com/repositories/163712106/contents/src/graphql/types/comment.gql?ref=9234232534ccd12caa3f4a2b6db727c01cec94f7",
+      "git_url": "https://api.github.com/repositories/163712106/git/blobs/b2ef0500fb44c0ba30427828b539b1f5a093de0d",
+      "html_url": "https://github.com/ouarrtaha/graphql-apollo-bookshelf-boilerplate/blob/9234232534ccd12caa3f4a2b6db727c01cec94f7/src/graphql/types/comment.gql",
+      "content": "type Comment  {\n    id: ID!\n    post_id: ID!\n    username: String\n    comment: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-01T04:02:43Z",
+    "updated_at": "2019-04-06T01:06:48Z",
+    "pushed_at": "2019-01-04T03:36:15Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

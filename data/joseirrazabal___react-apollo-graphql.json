@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-apollo-graphql",
+  "repo_full_name": "joseirrazabal/react-apollo-graphql",
+  "repo_owner": "joseirrazabal",
+  "repo_description": "react apollo graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "3d10ea882e69d1d019daa10423f88307c1e9473c",
+      "url": "https://api.github.com/repositories/98487652/contents/server/src/schema.graphql?ref=3214d6bde20bf82ba0f31f96792fef9dab3b7a82",
+      "git_url": "https://api.github.com/repositories/98487652/git/blobs/3d10ea882e69d1d019daa10423f88307c1e9473c",
+      "html_url": "https://github.com/joseirrazabal/react-apollo-graphql/blob/3214d6bde20bf82ba0f31f96792fef9dab3b7a82/server/src/schema.graphql",
+      "content": "type MenuItem {\n\tid: ID!\n\tname: String!\n\ttitle: Boolean\n\turl: String\n\torder: Int\n\ticon: String\n\tcredential: Int\n}\n\n  type Channel {\n\tid: ID!\n\tname: String\n  }\n  \n  input MessageInput{\n\tchannelId: ID!\n\ttext: String\n  }\n  \n  type Message {\n\tid: ID!\n\ttext: String\n  }\n  \n  # Error type.\n  type Error {\n\tkey: String\n\tvalue: String\n  }\n  # user\n  type User {\n\tid: String\n\tusername: String\n\tcreatedAt: String\n\tmodifiedAt: String\n\tlastLogin: String\n  }\n  # Role\n  type Role {\n\tid: String\n\tname: String\n\tcreatedAt: String\n  }\n  \n  # Auth type.\n  type Auth {\n\ttoken: String\n\tuser: User\n\terrors: [Error]\n  }\n  \n  input ChannelsaInput {\n\ttoken: String\n  }\n\n  # This type specifies the entry points into our API\n  type Query {\n\tchannelsa(params: ChannelsaInput): [Channel]\n\tchannel(name: String!): Channel\n\tgetUser(id: ID!): User \n\tgetRole(id: ID!): Role\n\tloggedInUser: User\n\tgetAllMenuItem: [MenuItem]\n  }\n  \n  # The mutation root type, used to define all mutations\n  type Mutation {\n\taddChannel(name: String!): Channel\n\taddMessage(message: MessageInput!): Message\n\tlogUser(email: String!, password: String!): Auth\n\tsetMenuItem(name: String!, title: Boolean, url: String, order: Int, icon: String, credential: Int): MenuItem\n  }\n  \n  # The subscription root type, specifying what we can subscribe to\n  type Subscription {\n\tchannelAdded: Channel\n\t# menuItemAdded(credential: Int!): MenuItem\n\tmenuItemAdded: MenuItem\n  }\n\n# schema {\n# \tquery: Query\n# \tmutation: Mutation \n# \tsubscription: Subscription\n# }",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-27T02:59:40Z",
+    "updated_at": "2017-12-16T16:48:39Z",
+    "pushed_at": "2018-02-09T18:05:15Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

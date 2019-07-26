@@ -1,0 +1,39 @@
+{
+  "repo_name": "hello-prisma",
+  "repo_full_name": "matt-sm/hello-prisma",
+  "repo_owner": "matt-sm",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "45a7089d3bd2f1da25e98e638a6ea92b347ac768",
+      "url": "https://api.github.com/repositories/159448958/contents/schema.graphql?ref=f5db1bb632a74534ede660d7310f4145639a0407",
+      "git_url": "https://api.github.com/repositories/159448958/git/blobs/45a7089d3bd2f1da25e98e638a6ea92b347ac768",
+      "html_url": "https://github.com/matt-sm/hello-prisma/blob/f5db1bb632a74534ede660d7310f4145639a0407/schema.graphql",
+      "content": "type Query {\n  publishedPosts: [Post!]!\n  post(postId: ID!): Post\n  postsByUser(userId: ID!): [Post!]!\n}\n\ntype Mutation {\n  createUser(name: String!): User\n  createDraft(title: String!, userId: ID!): Post\n  publish(postId: ID!): Post\n}\n\ntype User {\n  id: ID!\n  email: String\n  name: String!\n  posts: [Post!]!\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  published: Boolean!\n  author: User\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-28T05:32:03Z",
+    "updated_at": "2018-11-28T08:38:26Z",
+    "pushed_at": "2018-11-28T08:38:24Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

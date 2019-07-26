@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-hotels-example",
+  "repo_full_name": "r0b1n/graphql-hotels-example",
+  "repo_owner": "r0b1n",
+  "repo_description": "GraphQL server example. Country/City/Hotel structure.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "2d6b036c6b31f343e14e130980079b388aeab900",
+      "url": "https://api.github.com/repositories/50257530/contents/graphql/schema.graphql?ref=61341b534867c83ad786d1950800252a3c6c05c5",
+      "git_url": "https://api.github.com/repositories/50257530/git/blobs/2d6b036c6b31f343e14e130980079b388aeab900",
+      "html_url": "https://github.com/r0b1n/graphql-hotels-example/blob/61341b534867c83ad786d1950800252a3c6c05c5/graphql/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype City implements Node {\n  id: ID!\n  _id: String\n  name: String\n  population: Int\n  hotelsCount: Int\n  images: [Image]\n  country: Country\n  hotels: [Hotel]\n}\n\ntype CityConnection {\n  pageInfo: PageInfo!\n  edges: [CityEdge]\n}\n\ntype CityEdge {\n  node: City\n  cursor: String!\n}\n\ntype Country implements Node {\n  id: ID!\n  _id: String\n  name: String\n  description: String\n  slug: String\n  coverImageUrl: String\n  cities: [City]\n  citiesList(after: String, first: Int, before: String, last: Int): CityConnection\n}\n\ntype Hotel implements Node {\n  id: ID!\n  name: String\n  address: String\n  stars: Int\n  city: City\n}\n\ntype Image implements Node {\n  id: ID!\n  url: String\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  viewer: ViewerQueryType\n  node(id: ID!): Node\n}\n\ntype ViewerQueryType {\n  country(id: String!): Country\n  countries: [Country]\n  city(id: String!): City\n  hotel(id: String!): Hotel\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-01-23T20:42:51Z",
+    "updated_at": "2017-04-24T10:47:45Z",
+    "pushed_at": "2016-08-08T23:54:53Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

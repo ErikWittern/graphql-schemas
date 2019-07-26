@@ -1,0 +1,63 @@
+{
+  "repo_name": "graphql-config",
+  "repo_full_name": "prisma/graphql-config",
+  "repo_owner": "prisma",
+  "repo_description": "The easiest way to configure your development environment with your GraphQL schema (supported by most tools, editors & IDEs)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema-b1.graphql",
+      "path": "src/__tests__/basic/config/schema-b1.graphql",
+      "sha": "f04edbdaca009793a36b3c88ba0f3115cffb30e0",
+      "url": "https://api.github.com/repositories/64470436/contents/src/__tests__/basic/config/schema-b1.graphql?ref=4c09eef3b97ebfbde6aa3710dfcfb1fe845f6d60",
+      "git_url": "https://api.github.com/repositories/64470436/git/blobs/f04edbdaca009793a36b3c88ba0f3115cffb30e0",
+      "html_url": "https://github.com/prisma/graphql-config/blob/4c09eef3b97ebfbde6aa3710dfcfb1fe845f6d60/src/__tests__/basic/config/schema-b1.graphql",
+      "content": "# import User from \"./schema-b2.graphql\"\n\ntype Query {\n  hello: String!\n  user: User!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/prisma/graphql-config/blob/4c09eef3b97ebfbde6aa3710dfcfb1fe845f6d60/src/__tests__/basic/config/schema-b1.graphql:\n# import User from \"./schema-b2.graphql\"\n\ntype Query {\n  hello: String!\n  user: User!\n}\n\n# https://github.com/prisma/graphql-config/blob/4c09eef3b97ebfbde6aa3710dfcfb1fe845f6d60/src/__tests__/basic/config/schema-b2.graphql:\ntype User {\n  name: String\n}\n",
+        "mergedPaths": [
+          "src/__tests__/basic/config/schema-b2.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema-b2.graphql",
+      "path": "src/__tests__/basic/config/schema-b2.graphql",
+      "sha": "712898d796cb71d5aefe63ef85c5d030af344636",
+      "url": "https://api.github.com/repositories/64470436/contents/src/__tests__/basic/config/schema-b2.graphql?ref=4c09eef3b97ebfbde6aa3710dfcfb1fe845f6d60",
+      "git_url": "https://api.github.com/repositories/64470436/git/blobs/712898d796cb71d5aefe63ef85c5d030af344636",
+      "html_url": "https://github.com/prisma/graphql-config/blob/4c09eef3b97ebfbde6aa3710dfcfb1fe845f6d60/src/__tests__/basic/config/schema-b2.graphql",
+      "content": "type User {\n  name: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-07-29T09:54:26Z",
+    "updated_at": "2019-07-19T11:23:43Z",
+    "pushed_at": "2019-07-09T15:13:14Z",
+    "issues": 40,
+    "watchers": 17,
+    "fork_count": 41,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 83,
+    "pull_requests_open": 17,
+    "pull_requests_closed": 16,
+    "pull_requests_merged": 50,
+    "releases": 13,
+    "stargazers": 574
+  }
+}

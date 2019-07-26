@@ -1,0 +1,42 @@
+{
+  "repo_name": "PR3-IOT",
+  "repo_full_name": "sandysundram/pr3-iot",
+  "repo_owner": "SandySundram",
+  "repo_description": "React-Server-NodeMCU",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "457f492a9cb55da0a2df097454f1145c1a8f2cd7",
+      "url": "https://api.github.com/repositories/152683055/contents/src/schema.graphql?ref=62a497d1324c5dc4aea42235d2ddcd522c4abcc2",
+      "git_url": "https://api.github.com/repositories/152683055/git/blobs/457f492a9cb55da0a2df097454f1145c1a8f2cd7",
+      "html_url": "https://github.com/SandySundram/PR3-IOT/blob/62a497d1324c5dc4aea42235d2ddcd522c4abcc2/src/schema.graphql",
+      "content": "type Subscription {\n  eventAdded: Event!\n}\n\ntype Query {\n  events: [Event!]!\n  feed: String!\n}\n\ntype Mutation {\n  createEvent(topic: String!, message: String!): Event!\n  turnOnWithAuth: Event!\n  turnOffWithAuth: Event!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n}\n\ntype Event {\n  _id: ID!\n  topic: String!\n  message: String!\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  _id: ID!\n  email: String!\n  name: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-12T02:29:56Z",
+    "updated_at": "2018-11-03T17:45:31Z",
+    "pushed_at": "2018-11-03T06:12:30Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 13,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

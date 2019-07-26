@@ -1,0 +1,42 @@
+{
+  "repo_name": "blacktube-graphql",
+  "repo_full_name": "koneko096/blacktube-graphql",
+  "repo_owner": "koneko096",
+  "repo_description": "Simple video streaming backend with GraphQL data source",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "d66f0719568b120ffa32ec9c2cfad554c9eb9956",
+      "url": "https://api.github.com/repositories/89790635/contents/graphql/schema.graphql?ref=880d826a23acedbb5bc2f08e621a526f208cd3ec",
+      "git_url": "https://api.github.com/repositories/89790635/git/blobs/d66f0719568b120ffa32ec9c2cfad554c9eb9956",
+      "html_url": "https://github.com/koneko096/blacktube-graphql/blob/880d826a23acedbb5bc2f08e621a526f208cd3ec/graphql/schema.graphql",
+      "content": "type User {\n\tid: Int!\n\tname: String!\n\tpassword: String!\n}\n\ntype Video {\n\tid: Int!\n\tduration: Int!\n\tkey: String!\n\ttitle: String!\n\tdescription: String!\n\towner: User!\n}\n\ntype Query {\n\tusers: [User!]!\n\tvideos: [Video!]!\n}\n\ninput NewUser {\n\tname: String!\n\tpassword: String!\n}\n\ninput UserMutation {\n\tname: String\n\tpassword: String\n}\n\ninput NewVideo {\n\ttitle: String!\n\tdescription: String!\n\tduration: Int!\n\townerId: String!\n}\n\ninput VideoMutation {\n\ttitle: String\n\tdescription: String\n\tduration: Int\n\townerId: String\n}\n\ntype Mutation {\n\tcreateUser(input: NewUser!): User!\n\tdeleteUser(id: Int!): User!\n\tupdateUser(id: Int!, mutation: UserMutation!): User!\n\tcreateVideo(input: NewVideo!): Video!\n\tdeleteVideo(id: Int!): Video!\n\tupdateVideo(id: Int!, mutation: VideoMutation!): Video!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-29T14:28:50Z",
+    "updated_at": "2018-10-16T10:04:34Z",
+    "pushed_at": "2018-10-16T10:04:33Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

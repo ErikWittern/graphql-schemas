@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-hackathon",
+  "repo_full_name": "robzhu/graphql-hackathon",
+  "repo_owner": "robzhu",
+  "repo_description": "Repo for starter kits and samples for the GraphQL Community Hackathon",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "275ed2eb0b42d40df5b5d26b3414612cc3a1bea4",
+      "url": "https://api.github.com/repositories/79856841/contents/server/schema.graphql?ref=79d13256920516e5862e33fc5f69bdd5027c29fd",
+      "git_url": "https://api.github.com/repositories/79856841/git/blobs/275ed2eb0b42d40df5b5d26b3414612cc3a1bea4",
+      "html_url": "https://github.com/robzhu/graphql-hackathon/blob/79d13256920516e5862e33fc5f69bdd5027c29fd/server/schema.graphql",
+      "content": "schema {\n  query: QueryRoot\n  mutation: MutationRoot\n}\n\ntype Author {\n  id: String\n  name: String\n  image: String\n  books: [Book]\n}\n\ntype Book {\n  id: String\n  title: String\n  image: String\n  authorId: String\n  description: String\n  author: Author\n}\n\ninput BookInput {\n  id: String\n  title: String\n  image: String\n  description: String\n  authorId: String\n}\n\ntype MutationRoot {\n  addBook(book: BookInput): Book\n}\n\ntype QueryRoot {\n  viewer: Viewer\n  authors: [Author]\n  books: [Book]\n  bookByID(id: String): Book\n  bookSearch(keyword: String): [Book]\n  secret: String\n}\n\ntype Viewer {\n  authors: [Author]\n  books: [Book]\n  bookByID(id: String): Book\n  bookSearch(keyword: String): [Book]\n  secret: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-23T22:52:51Z",
+    "updated_at": "2018-10-13T03:34:24Z",
+    "pushed_at": "2017-02-10T22:03:44Z",
+    "issues": 4,
+    "watchers": 7,
+    "fork_count": 19,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 10,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 9,
+    "releases": 0,
+    "stargazers": 22
+  }
+}

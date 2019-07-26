@@ -1,0 +1,42 @@
+{
+  "repo_name": "warner-bros-games-api",
+  "repo_full_name": "andykais/warner-bros-games-api",
+  "repo_owner": "andykais",
+  "repo_description": "graphql user records api accessed and modified by real-time-servers and users",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "types.graphql",
+      "path": "src/api/graphql/types.graphql",
+      "sha": "b937d8d1e9774cdefa2fa0c76ea32e8368ca039d",
+      "url": "https://api.github.com/repositories/154549769/contents/src/api/graphql/types.graphql?ref=193dfda82275feeccc7c76e0701abd5b4bc9d4f3",
+      "git_url": "https://api.github.com/repositories/154549769/git/blobs/b937d8d1e9774cdefa2fa0c76ea32e8368ca039d",
+      "html_url": "https://github.com/andykais/warner-bros-games-api/blob/193dfda82275feeccc7c76e0701abd5b4bc9d4f3/src/api/graphql/types.graphql",
+      "content": "\"either an Int or Float, mongodb does not distinguish\"\nscalar Number\n\ntype Query {\n  _empty: String\n}\n\ntype Mutation {\n  _empty: String\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-24T18:34:03Z",
+    "updated_at": "2018-10-31T04:05:01Z",
+    "pushed_at": "2018-10-31T04:04:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "relayBoiler",
+  "repo_full_name": "jschloer/relayboiler",
+  "repo_owner": "jschloer",
+  "repo_description": "Started with react-redux-starter-kit, added relay. Used it on a project and then worked my way backwards to this.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema.graphql",
+      "sha": "67a703086df2da203e695edb1b0979a45edbb4c3",
+      "url": "https://api.github.com/repositories/58243283/contents/src/data/schema.graphql?ref=918084b1b3dc1ac8970a9af13de241b0daeaad3e",
+      "git_url": "https://api.github.com/repositories/58243283/git/blobs/67a703086df2da203e695edb1b0979a45edbb4c3",
+      "html_url": "https://github.com/jschloer/relayBoiler/blob/918084b1b3dc1ac8970a9af13de241b0daeaad3e/src/data/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: Viewer\n}\n\ntype User implements Node {\n  id: ID!\n  username: String\n  name: String\n}\n\ntype Viewer {\n  root: Viewer!\n  user: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-05-07T01:17:53Z",
+    "updated_at": "2016-05-07T01:18:46Z",
+    "pushed_at": "2016-05-07T01:18:45Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

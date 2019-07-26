@@ -1,0 +1,42 @@
+{
+  "repo_name": "focus",
+  "repo_full_name": "joshpitzalis/focus",
+  "repo_owner": "joshpitzalis",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "f35eabb1782469afc5e22a0a22c0bb668a1aa98a",
+      "url": "https://api.github.com/repositories/165002772/contents/server/schema.graphql?ref=a8d0e4d030451c053c69496398e1ad1fee1f0254",
+      "git_url": "https://api.github.com/repositories/165002772/git/blobs/f35eabb1782469afc5e22a0a22c0bb668a1aa98a",
+      "html_url": "https://github.com/joshpitzalis/focus/blob/a8d0e4d030451c053c69496398e1ad1fee1f0254/server/schema.graphql",
+      "content": "scalar JSON\n\ntype Orders {\n  PMY5XbR7FZo5qEkEb: Int\n}\n\n# union FalseOrTime = Boolean | String\n\ntype Task {\n  _id: ID!\n  created: String!\n  title: String!\n  note: String\n  duration: Int\n  tags: [String]\n  completed: String!\n  fromCalendar: Boolean\n  listId: String\n  userId: String!\n  splittable: Boolean\n  orders: JSON\n  createdLocal: String!\n  createdLocalPretty: String!\n  createdDatePretty: String!\n  createdTimePretty: String!\n}\n\ntype Query {\n  tasks: [Task]\n}\n\ntype Mutation {\n  createTask(title: String!): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-10T06:22:10Z",
+    "updated_at": "2019-01-19T12:31:18Z",
+    "pushed_at": "2019-01-19T12:31:17Z",
+    "issues": 10,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

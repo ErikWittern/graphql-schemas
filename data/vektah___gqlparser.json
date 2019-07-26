@@ -1,0 +1,52 @@
+{
+  "repo_name": "gqlparser",
+  "repo_full_name": "vektah/gqlparser",
+  "repo_owner": "vektah",
+  "repo_description": "A port of the parser from graphql-js into golang",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "swapi.graphql",
+      "path": "validator/testdata/swapi.graphql",
+      "sha": "38422b7f710f08403ae64861d44604a7d08c0931",
+      "url": "https://api.github.com/repositories/132299984/contents/validator/testdata/swapi.graphql?ref=c56094c54c2c4a462d1cdab34e9f54417976f7cb",
+      "git_url": "https://api.github.com/repositories/132299984/git/blobs/38422b7f710f08403ae64861d44604a7d08c0931",
+      "html_url": "https://github.com/vektah/gqlparser/blob/c56094c54c2c4a462d1cdab34e9f54417976f7cb/validator/testdata/swapi.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n    subscription: Subscription\n}\n\n# The query type, represents all of the entry points into our object graph\ntype Query {\n    hero(episode: Episode): Character\n    reviews(episode: Episode!): [Review]\n    search(text: String): [SearchResult]\n    character(id: ID!): Character\n    droid(id: ID!): Droid\n    human(id: ID!): Human\n    starship(id: ID!): Starship\n}\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n    createReview(episode: Episode, review: ReviewInput!): Review\n}\n# The subscription type, represents all subscriptions we can make to our data\ntype Subscription {\n    reviewAdded(episode: Episode): Review\n}\n# The episodes in the Star Wars trilogy\nenum Episode {\n    # Star Wars Episode IV: A New Hope, released in 1977.\n    NEWHOPE\n    # Star Wars Episode V: The Empire Strikes Back, released in 1980.\n    EMPIRE\n    # Star Wars Episode VI: Return of the Jedi, released in 1983.\n    JEDI\n}\n# A character from the Star Wars universe\ninterface Character {\n    # The ID of the character\n    id: ID!\n    # The name of the character\n    name: String!\n    # The friends of the character, or an empty list if they have none\n    friends: [Character]\n    # The friends of the character exposed as a connection with edges\n    friendsConnection(first: Int, after: ID): FriendsConnection!\n    # The movies this character appears in\n    appearsIn: [Episode]!\n}\n# Units of height\nenum LengthUnit {\n    # The standard unit around the world\n    METER\n    # Primarily used in the United States\n    FOOT\n}\n# A humanoid creature from the Star Wars universe\ntype Human implements Character {\n    # The ID of the human\n    id: ID!\n    # What this human calls themselves\n    name: String!\n    # The home planet of the human, or null if unknown\n    homePlanet: String\n    # Height in the preferred unit, default is meters\n    height(unit: LengthUnit = METER): Float\n    # Mass in kilograms, or null if unknown\n    mass: Float\n    # This human's friends, or an empty list if they have none\n    friends: [Character]\n    # The friends of the human exposed as a connection with edges\n    friendsConnection(first: Int, after: ID): FriendsConnection!\n    # The movies this human appears in\n    appearsIn: [Episode]!\n    # A list of starships this person has piloted, or an empty list if none\n    starships: [Starship]\n}\n# An autonomous mechanical character in the Star Wars universe\ntype Droid implements Character {\n    # The ID of the droid\n    id: ID!\n    # What others call this droid\n    name: String!\n    # This droid's friends, or an empty list if they have none\n    friends: [Character]\n    # The friends of the droid exposed as a connection with edges\n    friendsConnection(first: Int, after: ID): FriendsConnection!\n    # The movies this droid appears in\n    appearsIn: [Episode]!\n    # This droid's primary function\n    primaryFunction: String\n}\n# A connection object for a character's friends\ntype FriendsConnection {\n    # The total number of friends\n    totalCount: Int\n    # The edges for each of the character's friends.\n    edges: [FriendsEdge]\n    # A list of the friends, as a convenience when edges are not needed.\n    friends: [Character]\n    # Information for paginating this connection\n    pageInfo: PageInfo!\n}\n# An edge object for a character's friends\ntype FriendsEdge {\n    # A cursor used for pagination\n    cursor: ID!\n    # The character represented by this friendship edge\n    node: Character\n}\n# Information for paginating this connection\ntype PageInfo {\n    startCursor: ID\n    endCursor: ID\n    hasNextPage: Boolean!\n}\n# Represents a review for a movie\ntype Review {\n    # The movie\n    episode: Episode\n    # The number of stars this review gave, 1-5\n    stars: Int!\n    # Comment about the movie\n    commentary: String\n}\n# The input object sent when someone is creating a new review\ninput ReviewInput {\n    # 0-5 stars\n    stars: Int!\n    # Comment about the movie, optional\n    commentary: String\n    # Favorite color, optional\n    favorite_color: ColorInput\n}\n# The input object sent when passing in a color\ninput ColorInput {\n    red: Int!\n    green: Int!\n    blue: Int!\n}\ntype Starship {\n    # The ID of the starship\n    id: ID!\n    # The name of the starship\n    name: String!\n    # Length of the starship, along the longest axis\n    length(unit: LengthUnit = METER): Float\n    coordinates: [[Float!]!]\n}\nunion SearchResult = Human | Droid | Starship",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 17
+    },
+    {
+      "name": "vars.graphql",
+      "path": "validator/testdata/vars.graphql",
+      "sha": "5083ed53ec2818a9be5329d65842d873e3659d04",
+      "url": "https://api.github.com/repositories/132299984/contents/validator/testdata/vars.graphql?ref=dc92a8140f312f91f20d2b1cf04cb1525a76d5f3",
+      "git_url": "https://api.github.com/repositories/132299984/git/blobs/5083ed53ec2818a9be5329d65842d873e3659d04",
+      "html_url": "https://github.com/vektah/gqlparser/blob/dc92a8140f312f91f20d2b1cf04cb1525a76d5f3/validator/testdata/vars.graphql",
+      "content": "type Query {\n    optionalIntArg(i: Int): Boolean!\n    intArg(i: Int!): Boolean!\n    stringArg(i: String): Boolean!\n    boolArg(i: Boolean!): Boolean!\n    floatArg(i: Float!): Boolean!\n    idArg(i: ID!): Boolean!\n    scalarArg(i: Custom!): Boolean!\n    structArg(i: InputType!): Boolean!\n    defaultStructArg(i: InputType! = {name: \"foo\"}): Boolean!\n    arrayArg(i: [InputType!]): Boolean!\n}\n\ninput InputType {\n    name: String!\n    nullName: String\n    nullEmbedded: Embedded\n}\n\ninput Embedded {\n    name: String!\n}\n\nscalar Custom\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-06T02:24:25Z",
+    "updated_at": "2019-07-16T02:30:18Z",
+    "pushed_at": "2019-07-18T18:03:54Z",
+    "issues": 12,
+    "watchers": 6,
+    "fork_count": 21,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 94,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 12,
+    "pull_requests_merged": 79,
+    "releases": 4,
+    "stargazers": 151
+  }
+}

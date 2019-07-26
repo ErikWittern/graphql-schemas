@@ -1,0 +1,42 @@
+{
+  "repo_name": "banyandb",
+  "repo_full_name": "hanahmily/banyandb",
+  "repo_owner": "hanahmily",
+  "repo_description": "An APM database",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "query/graph/schema/schema.graphql",
+      "sha": "588fd255e22ded0037ca1970a65a54ef20ef7d53",
+      "url": "https://api.github.com/repositories/132688777/contents/query/graph/schema/schema.graphql?ref=77cdaa05a544c0f948d3aa6245a26a3108ecaa61",
+      "git_url": "https://api.github.com/repositories/132688777/git/blobs/588fd255e22ded0037ca1970a65a54ef20ef7d53",
+      "html_url": "https://github.com/hanahmily/banyandb/blob/77cdaa05a544c0f948d3aa6245a26a3108ecaa61/query/graph/schema/schema.graphql",
+      "content": "type LogItem {\n  name: String!\n  value: String!\n}\n\nenum ItemType {\n  STRING\n  INT32\n  INT64\n  FLOAT\n  DOUBLE\n  BOOL\n  BYTES\n}\n\ninput LogMetaItem {\n  name: String!\n  type: ItemType!\n}\n\ninput LogMetaInput {\n  name: String!\n  logItems: [LogMetaItem!]!\n}\n\ntype Query {\n  log: [LogItem!]!\n}\n\ntype Mutation {\n  createLogEntity(logMeta: LogMetaInput!): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-09T02:09:01Z",
+    "updated_at": "2018-09-20T00:57:25Z",
+    "pushed_at": "2018-06-05T01:04:06Z",
+    "issues": 1,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

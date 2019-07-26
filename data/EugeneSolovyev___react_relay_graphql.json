@@ -1,0 +1,42 @@
+{
+  "repo_name": "react_relay_graphql",
+  "repo_full_name": "eugenesolovyev/react_relay_graphql",
+  "repo_owner": "EugeneSolovyev",
+  "repo_description": "have an issue",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "8b81672f04596c46723fbb6f3eecc55f11c27104",
+      "url": "https://api.github.com/repositories/108731182/contents/server/data/schema.graphql?ref=9a18b880ce8f9e0cc4eca166d19159909b2f99bd",
+      "git_url": "https://api.github.com/repositories/108731182/git/blobs/8b81672f04596c46723fbb6f3eecc55f11c27104",
+      "html_url": "https://github.com/EugeneSolovyev/react_relay_graphql/blob/9a18b880ce8f9e0cc4eca166d19159909b2f99bd/server/data/schema.graphql",
+      "content": "# Favorite places from Google API\ntype Favorite implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Name of favorite place\n  place: String\n\n  # Is favorite place?\n  isFavorite: Boolean\n}\n\n# A connection to a list of items.\ntype FavoriteConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [FavoriteEdge]\n}\n\n# An edge in a connection.\ntype FavoriteEdge {\n  # The item at the end of the edge\n  node: Favorite\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# Google API\ntype Google implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Favorite place that I have\n  favorite(after: String, first: Int, before: String, last: Int): FavoriteConnection\n}\n\ntype Mutation {\n  removeFavoriteItem(input: RemoveFavoriteInput!): RemoveFavoritePayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  google: Google\n}\n\ninput RemoveFavoriteInput {\n  place: String!\n  clientMutationId: String\n}\n\ntype RemoveFavoritePayload {\n  favoriteEdge: FavoriteEdge\n  google: Google\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-29T12:11:47Z",
+    "updated_at": "2017-10-29T12:12:42Z",
+    "pushed_at": "2017-10-29T14:01:53Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

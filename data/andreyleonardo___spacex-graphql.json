@@ -1,0 +1,42 @@
+{
+  "repo_name": "spacex-graphql",
+  "repo_full_name": "andreyleonardo/spacex-graphql",
+  "repo_owner": "andreyleonardo",
+  "repo_description": "[GraphQL-Study] A GraphQL server that connects to SpaceX Api",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/rocket/schema.graphql",
+      "sha": "7eed4ecf5fc5544f7023f09893d190012642a3f2",
+      "url": "https://api.github.com/repositories/164494523/contents/src/graphql/rocket/schema.graphql?ref=86286c76a9a45bc6c42169cac0aeecb73bdf66f6",
+      "git_url": "https://api.github.com/repositories/164494523/git/blobs/7eed4ecf5fc5544f7023f09893d190012642a3f2",
+      "html_url": "https://github.com/andreyleonardo/spacex-graphql/blob/86286c76a9a45bc6c42169cac0aeecb73bdf66f6/src/graphql/rocket/schema.graphql",
+      "content": "type Rocket {\n  rocket_id: String\n  rocket_name: String\n  rocket_type: String\n}\n\ntype Query {\n  rockets: [Rocket]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-07T20:57:19Z",
+    "updated_at": "2019-03-14T09:01:33Z",
+    "pushed_at": "2019-01-11T02:18:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

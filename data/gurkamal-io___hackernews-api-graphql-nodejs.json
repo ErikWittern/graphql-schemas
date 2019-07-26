@@ -1,0 +1,39 @@
+{
+  "repo_name": "hackernews-api-graphql-nodejs",
+  "repo_full_name": "gurkamal-io/hackernews-api-graphql-nodejs",
+  "repo_owner": "gurkamal-io",
+  "repo_description": "A GraphQL-powered backend server for a hackernews clone app.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "a31f17ed5ab7084dec62f95960af298501be066e",
+      "url": "https://api.github.com/repositories/174416085/contents/src/schema.graphql?ref=d1f1097e7c913f6aa5d27b2d94b3b8497d503f44",
+      "git_url": "https://api.github.com/repositories/174416085/git/blobs/a31f17ed5ab7084dec62f95960af298501be066e",
+      "html_url": "https://github.com/gurkamal-io/hackernews-api-graphql-nodejs/blob/d1f1097e7c913f6aa5d27b2d94b3b8497d503f44/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  feed: [Link!]!\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n  postedBy: User\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-07T20:35:06Z",
+    "updated_at": "2019-03-08T08:08:50Z",
+    "pushed_at": "2019-03-08T08:08:49Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

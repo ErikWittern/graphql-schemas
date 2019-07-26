@@ -1,0 +1,39 @@
+{
+  "repo_name": "vue_node_mongo_graphql_docker",
+  "repo_full_name": "isareds/vue_node_mongo_graphql_docker",
+  "repo_owner": "isareds",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "b3fce8846d29e98afb960b2afd9a1c6dec433e94",
+      "url": "https://api.github.com/repositories/157229298/contents/server/src/schema.graphql?ref=e7769d91f32145b9aff9809d072143b110499391",
+      "git_url": "https://api.github.com/repositories/157229298/git/blobs/b3fce8846d29e98afb960b2afd9a1c6dec433e94",
+      "html_url": "https://github.com/isareds/vue_node_mongo_graphql_docker/blob/e7769d91f32145b9aff9809d072143b110499391/server/src/schema.graphql",
+      "content": "\nscalar Date\nscalar JSON\n\ntype Query {\n  getTeam: Team\n  getFolders(parent: String): [Folder]\n  getFolder(id:String!): Folder\n}\n\ntype Mutation {\n  captureEmail(email: String!): User\n  signup(id: String!, firstname: String!, lastname: String!, password: String!): AuthPayload!\n  login(email: String!, password: String!): AuthPayload!\n}\n\ntype User {\n  id: String\n  name: String\n  firstname: String\n  lastname: String\n  email: String\n  avatarColor: String\n  jobTitle: String\n  team: String\n  role: String\n  status: String\n  createdAt: Date\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n\ntype Team {\n  id: String,\n  name: String\n}\n\ntype Folder {\n  id: String\n  name: String\n  parent: String\n  description: String\n  shareWith: [JSON]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-12T14:51:39Z",
+    "updated_at": "2018-11-12T14:58:45Z",
+    "pushed_at": "2018-11-12T14:58:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

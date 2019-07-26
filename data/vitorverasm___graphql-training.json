@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-training",
+  "repo_full_name": "vitorverasm/graphql-training",
+  "repo_owner": "vitorverasm",
+  "repo_description": "Simple GraphQL api.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "8a39b9bd00a5c78f4af0d810bb799eaad660ce39",
+      "url": "https://api.github.com/repositories/180898754/contents/src/schema.graphql?ref=b5e5bfa14f306e57ff470fc8192c7011458249f5",
+      "git_url": "https://api.github.com/repositories/180898754/git/blobs/8a39b9bd00a5c78f4af0d810bb799eaad660ce39",
+      "html_url": "https://github.com/vitorverasm/graphql-training/blob/b5e5bfa14f306e57ff470fc8192c7011458249f5/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n feed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): [Link!]!\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n  postedBy: User\n}\n\ntype Subscription {\n  newLink: Link\n}\n\nenum LinkOrderByInput {\n  description_ASC\n  description_DESC\n  url_ASC\n  url_DESC\n  createdAt_ASC\n  createdAt_DESC\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-12T00:24:32Z",
+    "updated_at": "2019-05-06T21:51:01Z",
+    "pushed_at": "2019-05-06T21:51:00Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "repo_name": "gql-mono",
+  "repo_full_name": "elsangedy/gql-mono",
+  "repo_owner": "elsangedy",
+  "repo_description": "GraphQL monorepo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/author/src/schema.graphql",
+      "sha": "11be9b0e74cfc4cf52e84057b8227741330cecf4",
+      "url": "https://api.github.com/repositories/141762634/contents/packages/author/src/schema.graphql?ref=eb2daec7b6d67782269373b3b52efe566a39cddf",
+      "git_url": "https://api.github.com/repositories/141762634/git/blobs/11be9b0e74cfc4cf52e84057b8227741330cecf4",
+      "html_url": "https://github.com/elsangedy/gql-mono/blob/eb2daec7b6d67782269373b3b52efe566a39cddf/packages/author/src/schema.graphql",
+      "content": "type Author {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  author(id: ID!): Author\n  authors: [Author!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/post/src/schema.graphql",
+      "sha": "902bc326286d2dfc736d8f5b3976ee88defc08e7",
+      "url": "https://api.github.com/repositories/141762634/contents/packages/post/src/schema.graphql?ref=eb2daec7b6d67782269373b3b52efe566a39cddf",
+      "git_url": "https://api.github.com/repositories/141762634/git/blobs/902bc326286d2dfc736d8f5b3976ee88defc08e7",
+      "html_url": "https://github.com/elsangedy/gql-mono/blob/eb2daec7b6d67782269373b3b52efe566a39cddf/packages/post/src/schema.graphql",
+      "content": "type Post {\n  id: ID!\n  title: String!\n  author_id: ID!\n}\n\ntype Query {\n  post(id: ID!): Post\n  posts: [Post!]!\n  postsByAuthor(author_id: ID!): [Post!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/auth/src/schema.graphql",
+      "sha": "1fa4147ca6b145e1908804b27669bb63bdb6feb1",
+      "url": "https://api.github.com/repositories/141762634/contents/packages/auth/src/schema.graphql?ref=7f6d60ffd32d75f076e9261d283ca6dd1e7ef31c",
+      "git_url": "https://api.github.com/repositories/141762634/git/blobs/1fa4147ca6b145e1908804b27669bb63bdb6feb1",
+      "html_url": "https://github.com/elsangedy/gql-mono/blob/7f6d60ffd32d75f076e9261d283ca6dd1e7ef31c/packages/auth/src/schema.graphql",
+      "content": "type User {\n  id: ID!\n  name: String!\n  email: String!\n}\n\ntype Auth {\n  token: String!\n  user: User!\n}\n\ntype Query {\n  me: User\n}\n\ntype Mutation {\n  signup(email: String!, password: String!, name: String!): Auth!\n  signin(email: String!, password: String!): Auth!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-20T22:16:45Z",
+    "updated_at": "2019-02-28T15:02:44Z",
+    "pushed_at": "2018-08-21T10:34:16Z",
+    "issues": 5,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 6,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 6,
+    "releases": 0,
+    "stargazers": 7
+  }
+}

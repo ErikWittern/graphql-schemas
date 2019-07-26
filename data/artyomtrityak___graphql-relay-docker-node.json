@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-relay-docker-node",
+  "repo_full_name": "artyomtrityak/graphql-relay-docker-node",
+  "repo_owner": "artyomtrityak",
+  "repo_description": "Docker Nodejs PostgreSQL GraphQL server setup",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "scripts/schema.graphql",
+      "sha": "c42bde999626cd1b9fcdc68e64f267984eabd73e",
+      "url": "https://api.github.com/repositories/53607943/contents/scripts/schema.graphql?ref=f357e11621a9211d20bd1635ec7d021205a62bc5",
+      "git_url": "https://api.github.com/repositories/53607943/git/blobs/c42bde999626cd1b9fcdc68e64f267984eabd73e",
+      "html_url": "https://github.com/artyomtrityak/graphql-relay-docker-node/blob/f357e11621a9211d20bd1635ec7d021205a62bc5/scripts/schema.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Play implements Node {\n  id: ID!\n  name: String\n  author: User\n}\n\ntype PlayConnection {\n  pageInfo: PageInfo!\n  edges: [PlayEdge]\n}\n\ntype PlayEdge {\n  node: Play\n  cursor: String!\n}\n\ntype RootMutation {\n  createUser(email: String, password: String): User\n  createPlay(author: Int, name: String): Play\n}\n\ntype RootQuery {\n  viewer: RootViewerType\n  node(id: ID!): Node\n}\n\ntype RootViewerType {\n  user(id: Int): User\n  users(after: String, first: Int, before: String, last: Int): UserConnection\n  play(id: Int): Play\n}\n\ntype User implements Node {\n  id: ID!\n  email: String\n  verified: Boolean\n  details: String\n  plays: PlayConnection\n}\n\ntype UserConnection {\n  pageInfo: PageInfo!\n  edges: [UserEdge]\n}\n\ntype UserEdge {\n  node: User\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-03-10T18:36:04Z",
+    "updated_at": "2017-08-11T12:40:23Z",
+    "pushed_at": "2016-04-06T15:40:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

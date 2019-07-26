@@ -1,0 +1,42 @@
+{
+  "repo_name": "nest-user-auth",
+  "repo_full_name": "erickit/nest-user-auth",
+  "repo_owner": "EricKit",
+  "repo_description": "A starter build for a back end which implements managing users with MongoDB, Mongoose, NestJS, Passport-JWT, and GraphQL.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "users.types.graphql",
+      "path": "src/users/users.types.graphql",
+      "sha": "3bf6311374cc49fc5e65d05e3fd8d95424dc2d8f",
+      "url": "https://api.github.com/repositories/171186954/contents/src/users/users.types.graphql?ref=cead2dde5b705c1e1c1c4bc04be298fcfa55beb6",
+      "git_url": "https://api.github.com/repositories/171186954/git/blobs/3bf6311374cc49fc5e65d05e3fd8d95424dc2d8f",
+      "html_url": "https://github.com/EricKit/nest-user-auth/blob/cead2dde5b705c1e1c1c4bc04be298fcfa55beb6/src/users/users.types.graphql",
+      "content": "scalar Date\nscalar MongoObjectId\n\ntype Query {\n  users: [User!]!\n  user(username: String, email: String): User!\n  forgotPassword(email: String): Boolean\n}\n\ntype Mutation {\n  createUser(createUserInput: CreateUserInput): User!\n  updateUser(username: String!, fieldsToUpdate: UpdateUserInput!): User!\n  addAdminPermission(username: String!): User!\n  removeAdminPermission(username: String!): User!\n  resetPassword(username: String!, code: String!, password: String!): User!\n}\n\ntype User {\n  username: String!\n  email: String!\n  permissions: [String!]!\n  createdAt: Date!\n  updatedAt: Date!\n  lastSeenAt: Date!\n  enabled: Boolean!\n  _id: MongoObjectId!\n}\n\ninput CreateUserInput {\n  username: String!\n  email: String!\n  password: String!\n}\n\ninput UpdateUserInput {\n  username: String\n  email: String\n  password: String\n  enabled: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-18T00:02:58Z",
+    "updated_at": "2019-07-09T15:35:51Z",
+    "pushed_at": "2019-07-06T21:36:26Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 24
+  }
+}

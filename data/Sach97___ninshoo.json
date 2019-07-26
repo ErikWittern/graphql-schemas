@@ -1,0 +1,42 @@
+{
+  "repo_name": "ninshoo",
+  "repo_full_name": "sach97/ninshoo",
+  "repo_owner": "Sach97",
+  "repo_description": "A package for dealing with user registration and authentification in go ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/ninshoo_hasura/schema.graphql",
+      "sha": "c95942e65adefe06c6424d183b29141b1de1775e",
+      "url": "https://api.github.com/repositories/167532994/contents/examples/ninshoo_hasura/schema.graphql?ref=a43692418d346eedc64af594c397071e5c30d3f5",
+      "git_url": "https://api.github.com/repositories/167532994/git/blobs/c95942e65adefe06c6424d183b29141b1de1775e",
+      "html_url": "https://github.com/Sach97/ninshoo/blob/a43692418d346eedc64af594c397071e5c30d3f5/examples/ninshoo_hasura/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  hello: String!\n}\n\ntype Mutation {\n  signup(email: String!, password: String!): Instructions!\n  login(email: String!, password: String!): AuthPayload!\n  verifyToken(token:String!): Boolean!\n}\n\ntype AuthPayload {\n  token: String!\n}\n\ntype Instructions {\n  text: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-25T10:54:02Z",
+    "updated_at": "2019-03-15T12:47:58Z",
+    "pushed_at": "2019-03-15T12:48:23Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 6,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "apollo-server_graphql-modules_subscriptions",
+  "repo_full_name": "dancon/apollo-server_graphql-modules_subscriptions",
+  "repo_owner": "dancon",
+  "repo_description": "The server side implementation of Graphql subscription with apollo-server and Graphql Modules.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schemas/subscription/schema.graphql",
+      "sha": "25447efa56f77be62dfbcd6321fc7d373c0866f4",
+      "url": "https://api.github.com/repositories/185305476/contents/src/schemas/subscription/schema.graphql?ref=39df28d828d68b4d7e60da6db128c82a51d29b93",
+      "git_url": "https://api.github.com/repositories/185305476/git/blobs/25447efa56f77be62dfbcd6321fc7d373c0866f4",
+      "html_url": "https://github.com/dancon/apollo-server_graphql-modules_subscriptions/blob/39df28d828d68b4d7e60da6db128c82a51d29b93/src/schemas/subscription/schema.graphql",
+      "content": "type Query {\n  indicators (psm: String!): [Indicator!]!\n}\n\ntype Mutation {\n  updateIndicators (psm: String!, payload: [IndicatorPayload!]!): [Indicator!]!\n}\n\ntype Subscription {\n  indicatorUpdated (psm: String!): [Indicator!]!\n}\n\ntype Indicator {\n  host: String\n  risk: Boolean\n}\n\ninput IndicatorPayload {\n  host: String\n  risk: Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-07T02:25:48Z",
+    "updated_at": "2019-06-13T06:37:20Z",
+    "pushed_at": "2019-06-13T06:37:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "d_node",
+  "repo_full_name": "sandiiarov/d_node",
+  "repo_owner": "sandiiarov",
+  "repo_description": "Dictionary (node.js, relay, graphQL)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "6e73ee1cc81672774651c8558cbf7c374463cb33",
+      "url": "https://api.github.com/repositories/62872417/contents/server/data/schema.graphql?ref=379e51d2e1e75be7385e97ec2c4b2de00f91d6c0",
+      "git_url": "https://api.github.com/repositories/62872417/git/blobs/6e73ee1cc81672774651c8558cbf7c374463cb33",
+      "html_url": "https://github.com/sandiiarov/d_node/blob/379e51d2e1e75be7385e97ec2c4b2de00f91d6c0/server/data/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Feature implements Node {\n  id: ID!\n  name: String\n  description: String\n  url: String\n}\n\ntype FeatureConnection {\n  pageInfo: PageInfo!\n  edges: [FeatureEdge]\n}\n\ntype FeatureEdge {\n  node: Feature\n  cursor: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n  word(id: ID): Word\n}\n\ntype User implements Node {\n  id: ID!\n  features(after: String, first: Int, before: String, last: Int): FeatureConnection\n  username: String\n  website: String\n}\n\ntype Word implements Node {\n  id: ID!\n  en: String\n  ru: [String]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-07-08T08:36:10Z",
+    "updated_at": "2019-02-19T14:35:37Z",
+    "pushed_at": "2017-02-04T06:05:19Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

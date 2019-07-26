@@ -1,0 +1,42 @@
+{
+  "repo_name": "public-transit-graphql-subscription",
+  "repo_full_name": "brygrill/public-transit-graphql-subscription",
+  "repo_owner": "brygrill",
+  "repo_description": ":bus: GraphQL subscriptions for live public transit GPS data as GeoJSON ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "server/src/schema/schema.gql",
+      "sha": "57793c99b9df4624364f0b928cc5a81f7b36aa67",
+      "url": "https://api.github.com/repositories/115662646/contents/server/src/schema/schema.gql?ref=d2079f7943bb1985f1604bde11209b2ca8031a3c",
+      "git_url": "https://api.github.com/repositories/115662646/git/blobs/57793c99b9df4624364f0b928cc5a81f7b36aa67",
+      "html_url": "https://github.com/brygrill/public-transit-graphql-subscription/blob/d2079f7943bb1985f1604bde11209b2ca8031a3c/server/src/schema/schema.gql",
+      "content": "# GeoJSON Type\nscalar Coordinates\n\ntype PointGeometry {\n  type: String!\n  coordinates: Coordinates!\n}\n\ntype RedRoseProps {\n  id: Int!\n  lat: Float\n  lon: Float\n}\n\ntype RedRosePointObject {\n  type: String!\n  geometry: PointGeometry\n  properties: RedRoseProps\n}\n\n# Red Rose Types\ntype RedRoseBus {\n  type: String!\n  features: [RedRosePointObject]\n}\n\ntype RedRoseTransit {\n  single_bus(id: Int!): RedRoseBus\n  all_buses: RedRoseBus\n}\n\n# Root\ntype Query {\n  red_rose_transit: RedRoseTransit\n}\n\ntype Subscription {\n  red_rose_sub: RedRoseBus\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-28T21:57:49Z",
+    "updated_at": "2018-02-12T09:56:52Z",
+    "pushed_at": "2018-02-12T09:53:49Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

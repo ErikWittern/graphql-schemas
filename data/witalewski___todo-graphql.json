@@ -1,0 +1,58 @@
+{
+  "repo_name": "todo-graphql",
+  "repo_full_name": "witalewski/todo-graphql",
+  "repo_owner": "witalewski",
+  "repo_description": "Short tutorial on getting up and running with full stack GraphQL application in Javascript with Prisma stack",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "dc6537ebec46298fba2478cb1ec61e77e942fd84",
+      "url": "https://api.github.com/repositories/150097107/contents/src/schema.graphql?ref=499b72f03212f5f2249f69b78152f51c182fbf40",
+      "git_url": "https://api.github.com/repositories/150097107/git/blobs/dc6537ebec46298fba2478cb1ec61e77e942fd84",
+      "html_url": "https://github.com/witalewski/todo-graphql/blob/499b72f03212f5f2249f69b78152f51c182fbf40/src/schema.graphql",
+      "content": "type Query {\n  tasks: [Task!]!\n}\n\ntype Task {\n    id: ID!\n    name: String!\n    description: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    },
+    {
+      "name": "prisma.graphql",
+      "path": "src/generated/prisma.graphql",
+      "sha": "2dd6826a3a00eaaf9b12c8ad80460b641380d46f",
+      "url": "https://api.github.com/repositories/150097107/contents/src/generated/prisma.graphql?ref=499b72f03212f5f2249f69b78152f51c182fbf40",
+      "git_url": "https://api.github.com/repositories/150097107/git/blobs/2dd6826a3a00eaaf9b12c8ad80460b641380d46f",
+      "html_url": "https://github.com/witalewski/todo-graphql/blob/499b72f03212f5f2249f69b78152f51c182fbf40/src/generated/prisma.graphql",
+      "content": "# source: https://us1.prisma.sh/krzysztof-witalewski/todo-graphql/dev\n# timestamp: Mon Sep 24 2018 13:29:44 GMT+0200 (CEST)\n\ntype AggregateTask {\n  count: Int!\n}\n\ntype BatchPayload {\n  \"\"\"The number of nodes that have been affected by the Batch operation.\"\"\"\n  count: Long!\n}\n\nscalar DateTime\n\n\"\"\"\nThe `Long` scalar type represents non-fractional signed whole numeric values.\nLong can represent values between -(2^63) and 2^63 - 1.\n\"\"\"\nscalar Long\n\ntype Mutation {\n  createTask(data: TaskCreateInput!): Task!\n  updateTask(data: TaskUpdateInput!, where: TaskWhereUniqueInput!): Task\n  deleteTask(where: TaskWhereUniqueInput!): Task\n  upsertTask(where: TaskWhereUniqueInput!, create: TaskCreateInput!, update: TaskUpdateInput!): Task!\n  updateManyTasks(data: TaskUpdateInput!, where: TaskWhereInput): BatchPayload!\n  deleteManyTasks(where: TaskWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Query {\n  tasks(where: TaskWhereInput, orderBy: TaskOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Task]!\n  task(where: TaskWhereUniqueInput!): Task\n  tasksConnection(where: TaskWhereInput, orderBy: TaskOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): TaskConnection!\n\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n}\n\ntype Subscription {\n  task(where: TaskSubscriptionWhereInput): TaskSubscriptionPayload\n}\n\ntype Task implements Node {\n  id: ID!\n  createdAt: DateTime!\n  name: String!\n  description: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype TaskConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [TaskEdge]!\n  aggregate: AggregateTask!\n}\n\ninput TaskCreateInput {\n  name: String!\n  description: String\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype TaskEdge {\n  \"\"\"The item at the end of the edge.\"\"\"\n  node: Task!\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\nenum TaskOrderByInput {\n  id_ASC\n  id_DESC\n  createdAt_ASC\n  createdAt_DESC\n  name_ASC\n  name_DESC\n  description_ASC\n  description_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n}\n\ntype TaskPreviousValues {\n  id: ID!\n  createdAt: DateTime!\n  name: String!\n  description: String\n}\n\ntype TaskSubscriptionPayload {\n  mutation: MutationType!\n  node: Task\n  updatedFields: [String!]\n  previousValues: TaskPreviousValues\n}\n\ninput TaskSubscriptionWhereInput {\n  \"\"\"Logical AND on all given filters.\"\"\"\n  AND: [TaskSubscriptionWhereInput!]\n\n  \"\"\"Logical OR on all given filters.\"\"\"\n  OR: [TaskSubscriptionWhereInput!]\n\n  \"\"\"Logical NOT on all given filters combined by AND.\"\"\"\n  NOT: [TaskSubscriptionWhereInput!]\n\n  \"\"\"\n  The subscription event gets dispatched when it's listed in mutation_in\n  \"\"\"\n  mutation_in: [MutationType!]\n\n  \"\"\"\n  The subscription event gets only dispatched when one of the updated fields names is included in this list\n  \"\"\"\n  updatedFields_contains: String\n\n  \"\"\"\n  The subscription event gets only dispatched when all of the field names included in this list have been updated\n  \"\"\"\n  updatedFields_contains_every: [String!]\n\n  \"\"\"\n  The subscription event gets only dispatched when some of the field names included in this list have been updated\n  \"\"\"\n  updatedFields_contains_some: [String!]\n  node: TaskWhereInput\n}\n\ninput TaskUpdateInput {\n  name: String\n  description: String\n}\n\ninput TaskWhereInput {\n  \"\"\"Logical AND on all given filters.\"\"\"\n  AND: [TaskWhereInput!]\n\n  \"\"\"Logical OR on all given filters.\"\"\"\n  OR: [TaskWhereInput!]\n\n  \"\"\"Logical NOT on all given filters combined by AND.\"\"\"\n  NOT: [TaskWhereInput!]\n  id: ID\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  id_not: ID\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  id_in: [ID!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  id_not_in: [ID!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  id_lt: ID\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  id_lte: ID\n\n  \"\"\"All values greater than the given value.\"\"\"\n  id_gt: ID\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  id_gte: ID\n\n  \"\"\"All values containing the given string.\"\"\"\n  id_contains: ID\n\n  \"\"\"All values not containing the given string.\"\"\"\n  id_not_contains: ID\n\n  \"\"\"All values starting with the given string.\"\"\"\n  id_starts_with: ID\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  id_not_starts_with: ID\n\n  \"\"\"All values ending with the given string.\"\"\"\n  id_ends_with: ID\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  id_not_ends_with: ID\n  createdAt: DateTime\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  createdAt_not: DateTime\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  createdAt_in: [DateTime!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  createdAt_not_in: [DateTime!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  createdAt_lt: DateTime\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  createdAt_lte: DateTime\n\n  \"\"\"All values greater than the given value.\"\"\"\n  createdAt_gt: DateTime\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  createdAt_gte: DateTime\n  name: String\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  name_not: String\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  name_in: [String!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  name_not_in: [String!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  name_lt: String\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  name_lte: String\n\n  \"\"\"All values greater than the given value.\"\"\"\n  name_gt: String\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  name_gte: String\n\n  \"\"\"All values containing the given string.\"\"\"\n  name_contains: String\n\n  \"\"\"All values not containing the given string.\"\"\"\n  name_not_contains: String\n\n  \"\"\"All values starting with the given string.\"\"\"\n  name_starts_with: String\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  name_not_starts_with: String\n\n  \"\"\"All values ending with the given string.\"\"\"\n  name_ends_with: String\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  name_not_ends_with: String\n  description: String\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  description_not: String\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  description_in: [String!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  description_not_in: [String!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  description_lt: String\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  description_lte: String\n\n  \"\"\"All values greater than the given value.\"\"\"\n  description_gt: String\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  description_gte: String\n\n  \"\"\"All values containing the given string.\"\"\"\n  description_contains: String\n\n  \"\"\"All values not containing the given string.\"\"\"\n  description_not_contains: String\n\n  \"\"\"All values starting with the given string.\"\"\"\n  description_starts_with: String\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  description_not_starts_with: String\n\n  \"\"\"All values ending with the given string.\"\"\"\n  description_ends_with: String\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  description_not_ends_with: String\n}\n\ninput TaskWhereUniqueInput {\n  id: ID\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-24T12:11:03Z",
+    "updated_at": "2018-09-24T21:31:57Z",
+    "pushed_at": "2018-09-24T21:31:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

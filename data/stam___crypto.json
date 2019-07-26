@@ -1,0 +1,42 @@
+{
+  "repo_name": "crypto",
+  "repo_full_name": "stam/crypto",
+  "repo_owner": "stam",
+  "repo_description": "A tool for crypto trading, backtesting & visualisation",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/src/schema.graphql",
+      "sha": "a7c24943a68d2fc217e759fde431079276589bc6",
+      "url": "https://api.github.com/repositories/146035335/contents/backend/src/schema.graphql?ref=ba1af7b1479de6a71fba27bca375cf02dcbebb5b",
+      "git_url": "https://api.github.com/repositories/146035335/git/blobs/a7c24943a68d2fc217e759fde431079276589bc6",
+      "html_url": "https://github.com/stam/crypto/blob/ba1af7b1479de6a71fba27bca375cf02dcbebb5b/backend/src/schema.graphql",
+      "content": "  scalar Date\n  type Query {\n    tick(id: ID!): Tick\n    candles: [Candle]\n  }\n  type Mutation {\n    runSimulation(startValue: Float!, startFiat: Int!): Simulation\n  }\n  type Simulation {\n    orders: [Order]\n    trades: [Trade]\n  }\n  type Order {\n    type: String\n    date: Date\n    quantity: Int\n    price: Int\n  }\n  type Tick {\n    id: Int!\n    last: Int\n    timestamp: Date\n  }\n  type Trade {\n    buyPrice: Int\n    sellPrice: Int\n    buyDate: Date\n    sellDate: Date\n    result: Float\n  }\n  type Candle {\n    id: Int\n    open: Int\n    close: Int\n    high: Int\n    low: Int\n    datetime: Date\n  }\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-24T20:09:53Z",
+    "updated_at": "2019-07-01T20:40:35Z",
+    "pushed_at": "2019-07-12T19:34:15Z",
+    "issues": 18,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 11,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 7,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

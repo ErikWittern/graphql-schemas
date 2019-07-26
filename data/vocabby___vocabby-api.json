@@ -1,0 +1,42 @@
+{
+  "repo_name": "vocabby-api",
+  "repo_full_name": "vocabby/vocabby-api",
+  "repo_owner": "vocabby",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "api.gql",
+      "path": "src/graphql/types/api.gql",
+      "sha": "55b50c9916dba4bf19f3808e0590b755b10d7edc",
+      "url": "https://api.github.com/repositories/135397420/contents/src/graphql/types/api.gql?ref=2cf47b11280aae9579af0d51972c1ce7233e0ff3",
+      "git_url": "https://api.github.com/repositories/135397420/git/blobs/55b50c9916dba4bf19f3808e0590b755b10d7edc",
+      "html_url": "https://github.com/vocabby/vocabby-api/blob/2cf47b11280aae9579af0d51972c1ce7233e0ff3/src/graphql/types/api.gql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  status: Boolean\n}\n\ntype Mutation {\n  status: Boolean\n}\n\nscalar ResourceUrl\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-30T06:24:02Z",
+    "updated_at": "2019-06-20T11:04:41Z",
+    "pushed_at": "2019-06-20T11:04:39Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "bsd-3-clause",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

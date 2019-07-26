@@ -1,0 +1,39 @@
+{
+  "repo_name": "reinbo-old",
+  "repo_full_name": "reinboapp/reinbo-old",
+  "repo_owner": "reinboapp",
+  "repo_description": "monorepo reinbo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "test.graphql",
+      "path": "api/src/typeDefs/test.graphql",
+      "sha": "a4983aa3518afba1f0c095bb860f55eae38b5cf8",
+      "url": "https://api.github.com/repositories/146262069/contents/api/src/typeDefs/test.graphql?ref=352132f1b9426585744cdaa153a7e14c4ed76b2c",
+      "git_url": "https://api.github.com/repositories/146262069/git/blobs/a4983aa3518afba1f0c095bb860f55eae38b5cf8",
+      "html_url": "https://github.com/reinboapp/reinbo-old/blob/352132f1b9426585744cdaa153a7e14c4ed76b2c/api/src/typeDefs/test.graphql",
+      "content": "type Query {\n  publicPing: String!\n  secretPing: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-27T07:27:05Z",
+    "updated_at": "2018-12-21T12:42:20Z",
+    "pushed_at": "2018-09-11T15:00:42Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

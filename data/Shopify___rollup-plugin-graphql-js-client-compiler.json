@@ -1,0 +1,39 @@
+{
+  "repo_name": "rollup-plugin-graphql-js-client-compiler",
+  "repo_full_name": "shopify/rollup-plugin-graphql-js-client-compiler",
+  "repo_owner": "Shopify",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/sample-project/src/graphql/schema.graphql",
+      "sha": "0035727d441eb8e32b498f4c4d46b3a9b506aafa",
+      "url": "https://api.github.com/repositories/100052709/contents/test/fixtures/sample-project/src/graphql/schema.graphql?ref=2e6e3ccfe50dc17f3374f62b3e04427f7e4bd603",
+      "git_url": "https://api.github.com/repositories/100052709/git/blobs/0035727d441eb8e32b498f4c4d46b3a9b506aafa",
+      "html_url": "https://github.com/Shopify/rollup-plugin-graphql-js-client-compiler/blob/2e6e3ccfe50dc17f3374f62b3e04427f7e4bd603/test/fixtures/sample-project/src/graphql/schema.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype Product implements Node {\n  id: ID!\n  name: String!\n  price: Float!\n  handle: String\n}\n\ntype Shop {\n  name: String!\n  address: String!\n}\n\ntype Collection {\n  name: String!\n  products: [Product!]!\n}\n\ntype Query {\n  node(id: ID!): Node\n  shop: Shop!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-11T16:48:57Z",
+    "updated_at": "2019-07-03T20:50:16Z",
+    "pushed_at": "2018-08-27T20:05:00Z",
+    "issues": 2,
+    "watchers": 123,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

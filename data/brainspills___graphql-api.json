@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-api",
+  "repo_full_name": "brainspills/graphql-api",
+  "repo_owner": "brainspills",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.graphql",
+      "path": "definitions/user.graphql",
+      "sha": "356af5d7fbaa4a8c82e30fe062c7f006602ea61f",
+      "url": "https://api.github.com/repositories/117924807/contents/definitions/user.graphql?ref=52f99f27731c1650d56a3c51af8374e82743eada",
+      "git_url": "https://api.github.com/repositories/117924807/git/blobs/356af5d7fbaa4a8c82e30fe062c7f006602ea61f",
+      "html_url": "https://github.com/brainspills/graphql-api/blob/52f99f27731c1650d56a3c51af8374e82743eada/definitions/user.graphql",
+      "content": "# User record\ntype User {\n    # Unique user record identifier\n    id: ID!\n    # User name\n    name: String!\n}\n\ntype Query {\n    # Retrieve all users\n    users: [User]\n    # Retrieve a user by ID\n    user(id: ID!): User\n    # Retrieve user by authorization header\n    me: User\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-18T03:08:10Z",
+    "updated_at": "2018-01-18T03:10:11Z",
+    "pushed_at": "2018-01-18T10:06:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

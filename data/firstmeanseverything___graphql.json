@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql",
+  "repo_full_name": "firstmeanseverything/graphql",
+  "repo_owner": "firstmeanseverything",
+  "repo_description": "🏁 GraphQL API for First Means Everything",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e0198778d764d1351a5776bd79af0f159484e0da",
+      "url": "https://api.github.com/repositories/133981666/contents/src/schema.graphql?ref=3270731b6f0b74853ff371016bf4e195b13448e3",
+      "git_url": "https://api.github.com/repositories/133981666/git/blobs/e0198778d764d1351a5776bd79af0f159484e0da",
+      "html_url": "https://github.com/firstmeanseverything/graphql/blob/3270731b6f0b74853ff371016bf4e195b13448e3/src/schema.graphql",
+      "content": "interface User {\n  id: ID!\n  email: Email!\n  name: String!\n  isAdmin: Boolean!\n}\n\ninterface Leaderboard {\n  id: ID!\n  athletes: [Athlete]\n  category: String\n  competition: Competition\n  division: LEADERBOARD_DIVISION\n  gender: ATHLETE_GENDER\n  locked: Boolean\n  name: String\n  slug: String\n  tickets: [Ticket]\n  workouts: [Workout]\n}\n\ninput CompetitionRegistrationInput {\n  currency: String!\n  email: Email!\n  leaderboard: ID!\n  ticket: ID!\n  token: String!\n}\n\ninput CreateAthleteInput {\n  box: String!\n  dateOfBirth: Date!\n  email: Email!\n  gender: ATHLETE_GENDER!\n  name: String!\n  password: String!\n}\n\ninput CreateScoreInput {\n  athlete: ID!\n  value: Float\n  workout: ID!\n}\n\ninput SpectatorRegistrationInput {\n  competition: ID!\n  currency: String!\n  email: Email!\n  quantity: Int\n  ticket: ID!\n  token: String!\n}\n\ninput UpdateProfileInput {\n  box: String\n  name: String\n  size: ATHLETE_SIZE\n}\n\ninput UpdateScoreInput {\n  score: ID!\n  value: Float\n}\n\nscalar Date\nscalar Email\n\nunion Me = Athlete | Admin\n\ntype Admin implements User {\n  id: ID!\n  email: Email!\n  isAdmin: Boolean!\n  name: String!\n}\n\ntype Athlete implements User {\n  id: ID!\n  box: String\n  dateOfBirth: Date\n  email: Email!\n  finalsLeaderboards: [FinalsLeaderboard]\n  gender: ATHLETE_GENDER\n  isAdmin: Boolean!\n  name: String!\n  qualifiersLeaderboards: [QualifiersLeaderboard]\n  scores: [Score]\n  size: ATHLETE_SIZE\n}\n\ntype ScoreboardAthlete {\n  box: String\n  name: String\n  rank: Int\n  scores: [Score]\n  total: Int\n}\n\ntype Competition {\n  id: ID!\n  finalsDate: Date\n  finalsLeaderboards: [FinalsLeaderboard]\n  name: String\n  qualifiersEndDate: Date\n  qualifiersLeaderboards: [QualifiersLeaderboard]\n  qualifiersStartDate: Date\n  registrationEndDate: Date\n  registrationStartDate: Date\n  slug: String\n  tickets: [Ticket]\n  venue: Venue\n}\n\ntype FinalsLeaderboard implements Leaderboard {\n  id: ID!\n  athletes: [Athlete]\n  category: String\n  competition: Competition\n  division: LEADERBOARD_DIVISION\n  gender: ATHLETE_GENDER\n  locked: Boolean\n  name: String\n  qualifiedAthletes: [Athlete]\n  slug: String\n  tickets: [Ticket]\n  workouts: [Workout]\n  meta: FinalsLeaderboardMeta\n}\n\ntype FinalsLeaderboardMeta {\n  athletesCount: Int!\n  qualifiedAthletesCount: Int!\n}\n\ntype Order {\n  id: ID!\n}\n\ntype QualifiersLeaderboard implements Leaderboard {\n  id: ID!\n  athletes: [Athlete]\n  category: String\n  competition: Competition\n  division: LEADERBOARD_DIVISION\n  gender: ATHLETE_GENDER\n  locked: Boolean\n  name: String\n  slug: String\n  tickets: [Ticket]\n  workouts: [Workout]\n  meta: QualifiersLeaderboardMeta\n}\n\ntype QualifiersLeaderboardMeta {\n  athletesCount: Int!\n}\n\ntype Score {\n  id: ID!\n  athlete: Athlete\n  rank: Int\n  value: Float\n  workout: Workout\n  meta: ScoreMeta!\n}\n\ntype ScoreMeta {\n  createdAt: Date\n  updatedAt: Date\n}\n\ntype Scoreboard {\n  athletes: [ScoreboardAthlete]\n  workouts: [Workout]\n}\n\ntype Ticket {\n  id: ID!\n  active: Boolean\n  currency: String\n  name: String\n  price: Int\n  quantity: Int\n  release: TICKET_RELEASE\n  type: TICKET_TYPE\n}\n\ntype Venue {\n  id: ID!\n  address: String\n  latitude: String\n  longitude: String\n  name: String\n}\n\ntype Workout {\n  id: ID!\n  description: String\n  standards: String\n  name: String\n  scores(sort: SCORES_SORT, dir: SORT_DIR): [Score]\n  type: WORKOUT_TYPE\n}\n\ntype AuthToken {\n  token: String!\n}\n\ntype ForgotPasswordPayload {\n  id: ID!\n}\n\ntype Query {\n  athletes(limit: Int, offset: Int): [Athlete]\n  athlete(id: ID!): Athlete\n  competitions(limit: Int, offset: Int): [Competition]\n  competition(id: ID!): Competition\n  getCompetitionBySlug(slug: String!): Competition\n  getRelevantFinalsLeaderboards(competitionId: ID!): [FinalsLeaderboard]\n  getRelevantQualifiersLeaderboard(\n    competitionId: ID!\n    division: LEADERBOARD_DIVISION!\n  ): QualifiersLeaderboard\n  competitionQualifiersLeaderboards(competitionId: ID!): [QualifiersLeaderboard]\n  competitionFinalsLeaderboards(competitionId: ID!): [FinalsLeaderboard]\n  me: Me!\n  getQualifiersLeaderboardScoreboard(leaderboardId: ID!): Scoreboard\n  scores(workoutId: ID!, sort: SCORES_SORT, dir: SORT_DIR): [Score]\n  venues(limit: Int, offset: Int): [Venue]\n  venue(id: ID!): Venue\n  workouts(leaderboardId: ID!): [Workout]\n  workout(id: ID!): Workout\n}\n\ntype Mutation {\n  addAthletesToFinalsLeaderboard(\n    leaderboardId: ID!\n    athletes: [ID!]\n  ): FinalsLeaderboard\n  athleteFinalsRegistration(\n    registration: CompetitionRegistrationInput!\n  ): Athlete!\n  athleteQualifiersRegistration(\n    registration: CompetitionRegistrationInput!\n  ): Athlete!\n  authenticateAdmin(email: Email!, password: String!): AuthToken!\n  authenticateAthlete(email: Email!, password: String!): AuthToken!\n  createAthleteAccount(athlete: CreateAthleteInput!): Athlete!\n  createWorkoutScore(score: CreateScoreInput!): Score!\n  forgotPassword(email: Email!): ForgotPasswordPayload!\n  lockCompetitionQualifiersLeaderboards(\n    competitionId: ID!\n  ): [QualifiersLeaderboard]!\n  resetPassword(password: String!, token: String!): ForgotPasswordPayload!\n  spectatorCompetitionRegistration(\n    registration: SpectatorRegistrationInput!\n  ): Order!\n  unlockCompetitionQualifiersLeaderboards(\n    competitionId: ID!\n  ): [QualifiersLeaderboard]!\n  updateAthleteProfile(athleteId: ID!, profile: UpdateProfileInput!): Athlete!\n  updateWorkoutScore(score: UpdateScoreInput!): Score!\n}\n\nenum LEADERBOARD_DIVISION {\n  rx\n  scaled\n}\n\nenum ATHLETE_GENDER {\n  female\n  male\n}\n\nenum ATHLETE_SIZE {\n  xs\n  small\n  medium\n  large\n  xl\n  xxl\n}\n\nenum WORKOUT_TYPE {\n  amrap\n  time\n  weight\n}\n\nenum SCORES_SORT {\n  rank\n  scaled\n  value\n}\n\nenum SORT_DIR {\n  asc\n  desc\n}\n\nenum TICKET_RELEASE {\n  early\n  standard\n}\n\nenum TICKET_TYPE {\n  bucket\n  finite\n  infinite\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 19,
+      "containsCycle": true,
+      "numDefinitions": 38
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-18T16:57:03Z",
+    "updated_at": "2019-07-18T22:52:10Z",
+    "pushed_at": "2019-07-18T22:52:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 114,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 110,
+    "releases": 0,
+    "stargazers": 17
+  }
+}

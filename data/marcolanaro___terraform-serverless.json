@@ -1,0 +1,42 @@
+{
+  "repo_name": "terraform-serverless",
+  "repo_full_name": "marcolanaro/terraform-serverless",
+  "repo_owner": "marcolanaro",
+  "repo_description": "Configure AWS serverless infrastructure",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "appsync/graphql/schema.graphql",
+      "sha": "4aed43c09d8b3c726651000306de283ca603ad8a",
+      "url": "https://api.github.com/repositories/128660457/contents/appsync/graphql/schema.graphql?ref=8b6a8a6cd2c36f0068ce5a9ea78d9982482bb2fb",
+      "git_url": "https://api.github.com/repositories/128660457/git/blobs/4aed43c09d8b3c726651000306de283ca603ad8a",
+      "html_url": "https://github.com/marcolanaro/terraform-serverless/blob/8b6a8a6cd2c36f0068ce5a9ea78d9982482bb2fb/appsync/graphql/schema.graphql",
+      "content": "type Mutation {\n\tputTenant(id: ID!): Tenant\n}\n\ntype Query {\n\tgetTenantById(id: ID!): Tenant\n}\n\ntype Tenant {\n\tid: ID!\n}\n\nschema {\n\tquery: Query\n\tmutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-08T16:27:14Z",
+    "updated_at": "2019-06-12T13:30:07Z",
+    "pushed_at": "2018-04-14T15:12:47Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "expenses",
+  "repo_full_name": "penzington/expenses",
+  "repo_owner": "penzington",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/src/schema.graphql",
+      "sha": "910d147a2ce274ca1b380ee6fc081aa297847ea5",
+      "url": "https://api.github.com/repositories/177121655/contents/graphql/src/schema.graphql?ref=d462c73d852e9bb8f82cec9e153165449b2bc702",
+      "git_url": "https://api.github.com/repositories/177121655/git/blobs/910d147a2ce274ca1b380ee6fc081aa297847ea5",
+      "html_url": "https://github.com/penzington/expenses/blob/d462c73d852e9bb8f82cec9e153165449b2bc702/graphql/src/schema.graphql",
+      "content": "type Query {\n  expenses(skip: Int = 0, first: Int = 10): ExpensesPage!\n  expense(id: ID!): Expense\n}\n\ntype Mutation {\n  commentOnExpense(id: ID!, comment: String!): Expense!\n}\n\ntype ExpensesPage {\n  count: Int!\n  nodes: [Expense!]!\n}\n\ntype User {\n  first: String!\n  last: String!\n  email: String!\n}\n\ntype Amount {\n  value: String!\n  currency: String!\n}\n\ntype Receipt {\n  url: String!\n}\n\ntype Expense {\n  id: ID!\n  date: String!\n  merchant: String!\n  comment: String!\n  category: String!\n  user: User!\n  amount: Amount!\n  receipts: [Receipt!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-22T10:38:09Z",
+    "updated_at": "2019-03-22T10:41:28Z",
+    "pushed_at": "2019-03-22T10:41:26Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

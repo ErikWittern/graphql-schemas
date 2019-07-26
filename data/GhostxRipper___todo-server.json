@@ -1,0 +1,42 @@
+{
+  "repo_name": "todo-server",
+  "repo_full_name": "ghostxripper/todo-server",
+  "repo_owner": "GhostxRipper",
+  "repo_description": "GraphQL todo api",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "d4c86c75df0408593007c2b5bdc2e92f9e4733cb",
+      "url": "https://api.github.com/repositories/155611585/contents/schema.graphql?ref=27eb0e07f85633c2d4e4d60da1aaff5031c21b7e",
+      "git_url": "https://api.github.com/repositories/155611585/git/blobs/d4c86c75df0408593007c2b5bdc2e92f9e4733cb",
+      "html_url": "https://github.com/GhostxRipper/todo-server/blob/27eb0e07f85633c2d4e4d60da1aaff5031c21b7e/schema.graphql",
+      "content": "scalar Token\n\ninput AddTodoInput {\n  text: String!\n  clientMutationId: String\n}\n\ntype AddTodoPayload {\n  todoEdge: TodoEdge\n  viewer: User\n  clientMutationId: String\n}\n\ninput ChangeTodoStatusInput {\n  complete: Boolean!\n  id: ID!\n  clientMutationId: String\n}\n\ntype ChangeTodoStatusPayload {\n  todo: Todo\n  viewer: User\n  clientMutationId: String\n}\n\ninput ConnectionInput {\n  username: String!\n  password: String!\n}\n\ntype ConnectionPayload {\n  viewer: User\n  token: Token!\n}\n\ninput MarkAllTodosInput {\n  complete: Boolean!\n  clientMutationId: String\n}\n\ntype MarkAllTodosPayload {\n  changedTodos: [Todo]\n  viewer: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  login(input: ConnectionInput!): ConnectionPayload\n  register(input: ConnectionInput!): ConnectionPayload\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  changeTodoStatus(input: ChangeTodoStatusInput!): ChangeTodoStatusPayload\n  markAllTodos(input: MarkAllTodosInput!): MarkAllTodosPayload\n  removeCompletedTodos(\n    input: RemoveCompletedTodosInput!\n  ): RemoveCompletedTodosPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n  renameTodo(input: RenameTodoInput!): RenameTodoPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection\ntype PageInfo {\n  # When paginating forwards, are there more items\n  hasNextPage: Boolean!\n  # When paginating backwards, are there more items\n  hasPreviousPage: Boolean!\n  # When paginating backwards, the cursor to continue\n  startCursor: String\n  # When paginating forwards, the cursor to continue\n  endCursor: String\n}\n\ntype Query {\n  viewer: User\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n\n  todos(after: String, first: Int, before: String, last: Int): TodoConnection\n}\n\ninput RemoveCompletedTodosInput {\n  clientMutationId: String\n}\n\ntype RemoveCompletedTodosPayload {\n  deletedTodoIds: [String]\n  viewer: User\n  clientMutationId: String\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype RemoveTodoPayload {\n  deletedTodoId: ID\n  viewer: User\n  clientMutationId: String\n}\n\ninput RenameTodoInput {\n  id: ID!\n  text: String!\n  clientMutationId: String\n}\n\ntype RenameTodoPayload {\n  todo: Todo\n  clientMutationId: String\n}\n\ntype Todo implements Node {\n  # The ID of an object\n  id: ID!\n  text: String\n  complete: Boolean\n}\n\n# A connection to a list of items.\ntype TodoConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TodoEdge]\n}\n\n# An edge in a connection.\ntype TodoEdge {\n  # The item at the end of the edge\n  node: Todo\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  username: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 23
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-31T19:21:31Z",
+    "updated_at": "2018-10-31T19:27:52Z",
+    "pushed_at": "2018-10-31T19:26:24Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "autographql",
+  "repo_full_name": "antstanley/autographql",
+  "repo_owner": "antstanley",
+  "repo_description": "Deploy GraphQL to a FaaS of your choice quickly and easily",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "starwars.gql",
+      "path": "test/sample/schema/starwars.gql",
+      "sha": "934bf3f2c19026ca7a887f2741a3d61e3f4d10c3",
+      "url": "https://api.github.com/repositories/169405081/contents/test/sample/schema/starwars.gql?ref=d15f8395b2350a9352f460b362b233f31e1c028c",
+      "git_url": "https://api.github.com/repositories/169405081/git/blobs/934bf3f2c19026ca7a887f2741a3d61e3f4d10c3",
+      "html_url": "https://github.com/antstanley/autographql/blob/d15f8395b2350a9352f460b362b233f31e1c028c/test/sample/schema/starwars.gql",
+      "content": "type Query {\n  human(id: ID!): Human\n  allHumans: [Human]\n  droid(id: ID!): Droid\n  allDroids: [Droid]\n}\n\ninterface Character {\n  id: ID!\n  name: String\n  friends: [Character]\n  appearsIn: [Episode]\n  secretBackstory: String\n}\n\nenum Episode {\n  PHANTOM\n  CLONES\n  SITH\n  NEWHOPE\n  EMPIRE\n  JEDI\n  FORCE\n  LASTJEDI\n}\n\ntype Droid implements Character {\n  id: ID!\n  name: String\n  friends: [Character]\n  appearsIn: [Episode]\n  secretBackstory: String\n  primaryFunction: String\n}\n\ntype Human implements Character {\n  id: ID!\n  name: String\n  friends: [Character]\n  appearsIn: [Episode]\n  homePlanet: String\n  secretBackstory: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-06T12:49:27Z",
+    "updated_at": "2019-05-15T06:55:44Z",
+    "pushed_at": "2019-05-15T06:55:42Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

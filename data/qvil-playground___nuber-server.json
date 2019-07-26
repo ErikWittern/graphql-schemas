@@ -1,0 +1,52 @@
+{
+  "repo_name": "nuber-server",
+  "repo_full_name": "qvil-playground/nuber-server",
+  "repo_owner": "qvil-playground",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "User.gql",
+      "path": "src/api/User/shared/User.gql",
+      "sha": "e186e9313f705682972a728362c7b2749a4b8002",
+      "url": "https://api.github.com/repositories/149860489/contents/src/api/User/shared/User.gql?ref=1339bc7fca1931ac592a6ec5003bc5870c8813a6",
+      "git_url": "https://api.github.com/repositories/149860489/git/blobs/e186e9313f705682972a728362c7b2749a4b8002",
+      "html_url": "https://github.com/qvil-playground/nuber-server/blob/1339bc7fca1931ac592a6ec5003bc5870c8813a6/src/api/User/shared/User.gql",
+      "content": "type User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullname: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  createdAt: String!\n  updatedAt: String\n}\n\ntype Query {\n  user: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.gql",
+      "path": "src/schema.gql",
+      "sha": "a05042b2514f58872fc0df9949092caebcabf2ec",
+      "url": "https://api.github.com/repositories/149860489/contents/src/schema.gql?ref=3e67167d15077e9622978a4426ec6c7c33cd5aa2",
+      "git_url": "https://api.github.com/repositories/149860489/git/blobs/a05042b2514f58872fc0df9949092caebcabf2ec",
+      "html_url": "https://github.com/qvil-playground/nuber-server/blob/3e67167d15077e9622978a4426ec6c7c33cd5aa2/src/schema.gql",
+      "content": "type User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullname: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  createdAt: String!\n  updatedAt: String\n}\n\ntype Query {\n  user: User\n}\n\ntype Verification {\n  id: Int!\n  target: String!\n  payload: String!\n  key: String!\n  used: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-22T08:50:28Z",
+    "updated_at": "2018-11-23T19:47:08Z",
+    "pushed_at": "2018-11-23T19:47:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

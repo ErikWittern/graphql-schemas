@@ -1,0 +1,39 @@
+{
+  "repo_name": "fetchq",
+  "repo_full_name": "marcopeg/fetchq",
+  "repo_owner": "marcopeg",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "rest-client/src/routes/graphql/schema.gql",
+      "sha": "ddcca87dfd1350018388d84500232c6cd851e498",
+      "url": "https://api.github.com/repositories/136695568/contents/rest-client/src/routes/graphql/schema.gql?ref=a4b78923fed8ad659d2f4d5dd048de90d2a044c4",
+      "git_url": "https://api.github.com/repositories/136695568/git/blobs/ddcca87dfd1350018388d84500232c6cd851e498",
+      "html_url": "https://github.com/marcopeg/fetchq/blob/a4b78923fed8ad659d2f4d5dd048de90d2a044c4/rest-client/src/routes/graphql/schema.gql",
+      "content": "\nenum QuerySortOrder {\n    ASC\n    DESC\n}\n\ntype Queue {\n    id: Int!\n    name: String!\n    is_active: Boolean\n    current_version: Int\n    max_attempts: Int\n    created_at: String\n}\n\ntype QueueResult {\n    queue_id: Int\n    was_created: Boolean\n    was_dropped: Boolean\n    queue: Queue\n}\n\ntype Query {\n    # list all available queues\n    queues (\n        sortBy: String,\n        sortOrder: QuerySortOrder\n    ): [ Queue ]!\n\n    # get a queue by name\n    queue (name: String!): Queue\n}\n\ntype Mutation {\n    createQueue(name: String!): QueueResult\n    dropQueue(name: String!): QueueResult\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-09T06:03:40Z",
+    "updated_at": "2018-10-02T12:45:48Z",
+    "pushed_at": "2018-07-06T10:53:34Z",
+    "issues": 70,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 35,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 35,
+    "releases": 1,
+    "stargazers": 1
+  }
+}

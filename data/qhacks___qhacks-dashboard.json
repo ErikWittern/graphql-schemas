@@ -1,0 +1,42 @@
+{
+  "repo_name": "qhacks-dashboard",
+  "repo_full_name": "qhacks/qhacks-dashboard",
+  "repo_owner": "qhacks",
+  "repo_description": "Dashboard for partners and hackers participating in QHacks! :sunglasses: :computer:",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "QueryRoot.graphql",
+      "path": "packages/server/gql/definitions/types/QueryRoot.graphql",
+      "sha": "766eecd652e581d977d55166a2fca953aa74b8e1",
+      "url": "https://api.github.com/repositories/105965506/contents/packages/server/gql/definitions/types/QueryRoot.graphql?ref=b493c9508781971bf72a579d862c6719d4ab1eda",
+      "git_url": "https://api.github.com/repositories/105965506/git/blobs/766eecd652e581d977d55166a2fca953aa74b8e1",
+      "html_url": "https://github.com/qhacks/qhacks-dashboard/blob/b493c9508781971bf72a579d862c6719d4ab1eda/packages/server/gql/definitions/types/QueryRoot.graphql",
+      "content": "\"\"\"\nThe schemas entry-point for queries. This acts as the public,\ntop-level API from which all queries must start.\n\"\"\"\ntype QueryRoot\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-06T03:56:24Z",
+    "updated_at": "2019-01-16T14:30:11Z",
+    "pushed_at": "2019-02-20T19:24:29Z",
+    "issues": 90,
+    "watchers": 6,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 167,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 9,
+    "pull_requests_merged": 154,
+    "releases": 3,
+    "stargazers": 9
+  }
+}

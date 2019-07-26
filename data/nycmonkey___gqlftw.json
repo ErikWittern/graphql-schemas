@@ -1,0 +1,41 @@
+{
+  "repo_name": "gqlftw",
+  "repo_full_name": "nycmonkey/gqlftw",
+  "repo_owner": "nycmonkey",
+  "repo_description": "Fun with GraphQL and SPARQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "bcca2e8297d3ede69229ee99a79980273d77d605",
+      "url": "https://api.github.com/repositories/133293510/contents/schema.graphql?ref=acd95e07c3575a6baabf8affb2d1396677b0ae45",
+      "git_url": "https://api.github.com/repositories/133293510/git/blobs/bcca2e8297d3ede69229ee99a79980273d77d605",
+      "html_url": "https://github.com/nycmonkey/gqlftw/blob/acd95e07c3575a6baabf8affb2d1396677b0ae45/schema.graphql",
+      "content": "type Query {\n    # Find a company by homepage url (e.g., delta.com)\n    company(domain: String!): Company\n    # All loaded companies\n    companies: [Company]\n}\n\n# Business enterprise\ntype Company {\n    id: ID!\n    # English name\n    name: String\n    # Primary website URL\n    homepage: String\n    # Company logo URL\n    logoUrl: String\n    # CEO or other senior leader\n    executive: Person\n    # People who work or worked for the company, other than the CEO\n    employees: [Person]\n}\n\n# Human\ntype Person {\n    id: ID!\n    # Full name\n    name: String\n    # Company for which the person works\n    employer: Company\n    # Online photos\n    photoURLs: [String]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-14T02:16:11Z",
+    "updated_at": "2018-05-15T14:29:03Z",
+    "pushed_at": "2018-05-15T14:29:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 2,
+    "stargazers": 0
+  }
+}

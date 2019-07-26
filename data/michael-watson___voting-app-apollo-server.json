@@ -1,0 +1,42 @@
+{
+  "repo_name": "voting-app-apollo-server",
+  "repo_full_name": "michael-watson/voting-app-apollo-server",
+  "repo_owner": "michael-watson",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql-api-typescript/graphql/schema.graphql",
+      "sha": "4a5676eb660471ddc2df8dd155b06838cd100693",
+      "url": "https://api.github.com/repositories/180465804/contents/graphql-api-typescript/graphql/schema.graphql?ref=79dfbac9a80e719cfa8faad388fb9984f21d9d0c",
+      "git_url": "https://api.github.com/repositories/180465804/git/blobs/4a5676eb660471ddc2df8dd155b06838cd100693",
+      "html_url": "https://github.com/michael-watson/voting-app-apollo-server/blob/79dfbac9a80e719cfa8faad388fb9984f21d9d0c/graphql-api-typescript/graphql/schema.graphql",
+      "content": "type Query {\n    teams: [Team]\n}\n\ntype Mutation {\n    incrementPoints(id: ID!): Team\n}\n\ntype Team {\n    id: ID\n    name: String\n    points: Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-09T23:42:32Z",
+    "updated_at": "2019-04-18T16:49:42Z",
+    "pushed_at": "2019-04-10T04:10:18Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

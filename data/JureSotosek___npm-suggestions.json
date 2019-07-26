@@ -1,0 +1,42 @@
+{
+  "repo_name": "npm-suggestions",
+  "repo_full_name": "juresotosek/npm-suggestions",
+  "repo_owner": "JureSotosek",
+  "repo_description": "🎯Suggests packages that best 👔suit your project.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "d74bbcdfe9b843408ba526bfd96bf5535bf3ab02",
+      "url": "https://api.github.com/repositories/126528714/contents/src/schema.graphql?ref=ca1b418605ea4e96dd17328e721bd87ba632f945",
+      "git_url": "https://api.github.com/repositories/126528714/git/blobs/d74bbcdfe9b843408ba526bfd96bf5535bf3ab02",
+      "html_url": "https://github.com/JureSotosek/npm-suggestions/blob/ca1b418605ea4e96dd17328e721bd87ba632f945/src/schema.graphql",
+      "content": "type Query {\n  suggestions(\n    dependencies: [String!]\n    devDependencies: [String!]\n    limit: Int\n    page: Int\n  ): SuggestionsPayload!\n}\n\ntype SuggestionsPayload {\n  suggestions: [Package!]!\n  devSuggestions: [Package!]!\n  allSuggestions: [Package!]!\n}\n\ntype Package {\n  name: String!\n  version: String!\n  description: String\n  owner: Owner!\n  humanDownloadsLast30Days: String!\n  objectID: String!\n  popular: Boolean!\n}\n\ntype Owner {\n  name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-23T19:08:50Z",
+    "updated_at": "2018-09-24T11:50:08Z",
+    "pushed_at": "2018-09-24T11:50:07Z",
+    "issues": 2,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

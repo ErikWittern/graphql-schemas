@@ -1,0 +1,81 @@
+{
+  "repo_name": "graphql-prefab",
+  "repo_full_name": "jdolle/graphql-prefab",
+  "repo_owner": "jdolle",
+  "repo_description": "A language-agnostic GraphQL API sidecar",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "packages/graphql-prefab-resolvers/examples/demo-server/src/types/Query.graphql",
+      "sha": "d21cf82aa2dbf8e924f0af47f230e24be19d4743",
+      "url": "https://api.github.com/repositories/126676449/contents/packages/graphql-prefab-resolvers/examples/demo-server/src/types/Query.graphql?ref=36b03e916f075c480a96bdb965787eaef94de73f",
+      "git_url": "https://api.github.com/repositories/126676449/git/blobs/d21cf82aa2dbf8e924f0af47f230e24be19d4743",
+      "html_url": "https://github.com/jdolle/graphql-prefab/blob/36b03e916f075c480a96bdb965787eaef94de73f/packages/graphql-prefab-resolvers/examples/demo-server/src/types/Query.graphql",
+      "content": "#import AcceptanceDocument from 'AcceptanceDocument.graphql'\n#import Toggle from 'Toggle.graphql'\n\ntype Query {\n  acceptanceDocument(type: String!): AcceptanceDocument\n  allToggles: [Toggle]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jdolle/graphql-prefab/blob/36b03e916f075c480a96bdb965787eaef94de73f/packages/graphql-prefab-resolvers/examples/demo-server/src/types/Query.graphql:\n#import AcceptanceDocument from 'AcceptanceDocument.graphql'\n#import Toggle from 'Toggle.graphql'\n\ntype Query {\n  acceptanceDocument(type: String!): AcceptanceDocument\n  allToggles: [Toggle]\n}\n\n# https://github.com/jdolle/graphql-prefab/blob/36b03e916f075c480a96bdb965787eaef94de73f/packages/graphql-prefab-resolvers/examples/demo-server/src/types/AcceptanceDocument.graphql:\ntype AcceptanceDocument {\n  acceptanceDocumentVersionUuid: ID!\n  # The name of the document\n  name: String!\n  # The type of document (arbitrary right now)\n  documentType: String!\n  # The version of the document\n  version: String!\n  # The URL to the document text\n  url: String!\n   # The name of the summary\n  summaryName: String\n  # The URL to the summary text\n  summaryUrl: String\n  # Indicates wether the app should force the user to scroll to\n  # the bottom before accepting\n  mustScrollToBottom: Boolean\n  # A string indicating a specific app feature that the acceptance\n  # of the document is required for using\n  requiredFor: String\n}\n\n# https://github.com/jdolle/graphql-prefab/blob/36b03e916f075c480a96bdb965787eaef94de73f/packages/graphql-prefab-resolvers/examples/demo-server/src/types/Toggle.graphql:\ntype Toggle {\n  id: ID!\n  name: String!\n  projectString: String!\n  createdAt: String!\n  updatedAt: String\n  ruleId: ID!\n}\n",
+        "mergedPaths": [
+          "packages/graphql-prefab-resolvers/examples/demo-server/src/types/AcceptanceDocument.graphql",
+          "packages/graphql-prefab-resolvers/examples/demo-server/src/types/Toggle.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "AcceptanceDocument",
+          "Toggle"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Toggle.graphql",
+      "path": "packages/graphql-prefab-resolvers/examples/demo-server/src/types/Toggle.graphql",
+      "sha": "968f93312bd97737797de4f8771d3f91e6fa842d",
+      "url": "https://api.github.com/repositories/126676449/contents/packages/graphql-prefab-resolvers/examples/demo-server/src/types/Toggle.graphql?ref=36b03e916f075c480a96bdb965787eaef94de73f",
+      "git_url": "https://api.github.com/repositories/126676449/git/blobs/968f93312bd97737797de4f8771d3f91e6fa842d",
+      "html_url": "https://github.com/jdolle/graphql-prefab/blob/36b03e916f075c480a96bdb965787eaef94de73f/packages/graphql-prefab-resolvers/examples/demo-server/src/types/Toggle.graphql",
+      "content": "type Toggle {\n  id: ID!\n  name: String!\n  projectString: String!\n  createdAt: String!\n  updatedAt: String\n  ruleId: ID!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "AcceptanceDocument.graphql",
+      "path": "packages/graphql-prefab-resolvers/examples/demo-server/src/types/AcceptanceDocument.graphql",
+      "sha": "403ecb2588d087f4d9bd00fde1a3d0394a91d79d",
+      "url": "https://api.github.com/repositories/126676449/contents/packages/graphql-prefab-resolvers/examples/demo-server/src/types/AcceptanceDocument.graphql?ref=36b03e916f075c480a96bdb965787eaef94de73f",
+      "git_url": "https://api.github.com/repositories/126676449/git/blobs/403ecb2588d087f4d9bd00fde1a3d0394a91d79d",
+      "html_url": "https://github.com/jdolle/graphql-prefab/blob/36b03e916f075c480a96bdb965787eaef94de73f/packages/graphql-prefab-resolvers/examples/demo-server/src/types/AcceptanceDocument.graphql",
+      "content": "type AcceptanceDocument {\n  acceptanceDocumentVersionUuid: ID!\n  # The name of the document\n  name: String!\n  # The type of document (arbitrary right now)\n  documentType: String!\n  # The version of the document\n  version: String!\n  # The URL to the document text\n  url: String!\n   # The name of the summary\n  summaryName: String\n  # The URL to the summary text\n  summaryUrl: String\n  # Indicates wether the app should force the user to scroll to\n  # the bottom before accepting\n  mustScrollToBottom: Boolean\n  # A string indicating a specific app feature that the acceptance\n  # of the document is required for using\n  requiredFor: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-25T08:01:54Z",
+    "updated_at": "2019-06-12T19:55:55Z",
+    "pushed_at": "2019-03-20T00:28:29Z",
+    "issues": 25,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 59,
+    "pull_requests_open": 6,
+    "pull_requests_closed": 9,
+    "pull_requests_merged": 44,
+    "releases": 4,
+    "stargazers": 2
+  }
+}

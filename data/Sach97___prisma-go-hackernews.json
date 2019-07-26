@@ -1,0 +1,41 @@
+{
+  "repo_name": "prisma-go-hackernews",
+  "repo_full_name": "sach97/prisma-go-hackernews",
+  "repo_owner": "Sach97",
+  "repo_description": "Example adapted from howtographql using Prisma",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "f5ecb9be645cd11bd47fd17f8f35dd1b37d147c6",
+      "url": "https://api.github.com/repositories/150564574/contents/server/schema.graphql?ref=cb79a33e7ed2f8020bbc3f81180b3e7ce3a4f6f9",
+      "git_url": "https://api.github.com/repositories/150564574/git/blobs/f5ecb9be645cd11bd47fd17f8f35dd1b37d147c6",
+      "html_url": "https://github.com/Sach97/prisma-go-hackernews/blob/cb79a33e7ed2f8020bbc3f81180b3e7ce3a4f6f9/server/schema.graphql",
+      "content": "type Query {\n  links: [Link!]!\n  users: [User!]!\n  me(id:ID!): User!\n}\n\ntype Mutation {\n  createUser(name: String!, email: String!, password: String!): User!\n  createLink(url: String!, description: String!): Link!\n  upVote(linkId: String!): Vote!\n}\n\ntype Link {\n  id: ID! \n  createdAt: DateTime!\n  description: String!\n  url: String!\n  postedBy: User\n  allVotes: [Vote!]!\n}\n\ntype User {\n  id: ID! \n  name: String!\n  email: String! \n  password: String!\n  links: [Link!]!\n  votes: [Vote!]!\n}\n\ntype Vote {\n  id: ID!\n  link: Link!\n  votedBy: User!\n}\n\nscalar DateTime",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-27T09:45:44Z",
+    "updated_at": "2019-03-06T10:47:22Z",
+    "pushed_at": "2019-03-06T10:47:20Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

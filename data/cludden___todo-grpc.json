@@ -1,0 +1,42 @@
+{
+  "repo_name": "todo-grpc",
+  "repo_full_name": "cludden/todo-grpc",
+  "repo_owner": "cludden",
+  "repo_description": "an example gRPC application that powers a GraphQL & RESTful JSON api written in go  ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "548e379196f65da88adb5466a4df6b887c525bac",
+      "url": "https://api.github.com/repositories/144525202/contents/graphql/schema.graphql?ref=9b3d367ce480859ad9c53a4fe0b8aa1ba4f808cb",
+      "git_url": "https://api.github.com/repositories/144525202/git/blobs/548e379196f65da88adb5466a4df6b887c525bac",
+      "html_url": "https://github.com/cludden/todo-grpc/blob/9b3d367ce480859ad9c53a4fe0b8aa1ba4f808cb/graphql/schema.graphql",
+      "content": "\"Represents a moment in time\"\nscalar DateTime\n\n\"Describes the input to a completeTodo mutation\"\ninput CompleteTodoInput {\n    \"Primary identifier\"\n    id: ID!\n}\n\n\"Describes the input to a createTodo mutation\"\ninput CreateTodoInput {\n    \"Optional task detail\"\n    description: String\n\n    \"Task title\"\n    title: String!\n}\n\n\"Describes the root mutation entrypoints\"\ntype Mutation {\n    \"Mark an existing Todo as completed\"\n    completeTodo(input: CompleteTodoInput!): Todo\n\n    \"Create a new Todo\"\n    createTodo(input: CreateTodoInput!): Todo\n}\n\n\"Describes a vertex in the graph\"\ninterface Node {\n    \"Primary identifier\"\n    id: ID!\n}\n\n\"Describes pagination information\"\ntype PageInfo {\n    \"The total number of items represented by the connection\"\n    total: Int\n}\n\n\"Describes the root query entrypoints\"\ntype Query {\n    \"Retrieves a paginated list of todos\"\n    todos(input: TodosQueryInput!): TodosQueryConnection\n}\n\n\"Represents an individual task\"\ntype Todo implements Node {\n    \"Primary identifier\"\n    id: ID!\n\n    \"Boolean flag indicating whether or not the todo has been completed\"\n    complete: Boolean!\n\n    \"Completion timestamp\"\n    completed_at: DateTime\n\n    \"Creation timestamp\"\n    created_at: DateTime!\n\n    \"Optional detail\"\n    description: String\n\n    \"Task title\"\n    title: String!\n}\n\n\"Root todos query connection\"\ntype TodosQueryConnection {\n    \"List of edges\"\n    edges: [TodosQueryEdge]\n\n    \"Pagination information\"\n    pageInfo: PageInfo\n}\n\n\"Edge type for a TodosQueryConnection\"\ntype TodosQueryEdge {\n    \"Pagination cursor\"\n    cursor: String!\n\n    \"Item at the end of the edge\"\n    node: Todo\n}\n\n\"Describes the input to the root todos query\"\ninput TodosQueryInput {\n    \"Pagination offset\"\n    after: String\n\n    \"Page size\"\n    first: Int\n\n    \"Optional query string\"\n    query: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-13T03:31:02Z",
+    "updated_at": "2018-11-29T23:37:46Z",
+    "pushed_at": "2018-08-21T14:28:11Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

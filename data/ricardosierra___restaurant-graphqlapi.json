@@ -1,0 +1,39 @@
+{
+  "repo_name": "restaurant-graphqlapi",
+  "repo_full_name": "ricardosierra/restaurant-graphqlapi",
+  "repo_owner": "ricardosierra",
+  "repo_description": "Graphql Api using Mongo and JWT authentication in Golang",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "bilo-api_old/schema.graphql",
+      "sha": "297e9534f903f3b2e2a9824f66096e1a798f445a",
+      "url": "https://api.github.com/repositories/112781785/contents/bilo-api_old/schema.graphql?ref=e8ea49e550c55a426099418c160a876c74e66819",
+      "git_url": "https://api.github.com/repositories/112781785/git/blobs/297e9534f903f3b2e2a9824f66096e1a798f445a",
+      "html_url": "https://github.com/ricardosierra/restaurant-graphqlapi/blob/e8ea49e550c55a426099418c160a876c74e66819/bilo-api_old/schema.graphql",
+      "content": "type User {\n  id: ID\n  email: String!\n  post(id: ID!): Post\n  posts: [Post!]!\n  follower(id: ID!): User\n  followers: [User!]!\n  followee(id: ID!): User\n  followees: [User!]!\n}\n\ntype Post {\n  id: ID\n  user: User!\n  title: String!\n  body: String!\n  comment(id: ID!): Comment\n  comments: [Comment!]!\n}\n\ntype Comment {\n  id: ID\n  user: User!\n  post: Post!\n  title: String\n  body: String!\n}\n\ntype Query {\n  user(id: ID!): User\n}\n\ntype Mutation {\n  createUser(email: String!): User\n  removeUser(id: ID!): Boolean\n  follow(follower: ID!, followee: ID!): Boolean\n  unfollow(follower: ID!, followee: ID!): Boolean\n  createPost(user: ID!, title: String!, body: String!): Post\n  removePost(id: ID!): Boolean\n  createComment(user: ID!, post: ID!, title: String!, body: String!): Comment\n  removeComment(id: ID!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-01T20:05:07Z",
+    "updated_at": "2018-02-09T10:19:26Z",
+    "pushed_at": "2017-12-01T20:06:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

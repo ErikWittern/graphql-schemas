@@ -1,0 +1,103 @@
+{
+  "repo_name": "uber-server",
+  "repo_full_name": "wanted7751/uber-server",
+  "repo_owner": "wanted7751",
+  "repo_description": "uber clone with react and graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e2b7377acaa9c8983cf72729c56d58da706d3ec2",
+      "url": "https://api.github.com/repositories/164664539/contents/src/schema.graphql?ref=5dc531c0b463178c07307edb73425bdab25a2e12",
+      "git_url": "https://api.github.com/repositories/164664539/git/blobs/e2b7377acaa9c8983cf72729c56d58da706d3ec2",
+      "html_url": "https://github.com/wanted7751/uber-server/blob/5dc531c0b463178c07307edb73425bdab25a2e12/src/schema.graphql",
+      "content": "type Chat {\n  id: Int!\n  message: [Message]!\n  participants: [User]!\n  createdAt: String!\n  updatedAt: String!\n}\n\ntype Message {\n  id: Int!\n  text: String!\n  chat: Chat!\n  user: User!\n  createdAt: String!\n  updatedAt: String!\n}\n\ntype Place {\n  id: Int!\n  name: String!\n  lat: Float!\n  lng: Float!\n  address: String!\n  isFav: Boolean!\n  createdAt: String!\n  updatedAt: String\n}\n\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress: String!\n  pickUplat: Float!\n  pickUplng: Float!\n  dropOffAddress: String!\n  dropOffLat: Float!\n  dropOffLng: Float!\n  price: Float!\n  distance: String!\n  duration: String!\n  driver: User!\n  passenger: User!\n  createdAt: String!\n  updatedAt: String\n}\n\ntype CompletePhoneVerificationResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype Mutation {\n  CompletePhoneVerification(phoneNumber: String!, key: String!): CompletePhoneVerificationResponse!\n  EmailSignIn(email: String!, password: String!): EmailSignInResponse!\n  EmailSignUp(firstName: String!, lastName: String!, email: String!, password: String!, profilePhoto: String!, age: Int!, phoneNumber: String!): EmailSignUpResponse!\n  FacebookConnect(firstName: String!, lastName: String!, email: String, fbId: String!): FacebookConnectResponse!\n  StartPhoneVerification(phoneNumber: String!): StartPhoneVerificationResponse!\n}\n\ntype EmailSignInResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype EmailSignUpResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype FacebookConnectResponse {\n  ok: Boolean!\n  error: String\n  token: String\n}\n\ntype StartPhoneVerificationResponse {\n  ok: Boolean!\n  error: String\n}\n\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  chat: Chat\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  createdAt: String!\n  updatedAt: String\n}\n\ntype Query {\n  user: User\n}\n\ntype Verification {\n  id: Int!\n  target: String!\n  payload: String!\n  key: String!\n  verified: Boolean!\n  createdAt: String!\n  updatedAt: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 13
+    },
+    {
+      "name": "User.graphql",
+      "path": "src/api/User/shared/User.graphql",
+      "sha": "50f54870512d8ef120bd6126afc5a4bb523edc30",
+      "url": "https://api.github.com/repositories/164664539/contents/src/api/User/shared/User.graphql?ref=5ecd2aca107465a1b57cf1995d660b29ea6e3e40",
+      "git_url": "https://api.github.com/repositories/164664539/git/blobs/50f54870512d8ef120bd6126afc5a4bb523edc30",
+      "html_url": "https://github.com/wanted7751/uber-server/blob/5ecd2aca107465a1b57cf1995d660b29ea6e3e40/src/api/User/shared/User.graphql",
+      "content": "type User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  chat: Chat\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  createdAt: String!\n  updatedAt: String\n}\n\ntype Query {\n  user: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/wanted7751/uber-server/blob/5ecd2aca107465a1b57cf1995d660b29ea6e3e40/src/api/User/shared/User.graphql:\ntype User {\n  id: Int!\n  email: String\n  verifiedEmail: Boolean!\n  firstName: String!\n  lastName: String!\n  age: Int\n  password: String\n  phoneNumber: String\n  verifiedPhoneNumber: Boolean!\n  profilePhoto: String\n  fullName: String\n  isDriving: Boolean!\n  isRiding: Boolean!\n  isTaken: Boolean!\n  lastLng: Float\n  lastLat: Float\n  lastOrientation: Float\n  fbId: String\n  chat: Chat\n  messages: [Message]\n  ridesAsPassenger: [Ride]\n  ridesAsDriver: [Ride]\n  createdAt: String!\n  updatedAt: String\n}\n\ntype Query {\n  user: User\n}\n\n# https://github.com/wanted7751/uber-server/blob/6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012/src/api/Chat/shared/Chat.graphql:\ntype Chat {\n  id: Int!\n  message:[Message]!\n  participants:[User]!\n  createdAt: String!\n  updatedAt: String!\n}\n\n# https://github.com/wanted7751/uber-server/blob/6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012/src/api/Chat/shared/Message.graphql:\ntype Message {\n  id: Int!\n  text: String!\n  chat:Chat!\n  user:User!\n  createdAt: String!\n  updatedAt: String!\n}\n\n# https://github.com/wanted7751/uber-server/blob/6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012/src/api/Ride/shared/Ride.graphql:\ntype Ride {\n  id: Int!\n  status: String!\n  pickUpAddress:String!\n  pickUplat:Float!\n  pickUplng:Float!\n  dropOffAddress:String!\n  dropOffLat:Float!\n  dropOffLng:Float!\n  price:Float!\n  distance:String!\n  duration:String!\n  driver:User!\n  passenger:User!\n  createdAt: String!\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "src/api/Chat/shared/Chat.graphql",
+          "src/api/Chat/shared/Message.graphql",
+          "src/api/Ride/shared/Ride.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Chat",
+          "Message",
+          "Ride"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Chat.graphql",
+      "path": "src/api/Chat/shared/Chat.graphql",
+      "sha": "9b571f85894f6e1360c95c2fb891ad8b4c19f8e9",
+      "url": "https://api.github.com/repositories/164664539/contents/src/api/Chat/shared/Chat.graphql?ref=6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012",
+      "git_url": "https://api.github.com/repositories/164664539/git/blobs/9b571f85894f6e1360c95c2fb891ad8b4c19f8e9",
+      "html_url": "https://github.com/wanted7751/uber-server/blob/6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012/src/api/Chat/shared/Chat.graphql",
+      "content": "type Chat {\n  id: Int!\n  message:[Message]!\n  participants:[User]!\n  createdAt: String!\n  updatedAt: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Message.graphql",
+      "path": "src/api/Chat/shared/Message.graphql",
+      "sha": "cee35f7235d4409941c51de34801e9bf1edaa4ee",
+      "url": "https://api.github.com/repositories/164664539/contents/src/api/Chat/shared/Message.graphql?ref=6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012",
+      "git_url": "https://api.github.com/repositories/164664539/git/blobs/cee35f7235d4409941c51de34801e9bf1edaa4ee",
+      "html_url": "https://github.com/wanted7751/uber-server/blob/6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012/src/api/Chat/shared/Message.graphql",
+      "content": "type Message {\n  id: Int!\n  text: String!\n  chat:Chat!\n  user:User!\n  createdAt: String!\n  updatedAt: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Ride.graphql",
+      "path": "src/api/Ride/shared/Ride.graphql",
+      "sha": "4e34db647d065e72dc96edb1903e319f09a12f10",
+      "url": "https://api.github.com/repositories/164664539/contents/src/api/Ride/shared/Ride.graphql?ref=6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012",
+      "git_url": "https://api.github.com/repositories/164664539/git/blobs/4e34db647d065e72dc96edb1903e319f09a12f10",
+      "html_url": "https://github.com/wanted7751/uber-server/blob/6af0701cd3e8c8521eb45ef2fd1b3fd2fd3c4012/src/api/Ride/shared/Ride.graphql",
+      "content": "type Ride {\n  id: Int!\n  status: String!\n  pickUpAddress:String!\n  pickUplat:Float!\n  pickUplng:Float!\n  dropOffAddress:String!\n  dropOffLat:Float!\n  dropOffLng:Float!\n  price:Float!\n  distance:String!\n  duration:String!\n  driver:User!\n  passenger:User!\n  createdAt: String!\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-08T14:19:51Z",
+    "updated_at": "2019-01-16T13:41:36Z",
+    "pushed_at": "2019-01-16T13:41:34Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

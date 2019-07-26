@@ -1,0 +1,39 @@
+{
+  "repo_name": "mock-graphql-server",
+  "repo_full_name": "estrada9166/mock-graphql-server",
+  "repo_owner": "estrada9166",
+  "repo_description": "Create a GraphQL server with mocked schema on the go!",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema.gql",
+      "sha": "f22e9043c04aa88957756dbac5a7567a54bddfd0",
+      "url": "https://api.github.com/repositories/147253858/contents/src/schema.gql?ref=ff7fa799af355f42fb6497c026ff468fcbd07a85",
+      "git_url": "https://api.github.com/repositories/147253858/git/blobs/f22e9043c04aa88957756dbac5a7567a54bddfd0",
+      "html_url": "https://github.com/estrada9166/mock-graphql-server/blob/ff7fa799af355f42fb6497c026ff468fcbd07a85/src/schema.gql",
+      "content": "type Student {\n  id: ID!\n  email: String!\n  username: String!\n  career: Career!\n}\n\ntype Career {\n  id: ID!\n  name: String!\n  students: [Student]\n}\n\n# MUTATIONS\n# Create a new Student\ninput StudentInput {\n  email: String!\n  username: String!\n  careerId: ID!\n}\n\n# Career\ninput CareerInput {\n  name: String!\n}\n\ntype Query {\n  geAllStudents: [Student]\n  getStudentById(studentId: ID!): Student\n  getAllCareers: [Career]\n  getCareerById(careerID: ID!): Career\n}\n\ntype Mutation {\n  createStudent(input: StudentInput!): Student\n  createCareer(input: CareerInput!): Career\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-03T21:09:43Z",
+    "updated_at": "2018-09-03T21:19:11Z",
+    "pushed_at": "2018-09-03T21:19:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

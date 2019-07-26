@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-linalyzer",
+  "repo_full_name": "graphql-java/graphql-linalyzer",
+  "repo_owner": "graphql-java",
+  "repo_description": "GraphQL Schema linter and analyzer",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "example-schema.graphql",
+      "path": "examples/example-schema.graphql",
+      "sha": "68d79b0cbbaaf3b161dc1cc1c2cdc850ec240ba8",
+      "url": "https://api.github.com/repositories/156927857/contents/examples/example-schema.graphql?ref=a3c0b95070c7467d4ec3b25d54f43b8eb67eabb1",
+      "git_url": "https://api.github.com/repositories/156927857/git/blobs/68d79b0cbbaaf3b161dc1cc1c2cdc850ec240ba8",
+      "html_url": "https://github.com/graphql-java/graphql-linalyzer/blob/a3c0b95070c7467d4ec3b25d54f43b8eb67eabb1/examples/example-schema.graphql",
+      "content": "type Query {\n    Name: String\n    Id: String\n\tAge: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-09T23:07:19Z",
+    "updated_at": "2019-07-04T13:33:45Z",
+    "pushed_at": "2018-11-22T08:02:14Z",
+    "issues": 15,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

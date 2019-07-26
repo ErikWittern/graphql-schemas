@@ -1,0 +1,42 @@
+{
+  "repo_name": "auth",
+  "repo_full_name": "hackgt/auth",
+  "repo_owner": "HackGT",
+  "repo_description": "Single sign on and authentication for all apps.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "api.graphql",
+      "path": "server/api/api.graphql",
+      "sha": "54413837485272c6a76ec169329aff2def1ef930",
+      "url": "https://api.github.com/repositories/100149542/contents/server/api/api.graphql?ref=c0e9539e9feee8176c6389b85d684f1186dd387c",
+      "git_url": "https://api.github.com/repositories/100149542/git/blobs/54413837485272c6a76ec169329aff2def1ef930",
+      "html_url": "https://github.com/HackGT/auth/blob/c0e9539e9feee8176c6389b85d684f1186dd387c/server/api/api.graphql",
+      "content": "interface Auth {\n  user(token: ID!): User\n  authenticate(callback: String!): String!\n  logout: String!\n}\n\n# The basic user type\ntype User {\n  # The user's ID, this should be consistent within all nodes\n  id: ID!\n  # The user's email address\n  email: String!\n  # If the user's email has been verified\n  email_verified: Boolean!\n  # If the user is an administrator\n  admin: Boolean!\n  # If the user's human-readable full name\n  name: String\n}\n\n# The root query type, home of all queries.\ntype Query implements Auth {\n  # Look up the current user by his or her token, or if this is an admin\n  # token look up a user by his or her ID.\n  user(token: ID!, id: ID): User\n\n  # Search through a user's name and email through regex (admin only)\n  search_user(token: ID!, search: String!, offset: Int!, n: Int!): [User]!\n\n  # Provide a URL to authenticate with that redirects to the specified callback.\n  authenticate(callback: String!): String!\n\n  # Provide a URL to logout with\n  logout: String!\n}\n\n# The root mutation type, home of all mutations.\ntype Mutation {\n  # Set the admin flag on a user, can only be done by admins.\n  is_admin(token: ID!, email: String!, admin: Boolean!): Boolean\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-13T02:44:05Z",
+    "updated_at": "2017-08-13T02:44:28Z",
+    "pushed_at": "2017-08-18T08:50:47Z",
+    "issues": 5,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

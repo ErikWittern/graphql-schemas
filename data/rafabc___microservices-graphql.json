@@ -1,0 +1,52 @@
+{
+  "repo_name": "microservices-graphql",
+  "repo_full_name": "rafabc/microservices-graphql",
+  "repo_owner": "rafabc",
+  "repo_description": "Microservices netflix integrated with GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "microservice_config_server/src/main/resources/config/schema.graphql",
+      "sha": "d3f3a89fb4e7b5917a86c07c83e5197145e41ac0",
+      "url": "https://api.github.com/repositories/120893603/contents/microservice_config_server/src/main/resources/config/schema.graphql?ref=c13724be78aa5441f1998d981f57bca68ec73163",
+      "git_url": "https://api.github.com/repositories/120893603/git/blobs/d3f3a89fb4e7b5917a86c07c83e5197145e41ac0",
+      "html_url": "https://github.com/rafabc/microservices-graphql/blob/c13724be78aa5441f1998d981f57bca68ec73163/microservice_config_server/src/main/resources/config/schema.graphql",
+      "content": "schema {\n    query: QueryType\n    mutation: MutationType\n}\n\ntype QueryType {\n    character(firstName: String): Character\n    characters: [Character]\n    episodes: [Episode]\n    search(searchFor: String): [Everything]\n}\n\n\ntype MutationType {\n    addCharacter(character: CharacterInput): MutationResult\n}\n\ninput CharacterInput {\n    firstName: String\n    lastName: String\n    family: Boolean\n}\n\ntype MutationResult {\n   success: Boolean\n}\n\n\ntype Character {\n    id: ID!\n    firstName: String\n    lastName: String\n    family: Boolean\n    episodes: [Episode]\n}\n\ntype Episode {\n    id: ID!\n    name: String\n    season: Season\n    number: Int\n    numberOverall: Int\n    characters: [Character]\n}\n\nunion Everything = Character | Episode\n\n# Simpson seasons\nenum Season {\n    # the beginning\n    Season1,\n    Season2,\n    Season3,\n    Season4,\n    # Another one\n    Season5,\n    Season6,\n    Season7,\n    Season8,\n    # Not really the last one :-)\n    Season9\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    },
+    {
+      "name": "schema.graphql",
+      "path": "microservice_graphql/src/main/resources/schema.graphql",
+      "sha": "d3f3a89fb4e7b5917a86c07c83e5197145e41ac0",
+      "url": "https://api.github.com/repositories/120893603/contents/microservice_graphql/src/main/resources/schema.graphql?ref=c13724be78aa5441f1998d981f57bca68ec73163",
+      "git_url": "https://api.github.com/repositories/120893603/git/blobs/d3f3a89fb4e7b5917a86c07c83e5197145e41ac0",
+      "html_url": "https://github.com/rafabc/microservices-graphql/blob/c13724be78aa5441f1998d981f57bca68ec73163/microservice_graphql/src/main/resources/schema.graphql",
+      "content": "schema {\n    query: QueryType\n    mutation: MutationType\n}\n\ntype QueryType {\n    character(firstName: String): Character\n    characters: [Character]\n    episodes: [Episode]\n    search(searchFor: String): [Everything]\n}\n\n\ntype MutationType {\n    addCharacter(character: CharacterInput): MutationResult\n}\n\ninput CharacterInput {\n    firstName: String\n    lastName: String\n    family: Boolean\n}\n\ntype MutationResult {\n   success: Boolean\n}\n\n\ntype Character {\n    id: ID!\n    firstName: String\n    lastName: String\n    family: Boolean\n    episodes: [Episode]\n}\n\ntype Episode {\n    id: ID!\n    name: String\n    season: Season\n    number: Int\n    numberOverall: Int\n    characters: [Character]\n}\n\nunion Everything = Character | Episode\n\n# Simpson seasons\nenum Season {\n    # the beginning\n    Season1,\n    Season2,\n    Season3,\n    Season4,\n    # Another one\n    Season5,\n    Season6,\n    Season7,\n    Season8,\n    # Not really the last one :-)\n    Season9\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-09T10:42:00Z",
+    "updated_at": "2018-05-09T15:08:23Z",
+    "pushed_at": "2018-02-09T10:57:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

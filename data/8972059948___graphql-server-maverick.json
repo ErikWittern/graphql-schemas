@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-server-maverick",
+  "repo_full_name": "8972059948/graphql-server-maverick",
+  "repo_owner": "8972059948",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/utils/schema.graphql",
+      "sha": "d075b6d9bc1676dbd5c79aa6f0c9bb15636e2d54",
+      "url": "https://api.github.com/repositories/146716070/contents/src/utils/schema.graphql?ref=ad193e0ae8715f1a07454f1efdaf0d29ae7368a0",
+      "git_url": "https://api.github.com/repositories/146716070/git/blobs/d075b6d9bc1676dbd5c79aa6f0c9bb15636e2d54",
+      "html_url": "https://github.com/8972059948/graphql-server-maverick/blob/ad193e0ae8715f1a07454f1efdaf0d29ae7368a0/src/utils/schema.graphql",
+      "content": "schema {\n  query: RootQueryType\n  mutation: MutationRoot\n}\n\n\"\"\"food item\"\"\"\ntype food {\n  \"\"\"Resturent Object Id\"\"\"\n  _id: ID\n\n  \"\"\"The id of the food item.\"\"\"\n  itemId: String\n\n  \"\"\"The name of the food.\"\"\"\n  foodName: String\n\n  \"\"\"The type of food. \"\"\"\n  foodType: String\n}\n\n\"\"\"food item\"\"\"\ninput foodinputitem {\n  \"\"\"The name of the food.\"\"\"\n  foodName: String\n\n  \"\"\"The type of food. \"\"\"\n  foodType: String\n}\n\n\"\"\"Mutation API\"\"\"\ntype MutationRoot {\n  fooditemSave(inputItem: foodinputitem!): food\n  resturentmenuItemSave(inputItem: resturentmutation!): resturent\n}\n\n\"\"\"resturent menu item\"\"\"\ntype resturent {\n  \"\"\"Resturent Object Id\"\"\"\n  _id: ID\n\n  \"\"\"Resturent Item Id\"\"\"\n  itemId: String\n\n  \"\"\"The name of the resturent.\"\"\"\n  resturentName: String\n\n  \"\"\"The type of menu a resturent have. \"\"\"\n  menuType: [String]\n}\n\n\"\"\"resturent menu items\"\"\"\ninput resturentmutation {\n  \"\"\"The name of the resturent.\"\"\"\n  resturentName: String\n\n  \"\"\"The type of menu a resturent have. \"\"\"\n  menuType: [String]\n}\n\ntype RootQueryType {\n  foodItem(itemId: ID!): [food]\n  foodItems: [food]\n  resturentCollection: [resturent]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-30T07:59:18Z",
+    "updated_at": "2018-08-30T08:32:11Z",
+    "pushed_at": "2018-08-30T08:32:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "abac",
+  "repo_full_name": "dmitry-n-medvedev/abac",
+  "repo_owner": "Dmitry-N-Medvedev",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "a35875babf5a9ec2c4b70d4a07dddb99b28abf56",
+      "url": "https://api.github.com/repositories/128217562/contents/schema/schema.graphql?ref=69c904d702f8dda4afc24db6b78345e83997200c",
+      "git_url": "https://api.github.com/repositories/128217562/git/blobs/a35875babf5a9ec2c4b70d4a07dddb99b28abf56",
+      "html_url": "https://github.com/Dmitry-N-Medvedev/abac/blob/69c904d702f8dda4afc24db6b78345e83997200c/schema/schema.graphql",
+      "content": "type Car {\n  id: ID\n  make: String\n  model: String\n  trim: String\n  year: Int\n  mileage: Int\n  color: String\n  vin: String\n}\n\ntype CarList {\n  list: [Car]\n}\n\ntype Query {\n  car (\n    id: ID\n    make: String\n    model: String\n    trim: String\n    year: Int\n    mileage: Float\n    color: String\n    vin: String\n    limit: Int = 20\n    page: Int = 0\n  ): CarList\n}\n\ntype Mutation {\n  setCarMake (carId: ID, make: String) : Car\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-05T14:24:46Z",
+    "updated_at": "2018-07-27T17:51:46Z",
+    "pushed_at": "2018-04-06T03:56:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

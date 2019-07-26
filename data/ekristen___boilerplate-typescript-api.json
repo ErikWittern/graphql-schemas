@@ -1,0 +1,42 @@
+{
+  "repo_name": "boilerplate-typescript-api",
+  "repo_full_name": "ekristen/boilerplate-typescript-api",
+  "repo_owner": "ekristen",
+  "repo_description": "My preferred starting boilerplate for a TypeScript based API project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "dbd866cb223a6479736a1d5abf5b74e879b5ff6b",
+      "url": "https://api.github.com/repositories/142364472/contents/src/graphql/schema.graphql?ref=21d29a947c239b22c6af36e6558d667633c97ce1",
+      "git_url": "https://api.github.com/repositories/142364472/git/blobs/dbd866cb223a6479736a1d5abf5b74e879b5ff6b",
+      "html_url": "https://github.com/ekristen/boilerplate-typescript-api/blob/21d29a947c239b22c6af36e6558d667633c97ce1/src/graphql/schema.graphql",
+      "content": "type Query {\n  base: Boolean\n}\n\ntype Mutation {\n  base: Boolean\n}\n\ntype Subscription {\n  baseChanged: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-25T23:38:40Z",
+    "updated_at": "2018-11-07T20:33:22Z",
+    "pushed_at": "2018-07-26T17:45:08Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

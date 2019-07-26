@@ -1,0 +1,41 @@
+{
+  "repo_name": "linksh",
+  "repo_full_name": "nethruster/linksh",
+  "repo_owner": "nethruster",
+  "repo_description": "A fast, light and modern URL shortener written in Go and Javascript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "pkg/graphql/schema.graphql",
+      "sha": "d0a76574d16ba049b973a6ef99766009f13aa563",
+      "url": "https://api.github.com/repositories/123832540/contents/pkg/graphql/schema.graphql?ref=cff9cfe99dea1a179d18217a4dc2d4d247fd06fd",
+      "git_url": "https://api.github.com/repositories/123832540/git/blobs/d0a76574d16ba049b973a6ef99766009f13aa563",
+      "html_url": "https://github.com/nethruster/linksh/blob/cff9cfe99dea1a179d18217a4dc2d4d247fd06fd/pkg/graphql/schema.graphql",
+      "content": "type Link {\n\tid: String!\n\tdestination: String!\n    owner: User!\n\tcreatedAt: Timestamp!\n\tupdatedAt: Timestamp!\n\thits: Int\n}\n\ntype User {\n    id: Int!\n    name: String!\n    apiKey: String!\n    isAdmin: Boolean!\n    links: [Link!]\n    createdAt: Timestamp!\n\tupdatedAt: Timestamp!\n}\n\ninput NewUser {\n    name: String!\n    password: String!\n    isAdmin: Boolean!\n}\n\ninput EditUser {\n    id: Int!\n    name: String\n    password: String\n    isAdmin: Boolean\n}\n\ninput Login {\n    name: String!\n    password: String!\n    keepSession: Boolean!\n    WriteCookie: Boolean!\n}\n\ninput NewLink {\n    id: String\n    destination: String!\n}\n\ntype Mutation {\n    addUser(input: NewUser!): User!\n    deleteUser(id: Int!): Int!\n    updateUser(input: EditUser): User!\n    logout: Boolean\n    addLink(input: NewLink!): Link!\n    deleteLink(id: String!): String!\n}\n\ntype Query {\n    user(id: Int): User\n    users(limit: Int offset: Int): [User!]!\n    links(owner: Int destination: String limit: Int offset: Int): [Link!]!\n    link(id: String!): Link\n    checkSessionIntegrity: Boolean!\n}\n\nscalar Timestamp\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-04T21:51:56Z",
+    "updated_at": "2019-07-17T23:12:51Z",
+    "pushed_at": "2019-07-17T23:12:49Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

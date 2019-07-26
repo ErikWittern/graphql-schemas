@@ -1,0 +1,41 @@
+{
+  "repo_name": "ts-gql-defs",
+  "repo_full_name": "swashcap/ts-gql-defs",
+  "repo_owner": "swashcap",
+  "repo_description": "Demoing TypeScript + GraphQL + Auto Defs",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "26d0377e8a302f0427adaf3fa9191a1d1d63e5d7",
+      "url": "https://api.github.com/repositories/163618275/contents/src/schema.graphql?ref=b2eaf1fe351851a79503647c876e34d24170600d",
+      "git_url": "https://api.github.com/repositories/163618275/git/blobs/26d0377e8a302f0427adaf3fa9191a1d1d63e5d7",
+      "html_url": "https://github.com/swashcap/ts-gql-defs/blob/b2eaf1fe351851a79503647c876e34d24170600d/src/schema.graphql",
+      "content": "type Author {\n  books: [Book]!\n  id: ID!\n  name: String!\n}\n\ntype Book {\n  author: Author!\n  id: ID!\n  title: String!\n}\n\ntype Query {\n  books: [Book]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-30T21:18:42Z",
+    "updated_at": "2019-01-02T02:03:03Z",
+    "pushed_at": "2019-01-02T02:03:02Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

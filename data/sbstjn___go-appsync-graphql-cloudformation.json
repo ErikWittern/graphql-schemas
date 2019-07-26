@@ -1,0 +1,42 @@
+{
+  "repo_name": "go-appsync-graphql-cloudformation",
+  "repo_full_name": "sbstjn/go-appsync-graphql-cloudformation",
+  "repo_owner": "sbstjn",
+  "repo_description": "AWS AppSync GraphQL API Proxy with Lambda, CloudFormation, and SAM",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "c2dde3e4689c67101eec413206757018d9e576b6",
+      "url": "https://api.github.com/repositories/122257320/contents/schema.graphql?ref=ee74891c20a7fb787751eea7d0b6b3a4c4a92e96",
+      "git_url": "https://api.github.com/repositories/122257320/git/blobs/c2dde3e4689c67101eec413206757018d9e576b6",
+      "html_url": "https://github.com/sbstjn/go-appsync-graphql-cloudformation/blob/ee74891c20a7fb787751eea7d0b6b3a4c4a92e96/schema.graphql",
+      "content": "type Post {\n\turl: String\n\ttitle: String\n\tdate: String\n}\n\ntype Query {\n\tfeed: [Post]\n}\n\nschema {\n\tquery: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-20T21:15:51Z",
+    "updated_at": "2019-07-06T17:42:49Z",
+    "pushed_at": "2018-07-12T09:14:14Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 24
+  }
+}

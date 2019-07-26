@@ -1,0 +1,41 @@
+{
+  "repo_name": "rome",
+  "repo_full_name": "eusdima/rome",
+  "repo_owner": "eusdima",
+  "repo_description": "HTTP package scheduler for Dart",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "examples/schema.gql",
+      "sha": "8f14fd21a7d60a1268f036fd0ebf36dcc3105afe",
+      "url": "https://api.github.com/repositories/161390740/contents/examples/schema.gql?ref=4a252518e8c23297ba9a31e99825d8e60b034f8c",
+      "git_url": "https://api.github.com/repositories/161390740/git/blobs/8f14fd21a7d60a1268f036fd0ebf36dcc3105afe",
+      "html_url": "https://github.com/eusdima/rome/blob/4a252518e8c23297ba9a31e99825d8e60b034f8c/examples/schema.gql",
+      "content": "type Author {\n  id: Int!\n  firstName: String\n  lastName: String\n  \"\"\"\n  the list of Posts by this author\n  \"\"\"\n  posts: [Post]\n}\n\ntype Post {\n  id: Int!\n  title: String\n  author: Author\n  votes: Int\n}\n\ntype Query {\n  posts: [Post]\n  author: Author\n}\n\ntype Eus {\n  id: String\n  firstName: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-11T20:37:19Z",
+    "updated_at": "2019-01-07T19:53:43Z",
+    "pushed_at": "2019-01-07T19:53:41Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

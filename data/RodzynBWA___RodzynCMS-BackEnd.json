@@ -1,0 +1,42 @@
+{
+  "repo_name": "RodzynCMS-BackEnd",
+  "repo_full_name": "rodzynbwa/rodzyncms-backend",
+  "repo_owner": "RodzynBWA",
+  "repo_description": "Back-End of my private homepage written in NestJS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "blogroll.graphql",
+      "path": "src/blogrolls/blogroll.graphql",
+      "sha": "cf9fc6c2160d4bf16e2826a575f720a46039ea02",
+      "url": "https://api.github.com/repositories/178290738/contents/src/blogrolls/blogroll.graphql?ref=dd8521f8ee0f6d99d4fbae4db8477ef672c90657",
+      "git_url": "https://api.github.com/repositories/178290738/git/blobs/cf9fc6c2160d4bf16e2826a575f720a46039ea02",
+      "html_url": "https://github.com/RodzynBWA/RodzynCMS-BackEnd/blob/dd8521f8ee0f6d99d4fbae4db8477ef672c90657/src/blogrolls/blogroll.graphql",
+      "content": "type Query {\n  getBlogrolls: [Blogroll]\n  getBlogrollID(id: Int): Blogroll\n}\n\ntype Mutation {\n  createBlogroll(createBlogrollInput: BlogrollInput): Blogroll\n  updateBlogroll(id: Int, updateBlogrollInput: BlogrollInput): Blogroll\n  deleteBlogroll(id: Int): Blogroll\n}\n\ntype Subscription {\n  blogrollCreated: Blogroll\n  blogrollUpdated: Blogroll\n  blogrollDeleted: Blogroll\n}\n\ntype Blogroll {\n  id: Int\n  name: String\n  url: String\n}\n\ninput BlogrollInput {\n  name: String\n  url: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-28T22:20:38Z",
+    "updated_at": "2019-05-12T17:50:04Z",
+    "pushed_at": "2019-07-05T20:38:40Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

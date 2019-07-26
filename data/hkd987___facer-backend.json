@@ -1,0 +1,39 @@
+{
+  "repo_name": "facer-backend",
+  "repo_full_name": "hkd987/facer-backend",
+  "repo_owner": "hkd987",
+  "repo_description": "Todo App Graphql Server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "bookType.graphql",
+      "path": "src/schema/types/bookType.graphql",
+      "sha": "5e54ee582f71decd33bc46cce16be838013fe202",
+      "url": "https://api.github.com/repositories/128858925/contents/src/schema/types/bookType.graphql?ref=ac62cae12f801a0e7d9606c3b8a615e25427753e",
+      "git_url": "https://api.github.com/repositories/128858925/git/blobs/5e54ee582f71decd33bc46cce16be838013fe202",
+      "html_url": "https://github.com/hkd987/facer-backend/blob/ac62cae12f801a0e7d9606c3b8a615e25427753e/src/schema/types/bookType.graphql",
+      "content": "type Query { books: [Book] }\ntype Book { title: String, author: String }\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-10T02:03:37Z",
+    "updated_at": "2018-04-12T14:17:05Z",
+    "pushed_at": "2018-04-12T01:13:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

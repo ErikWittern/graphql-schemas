@@ -1,0 +1,41 @@
+{
+  "repo_name": "schema-stitching-demo",
+  "repo_full_name": "patchyj/schema-stitching-demo",
+  "repo_owner": "patchyj",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "service-gateway/schema.graphql",
+      "sha": "f72552e5b19f7832e5c719b000f38c0afd451532",
+      "url": "https://api.github.com/repositories/175067042/contents/service-gateway/schema.graphql?ref=b1132ccc0b15fde6630aebd066f91dbcdc5a2cc1",
+      "git_url": "https://api.github.com/repositories/175067042/git/blobs/f72552e5b19f7832e5c719b000f38c0afd451532",
+      "html_url": "https://github.com/patchyj/schema-stitching-demo/blob/b1132ccc0b15fde6630aebd066f91dbcdc5a2cc1/service-gateway/schema.graphql",
+      "content": "type Blog {\n  id: ID!\n  title: String\n  tagline: String\n  body: String\n  user: ID\n  author: User\n}\n\nenum CacheControlScope {\n  PUBLIC\n  PRIVATE\n}\n\ntype Education {\n  school: String!\n  degree: String!\n  fieldofstudy: String!\n  from: String!\n  to: String!\n  current: Boolean!\n  description: String!\n}\n\ntype Experience {\n  title: String!\n  company: String!\n  location: String!\n  from: String!\n  to: String!\n  current: Boolean!\n  description: String!\n}\n\ntype Profile {\n  id: ID!\n  experience: [Experience]!\n  education: [Education]!\n  skills: [Skill]!\n  user: ID\n}\n\ntype Query {\n  allUsers: [User]\n  user(id: ID!): User\n  allBlogs: [Blog]\n  blog(id: ID!): Blog\n  blogsByAuthorId(authorId: ID!): [Blog]\n  allProfiles: [Profile!]\n  profile(id: ID!): Profile\n  profileUser(userID: ID!): Profile\n}\n\ntype Skill {\n  name: String!\n  level: Int!\n}\n\n\"\"\"The `Upload` scalar type represents a file upload.\"\"\"\nscalar Upload\n\ntype User {\n  id: ID!\n  firstName: String\n  lastName: String\n  email: String\n  password: String\n  blogs: [Blog]\n  profile: Profile\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-11T19:09:02Z",
+    "updated_at": "2019-03-13T17:31:19Z",
+    "pushed_at": "2019-05-23T18:14:13Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

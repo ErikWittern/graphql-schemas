@@ -1,0 +1,42 @@
+{
+  "repo_name": "server",
+  "repo_full_name": "velop-io/server",
+  "repo_owner": "velop-io",
+  "repo_description": "Serve one or more react apps! - Custom routes, HotReloading, Authenticated Apps/routes, Relay, Webpack..",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/9-react-graphql-relay/schema/schema.graphql",
+      "sha": "2a4319199a3066943846a396606e7c29731f4c71",
+      "url": "https://api.github.com/repositories/108740632/contents/examples/9-react-graphql-relay/schema/schema.graphql?ref=0d9521f2c6bacff0ab6b717432ab1cb87ccbc9bc",
+      "git_url": "https://api.github.com/repositories/108740632/git/blobs/2a4319199a3066943846a396606e7c29731f4c71",
+      "html_url": "https://github.com/velop-io/server/blob/0d9521f2c6bacff0ab6b717432ab1cb87ccbc9bc/examples/9-react-graphql-relay/schema/schema.graphql",
+      "content": "schema {\n  query: RootType\n}\n\ntype MemberType {\n  id: Int\n  name: String\n  tickets: [TicketType]\n}\n\ntype ProjectType {\n  id: Int\n  name: String\n  members: [MemberType]\n}\n\ntype RootType {\n  projects: [ProjectType]\n  project(id: ID!): ProjectType\n}\n\ntype TicketType {\n  id: String\n  message: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-29T14:20:19Z",
+    "updated_at": "2019-06-11T19:14:30Z",
+    "pushed_at": "2019-07-19T22:28:19Z",
+    "issues": 22,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 88,
+    "pull_requests_open": 36,
+    "pull_requests_closed": 4,
+    "pull_requests_merged": 48,
+    "releases": 62,
+    "stargazers": 20
+  }
+}

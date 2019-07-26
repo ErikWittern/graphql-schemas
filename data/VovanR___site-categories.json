@@ -1,0 +1,39 @@
+{
+  "repo_name": "site-categories",
+  "repo_full_name": "vovanr/site-categories",
+  "repo_owner": "VovanR",
+  "repo_description": "Experiment",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "6ae991f681b7e854d8cf4844bf9a3af8382a6f05",
+      "url": "https://api.github.com/repositories/118795243/contents/schema.graphql?ref=189156a4623ae0c40b1253bef7d6ec1fca70dfb4",
+      "git_url": "https://api.github.com/repositories/118795243/git/blobs/6ae991f681b7e854d8cf4844bf9a3af8382a6f05",
+      "html_url": "https://github.com/VovanR/site-categories/blob/189156a4623ae0c40b1253bef7d6ec1fca70dfb4/schema.graphql",
+      "content": "type Query {\n  hello: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-24T17:02:10Z",
+    "updated_at": "2018-01-24T18:38:08Z",
+    "pushed_at": "2018-01-24T18:40:16Z",
+    "issues": 5,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

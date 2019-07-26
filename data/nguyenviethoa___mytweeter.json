@@ -1,0 +1,43 @@
+{
+  "repo_name": "mytweeter",
+  "repo_full_name": "nguyenviethoa/mytweeter",
+  "repo_owner": "nguyenviethoa",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "f0b0c93efc2f63418f36f31b5cb52a57ac746d2b",
+      "url": "https://api.github.com/repositories/128660148/contents/schema.graphql?ref=f23de9426b2b08d80b6528923c3cfda04c227a09",
+      "git_url": "https://api.github.com/repositories/128660148/git/blobs/f0b0c93efc2f63418f36f31b5cb52a57ac746d2b",
+      "html_url": "https://github.com/nguyenviethoa/mytweeter/blob/f23de9426b2b08d80b6528923c3cfda04c227a09/schema.graphql",
+      "content": "type Tweet {\n    id: ID!\n    # The tweet text. No more than 140 characters!\n    body: String\n    # When the tweet was published\n    date: Date\n    # Who published the tweet\n    Author: User\n    # Views, retweets, likes, etc\n    Stats: Stat\n}\n\ntype User {\n    id: ID!\n    username: String\n    first_name: String\n    last_name: String\n    full_name: String\n    name: String @deprecated\n    avatar_url: Url\n}\n\ntype Stat {\n    views: Int\n    likes: Int\n    retweets: Int\n    responses: Int\n}\n\ntype Notification {\n    id: ID\n    date: Date\n    type: String\n}\n\ntype Meta {\n    count: Int\n}\n\nscalar Url\nscalar Date\n\ntype Query {\n    Tweet(id: ID!): Tweet\n    Tweets(limit: Int, skip: Int, sort_field: String, sort_order: String): [Tweet]\n    TweetsMeta: Meta\n    User(id: ID!): User\n    Notifications(limit: Int): [Notification]\n    NotificationsMeta: Meta\n}\n\ntype Mutation {\n    createTweet (\n        body: String\n    ): Tweet\n    deleteTweet(id: ID!): Tweet\n    markTweetRead(id: ID!): Boolean\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-08T16:23:55Z",
+    "updated_at": "2018-04-26T04:04:10Z",
+    "pushed_at": "2018-04-26T04:04:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

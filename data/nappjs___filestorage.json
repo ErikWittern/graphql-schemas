@@ -1,0 +1,42 @@
+{
+  "repo_name": "filestorage",
+  "repo_full_name": "nappjs/filestorage",
+  "repo_owner": "nappjs",
+  "repo_description": "Filestorage for nappjs",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "files.graphql",
+      "path": "graphql/files.graphql",
+      "sha": "c1424a9e3fddb16ec358a446aeca27324f92b43c",
+      "url": "https://api.github.com/repositories/121889605/contents/graphql/files.graphql?ref=173a3790114c843a9d5d5eaa24467f07e7a2e82c",
+      "git_url": "https://api.github.com/repositories/121889605/git/blobs/c1424a9e3fddb16ec358a446aeca27324f92b43c",
+      "html_url": "https://github.com/nappjs/filestorage/blob/173a3790114c843a9d5d5eaa24467f07e7a2e82c/graphql/files.graphql",
+      "content": "type File {\n  uid: String!\n  name: String\n}\n\ntype Query {\n  files: [File!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-17T20:24:43Z",
+    "updated_at": "2018-03-13T21:02:30Z",
+    "pushed_at": "2018-03-13T21:02:29Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

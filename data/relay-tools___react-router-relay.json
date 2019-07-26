@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-router-relay",
+  "repo_full_name": "relay-tools/react-router-relay",
+  "repo_owner": "relay-tools",
+  "repo_description": "[Deprecated] Relay Classic integration for React Router",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/schema.graphql",
+      "sha": "4c0c49e070744991a2a26455c6d14cbe56d42227",
+      "url": "https://api.github.com/repositories/40947810/contents/test/fixtures/schema.graphql?ref=fee7b5e9666d46f2a2703914df0a6a872e19063b",
+      "git_url": "https://api.github.com/repositories/40947810/git/blobs/4c0c49e070744991a2a26455c6d14cbe56d42227",
+      "html_url": "https://github.com/relay-tools/react-router-relay/blob/fee7b5e9666d46f2a2703914df0a6a872e19063b/test/fixtures/schema.graphql",
+      "content": "type Query {\n  widget: Widget\n  widgetByArg(name: String!): Widget\n}\n\ntype Widget {\n  name: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-08-18T03:07:05Z",
+    "updated_at": "2019-07-13T21:03:32Z",
+    "pushed_at": "2017-08-14T21:03:36Z",
+    "issues": 131,
+    "watchers": 29,
+    "fork_count": 73,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 113,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 24,
+    "pull_requests_merged": 89,
+    "releases": 39,
+    "stargazers": 569
+  }
+}

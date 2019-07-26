@@ -1,0 +1,42 @@
+{
+  "repo_name": "funnas1.0",
+  "repo_full_name": "skrishnan602/funnas1.0",
+  "repo_owner": "SKrishnan602",
+  "repo_description": "Personal Website based on Relay React and Cassandra babel web-pack node and express",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "cadcb471d2b5dd189b33d96e013b7e5e7edab762",
+      "url": "https://api.github.com/repositories/78683483/contents/data/schema.graphql?ref=45b8feb47917000833f9eeea8a6b8064bf9cee96",
+      "git_url": "https://api.github.com/repositories/78683483/git/blobs/cadcb471d2b5dd189b33d96e013b7e5e7edab762",
+      "html_url": "https://github.com/SKrishnan602/funnas1.0/blob/45b8feb47917000833f9eeea8a6b8064bf9cee96/data/schema.graphql",
+      "content": "# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# Details of Product\ntype Product implements Node {\n  # The ID of an object\n  id: ID!\n\n  # prod_source\n  prod_source: String\n\n  # prod_code\n  prod_code: String\n\n  # prod_desc\n  prod_desc: String\n\n  # prod_href\n  prod_href: String\n\n  # prod_img1_src\n  prod_img1_src: String\n\n  # prod_img1_style\n  prod_img1_style: String\n\n  # prod_img2_src\n  prod_img2_src: String\n\n  # prod_img2_style\n  prod_img2_style: String\n}\n\n# A connection to a list of items.\ntype ProductConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [ProductEdge]\n}\n\n# An edge in a connection.\ntype ProductEdge {\n  # The item at the end of the edge\n  node: Product\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# List all product types\ntype ProductList implements Node {\n  # The ID of an object\n  id: ID!\n\n  # List of products\n  products(after: String, first: Int, before: String, last: Int): ProductConnection\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  tickerList: TickerList\n  productList: ProductList\n  rakutenDealsList: RakutenDealsList\n}\n\n# Details of Rakuten Deals\ntype RakutenDeals implements Node {\n  # The ID of an object\n  id: ID!\n\n  # merchant\n  merchant: String\n\n  # start_on\n  start_on: String\n\n  # end_on\n  end_on: String\n\n  # code\n  code: String\n\n  # deal_id\n  deal_id: String\n\n  # deal_name\n  deal_name: String\n\n  # deal_type\n  deal_type: String\n\n  # deal_type_desc\n  deal_type_desc: String\n\n  # deal_url\n  deal_url: String\n\n  # merchant_text\n  merchant_text: String\n\n  # restrictions\n  restrictions: String\n\n  # site_wide\n  site_wide: String\n\n  # sku\n  sku: String\n}\n\n# A connection to a list of items.\ntype RakutenDealsConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [RakutenDealsEdge]\n}\n\n# An edge in a connection.\ntype RakutenDealsEdge {\n  # The item at the end of the edge\n  node: RakutenDeals\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# List all rakuten deals types\ntype RakutenDealsList implements Node {\n  # The ID of an object\n  id: ID!\n\n  # List of rakutenDeals\n  rakutenDeals(after: String, first: Int, before: String, last: Int): RakutenDealsConnection\n}\n\n# Details of Ticker\ntype Ticker implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Ticker Code\n  ticker: String\n\n  # Ticker Description\n  tickerdesc: String\n}\n\n# A connection to a list of items.\ntype TickerConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [TickerEdge]\n}\n\n# An edge in a connection.\ntype TickerEdge {\n  # The item at the end of the edge\n  node: Ticker\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# List all ticker types\ntype TickerList implements Node {\n  # The ID of an object\n  id: ID!\n\n  # List of tickers\n  tickers(after: String, first: Int, before: String, last: Int): TickerConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-11T21:55:30Z",
+    "updated_at": "2017-03-01T21:45:55Z",
+    "pushed_at": "2017-03-02T20:22:33Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

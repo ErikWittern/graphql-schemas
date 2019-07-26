@@ -1,0 +1,52 @@
+{
+  "repo_name": "loona",
+  "repo_full_name": "kamilkisiela/loona",
+  "repo_owner": "kamilkisiela",
+  "repo_description": "🌕 Application State Management done with GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "books.graphql",
+      "path": "examples/angular/lazy/src/app/books/books.graphql",
+      "sha": "a206c23c37b7073612745ba7116fc54435c729f2",
+      "url": "https://api.github.com/repositories/133176877/contents/examples/angular/lazy/src/app/books/books.graphql?ref=8f46adc4ae0a7f060c4dfecd07111845d81abc1b",
+      "git_url": "https://api.github.com/repositories/133176877/git/blobs/a206c23c37b7073612745ba7116fc54435c729f2",
+      "html_url": "https://github.com/kamilkisiela/loona/blob/8f46adc4ae0a7f060c4dfecd07111845d81abc1b/examples/angular/lazy/src/app/books/books.graphql",
+      "content": "type Book {\n  id: ID!\n  title: String!\n}\n\ntype Query {\n  books: [Book]\n}\n\ntype Mutation {\n  addBook(title: String!): Book\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "notes.graphql",
+      "path": "examples/angular/lazy/src/app/notes/notes.graphql",
+      "sha": "5f81cfc9b5dc202e73715ebe71088bf0e2f2981e",
+      "url": "https://api.github.com/repositories/133176877/contents/examples/angular/lazy/src/app/notes/notes.graphql?ref=8f46adc4ae0a7f060c4dfecd07111845d81abc1b",
+      "git_url": "https://api.github.com/repositories/133176877/git/blobs/5f81cfc9b5dc202e73715ebe71088bf0e2f2981e",
+      "html_url": "https://github.com/kamilkisiela/loona/blob/8f46adc4ae0a7f060c4dfecd07111845d81abc1b/examples/angular/lazy/src/app/notes/notes.graphql",
+      "content": "type Note {\n  id: ID!\n  text: String!\n}\n\ntype Query {\n  notes: [Note]\n}\n\ntype Mutation {\n  addNote(text: String!): Note\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-12T19:23:45Z",
+    "updated_at": "2019-07-19T11:16:25Z",
+    "pushed_at": "2019-07-13T12:01:21Z",
+    "issues": 17,
+    "watchers": 18,
+    "fork_count": 14,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 519,
+    "pull_requests_open": 26,
+    "pull_requests_closed": 23,
+    "pull_requests_merged": 470,
+    "releases": 1,
+    "stargazers": 193
+  }
+}

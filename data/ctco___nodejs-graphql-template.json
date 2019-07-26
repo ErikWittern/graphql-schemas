@@ -1,0 +1,42 @@
+{
+  "repo_name": "nodejs-graphql-template",
+  "repo_full_name": "ctco/nodejs-graphql-template",
+  "repo_owner": "ctco",
+  "repo_description": "Template project for Node.js® GraphQL APIs",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "jokes.graphql",
+      "path": "src/graphql/schema/jokes.graphql",
+      "sha": "f3b90edfbd49829aae57d51c26a00d77180e6b34",
+      "url": "https://api.github.com/repositories/90636761/contents/src/graphql/schema/jokes.graphql?ref=31a8e4ba9ad246964298a76ff668a65bfa571149",
+      "git_url": "https://api.github.com/repositories/90636761/git/blobs/f3b90edfbd49829aae57d51c26a00d77180e6b34",
+      "html_url": "https://github.com/ctco/nodejs-graphql-template/blob/31a8e4ba9ad246964298a76ff668a65bfa571149/src/graphql/schema/jokes.graphql",
+      "content": "# Root _Query_ definition\ntype Query {\n  # Get _Jokes_\n  jokes: Jokes\n}\n\n# _Jokes_ definition\ntype Jokes {\n    # Get _Joke_ by _JokeCategoryEnum_\n    byCategory(category: JokeCategoryEnum): Joke\n    byId(id: Int!): Joke\n}\n\n# _Joke_ definition\ntype Joke {\n  id: String!\n  text: String!\n  categories: [JokeCategoryEnum]\n}\n\n# Available _Joke_ categories\nenum JokeCategoryEnum {\n  NERDY\n  EXPLICIT\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-08T14:20:39Z",
+    "updated_at": "2019-02-12T15:53:29Z",
+    "pushed_at": "2019-01-18T09:58:43Z",
+    "issues": 35,
+    "watchers": 10,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 207,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 60,
+    "pull_requests_merged": 146,
+    "releases": 0,
+    "stargazers": 11
+  }
+}

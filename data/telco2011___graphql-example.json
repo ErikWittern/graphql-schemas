@@ -1,0 +1,78 @@
+{
+  "repo_name": "graphql-example",
+  "repo_full_name": "telco2011/graphql-example",
+  "repo_owner": "telco2011",
+  "repo_description": "Graphql example project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "src/schemas/Query.graphql",
+      "sha": "93027cf075bef107358c00a874f023165cd08e7b",
+      "url": "https://api.github.com/repositories/99863527/contents/src/schemas/Query.graphql?ref=d261240617ef1520f1ce9264b85e90a07902efad",
+      "git_url": "https://api.github.com/repositories/99863527/git/blobs/93027cf075bef107358c00a874f023165cd08e7b",
+      "html_url": "https://github.com/telco2011/graphql-example/blob/d261240617ef1520f1ce9264b85e90a07902efad/src/schemas/Query.graphql",
+      "content": "type Query {\n  authors: [Author]\n  posts: [Post]\n  author(firstName: String, lastName: String): Author\n  getFortunerCookie: String\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/telco2011/graphql-example/blob/d261240617ef1520f1ce9264b85e90a07902efad/src/schemas/Query.graphql:\ntype Query {\n  authors: [Author]\n  posts: [Post]\n  author(firstName: String, lastName: String): Author\n  getFortunerCookie: String\n}\n# https://github.com/telco2011/graphql-example/blob/d261240617ef1520f1ce9264b85e90a07902efad/src/schemas/Author.graphql:\ntype Author {\n  id: Int\n  firstName: String\n  lastName: String\n  posts: [Post]\n}\n# https://github.com/telco2011/graphql-example/blob/d261240617ef1520f1ce9264b85e90a07902efad/src/schemas/Post.graphql:\ntype Post {\n  id: Int\n  title: String\n  text: String\n  views: Int\n  author: Author\n}",
+        "mergedPaths": [
+          "src/schemas/Author.graphql",
+          "src/schemas/Post.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Author",
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Author.graphql",
+      "path": "src/schemas/Author.graphql",
+      "sha": "731f9010f20cf7ab8a0657e994f252c171152d3b",
+      "url": "https://api.github.com/repositories/99863527/contents/src/schemas/Author.graphql?ref=d261240617ef1520f1ce9264b85e90a07902efad",
+      "git_url": "https://api.github.com/repositories/99863527/git/blobs/731f9010f20cf7ab8a0657e994f252c171152d3b",
+      "html_url": "https://github.com/telco2011/graphql-example/blob/d261240617ef1520f1ce9264b85e90a07902efad/src/schemas/Author.graphql",
+      "content": "type Author {\n  id: Int\n  firstName: String\n  lastName: String\n  posts: [Post]\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "Post.graphql",
+      "path": "src/schemas/Post.graphql",
+      "sha": "5f0a84c123d23dc80f7515c98cdac95d401b1c03",
+      "url": "https://api.github.com/repositories/99863527/contents/src/schemas/Post.graphql?ref=d261240617ef1520f1ce9264b85e90a07902efad",
+      "git_url": "https://api.github.com/repositories/99863527/git/blobs/5f0a84c123d23dc80f7515c98cdac95d401b1c03",
+      "html_url": "https://github.com/telco2011/graphql-example/blob/d261240617ef1520f1ce9264b85e90a07902efad/src/schemas/Post.graphql",
+      "content": "type Post {\n  id: Int\n  title: String\n  text: String\n  views: Int\n  author: Author\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-10T00:20:22Z",
+    "updated_at": "2019-07-15T07:31:17Z",
+    "pushed_at": "2017-08-16T08:57:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 6,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 6,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

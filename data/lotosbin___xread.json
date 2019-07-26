@@ -1,0 +1,41 @@
+{
+  "repo_name": "xread",
+  "repo_full_name": "lotosbin/xread",
+  "repo_owner": "lotosbin",
+  "repo_description": "another rss reader",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "52c81260a10ff758379bd0b8c1fe1250428cdbaf",
+      "url": "https://api.github.com/repositories/170811858/contents/server/schema.graphql?ref=cf7ef577e58f875b276c43966b0111c5c78b980c",
+      "git_url": "https://api.github.com/repositories/170811858/git/blobs/52c81260a10ff758379bd0b8c1fe1250428cdbaf",
+      "html_url": "https://github.com/lotosbin/xread/blob/cf7ef577e58f875b276c43966b0111c5c78b980c/server/schema.graphql",
+      "content": "#schema {\n#    query: Query\n#    mutation: Mutation\n#    subscription:Subscription\n#}\n\ninterface Node {\n    id: ID!\n}\ntype PageInfo {\n    startCursor: String,\n    endCursor: String,\n    hasNextPage: Boolean!,\n    hasPreviousPage: Boolean!\n}\ntype Viewer{\n    username: String\n}\ninput ArticleInput {\n    keyword: String,\n}\ntype Tag implements Node{\n    id:ID!\n    name: String!\n    articles(first:Int,after:String,last:Int,before:String,box:String,read:String=\"all\",priority:Int=0,search:ArticleInput):ArticleConnection\n}\ntype TagConnection {\n    pageInfo: PageInfo!\n    edges: [TagEdge!]!\n}\ntype TagEdge  {\n    cursor: String!\n    node: Tag!\n}\ntype Topic implements Node{\n    id:ID!\n    name:String!\n    articles(first:Int,after:String,last:Int,before:String,box:String,read:String=\"all\",priority:Int=0,search:ArticleInput):ArticleConnection\n}\ntype TopicConnection {\n    pageInfo: PageInfo!\n    edges: [TopicEdge!]!\n}\ntype TopicEdge  {\n    cursor: String!\n    node: Topic!\n}\ntype Series implements Node{\n    id:ID!\n    title:String\n    articles(first:Int,after:String,last:Int,before:String,box:String,read:String=\"all\",priority:Int=0,search:ArticleInput): ArticleConnection\n}\ntype Article implements Node {\n    id: ID!\n    title: String\n    summary: String\n    link: String\n    time: String\n    feed: Feed\n    tags: [String]\n    topic: String\n    box: String\n    priority: Int!\n    series: Series\n}\n\ntype ArticleConnection {\n    pageInfo: PageInfo!\n    edges: [ArticleEdge!]!\n}\ntype ArticleEdge  {\n    cursor: String!\n    node: Article!\n}\n\ntype Feed implements Node{\n    id:ID!\n    link:String!\n    title:String\n    articles(first:Int,after:String,last:Int,before:String,box:String,read:String=\"all\",priority:Int=0,search:ArticleInput):ArticleConnection\n}\ntype FeedConnection {\n    pageInfo: PageInfo!\n    edges: [FeedEdge!]!\n}\ntype FeedEdge  {\n    cursor: String!\n    node: Feed!\n}\n\n# The \"Query\" type is the root of all GraphQL queries.\n# (A \"Mutation\" type will be covered later on.)\ntype Query {\n    articles(first:Int,after:String,last:Int,before:String,box:String,read:String=\"all\",priority:Int=0,search:ArticleInput): ArticleConnection\n    viewer: Viewer\n    node(id: ID!,type:String): Node\n    feeds(first:Int,after:String,last:Int,before:String):FeedConnection\n    tags:TagConnection\n    topics:TopicConnection\n}\ntype Mutation {\n    addArticle(title: String, summary: String,link:String,time:String,feedId:String):Article\n    addFeed(link:String!,title:String):Feed\n    markReaded(id:String):Article\n    markSpam(id:String):Article\n}\ntype Subscription {\n    articleAdded: Article\n    feedAdded:Feed\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": true,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-15T06:16:58Z",
+    "updated_at": "2019-06-13T02:21:30Z",
+    "pushed_at": "2019-07-13T12:35:41Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 6,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

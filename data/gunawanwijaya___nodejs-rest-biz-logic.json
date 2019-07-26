@@ -1,0 +1,39 @@
+{
+  "repo_name": "nodejs-rest-biz-logic",
+  "repo_full_name": "gunawanwijaya/nodejs-rest-biz-logic",
+  "repo_owner": "gunawanwijaya",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "some.gql",
+      "path": "service/graphql/schemas/some.gql",
+      "sha": "18430cc41ca1cba69e03b006d94c215705aeb3c5",
+      "url": "https://api.github.com/repositories/142475588/contents/service/graphql/schemas/some.gql?ref=d33f9379fd398acc04f8ebc28542fc7bbe865496",
+      "git_url": "https://api.github.com/repositories/142475588/git/blobs/18430cc41ca1cba69e03b006d94c215705aeb3c5",
+      "html_url": "https://github.com/gunawanwijaya/nodejs-rest-biz-logic/blob/d33f9379fd398acc04f8ebc28542fc7bbe865496/service/graphql/schemas/some.gql",
+      "content": "scalar JSON\n\ntype PageInfo {\n  endCursor: ID\n  hasNextPage: Boolean\n  startCursor: ID\n  hasPreviousPage: Boolean\n}\n\ntype MutationResponse {\n  id: ID\n  input: JSON\n  message: String!\n  code: Int!\n}\n\ntype Mutation {\n  createSome(input: SomeInput): MutationResponse\n  updateSome(input: SomeInput): MutationResponse\n  deleteSome(input: SomeInput): MutationResponse\n}\n\ntype Query {\n  some: SomeNode\n}\n\n#######################\n\ntype SomeConnection {\n  totalCount: Int\n  pageInfo: PageInfo\n  edges: [SomeEdge]\n}\n\ntype SomeEdge {\n  cursor: ID\n  node: SomeNode\n}\n\ntype SomeNode {\n  uuid: ID\n  createdAt: Float\n  updatedAt: Float\n  isDeleted: Boolean\n\n  name: String\n}\n\ninput SomeInput {\n  uuid: ID\n  createdAt: Float\n  updatedAt: Float\n  isDeleted: Boolean\n\n  name: String\n}\n\n#######################\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-26T17:55:07Z",
+    "updated_at": "2019-07-05T05:09:41Z",
+    "pushed_at": "2019-07-11T18:28:20Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 6,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

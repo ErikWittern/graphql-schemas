@@ -1,0 +1,109 @@
+{
+  "repo_name": "demo-graphql",
+  "repo_full_name": "qubeyuval/demo-graphql",
+  "repo_owner": "qubeyuval",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "types.graphql",
+      "path": "graphql-server/schema/types.graphql",
+      "sha": "2ca9ea0bd09904b8654750e46c8edfc020ed6376",
+      "url": "https://api.github.com/repositories/133715977/contents/graphql-server/schema/types.graphql?ref=cefa9ea2147f80598a481743cae3b025944e76e8",
+      "git_url": "https://api.github.com/repositories/133715977/git/blobs/2ca9ea0bd09904b8654750e46c8edfc020ed6376",
+      "html_url": "https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/types.graphql",
+      "content": "# import User Address Geo Company from \"./user.graphql\"\n# import Post from \"./post.graphql\"\n# import Comment from \"./comment.graphql\"\n# import Todo from \"./todo.graphql\"\n\ntype Query {\n    users: [User!]!\n    user(id: ID!): User\n\n    posts: [Post!]!\n    post(id: ID!): Post\n\n    todosByUser(userId: ID!, completed: Boolean, limit: Int): [Todo]\n}\n\ntype Mutation {\n    createComment(postId: ID!, name: String!, email: String, body: String): Comment\n    updateComment(id: ID!, name: String!, body: String!): Comment\n    deleteComment(id: ID!): Comment\n\n    createPost(userId: ID!, title: String!, body: String): Post\n    updatePost(id: ID!, title: String!, body: String!): Post\n    deletePost(id: ID!): Post\n\n    createTodo(userId: ID!, title: String!, completed: Boolean): Todo\n    updateTodo(id: ID!, title: String, completed: Boolean): Todo\n    deleteTodo(id: ID!): Todo\n}\n\ntype Subscription {\n    commentCreated(postId: ID!): Comment!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/types.graphql:\n# import User Address Geo Company from \"./user.graphql\"\n# import Post from \"./post.graphql\"\n# import Comment from \"./comment.graphql\"\n# import Todo from \"./todo.graphql\"\n\ntype Query {\n    users: [User!]!\n    user(id: ID!): User\n\n    posts: [Post!]!\n    post(id: ID!): Post\n\n    todosByUser(userId: ID!, completed: Boolean, limit: Int): [Todo]\n}\n\ntype Mutation {\n    createComment(postId: ID!, name: String!, email: String, body: String): Comment\n    updateComment(id: ID!, name: String!, body: String!): Comment\n    deleteComment(id: ID!): Comment\n\n    createPost(userId: ID!, title: String!, body: String): Post\n    updatePost(id: ID!, title: String!, body: String!): Post\n    deletePost(id: ID!): Post\n\n    createTodo(userId: ID!, title: String!, completed: Boolean): Todo\n    updateTodo(id: ID!, title: String, completed: Boolean): Todo\n    deleteTodo(id: ID!): Todo\n}\n\ntype Subscription {\n    commentCreated(postId: ID!): Comment!\n}\n\n# https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/user.graphql:\n# import Post from \"./post.graphql\"\n# import Todo from \"./todo.graphql\"\n\ntype Address {\n    street: String\n    suite: String\n    city: String\n    zipcode: String\n    geo: Geo\n}\n\ntype Geo {\n    lat: Float\n    lng: Float\n}\n\ntype Company {\n    name: String\n    catchPhrase: String\n    bs: String\n}\n\ntype User {\n    id: ID!\n    name: String\n    username: String\n    email: String\n    address: Address\n    phone: String\n    website: String\n    company: Company\n    posts: [Post]\n    todos(completed: Boolean): [Todo]\n}\n\n# https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/post.graphql:\n# import Comment from \"./comment.graphql\"\n\ntype Post {\n    id: ID\n    title: String\n    body: String\n    comments: [Comment]\n}\n\n# https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/todo.graphql:\n\ntype Todo {\n    id: ID!\n    title: String!\n    completed: Boolean!\n}\n\n# https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/comment.graphql:\ntype Comment {\n    id: ID\n    name: String\n    email: String\n    body: String\n}\n",
+        "mergedPaths": [
+          "graphql-server/schema/user.graphql",
+          "graphql-server/schema/post.graphql",
+          "graphql-server/schema/todo.graphql",
+          "graphql-server/schema/comment.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Post",
+          "Todo",
+          "Comment"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 10,
+        "containsCycle": false,
+        "polynomialLevel": 3,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "post.graphql",
+      "path": "graphql-server/schema/post.graphql",
+      "sha": "2420db18baf1cb325f352717125a2d7d7b4e91ce",
+      "url": "https://api.github.com/repositories/133715977/contents/graphql-server/schema/post.graphql?ref=cefa9ea2147f80598a481743cae3b025944e76e8",
+      "git_url": "https://api.github.com/repositories/133715977/git/blobs/2420db18baf1cb325f352717125a2d7d7b4e91ce",
+      "html_url": "https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/post.graphql",
+      "content": "# import Comment from \"./comment.graphql\"\n\ntype Post {\n    id: ID\n    title: String\n    body: String\n    comments: [Comment]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "user.graphql",
+      "path": "graphql-server/schema/user.graphql",
+      "sha": "8588508e2777d827b924cd95791ad2821a85beb8",
+      "url": "https://api.github.com/repositories/133715977/contents/graphql-server/schema/user.graphql?ref=cefa9ea2147f80598a481743cae3b025944e76e8",
+      "git_url": "https://api.github.com/repositories/133715977/git/blobs/8588508e2777d827b924cd95791ad2821a85beb8",
+      "html_url": "https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/user.graphql",
+      "content": "# import Post from \"./post.graphql\"\n# import Todo from \"./todo.graphql\"\n\ntype Address {\n    street: String\n    suite: String\n    city: String\n    zipcode: String\n    geo: Geo\n}\n\ntype Geo {\n    lat: Float\n    lng: Float\n}\n\ntype Company {\n    name: String\n    catchPhrase: String\n    bs: String\n}\n\ntype User {\n    id: ID!\n    name: String\n    username: String\n    email: String\n    address: Address\n    phone: String\n    website: String\n    company: Company\n    posts: [Post]\n    todos(completed: Boolean): [Todo]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 4
+    },
+    {
+      "name": "todo.graphql",
+      "path": "graphql-server/schema/todo.graphql",
+      "sha": "db9acf0526868e347f7a068e3b2e7d23f3d8f4a9",
+      "url": "https://api.github.com/repositories/133715977/contents/graphql-server/schema/todo.graphql?ref=cefa9ea2147f80598a481743cae3b025944e76e8",
+      "git_url": "https://api.github.com/repositories/133715977/git/blobs/db9acf0526868e347f7a068e3b2e7d23f3d8f4a9",
+      "html_url": "https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/todo.graphql",
+      "content": "\ntype Todo {\n    id: ID!\n    title: String!\n    completed: Boolean!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "comment.graphql",
+      "path": "graphql-server/schema/comment.graphql",
+      "sha": "d186bb7a112c0331141a1295ebb051897ab150a2",
+      "url": "https://api.github.com/repositories/133715977/contents/graphql-server/schema/comment.graphql?ref=cefa9ea2147f80598a481743cae3b025944e76e8",
+      "git_url": "https://api.github.com/repositories/133715977/git/blobs/d186bb7a112c0331141a1295ebb051897ab150a2",
+      "html_url": "https://github.com/qubeyuval/demo-graphql/blob/cefa9ea2147f80598a481743cae3b025944e76e8/graphql-server/schema/comment.graphql",
+      "content": "type Comment {\n    id: ID\n    name: String\n    email: String\n    body: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-16T19:51:02Z",
+    "updated_at": "2018-06-27T08:30:18Z",
+    "pushed_at": "2018-06-27T08:30:17Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

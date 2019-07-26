@@ -1,0 +1,39 @@
+{
+  "repo_name": "apollo-server-express-starter",
+  "repo_full_name": "mrdulin/apollo-server-express-starter",
+  "repo_owner": "mrdulin",
+  "repo_description": "Learning apollo-server v1.x, GraphQL with express.js - 快速入门apollo-server v1.x, GraphQL和express.js及典型问题示例",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/n+1/graphql/modules/user/schema.graphql",
+      "sha": "ead71df72d47bac300b2b0ee4f0937e4f63656d9",
+      "url": "https://api.github.com/repositories/129237250/contents/src/n+1/graphql/modules/user/schema.graphql?ref=e0489ed24fb57ba6ba0a1b56247bda7134a42b58",
+      "git_url": "https://api.github.com/repositories/129237250/git/blobs/ead71df72d47bac300b2b0ee4f0937e4f63656d9",
+      "html_url": "https://github.com/mrdulin/apollo-server-express-starter/blob/e0489ed24fb57ba6ba0a1b56247bda7134a42b58/src/n+1/graphql/modules/user/schema.graphql",
+      "content": "type User {\n  id: ID!\n  name: String!\n}\n\ntype Query {\n  user(id: ID!): User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-12T10:57:06Z",
+    "updated_at": "2019-07-07T12:55:09Z",
+    "pushed_at": "2019-02-26T14:37:58Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 16
+  }
+}

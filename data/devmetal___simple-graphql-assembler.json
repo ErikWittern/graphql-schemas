@@ -1,0 +1,42 @@
+{
+  "repo_name": "simple-graphql-assembler",
+  "repo_full_name": "devmetal/simple-graphql-assembler",
+  "repo_owner": "devmetal",
+  "repo_description": "Server side schema preparing tool.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "example/schema/schema.gql",
+      "sha": "622be161bbdeb842a2c203bd6fd8a9275df92497",
+      "url": "https://api.github.com/repositories/164345020/contents/example/schema/schema.gql?ref=caa0a0f9e2d3cc49c0c25207f4e4ede30e0a496f",
+      "git_url": "https://api.github.com/repositories/164345020/git/blobs/622be161bbdeb842a2c203bd6fd8a9275df92497",
+      "html_url": "https://github.com/devmetal/simple-graphql-assembler/blob/caa0a0f9e2d3cc49c0c25207f4e4ede30e0a496f/example/schema/schema.gql",
+      "content": "type Query {\n  _: Boolean\n}\n\ntype Mutation {\n  _: Boolean\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-06T20:59:54Z",
+    "updated_at": "2019-04-09T13:32:04Z",
+    "pushed_at": "2019-02-23T13:22:16Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 9,
+    "releases": 0,
+    "stargazers": 7
+  }
+}

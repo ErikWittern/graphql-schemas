@@ -1,0 +1,42 @@
+{
+  "repo_name": "learning-graphql",
+  "repo_full_name": "jamierez/learning-graphql",
+  "repo_owner": "JamieRez",
+  "repo_description": "Project I made to learn graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "prisma.graphql",
+      "path": "server/src/generated/prisma.graphql",
+      "sha": "0dde6736d4cec3bb2accf85eb8e969e8a7e9c408",
+      "url": "https://api.github.com/repositories/133573802/contents/server/src/generated/prisma.graphql?ref=39bb4040c992a98a75f7c2da97cc44a9f8d0a3b5",
+      "git_url": "https://api.github.com/repositories/133573802/git/blobs/0dde6736d4cec3bb2accf85eb8e969e8a7e9c408",
+      "html_url": "https://github.com/JamieRez/learning-graphql/blob/39bb4040c992a98a75f7c2da97cc44a9f8d0a3b5/server/src/generated/prisma.graphql",
+      "content": "# source: https://us1.prisma.sh/public-plumeneck-656/newskills/dev\n# timestamp: Fri May 11 2018 13:39:48 GMT-0700 (PDT)\n\ntype AggregateComment {\n  count: Int!\n}\n\ntype BatchPayload {\n  \"\"\"The number of nodes that have been affected by the Batch operation.\"\"\"\n  count: Long!\n}\n\ntype Comment implements Node {\n  id: ID!\n  text: String!\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype CommentConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [CommentEdge]!\n  aggregate: AggregateComment!\n}\n\ninput CommentCreateInput {\n  text: String!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype CommentEdge {\n  \"\"\"The item at the end of the edge.\"\"\"\n  node: Comment!\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\nenum CommentOrderByInput {\n  id_ASC\n  id_DESC\n  text_ASC\n  text_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\ntype CommentPreviousValues {\n  id: ID!\n  text: String!\n}\n\ntype CommentSubscriptionPayload {\n  mutation: MutationType!\n  node: Comment\n  updatedFields: [String!]\n  previousValues: CommentPreviousValues\n}\n\ninput CommentSubscriptionWhereInput {\n  \"\"\"Logical AND on all given filters.\"\"\"\n  AND: [CommentSubscriptionWhereInput!]\n\n  \"\"\"Logical OR on all given filters.\"\"\"\n  OR: [CommentSubscriptionWhereInput!]\n\n  \"\"\"Logical NOT on all given filters combined by AND.\"\"\"\n  NOT: [CommentSubscriptionWhereInput!]\n\n  \"\"\"\n  The subscription event gets dispatched when it's listed in mutation_in\n  \"\"\"\n  mutation_in: [MutationType!]\n\n  \"\"\"\n  The subscription event gets only dispatched when one of the updated fields names is included in this list\n  \"\"\"\n  updatedFields_contains: String\n\n  \"\"\"\n  The subscription event gets only dispatched when all of the field names included in this list have been updated\n  \"\"\"\n  updatedFields_contains_every: [String!]\n\n  \"\"\"\n  The subscription event gets only dispatched when some of the field names included in this list have been updated\n  \"\"\"\n  updatedFields_contains_some: [String!]\n  node: CommentWhereInput\n}\n\ninput CommentUpdateInput {\n  text: String\n}\n\ninput CommentWhereInput {\n  \"\"\"Logical AND on all given filters.\"\"\"\n  AND: [CommentWhereInput!]\n\n  \"\"\"Logical OR on all given filters.\"\"\"\n  OR: [CommentWhereInput!]\n\n  \"\"\"Logical NOT on all given filters combined by AND.\"\"\"\n  NOT: [CommentWhereInput!]\n  id: ID\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  id_not: ID\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  id_in: [ID!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  id_not_in: [ID!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  id_lt: ID\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  id_lte: ID\n\n  \"\"\"All values greater than the given value.\"\"\"\n  id_gt: ID\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  id_gte: ID\n\n  \"\"\"All values containing the given string.\"\"\"\n  id_contains: ID\n\n  \"\"\"All values not containing the given string.\"\"\"\n  id_not_contains: ID\n\n  \"\"\"All values starting with the given string.\"\"\"\n  id_starts_with: ID\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  id_not_starts_with: ID\n\n  \"\"\"All values ending with the given string.\"\"\"\n  id_ends_with: ID\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  id_not_ends_with: ID\n  text: String\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  text_not: String\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  text_in: [String!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  text_not_in: [String!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  text_lt: String\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  text_lte: String\n\n  \"\"\"All values greater than the given value.\"\"\"\n  text_gt: String\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  text_gte: String\n\n  \"\"\"All values containing the given string.\"\"\"\n  text_contains: String\n\n  \"\"\"All values not containing the given string.\"\"\"\n  text_not_contains: String\n\n  \"\"\"All values starting with the given string.\"\"\"\n  text_starts_with: String\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  text_not_starts_with: String\n\n  \"\"\"All values ending with the given string.\"\"\"\n  text_ends_with: String\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  text_not_ends_with: String\n}\n\ninput CommentWhereUniqueInput {\n  id: ID\n}\n\n\"\"\"\nThe `Long` scalar type represents non-fractional signed whole numeric values.\nLong can represent values between -(2^63) and 2^63 - 1.\n\"\"\"\nscalar Long\n\ntype Mutation {\n  createComment(data: CommentCreateInput!): Comment!\n  updateComment(data: CommentUpdateInput!, where: CommentWhereUniqueInput!): Comment\n  deleteComment(where: CommentWhereUniqueInput!): Comment\n  upsertComment(where: CommentWhereUniqueInput!, create: CommentCreateInput!, update: CommentUpdateInput!): Comment!\n  updateManyComments(data: CommentUpdateInput!, where: CommentWhereInput): BatchPayload!\n  deleteManyComments(where: CommentWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Query {\n  comments(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Comment]!\n  comment(where: CommentWhereUniqueInput!): Comment\n  commentsConnection(where: CommentWhereInput, orderBy: CommentOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): CommentConnection!\n\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n}\n\ntype Subscription {\n  comment(where: CommentSubscriptionWhereInput): CommentSubscriptionPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 20
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-15T21:10:46Z",
+    "updated_at": "2018-05-16T00:19:21Z",
+    "pushed_at": "2018-05-16T00:19:19Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

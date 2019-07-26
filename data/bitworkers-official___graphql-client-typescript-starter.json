@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-client-typescript-starter",
+  "repo_full_name": "bitworkers-official/graphql-client-typescript-starter",
+  "repo_owner": "bitworkers-official",
+  "repo_description": "Starter template for a GraphQL & TypeScript client",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "3b2fe4fa7acc16a515a9dfacfda71548298bd6e9",
+      "url": "https://api.github.com/repositories/167859920/contents/schema.graphql?ref=ea2bbf3107a514bb50fab1c98387f9cd5ab7399a",
+      "git_url": "https://api.github.com/repositories/167859920/git/blobs/3b2fe4fa7acc16a515a9dfacfda71548298bd6e9",
+      "html_url": "https://github.com/bitworkers-official/graphql-client-typescript-starter/blob/ea2bbf3107a514bb50fab1c98387f9cd5ab7399a/schema.graphql",
+      "content": "# source: https://graphql-typescript-starter.herokuapp.com\n# timestamp: Sun Jan 27 2019 19:32:45 GMT+0100 (Central European Standard Time)\n\ntype Query {\n  hello(name: String): String!\n  isGraphQLAwesome: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-27T21:19:26Z",
+    "updated_at": "2019-03-29T18:11:38Z",
+    "pushed_at": "2019-03-29T14:05:22Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 37,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 35,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

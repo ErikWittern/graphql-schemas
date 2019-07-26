@@ -1,0 +1,42 @@
+{
+  "repo_name": "rainmaker-api",
+  "repo_full_name": "michals2/rainmaker-api",
+  "repo_owner": "michals2",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "iex.graphql",
+      "path": "src/api/iex/iex.graphql",
+      "sha": "461c3ab33a5b7c5ddf4bdc1cc7754019d83b033b",
+      "url": "https://api.github.com/repositories/144403540/contents/src/api/iex/iex.graphql?ref=8af8d9bb7f3b006bca438f51ee41d61f2f78b6c4",
+      "git_url": "https://api.github.com/repositories/144403540/git/blobs/461c3ab33a5b7c5ddf4bdc1cc7754019d83b033b",
+      "html_url": "https://github.com/michals2/rainmaker-api/blob/8af8d9bb7f3b006bca438f51ee41d61f2f78b6c4/src/api/iex/iex.graphql",
+      "content": "type Query {\n  # GraphQL wrapper around the IEX REST API\n  iex: Iex\n}\n\ntype Iex {\n  stock(symbol: String!): Stock\n}\n\ntype Stock {\n  chart(range: Range = d1): [StockDataPoint]\n}\n\ntype StockDataPoint {\n  date: String\n  minute: String\n  high: Float\n  low: Float\n  average: Float\n}\n\nenum Range {\n  # 1 day\n  d1\n  # 1 month\n  m1\n  # 3 months\n  m3\n  # 6 months\n  m6\n  # year to date\n  ytd\n  # 1 year\n  y1\n  # 2 years\n  y2\n  # 5 years\n  y5\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-11T17:03:56Z",
+    "updated_at": "2018-08-14T04:09:09Z",
+    "pushed_at": "2018-08-14T04:09:08Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

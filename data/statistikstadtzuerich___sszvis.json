@@ -1,0 +1,42 @@
+{
+  "repo_name": "sszvis",
+  "repo_full_name": "statistikstadtzuerich/sszvis",
+  "repo_owner": "statistikstadtzuerich",
+  "repo_description": "📊 Statistik Stadt Zürich Visualization Library",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/tools/visual-regression-report/schema.graphql",
+      "sha": "122a0c80d67d4ca7cebac0b1450ed73955e53383",
+      "url": "https://api.github.com/repositories/114238055/contents/test/tools/visual-regression-report/schema.graphql?ref=a59125da2386ada3ca74d9212fde8bf39cef1c53",
+      "git_url": "https://api.github.com/repositories/114238055/git/blobs/122a0c80d67d4ca7cebac0b1450ed73955e53383",
+      "html_url": "https://github.com/statistikstadtzuerich/sszvis/blob/a59125da2386ada3ca74d9212fde8bf39cef1c53/test/tools/visual-regression-report/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n  mutation: Mutation\n}\n\ntype RootQuery {\n  tests: [Test!]!\n}\n\ntype Mutation {\n  acceptImage(testId: ID!, screenshotId: ID!): Screenshot!\n}\n\ntype Test {\n  id: ID!\n  name: String!\n  duration: Int!\n  state: State!\n  screenshots: [Screenshot!]!\n}\n\nenum State { pass, fail }\n\ntype Screenshot {\n  id: ID!\n  name: String!\n  platform: String!\n  browserName: String!\n  resolution: String!\n  referenceUrl: String!\n  takenUrl: String\n  diffUrl: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-14T10:42:07Z",
+    "updated_at": "2018-07-19T21:25:53Z",
+    "pushed_at": "2018-09-03T08:51:45Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "bsd-3-clause",
+    "pull_requests": 2,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

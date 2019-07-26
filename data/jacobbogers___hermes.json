@@ -1,0 +1,42 @@
+{
+  "repo_name": "hermes",
+  "repo_full_name": "jacobbogers/hermes",
+  "repo_owner": "jacobbogers",
+  "repo_description": "user subscription management microservice for websites",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typedefs.gql",
+      "path": "src/lib/graphql/typedefs.gql",
+      "sha": "762a313faf985f4ff7d20e2aa4b5ce8e896dca8a",
+      "url": "https://api.github.com/repositories/88578102/contents/src/lib/graphql/typedefs.gql?ref=70bac8b8106b393fb42e78e2a28eb2abeec3134c",
+      "git_url": "https://api.github.com/repositories/88578102/git/blobs/762a313faf985f4ff7d20e2aa4b5ce8e896dca8a",
+      "html_url": "https://github.com/jacobbogers/hermes/blob/70bac8b8106b393fb42e78e2a28eb2abeec3134c/src/lib/graphql/typedefs.gql",
+      "content": "type ServerInfo {\n  serverTime: String!\n}\n\ntype AuthError {\n  context: String\n  message: String!\n}\n\ntype AuthResult {\n  errors: [AuthError!]\n  user: UserInfo\n  token: TokenInfo\n}\n\ntype TokenInfo {\n  tokenId: String!\n  purpose: String!\n  revoked: String! # UTC Date\n  issued: String! #UTC Date\n  expired: String! #UTC Date\n}\n\n# Your User Information\ntype UserInfo {\n  # some more comments\n  name: String\n  email: String\n  state: String\n}\n\ntype Query {\n  #; Get the current status of a visitor\n  currentUser: AuthResult\n  isEmailRegistered(email: String!): AuthResult\n  isUserNameRegistered(name: String!): AuthResult\n  serverInfo: ServerInfo\n  tokenStatus(token: String): AuthResult\n}\n\ntype Mutation {\n  login(email: String!, password: String!): AuthResult\n  logout: AuthResult\n  createUser(name: String!, email: String!, password: String!): AuthResult\n  activate(email: String!, token: String!): AuthResult\n  requestPasswordReset(email: String!): AuthResult\n  resetPassword(token: String!, password: String!): AuthResult\n  reSendActivation(email: String): AuthResult\n}\n\n# schema {\n#    query: Query\n#    mutation: Mutation\n# }\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-18T03:36:53Z",
+    "updated_at": "2018-12-02T19:05:54Z",
+    "pushed_at": "2018-11-25T17:28:28Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

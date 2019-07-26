@@ -1,0 +1,39 @@
+{
+  "repo_name": "front-commerce-lite-upward",
+  "repo_full_name": "real34/front-commerce-lite-upward",
+  "repo_owner": "real34",
+  "repo_description": "Experimental UPWARD based version of Front-Commerce Lite",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/server/modules/store-information/schema.gql",
+      "sha": "f2e33123d183f61150fdca72b38f3fe2f8ba5183",
+      "url": "https://api.github.com/repositories/151855713/contents/src/server/modules/store-information/schema.gql?ref=0ded09bb1894d308c25fd97ade8e760adbb107fb",
+      "git_url": "https://api.github.com/repositories/151855713/git/blobs/f2e33123d183f61150fdca72b38f3fe2f8ba5183",
+      "html_url": "https://github.com/real34/front-commerce-lite-upward/blob/0ded09bb1894d308c25fd97ade8e760adbb107fb/src/server/modules/store-information/schema.gql",
+      "content": "type Query {\n  \"General information about this store\"\n  store: StoreInformation\n}\n\n\"General information about a store\"\ntype StoreInformation {\n  \"Store name\"\n  name: String!\n  \"Support phone number\"\n  phone: String\n  \"Store owner\"\n  owner: StoreOwner\n}\n\n\"\"\"\nThe Owner of a store, with contact and personal\ninformation to make the store more human\n\"\"\"\ntype StoreOwner {\n  gender: Gender\n  displayName: String!\n  email: String!\n  picture(size: ImageSize = medium): String!\n}\n\nenum Gender {\n  FEMALE\n  MALE\n  NONBINARY\n}\n\nenum ImageSize {\n  large\n  medium\n  thumbnail\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-06T15:51:49Z",
+    "updated_at": "2018-10-15T16:10:07Z",
+    "pushed_at": "2018-10-06T17:34:12Z",
+    "issues": 3,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

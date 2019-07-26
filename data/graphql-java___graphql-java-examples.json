@@ -1,0 +1,52 @@
+{
+  "repo_name": "graphql-java-examples",
+  "repo_full_name": "graphql-java/graphql-java-examples",
+  "repo_owner": "graphql-java",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "defer/server/src/main/resources/schema.graphql",
+      "sha": "c3e15f50e03971e0e457295b23bc687a81d22609",
+      "url": "https://api.github.com/repositories/148550395/contents/defer/server/src/main/resources/schema.graphql?ref=e741223683d9352dfde48747f51108c4781b607f",
+      "git_url": "https://api.github.com/repositories/148550395/git/blobs/c3e15f50e03971e0e457295b23bc687a81d22609",
+      "html_url": "https://github.com/graphql-java/graphql-java-examples/blob/e741223683d9352dfde48747f51108c4781b607f/defer/server/src/main/resources/schema.graphql",
+      "content": "type Book {\n    title: String\n    author: String\n    comments: [Comment]\n}\n\ntype Comment {\n    user: String\n    text: String\n}\n\ntype Query {\n    books: [Book]\n}\n\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "spring-boot-integration/src/main/resources/schema.graphql",
+      "sha": "02333046a58f88a6daad348dd1a29d0469e19697",
+      "url": "https://api.github.com/repositories/148550395/contents/spring-boot-integration/src/main/resources/schema.graphql?ref=e5e3b95e372b6f0c7a3ce6535088fd57e2f59fa5",
+      "git_url": "https://api.github.com/repositories/148550395/git/blobs/02333046a58f88a6daad348dd1a29d0469e19697",
+      "html_url": "https://github.com/graphql-java/graphql-java-examples/blob/e5e3b95e372b6f0c7a3ce6535088fd57e2f59fa5/spring-boot-integration/src/main/resources/schema.graphql",
+      "content": "\ntype Query {\n    hello: String\n    echo(toEcho: String): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-12T22:35:36Z",
+    "updated_at": "2019-07-10T16:55:55Z",
+    "pushed_at": "2019-07-09T03:05:47Z",
+    "issues": 2,
+    "watchers": 3,
+    "fork_count": 17,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 7,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 33
+  }
+}

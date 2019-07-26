@@ -1,0 +1,42 @@
+{
+  "repo_name": "opinionated.baby",
+  "repo_full_name": "arichivukula/opinionated.baby",
+  "repo_owner": "AriChivukula",
+  "repo_description": "A confidently immature starting point",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/schema.graphql",
+      "sha": "0247b89148496ddc37b6c30ee26130834440ede2",
+      "url": "https://api.github.com/repositories/127871438/contents/src/server/schema.graphql?ref=a37e10ca303a52cd663700eb8aaa3c29d8b9be40",
+      "git_url": "https://api.github.com/repositories/127871438/git/blobs/0247b89148496ddc37b6c30ee26130834440ede2",
+      "html_url": "https://github.com/AriChivukula/opinionated.baby/blob/a37e10ca303a52cd663700eb8aaa3c29d8b9be40/src/server/schema.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n}\n\ntype Release {\n  id: ID!\n  title: String!\n  subtitle: String!\n}\n\ntype Tool {\n  id: ID!\n  icon: String!\n  link: String!\n  title: String!\n}\n\ntype Query {\n  me: User\n  loginURL: String!\n  releases: [Release]\n  tools: [Tool]\n}\n\ntype AccessToken {\n  accessToken: String!\n}\n\ninput LoginInput {\n  code: String!\n}\n\ninput LogoutInput {\n  dummy: String!\n}\n\ntype Mutation {\n  login(input: LoginInput): AccessToken!\n  logout(input: LogoutInput): AccessToken!\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-03T07:51:57Z",
+    "updated_at": "2019-07-19T16:51:40Z",
+    "pushed_at": "2019-07-19T16:51:40Z",
+    "issues": 109,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 272,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 17,
+    "pull_requests_merged": 255,
+    "releases": 10,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-pouch",
+  "repo_full_name": "mikebild/graphql-pouch",
+  "repo_owner": "MikeBild",
+  "repo_description": "GraphQL runtime using PouchDB",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "gettingstarted.graphql",
+      "path": "example/getting-started/gettingstarted.graphql",
+      "sha": "61a13422e97207c013a8e38f132e1745886f251e",
+      "url": "https://api.github.com/repositories/63133028/contents/example/getting-started/gettingstarted.graphql?ref=f3a90a7c7ed9d13032fe641b326456bd77991530",
+      "git_url": "https://api.github.com/repositories/63133028/git/blobs/61a13422e97207c013a8e38f132e1745886f251e",
+      "html_url": "https://github.com/MikeBild/graphql-pouch/blob/f3a90a7c7ed9d13032fe641b326456bd77991530/example/getting-started/gettingstarted.graphql",
+      "content": "type Post {\n  # Document key\n  id: ID\n  # Document revision\n  rev: String\n  # The fullname of the user\n  name: String\n}\n\ntype Query {\n  loadPostsByName(name: String): [Post]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-07-12T06:37:28Z",
+    "updated_at": "2019-07-16T08:06:45Z",
+    "pushed_at": "2019-06-21T06:55:18Z",
+    "issues": 28,
+    "watchers": 10,
+    "fork_count": 14,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 7,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 11,
+    "stargazers": 178
+  }
+}

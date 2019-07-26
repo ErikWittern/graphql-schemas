@@ -1,0 +1,42 @@
+{
+  "repo_name": "go-graphql-auth",
+  "repo_full_name": "callistom/go-graphql-auth",
+  "repo_owner": "CallistoM",
+  "repo_description": "A golang project integrating JWT and GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "4fe4866541dd844cbf84b2d42c5c35ed4e0d03e8",
+      "url": "https://api.github.com/repositories/113759905/contents/schema.graphql?ref=b48908410fcff07dc5796c1dda66ddc7566adc4c",
+      "git_url": "https://api.github.com/repositories/113759905/git/blobs/4fe4866541dd844cbf84b2d42c5c35ed4e0d03e8",
+      "html_url": "https://github.com/CallistoM/go-graphql-auth/blob/b48908410fcff07dc5796c1dda66ddc7566adc4c/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  user(token: String): User\n  users(token: String): [User]!\n}\n\ntype Mutation {\n  login(input: LoginInput!): String!\n}\n\ntype User {\n  id: ID!\n  name: String!\n  mail: String!\n}\n\ninput LoginInput {\n  mail: String!\n  password: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-10T15:13:28Z",
+    "updated_at": "2019-07-13T16:33:00Z",
+    "pushed_at": "2018-02-17T20:10:10Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 1,
+    "stargazers": 6
+  }
+}

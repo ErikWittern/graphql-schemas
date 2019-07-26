@@ -1,0 +1,42 @@
+{
+  "repo_name": "symmetrical-train",
+  "repo_full_name": "petrpatek/symmetrical-train",
+  "repo_owner": "petrpatek",
+  "repo_description": "Tech stack for creating GraphQl realtime web apps using node.js and  react",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/graphql/book/schema.graphql",
+      "sha": "c3962ab53ecf1d20eb76238e6230e82d7d49a1e8",
+      "url": "https://api.github.com/repositories/137608823/contents/src/server/graphql/book/schema.graphql?ref=54a3e416ade0d0b770eb0df6b3cea65b1a7241d7",
+      "git_url": "https://api.github.com/repositories/137608823/git/blobs/c3962ab53ecf1d20eb76238e6230e82d7d49a1e8",
+      "html_url": "https://github.com/petrpatek/symmetrical-train/blob/54a3e416ade0d0b770eb0df6b3cea65b1a7241d7/src/server/graphql/book/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n\ntype Book {\n  title: String\n  author: String\n}\n\ntype Query {\n  books: [Book]\n\n}\n\ntype Mutation {\n  createBook(author: String!, title: String!): Book\n}\n\ntype Subscription{\n  bookCreated: Book\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-16T20:35:27Z",
+    "updated_at": "2018-06-30T09:15:35Z",
+    "pushed_at": "2018-07-01T16:36:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

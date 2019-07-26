@@ -1,0 +1,63 @@
+{
+  "repo_name": "strap",
+  "repo_full_name": "meatwallace/strap",
+  "repo_owner": "meatwallace",
+  "repo_description": "universal react + graphql boilerplate",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootQuery.graphql",
+      "path": "src/common/data/schema/rootQuery.graphql",
+      "sha": "26ac20b497fbeb9ab05aeb49eb20ea58f9841c29",
+      "url": "https://api.github.com/repositories/79869650/contents/src/common/data/schema/rootQuery.graphql?ref=676410a4536a9dcf05a121d4327f29768e4cd40a",
+      "git_url": "https://api.github.com/repositories/79869650/git/blobs/26ac20b497fbeb9ab05aeb49eb20ea58f9841c29",
+      "html_url": "https://github.com/meatwallace/strap/blob/676410a4536a9dcf05a121d4327f29768e4cd40a/src/common/data/schema/rootQuery.graphql",
+      "content": "type Query {\n  # User\n  currentUser: User\n  user(email: String!): User\n  users: [User]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/meatwallace/strap/blob/676410a4536a9dcf05a121d4327f29768e4cd40a/src/common/data/schema/rootQuery.graphql:\ntype Query {\n  # User\n  currentUser: User\n  user(email: String!): User\n  users: [User]\n}\n\n# https://github.com/meatwallace/strap/blob/676410a4536a9dcf05a121d4327f29768e4cd40a/src/common/data/schema/User/type.graphql:\ntype User {\n  _id: ID!\n  facebookId: String\n  googleId: String\n  email: String\n  firstName: String\n  lastName: String\n  gender: String\n  roles: [String]\n\n  createdAt: String!\n  updatedAt: String\n}\n",
+        "mergedPaths": [
+          "src/common/data/schema/User/type.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "type.graphql",
+      "path": "src/common/data/schema/User/type.graphql",
+      "sha": "a3a463ec1c6c58a820797c3e02ce8d129ba7b288",
+      "url": "https://api.github.com/repositories/79869650/contents/src/common/data/schema/User/type.graphql?ref=676410a4536a9dcf05a121d4327f29768e4cd40a",
+      "git_url": "https://api.github.com/repositories/79869650/git/blobs/a3a463ec1c6c58a820797c3e02ce8d129ba7b288",
+      "html_url": "https://github.com/meatwallace/strap/blob/676410a4536a9dcf05a121d4327f29768e4cd40a/src/common/data/schema/User/type.graphql",
+      "content": "type User {\n  _id: ID!\n  facebookId: String\n  googleId: String\n  email: String\n  firstName: String\n  lastName: String\n  gender: String\n  roles: [String]\n\n  createdAt: String!\n  updatedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-24T02:08:05Z",
+    "updated_at": "2018-11-17T04:31:36Z",
+    "pushed_at": "2018-04-21T07:18:49Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 70,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 56,
+    "pull_requests_merged": 14,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "repo_name": "MyLearningSpot",
+  "repo_full_name": "master-alcy/mylearningspot",
+  "repo_owner": "Master-Alcy",
+  "repo_description": "Keep Digging",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "Prisma/node/graphql-subscriptions/src/schema.graphql",
+      "sha": "3039f5c2671d9b2bc7bbfe22bcf2f060404d6735",
+      "url": "https://api.github.com/repositories/155647576/contents/Prisma/node/graphql-subscriptions/src/schema.graphql?ref=95e2c3b53d721d537dcbc073c0a55acda96d07e3",
+      "git_url": "https://api.github.com/repositories/155647576/git/blobs/3039f5c2671d9b2bc7bbfe22bcf2f060404d6735",
+      "html_url": "https://github.com/Master-Alcy/MyLearningSpot/blob/95e2c3b53d721d537dcbc073c0a55acda96d07e3/Prisma/node/graphql-subscriptions/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  feed: [Post!]!\n  filterPosts(searchString: String): [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String): Post!\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n}\n\ntype Subscription {\n  posts: Post\n}\n\ntype Post {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  published: Boolean!\n  title: String!\n  content: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "Prisma/node/graphql/src/schema.graphql",
+      "sha": "dbed32c15f198db40a3d6ecd267b4968e0d12b80",
+      "url": "https://api.github.com/repositories/155647576/contents/Prisma/node/graphql/src/schema.graphql?ref=95e2c3b53d721d537dcbc073c0a55acda96d07e3",
+      "git_url": "https://api.github.com/repositories/155647576/git/blobs/dbed32c15f198db40a3d6ecd267b4968e0d12b80",
+      "html_url": "https://github.com/Master-Alcy/MyLearningSpot/blob/95e2c3b53d721d537dcbc073c0a55acda96d07e3/Prisma/node/graphql/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  feed: [Post!]!\n  filterPosts(searchString: String): [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  signupUser(email: String!, name: String): User!\n  createDraft(title: String!, content: String, authorEmail: String!): Post!\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n}\n\ntype Post {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  published: Boolean!\n  title: String!\n  content: String\n  author: User!\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String\n  posts: [Post!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "Prisma/node/graphql-auth/src/schema.graphql",
+      "sha": "7b0bf7e9a9131486c110103563059b946576e25f",
+      "url": "https://api.github.com/repositories/155647576/contents/Prisma/node/graphql-auth/src/schema.graphql?ref=95e2c3b53d721d537dcbc073c0a55acda96d07e3",
+      "git_url": "https://api.github.com/repositories/155647576/git/blobs/7b0bf7e9a9131486c110103563059b946576e25f",
+      "html_url": "https://github.com/Master-Alcy/MyLearningSpot/blob/95e2c3b53d721d537dcbc073c0a55acda96d07e3/Prisma/node/graphql-auth/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  me: User\n  feed: [Post!]!\n  filterPosts(searchString: String): [Post!]!\n  post(id: ID!): Post\n}\n\ntype Mutation {\n  createDraft(title: String!, content: String): Post!\n  deletePost(id: ID!): Post\n  publish(id: ID!): Post\n  signup(email: String!, password: String!, name: String): AuthPayload!\n  login(email: String!, password: String!): AuthPayload!\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n\ntype Post {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  published: Boolean!\n  title: String!\n  content: String\n  author: User!\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String\n  posts: [Post!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-01T01:57:53Z",
+    "updated_at": "2019-06-18T20:08:57Z",
+    "pushed_at": "2019-06-18T20:08:56Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

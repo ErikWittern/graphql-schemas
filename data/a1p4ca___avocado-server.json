@@ -1,0 +1,63 @@
+{
+  "repo_name": "avocado-server",
+  "repo_full_name": "a1p4ca/avocado-server",
+  "repo_owner": "a1p4ca",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "queries.graphql",
+      "path": "src/graphql/queries.graphql",
+      "sha": "32c8d104f403a8da0169dc4cfe5a49ee4c9bde88",
+      "url": "https://api.github.com/repositories/144570852/contents/src/graphql/queries.graphql?ref=4ae26a782721af7c39407dcaa7ef4cffdb1d3491",
+      "git_url": "https://api.github.com/repositories/144570852/git/blobs/32c8d104f403a8da0169dc4cfe5a49ee4c9bde88",
+      "html_url": "https://github.com/a1p4ca/avocado-server/blob/4ae26a782721af7c39407dcaa7ef4cffdb1d3491/src/graphql/queries.graphql",
+      "content": "type Query {\n  getUser: User!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/a1p4ca/avocado-server/blob/4ae26a782721af7c39407dcaa7ef4cffdb1d3491/src/graphql/queries.graphql:\ntype Query {\n  getUser: User!\n}\n\n# https://github.com/a1p4ca/avocado-server/blob/4ae26a782721af7c39407dcaa7ef4cffdb1d3491/src/graphql/types.graphql:\ntype User {\n  id: String!\n}\n",
+        "mergedPaths": [
+          "src/graphql/types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "types.graphql",
+      "path": "src/graphql/types.graphql",
+      "sha": "04cbecec8ef5947ca36dfe59b1977e8385e5df60",
+      "url": "https://api.github.com/repositories/144570852/contents/src/graphql/types.graphql?ref=4ae26a782721af7c39407dcaa7ef4cffdb1d3491",
+      "git_url": "https://api.github.com/repositories/144570852/git/blobs/04cbecec8ef5947ca36dfe59b1977e8385e5df60",
+      "html_url": "https://github.com/a1p4ca/avocado-server/blob/4ae26a782721af7c39407dcaa7ef4cffdb1d3491/src/graphql/types.graphql",
+      "content": "type User {\n  id: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-13T11:30:50Z",
+    "updated_at": "2018-10-08T13:54:41Z",
+    "pushed_at": "2018-08-17T00:35:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

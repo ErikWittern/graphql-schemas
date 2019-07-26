@@ -1,0 +1,39 @@
+{
+  "repo_name": "web-starter",
+  "repo_full_name": "pi-cubed/web-starter",
+  "repo_owner": "pi-cubed",
+  "repo_description": "Starter kit for making web apps using JS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/schema.graphql",
+      "sha": "a65e44fdea29a2a8b9d57ecbcc0de97482ee89d1",
+      "url": "https://api.github.com/repositories/122666210/contents/api/schema.graphql?ref=77f00d7336683db34ad4c5db13c0999edcc5d921",
+      "git_url": "https://api.github.com/repositories/122666210/git/blobs/a65e44fdea29a2a8b9d57ecbcc0de97482ee89d1",
+      "html_url": "https://github.com/pi-cubed/web-starter/blob/77f00d7336683db34ad4c5db13c0999edcc5d921/api/schema.graphql",
+      "content": "type Query {\n\tme: User\n\tgetSchema(url: String!): String!\n\tquery(url: String!, query: String!): String!\n}\n\ntype Mutation {\n\tsignup(email: String!, password: String!): AuthPayload!\n\tlogin(email: String!, password: String!): AuthPayload!\n}\n\ntype AuthPayload {\n\ttoken: String!\n\tuser: User!\n}\n\n# The `User` type is a reduced version (\"mask\") of the `User` type from the data model (and database schema).\n# It does not expose the `createdAt`, `updatedAt` and `password` fields.\ntype User {\n\tid: ID!\n\temail: String\n\tname: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-23T19:53:41Z",
+    "updated_at": "2018-06-29T04:16:42Z",
+    "pushed_at": "2019-07-10T21:20:32Z",
+    "issues": 24,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 4,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

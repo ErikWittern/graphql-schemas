@@ -1,0 +1,52 @@
+{
+  "repo_name": "GraphQL-tutorial",
+  "repo_full_name": "kevin-sooter/graphql-tutorial",
+  "repo_owner": "kevin-sooter",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "hackernews-node/src/schema.graphql",
+      "sha": "57738ee7d69a9787bedafd77f1cc8c25509a9706",
+      "url": "https://api.github.com/repositories/176977435/contents/hackernews-node/src/schema.graphql?ref=c97620a31cabc9956f78688e22dd5de0a6f7c727",
+      "git_url": "https://api.github.com/repositories/176977435/git/blobs/57738ee7d69a9787bedafd77f1cc8c25509a9706",
+      "html_url": "https://github.com/kevin-sooter/GraphQL-tutorial/blob/c97620a31cabc9956f78688e22dd5de0a6f7c727/hackernews-node/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  feed: [Link!]!\n  link(id: ID!): Link\n}\n\ntype Mutation {\n  # add a link\n  post(url: String!, description: String): Link!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n\n  # delete a link\n  deleteLink(id: ID!): String!\n\n  # update a link\n  updateLink(id: ID!, url: String, description: String): Link\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n  postedBy: User\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "hackernews-react-apollo/server/src/schema.graphql",
+      "sha": "53d45ae0b9846bf4c3cfc845b60d4f2d5d5677f7",
+      "url": "https://api.github.com/repositories/176977435/contents/hackernews-react-apollo/server/src/schema.graphql?ref=32ac1a4782868c4a36d7b75a31fd5d5893c519a3",
+      "git_url": "https://api.github.com/repositories/176977435/git/blobs/53d45ae0b9846bf4c3cfc845b60d4f2d5d5677f7",
+      "html_url": "https://github.com/kevin-sooter/GraphQL-tutorial/blob/32ac1a4782868c4a36d7b75a31fd5d5893c519a3/hackernews-react-apollo/server/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  info: String!\n  feed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): Feed!\n}\n\nenum LinkOrderByInput {\n  description_ASC\n  description_DESC\n  url_ASC\n  url_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\ntype Feed {\n  links: [Link!]!\n  count: Int!\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n  vote(linkId: ID!): Vote!\n}\n\ntype Subscription {\n  newLink: Link\n  newVote: Vote\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n\ntype Link {\n  id: ID!\n  createdAt: DateTime!\n  description: String!\n  url: String!\n  postedBy: User\n  votes: [Vote!]!\n}\n\ntype Vote {\n  id: ID!\n  link: Link!\n  user: User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-21T15:49:29Z",
+    "updated_at": "2019-03-25T23:10:11Z",
+    "pushed_at": "2019-03-25T23:10:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

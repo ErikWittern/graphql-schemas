@@ -1,0 +1,68 @@
+{
+  "repo_name": "graphql-moba-server",
+  "repo_full_name": "mattblackdev/graphql-moba-server",
+  "repo_owner": "mattblackdev",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "server/schema/Query.graphql",
+      "sha": "bb380a16f2c2ded426a39aad9faad4796620b84d",
+      "url": "https://api.github.com/repositories/121187443/contents/server/schema/Query.graphql?ref=53869da7fdea1b60c8d0516a150bccdf6412ecd9",
+      "git_url": "https://api.github.com/repositories/121187443/git/blobs/bb380a16f2c2ded426a39aad9faad4796620b84d",
+      "html_url": "https://github.com/mattblackdev/graphql-moba-server/blob/53869da7fdea1b60c8d0516a150bccdf6412ecd9/server/schema/Query.graphql",
+      "content": "# Main type (the root of all queries)\ntype Query {\n  me: Player\n  game: Game\n  classes: [Class]\n  skills: [Skill]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/mattblackdev/graphql-moba-server/blob/53869da7fdea1b60c8d0516a150bccdf6412ecd9/server/schema/Query.graphql:\n# Main type (the root of all queries)\ntype Query {\n  me: Player\n  game: Game\n  classes: [Class]\n  skills: [Skill]\n}\n\n# https://github.com/mattblackdev/graphql-moba-server/blob/53869da7fdea1b60c8d0516a150bccdf6412ecd9/server/schema/Game.graphql:\ntype Game {\n  _id: ID!\n  name: String\n  teams: [Team]!\n  players: [Player]!\n  duration: Int\n  startTime: String\n  endTime: String\n}\n\ntype Team {\n  _id: ID!\n  color: String\n}\n\ntype Player {\n  _id: ID!\n  name: String!\n  team: Team!\n  class: Class!\n  xp: Int!\n  level: Int!\n  health: Int\n  attack: Int!\n  kills: Int!\n  deaths: Int!\n  cooldown: Cooldown\n}\n\ntype Class {\n  _id: ID!\n  name: String!\n  description: String!\n  skills: [Skill]!\n  health: Rating!\n  attack: Rating!\n  defense: Rating!\n  speed: Rating!\n}\n\nenum Rating {\n  TERRIBLE\n  POOR\n  DECENT\n  GREAT\n  SPECTACULAR\n}\n\ntype Skill {\n  _id: ID!\n  name: String!\n  classes: [Class]!\n  description: String!\n  cooldown: Int!\n}\n\ntype Cooldown {\n  _id: ID!\n  endTime: String!\n  secondsRemaining: Int!\n}\n\ntype Attack {\n  success: Boolean!\n  damage: Int\n  cooldown: Cooldown\n  fromPlayer: Player!\n  toPlayer: Player\n}\n",
+        "mergedPaths": [
+          "server/schema/Game.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Game",
+          "Player",
+          "Class",
+          "Skill"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 8,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Game.graphql",
+      "path": "server/schema/Game.graphql",
+      "sha": "a9214af58bdbf29edd817c0ca2dcee469ceed66b",
+      "url": "https://api.github.com/repositories/121187443/contents/server/schema/Game.graphql?ref=53869da7fdea1b60c8d0516a150bccdf6412ecd9",
+      "git_url": "https://api.github.com/repositories/121187443/git/blobs/a9214af58bdbf29edd817c0ca2dcee469ceed66b",
+      "html_url": "https://github.com/mattblackdev/graphql-moba-server/blob/53869da7fdea1b60c8d0516a150bccdf6412ecd9/server/schema/Game.graphql",
+      "content": "type Game {\n  _id: ID!\n  name: String\n  teams: [Team]!\n  players: [Player]!\n  duration: Int\n  startTime: String\n  endTime: String\n}\n\ntype Team {\n  _id: ID!\n  color: String\n}\n\ntype Player {\n  _id: ID!\n  name: String!\n  team: Team!\n  class: Class!\n  xp: Int!\n  level: Int!\n  health: Int\n  attack: Int!\n  kills: Int!\n  deaths: Int!\n  cooldown: Cooldown\n}\n\ntype Class {\n  _id: ID!\n  name: String!\n  description: String!\n  skills: [Skill]!\n  health: Rating!\n  attack: Rating!\n  defense: Rating!\n  speed: Rating!\n}\n\nenum Rating {\n  TERRIBLE\n  POOR\n  DECENT\n  GREAT\n  SPECTACULAR\n}\n\ntype Skill {\n  _id: ID!\n  name: String!\n  classes: [Class]!\n  description: String!\n  cooldown: Int!\n}\n\ntype Cooldown {\n  _id: ID!\n  endTime: String!\n  secondsRemaining: Int!\n}\n\ntype Attack {\n  success: Boolean!\n  damage: Int\n  cooldown: Cooldown\n  fromPlayer: Player!\n  toPlayer: Player\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-12T01:49:37Z",
+    "updated_at": "2018-02-13T23:07:13Z",
+    "pushed_at": "2018-02-13T21:37:07Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

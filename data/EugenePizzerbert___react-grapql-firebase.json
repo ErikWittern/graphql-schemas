@@ -1,0 +1,39 @@
+{
+  "repo_name": "react-grapql-firebase",
+  "repo_full_name": "eugenepizzerbert/react-grapql-firebase",
+  "repo_owner": "EugenePizzerbert",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "index.gql",
+      "path": "server/src/graphql/schema/index.gql",
+      "sha": "feb3912961788d2242df6adafb2edecb76394462",
+      "url": "https://api.github.com/repositories/146105934/contents/server/src/graphql/schema/index.gql?ref=8f4898a1e111f926d573ba043d5eddbf0fcb5c20",
+      "git_url": "https://api.github.com/repositories/146105934/git/blobs/feb3912961788d2242df6adafb2edecb76394462",
+      "html_url": "https://github.com/EugenePizzerbert/react-grapql-firebase/blob/8f4898a1e111f926d573ba043d5eddbf0fcb5c20/server/src/graphql/schema/index.gql",
+      "content": "type WeekSummary {\n  # Activity summary for a single week. Monday to Sunday\n  week_of: String # Week start in human readable format\n  week_num: String # Week number with 0 being current week\n  time_total_sec: Int # Accumulated moving_time for all activities of the week\n  time_total_hrs: Float # time_total_sec converted to hours\n  time_total_hrs_str: String # total_time_hrs converted to HH:mm\n  suffer_total: Int # Accumulated suffer_score for all activities of the week. Premium only\n}\n\ntype Activity {\n  # Strava athlete activity data\n  single_activity(id: Int!): String # Data for a single activity\n  week_summary(count: Int!): [WeekSummary] # Activity data summarized by week\n}\n\ntype Dash {\n  # Top level Dash user data\n  uid: String # user id\n  strava_token: String # strava oath access token\n}\n\ntype Strava {\n  # Top level Strava user data\n  athlete: String\n  activity: Activity\n}\n\ntype Query {\n  # Root query\n  dash: Dash\n  strava: Strava\n}\n\ntype Mutation {\n  add_strava_token(code: String!): Dash\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-25T15:17:23Z",
+    "updated_at": "2018-12-11T07:11:24Z",
+    "pushed_at": "2018-08-25T15:18:40Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "repo_name": "backpack",
+  "repo_full_name": "corbpaul/backpack",
+  "repo_owner": "corbpaul",
+  "repo_description": "An exploration of using NodeJS/React/GraphQL tech-stack",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/server/graphql/homepage/schema.graphql",
+      "sha": "2d2d7835d4d007a46f1266f322d8b5a7185cb2c8",
+      "url": "https://api.github.com/repositories/176072509/contents/src/server/graphql/homepage/schema.graphql?ref=0071fd18f84c874b16bf769a5b67c52478083f49",
+      "git_url": "https://api.github.com/repositories/176072509/git/blobs/2d2d7835d4d007a46f1266f322d8b5a7185cb2c8",
+      "html_url": "https://github.com/corbpaul/backpack/blob/0071fd18f84c874b16bf769a5b67c52478083f49/src/server/graphql/homepage/schema.graphql",
+      "content": "type Query {\n  homepage: Homepage\n}\n\ntype Homepage {\n  heading: String\n  subheading: String\n  heroImageUrl: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/server/graphql/faqs/schema.graphql",
+      "sha": "83f32892923a0687f57fd7b31b2eef2730265424",
+      "url": "https://api.github.com/repositories/176072509/contents/src/server/graphql/faqs/schema.graphql?ref=0071fd18f84c874b16bf769a5b67c52478083f49",
+      "git_url": "https://api.github.com/repositories/176072509/git/blobs/83f32892923a0687f57fd7b31b2eef2730265424",
+      "html_url": "https://github.com/corbpaul/backpack/blob/0071fd18f84c874b16bf769a5b67c52478083f49/src/server/graphql/faqs/schema.graphql",
+      "content": "type Query {\n  faqs: [Faq!]!\n}\n\ntype Faq {\n  title: String\n  body: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-17T08:01:19Z",
+    "updated_at": "2019-07-16T22:37:06Z",
+    "pushed_at": "2019-07-19T17:32:27Z",
+    "issues": 13,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 75,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 72,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

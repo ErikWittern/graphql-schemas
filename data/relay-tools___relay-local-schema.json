@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-local-schema",
+  "repo_full_name": "relay-tools/relay-local-schema",
+  "repo_owner": "relay-tools",
+  "repo_description": "Use Relay without a GraphQL server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/fixtures/schema.graphql",
+      "sha": "7b985b79500f3360015ca358a71db826c2a99bbe",
+      "url": "https://api.github.com/repositories/42072677/contents/test/fixtures/schema.graphql?ref=f50625cc574ae6a6679c9ae88f8903a9d8629fc5",
+      "git_url": "https://api.github.com/repositories/42072677/git/blobs/7b985b79500f3360015ca358a71db826c2a99bbe",
+      "html_url": "https://github.com/relay-tools/relay-local-schema/blob/f50625cc574ae6a6679c9ae88f8903a9d8629fc5/test/fixtures/schema.graphql",
+      "content": "type Mutation {\n  setWidgetName(input: SetWidgetNameInput!): SetWidgetNamePayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\ntype Query {\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n\n  \"\"\"Fetches objects given their IDs\"\"\"\n  nodes(\n    \"\"\"The IDs of objects\"\"\"\n    ids: [ID!]!\n  ): [Node]!\n  widget: Widget\n  invalid: Widget\n}\n\ninput SetWidgetNameInput {\n  name: String!\n  clientMutationId: String\n}\n\ntype SetWidgetNamePayload {\n  widget: Widget\n  clientMutationId: String\n}\n\ntype Widget implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-09-07T20:15:41Z",
+    "updated_at": "2019-07-19T06:12:17Z",
+    "pushed_at": "2019-07-19T06:12:16Z",
+    "issues": 6,
+    "watchers": 6,
+    "fork_count": 12,
+    "has_wiki_enabled": true,
+    "license": "cc0-1.0",
+    "pull_requests": 148,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 24,
+    "pull_requests_merged": 124,
+    "releases": 20,
+    "stargazers": 233
+  }
+}

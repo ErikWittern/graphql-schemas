@@ -1,0 +1,42 @@
+{
+  "repo_name": "modern-go-application",
+  "repo_full_name": "sagikazarmark/modern-go-application",
+  "repo_owner": "sagikazarmark",
+  "repo_description": "Modern Go Application example",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "todo.graphql",
+      "path": "api/graphql/todo.graphql",
+      "sha": "48f8fa35360a97f94ae7259cb7bd23454862e3bb",
+      "url": "https://api.github.com/repositories/148784348/contents/api/graphql/todo.graphql?ref=5cb2bad8b70c9fb734f4236048474262bd37aa76",
+      "git_url": "https://api.github.com/repositories/148784348/git/blobs/48f8fa35360a97f94ae7259cb7bd23454862e3bb",
+      "html_url": "https://github.com/sagikazarmark/modern-go-application/blob/5cb2bad8b70c9fb734f4236048474262bd37aa76/api/graphql/todo.graphql",
+      "content": "type Todo {\n    id: ID!\n    text: String!\n    done: Boolean!\n}\n\ntype Query {\n    todos: [Todo!]!\n}\n\ninput NewTodo {\n    text: String!\n}\n\ntype Mutation {\n    createTodo(input: NewTodo!): ID!\n    markTodoAsDone(input: ID!): Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-14T12:19:02Z",
+    "updated_at": "2019-07-19T00:25:08Z",
+    "pushed_at": "2019-07-19T00:25:06Z",
+    "issues": 19,
+    "watchers": 6,
+    "fork_count": 26,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 70,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 69,
+    "releases": 11,
+    "stargazers": 204
+  }
+}

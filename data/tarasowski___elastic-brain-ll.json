@@ -1,0 +1,42 @@
+{
+  "repo_name": "elastic-brain-ll",
+  "repo_full_name": "tarasowski/elastic-brain-ll",
+  "repo_owner": "tarasowski",
+  "repo_description": "Elastic Brain II",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/backend/graphql/schema/schema.graphql",
+      "sha": "97a07d03b0f73b5cd53b046e1599fcfa97900267",
+      "url": "https://api.github.com/repositories/164300543/contents/src/backend/graphql/schema/schema.graphql?ref=477a4bbfc97676ed835f0e617b7b6be168298b89",
+      "git_url": "https://api.github.com/repositories/164300543/git/blobs/97a07d03b0f73b5cd53b046e1599fcfa97900267",
+      "html_url": "https://github.com/tarasowski/elastic-brain-ll/blob/477a4bbfc97676ed835f0e617b7b6be168298b89/src/backend/graphql/schema/schema.graphql",
+      "content": "type AllCourses {\n\titems: [CourseList]\n\tnextToken: String\n}\n\ntype CourseList {\n\tcourses: [SingleCourse]\n}\n\ntype Mutation {\n\taddNewCourse(courseName: String!, courseId: String!): MyCourseList\n\taddNewCard(input: CardInfo): CardView\n}\n\ninput CardInfo {\n\tcardId: String!\n\tquestion: String!\n\tanswer: String!\n\tdateAdded: String!\n\tcourseId: String!\n}\n\ntype MyCourseList {\n\tuserId: String!\n\tcourses: [SingleCourse]\n}\n\ntype Query {\n\tgetAllCourses: AllCourses\n\tgetSpecificCourseCards(courseId: String!): SpecificCourseCards\n\tgetAllCards: AllCards\n}\n\ntype AllCards {\n\titems: [CardView]\n\tnextToken: String\n}\n\ntype SpecificCourseCards {\n\titems: [CardView]\n\tnextToken: String\n}\n\ntype CardView {\n\tuserId: String!\n\tcardId: String!\n\tuserId_courseId_cardId: String!\n\tquestion: String!\n\tanswer: String!\n\tcourseId: String!\n\tdateAdded: String!\n}\n\ntype SingleCourse {\n\tcourseName: String!\n\tcourseId: String!\n}\n\nschema {\n\tquery: Query\n\tmutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-06T11:26:33Z",
+    "updated_at": "2019-01-13T09:21:51Z",
+    "pushed_at": "2019-01-13T09:21:49Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

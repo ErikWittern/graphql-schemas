@@ -1,0 +1,42 @@
+{
+  "repo_name": "cwp-29",
+  "repo_full_name": "annaprih/cwp-29",
+  "repo_owner": "annaprih",
+  "repo_description": "cwp-29",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "tnmt.graphql",
+      "path": "tnmt.graphql",
+      "sha": "ffe3b59bdfba7e066da112944c96d729cd23d4f8",
+      "url": "https://api.github.com/repositories/125965996/contents/tnmt.graphql?ref=cf8820fde4ca1dc663690f7edcdd04dde6b0d66d",
+      "git_url": "https://api.github.com/repositories/125965996/git/blobs/ffe3b59bdfba7e066da112944c96d729cd23d4f8",
+      "html_url": "https://github.com/annaprih/cwp-29/blob/cf8820fde4ca1dc663690f7edcdd04dde6b0d66d/tnmt.graphql",
+      "content": "type Pizza {\n  id: ID!\n  name: String\n  colories: Int\n}\n\ntype Weapon {\n  id: ID!\n  name: String\n  dps: Float\n}\n\ntype Turtle {\n  id: ID!\n  name: String\n  color: String\n  weapon: Weapon\n  favoritePizza: Pizza\n  secondFavoritePizza: Pizza\n}\n\ntype Query {\n  weapons(limit: Int, order: String): [Weapon]\n  pizzas(limit: Int, order: String): [Pizza]\n  turtles(pizzas: [String]): [Turtle]\n  turtle(id: ID): Turtle\n  pizza(id: ID): Pizza\n  weapon(id: ID): Weapon\n  createTurtle(\n    name: String\n    color: String\n    weaponId: ID\n    favoritePizzaId: ID\n    secondFavoritePizzaId: ID\n  ): Turtle\n  updateTurtle(\n    id: ID\n    name: String\n    color: String\n    weaponId: ID\n    favoritePizzaId: ID\n    secondFavoritePizzaId: ID\n  ): Turtle\n  deleteTurtle(\n    id: ID\n  ): Turtle\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-20T05:36:49Z",
+    "updated_at": "2018-03-20T05:37:00Z",
+    "pushed_at": "2018-03-20T05:36:59Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

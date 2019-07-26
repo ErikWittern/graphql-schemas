@@ -1,0 +1,39 @@
+{
+  "repo_name": "conatux",
+  "repo_full_name": "elcoosp/conatux",
+  "repo_owner": "elcoosp",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/back/server/schema.graphql",
+      "sha": "507e98342b062ab9d984d5933ee705c43a66623f",
+      "url": "https://api.github.com/repositories/160880071/contents/packages/back/server/schema.graphql?ref=2fe31f9edf40dc0ac4df49ee37b405f18da17dfb",
+      "git_url": "https://api.github.com/repositories/160880071/git/blobs/507e98342b062ab9d984d5933ee705c43a66623f",
+      "html_url": "https://github.com/elcoosp/conatux/blob/2fe31f9edf40dc0ac4df49ee37b405f18da17dfb/packages/back/server/schema.graphql",
+      "content": "type Query {\n  user(id: ID!): User!\n}\n\ntype Mutation {\n  signUp(username: String!, email: String!, password: String!): AuthPayload!\n  login(email: String!, password: String!): AuthPayload!\n}\n\ntype User {\n  id: ID!\n  username: String!\n  email: String!\n  password: String!\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-07T22:04:01Z",
+    "updated_at": "2019-01-30T22:53:43Z",
+    "pushed_at": "2019-07-13T06:09:01Z",
+    "issues": 16,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 54,
+    "pull_requests_open": 20,
+    "pull_requests_closed": 7,
+    "pull_requests_merged": 27,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

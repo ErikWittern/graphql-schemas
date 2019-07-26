@@ -1,0 +1,42 @@
+{
+  "repo_name": "falcon",
+  "repo_full_name": "skeithtan/falcon",
+  "repo_owner": "skeithtan",
+  "repo_description": "An innovation project for Philippine Normal University's Faculty of Arts and Languages that stores faculty profiles and schedules faculty based on time constraints and subject expertise.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/graphql/schema.graphql",
+      "sha": "750cf3bb39546c4293ddf7ec0d3136916e332e73",
+      "url": "https://api.github.com/repositories/130285758/contents/server/graphql/schema.graphql?ref=19923adf7539fc9924cc8e1637b2f5de2cf538a2",
+      "git_url": "https://api.github.com/repositories/130285758/git/blobs/750cf3bb39546c4293ddf7ec0d3136916e332e73",
+      "html_url": "https://github.com/skeithtan/falcon/blob/19923adf7539fc9924cc8e1637b2f5de2cf538a2/server/graphql/schema.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n}\n\n# Parsing fails when these types do not have at least one field\n# See https://github.com/apollographql/graphql-tools/issues/293\n# Field hello is kept as the test field - it does not modify database in any way\n# Querying this field will always return the string \"World\"\n\ntype Query {\n    hello: String\n}\n\ntype Mutation {\n    hello: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-20T00:09:18Z",
+    "updated_at": "2018-12-10T06:47:21Z",
+    "pushed_at": "2018-08-07T02:17:00Z",
+    "issues": 1,
+    "watchers": 3,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 0,
+    "releases": 1,
+    "stargazers": 9
+  }
+}

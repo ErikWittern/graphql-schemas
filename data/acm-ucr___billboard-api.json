@@ -1,0 +1,66 @@
+{
+  "repo_name": "billboard-api",
+  "repo_full_name": "acm-ucr/billboard-api",
+  "repo_owner": "acm-ucr",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "announcement.graphql",
+      "path": "schema/types/announcement.graphql",
+      "sha": "6968d9daac147d67c9b79d8c2cc4c2084bdd4462",
+      "url": "https://api.github.com/repositories/114018522/contents/schema/types/announcement.graphql?ref=f9f784327b1d2912324be9ff97b97412bbbb6b40",
+      "git_url": "https://api.github.com/repositories/114018522/git/blobs/6968d9daac147d67c9b79d8c2cc4c2084bdd4462",
+      "html_url": "https://github.com/acm-ucr/billboard-api/blob/f9f784327b1d2912324be9ff97b97412bbbb6b40/schema/types/announcement.graphql",
+      "content": "type Announcement {\n  id: ID!\n  header: String\n  body: String\n  imageUrl: String\n}\n\ntype AnnouncementSubscriptionPayload {\n  mutation: _ModelMutationType!\n  node: Announcement\n}\n\ntype Query {\n  getAnnouncements(\n    last: Int\n  ): [Announcement!]!\n}\n\ntype Mutation {\n  addAnnouncement (\n    header: String\n    body: String\n    imageUrl: String\n  ): Announcement!\n}\n\ntype Subscription {\n  Announcement: AnnouncementSubscriptionPayload!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/acm-ucr/billboard-api/blob/f9f784327b1d2912324be9ff97b97412bbbb6b40/schema/types/announcement.graphql:\ntype Announcement {\n  id: ID!\n  header: String\n  body: String\n  imageUrl: String\n}\n\ntype AnnouncementSubscriptionPayload {\n  mutation: _ModelMutationType!\n  node: Announcement\n}\n\ntype Query {\n  getAnnouncements(\n    last: Int\n  ): [Announcement!]!\n}\n\ntype Mutation {\n  addAnnouncement (\n    header: String\n    body: String\n    imageUrl: String\n  ): Announcement!\n}\n\ntype Subscription {\n  Announcement: AnnouncementSubscriptionPayload!\n}\n\n# https://github.com/acm-ucr/billboard-api/blob/f9f784327b1d2912324be9ff97b97412bbbb6b40/schema/types/general.graphql:\nenum _ModelMutationType {\n  CREATED\n  UPDATED\n  DELETED\n}",
+        "mergedPaths": [
+          "schema/types/general.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "_ModelMutationType"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "general.graphql",
+      "path": "schema/types/general.graphql",
+      "sha": "e764caf35ae7ad976a72527542e2aeb564ea1e7a",
+      "url": "https://api.github.com/repositories/114018522/contents/schema/types/general.graphql?ref=f9f784327b1d2912324be9ff97b97412bbbb6b40",
+      "git_url": "https://api.github.com/repositories/114018522/git/blobs/e764caf35ae7ad976a72527542e2aeb564ea1e7a",
+      "html_url": "https://github.com/acm-ucr/billboard-api/blob/f9f784327b1d2912324be9ff97b97412bbbb6b40/schema/types/general.graphql",
+      "content": "enum _ModelMutationType {\n  CREATED\n  UPDATED\n  DELETED\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-12T17:18:58Z",
+    "updated_at": "2017-12-12T18:02:41Z",
+    "pushed_at": "2017-12-12T19:50:03Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

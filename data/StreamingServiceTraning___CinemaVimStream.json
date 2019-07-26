@@ -1,0 +1,42 @@
+{
+  "repo_name": "CinemaVimStream",
+  "repo_full_name": "streamingservicetraning/cinemavimstream",
+  "repo_owner": "StreamingServiceTraning",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/src/schema.graphql",
+      "sha": "6c9cbc3cb52efa566d17ad29454699af47d6784d",
+      "url": "https://api.github.com/repositories/160646338/contents/api/src/schema.graphql?ref=bdb7f1fc278063e70e0aaad6c41d0748045a7bda",
+      "git_url": "https://api.github.com/repositories/160646338/git/blobs/6c9cbc3cb52efa566d17ad29454699af47d6784d",
+      "html_url": "https://github.com/StreamingServiceTraning/CinemaVimStream/blob/bdb7f1fc278063e70e0aaad6c41d0748045a7bda/api/src/schema.graphql",
+      "content": "type Query {\n  getUsers: [User]\n  getUser(id: ID!): User\n}\n\ntype User {\n  name: String\n  password: String\n  email: String\n  avatar: String\n  id: ID\n  errors: String\n  token: String\n}\n\ntype Mutation {\n  createUser(name: String, password: String, email: String): User\n  login(password: String, email: String): String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-06T08:52:36Z",
+    "updated_at": "2019-01-08T12:22:09Z",
+    "pushed_at": "2019-02-04T14:22:06Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

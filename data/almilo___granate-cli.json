@@ -1,0 +1,42 @@
+{
+  "repo_name": "granate-cli",
+  "repo_full_name": "almilo/granate-cli",
+  "repo_owner": "almilo",
+  "repo_description": "CLI for granate container",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/schema.graphql",
+      "sha": "fa757ef7abcecfdd4113396cd1b6e1593fc83ee7",
+      "url": "https://api.github.com/repositories/67291876/contents/test/schema.graphql?ref=a64f851fe8e3652c209cdd974af15e70922ceb6f",
+      "git_url": "https://api.github.com/repositories/67291876/git/blobs/fa757ef7abcecfdd4113396cd1b6e1593fc83ee7",
+      "html_url": "https://github.com/almilo/granate-cli/blob/a64f851fe8e3652c209cdd974af15e70922ceb6f/test/schema.graphql",
+      "content": "type Todo {\n    id: ID\n    title: String\n    completed: Boolean\n}\n\ntype Query {\n    todos: [Todo]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-03T13:35:09Z",
+    "updated_at": "2016-09-03T13:41:19Z",
+    "pushed_at": "2017-05-31T21:50:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 57,
+    "pull_requests_open": 57,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 8,
+    "stargazers": 0
+  }
+}

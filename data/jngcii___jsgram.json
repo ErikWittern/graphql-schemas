@@ -1,0 +1,243 @@
+{
+  "repo_name": "jsgram",
+  "repo_full_name": "jngcii/jsgram",
+  "repo_owner": "jngcii",
+  "repo_description": "Cloning Instagram with Node, Prisma, React",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "logIn.graphql",
+      "path": "src/api/User/logIn/logIn.graphql",
+      "sha": "16b42d5ddb87c8c9482b703083c3038c6fd61449",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/User/logIn/logIn.graphql?ref=1ad648a20f4367d253ba9bdfc22b10b02124d5b9",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/16b42d5ddb87c8c9482b703083c3038c6fd61449",
+      "html_url": "https://github.com/jngcii/jsgram/blob/1ad648a20f4367d253ba9bdfc22b10b02124d5b9/src/api/User/logIn/logIn.graphql",
+      "content": "type Mutation {\n\tlogin(username: String!, password: String!): AuthPayload\n}\n\ntype Query {\n\tsomething: String\n}\n\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jngcii/jsgram/blob/1ad648a20f4367d253ba9bdfc22b10b02124d5b9/src/api/User/logIn/logIn.graphql:\ntype Mutation {\n\tlogin(username: String!, password: String!): AuthPayload\n}\n\ntype Query {\n\tsomething: String\n}\n\n\n# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql:\ntype User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "AuthPayload"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 10,
+        "containsCycle": true,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "models.graphql",
+      "path": "src/api/models.graphql",
+      "sha": "94b38e1b5993ff3299a7998182540476d2212f58",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/models.graphql?ref=667b5b1bac6f9675f027efb0de9d06d59e376974",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/94b38e1b5993ff3299a7998182540476d2212f58",
+      "html_url": "https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql",
+      "content": "type User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 8
+    },
+    {
+      "name": "createAccount.graphql",
+      "path": "src/api/User/createAccount/createAccount.graphql",
+      "sha": "eed8295f6206704bfe33f38d84def25c0ab985b3",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/User/createAccount/createAccount.graphql?ref=1ad648a20f4367d253ba9bdfc22b10b02124d5b9",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/eed8295f6206704bfe33f38d84def25c0ab985b3",
+      "html_url": "https://github.com/jngcii/jsgram/blob/1ad648a20f4367d253ba9bdfc22b10b02124d5b9/src/api/User/createAccount/createAccount.graphql",
+      "content": "type Mutation {\n\tcreateAccount(username: String!, name: String, password: String!): AuthPayload\n}\n\ntype Query {\n\tsomething: String\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jngcii/jsgram/blob/1ad648a20f4367d253ba9bdfc22b10b02124d5b9/src/api/User/createAccount/createAccount.graphql:\ntype Mutation {\n\tcreateAccount(username: String!, name: String, password: String!): AuthPayload\n}\n\ntype Query {\n\tsomething: String\n}\n\n# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql:\ntype User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "AuthPayload"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "userProfile.graphql",
+      "path": "src/api/User/userProfile/userProfile.graphql",
+      "sha": "7c9e4820d15e9922c3b202a64eb50e5ec90bb6a6",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/User/userProfile/userProfile.graphql?ref=667b5b1bac6f9675f027efb0de9d06d59e376974",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/7c9e4820d15e9922c3b202a64eb50e5ec90bb6a6",
+      "html_url": "https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/User/userProfile/userProfile.graphql",
+      "content": "type Mutation {\n\teditProfile(name: String, avatar: String): User!\n}\n\ntype Query {\n\tuserProfile(id: String!): User!\n\tmyProfile: User!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/User/userProfile/userProfile.graphql:\ntype Mutation {\n\teditProfile(name: String, avatar: String): User!\n}\n\ntype Query {\n\tuserProfile(id: String!): User!\n\tmyProfile: User!\n}\n\n# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql:\ntype User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 10,
+        "containsCycle": true,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "feed.graphql",
+      "path": "src/api/Post/feed/feed.graphql",
+      "sha": "b28814f67d36026d36ba55270eaa4e4fa1b43459",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/Post/feed/feed.graphql?ref=a5daa7a42812822b1d66fe8c4ab10d950bf11926",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/b28814f67d36026d36ba55270eaa4e4fa1b43459",
+      "html_url": "https://github.com/jngcii/jsgram/blob/a5daa7a42812822b1d66fe8c4ab10d950bf11926/src/api/Post/feed/feed.graphql",
+      "content": "type Query {\n\tfeed: [Post!]\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jngcii/jsgram/blob/a5daa7a42812822b1d66fe8c4ab10d950bf11926/src/api/Post/feed/feed.graphql:\ntype Query {\n\tfeed: [Post!]\n}\n\n# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql:\ntype User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "seeFullPost.graphql",
+      "path": "src/api/Post/seeFullPost/seeFullPost.graphql",
+      "sha": "2fdedaf715d09b801048a52602fb500cb7594a4f",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/Post/seeFullPost/seeFullPost.graphql?ref=f4aaff276f6d8ed7bcffe7320bc2414452472e78",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/2fdedaf715d09b801048a52602fb500cb7594a4f",
+      "html_url": "https://github.com/jngcii/jsgram/blob/f4aaff276f6d8ed7bcffe7320bc2414452472e78/src/api/Post/seeFullPost/seeFullPost.graphql",
+      "content": "type Query {\n\tseeFullPost(id: String!): Post!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jngcii/jsgram/blob/f4aaff276f6d8ed7bcffe7320bc2414452472e78/src/api/Post/seeFullPost/seeFullPost.graphql:\ntype Query {\n\tseeFullPost(id: String!): Post!\n}\n\n# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql:\ntype User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "searchPost.graphql",
+      "path": "src/api/Post/searchPost/searchPost.graphql",
+      "sha": "547ef33be2e7bd1cfed2988bd5a49f63b91cd391",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/Post/searchPost/searchPost.graphql?ref=a621ebdd841dc41f2511666f690bbc9ff97c0bc3",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/547ef33be2e7bd1cfed2988bd5a49f63b91cd391",
+      "html_url": "https://github.com/jngcii/jsgram/blob/a621ebdd841dc41f2511666f690bbc9ff97c0bc3/src/api/Post/searchPost/searchPost.graphql",
+      "content": "type Query {\n\tsearchPost(term: String!): [Post!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jngcii/jsgram/blob/a621ebdd841dc41f2511666f690bbc9ff97c0bc3/src/api/Post/searchPost/searchPost.graphql:\ntype Query {\n\tsearchPost(term: String!): [Post!]!\n}\n\n# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql:\ntype User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "searchUser.graphql",
+      "path": "src/api/User/searchUser/searchUser.graphql",
+      "sha": "47ab1ad53cf5829d0c71b1b57d28f1311839821c",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/User/searchUser/searchUser.graphql?ref=a621ebdd841dc41f2511666f690bbc9ff97c0bc3",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/47ab1ad53cf5829d0c71b1b57d28f1311839821c",
+      "html_url": "https://github.com/jngcii/jsgram/blob/a621ebdd841dc41f2511666f690bbc9ff97c0bc3/src/api/User/searchUser/searchUser.graphql",
+      "content": "type Query {\n\tsearchUser(term: String!): [User!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jngcii/jsgram/blob/a621ebdd841dc41f2511666f690bbc9ff97c0bc3/src/api/User/searchUser/searchUser.graphql:\ntype Query {\n\tsearchUser(term: String!): [User!]!\n}\n\n# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql:\ntype User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    },
+    {
+      "name": "room.graphql",
+      "path": "src/api/Chat/room/room.graphql",
+      "sha": "9e1730735d7ff5ad87288fa7a2662258452247e4",
+      "url": "https://api.github.com/repositories/181611525/contents/src/api/Chat/room/room.graphql?ref=d5977397c3839317a431466d51389ecb6c63a99f",
+      "git_url": "https://api.github.com/repositories/181611525/git/blobs/9e1730735d7ff5ad87288fa7a2662258452247e4",
+      "html_url": "https://github.com/jngcii/jsgram/blob/d5977397c3839317a431466d51389ecb6c63a99f/src/api/Chat/room/room.graphql",
+      "content": "type Query {\n\tlistRooms: [Room!]\n\tshowRoom(roomId: String!): Room\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jngcii/jsgram/blob/d5977397c3839317a431466d51389ecb6c63a99f/src/api/Chat/room/room.graphql:\ntype Query {\n\tlistRooms: [Room!]\n\tshowRoom(roomId: String!): Room\n}\n\n# https://github.com/jngcii/jsgram/blob/667b5b1bac6f9675f027efb0de9d06d59e376974/src/api/models.graphql:\ntype User {\n\tid: ID!\n\tusername: String!\n\tpassword: String!\n\tname: String\n\tavatar: String\n\tposts: [Post!]\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tisFollowing: Boolean!\n\tisSelf: Boolean!\n\tfollowers: [User!]\n\tfollowing: [User!]\n\tcreatedAt: String!\n\tupdatedAt: String!\n\troom: [Room!]\n}\n\ntype Post {\n\tid: ID!\n\tuser: User\n\tcaption: String\n\tlocation: String\n\tfiles: [File!]!\n\tlikes: [Like!]\n\tcomments: [Comment!]\n\tlikeCount: Int!\n\tcommentCount: Int!\n\tisLiked: Boolean!\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Like {\n\tid: ID!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Comment {\n\tid: ID!\n\ttext: String!\n\tuser: User\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype File {\n\tid: ID!\n\turl: String!\n\tpost: Post\n\tcreatedAt: String!\n\tupdatedAt: String!\n}\n\ntype Room {\n\tid: ID!\n\tparticipants: [User!]!\n\tmessages: [Message!]\n}\n\ntype Message {\n\tid: ID!\n\ttext: String!\n\tfrom: User!\n\tto: User!\n\troom: Room!\n}\n\ntype AuthPayload {\n\ttoken: String\n\tuser: User\n}\n",
+        "mergedPaths": [
+          "src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Room"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": true,
+        "numDefinitions": 9
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-16T03:56:46Z",
+    "updated_at": "2019-04-29T05:34:05Z",
+    "pushed_at": "2019-04-29T05:34:03Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

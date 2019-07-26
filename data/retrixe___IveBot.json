@@ -1,0 +1,42 @@
+{
+  "repo_name": "IveBot",
+  "repo_full_name": "retrixe/ivebot",
+  "repo_owner": "retrixe",
+  "repo_description": "The bot that made the iPhone X.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "efd0c999ea886ce7c27ad88607e95731c3efde98",
+      "url": "https://api.github.com/repositories/112025942/contents/server/schema.graphql?ref=d89677d778476f2c98952de8e5985fe4b5479647",
+      "git_url": "https://api.github.com/repositories/112025942/git/blobs/efd0c999ea886ce7c27ad88607e95731c3efde98",
+      "html_url": "https://github.com/retrixe/IveBot/blob/d89677d778476f2c98952de8e5985fe4b5479647/server/schema.graphql",
+      "content": "# Server specific settings.\ntype ServerSetting {\n  # Server ID.\n  serverId: String!\n  # If add role is enabled for everyone.\n  addRoleForAll: Boolean\n  # If join/leave messages are enabled, and if so, what message and channel.\n  joinLeaveMessages: [String]\n  # If join autorole is enabled, and if so, what role.\n  joinAutorole: String\n}\n\n# Server type.\ntype Server {\n  # ID of server.\n  serverId: String!\n  # Permission to manage it?\n  perms: Boolean\n  # Icon of server.\n  icon: String\n  # Name of server.\n  name: String\n}\n\n# Enable queries.\ntype Query {\n  # Query server settings.\n  serverSettings(serverId: String!, linkToken: String!): ServerSetting!\n  # Get the user for a link code.\n  getUserInfo(linkToken: String!): [Server!]!\n}\n\n# Input for editServerSettings mutation.\ninput EditServerSettingsInput {\n  # Server ID of the server.\n  serverId: String!\n  # Token of the user by whom the operation is performed.\n  linkToken: String!\n  # Enable public roles through this setting.\n  addRoleForAll: Boolean\n  # Edit join autorole through this setting.\n  joinAutorole: String\n}\n\n# Enable mutations.\ntype Mutation {\n  # Edit server settings.\n  editServerSettings(input: EditServerSettingsInput!): ServerSetting!\n}\n\nschema {\n  mutation: Mutation\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-25T18:34:25Z",
+    "updated_at": "2019-07-04T06:39:49Z",
+    "pushed_at": "2019-07-18T13:33:53Z",
+    "issues": 3,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 38,
+    "stargazers": 5
+  }
+}

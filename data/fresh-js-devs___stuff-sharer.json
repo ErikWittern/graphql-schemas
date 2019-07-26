@@ -1,0 +1,39 @@
+{
+  "repo_name": "stuff-sharer",
+  "repo_full_name": "fresh-js-devs/stuff-sharer",
+  "repo_owner": "fresh-js-devs",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "modules/core/server-ts/api/rootSchema.graphql",
+      "sha": "71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "url": "https://api.github.com/repositories/186126605/contents/modules/core/server-ts/api/rootSchema.graphql?ref=aa26e073ba74192066d3a9e976ff3eb120eedbce",
+      "git_url": "https://api.github.com/repositories/186126605/git/blobs/71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "html_url": "https://github.com/fresh-js-devs/stuff-sharer/blob/aa26e073ba74192066d3a9e976ff3eb120eedbce/modules/core/server-ts/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-11T11:50:17Z",
+    "updated_at": "2019-05-11T12:11:49Z",
+    "pushed_at": "2019-05-11T12:11:47Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

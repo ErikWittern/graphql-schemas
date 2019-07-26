@@ -1,0 +1,42 @@
+{
+  "repo_name": "wocdb-react",
+  "repo_full_name": "jameserrington/wocdb-react",
+  "repo_owner": "JamesErrington",
+  "repo_description": "React and GraphQL implementation of the Maprunner WOC DB",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/adapters/server/graphql/schema.graphql",
+      "sha": "beb75fa54d5434177089ad9f8461e668639fb876",
+      "url": "https://api.github.com/repositories/154726625/contents/api/adapters/server/graphql/schema.graphql?ref=21dbc3f00c448d89937b180a906fd8e8f838de82",
+      "git_url": "https://api.github.com/repositories/154726625/git/blobs/beb75fa54d5434177089ad9f8461e668639fb876",
+      "html_url": "https://github.com/JamesErrington/wocdb-react/blob/21dbc3f00c448d89937b180a906fd8e8f838de82/api/adapters/server/graphql/schema.graphql",
+      "content": "type Country {\n  abbr: String\n  country: String\n  code: String\n}\n\ntype WOC {\n  id: Int\n  type: String\n  year: Int\n  country: Country\n  location: String\n  dates: String\n  countries: Int\n  runners: Int\n}\n\ntype Name {\n  id: Int\n  name: String\n  plainname: String\n  personid: Int\n  nameid: Int\n}\n\nenum Type {\n  WOC\n  JWOC\n}\n\nenum Class {\n  Men\n  Women\n}\n\nenum Race {\n  Long\n  LongQualA\n  LongQualB\n  LongQualC\n  LongQual1\n  LongQual2\n  LongQual3\n  Short\n  ShortQualA\n  ShortQualB\n  ShortQualC\n  ShortQualD\n  Middle\n  MiddleQualA\n  MiddleQualB\n  MiddleQualC\n  MiddleQual1\n  MiddleQual2\n  MiddleQual4\n  Sprint\n  SprintQualA\n  SprintQualB\n  SprintQualC\n  SprintQual1\n  SprintQual2\n  SprintQual3\n  Relay\n  SprintRelay\n}\n\ntype Result {\n  id: Int\n  position: Int\n  name: String\n  country: Country\n  time: String\n  seconds: Int\n  secsdown: String\n  percentdown: Float\n  class: Class\n  race: Race\n  year: Int\n  raceid: Int\n  woc: WOC\n  final: Int\n  nameid: Int\n  personid: Int\n  points: Int\n}\n\ntype Query {\n  allWOCs: [WOC]\n  bestResult(type: Type!, class: Class!, race: Race!, country: String): [Result]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-25T19:32:34Z",
+    "updated_at": "2018-10-31T12:49:31Z",
+    "pushed_at": "2018-10-31T12:49:27Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

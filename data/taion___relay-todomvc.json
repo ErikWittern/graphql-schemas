@@ -1,0 +1,39 @@
+{
+  "repo_name": "relay-todomvc",
+  "repo_full_name": "taion/relay-todomvc",
+  "repo_owner": "taion",
+  "repo_description": "Relay TodoMVC with routing",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema.graphql",
+      "sha": "d5432a854515fd7f9913db8e14e20e55c2c5dc51",
+      "url": "https://api.github.com/repositories/42077966/contents/src/data/schema.graphql?ref=e6564fe61c734a689784d7aec9bd3bd40e1a1d25",
+      "git_url": "https://api.github.com/repositories/42077966/git/blobs/d5432a854515fd7f9913db8e14e20e55c2c5dc51",
+      "html_url": "https://github.com/taion/relay-todomvc/blob/e6564fe61c734a689784d7aec9bd3bd40e1a1d25/src/data/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutation\n}\n\ninput AddTodoInput {\n  text: String!\n  clientMutationId: String\n}\n\ntype AddTodoPayload {\n  viewer: User\n  todoEdge: TodoEdge\n  clientMutationId: String\n}\n\ninput ChangeTodoStatusInput {\n  id: ID!\n  complete: Boolean!\n  clientMutationId: String\n}\n\ntype ChangeTodoStatusPayload {\n  viewer: User\n  todo: Todo\n  clientMutationId: String\n}\n\ninput MarkAllTodosInput {\n  complete: Boolean!\n  clientMutationId: String\n}\n\ntype MarkAllTodosPayload {\n  viewer: User\n  changedTodos: [Todo]\n  clientMutationId: String\n}\n\ntype Mutation {\n  addTodo(input: AddTodoInput!): AddTodoPayload\n  changeTodoStatus(input: ChangeTodoStatusInput!): ChangeTodoStatusPayload\n  markAllTodos(input: MarkAllTodosInput!): MarkAllTodosPayload\n  removeCompletedTodos(input: RemoveCompletedTodosInput!): RemoveCompletedTodosPayload\n  removeTodo(input: RemoveTodoInput!): RemoveTodoPayload\n  renameTodo(input: RenameTodoInput!): RenameTodoPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ninput RemoveCompletedTodosInput {\n  clientMutationId: String\n}\n\ntype RemoveCompletedTodosPayload {\n  viewer: User\n  deletedIds: [String]\n  clientMutationId: String\n}\n\ninput RemoveTodoInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype RemoveTodoPayload {\n  viewer: User\n  deletedId: ID\n  clientMutationId: String\n}\n\ninput RenameTodoInput {\n  id: ID!\n  text: String!\n  clientMutationId: String\n}\n\ntype RenameTodoPayload {\n  todo: Todo\n  clientMutationId: String\n}\n\ntype Root {\n  viewer: User\n\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n}\n\ntype Todo implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  complete: Boolean\n  text: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype TodoConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [TodoEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype TodoEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Todo\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ntype User implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  todos(status: String = \"any\", after: String, first: Int, before: String, last: Int): TodoConnection\n  numTodos: Int\n  numCompletedTodos: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-09-07T22:49:19Z",
+    "updated_at": "2019-07-19T06:24:12Z",
+    "pushed_at": "2019-07-19T06:26:00Z",
+    "issues": 12,
+    "watchers": 6,
+    "fork_count": 48,
+    "has_wiki_enabled": true,
+    "license": "cc0-1.0",
+    "pull_requests": 257,
+    "pull_requests_open": 10,
+    "pull_requests_closed": 111,
+    "pull_requests_merged": 136,
+    "releases": 0,
+    "stargazers": 153
+  }
+}

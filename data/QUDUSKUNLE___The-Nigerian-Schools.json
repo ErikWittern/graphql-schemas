@@ -1,0 +1,42 @@
+{
+  "repo_name": "The-Nigerian-Schools",
+  "repo_full_name": "quduskunle/the-nigerian-schools",
+  "repo_owner": "QUDUSKUNLE",
+  "repo_description": "A simple app that houses all schools situated in Lagos",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema/schema.graphql",
+      "sha": "e5202567aa3fc0202e7aa8538a45b22b02a0b3e6",
+      "url": "https://api.github.com/repositories/166441064/contents/src/schema/schema.graphql?ref=c44f84dab0faba95d29528aa068e19ac1969e30e",
+      "git_url": "https://api.github.com/repositories/166441064/git/blobs/e5202567aa3fc0202e7aa8538a45b22b02a0b3e6",
+      "html_url": "https://github.com/QUDUSKUNLE/The-Nigerian-Schools/blob/c44f84dab0faba95d29528aa068e19ac1969e30e/src/schema/schema.graphql",
+      "content": "type Query {\n  user(id: ID!): User\n  users(filter: String, skip: Int, first: Int): Users\n  school(id: ID!): School\n  schools(filter: String, skip: Int, first: Int): Schools\n}\n\ntype Mutation {\n  signup(name: String!, email: String!, password: String!, confirmPassword: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n  put(id: ID!, name: String, email: String): NewProfile!\n  delete(id: ID!): Message\n  register(input: ObjectInput): NewSchool\n  updateSchool(id: ID!, input: UpdateSchool): NewSchool\n}\n\ntype Users {\n  count: Int,\n  users: [User]\n}\n\ntype Schools {\n  count: Int,\n  schools: [School]\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  availability: Boolean!\n}\ntype AuthPayload {\n  token: String!\n  user: User\n}\ntype NewProfile {\n  message: String\n  success: Boolean\n  user: User\n}\ntype Message {\n  message: String!\n  success: Boolean\n}\ntype NewSchool {\n  message: String!\n  school: School\n}\ntype School {\n  id: ID!\n  school_name: String\n  school_address: String\n  school_convention: SchoolConvention\n  school_class: SchoolClass\n  school_section: SchoolSection\n  school_type: SchoolType\n  school_contacts: SchoolContact\n}\n\ntype UpdatedSchoolInformation {\n  id: ID!\n  school_name: String\n  school_address: String\n  school_convention: SchoolConvention\n  school_class: SchoolClass\n  school_section: SchoolSection\n  school_type: SchoolType\n  school_contacts: SchoolContact\n}\ntype SchoolConvention {\n  conventional: Boolean!\n  muslim: Boolean!\n  christian: Boolean!\n}\ntype SchoolClass {\n  private: Boolean\n  public: Boolean\n}\ntype SchoolSection {\n  creche: Boolean\n  nursery: Boolean\n  after_school: Boolean\n  primary: Boolean\n  junior_secondary: Boolean\n  senior_secondary: Boolean\n}\ntype SchoolType {\n  day_school: Boolean\n  boarding: Boolean\n}\ntype SchoolContact {\n  email: String\n  phone_number: String\n}\n\ninput ObjectInput {\n  name: String!\n  address: String!\n  school_class: Class!\n  school_convention: Convention!\n  school_section: Section!\n  school_population: Population!\n  school_contacts: Contacts!\n  school_type: SType!\n}\n\ninput UpdateSchool {\n  name: String\n  address: String\n  school_class: Class\n  school_convention: Convention\n  school_section: Section\n  school_population: Population\n  school_contacts: Contacts\n  school_type: SType\n  school_approval: Approval\n  school_images: Images\n}\ninput Class {\n  private: Boolean\n  public: Boolean\n}\ninput Convention {\n  conventional: Boolean\n  muslim: Boolean\n  christian: Boolean\n}\ninput Section {\n  creche: Boolean\n  nursery: Boolean\n  after_school: Boolean\n  primary: Boolean\n  junior_secondary: Boolean\n  senior_secondary: Boolean\n}\ninput Population {\n  creche: Int\n  nursery: Int\n  after_school: Int\n  primary: Int\n  junior_secondary: Int\n  senior_secondary: Int\n}\ninput Contacts {\n  email: String!\n  phone_number: String!\n}\ninput SType {\n  day_school: Boolean\n  boarding: Boolean\n}\ninput Approval {\n  approved_date: String\n  status: Boolean\n}\ninput Images {\n  creche: String\n  nursery: String\n  after_school: String\n  primary: String\n  junior_secondary: String\n  senior_secondary: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 26
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-18T16:44:08Z",
+    "updated_at": "2019-01-27T02:57:27Z",
+    "pushed_at": "2019-01-27T02:57:29Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

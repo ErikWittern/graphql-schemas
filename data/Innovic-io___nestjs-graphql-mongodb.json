@@ -1,0 +1,42 @@
+{
+  "repo_name": "nestjs-graphql-mongodb",
+  "repo_full_name": "innovic-io/nestjs-graphql-mongodb",
+  "repo_owner": "Innovic-io",
+  "repo_description": "GraphQL starter based on MongoDB and NestJS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "common.types.graphql",
+      "path": "src/modules/pets/common/common.types.graphql",
+      "sha": "8b235d120d514f03a3af2af80499b993c54e1889",
+      "url": "https://api.github.com/repositories/122478585/contents/src/modules/pets/common/common.types.graphql?ref=8ddd8508190414c0826b19988d674ac8fd52e320",
+      "git_url": "https://api.github.com/repositories/122478585/git/blobs/8b235d120d514f03a3af2af80499b993c54e1889",
+      "html_url": "https://github.com/Innovic-io/nestjs-graphql-mongodb/blob/8ddd8508190414c0826b19988d674ac8fd52e320/src/modules/pets/common/common.types.graphql",
+      "content": "scalar DateTime\n\nscalar Upload\n\ntype Query {\n  getOwnerById(_id: ID!): Owner\n  getOwners: [Owner]\n\n  getPetById(_id: ID!): Pet\n  getImage(id: ID!): String\n}\n\ntype Mutation {\n  createPet(name: String!, image: String, species: PetSpeciesInput!, age: Int, owner: String!, dateAdopted: DateTime): Owner\n  updatePet(_id: ID!, name: String, species: PetSpeciesInput, age: Int ): Owner\n\n  updatePetsOwner(petID: ID!, owner: ID!): Owner\n  deletePet(_id: ID!): Pet\n\n  createOwner(first_name: String!, last_name: String!, mobile: String, email: String ): Owner\n  updateOwner(first_name: String, last_name: String, mobile: String, email: String, _id: ID!): Owner\n  deleteOwner(_id: ID!): Owner\n\n  uploadProfilePicture(id: Int!, fileNames: [String!]!): String\n}\n\ninput PetSpeciesInput {\n  speciesName: String!\n  speciesFamily: String\n  speciesType: SpeciesTypeEnum!\n}\n\ntype PetSpecies {\n  speciesName: String!\n  speciesFamily: String\n  speciesType: SpeciesTypeEnum\n}\n\ntype Owner {\n  _id: ID!\n  first_name: String\n  last_name: String\n  mobile: String\n  email: String\n  pets: [Pet]\n}\n\ntype Pet {\n  _id: ID!\n  name: String\n  species: PetSpecies\n  age: Int\n  image: Image\n  dateAdopted: DateTime\n}\n\nenum SpeciesTypeEnum {\n  BIRD\n  MAMMAL\n  BUG\n  FISH\n}\n\ntype Image {\n  filename: String\n  contentType: String\n  encoding: String\n  Buffer: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-22T12:57:56Z",
+    "updated_at": "2018-08-23T17:57:17Z",
+    "pushed_at": "2018-04-05T12:14:48Z",
+    "issues": 0,
+    "watchers": 6,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

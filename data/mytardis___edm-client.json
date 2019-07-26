@@ -1,0 +1,41 @@
+{
+  "repo_name": "edm-client",
+  "repo_full_name": "mytardis/edm-client",
+  "repo_owner": "mytardis",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "fb208b8c902de42e2de903e4507a49f9475dad0f",
+      "url": "https://api.github.com/repositories/68986357/contents/schema.graphql?ref=2bd067d92b5d5cb0b21d99301c043087c0e7c53c",
+      "git_url": "https://api.github.com/repositories/68986357/git/blobs/fb208b8c902de42e2de903e4507a49f9475dad0f",
+      "html_url": "https://github.com/mytardis/edm-client/blob/2bd067d92b5d5cb0b21d99301c043087c0e7c53c/schema.graphql",
+      "content": "schema {\n  query: RootQueryType\n}\n\ntype Client implements Node {\n  facility: Facility\n  id: ID!\n  ipAddress: String!\n  nickname: String!\n  uuid: String!\n}\n\ntype ClientConnection {\n  edges: [ClientEdge]\n  pageInfo: PageInfo!\n}\n\ntype ClientEdge {\n  cursor: String!\n  node: Client\n}\n\ntype Facility implements Node {\n  id: ID!\n  instrumentGroups(after: String, before: String, first: Int, last: Int): InstrumentGroupConnection\n  name: String!\n}\n\ntype Group implements Node {\n  children(after: String, before: String, first: Int, last: Int): GroupConnection\n  id: ID!\n  members(after: String, before: String, first: Int, last: Int): UserConnection\n  name: String!\n  parent: Group\n}\n\ntype GroupConnection {\n  edges: [GroupEdge]\n  pageInfo: PageInfo!\n}\n\ntype GroupEdge {\n  cursor: String!\n  node: Group\n}\n\ntype InstrumentGroup implements Node {\n  clients(after: String, before: String, first: Int, last: Int): ClientConnection\n  configurationBlob: String\n  description: String\n  facility: Facility\n  id: ID!\n  name: String!\n}\n\ntype InstrumentGroupConnection {\n  edges: [InstrumentGroupEdge]\n  pageInfo: PageInfo!\n}\n\ntype InstrumentGroupEdge {\n  cursor: String!\n  node: InstrumentGroup\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  endCursor: String\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n}\n\ntype RootQueryType {\n  clients(after: String, before: String, first: Int, last: Int): ClientConnection\n  groups(after: String, before: String, first: Int, last: Int): GroupConnection\n  instrumentGroups(after: String, before: String, first: Int, last: Int): InstrumentGroupConnection\n  node(id: ID!): Node\n  users(after: String, before: String, first: Int, last: Int): UserConnection\n}\n\ntype User implements Node {\n  email: String!\n  groups(after: String, before: String, first: Int, last: Int): GroupConnection\n  groupsFlat(after: String, before: String, first: Int, last: Int): GroupConnection\n  id: ID!\n  name: String!\n}\n\ntype UserConnection {\n  edges: [UserEdge]\n  pageInfo: PageInfo!\n}\n\ntype UserEdge {\n  cursor: String!\n  node: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": true,
+      "numDefinitions": 17
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-09-23T03:44:40Z",
+    "updated_at": "2018-02-22T01:44:46Z",
+    "pushed_at": "2017-07-18T04:41:27Z",
+    "issues": 0,
+    "watchers": 4,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "bsd-3-clause",
+    "pull_requests": 8,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

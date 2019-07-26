@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-nodejs",
+  "repo_full_name": "alessandrodeste/graphql-nodejs",
+  "repo_owner": "alessandrodeste",
+  "repo_description": "simple graphql example with node js using express and apollo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "dd9a3c750a134d3a7294561b8b854a3ad5fdd21c",
+      "url": "https://api.github.com/repositories/136638317/contents/schema.graphql?ref=75f2c7cbf7c2a788f9db278864b06dc7d68fe1b6",
+      "git_url": "https://api.github.com/repositories/136638317/git/blobs/dd9a3c750a134d3a7294561b8b854a3ad5fdd21c",
+      "html_url": "https://github.com/alessandrodeste/graphql-nodejs/blob/75f2c7cbf7c2a788f9db278864b06dc7d68fe1b6/schema.graphql",
+      "content": "type Book {\n  id: String!,\n  title: String!,\n  author: Author\n}\n\ntype Author {\n  id: String!,\n  name: String,\n  age: Int,\n  books: [Book]\n}\n\ntype Query {\n  books: [Book],\n  authors: [Author]\n}\n\ntype Mutation {\n  addAuthor (\n    name: String,\n    age: Int\n  ): Author\n}\n\nschema {\n  query: Query,\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-08T15:46:15Z",
+    "updated_at": "2018-06-11T11:11:38Z",
+    "pushed_at": "2018-06-11T11:11:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

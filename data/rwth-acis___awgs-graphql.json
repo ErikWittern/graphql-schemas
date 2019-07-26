@@ -1,0 +1,41 @@
+{
+  "repo_name": "awgs-graphql",
+  "repo_full_name": "rwth-acis/awgs-graphql",
+  "repo_owner": "rwth-acis",
+  "repo_description": "A lightweight but highly experimental GraphQL Web service for the AWGS database.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "96a894e9898f64ea0d515fd89635c30cf275c4dd",
+      "url": "https://api.github.com/repositories/167318145/contents/src/schema.graphql?ref=55283232153527535683d1062c6d585d145db5d7",
+      "git_url": "https://api.github.com/repositories/167318145/git/blobs/96a894e9898f64ea0d515fd89635c30cf275c4dd",
+      "html_url": "https://github.com/rwth-acis/awgs-graphql/blob/55283232153527535683d1062c6d585d145db5d7/src/schema.graphql",
+      "content": "type Query {\n  me: User\n  items: [Item]\n  itemtypes: [ItemType]\n}\n\ntype Mutation {\n  createItem(name: String!, description: String!, typeString: String!, url: String!): Item!\n}\n\ntype Item {\n  id: String!\n  name: String\n  description: String\n  url: String\n  type: ItemType\n  owner: String\n  lastupdate: String\n}\n\ntype ItemType {\n  id: Int!\n  name: String\n  description: String\n  items: [Item]\n}\n\ntype User {\n  id: Int!\n  name: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-24T06:50:07Z",
+    "updated_at": "2019-01-24T06:56:12Z",
+    "pushed_at": "2019-01-24T06:56:10Z",
+    "issues": 0,
+    "watchers": 6,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

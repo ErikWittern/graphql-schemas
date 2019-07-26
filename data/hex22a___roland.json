@@ -1,0 +1,42 @@
+{
+  "repo_name": "roland",
+  "repo_full_name": "hex22a/roland",
+  "repo_owner": "hex22a",
+  "repo_description": "Simple webapp to build and send e-mails",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "c99bd62058d7bb900a84eb823b34cfcbd3cec1c7",
+      "url": "https://api.github.com/repositories/73649987/contents/data/schema.graphql?ref=79f5212939f8be73f71564ebe758d9f950fffd3a",
+      "git_url": "https://api.github.com/repositories/73649987/git/blobs/c99bd62058d7bb900a84eb823b34cfcbd3cec1c7",
+      "html_url": "https://github.com/hex22a/roland/blob/79f5212939f8be73f71564ebe758d9f950fffd3a/data/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutation\n}\n\ninput AddSiteInput {\n  name: String!\n  destinations: String\n  url: String!\n  SMTPLogin: String\n  SMTPPassword: String\n  clientMutationId: String\n}\n\ntype AddSitePayload {\n  siteEdge: SiteEdge\n  viewer: Viewer\n  clientMutationId: String\n}\n\ntype Mutation {\n  addSite(input: AddSiteInput!): AddSitePayload\n  removeSite(input: RemoveSiteInput!): RemoveSitePayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ninput RemoveSiteInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype RemoveSitePayload {\n  deletedId: ID\n  viewer: Viewer\n  clientMutationId: String\n}\n\ntype Root {\n  viewer(\n    # pass jwt if exists\n    jwt: String\n  ): Viewer\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\n# A site object\ntype Site implements Node {\n  # The ID of an object\n  id: ID!\n\n  # id of site in db\n  siteId: String\n\n  # Site name\n  name: String\n  destinations: [String]\n  owners: [String]\n  url: String\n  SMTPLogin: String\n  JWT: String\n}\n\n# A connection to a list of items.\ntype SiteConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [SiteEdge]\n}\n\n# An edge in a connection.\ntype SiteEdge {\n  # The item at the end of the edge\n  node: Site\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Viewer implements Node {\n  # The ID of an object\n  id: ID!\n\n  # User login (if presented)\n  login: String\n  sites(after: String, first: Int, before: String, last: Int): SiteConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-11-13T23:32:30Z",
+    "updated_at": "2017-02-13T15:07:38Z",
+    "pushed_at": "2017-03-08T13:02:09Z",
+    "issues": 11,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

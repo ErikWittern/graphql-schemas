@@ -1,0 +1,42 @@
+{
+  "repo_name": "apollo-fullstack-starter",
+  "repo_full_name": "akornato/apollo-fullstack-starter",
+  "repo_owner": "akornato",
+  "repo_description": "Apollo fullstack starter.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/src/schema.graphql",
+      "sha": "2b4fef241ee1bf46cf114a2c3fc888af6c47c920",
+      "url": "https://api.github.com/repositories/158862141/contents/backend/src/schema.graphql?ref=af0ae17fa27a51d6053c860faea987c4227482c5",
+      "git_url": "https://api.github.com/repositories/158862141/git/blobs/2b4fef241ee1bf46cf114a2c3fc888af6c47c920",
+      "html_url": "https://github.com/akornato/apollo-fullstack-starter/blob/af0ae17fa27a51d6053c860faea987c4227482c5/backend/src/schema.graphql",
+      "content": "scalar JSON\n\ntype Email {\n  email: String!\n}\n\ntype Token {\n  token: String!\n}\n\ntype Entity {\n  entityName: String\n  VATIN: String\n  statisticalNumber: String\n  courtRegisterNumber: String\n  street: String\n  postalCode: String\n  city: String\n  country: String\n  www: String\n  email: String\n}\n\ntype User {\n  id: String!\n\n  firstName: String!\n  lastName: String!\n  email: String!\n  hash: String!\n\n  roles: [String!]!\n\n  entity: Entity!\n\n  code: String\n\n  jobTitle: String\n\n  agreedToMarketingCommunication: Boolean\n  agreedToPersonalDataProcessing: Boolean\n}\n\ntype Client {\n  id: String!\n\n  owner: String!\n\n  entity: Entity!\n\n  entityType: String\n  entitySubtype: String\n  employeeCount: Int\n  contractorCount: Int\n}\n\ntype Query {\n  meUser: User!\n  myClientList: [Client!]!\n  myClient(id: String!): Client!\n}\n\ntype Mutation {\n  signup(firstName: String!, lastName: String!, email: String!, password: String!): Token!\n  login(email: String!, password: String!): Token!\n  requestCode(email: String!, from: String!, subject: String!): Email!\n  setPassword(email: String!, code: String!, password: String!): Token!\n\n  updateMe(data: JSON!): User!\n\n  addMyClient(entityName: String!): Client!\n  updateMyClient(id: String!, data: JSON!): Client!\n  deleteMyClient(id: String!): Client!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-23T17:39:10Z",
+    "updated_at": "2018-12-16T14:43:15Z",
+    "pushed_at": "2018-12-01T18:25:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "ikimasho",
+  "repo_full_name": "jjw5234/ikimasho",
+  "repo_owner": "jjw5234",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "ba1163d517a570416a4774dcbed3ac8264f0600c",
+      "url": "https://api.github.com/repositories/166608386/contents/server/src/schema.graphql?ref=9285e9a1eac3f12ef9b89c7c81fdfa47eabe900a",
+      "git_url": "https://api.github.com/repositories/166608386/git/blobs/ba1163d517a570416a4774dcbed3ac8264f0600c",
+      "html_url": "https://github.com/jjw5234/ikimasho/blob/9285e9a1eac3f12ef9b89c7c81fdfa47eabe900a/server/src/schema.graphql",
+      "content": "type Query {\n  events(orderBy: EventOrderByInput): [Event!]!\n  itinerary(where: ItineraryWhereUniqueInput!): Itinerary\n  itineraries: [Itinerary]\n  eventsByItinerary(where: ItineraryWhereUniqueInput!): [Event!]!\n}\n\ntype Mutation {\n  createItinerary(data: ItineraryCreateInput!): Itinerary!\n  deleteItinerary(where: ItineraryWhereUniqueInput!): Itinerary\n  createEvent(data: EventCreateInput!): Event!\n  updateEvent(data: EventUpdateInput!, where: EventWhereUniqueInput!): Event\n  deleteEvent(where: EventWhereUniqueInput!): Event\n}\n\nenum EventOrderByInput {\n  day_DESC\n}\n\ntype Event {\n  id: ID!\n  title: String!\n  day: Float\n  neighborhood: String!\n  description: String\n  cost: Float\n  updatedAt: DateTime!\n  createdAt: DateTime!\n  itinerary: Itinerary\n}\n\ninput EventCreateInput {\n  title: String!\n  day: Float\n  neighborhood: String!\n  description: String\n  cost: Float\n  itinerary: ItineraryCreateOneWithoutEventsInput\n}\n\ninput ItineraryCreateOneWithoutEventsInput {\n  connect: ItineraryWhereUniqueInput\n}\n\ninput EventWhereUniqueInput {\n  id: ID\n}\n\ninput ItineraryWhereUniqueInput {\n  id: ID\n}\n\ninput ItineraryCreateInput {\n  title: String!\n  days: Float!\n  events: EventCreateManyInput\n}\n\ninput EventCreateManyInput {\n  create: [EventCreateInput!]\n  connect: [EventWhereUniqueInput!]\n}\n\ntype Itinerary {\n  id: ID!\n  title: String!\n  days: Float!\n  updatedAt: DateTime!\n  createdAt: DateTime!\n  events: [Event!]!\n}\n\ninput EventUpdateInput {\n  title: String\n  day: Float\n  neighborhood: String\n  description: String\n  cost: Float\n  itinerary: ItineraryUpdateOneWithoutEventsInput\n}\n\ninput ItineraryUpdateOneWithoutEventsInput {\n  connect: ItineraryWhereUniqueInput\n}\n\nscalar DateTime\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-20T00:36:49Z",
+    "updated_at": "2019-03-14T00:26:23Z",
+    "pushed_at": "2019-02-11T00:44:05Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

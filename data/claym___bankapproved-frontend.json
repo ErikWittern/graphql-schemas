@@ -1,0 +1,39 @@
+{
+  "repo_name": "bankapproved-frontend",
+  "repo_full_name": "claym/bankapproved-frontend",
+  "repo_owner": "claym",
+  "repo_description": "BofA / AWS Code Week 2018 Project - Frontend",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "aa7ede770f27532743ec6b933b56414b0fcd68fe",
+      "url": "https://api.github.com/repositories/160978304/contents/schema.graphql?ref=fe6c06b01539e3151684804994295764d144026d",
+      "git_url": "https://api.github.com/repositories/160978304/git/blobs/aa7ede770f27532743ec6b933b56414b0fcd68fe",
+      "html_url": "https://github.com/claym/bankapproved-frontend/blob/fe6c06b01539e3151684804994295764d144026d/schema.graphql",
+      "content": "# source: http://localhost:4000/\n# timestamp: Wed Dec 12 2018 15:20:45 GMT-0500 (Eastern Standard Time)\n\ntype Application {\n  id: ID!\n  ait: Int!\n  name: String!\n  description: String\n  owner: User\n  parent: Application\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n\nscalar DateTime\n\ntype Mutation {\n  signup(email: String!, password: String!, name: String!): AuthPayload!\n  login(email: String!, password: String!): AuthPayload!\n  createDraft(title: String!, content: String!): Post!\n  publish(id: ID!): Post!\n  deletePost(id: ID!): Post!\n  createRequest(applicationId: String!, name: String!, description: String!, date: DateTime): Request!\n}\n\ntype Post {\n  id: ID!\n  published: Boolean!\n  title: String!\n  content: String!\n  author: User!\n}\n\ntype Query {\n  feed: [Post!]!\n  drafts: [Post!]!\n  post(id: ID!): Post\n  me: User\n  applications: [Application]\n}\n\ntype Request {\n  id: ID!\n  application: Application!\n  name: String!\n  description: String!\n  date: DateTime!\n}\n\ntype Subscription {\n  feedSubscription: Post\n}\n\ntype User {\n  id: ID!\n  email: String!\n  name: String!\n  posts: [Post!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-08T21:02:37Z",
+    "updated_at": "2018-12-12T20:21:54Z",
+    "pushed_at": "2018-12-12T20:21:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

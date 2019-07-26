@@ -1,0 +1,42 @@
+{
+  "repo_name": "odata-qraphql",
+  "repo_full_name": "krcourville/odata-qraphql",
+  "repo_owner": "krcourville",
+  "repo_description": "An OData-GraphQL Implementation Comparison",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gql-facade/schema/schema.graphql",
+      "sha": "135a4f6754e55471d4f5122745b162cf3efeb4b7",
+      "url": "https://api.github.com/repositories/146885679/contents/gql-facade/schema/schema.graphql?ref=21af1c9bbe71f745caeedf614ca4d1e1de0a9f22",
+      "git_url": "https://api.github.com/repositories/146885679/git/blobs/135a4f6754e55471d4f5122745b162cf3efeb4b7",
+      "html_url": "https://github.com/krcourville/odata-qraphql/blob/21af1c9bbe71f745caeedf614ca4d1e1de0a9f22/gql-facade/schema/schema.graphql",
+      "content": "\"Flight System Root Query\"\ntype Query {\n\t\"All flights\"\n\tflights: [Flight!]!\n}\n\ntype Mutation {\n\treserveFlight(\n\t\tflightNo: String!,\n\t\tuserId: String!\n\t): FlightReservation!\n}\n\nscalar Date\n\ntype FlightConnection {\n\tairportCode: String!\n\ttime: Date!\n}\n\ntype FlightReservation {\n\tid: String!\n\tuserId: String!\n\tflightNo: String!\n}\n\ntype FlightStatus {\n\tflightNo: ID!,\n\tid: FlightStatusId!,\n\tname: String!\n}\n\nenum FlightStatusId {\n\tON_TIME,\n\tDELAYED,\n\tUNKNOWN\n}\n\ntype Flight {\n\tflightNo: ID!\n\tstart: FlightConnection!\n\tend: FlightConnection!\n\tstatusId : FlightStatusId!\n\tstatus: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-31T11:53:37Z",
+    "updated_at": "2018-09-25T12:52:12Z",
+    "pushed_at": "2018-09-25T12:52:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

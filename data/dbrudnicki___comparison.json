@@ -1,0 +1,42 @@
+{
+  "repo_name": "comparison",
+  "repo_full_name": "dbrudnicki/comparison",
+  "repo_owner": "dbrudnicki",
+  "repo_description": "Comparing data fetching with resolver dataloaders vs joins.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "src/typeDefs.graphql",
+      "sha": "e79bcf25acd04d18ef70be9973ae2e5e6e4c0b60",
+      "url": "https://api.github.com/repositories/167851558/contents/src/typeDefs.graphql?ref=1806ef4a2ea904c94a32ea0e93600004916045a2",
+      "git_url": "https://api.github.com/repositories/167851558/git/blobs/e79bcf25acd04d18ef70be9973ae2e5e6e4c0b60",
+      "html_url": "https://github.com/dbrudnicki/comparison/blob/1806ef4a2ea904c94a32ea0e93600004916045a2/src/typeDefs.graphql",
+      "content": "type TimeSegment {\n  id: Int!\n  displayName: String\n  duration: Int\n  sequence: Int\n}\n\ntype Task {\n  id: Int!\n  name: String!\n  timeSegments: [TimeSegment!]!\n  TimeSegments: [TimeSegment!]!\n}\n\ntype Job {\n  id: Int!\n  name: String!\n  buildPart: String\n  tasks: [Task!]!\n  Tasks: [Task!]!\n}\n\ntype Query {\n  dataLoaderJobs: [Job!]!\n  joinedJobs: [Job!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-27T19:52:26Z",
+    "updated_at": "2019-04-11T20:26:19Z",
+    "pushed_at": "2019-04-11T20:26:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

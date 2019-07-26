@@ -1,0 +1,39 @@
+{
+  "repo_name": "movieql",
+  "repo_full_name": "shirong88/movieql",
+  "repo_owner": "shirong88",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "959ae1cb59d4de06bcfd871e9b59d40661bc76bd",
+      "url": "https://api.github.com/repositories/148411464/contents/graphql/schema.graphql?ref=a1d9effd014ef884f6819c2e7942a20ec69bb401",
+      "git_url": "https://api.github.com/repositories/148411464/git/blobs/959ae1cb59d4de06bcfd871e9b59d40661bc76bd",
+      "html_url": "https://github.com/shirong88/movieql/blob/a1d9effd014ef884f6819c2e7942a20ec69bb401/graphql/schema.graphql",
+      "content": "type Movie {\n  id: Int!\n  title: String!\n  rating: Float!\n  summary: String!\n  language: String!\n  medium_cover_image: String!\n}\n\ntype Query {\n  movies(limit: Int, rating: Float): [Movie]!\n  movie(id: Int!): Movie\n  suggestions(id: Int!): [Movie]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-12T02:47:35Z",
+    "updated_at": "2018-09-13T06:42:45Z",
+    "pushed_at": "2018-09-13T06:42:43Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

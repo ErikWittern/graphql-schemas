@@ -1,0 +1,67 @@
+{
+  "repo_name": "reason-graphql-docker",
+  "repo_full_name": "ecliptic/reason-graphql-docker",
+  "repo_owner": "ecliptic",
+  "repo_description": "A demo deployment of ReasonML and Apollo GraphQL using Docker",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "queries.graphql",
+      "path": "graphql/queries.graphql",
+      "sha": "4c62037b61e0a9708b4b141327e87e6a17877820",
+      "url": "https://api.github.com/repositories/113402567/contents/graphql/queries.graphql?ref=33d6a0b6a57d97edb066e29259ac2798fb5d4b66",
+      "git_url": "https://api.github.com/repositories/113402567/git/blobs/4c62037b61e0a9708b4b141327e87e6a17877820",
+      "html_url": "https://github.com/ecliptic/reason-graphql-docker/blob/33d6a0b6a57d97edb066e29259ac2798fb5d4b66/graphql/queries.graphql",
+      "content": "type Query {\n  # Retrieve all PaperClips\n  allPaperClips(filter: PaperClipInput): [PaperClip]\n\n  # Retrieve an individual PaperClip\n  paperClip(id: ID!): PaperClip\n}\n\ntype EmptyResult {\n  success: Boolean\n}\n\ntype Mutation {\n  # Add a new PaperClip\n  addPaperClip(paperClip: PaperClipInput!): PaperClip\n\n  # Update an existing PaperClip\n  updatePaperClip(id: ID!, paperClip: PaperClipInput!): PaperClip\n\n  # Remove an existing PaperClip\n  removePaperClip(id: ID!): EmptyResult\n}\n\ninput PaperClipInput {\n  size: Size!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ecliptic/reason-graphql-docker/blob/33d6a0b6a57d97edb066e29259ac2798fb5d4b66/graphql/queries.graphql:\ntype Query {\n  # Retrieve all PaperClips\n  allPaperClips(filter: PaperClipInput): [PaperClip]\n\n  # Retrieve an individual PaperClip\n  paperClip(id: ID!): PaperClip\n}\n\ntype EmptyResult {\n  success: Boolean\n}\n\ntype Mutation {\n  # Add a new PaperClip\n  addPaperClip(paperClip: PaperClipInput!): PaperClip\n\n  # Update an existing PaperClip\n  updatePaperClip(id: ID!, paperClip: PaperClipInput!): PaperClip\n\n  # Remove an existing PaperClip\n  removePaperClip(id: ID!): EmptyResult\n}\n\ninput PaperClipInput {\n  size: Size!\n}\n\n# https://github.com/ecliptic/reason-graphql-docker/blob/33d6a0b6a57d97edb066e29259ac2798fb5d4b66/graphql/schema.graphql:\nscalar DateTime\n\nenum Size {\n  SMALL\n  MEDIUM\n  LARGE\n}\n\n# A delightful paper clip model\ntype PaperClip {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  size: Size!\n}\n",
+        "mergedPaths": [
+          "graphql/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Size",
+          "PaperClip"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "9988ec6bc8b23c6f56a5485c27e2f18f00c661a5",
+      "url": "https://api.github.com/repositories/113402567/contents/graphql/schema.graphql?ref=33d6a0b6a57d97edb066e29259ac2798fb5d4b66",
+      "git_url": "https://api.github.com/repositories/113402567/git/blobs/9988ec6bc8b23c6f56a5485c27e2f18f00c661a5",
+      "html_url": "https://github.com/ecliptic/reason-graphql-docker/blob/33d6a0b6a57d97edb066e29259ac2798fb5d4b66/graphql/schema.graphql",
+      "content": "scalar DateTime\n\nenum Size {\n  SMALL\n  MEDIUM\n  LARGE\n}\n\n# A delightful paper clip model\ntype PaperClip {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  size: Size!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-07T04:25:10Z",
+    "updated_at": "2019-05-24T09:57:50Z",
+    "pushed_at": "2018-01-23T18:44:09Z",
+    "issues": 2,
+    "watchers": 5,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "bsd-2-clause",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 40
+  }
+}

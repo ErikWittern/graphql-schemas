@@ -1,0 +1,39 @@
+{
+  "repo_name": "kinko",
+  "repo_full_name": "noeldemartin/kinko",
+  "repo_owner": "NoelDeMartin",
+  "repo_description": "Autonomous Data Server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema_with_query.graphql",
+      "path": "tests/stubs/schema_with_query.graphql",
+      "sha": "c6231a451f9c90331d77b18a0c5c0394aafb8e60",
+      "url": "https://api.github.com/repositories/134453426/contents/tests/stubs/schema_with_query.graphql?ref=033eb732de315bc15ad57fc1a3506b4a8ffc2165",
+      "git_url": "https://api.github.com/repositories/134453426/git/blobs/c6231a451f9c90331d77b18a0c5c0394aafb8e60",
+      "html_url": "https://github.com/NoelDeMartin/kinko/blob/033eb732de315bc15ad57fc1a3506b4a8ffc2165/tests/stubs/schema_with_query.graphql",
+      "content": "type Query {\n    foobar: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-22T17:46:21Z",
+    "updated_at": "2019-01-15T06:51:38Z",
+    "pushed_at": "2019-01-15T06:45:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

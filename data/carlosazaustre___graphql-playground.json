@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-playground",
+  "repo_full_name": "carlosazaustre/graphql-playground",
+  "repo_owner": "carlosazaustre",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "apollo-example/schema.graphql",
+      "sha": "9d8433578f1736565f0b3ed2fd2f5f28b69bc249",
+      "url": "https://api.github.com/repositories/163624396/contents/apollo-example/schema.graphql?ref=b7a378bfd3158bbeddcbb0ac1cdf9e64659fe124",
+      "git_url": "https://api.github.com/repositories/163624396/git/blobs/9d8433578f1736565f0b3ed2fd2f5f28b69bc249",
+      "html_url": "https://github.com/carlosazaustre/graphql-playground/blob/b7a378bfd3158bbeddcbb0ac1cdf9e64659fe124/apollo-example/schema.graphql",
+      "content": "type Query {\n  users(status: Status = ACTIVE): [User]\n}\n\ntype Mutation {\n  createUser(user: UserInput): User\n}\n\ninput UserInput {\n  name: String!\n  email: String!\n  age: Int\n  status: String\n}\n\ntype User {\n  name: String\n  email: String\n  age: Int\n  messages: [Message]\n  status: Status\n}\n\ntype Message {\n  text: String\n  author: User\n}\n\nenum Status {\n  ACTIVE\n  SUSPENDED\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-30T23:22:04Z",
+    "updated_at": "2019-01-04T09:36:54Z",
+    "pushed_at": "2019-01-04T09:36:53Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

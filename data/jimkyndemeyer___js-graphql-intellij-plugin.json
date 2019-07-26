@@ -1,0 +1,81 @@
+{
+  "repo_name": "js-graphql-intellij-plugin",
+  "repo_full_name": "jimkyndemeyer/js-graphql-intellij-plugin",
+  "repo_owner": "jimkyndemeyer",
+  "repo_description": "GraphQL language support for WebStorm, IntelliJ IDEA and other IDEs based on the IntelliJ Platform.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test-resources/testData/graphql/injection/schema.graphql",
+      "sha": "44dcbaab3c10bff8d85441d7d8877e037e49c0a4",
+      "url": "https://api.github.com/repositories/47924453/contents/test-resources/testData/graphql/injection/schema.graphql?ref=ad4d0625305c22bf2bc4e65070bc145fe2f70790",
+      "git_url": "https://api.github.com/repositories/47924453/git/blobs/44dcbaab3c10bff8d85441d7d8877e037e49c0a4",
+      "html_url": "https://github.com/jimkyndemeyer/js-graphql-intellij-plugin/blob/ad4d0625305c22bf2bc4e65070bc145fe2f70790/test-resources/testData/graphql/injection/schema.graphql",
+      "content": "scalar String\nscalar Boolean\n\ntype Query {\n    hello: String\n}\n\ntype Mutation {\n    login(email: String, pwd: String): Login\n}\n\ntype Login {\n    success: Boolean\n    message: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema-one.graphql",
+      "path": "test-resources/testData/graphql/graphql-config/schema-one/schema-one.graphql",
+      "sha": "9362d239e1a8a6eb63b3b8ddfe197c721c59ceda",
+      "url": "https://api.github.com/repositories/47924453/contents/test-resources/testData/graphql/graphql-config/schema-one/schema-one.graphql?ref=a34e36b9596dfab0cc7a4dd4e768892f82c28c63",
+      "git_url": "https://api.github.com/repositories/47924453/git/blobs/9362d239e1a8a6eb63b3b8ddfe197c721c59ceda",
+      "html_url": "https://github.com/jimkyndemeyer/js-graphql-intellij-plugin/blob/a34e36b9596dfab0cc7a4dd4e768892f82c28c63/test-resources/testData/graphql/graphql-config/schema-one/schema-one.graphql",
+      "content": "type Query {\n    fieldOne: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema-two.graphql",
+      "path": "test-resources/testData/graphql/graphql-config/schema-two/schema-two.graphql",
+      "sha": "608b939e9ddc36d37a0a352e32a86954b0f5d43e",
+      "url": "https://api.github.com/repositories/47924453/contents/test-resources/testData/graphql/graphql-config/schema-two/schema-two.graphql?ref=a34e36b9596dfab0cc7a4dd4e768892f82c28c63",
+      "git_url": "https://api.github.com/repositories/47924453/git/blobs/608b939e9ddc36d37a0a352e32a86954b0f5d43e",
+      "html_url": "https://github.com/jimkyndemeyer/js-graphql-intellij-plugin/blob/a34e36b9596dfab0cc7a4dd4e768892f82c28c63/test-resources/testData/graphql/graphql-config/schema-two/schema-two.graphql",
+      "content": "type Query {\n    fieldTwo: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema-excluded-two.graphql",
+      "path": "test-resources/testData/graphql/graphql-config/schema-two/schema-excluded-two.graphql",
+      "sha": "e085b09e4ef5bf07a1eda445700393b978982d99",
+      "url": "https://api.github.com/repositories/47924453/contents/test-resources/testData/graphql/graphql-config/schema-two/schema-excluded-two.graphql?ref=a34e36b9596dfab0cc7a4dd4e768892f82c28c63",
+      "git_url": "https://api.github.com/repositories/47924453/git/blobs/e085b09e4ef5bf07a1eda445700393b978982d99",
+      "html_url": "https://github.com/jimkyndemeyer/js-graphql-intellij-plugin/blob/a34e36b9596dfab0cc7a4dd4e768892f82c28c63/test-resources/testData/graphql/graphql-config/schema-two/schema-excluded-two.graphql",
+      "content": "type Query {\n    excludedTwo: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-12-13T15:22:27Z",
+    "updated_at": "2019-07-16T12:54:33Z",
+    "pushed_at": "2019-07-16T17:37:21Z",
+    "issues": 258,
+    "watchers": 21,
+    "fork_count": 69,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 11,
+    "releases": 45,
+    "stargazers": 496
+  }
+}

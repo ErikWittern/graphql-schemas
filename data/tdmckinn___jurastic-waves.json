@@ -1,0 +1,42 @@
+{
+  "repo_name": "jurastic-waves",
+  "repo_full_name": "tdmckinn/jurastic-waves",
+  "repo_owner": "tdmckinn",
+  "repo_description": "Jurassic Waves (app) Demos some reactjs ecosystem features",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "4c0c54bc99a60e07ffd1a6902089a1d787cd5124",
+      "url": "https://api.github.com/repositories/53088673/contents/server/data/schema.graphql?ref=08443c7d7cdaa2186efff5a571a9c0d8c0023358",
+      "git_url": "https://api.github.com/repositories/53088673/git/blobs/4c0c54bc99a60e07ffd1a6902089a1d787cd5124",
+      "html_url": "https://github.com/tdmckinn/jurastic-waves/blob/08443c7d7cdaa2186efff5a571a9c0d8c0023358/server/data/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ninput AddStarRatingInput {\n  id: ID!\n  stars: Int!\n  clientMutationId: String!\n}\n\ntype AddStarRatingPayload {\n  viewer: DinosaurList\n  clientMutationId: String!\n}\n\ntype Dinosaur {\n  id: ID!\n  name: String\n  shortDescription: String\n  longDescription: String\n  imageUrl: String\n  order: String\n  superorder: String\n  kingdom: String\n  phylum: String\n  genus: String\n  geologicPeriod: String\n  family: String\n  suborder: String\n  class: String\n  stars: Int\n}\n\ntype DinosaurConnection {\n  pageInfo: PageInfo!\n  edges: [DinosaurEdge]\n}\n\ntype DinosaurEdge {\n  node: Dinosaur\n  cursor: String!\n}\n\ntype DinosaurList implements Node {\n  id: ID!\n  dinosaurs(period: Int, kingdom: String, order: String, after: String, first: Int, before: String, last: Int): DinosaurConnection\n  totalNumberOfDinosaurs: Int\n}\n\ntype Mutation {\n  addStars(input: AddStarRatingInput!): AddStarRatingPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: DinosaurList\n  queryDinosaurList: [Dinosaur]\n  queryDinosaur(id: ID!): Dinosaur\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-03-03T22:24:08Z",
+    "updated_at": "2016-06-23T13:40:42Z",
+    "pushed_at": "2016-05-26T19:51:19Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

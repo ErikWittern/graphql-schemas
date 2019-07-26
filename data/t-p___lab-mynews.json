@@ -1,0 +1,39 @@
+{
+  "repo_name": "lab-mynews",
+  "repo_full_name": "t-p/lab-mynews",
+  "repo_owner": "t-p",
+  "repo_description": "AWS cloudformation stack for a AppSync backend that acts as proxy to a newsfeed",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "c2dde3e4689c67101eec413206757018d9e576b6",
+      "url": "https://api.github.com/repositories/125655011/contents/schema.graphql?ref=35b4f3fd7124d61211bc289bb5cebb4a1198161c",
+      "git_url": "https://api.github.com/repositories/125655011/git/blobs/c2dde3e4689c67101eec413206757018d9e576b6",
+      "html_url": "https://github.com/t-p/lab-mynews/blob/35b4f3fd7124d61211bc289bb5cebb4a1198161c/schema.graphql",
+      "content": "type Post {\n\turl: String\n\ttitle: String\n\tdate: String\n}\n\ntype Query {\n\tfeed: [Post]\n}\n\nschema {\n\tquery: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-17T17:51:43Z",
+    "updated_at": "2018-09-08T10:21:46Z",
+    "pushed_at": "2018-09-08T10:21:45Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

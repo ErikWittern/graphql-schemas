@@ -1,0 +1,41 @@
+{
+  "repo_name": "node-graphql-partials",
+  "repo_full_name": "sydsvenskan/node-graphql-partials",
+  "repo_owner": "Sydsvenskan",
+  "repo_description": "Experimental transformer implementing support for partials in GraphQL Schemas",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "without-partials.graphql",
+      "path": "examples/without-partials.graphql",
+      "sha": "b15818a244fa502ccd383e6148cab9573a494204",
+      "url": "https://api.github.com/repositories/97609300/contents/examples/without-partials.graphql?ref=06966f1604b94b7697f3e2dc1c6bc61f02ba0c2b",
+      "git_url": "https://api.github.com/repositories/97609300/git/blobs/b15818a244fa502ccd383e6148cab9573a494204",
+      "html_url": "https://github.com/Sydsvenskan/node-graphql-partials/blob/06966f1604b94b7697f3e2dc1c6bc61f02ba0c2b/examples/without-partials.graphql",
+      "content": "# WARNING: THIS OUTPUT HAS BEEN AUTOMATICALLY GENERATED\nschema {\n  query: Query\n}\n\ntype Query {\n  \"Fetch an individual document\"\n  document(\n    \"The UUID of the document\"\n    uuid: ID\n    \"The URL path that the document is exposed to on the public site\"\n    path: String\n  ): Document\n}\n\ninterface Document {\n  links(\n    rel: String\n    type: String\n  ): [Link]\n\n  uuid: ID!\n\n  \"The document type, such as x-im/article\"\n  type: String\n  \"If specified, then a list of the products to which this document's availability is limited\"\n  products: [String]\n  \"The human readable name of the document, often used publicly to identify the document\"\n  title: String\n\n  \"The specific path on the web page where this document is publicly available\"\n  path: String\n\n  \"A single metadata block\"\n  metaBlock(\n    \"The specific metadata block type to get\"\n    type: String\n  ): MetadataBlock\n}\n\ntype AuthorDocument implements Document {\n  links(\n    rel: String\n    type: String\n  ): [Link]\n\n  uuid: ID!\n\n  \"The document type, such as x-im/article\"\n  type: String\n  \"If specified, then a list of the products to which this document's availability is limited\"\n  products: [String]\n  \"The human readable name of the document, often used publicly to identify the document\"\n  title: String\n\n  \"The specific path on the web page where this document is publicly available\"\n  path: String\n\n  \"A single metadata block\"\n  metaBlock(\n    \"The specific metadata block type to get\"\n    type: String\n  ): MetadataBlock\n}\n\ntype SubjectDocument implements Document {\n  links(\n    rel: String\n    type: String\n  ): [Link]\n\n  uuid: ID!\n\n  \"The document type, such as x-im/article\"\n  type: String\n  \"If specified, then a list of the products to which this document's availability is limited\"\n  products: [String]\n  \"The human readable name of the document, often used publicly to identify the document\"\n  title: String\n\n  \"The specific path on the web page where this document is publicly available\"\n  path: String\n\n  \"A single metadata block\"\n  metaBlock(\n    \"The specific metadata block type to get\"\n    type: String\n  ): MetadataBlock\n}\n\ntype ArticleDocument implements Document {\n  links(\n    rel: String\n    type: String\n  ): [Link]\n\n  uuid: ID!\n\n  \"The document type, such as x-im/article\"\n  type: String\n  \"If specified, then a list of the products to which this document's availability is limited\"\n  products: [String]\n  \"The human readable name of the document, often used publicly to identify the document\"\n  title: String\n\n  \"The specific path on the web page where this document is publicly available\"\n  path: String\n\n  \"A single metadata block\"\n  metaBlock(\n    \"The specific metadata block type to get\"\n    type: String\n  ): MetadataBlock\n}\n\ninterface Block {\n  links(\n    rel: String\n    type: String\n  ): [Link]\n\n  uuid: ID!\n  document: Document\n}\n\ntype MetadataBlock implements Block {\n  links(\n    rel: String\n    type: String\n  ): [Link]\n\n  uuid: ID!\n  document: Document\n}\n\n\"A reference to another document\"\ntype Link implements Block {\n  links(\n    rel: String\n    type: String\n  ): [Link]\n\n  uuid: ID!\n  document: Document\n\n  rel: String\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-18T14:38:01Z",
+    "updated_at": "2018-11-27T10:31:12Z",
+    "pushed_at": "2018-11-27T10:31:10Z",
+    "issues": 0,
+    "watchers": 7,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

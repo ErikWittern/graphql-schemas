@@ -1,0 +1,42 @@
+{
+  "repo_name": "animal-photos-server",
+  "repo_full_name": "claudiamatosa/animal-photos-server",
+  "repo_owner": "claudiamatosa",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema/schema.gql",
+      "sha": "ee21a965969fa95b0b058ec68e8defca612e3b2e",
+      "url": "https://api.github.com/repositories/126603667/contents/src/schema/schema.gql?ref=04246f1cdd4d1807ab973d7430b02600d220c2b7",
+      "git_url": "https://api.github.com/repositories/126603667/git/blobs/ee21a965969fa95b0b058ec68e8defca612e3b2e",
+      "html_url": "https://github.com/claudiamatosa/animal-photos-server/blob/04246f1cdd4d1807ab973d7430b02600d220c2b7/src/schema/schema.gql",
+      "content": "scalar Upload\n\ninput PhotoUpload {\n  photo: Upload!\n}\n\ntype Photo {\n  id: String!\n  src: String!\n  description: String\n  tags: [String]\n}\n\ntype Query {\n  photo(id: String!): Photo!\n  photos: [Photo!]!\n}\n\ntype Mutation {\n  addPhoto(data: PhotoUpload!): Photo!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-24T13:49:04Z",
+    "updated_at": "2018-06-10T11:54:06Z",
+    "pushed_at": "2018-06-10T11:54:04Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

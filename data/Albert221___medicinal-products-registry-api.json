@@ -1,0 +1,42 @@
+{
+  "repo_name": "medicinal-products-registry-api",
+  "repo_full_name": "albert221/medicinal-products-registry-api",
+  "repo_owner": "Albert221",
+  "repo_description": "Server exposing an API to dane.gov.pl's Registry of Medicinal Products.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "e11822d2c5039e9e29b41bb1acf8f9a3031a38bb",
+      "url": "https://api.github.com/repositories/151925207/contents/schema.graphql?ref=c221f643c2974bf5c9276b73758b9e300cac1c97",
+      "git_url": "https://api.github.com/repositories/151925207/git/blobs/e11822d2c5039e9e29b41bb1acf8f9a3031a38bb",
+      "html_url": "https://github.com/Albert221/medicinal-products-registry-api/blob/c221f643c2974bf5c9276b73758b9e300cac1c97/schema.graphql",
+      "content": "schema {\n    query: Query\n}\n\ntype Query {\n    product(ean: String!): Product\n}\n\ntype Product {\n    name: String!\n    commonName: String\n    type: String!\n    strength: String!\n    form: String!\n    responsibleEntity: String!\n    activeSubstances: [String!]!\n    packages: [Package!]!\n}\n\ntype Package {\n    ean: String!\n    size: Int!\n    sizeUnit: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-07T09:25:54Z",
+    "updated_at": "2019-04-12T12:37:28Z",
+    "pushed_at": "2018-10-10T11:59:02Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 1,
+    "stargazers": 11
+  }
+}

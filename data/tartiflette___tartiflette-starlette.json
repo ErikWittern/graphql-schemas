@@ -1,0 +1,39 @@
+{
+  "repo_name": "tartiflette-starlette",
+  "repo_full_name": "tartiflette/tartiflette-starlette",
+  "repo_owner": "tartiflette",
+  "repo_description": "ASGI adapter for the Tartiflette asynchronous GraphQL engine powered by Starlette",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "tests/sdl/Query.graphql",
+      "sha": "7810c3970695f4576b7418c832766e2960d2a6b5",
+      "url": "https://api.github.com/repositories/182316472/contents/tests/sdl/Query.graphql?ref=302269a582702d3de2441865d83843895123d642",
+      "git_url": "https://api.github.com/repositories/182316472/git/blobs/7810c3970695f4576b7418c832766e2960d2a6b5",
+      "html_url": "https://github.com/tartiflette/tartiflette-starlette/blob/302269a582702d3de2441865d83843895123d642/tests/sdl/Query.graphql",
+      "content": "type Query {\n  hello(name: String): String\n  whoami: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-19T19:38:45Z",
+    "updated_at": "2019-07-16T19:07:02Z",
+    "pushed_at": "2019-07-16T19:07:07Z",
+    "issues": 22,
+    "watchers": 6,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 20,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 16,
+    "releases": 0,
+    "stargazers": 29
+  }
+}

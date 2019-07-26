@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-experiments-relay",
+  "repo_full_name": "typical000/graphql-experiments-relay",
+  "repo_owner": "typical000",
+  "repo_description": "GraphQL experiments with Relay Modern",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e89eb45d4ce1c05ac029df0304edecfbd40ada1f",
+      "url": "https://api.github.com/repositories/120769936/contents/src/schema.graphql?ref=9e88f9a34d7a8644263dc099aeae56f5930e63a6",
+      "git_url": "https://api.github.com/repositories/120769936/git/blobs/e89eb45d4ce1c05ac029df0304edecfbd40ada1f",
+      "html_url": "https://github.com/typical000/graphql-experiments-relay/blob/9e88f9a34d7a8644263dc099aeae56f5930e63a6/src/schema.graphql",
+      "content": "type AppData {\n  guest: Boolean!\n  user: User\n}\n\ntype User {\n  id: Int!\n  avatar: String\n  screenname: String\n  gender: Int\n  geo: Geo\n  actions: Actions\n}\n\ntype OffsetUsers {\n  users: [User]\n  limitReached: Boolean!\n}\n\ntype Geo {\n  city: String\n  country: String\n  lat: Float\n  lng: Float\n}\n\ntype Actions {\n  id: Int!\n  like: Like!\n  favorite: Favorite!\n}\n\ntype Like {\n  id: Int!\n  available: Boolean!\n  active: Boolean!\n}\n\ntype Favorite {\n  id: Int!\n  available: Boolean!\n  active: Boolean!\n}\n\ntype Query {\n  appData: AppData\n  users: [User]\n  user(id: Int!): User\n  geo(id: Int!): Geo\n  offsetUsers(offset: Int!, limit: Int!): OffsetUsers\n\n  actions(id: Int): Actions\n  like(id: Int): Like\n  favorite(id: Int): Favorite\n}\n\ntype Mutation {\n  logout: AppData\n  like(id: Int!): Like\n  favorite(id: Int!): Favorite\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-08T14:12:58Z",
+    "updated_at": "2018-02-10T10:55:55Z",
+    "pushed_at": "2018-02-10T10:55:51Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

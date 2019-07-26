@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-flow-relay-example",
+  "repo_full_name": "leondejong/react-flow-relay-example",
+  "repo_owner": "leondejong",
+  "repo_description": "React Flow Relay Example",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/app/schema.graphql",
+      "sha": "4bfd9a20251cfe2c5316fc97b67889434370c282",
+      "url": "https://api.github.com/repositories/119873846/contents/src/app/schema.graphql?ref=ee512d3a3e66f0ad2932e79bf853a732dc2cc428",
+      "git_url": "https://api.github.com/repositories/119873846/git/blobs/4bfd9a20251cfe2c5316fc97b67889434370c282",
+      "html_url": "https://github.com/leondejong/react-flow-relay-example/blob/ee512d3a3e66f0ad2932e79bf853a732dc2cc428/src/app/schema.graphql",
+      "content": "type Item {\n  id: ID!\n  listId: ID!\n  name: String\n  checked: Boolean\n}\n\ntype List {\n  id: ID!\n  name: String\n  items: [Item]\n}\n\ntype Query {\n  item(id: ID!): Item\n  list(id: ID!): List\n}\n\ntype Mutation {\n  createItem(listId: ID, name: String, checked: Boolean): Item\n  updateItem(id: ID!, listId: ID, name: String, checked: Boolean): Item\n  deleteItem(id: ID!): Item\n  createList(name: String): List\n  updateList(id: ID!, name: String): List\n  deleteList(id: ID!): List\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-01T18:08:31Z",
+    "updated_at": "2018-03-31T12:32:18Z",
+    "pushed_at": "2018-03-31T12:32:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

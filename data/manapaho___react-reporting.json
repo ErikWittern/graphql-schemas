@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-reporting",
+  "repo_full_name": "manapaho/react-reporting",
+  "repo_owner": "manapaho",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "cb09415dfdb311cbedf0431dc2356c996be99be7",
+      "url": "https://api.github.com/repositories/50632788/contents/data/schema.graphql?ref=828ac3d6546cd01e69dc1454f0910ffaa7d9ff93",
+      "git_url": "https://api.github.com/repositories/50632788/git/blobs/cb09415dfdb311cbedf0431dc2356c996be99be7",
+      "html_url": "https://github.com/manapaho/react-reporting/blob/828ac3d6546cd01e69dc1454f0910ffaa7d9ff93/data/schema.graphql",
+      "content": "type Chart implements Node {\n  id: ID!\n  name: String\n  description: String\n  chartColumns: [ChartColumn]\n}\n\ntype ChartColumn implements Node {\n  id: ID!\n  name: String\n  type: String\n  dataColumns: [DataColumn]\n}\n\ntype DataColumn implements Node {\n  id: ID!\n  key: String\n  name: String\n  type: String\n  aggregation: String\n}\n\ninput DataColumnInput {\n  key: String\n  name: String\n  type: String\n  aggregation: String\n}\n\ntype DataSource implements Node {\n  id: ID!\n  name: String\n  description: String\n  dataColumns: [DataColumn]\n  data(dataColumns: [DataColumnInput]): String\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n}\n\ntype User implements Node {\n  id: ID!\n  firstName: String\n  lastName: String\n  email: String\n  language: String\n  dataSources: [DataSource]\n  charts: [Chart]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-01-29T02:57:07Z",
+    "updated_at": "2016-01-29T03:00:14Z",
+    "pushed_at": "2016-02-19T03:06:15Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

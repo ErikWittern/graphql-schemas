@@ -1,0 +1,42 @@
+{
+  "repo_name": "taskmeow",
+  "repo_full_name": "ydogandjiev/taskmeow",
+  "repo_owner": "ydogandjiev",
+  "repo_description": "A minimalist todo list app for the enterprise",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/routes/schema.graphql",
+      "sha": "f32812d9a5f581f2254aef82baadb33530084e0a",
+      "url": "https://api.github.com/repositories/131223574/contents/server/routes/schema.graphql?ref=b32c5a52d87b1c29fc96e299ff02117745f1aee6",
+      "git_url": "https://api.github.com/repositories/131223574/git/blobs/f32812d9a5f581f2254aef82baadb33530084e0a",
+      "html_url": "https://github.com/ydogandjiev/taskmeow/blob/b32c5a52d87b1c29fc96e299ff02117745f1aee6/server/routes/schema.graphql",
+      "content": "type Query {\n  tasks: [Task!]!\n  me: User!\n}\n\ntype Mutation {\n  createTask(title: String!, order: Float!, starred: Boolean): Task!\n  updateTask(id: ID!, title: String, order: Float, starred: Boolean): Task\n  deleteTask(id: ID!): Task\n}\n\ntype Task {\n  _id: ID!\n  title: String!\n  starred: Boolean\n  order: Float\n}\n\ntype User {\n  _id: ID!\n  email: String!\n  firstname: String!\n  lastname: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-27T00:12:44Z",
+    "updated_at": "2019-07-15T07:07:25Z",
+    "pushed_at": "2019-07-15T07:07:22Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 21,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 18,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "repo_name": "typescript-graphql-modules-api",
+  "repo_full_name": "jchapple/typescript-graphql-modules-api",
+  "repo_owner": "jchapple",
+  "repo_description": "A TypeScript GraphQL API using GraphQL Modules with code auto-generation.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/auth/schema/schema.graphql",
+      "sha": "b4c26026a40ac6f7fb9a2f0402ad83249a2881b1",
+      "url": "https://api.github.com/repositories/187108611/contents/src/modules/auth/schema/schema.graphql?ref=4df0440ea6994416db495953292808d5a8f143a9",
+      "git_url": "https://api.github.com/repositories/187108611/git/blobs/b4c26026a40ac6f7fb9a2f0402ad83249a2881b1",
+      "html_url": "https://github.com/jchapple/typescript-graphql-modules-api/blob/4df0440ea6994416db495953292808d5a8f143a9/src/modules/auth/schema/schema.graphql",
+      "content": "directive @auth on FIELD_DEFINITION\ndirective @protect(role: String) on FIELD_DEFINITION\n\n# Represents the available User Role types.\nenum UserRoleType {\n  ADMIN\n  CUSTOMER\n  DEALER\n}\n\n# Root queries\ntype Query {\n  # Gets the current User.\n  me: User! @auth\n\n  # Gets a User with the specified ID.\n  user(id: ID!): User @auth\n\n  # Gets a collection of Users.\n  users(name: String, roleType: UserRoleType, page: Int): UserList! @auth\n}\n\ntype Mutation {\n  # Gets authentication tokens for a user, given an email address and password.\n  login(email: String!, password: String!): AuthenticationResponse!\n\n  # Gets renewed authentication tokens, given a valid refresh token.\n  refreshToken(refreshToken: String!): AuthenticationResponse! @auth\n}\n\ntype AuthenticationResponse {\n  # A valid JSON Web Token, which can be used to authenticate requests to this API.\n  token: String!\n\n  # A Refresh Token, which can be used to refresh expired JSON Web Tokens.\n  refreshToken: String!\n}\n\ntype User implements Entity {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  roleType: UserRoleType\n  emails(verified: Boolean, primary: Boolean): [EmailAddress!]\n  timestamps: EntityTimestamps\n}\n\ntype EmailAddress implements Entity {\n  email: String!\n  verified: Boolean!\n  primary: Boolean!\n  user: User!\n  timestamps: EntityTimestamps\n}\n\ntype UserList implements PaginatedList {\n  data: [User!]!\n  pageInfo: PaginationInfo!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jchapple/typescript-graphql-modules-api/blob/4df0440ea6994416db495953292808d5a8f143a9/src/modules/auth/schema/schema.graphql:\ndirective @auth on FIELD_DEFINITION\ndirective @protect(role: String) on FIELD_DEFINITION\n\n# Represents the available User Role types.\nenum UserRoleType {\n  ADMIN\n  CUSTOMER\n  DEALER\n}\n\n# Root queries\ntype Query {\n  # Gets the current User.\n  me: User! @auth\n\n  # Gets a User with the specified ID.\n  user(id: ID!): User @auth\n\n  # Gets a collection of Users.\n  users(name: String, roleType: UserRoleType, page: Int): UserList! @auth\n}\n\ntype Mutation {\n  # Gets authentication tokens for a user, given an email address and password.\n  login(email: String!, password: String!): AuthenticationResponse!\n\n  # Gets renewed authentication tokens, given a valid refresh token.\n  refreshToken(refreshToken: String!): AuthenticationResponse! @auth\n}\n\ntype AuthenticationResponse {\n  # A valid JSON Web Token, which can be used to authenticate requests to this API.\n  token: String!\n\n  # A Refresh Token, which can be used to refresh expired JSON Web Tokens.\n  refreshToken: String!\n}\n\ntype User implements Entity {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  roleType: UserRoleType\n  emails(verified: Boolean, primary: Boolean): [EmailAddress!]\n  timestamps: EntityTimestamps\n}\n\ntype EmailAddress implements Entity {\n  email: String!\n  verified: Boolean!\n  primary: Boolean!\n  user: User!\n  timestamps: EntityTimestamps\n}\n\ntype UserList implements PaginatedList {\n  data: [User!]!\n  pageInfo: PaginationInfo!\n}\n\n# https://github.com/jchapple/typescript-graphql-modules-api/blob/4df0440ea6994416db495953292808d5a8f143a9/src/modules/common/schema/schema.graphql:\n# Represents an abstract entity\ninterface Entity {\n  timestamps: EntityTimestamps\n}\n\ntype EntityTimestamps {\n  createdAt: DateTime\n  updatedAt: DateTime\n}\n\n\"\"\"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.\"\"\"\nscalar DateTime\n\n# https://github.com/jchapple/typescript-graphql-modules-api/blob/4df0440ea6994416db495953292808d5a8f143a9/src/modules/common/schema/pagination.graphql:\ninterface PaginatedList {\n  data: [Entity!]!\n  pageInfo: PaginationInfo!\n}\n\ntype PaginationInfo {\n  # The current page number.\n  page: Int!\n\n  # The maximum number of results returned per page.\n  limit: Int!\n\n  # The total number of results.\n  count: Int!\n\n  # The total number of pages.\n  countPages: Int!\n\n  # Is there a next page?\n  hasNextPage: Boolean!\n}\n",
+        "mergedPaths": [
+          "src/modules/common/schema/schema.graphql",
+          "src/modules/common/schema/pagination.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "EntityTimestamps",
+          "PaginationInfo"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 8,
+        "containsCycle": true,
+        "numDefinitions": 14
+      },
+      "validSchema": false
+    },
+    {
+      "name": "pagination.graphql",
+      "path": "src/modules/common/schema/pagination.graphql",
+      "sha": "13c3a932553d8e72e4c00bf2672469ede6a92c5e",
+      "url": "https://api.github.com/repositories/187108611/contents/src/modules/common/schema/pagination.graphql?ref=4df0440ea6994416db495953292808d5a8f143a9",
+      "git_url": "https://api.github.com/repositories/187108611/git/blobs/13c3a932553d8e72e4c00bf2672469ede6a92c5e",
+      "html_url": "https://github.com/jchapple/typescript-graphql-modules-api/blob/4df0440ea6994416db495953292808d5a8f143a9/src/modules/common/schema/pagination.graphql",
+      "content": "interface PaginatedList {\n  data: [Entity!]!\n  pageInfo: PaginationInfo!\n}\n\ntype PaginationInfo {\n  # The current page number.\n  page: Int!\n\n  # The maximum number of results returned per page.\n  limit: Int!\n\n  # The total number of results.\n  count: Int!\n\n  # The total number of pages.\n  countPages: Int!\n\n  # Is there a next page?\n  hasNextPage: Boolean!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/modules/common/schema/schema.graphql",
+      "sha": "d0cee3840b67746ad23ba6747c174c620852cc2d",
+      "url": "https://api.github.com/repositories/187108611/contents/src/modules/common/schema/schema.graphql?ref=4df0440ea6994416db495953292808d5a8f143a9",
+      "git_url": "https://api.github.com/repositories/187108611/git/blobs/d0cee3840b67746ad23ba6747c174c620852cc2d",
+      "html_url": "https://github.com/jchapple/typescript-graphql-modules-api/blob/4df0440ea6994416db495953292808d5a8f143a9/src/modules/common/schema/schema.graphql",
+      "content": "# Represents an abstract entity\ninterface Entity {\n  timestamps: EntityTimestamps\n}\n\ntype EntityTimestamps {\n  createdAt: DateTime\n  updatedAt: DateTime\n}\n\n\"\"\"A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.\"\"\"\nscalar DateTime\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-16T22:19:16Z",
+    "updated_at": "2019-05-18T12:20:09Z",
+    "pushed_at": "2019-05-16T23:13:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

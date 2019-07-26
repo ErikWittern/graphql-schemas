@@ -1,0 +1,42 @@
+{
+  "repo_name": "topo",
+  "repo_full_name": "architecture-topography/topo",
+  "repo_owner": "architecture-topography",
+  "repo_description": "Topo is a living, interactive, queryable visual map of an organisation's software systems - what they are, how they are grouped together, and how they relate to each other.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "a377997a9b5ffdaeb8772cc2fe8cddfec5fe5476",
+      "url": "https://api.github.com/repositories/166311752/contents/server/src/schema.graphql?ref=3fecdf75af3f38415b0826c0cdac46e6777a80ef",
+      "git_url": "https://api.github.com/repositories/166311752/git/blobs/a377997a9b5ffdaeb8772cc2fe8cddfec5fe5476",
+      "html_url": "https://github.com/architecture-topography/topo/blob/3fecdf75af3f38415b0826c0cdac46e6777a80ef/server/src/schema.graphql",
+      "content": "type Query {\n  hello: String!\n  platforms: [Platform]!\n  systems(capabilityId: String!): [System]!\n}\n\nenum BoxType {\n  Platform\n  Domain\n  Capability\n}\n\ntype Mutation {\n  createBox(\n    name: String!\n    id: String!\n    boxType: BoxType!\n    parentId: String\n  ): Box!\n\n  createTechnology(id: String!, name: String!): Technology!\n\n  createSystem(\n    id: String!\n    name: String!\n    parentBoxId: String!\n    technologies: [String!]\n  ): System!\n\n  deleteAll: Result!\n}\n\ntype Result {\n  result: Boolean!\n}\n\ntype Box {\n  id: ID!\n  name: String!\n}\n\ntype Platform {\n  id: ID!\n  name: String!\n  domains: [Domain!]!\n}\n\ntype Domain {\n  id: ID!\n  name: String!\n  capabilities: [Capability!]!\n}\n\ntype Capability {\n  id: ID!\n  name: String!\n}\n\ntype System {\n  id: ID!\n  name: String!\n  technologies: [Technology!]!\n}\n\ntype Technology {\n  id: ID!\n  name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-17T23:26:07Z",
+    "updated_at": "2019-03-13T05:33:32Z",
+    "pushed_at": "2019-03-13T05:33:30Z",
+    "issues": 16,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

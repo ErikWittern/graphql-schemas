@@ -1,0 +1,41 @@
+{
+  "repo_name": "italki-tracker",
+  "repo_full_name": "patricevignola/italki-tracker",
+  "repo_owner": "PatriceVignola",
+  "repo_description": "An unofficial tracker to better keep track of documents sent to students on italki.com.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "450cf7cd4af010ec5e2ad0cd638be4906bfac2a5",
+      "url": "https://api.github.com/repositories/136262980/contents/schema.graphql?ref=8a3cc119a46b198013cd695048fa1c7cc50eb8fa",
+      "git_url": "https://api.github.com/repositories/136262980/git/blobs/450cf7cd4af010ec5e2ad0cd638be4906bfac2a5",
+      "html_url": "https://github.com/PatriceVignola/italki-tracker/blob/8a3cc119a46b198013cd695048fa1c7cc50eb8fa/schema.graphql",
+      "content": "# source: http://localhost:4000/graphql\n# timestamp: Thu Jul 05 2018 21:58:37 GMT-0700 (PDT)\n\ninput AddStudentData {\n  italkiId: Int!\n  skypeUsername: String\n  weChatUsername: String\n  email: String\n}\n\ntype AddStudentResult {\n  newStudentEdge: StudentEdge!\n}\n\ninput DeleteStudentData {\n  id: ID!\n}\n\ntype DeleteStudentResult {\n  deletedStudentId: String\n}\n\ntype Document implements Node {\n  id: ID!\n  checksum: String!\n  fileName: String!\n  students: [Student]\n}\n\nenum Gender {\n  Unspecified\n  Female\n  Male\n}\n\nscalar Int52\n\ntype ItalkiLanguage {\n  id: ID!\n  hasCourse: Boolean\n  canTeach: Boolean\n  name: String\n  level: ItalkiLanguageLevel\n  priority: Int\n  teaching: Boolean\n  learning: Boolean\n}\n\nscalar ItalkiLanguageLevel\n\ntype ItalkiProfile implements Node {\n  id: ID!\n  locale: String\n  localTime: String\n  avatarUrl: String\n  premium: Boolean\n  shortIntroduction: String\n  interest: String\n  allowContent: Boolean\n  livingCountryCode: String\n  originCountryCode: String\n  livingCityCode: String\n  originCityCode: String\n  originCityName: String\n  livingCityName: String\n  timezone: String\n  timezoneUtc: String\n  timezoneLocation: String\n  timezoneIana: String\n  languages(level: ItalkiLanguageLevel, learning: Boolean, teaching: Boolean): [ItalkiLanguage]\n  lastLoginTime: String\n  firstPurchaseTime: String\n  registerTime: String\n  twitterUrl: String\n  facebookUrl: String\n  linkedinUrl: String\n  activityPoints: Int\n  allowMessage: Boolean\n  notebookCount: Int\n  friendCount: Int\n  discussionCount: Int\n  hasSkype: Boolean\n  online: Boolean\n  nickname: String\n  isTutor: Boolean\n  questionCount: Int\n  gender: Gender\n  sessionCount: Int\n  professional: Boolean\n  friendListPublic: Boolean\n}\n\ninput LinkSkypeAccountData {\n  username: String!\n  password: String!\n}\n\ntype Mutation {\n  signin(data: SigninData!): User\n  signup(data: SignupData!): User\n  linkSkypeAccount(data: LinkSkypeAccountData!): SkypeTokens\n  signinToSkype(data: SigninToSkypeData!): SkypeTokens\n  addStudent(data: AddStudentData!): AddStudentResult!\n  deleteStudent(data: DeleteStudentData): DeleteStudentResult!\n  sendDocument(data: SendDocumentData!): SendDocumentResult!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  user: User\n  italkiProfile(id: ID!): ItalkiProfile\n  node(id: ID!): Node\n}\n\ninput SendDocumentData {\n  studentId: ID!\n  checksum: String!\n  fileName: String!\n}\n\ntype SendDocumentResult {\n  document: Document!\n}\n\ninput SigninData {\n  email: String!\n  password: String!\n}\n\ninput SigninToSkypeData {\n  password: String!\n}\n\ninput SignupData {\n  email: String!\n  password: String!\n}\n\ntype SkypeProfile {\n  username: ID!\n  avatarUrl: String\n  birthday: String\n  city: String\n  countryCode: String\n  emails: [String]\n  firstName: String\n  gender: Gender\n  homePage: String\n  jobTitle: String\n  languageCode: String\n  lastName: String\n  namespace: String\n  phoneHome: String\n  phoneMobile: String\n  phoneOffice: String\n  province: String\n  richMood: String\n}\n\ntype SkypeTokens {\n  skypeToken: String!\n  skypeTokenExpiration: Int52!\n  registrationToken: String!\n  registrationTokenExpiration: Int52!\n}\n\ntype Student implements Node {\n  id: ID!\n  italkiId: Int!\n  skypeUsername: String\n  weChatUsername: String\n  email: String\n  italkiProfile: ItalkiProfile\n  skypeProfile: SkypeProfile\n  documents: [Document]\n}\n\ntype StudentConnection {\n  pageInfo: PageInfo!\n  edges: [StudentEdge]\n}\n\ntype StudentEdge {\n  node: Student\n  cursor: String!\n}\n\ntype User implements Node {\n  id: ID!\n  jwt: String\n  email: String\n  skypeUsername: String\n  students(first: Int!, last: Int!): StudentConnection\n  documents: [Document]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": true,
+      "numDefinitions": 26
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-06T02:52:10Z",
+    "updated_at": "2018-07-10T03:46:41Z",
+    "pushed_at": "2018-07-10T03:47:52Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

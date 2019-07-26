@@ -1,0 +1,79 @@
+{
+  "repo_name": "myblog-server",
+  "repo_full_name": "nomkhonwaan/myblog-server",
+  "repo_owner": "nomkhonwaan",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "pkg/graphql/schema/query.graphql",
+      "sha": "51871af2fca2751f904c1cdadf90c98f0aa68b2f",
+      "url": "https://api.github.com/repositories/124188807/contents/pkg/graphql/schema/query.graphql?ref=0559ec1f4d7840fffdafac73b8d3ebb337cb62bb",
+      "git_url": "https://api.github.com/repositories/124188807/git/blobs/51871af2fca2751f904c1cdadf90c98f0aa68b2f",
+      "html_url": "https://github.com/nomkhonwaan/myblog-server/blob/0559ec1f4d7840fffdafac73b8d3ebb337cb62bb/pkg/graphql/schema/query.graphql",
+      "content": "# The query root of MyBlog's GraphQL interface\ntype Query {\n  # Return a published Post from its ID\n  publishedPost(id: ID!): Post\n\n  # Return a Tag from its ID\n  tag(id: ID!): Tag\n\n  # Return a list of Tags\n  tags(\n    offset: Int\n    limit: Int\n    orderBy: TagOrderByInput\n  ): [Tag]\n}\n\nenum OrderByDirection {\n  ASC\n  DESC\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/nomkhonwaan/myblog-server/blob/0559ec1f4d7840fffdafac73b8d3ebb337cb62bb/pkg/graphql/schema/query.graphql:\n# The query root of MyBlog's GraphQL interface\ntype Query {\n  # Return a published Post from its ID\n  publishedPost(id: ID!): Post\n\n  # Return a Tag from its ID\n  tag(id: ID!): Tag\n\n  # Return a list of Tags\n  tags(\n    offset: Int\n    limit: Int\n    orderBy: TagOrderByInput\n  ): [Tag]\n}\n\nenum OrderByDirection {\n  ASC\n  DESC\n}\n\n# https://github.com/nomkhonwaan/myblog-server/blob/0559ec1f4d7840fffdafac73b8d3ebb337cb62bb/pkg/graphql/schema/types/post.graphql:\n# A Post entity\ntype Post {\n  # A Post's ID\n  id: ID!\n  \n  # A Post's title\n  title: String!\n\n  # A Post's slug\n  slug: String!\n\n  # A link to this Post\n  link: String\n\n  # A Post's status\n  status: String!\n\n  # A Post's content in HTML format\n  html: String\n\n  # A Post's content in Markdown format\n  markdown: String\n\n  # Return a list of Post's tag\n  tags: [Tag]\n\n  # An RFC3339 date format that the Post was created\n  createdAt: String!\n\n  # An RFC3339 date format that the Post was updated\n  updatedAt: String\n\n  # An RFC3339 date format that the Post was published\n  publishedAt: String\n}\n\n# https://github.com/nomkhonwaan/myblog-server/blob/0559ec1f4d7840fffdafac73b8d3ebb337cb62bb/pkg/graphql/schema/types/tag.graphql:\n# A Tag entity\ntype Tag {\n  # A Tag's ID\n  id: ID!\n\n  # A Tag's name\n  name: String!\n\n  # A Tag's slug\n  slug: String!\n\n  # A link to this Tag\n  link: String!\n}\n\nenum TagOrderByField {\n  SLUG\n}\n\ninput TagOrderByInput {\n  field: TagOrderByField\n  direction: OrderByDirection\n}\n",
+        "mergedPaths": [
+          "pkg/graphql/schema/types/post.graphql",
+          "pkg/graphql/schema/types/tag.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post",
+          "Tag"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "tag.graphql",
+      "path": "pkg/graphql/schema/types/tag.graphql",
+      "sha": "9e8218cd15b8dc084201f8f86c6eef553d5b8eff",
+      "url": "https://api.github.com/repositories/124188807/contents/pkg/graphql/schema/types/tag.graphql?ref=0559ec1f4d7840fffdafac73b8d3ebb337cb62bb",
+      "git_url": "https://api.github.com/repositories/124188807/git/blobs/9e8218cd15b8dc084201f8f86c6eef553d5b8eff",
+      "html_url": "https://github.com/nomkhonwaan/myblog-server/blob/0559ec1f4d7840fffdafac73b8d3ebb337cb62bb/pkg/graphql/schema/types/tag.graphql",
+      "content": "# A Tag entity\ntype Tag {\n  # A Tag's ID\n  id: ID!\n\n  # A Tag's name\n  name: String!\n\n  # A Tag's slug\n  slug: String!\n\n  # A link to this Tag\n  link: String!\n}\n\nenum TagOrderByField {\n  SLUG\n}\n\ninput TagOrderByInput {\n  field: TagOrderByField\n  direction: OrderByDirection\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 3
+    },
+    {
+      "name": "post.graphql",
+      "path": "pkg/graphql/schema/types/post.graphql",
+      "sha": "73e384046bd928f0accb58c136c379016c933773",
+      "url": "https://api.github.com/repositories/124188807/contents/pkg/graphql/schema/types/post.graphql?ref=0559ec1f4d7840fffdafac73b8d3ebb337cb62bb",
+      "git_url": "https://api.github.com/repositories/124188807/git/blobs/73e384046bd928f0accb58c136c379016c933773",
+      "html_url": "https://github.com/nomkhonwaan/myblog-server/blob/0559ec1f4d7840fffdafac73b8d3ebb337cb62bb/pkg/graphql/schema/types/post.graphql",
+      "content": "# A Post entity\ntype Post {\n  # A Post's ID\n  id: ID!\n  \n  # A Post's title\n  title: String!\n\n  # A Post's slug\n  slug: String!\n\n  # A link to this Post\n  link: String\n\n  # A Post's status\n  status: String!\n\n  # A Post's content in HTML format\n  html: String\n\n  # A Post's content in Markdown format\n  markdown: String\n\n  # Return a list of Post's tag\n  tags: [Tag]\n\n  # An RFC3339 date format that the Post was created\n  createdAt: String!\n\n  # An RFC3339 date format that the Post was updated\n  updatedAt: String\n\n  # An RFC3339 date format that the Post was published\n  publishedAt: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-07T06:18:07Z",
+    "updated_at": "2018-05-28T13:13:28Z",
+    "pushed_at": "2018-05-28T13:13:01Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

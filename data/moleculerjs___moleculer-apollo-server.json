@@ -1,0 +1,41 @@
+{
+  "repo_name": "moleculer-apollo-server",
+  "repo_full_name": "moleculerjs/moleculer-apollo-server",
+  "repo_owner": "moleculerjs",
+  "repo_description": ":rocket: [WIP] Apollo GraphQL server for Moleculer",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "generated-schema.gql",
+      "path": "examples/full/generated-schema.gql",
+      "sha": "4acb3e7aeba08a99cea9052d78204f98dae277a8",
+      "url": "https://api.github.com/repositories/158609706/contents/examples/full/generated-schema.gql?ref=bc0800f7ffa9face43b68264f6b0451d33ec92ad",
+      "git_url": "https://api.github.com/repositories/158609706/git/blobs/4acb3e7aeba08a99cea9052d78204f98dae277a8",
+      "html_url": "https://github.com/moleculerjs/moleculer-apollo-server/blob/bc0800f7ffa9face43b68264f6b0451d33ec92ad/examples/full/generated-schema.gql",
+      "content": "scalar Date\n\ntype Mutation {\n  upvote(id: Int!, userID: Int!): Post\n  downvote(id: Int!, userID: Int!): Post\n}\n\n\"\"\"This type describes a post entity.\"\"\"\ntype Post {\n  id: Int!\n  title: String!\n  author: User!\n  votes: Int!\n  voters: [User]\n  createdAt: Timestamp\n  error: String\n}\n\ntype Query {\n  posts(limit: Int): [Post]\n  users(limit: Int): [User]\n}\n\ntype Subscription {\n  vote(userID: Int!): String!\n}\n\nscalar Timestamp\n\n\"\"\"This type describes a user entity.\"\"\"\ntype User {\n  id: Int!\n  name: String!\n  birthday: Date\n  posts(limit: Int): [Post]\n  postCount: Int\n  type: UserType\n}\n\n\"\"\"Enumerations for user types\"\"\"\nenum UserType {\n  ADMIN\n  PUBLISHER\n  READER\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-21T21:44:52Z",
+    "updated_at": "2019-07-18T19:28:14Z",
+    "pushed_at": "2019-07-13T17:57:39Z",
+    "issues": 16,
+    "watchers": 6,
+    "fork_count": 13,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 26,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 22,
+    "releases": 0,
+    "stargazers": 28
+  }
+}

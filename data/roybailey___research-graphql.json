@@ -1,0 +1,39 @@
+{
+  "repo_name": "research-graphql",
+  "repo_full_name": "roybailey/research-graphql",
+  "repo_owner": "roybailey",
+  "repo_description": "Sandpit for running GraphQL server in Java",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "sample-schema.graphql",
+      "path": "research-graphql-server/src/test/resources/sample-schema.graphql",
+      "sha": "b86a780dcf11c9e0838c5a4fb081e3bdfa2fd652",
+      "url": "https://api.github.com/repositories/88019930/contents/research-graphql-server/src/test/resources/sample-schema.graphql?ref=364b4ed0732bc42cb648043582f59e39a54485b0",
+      "git_url": "https://api.github.com/repositories/88019930/git/blobs/b86a780dcf11c9e0838c5a4fb081e3bdfa2fd652",
+      "html_url": "https://github.com/roybailey/research-graphql/blob/364b4ed0732bc42cb648043582f59e39a54485b0/research-graphql-server/src/test/resources/sample-schema.graphql",
+      "content": "type Query {\n    books: [Book!]\n}\n\ntype Book {\n    id: Int!\n    name: String!\n    author: Author!\n}\n\ntype Author {\n    id: Int!\n    name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-12T06:56:35Z",
+    "updated_at": "2019-05-15T21:32:23Z",
+    "pushed_at": "2017-06-09T06:18:26Z",
+    "issues": 2,
+    "watchers": 3,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 20
+  }
+}

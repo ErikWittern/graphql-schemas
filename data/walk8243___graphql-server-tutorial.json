@@ -1,0 +1,66 @@
+{
+  "repo_name": "graphql-server-tutorial",
+  "repo_full_name": "walk8243/graphql-server-tutorial",
+  "repo_owner": "walk8243",
+  "repo_description": "GitHubのAPI v4を使ったサーバサイドのチュートリアル",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.gql",
+      "path": "schema/query.gql",
+      "sha": "c4cb32c4bf6fad1f6d94c442b3fca839bf7b5384",
+      "url": "https://api.github.com/repositories/167785800/contents/schema/query.gql?ref=285cf90e65fd244c17be3eb8c0899cc3c5e53c49",
+      "git_url": "https://api.github.com/repositories/167785800/git/blobs/c4cb32c4bf6fad1f6d94c442b3fca839bf7b5384",
+      "html_url": "https://github.com/walk8243/graphql-server-tutorial/blob/285cf90e65fd244c17be3eb8c0899cc3c5e53c49/schema/query.gql",
+      "content": "type Query {\n  hello: String!\n  human: Human\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/walk8243/graphql-server-tutorial/blob/285cf90e65fd244c17be3eb8c0899cc3c5e53c49/schema/query.gql:\ntype Query {\n  hello: String!\n  human: Human\n}\n\n# https://github.com/walk8243/graphql-server-tutorial/blob/285cf90e65fd244c17be3eb8c0899cc3c5e53c49/schema/type/human.gql:\ntype Human {\n  name: String!\n  age(age: Int!): Int!\n}\n",
+        "mergedPaths": [
+          "schema/type/human.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Human"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "human.gql",
+      "path": "schema/type/human.gql",
+      "sha": "4b55753b852d0aa40120e3ca9ce48ae35e6ba3c5",
+      "url": "https://api.github.com/repositories/167785800/contents/schema/type/human.gql?ref=285cf90e65fd244c17be3eb8c0899cc3c5e53c49",
+      "git_url": "https://api.github.com/repositories/167785800/git/blobs/4b55753b852d0aa40120e3ca9ce48ae35e6ba3c5",
+      "html_url": "https://github.com/walk8243/graphql-server-tutorial/blob/285cf90e65fd244c17be3eb8c0899cc3c5e53c49/schema/type/human.gql",
+      "content": "type Human {\n  name: String!\n  age(age: Int!): Int!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-27T08:14:59Z",
+    "updated_at": "2019-01-30T16:01:38Z",
+    "pushed_at": "2019-01-30T16:01:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 1,
+    "stargazers": 0
+  }
+}

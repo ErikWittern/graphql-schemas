@@ -1,0 +1,39 @@
+{
+  "repo_name": "gqlgen-starter",
+  "repo_full_name": "meinto/gqlgen-starter",
+  "repo_owner": "meinto",
+  "repo_description": "GraphQL starter project for https://github.com/99designs/gqlgen",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.gql",
+      "path": "schema/query.gql",
+      "sha": "c27f15d8c7ddb59e354342a8c396756a134e9ea7",
+      "url": "https://api.github.com/repositories/185849184/contents/schema/query.gql?ref=8a0dc236345408615e1e5b77294747259653af21",
+      "git_url": "https://api.github.com/repositories/185849184/git/blobs/c27f15d8c7ddb59e354342a8c396756a134e9ea7",
+      "html_url": "https://github.com/meinto/gqlgen-starter/blob/8a0dc236345408615e1e5b77294747259653af21/schema/query.gql",
+      "content": "type Query {\n  hello(name: String!): String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-09T18:09:53Z",
+    "updated_at": "2019-05-13T21:19:47Z",
+    "pushed_at": "2019-05-13T21:19:45Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

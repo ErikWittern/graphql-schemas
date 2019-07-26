@@ -1,0 +1,41 @@
+{
+  "repo_name": "hogwarts",
+  "repo_full_name": "nexneo/hogwarts",
+  "repo_owner": "nexneo",
+  "repo_description": "Example for Go Meetup on GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "29043e29d461ee092b78e77afbe81985ed17f909",
+      "url": "https://api.github.com/repositories/141913117/contents/schema.graphql?ref=c584dbbda5fb063b9dfe8a82153fc1d717ef5416",
+      "git_url": "https://api.github.com/repositories/141913117/git/blobs/29043e29d461ee092b78e77afbe81985ed17f909",
+      "html_url": "https://github.com/nexneo/hogwarts/blob/c584dbbda5fb063b9dfe8a82153fc1d717ef5416/schema.graphql",
+      "content": "type House {\n  gid: ID!\n  name: String!\n  teachers: [Teacher]!\n  students: [Student]!\n}\n\ntype Teacher {\n    name: String!\n    house: House\n}\n\ntype Classroom {\n  gid: ID!\n  subject: String!\n  teacher: Teacher\n  students: [Student]!\n}\n\ntype Student {\n  name: String!\n  year: Int!\n  house: House!\n  parents: [Parent]!\n  classrooms: [Classroom]!\n}\n\ntype Parent {\n    name: String!\n    students: [Student]!\n}\n\ntype Query {\n  houses: [House]!\n  classrooms: [Classroom]!\n  students: [Student]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-22T16:39:38Z",
+    "updated_at": "2018-07-27T10:40:40Z",
+    "pushed_at": "2018-07-27T10:40:39Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

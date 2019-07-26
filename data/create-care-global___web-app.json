@@ -1,0 +1,58 @@
+{
+  "repo_name": "web-app",
+  "repo_full_name": "create-care-global/web-app",
+  "repo_owner": "create-care-global",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/src/schemas/schema.graphql",
+      "sha": "538c7c5699af42d2ecb5fa2e84440616e4d88375",
+      "url": "https://api.github.com/repositories/187205562/contents/graphql/src/schemas/schema.graphql?ref=c490402a17f81e65d841147cec23e08ff5477231",
+      "git_url": "https://api.github.com/repositories/187205562/git/blobs/538c7c5699af42d2ecb5fa2e84440616e4d88375",
+      "html_url": "https://github.com/create-care-global/web-app/blob/c490402a17f81e65d841147cec23e08ff5477231/graphql/src/schemas/schema.graphql",
+      "content": "# import Query.* from \"authentication.graphql\"\n# import Mutation.* from \"authentication.graphql\"\n\ntype Query {\n  getProjectFeed: GetProjectFeedPayload!\n  projectCategories: [ProjectCategory!]!\n  projectCharacteristicGroups: [ProjectCharacteristicGroup!]!\n  getProject(input: GetProjectInput!): GetProjectPayload!\n}\n\ntype Mutation {\n  createProject(input: CreateProjectInput!): CreateProjectPayload!\n}\n\ninput CreateProjectInput {\n  title: String!\n  categoryId: ID!\n  sourceOfItems: SourceOfItems!\n  amountOfKidsHelped: Int!\n  whyIsThisImportant: String!\n  meaningToTheKids: String!\n  microNeed: String!\n  numberOfItems: Int!\n  characteristicIds: [ID!]!\n  estimatedCost: Int!\n  personalMessage: String!\n}\n\ntype CreateProjectPayload {\n  project: Project!\n}\n\ntype Project {\n  id: ID!\n  title: String!\n  category: ProjectCategory!\n  sourceOfItems: SourceOfItems!\n  amountOfKidsHelped: Int!\n  whyIsThisImportant: String!\n  meaningToTheKids: String!\n  microNeed: String!\n  numberOfItems: Int!\n  characteristics: [ProjectCharacteristic!]!\n  estimatedCost: Int!\n  personalMessage: String!\n}\n\ntype ProjectCategory {\n  id: ID!\n  name: String!\n}\n\ntype GetProjectFeedPayload {\n  projects: [Project!]!\n}\n\ntype ProjectCharacteristicGroup {\n  id: ID!\n  name: String!\n  items: [ProjectCharacteristic!]!\n}\n\ntype ProjectCharacteristic {\n  id: ID!\n  name: String!\n}\n\ninput GetProjectInput {\n  id: ID!\n}\n\ntype GetProjectPayload {\n  project: Project!\n}\n\nenum SourceOfItems {\n  LOCAL\n  DIRECT\n  OTHER\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 12
+    },
+    {
+      "name": "authentication.graphql",
+      "path": "graphql/src/schemas/authentication.graphql",
+      "sha": "35e4921c1290b80db691db3d5fd5e03f6d917d08",
+      "url": "https://api.github.com/repositories/187205562/contents/graphql/src/schemas/authentication.graphql?ref=d01b592de9e3de579dca216103897c6890d18696",
+      "git_url": "https://api.github.com/repositories/187205562/git/blobs/35e4921c1290b80db691db3d5fd5e03f6d917d08",
+      "html_url": "https://github.com/create-care-global/web-app/blob/d01b592de9e3de579dca216103897c6890d18696/graphql/src/schemas/authentication.graphql",
+      "content": "type Query {\n  user(id: ID!): User\n}\n\ntype Mutation {\n  signup(input: SignupInput!): SignupPayload!\n  login(input: LoginInput!): LoginPayload\n  logout: Boolean!\n}\n\ntype User {\n  id: ID!\n  userGroup: String!\n  email: String!\n  firstName: String!\n  lastName: String!\n  displayName: String\n}\n\ninput SignupInput {\n  email: String!\n  firstName: String!\n  lastName: String!\n  password: String!\n  group: String!\n}\n\ninput LoginInput {\n  email: String!\n  password: String!\n}\n\ntype SignupPayload {\n  user: User!\n}\n\ntype LoginPayload {\n  user: User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-17T11:34:36Z",
+    "updated_at": "2019-07-09T13:34:19Z",
+    "pushed_at": "2019-07-09T13:34:19Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 17,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 17,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

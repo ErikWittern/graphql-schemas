@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-go-example",
+  "repo_full_name": "topliceanu/graphql-go-example",
+  "repo_owner": "topliceanu",
+  "repo_description": "Example GraphQL API implemented in Go and backed by Postgresql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "297e9534f903f3b2e2a9824f66096e1a798f445a",
+      "url": "https://api.github.com/repositories/77861792/contents/schema.graphql?ref=963b6ac0ffb3fbff1b55136496724719ec8d242a",
+      "git_url": "https://api.github.com/repositories/77861792/git/blobs/297e9534f903f3b2e2a9824f66096e1a798f445a",
+      "html_url": "https://github.com/topliceanu/graphql-go-example/blob/963b6ac0ffb3fbff1b55136496724719ec8d242a/schema.graphql",
+      "content": "type User {\n  id: ID\n  email: String!\n  post(id: ID!): Post\n  posts: [Post!]!\n  follower(id: ID!): User\n  followers: [User!]!\n  followee(id: ID!): User\n  followees: [User!]!\n}\n\ntype Post {\n  id: ID\n  user: User!\n  title: String!\n  body: String!\n  comment(id: ID!): Comment\n  comments: [Comment!]!\n}\n\ntype Comment {\n  id: ID\n  user: User!\n  post: Post!\n  title: String\n  body: String!\n}\n\ntype Query {\n  user(id: ID!): User\n}\n\ntype Mutation {\n  createUser(email: String!): User\n  removeUser(id: ID!): Boolean\n  follow(follower: ID!, followee: ID!): Boolean\n  unfollow(follower: ID!, followee: ID!): Boolean\n  createPost(user: ID!, title: String!, body: String!): Post\n  removePost(id: ID!): Boolean\n  createComment(user: ID!, post: ID!, title: String!, body: String!): Comment\n  removeComment(id: ID!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-02T21:06:04Z",
+    "updated_at": "2019-07-13T18:59:37Z",
+    "pushed_at": "2017-01-04T23:49:48Z",
+    "issues": 1,
+    "watchers": 6,
+    "fork_count": 20,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 113
+  }
+}

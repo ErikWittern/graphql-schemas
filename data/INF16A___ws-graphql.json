@@ -1,0 +1,95 @@
+{
+  "repo_name": "ws-graphql",
+  "repo_full_name": "inf16a/ws-graphql",
+  "repo_owner": "INF16A",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "src/schema/query.graphql",
+      "sha": "100be4b8ec366b54b01169920c71915208959b9a",
+      "url": "https://api.github.com/repositories/122458570/contents/src/schema/query.graphql?ref=daad45f58825ee61545090d065b391797448fac6",
+      "git_url": "https://api.github.com/repositories/122458570/git/blobs/100be4b8ec366b54b01169920c71915208959b9a",
+      "html_url": "https://github.com/INF16A/ws-graphql/blob/daad45f58825ee61545090d065b391797448fac6/src/schema/query.graphql",
+      "content": "type Query {\n    hello: Greeting,\n    companies: [Company],\n    internshipOffers(near: LocationInput, distance: Int, id: String):[InternshipOffer]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/INF16A/ws-graphql/blob/daad45f58825ee61545090d065b391797448fac6/src/schema/query.graphql:\ntype Query {\n    hello: Greeting,\n    companies: [Company],\n    internshipOffers(near: LocationInput, distance: Int, id: String):[InternshipOffer]\n}\n# https://github.com/INF16A/ws-graphql/blob/daad45f58825ee61545090d065b391797448fac6/src/schema/Greeting.graphql:\ntype Greeting {\n    word: String!,\n    recipient: String!\n}\n# https://github.com/INF16A/ws-graphql/blob/daad45f58825ee61545090d065b391797448fac6/src/schema/Company.graphql:\ntype Contact {\n    name: String,\n    email: String,\n    phone: String\n}\n\ntype Address {\n    street: String,\n    plz: String,\n    town: String,\n    location: Location\n}\n\ntype Location {\n    lat: Float,\n    long: Float\n}\n\ntype Company {\n    id: String!,\n    name: String!,\n    contact: Contact,\n    address: Address,\n    description: String\n}\n# https://github.com/INF16A/ws-graphql/blob/daad45f58825ee61545090d065b391797448fac6/src/schema/InternshipOffer.graphql:\ntype InternshipOffer {\n    id: String!,\n    jobname:String,\n    link:String,\n    company:Company,\n    address:Address,\n    contact:Contact,\n    description:String\n}\n\ninput LocationInput {\n    lat: Float!,\n    long: Float!\n}",
+        "mergedPaths": [
+          "src/schema/Greeting.graphql",
+          "src/schema/Company.graphql",
+          "src/schema/InternshipOffer.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Greeting",
+          "Company",
+          "InternshipOffer"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 7,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 8
+      },
+      "validSchema": false
+    },
+    {
+      "name": "InternshipOffer.graphql",
+      "path": "src/schema/InternshipOffer.graphql",
+      "sha": "eee5b2b0a97c227d1ee3a969fcd0e47ecd7ede52",
+      "url": "https://api.github.com/repositories/122458570/contents/src/schema/InternshipOffer.graphql?ref=daad45f58825ee61545090d065b391797448fac6",
+      "git_url": "https://api.github.com/repositories/122458570/git/blobs/eee5b2b0a97c227d1ee3a969fcd0e47ecd7ede52",
+      "html_url": "https://github.com/INF16A/ws-graphql/blob/daad45f58825ee61545090d065b391797448fac6/src/schema/InternshipOffer.graphql",
+      "content": "type InternshipOffer {\n    id: String!,\n    jobname:String,\n    link:String,\n    company:Company,\n    address:Address,\n    contact:Contact,\n    description:String\n}\n\ninput LocationInput {\n    lat: Float!,\n    long: Float!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "Company.graphql",
+      "path": "src/schema/Company.graphql",
+      "sha": "d63324e2fcef7d96ed040ef673ea46a93d1063c9",
+      "url": "https://api.github.com/repositories/122458570/contents/src/schema/Company.graphql?ref=daad45f58825ee61545090d065b391797448fac6",
+      "git_url": "https://api.github.com/repositories/122458570/git/blobs/d63324e2fcef7d96ed040ef673ea46a93d1063c9",
+      "html_url": "https://github.com/INF16A/ws-graphql/blob/daad45f58825ee61545090d065b391797448fac6/src/schema/Company.graphql",
+      "content": "type Contact {\n    name: String,\n    email: String,\n    phone: String\n}\n\ntype Address {\n    street: String,\n    plz: String,\n    town: String,\n    location: Location\n}\n\ntype Location {\n    lat: Float,\n    long: Float\n}\n\ntype Company {\n    id: String!,\n    name: String!,\n    contact: Contact,\n    address: Address,\n    description: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 4
+    },
+    {
+      "name": "Greeting.graphql",
+      "path": "src/schema/Greeting.graphql",
+      "sha": "7c44dadf0ccc3261c6975d34759966c9574ff026",
+      "url": "https://api.github.com/repositories/122458570/contents/src/schema/Greeting.graphql?ref=daad45f58825ee61545090d065b391797448fac6",
+      "git_url": "https://api.github.com/repositories/122458570/git/blobs/7c44dadf0ccc3261c6975d34759966c9574ff026",
+      "html_url": "https://github.com/INF16A/ws-graphql/blob/daad45f58825ee61545090d065b391797448fac6/src/schema/Greeting.graphql",
+      "content": "type Greeting {\n    word: String!,\n    recipient: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-22T09:41:28Z",
+    "updated_at": "2018-03-21T11:09:46Z",
+    "pushed_at": "2018-03-21T11:09:48Z",
+    "issues": 13,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 9,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

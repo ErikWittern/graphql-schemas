@@ -1,0 +1,55 @@
+{
+  "repo_name": "graphql-server",
+  "repo_full_name": "srod/graphql-server",
+  "repo_owner": "srod",
+  "repo_description": "GraphQL server with MongoDB",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.graphql",
+      "path": "graphql/types/user.graphql",
+      "sha": "6dc92c592eb657943cd049d80e45fa12b34dbea9",
+      "url": "https://api.github.com/repositories/157284596/contents/graphql/types/user.graphql?ref=aa54affaa86485c549336cb38e0a1a8be75f62e2",
+      "git_url": "https://api.github.com/repositories/157284596/git/blobs/6dc92c592eb657943cd049d80e45fa12b34dbea9",
+      "html_url": "https://github.com/srod/graphql-server/blob/aa54affaa86485c549336cb38e0a1a8be75f62e2/graphql/types/user.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n  name: String!\n  password: String!\n  createdAt: String!\n  updatedAt: String!\n}\ntype Query {\n  user(id: ID!): User\n  users: [User]\n}\ntype Mutation {\n  addUser(name: String!, email: String!): User\n  editUser(id: ID, name: String, email: String): User\n  deleteUser(id: ID): User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "client.graphql",
+      "path": "graphql/types/client.graphql",
+      "sha": "ac1d613dd7701eb10fff3cdce66b3ebb6e197565",
+      "url": "https://api.github.com/repositories/157284596/contents/graphql/types/client.graphql?ref=aa54affaa86485c549336cb38e0a1a8be75f62e2",
+      "git_url": "https://api.github.com/repositories/157284596/git/blobs/ac1d613dd7701eb10fff3cdce66b3ebb6e197565",
+      "html_url": "https://github.com/srod/graphql-server/blob/aa54affaa86485c549336cb38e0a1a8be75f62e2/graphql/types/client.graphql",
+      "content": "type Client {\n  id: ID!\n  name: String!\n  email: String!\n  createdAt: String!\n  updatedAt: String!\n}\ntype Query {\n  client(id: ID!): Client\n  clients: [Client]\n}\ntype Mutation {\n  addClient(name: String!, email: String!): Client\n  editClient(id: ID!, name: String, email: String): Client\n  deleteClient(id: ID!): Client\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-12T22:13:53Z",
+    "updated_at": "2018-11-12T22:26:02Z",
+    "pushed_at": "2018-11-12T22:24:42Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

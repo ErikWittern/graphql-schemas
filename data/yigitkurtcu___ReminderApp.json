@@ -1,0 +1,42 @@
+{
+  "repo_name": "ReminderApp",
+  "repo_full_name": "yigitkurtcu/reminderapp",
+  "repo_owner": "yigitkurtcu",
+  "repo_description": "ReminderApp is a service that reminds you text on the desired date.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "9d186597124dd85f4ebddaf5e17564394e0205ff",
+      "url": "https://api.github.com/repositories/162931084/contents/src/schema.graphql?ref=9faf56179a3a0322290a198e2c3852a219e15df6",
+      "git_url": "https://api.github.com/repositories/162931084/git/blobs/9d186597124dd85f4ebddaf5e17564394e0205ff",
+      "html_url": "https://github.com/yigitkurtcu/ReminderApp/blob/9faf56179a3a0322290a198e2c3852a219e15df6/src/schema.graphql",
+      "content": "type Query {\n  getMyReminders: [Message!]!\n}\n\ntype Mutation {\n  setReminder(data: ReminderInput!): String!\n  cancelReminder(id: String!): String!\n  register(data: RegisterInput!): RegisterPayload!\n  login(data: LoginInput!): AuthPayload!\n}\n\ntype User {\n  _id: String!\n  fullName: String!\n  email: String!\n  password: String!\n}\n\ntype Message {\n  _id: String!\n  text: String!\n  author: String!\n  email: String!\n  time: String!\n  status: String!\n}\n\ntype RemindersPayload {\n  _id: String!\n  text: String!\n  time: String!\n  status: String!\n}\n\ntype AuthPayload {\n  token: String!\n  user: RegisterPayload!\n}\n\ntype RegisterPayload {\n  _id: String!\n  fullName: String!\n  email: String!\n}\n\ninput ReminderInput {\n  date: String!\n  message: String!\n}\n\ninput LoginInput {\n  email: String!\n  password: String!\n}\n\ninput RegisterInput {\n  fullName: String!\n  email: String!\n  password: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-23T23:30:30Z",
+    "updated_at": "2018-12-24T02:13:02Z",
+    "pushed_at": "2018-12-24T02:13:00Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-job-board",
+  "repo_full_name": "lpollez/graphql-job-board",
+  "repo_owner": "lpollez",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "0c0a50c40b0073a89cd27a3deb836e87d7ec9b9c",
+      "url": "https://api.github.com/repositories/186436021/contents/server/schema.graphql?ref=bf456f9c0e0c84fa24926aa6c12f303402af21f0",
+      "git_url": "https://api.github.com/repositories/186436021/git/blobs/0c0a50c40b0073a89cd27a3deb836e87d7ec9b9c",
+      "html_url": "https://github.com/lpollez/graphql-job-board/blob/bf456f9c0e0c84fa24926aa6c12f303402af21f0/server/schema.graphql",
+      "content": "type Query {\n  jobs: [Job]\n  job(id: ID!): Job\n  company(id: ID!): Company\n}\n\ntype Mutation {\n  createJob(input: CreateJobInput): Job\n}\n\ntype Company {\n  id: ID!\n  name: String\n  description: String\n  jobs: [Job]\n}\n\ntype Job {\n  id: ID!\n  title: String\n  company: Company\n  description: String\n}\n\ninput CreateJobInput {\n  companyId: ID\n  title: String\n  description: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-13T14:27:52Z",
+    "updated_at": "2019-05-17T22:24:01Z",
+    "pushed_at": "2019-05-17T22:24:00Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

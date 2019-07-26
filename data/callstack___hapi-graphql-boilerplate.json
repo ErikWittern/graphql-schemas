@@ -1,0 +1,42 @@
+{
+  "repo_name": "hapi-graphql-boilerplate",
+  "repo_full_name": "callstack/hapi-graphql-boilerplate",
+  "repo_owner": "callstack",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/api/graphql/schema.graphql",
+      "sha": "69394f7ee483a89e7df8d34a0f04e58515a27e8b",
+      "url": "https://api.github.com/repositories/70602842/contents/app/api/graphql/schema.graphql?ref=af1e7be8e28565572be6bd4a42aa4a252357d19c",
+      "git_url": "https://api.github.com/repositories/70602842/git/blobs/69394f7ee483a89e7df8d34a0f04e58515a27e8b",
+      "html_url": "https://github.com/callstack/hapi-graphql-boilerplate/blob/af1e7be8e28565572be6bd4a42aa4a252357d19c/app/api/graphql/schema.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n}\n\ntype Query {\n  getUserById(id: ID!): User\n  getUserByEmail(email: String!): User\n}\n\ntype Mutation {\n  createUser(email: String!): User\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-11T14:38:24Z",
+    "updated_at": "2018-12-05T07:24:46Z",
+    "pushed_at": "2017-05-30T08:55:55Z",
+    "issues": 12,
+    "watchers": 4,
+    "fork_count": 7,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 26
+  }
+}

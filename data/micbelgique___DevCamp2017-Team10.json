@@ -1,0 +1,63 @@
+{
+  "repo_name": "DevCamp2017-Team10",
+  "repo_full_name": "micbelgique/devcamp2017-team10",
+  "repo_owner": "micbelgique",
+  "repo_description": "My Digital Key",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "cloud/imports/schema/Query.graphql",
+      "sha": "0ec716f7db4dadfe9a6cf6d0689b16c8cdf73d59",
+      "url": "https://api.github.com/repositories/98635655/contents/cloud/imports/schema/Query.graphql?ref=252a5aa97e37f4d8cce164917c6353be8622d157",
+      "git_url": "https://api.github.com/repositories/98635655/git/blobs/0ec716f7db4dadfe9a6cf6d0689b16c8cdf73d59",
+      "html_url": "https://github.com/micbelgique/DevCamp2017-Team10/blob/252a5aa97e37f4d8cce164917c6353be8622d157/cloud/imports/schema/Query.graphql",
+      "content": "type Query {\n    me:User\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/micbelgique/DevCamp2017-Team10/blob/252a5aa97e37f4d8cce164917c6353be8622d157/cloud/imports/schema/Query.graphql:\ntype Query {\n    me:User\n}\n# https://github.com/micbelgique/DevCamp2017-Team10/blob/252a5aa97e37f4d8cce164917c6353be8622d157/cloud/imports/schema/User.graphql:\ntype User {\n    _id: ID\n    emails: [Email]\n    profile: UserProfile\n}\n\ntype UserProfile {\n    name: String\n}\n\ntype Email {\n    address: String\n    verified: Boolean\n}",
+        "mergedPaths": [
+          "cloud/imports/schema/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "cloud/imports/schema/User.graphql",
+      "sha": "7eefbe1e28667a766b070296a49db17ad4a4bd9f",
+      "url": "https://api.github.com/repositories/98635655/contents/cloud/imports/schema/User.graphql?ref=252a5aa97e37f4d8cce164917c6353be8622d157",
+      "git_url": "https://api.github.com/repositories/98635655/git/blobs/7eefbe1e28667a766b070296a49db17ad4a4bd9f",
+      "html_url": "https://github.com/micbelgique/DevCamp2017-Team10/blob/252a5aa97e37f4d8cce164917c6353be8622d157/cloud/imports/schema/User.graphql",
+      "content": "type User {\n    _id: ID\n    emails: [Email]\n    profile: UserProfile\n}\n\ntype UserProfile {\n    name: String\n}\n\ntype Email {\n    address: String\n    verified: Boolean\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-28T09:50:38Z",
+    "updated_at": "2019-07-08T13:04:06Z",
+    "pushed_at": "2017-08-04T08:38:39Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

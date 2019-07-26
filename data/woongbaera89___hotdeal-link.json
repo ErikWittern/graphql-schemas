@@ -1,0 +1,39 @@
+{
+  "repo_name": "hotdeal-link",
+  "repo_full_name": "woongbaera89/hotdeal-link",
+  "repo_owner": "woongbaera89",
+  "repo_description": "hotdeal-link",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "53d45ae0b9846bf4c3cfc845b60d4f2d5d5677f7",
+      "url": "https://api.github.com/repositories/185574416/contents/server/src/schema.graphql?ref=459761e733167cd169821bd53627c21d41037f26",
+      "git_url": "https://api.github.com/repositories/185574416/git/blobs/53d45ae0b9846bf4c3cfc845b60d4f2d5d5677f7",
+      "html_url": "https://github.com/woongbaera89/hotdeal-link/blob/459761e733167cd169821bd53627c21d41037f26/server/src/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  info: String!\n  feed(filter: String, skip: Int, first: Int, orderBy: LinkOrderByInput): Feed!\n}\n\nenum LinkOrderByInput {\n  description_ASC\n  description_DESC\n  url_ASC\n  url_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\ntype Feed {\n  links: [Link!]!\n  count: Int!\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n  vote(linkId: ID!): Vote!\n}\n\ntype Subscription {\n  newLink: Link\n  newVote: Vote\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  links: [Link!]!\n}\n\ntype Link {\n  id: ID!\n  createdAt: DateTime!\n  description: String!\n  url: String!\n  postedBy: User\n  votes: [Vote!]!\n}\n\ntype Vote {\n  id: ID!\n  link: Link!\n  user: User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-08T09:26:22Z",
+    "updated_at": "2019-05-08T09:33:03Z",
+    "pushed_at": "2019-05-08T09:33:02Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

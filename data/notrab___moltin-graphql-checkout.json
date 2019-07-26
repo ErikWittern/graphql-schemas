@@ -1,0 +1,42 @@
+{
+  "repo_name": "moltin-graphql-checkout",
+  "repo_full_name": "notrab/moltin-graphql-checkout",
+  "repo_owner": "notrab",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "8c2c436f5b88493980d8d9050a17c681e33e781d",
+      "url": "https://api.github.com/repositories/126600257/contents/src/schema.graphql?ref=5776cbc6c3a956948e1f54fb87ca15c55d6850d9",
+      "git_url": "https://api.github.com/repositories/126600257/git/blobs/8c2c436f5b88493980d8d9050a17c681e33e781d",
+      "html_url": "https://github.com/notrab/moltin-graphql-checkout/blob/5776cbc6c3a956948e1f54fb87ca15c55d6850d9/src/schema.graphql",
+      "content": "type Query {\n  products: [Product]\n}\n\ntype Mutation {\n  Checkout(\n    token: String!\n    productId: ID!\n    customer: Customer!\n    billingAddress: Address!\n    shippingAddress: Address\n  ): Order\n}\n\ntype Order {\n  id: ID!\n}\n\ntype Product {\n  id: ID!\n  name: String!\n  slug: String!\n  sku: String!\n  description: String!\n  status: ActiveStatus!\n  price: [ProductPrice]\n  image: String\n}\n\ntype ProductPrice {\n  amount: Int!\n  currency: String\n  includes_tax: Boolean!\n}\n\nenum ActiveStatus {\n  draft\n  live\n}\n\ninput Customer {\n  name: String!\n  email: String!\n}\n\ninput Address {\n  first_name: String!\n  last_name: String!\n  line_1: String!\n  line_2: String\n  city: String\n  postcode: String!\n  county: String!\n  country: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-24T13:09:07Z",
+    "updated_at": "2018-06-30T12:47:26Z",
+    "pushed_at": "2018-07-08T20:49:36Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

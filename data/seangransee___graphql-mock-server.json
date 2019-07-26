@@ -1,0 +1,56 @@
+{
+  "repo_name": "graphql-mock-server",
+  "repo_full_name": "seangransee/graphql-mock-server",
+  "repo_owner": "seangransee",
+  "repo_description": "Generate GraphQL mock functions from a YAML file",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "55d9daac32f97705001f1610cc800a1c39791fe2",
+      "url": "https://api.github.com/repositories/147973289/contents/src/schema.graphql?ref=68c6600d3d242713076fa045d6f42651c702e4fb",
+      "git_url": "https://api.github.com/repositories/147973289/git/blobs/55d9daac32f97705001f1610cc800a1c39791fe2",
+      "html_url": "https://github.com/seangransee/graphql-mock-server/blob/68c6600d3d242713076fa045d6f42651c702e4fb/src/schema.graphql",
+      "content": "type User {\n  name: String\n  foo: String\n  age: Int\n  alive: Boolean\n  friends: [User!]\n  bff: User\n}\n\ntype Query {\n  user: User\n  dog: Dog\n}\n\ntype Dog {\n  breed: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "example/schema.graphql",
+      "sha": "479b4c750812f1b455998bd90d4f39150f1207b7",
+      "url": "https://api.github.com/repositories/147973289/contents/example/schema.graphql?ref=68c6600d3d242713076fa045d6f42651c702e4fb",
+      "git_url": "https://api.github.com/repositories/147973289/git/blobs/479b4c750812f1b455998bd90d4f39150f1207b7",
+      "html_url": "https://github.com/seangransee/graphql-mock-server/blob/68c6600d3d242713076fa045d6f42651c702e4fb/example/schema.graphql",
+      "content": "type User {\n  name: String\n  foo: String\n  age: Int\n  alive: Boolean\n  friends: [User!]\n  bff: User\n  happiness: Float\n}\n\ntype Query {\n  user: User\n  dog: Dog\n}\n\ntype Dog {\n  breed: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-08T22:05:38Z",
+    "updated_at": "2018-11-20T02:48:48Z",
+    "pushed_at": "2018-11-20T02:48:46Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

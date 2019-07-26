@@ -1,0 +1,42 @@
+{
+  "repo_name": "chat-go-graphql",
+  "repo_full_name": "dipen-dedania/chat-go-graphql",
+  "repo_owner": "Dipen-Dedania",
+  "repo_description": "A sample chat application with Golang, GraphQL & ReactJS with socket",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backendserver/schema.graphql",
+      "sha": "87ae1aaf357d8b80f8bfca7293cebe22a84b30d7",
+      "url": "https://api.github.com/repositories/162103312/contents/backendserver/schema.graphql?ref=8568bf8719d32d9dd9c41209f1ba4fca1777d2e2",
+      "git_url": "https://api.github.com/repositories/162103312/git/blobs/87ae1aaf357d8b80f8bfca7293cebe22a84b30d7",
+      "html_url": "https://github.com/Dipen-Dedania/chat-go-graphql/blob/8568bf8719d32d9dd9c41209f1ba4fca1777d2e2/backendserver/schema.graphql",
+      "content": "type User{\n    id: ID!\n    name: String!\n    createdAt: Time!\n}\ntype Chatconversation{\n    id: ID!\n    sender_name: String!\n    receiver_name: String!\n    message: String!\n    createdAt: Time!\n}\ntype Subscription{\n    userjoined: User!\n    messagePosted(id: String!): Chatconversation!\n}\ntype Mutation{\n    postMessage(sender_name: String!, receiver_name: String!, message: String!): Chatconversation!\n    joinUser(name: String!): User!\n}\ntype Query{\n    users: [User!]!\n    chats(sender_name: String!,receiver_name: String!): [Chatconversation!]!\n}\nscalar Time",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-17T09:07:39Z",
+    "updated_at": "2019-01-03T05:17:56Z",
+    "pushed_at": "2019-01-03T05:17:52Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

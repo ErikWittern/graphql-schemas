@@ -1,0 +1,39 @@
+{
+  "repo_name": "comman-stack",
+  "repo_full_name": "intel9911/comman-stack",
+  "repo_owner": "intel9911",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "raw2_type.gql",
+      "path": "packages/common-server-core/src/connector/__tests__/samples/graphql/types/client/raw2_type.gql",
+      "sha": "43006fe02ebdbedcf194a21235df70169a56d4f1",
+      "url": "https://api.github.com/repositories/136834336/contents/packages/common-server-core/src/connector/__tests__/samples/graphql/types/client/raw2_type.gql?ref=3814502cc333926aded6de19d6a63f0cbf254d43",
+      "git_url": "https://api.github.com/repositories/136834336/git/blobs/43006fe02ebdbedcf194a21235df70169a56d4f1",
+      "html_url": "https://github.com/intel9911/comman-stack/blob/3814502cc333926aded6de19d6a63f0cbf254d43/packages/common-server-core/src/connector/__tests__/samples/graphql/types/client/raw2_type.gql",
+      "content": "type Raw2 {\n  field: String!\n}\n\ntype Query {\n  raw2Query: [Raw2]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-10T18:27:25Z",
+    "updated_at": "2018-06-10T18:32:18Z",
+    "pushed_at": "2018-06-10T18:32:16Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

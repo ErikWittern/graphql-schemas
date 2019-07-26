@@ -1,0 +1,42 @@
+{
+  "repo_name": "bunjil",
+  "repo_full_name": "ojkelly/bunjil",
+  "repo_owner": "ojkelly",
+  "repo_description": "A GraphQL bastion server with schema merging, authentication and authorization with Policy Based Access Control",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/auth0/graphql/schema.graphql",
+      "sha": "33fa6e742a9f40214de244b85b980dc8270d29b3",
+      "url": "https://api.github.com/repositories/121351070/contents/examples/auth0/graphql/schema.graphql?ref=09c026971d88013ba585fccb16b4fe404152e560",
+      "git_url": "https://api.github.com/repositories/121351070/git/blobs/33fa6e742a9f40214de244b85b980dc8270d29b3",
+      "html_url": "https://github.com/ojkelly/bunjil/blob/09c026971d88013ba585fccb16b4fe404152e560/examples/auth0/graphql/schema.graphql",
+      "content": "type Query {\n    viewer: User\n    topPosts(limit: Int): [Post]\n}\n\ntype User {\n    id: String\n    email: String\n    givenName: String\n    name: String\n}\n\ntype Post {\n    id: ID\n    title: String\n    views: Int\n    author: User\n}\n\ntype Mutation {\n    authenticateUser(idToken: String): AuthenticationResponse\n}\n\ntype AuthenticationResponse {\n    token: String\n    user: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-13T07:17:46Z",
+    "updated_at": "2019-07-11T07:23:38Z",
+    "pushed_at": "2019-06-19T11:54:23Z",
+    "issues": 15,
+    "watchers": 0,
+    "fork_count": 5,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 41,
+    "pull_requests_open": 20,
+    "pull_requests_closed": 13,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 24
+  }
+}

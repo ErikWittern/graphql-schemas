@@ -1,0 +1,42 @@
+{
+  "repo_name": "grpc-go-kit-example",
+  "repo_full_name": "qneyrat/grpc-go-kit-example",
+  "repo_owner": "qneyrat",
+  "repo_description": "go-kit and gRPC",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql-gateway/schema.graphql",
+      "sha": "19d458dd9d20a1647fd71b3a6ded8eace5e24b20",
+      "url": "https://api.github.com/repositories/125365547/contents/graphql-gateway/schema.graphql?ref=1aac047f5e7738ce8e1305da12ab8697e9fb8d8e",
+      "git_url": "https://api.github.com/repositories/125365547/git/blobs/19d458dd9d20a1647fd71b3a6ded8eace5e24b20",
+      "html_url": "https://github.com/qneyrat/grpc-go-kit-example/blob/1aac047f5e7738ce8e1305da12ab8697e9fb8d8e/graphql-gateway/schema.graphql",
+      "content": "schema {\n\t\tquery: Query\n\t\tmutation: Mutation\n\t}\n\ntype Query {\n  product(id: Int!): Product!\n}\n\ntype Mutation {\n  createProduct(name: String!): Product!\n}\n\ntype Product {\n  id: Int!\n  name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-15T12:41:40Z",
+    "updated_at": "2019-06-20T01:17:49Z",
+    "pushed_at": "2018-04-01T09:25:48Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 7,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 13
+  }
+}

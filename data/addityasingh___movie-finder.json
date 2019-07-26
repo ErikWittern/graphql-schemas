@@ -1,0 +1,66 @@
+{
+  "repo_name": "movie-finder",
+  "repo_full_name": "addityasingh/movie-finder",
+  "repo_owner": "addityasingh",
+  "repo_description": "A movie finder Graphql API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "src/typedefs/query.graphql",
+      "sha": "dc64e3a08179e5b3348db029b8ac3a515d3947fd",
+      "url": "https://api.github.com/repositories/164103476/contents/src/typedefs/query.graphql?ref=13e7cdb18e50de6783b4f970375722f7ad63ee0b",
+      "git_url": "https://api.github.com/repositories/164103476/git/blobs/dc64e3a08179e5b3348db029b8ac3a515d3947fd",
+      "html_url": "https://github.com/addityasingh/movie-finder/blob/13e7cdb18e50de6783b4f970375722f7ad63ee0b/src/typedefs/query.graphql",
+      "content": "# import Movie from 'movie.graphql'\n\ntype Query {\n    Movie(title: String!): Movie\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/addityasingh/movie-finder/blob/13e7cdb18e50de6783b4f970375722f7ad63ee0b/src/typedefs/query.graphql:\n# import Movie from 'movie.graphql'\n\ntype Query {\n    Movie(title: String!): Movie\n}\n# https://github.com/addityasingh/movie-finder/blob/13e7cdb18e50de6783b4f970375722f7ad63ee0b/src/typedefs/movie.graphql:\ntype Movie {\n    id: ID!\n    Title: String!\n    Actors: String!\n    Genre: String!\n    Awards: String!\n    Country: String!\n    Director: String!\n    Language: String!\n    Metascore: Float!\n    Plot: String!\n    Poster: String!\n    Rated: String!\n    Ratings: String!\n    Released: Float!\n    Response: String!\n    Runtime: Float!\n    Type: String!\n    Writer: String!\n    Year: Float!\n    imdbID: String!\n    imdbRating: Float!\n    imdbVotes: Float!\n    totalSeasons: Float!\n}",
+        "mergedPaths": [
+          "src/typedefs/movie.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Movie"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "movie.graphql",
+      "path": "src/typedefs/movie.graphql",
+      "sha": "3c250f1f114f93f7ba3d3317908c5b64a803295c",
+      "url": "https://api.github.com/repositories/164103476/contents/src/typedefs/movie.graphql?ref=13e7cdb18e50de6783b4f970375722f7ad63ee0b",
+      "git_url": "https://api.github.com/repositories/164103476/git/blobs/3c250f1f114f93f7ba3d3317908c5b64a803295c",
+      "html_url": "https://github.com/addityasingh/movie-finder/blob/13e7cdb18e50de6783b4f970375722f7ad63ee0b/src/typedefs/movie.graphql",
+      "content": "type Movie {\n    id: ID!\n    Title: String!\n    Actors: String!\n    Genre: String!\n    Awards: String!\n    Country: String!\n    Director: String!\n    Language: String!\n    Metascore: Float!\n    Plot: String!\n    Poster: String!\n    Rated: String!\n    Ratings: String!\n    Released: Float!\n    Response: String!\n    Runtime: Float!\n    Type: String!\n    Writer: String!\n    Year: Float!\n    imdbID: String!\n    imdbRating: Float!\n    imdbVotes: Float!\n    totalSeasons: Float!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-04T12:13:41Z",
+    "updated_at": "2019-01-04T13:05:12Z",
+    "pushed_at": "2019-01-04T13:05:14Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

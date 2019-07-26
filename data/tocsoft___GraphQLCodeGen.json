@@ -1,0 +1,80 @@
+{
+  "repo_name": "GraphQLCodeGen",
+  "repo_full_name": "tocsoft/graphqlcodegen",
+  "repo_owner": "tocsoft",
+  "repo_description": "a template driven code generator for converting graphql queries into a strongly typed class library.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "Tocsoft.GraphQLCodeGen.Tests/Files/Fragements/schema.gql",
+      "sha": "0d8cbf509694d953fb1923a2c21f6b874c524638",
+      "url": "https://api.github.com/repositories/107901719/contents/Tocsoft.GraphQLCodeGen.Tests/Files/Fragements/schema.gql?ref=05270ea0ffb806e5965c64c53956213e6d41d62e",
+      "git_url": "https://api.github.com/repositories/107901719/git/blobs/0d8cbf509694d953fb1923a2c21f6b874c524638",
+      "html_url": "https://github.com/tocsoft/GraphQLCodeGen/blob/05270ea0ffb806e5965c64c53956213e6d41d62e/Tocsoft.GraphQLCodeGen.Tests/Files/Fragements/schema.gql",
+      "content": "schema \n{\n  query: Query\n}\n\ntype User {\n    id: ID!\n    username: String\n    first_name: String\n    last_name: String\n    full_name: String\n    name: String @deprecated\n}\n\ntype Query {\n    User(id: ID!): User\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.gql",
+      "path": "Tocsoft.GraphQLCodeGen.Tests/Files/Includes/schema.gql",
+      "sha": "0d8cbf509694d953fb1923a2c21f6b874c524638",
+      "url": "https://api.github.com/repositories/107901719/contents/Tocsoft.GraphQLCodeGen.Tests/Files/Includes/schema.gql?ref=05270ea0ffb806e5965c64c53956213e6d41d62e",
+      "git_url": "https://api.github.com/repositories/107901719/git/blobs/0d8cbf509694d953fb1923a2c21f6b874c524638",
+      "html_url": "https://github.com/tocsoft/GraphQLCodeGen/blob/05270ea0ffb806e5965c64c53956213e6d41d62e/Tocsoft.GraphQLCodeGen.Tests/Files/Includes/schema.gql",
+      "content": "schema \n{\n  query: Query\n}\n\ntype User {\n    id: ID!\n    username: String\n    first_name: String\n    last_name: String\n    full_name: String\n    name: String @deprecated\n}\n\ntype Query {\n    User(id: ID!): User\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.gql",
+      "path": "Tocsoft.GraphQLCodeGen.Tests/Files/Includes_Settings/schema.gql",
+      "sha": "0d8cbf509694d953fb1923a2c21f6b874c524638",
+      "url": "https://api.github.com/repositories/107901719/contents/Tocsoft.GraphQLCodeGen.Tests/Files/Includes_Settings/schema.gql?ref=05270ea0ffb806e5965c64c53956213e6d41d62e",
+      "git_url": "https://api.github.com/repositories/107901719/git/blobs/0d8cbf509694d953fb1923a2c21f6b874c524638",
+      "html_url": "https://github.com/tocsoft/GraphQLCodeGen/blob/05270ea0ffb806e5965c64c53956213e6d41d62e/Tocsoft.GraphQLCodeGen.Tests/Files/Includes_Settings/schema.gql",
+      "content": "schema \n{\n  query: Query\n}\n\ntype User {\n    id: ID!\n    username: String\n    first_name: String\n    last_name: String\n    full_name: String\n    name: String @deprecated\n}\n\ntype Query {\n    User(id: ID!): User\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-22T20:49:36Z",
+    "updated_at": "2018-10-03T15:15:51Z",
+    "pushed_at": "2018-10-03T15:16:25Z",
+    "issues": 14,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 5,
+    "stargazers": 2
+  }
+}

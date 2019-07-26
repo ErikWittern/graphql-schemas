@@ -1,0 +1,58 @@
+{
+  "repo_name": "city_hall_app",
+  "repo_full_name": "jesus-chacon/city_hall_app",
+  "repo_owner": "jesus-chacon",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "3f6f35fdd013e36afb82e87597a5ab34d4b723c1",
+      "url": "https://api.github.com/repositories/168840995/contents/server/src/schema.graphql?ref=22bc9c65226c1443e60b30a274977a1779132c25",
+      "git_url": "https://api.github.com/repositories/168840995/git/blobs/3f6f35fdd013e36afb82e87597a5ab34d4b723c1",
+      "html_url": "https://github.com/jesus-chacon/city_hall_app/blob/22bc9c65226c1443e60b30a274977a1779132c25/server/src/schema.graphql",
+      "content": "type Query {\n  feed: [Post!]!\n}\n\ntype Post {\n  id: ID!\n  type: PostType!\n  title: String!\n  image: String!\n  description: String\n}\n\nenum PostType {\n  NEWS,\n  EVENT\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    },
+    {
+      "name": "prisma.graphql",
+      "path": "server/prisma/graphql-schema/prisma.graphql",
+      "sha": "c21e41fefe7d981cfbf7f46ccbbb7c19ee265e4d",
+      "url": "https://api.github.com/repositories/168840995/contents/server/prisma/graphql-schema/prisma.graphql?ref=87b253e973aa9432e60da00744b117e6b5dce272",
+      "git_url": "https://api.github.com/repositories/168840995/git/blobs/c21e41fefe7d981cfbf7f46ccbbb7c19ee265e4d",
+      "html_url": "https://github.com/jesus-chacon/city_hall_app/blob/87b253e973aa9432e60da00744b117e6b5dce272/server/prisma/graphql-schema/prisma.graphql",
+      "content": "type AggregatePost {\n  count: Int!\n}\n\ntype AggregateUser {\n  count: Int!\n}\n\ntype BatchPayload {\n  count: Long!\n}\n\nscalar Long\n\ntype Mutation {\n  createPost(data: PostCreateInput!): Post!\n  updatePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post\n  updateManyPosts(data: PostUpdateManyMutationInput!, where: PostWhereInput): BatchPayload!\n  upsertPost(where: PostWhereUniqueInput!, create: PostCreateInput!, update: PostUpdateInput!): Post!\n  deletePost(where: PostWhereUniqueInput!): Post\n  deleteManyPosts(where: PostWhereInput): BatchPayload!\n  createUser(data: UserCreateInput!): User!\n  updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User\n  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!\n  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!\n  deleteUser(where: UserWhereUniqueInput!): User\n  deleteManyUsers(where: UserWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Post {\n  id: ID!\n  type: PostType!\n  title: String!\n  image: String!\n  description: String\n}\n\ntype PostConnection {\n  pageInfo: PageInfo!\n  edges: [PostEdge]!\n  aggregate: AggregatePost!\n}\n\ninput PostCreateInput {\n  type: PostType!\n  title: String!\n  image: String!\n  description: String\n}\n\ntype PostEdge {\n  node: Post!\n  cursor: String!\n}\n\nenum PostOrderByInput {\n  id_ASC\n  id_DESC\n  type_ASC\n  type_DESC\n  title_ASC\n  title_DESC\n  image_ASC\n  image_DESC\n  description_ASC\n  description_DESC\n  createdAt_ASC\n  createdAt_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n}\n\ntype PostPreviousValues {\n  id: ID!\n  type: PostType!\n  title: String!\n  image: String!\n  description: String\n}\n\ntype PostSubscriptionPayload {\n  mutation: MutationType!\n  node: Post\n  updatedFields: [String!]\n  previousValues: PostPreviousValues\n}\n\ninput PostSubscriptionWhereInput {\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: PostWhereInput\n  AND: [PostSubscriptionWhereInput!]\n  OR: [PostSubscriptionWhereInput!]\n  NOT: [PostSubscriptionWhereInput!]\n}\n\nenum PostType {\n  NEWS\n  EVENT\n}\n\ninput PostUpdateInput {\n  type: PostType\n  title: String\n  image: String\n  description: String\n}\n\ninput PostUpdateManyMutationInput {\n  type: PostType\n  title: String\n  image: String\n  description: String\n}\n\ninput PostWhereInput {\n  id: ID\n  id_not: ID\n  id_in: [ID!]\n  id_not_in: [ID!]\n  id_lt: ID\n  id_lte: ID\n  id_gt: ID\n  id_gte: ID\n  id_contains: ID\n  id_not_contains: ID\n  id_starts_with: ID\n  id_not_starts_with: ID\n  id_ends_with: ID\n  id_not_ends_with: ID\n  type: PostType\n  type_not: PostType\n  type_in: [PostType!]\n  type_not_in: [PostType!]\n  title: String\n  title_not: String\n  title_in: [String!]\n  title_not_in: [String!]\n  title_lt: String\n  title_lte: String\n  title_gt: String\n  title_gte: String\n  title_contains: String\n  title_not_contains: String\n  title_starts_with: String\n  title_not_starts_with: String\n  title_ends_with: String\n  title_not_ends_with: String\n  image: String\n  image_not: String\n  image_in: [String!]\n  image_not_in: [String!]\n  image_lt: String\n  image_lte: String\n  image_gt: String\n  image_gte: String\n  image_contains: String\n  image_not_contains: String\n  image_starts_with: String\n  image_not_starts_with: String\n  image_ends_with: String\n  image_not_ends_with: String\n  description: String\n  description_not: String\n  description_in: [String!]\n  description_not_in: [String!]\n  description_lt: String\n  description_lte: String\n  description_gt: String\n  description_gte: String\n  description_contains: String\n  description_not_contains: String\n  description_starts_with: String\n  description_not_starts_with: String\n  description_ends_with: String\n  description_not_ends_with: String\n  AND: [PostWhereInput!]\n  OR: [PostWhereInput!]\n  NOT: [PostWhereInput!]\n}\n\ninput PostWhereUniqueInput {\n  id: ID\n}\n\ntype Query {\n  post(where: PostWhereUniqueInput!): Post\n  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!\n  postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!\n  user(where: UserWhereUniqueInput!): User\n  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!\n  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!\n  node(id: ID!): Node\n}\n\ntype Subscription {\n  post(where: PostSubscriptionWhereInput): PostSubscriptionPayload\n  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload\n}\n\ntype User {\n  id: ID!\n  name: String!\n  type: UserType!\n}\n\ntype UserConnection {\n  pageInfo: PageInfo!\n  edges: [UserEdge]!\n  aggregate: AggregateUser!\n}\n\ninput UserCreateInput {\n  name: String!\n  type: UserType!\n}\n\ntype UserEdge {\n  node: User!\n  cursor: String!\n}\n\nenum UserOrderByInput {\n  id_ASC\n  id_DESC\n  name_ASC\n  name_DESC\n  type_ASC\n  type_DESC\n  createdAt_ASC\n  createdAt_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n}\n\ntype UserPreviousValues {\n  id: ID!\n  name: String!\n  type: UserType!\n}\n\ntype UserSubscriptionPayload {\n  mutation: MutationType!\n  node: User\n  updatedFields: [String!]\n  previousValues: UserPreviousValues\n}\n\ninput UserSubscriptionWhereInput {\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: UserWhereInput\n  AND: [UserSubscriptionWhereInput!]\n  OR: [UserSubscriptionWhereInput!]\n  NOT: [UserSubscriptionWhereInput!]\n}\n\nenum UserType {\n  ADMIN\n  CLIENT\n}\n\ninput UserUpdateInput {\n  name: String\n  type: UserType\n}\n\ninput UserUpdateManyMutationInput {\n  name: String\n  type: UserType\n}\n\ninput UserWhereInput {\n  id: ID\n  id_not: ID\n  id_in: [ID!]\n  id_not_in: [ID!]\n  id_lt: ID\n  id_lte: ID\n  id_gt: ID\n  id_gte: ID\n  id_contains: ID\n  id_not_contains: ID\n  id_starts_with: ID\n  id_not_starts_with: ID\n  id_ends_with: ID\n  id_not_ends_with: ID\n  name: String\n  name_not: String\n  name_in: [String!]\n  name_not_in: [String!]\n  name_lt: String\n  name_lte: String\n  name_gt: String\n  name_gte: String\n  name_contains: String\n  name_not_contains: String\n  name_starts_with: String\n  name_not_starts_with: String\n  name_ends_with: String\n  name_not_ends_with: String\n  type: UserType\n  type_not: UserType\n  type_in: [UserType!]\n  type_not_in: [UserType!]\n  AND: [UserWhereInput!]\n  OR: [UserWhereInput!]\n  NOT: [UserWhereInput!]\n}\n\ninput UserWhereUniqueInput {\n  id: ID\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 17,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 36
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-02T14:39:24Z",
+    "updated_at": "2019-02-11T10:43:34Z",
+    "pushed_at": "2019-02-11T10:43:32Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

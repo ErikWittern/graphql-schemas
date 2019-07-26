@@ -1,0 +1,55 @@
+{
+  "repo_name": "react-base",
+  "repo_full_name": "kallaspriit/react-base",
+  "repo_owner": "kallaspriit",
+  "repo_description": "React application foundation",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Sandbox.gql",
+      "path": "server/schemas/Sandbox.gql",
+      "sha": "c81d75b6e2763d9e1e9bdfaccd22152dd657fb44",
+      "url": "https://api.github.com/repositories/88159090/contents/server/schemas/Sandbox.gql?ref=194c0b7fea4602d164a9d826eea2c3a645038cc9",
+      "git_url": "https://api.github.com/repositories/88159090/git/blobs/c81d75b6e2763d9e1e9bdfaccd22152dd657fb44",
+      "html_url": "https://github.com/kallaspriit/react-base/blob/194c0b7fea4602d164a9d826eea2c3a645038cc9/server/schemas/Sandbox.gql",
+      "content": "# Represents a sandbox user\ntype SanboxUser {\n\t# User identifier\n\tid: Int!\n\n\t# User name\n\tname: String!\n}\n\n# Namespace for testing various GraphQL features\ntype Sandbox {\n\t# Returns a simple string\n\tmessage: String!\n\n\t# Returns sum of two required integers\n\tsum(a: Int!, b: Int!): Int!\n\n\t# Returns a list of integers\n\tlist: [Int!]\n\n\t# Returns sandbox user by id or null if not found\n\tuser(id: Int!): SanboxUser\n\n\t# Returns sandbox user, simulating asyncronously fetch\n\tasyncUser(id: Int!): SanboxUser\n\n\t# Simulates returning error when no return value was promised\n\terrorMaybe: String\n\n\t# Simulates returning error when a return value was promised\n\terrorDefinitely: String\n\n\t# Simulates throwing error when no return value was promised\n\texceptionMaybe: String\n\n\t# Simulates throwing error when a return value was promised\n\texceptionDefinitely: String!\n\n\t# Simulates throwing error in an asyncronous handler (currently crashes server)\n\texceptionPromise: String!\n\n\t# Returns an ever-increasing counter based on user session\n\tsession: Int!\n}\n\ntype Query {\n\tsandbox: Sandbox\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "User.gql",
+      "path": "server/schemas/User.gql",
+      "sha": "8c6c4777603c8953e8146f6ca9c4f81352c8968f",
+      "url": "https://api.github.com/repositories/88159090/contents/server/schemas/User.gql?ref=194c0b7fea4602d164a9d826eea2c3a645038cc9",
+      "git_url": "https://api.github.com/repositories/88159090/git/blobs/8c6c4777603c8953e8146f6ca9c4f81352c8968f",
+      "html_url": "https://github.com/kallaspriit/react-base/blob/194c0b7fea4602d164a9d826eea2c3a645038cc9/server/schemas/User.gql",
+      "content": "# Represents a user in the system\ntype User {\n\t# Unique system identifier\n\tid: String!\n\n\t# Username\n\tlogin: String!\n\n\t# User full name\n\tname: String!\n}\n\ntype Query {\n\t# Lookup user information by login identifier\n\tuser(login: String!): User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-13T11:44:30Z",
+    "updated_at": "2017-04-26T13:05:40Z",
+    "pushed_at": "2017-04-23T19:08:22Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

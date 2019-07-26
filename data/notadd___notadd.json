@@ -1,0 +1,142 @@
+{
+  "repo_name": "notadd",
+  "repo_full_name": "notadd/notadd",
+  "repo_owner": "notadd",
+  "repo_description": "A microservice development architecture based on nest.js. —— 基于 Nest.js 的微服务开发架构。",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "organization.types.graphql",
+      "path": "src/modules/user/graphqls/organization.types.graphql",
+      "sha": "ea054f01426dcc383708c900c3aa63b5e7e16da3",
+      "url": "https://api.github.com/repositories/46969839/contents/src/modules/user/graphqls/organization.types.graphql?ref=5d96b23c3afb041b626abb2028e8fdb636c5c1ca",
+      "git_url": "https://api.github.com/repositories/46969839/git/blobs/ea054f01426dcc383708c900c3aa63b5e7e16da3",
+      "html_url": "https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/organization.types.graphql",
+      "content": "type Query {\n    \"\"\"Query the roots node of organizations\"\"\"\n    findRootOrganizations: OrganizationsRootResult\n    \"\"\"Query all organizations\"\"\"\n    findAllOrganizations: OrganizationsJsonResult\n    \"\"\"Query all suborganizations under the specified organization\"\"\"\n    findChildrenOrganizations(id: Int!): OrganizationsJsonResult\n}\n\ntype Mutation {\n    \"\"\"Create an organization, when the parentId is empty, it means creating a root organization\"\"\"\n    createOrganization(name: String!, parentId: Int): UserModuleCommonResult\n    \"\"\"Update organization\"\"\"\n    updateOrganization(id: Int!, name: String!, parentId: Int!): UserModuleCommonResult\n    \"\"\"Delete organization\"\"\"\n    deleteOrganization(id: Int!): UserModuleCommonResult\n    \"\"\"Add users to the specified organization\"\"\"\n    addUsersToOrganization(id: Int!, userIds: [Int]!): UserModuleCommonResult\n    \"\"\"Delete users from the specified organization\"\"\"\n    deleteUserFromOrganization(id: Int!, userIds: [Int]!): UserModuleCommonResult\n}\n\ntype OrganizationsRootResult {\n    code: Int\n    message: String\n    data: [Organization]\n}\n\ntype Organization {\n    id: Int\n    name: String\n}\n\ntype OrganizationsJsonResult {\n    code: Int\n    message: String\n    data: JSON\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/organization.types.graphql:\ntype Query {\n    \"\"\"Query the roots node of organizations\"\"\"\n    findRootOrganizations: OrganizationsRootResult\n    \"\"\"Query all organizations\"\"\"\n    findAllOrganizations: OrganizationsJsonResult\n    \"\"\"Query all suborganizations under the specified organization\"\"\"\n    findChildrenOrganizations(id: Int!): OrganizationsJsonResult\n}\n\ntype Mutation {\n    \"\"\"Create an organization, when the parentId is empty, it means creating a root organization\"\"\"\n    createOrganization(name: String!, parentId: Int): UserModuleCommonResult\n    \"\"\"Update organization\"\"\"\n    updateOrganization(id: Int!, name: String!, parentId: Int!): UserModuleCommonResult\n    \"\"\"Delete organization\"\"\"\n    deleteOrganization(id: Int!): UserModuleCommonResult\n    \"\"\"Add users to the specified organization\"\"\"\n    addUsersToOrganization(id: Int!, userIds: [Int]!): UserModuleCommonResult\n    \"\"\"Delete users from the specified organization\"\"\"\n    deleteUserFromOrganization(id: Int!, userIds: [Int]!): UserModuleCommonResult\n}\n\ntype OrganizationsRootResult {\n    code: Int\n    message: String\n    data: [Organization]\n}\n\ntype Organization {\n    id: Int\n    name: String\n}\n\ntype OrganizationsJsonResult {\n    code: Int\n    message: String\n    data: JSON\n}\n# https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/common.types.graphql:\n\"\"\"User module universal response body\"\"\"\ntype UserModuleCommonResult {\n    \"\"\"status code\"\"\"\n    code: Int\n    \"\"\"response message\"\"\"\n    message: String\n}\n\n\"\"\"JSON data\"\"\"\nscalar JSON",
+        "mergedPaths": [
+          "src/modules/user/graphqls/common.types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonResult",
+          "JSON"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 6,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "common.types.graphql",
+      "path": "src/modules/user/graphqls/common.types.graphql",
+      "sha": "75528e851cad4bc10a2b07360016a886511abe81",
+      "url": "https://api.github.com/repositories/46969839/contents/src/modules/user/graphqls/common.types.graphql?ref=5d96b23c3afb041b626abb2028e8fdb636c5c1ca",
+      "git_url": "https://api.github.com/repositories/46969839/git/blobs/75528e851cad4bc10a2b07360016a886511abe81",
+      "html_url": "https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/common.types.graphql",
+      "content": "\"\"\"User module universal response body\"\"\"\ntype UserModuleCommonResult {\n    \"\"\"status code\"\"\"\n    code: Int\n    \"\"\"response message\"\"\"\n    message: String\n}\n\n\"\"\"JSON data\"\"\"\nscalar JSON",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "app.types.graphql",
+      "path": "src/app.types.graphql",
+      "sha": "255cf05015ec293b6c61fa346820892e4ada1daa",
+      "url": "https://api.github.com/repositories/46969839/contents/src/app.types.graphql?ref=5d96b23c3afb041b626abb2028e8fdb636c5c1ca",
+      "git_url": "https://api.github.com/repositories/46969839/git/blobs/255cf05015ec293b6c61fa346820892e4ada1daa",
+      "html_url": "https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/app.types.graphql",
+      "content": "type Query {\n    sayHello(name: String!): SayHelloResponse\n}\n\ntype SayHelloResponse {\n    code: Int\n    message: String\n    data: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    },
+    {
+      "name": "info-item.types.graphql",
+      "path": "src/modules/user/graphqls/info-item.types.graphql",
+      "sha": "3a16c86ccdb6a4a954adf3f22db9533674b69b96",
+      "url": "https://api.github.com/repositories/46969839/contents/src/modules/user/graphqls/info-item.types.graphql?ref=5d96b23c3afb041b626abb2028e8fdb636c5c1ca",
+      "git_url": "https://api.github.com/repositories/46969839/git/blobs/3a16c86ccdb6a4a954adf3f22db9533674b69b96",
+      "html_url": "https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/info-item.types.graphql",
+      "content": "type Query {\n    \"\"\"Query all information items\"\"\"\n    findAllInfoItem(pageNumber: Int, pageSize: Int): InfoItemResult\n}\n\ntype Mutation {\n    \"\"\"Create a new information item\"\"\"\n    createInfoItem(infoItemInput: InfoItemInput): UserModuleCommonResult\n    \"\"\"Delete the information item of the specified ID\"\"\"\n    deleteInfoItem(infoItemId: Int!): UserModuleCommonResult\n    \"\"\"Update the item name, label, description, and type of the specified ID\"\"\"\n    updateInfoItem(updateInfoItemInput: UpdateInfoItemInput): UserModuleCommonResult\n}\n\ninput InfoItemInput {\n    \"\"\"Information item's ordering\"\"\"\n    order: Int!\n    \"\"\"Information item's type\"\"\"\n    type: String!\n    \"\"\"Information item's name\"\"\"\n    name: String!\n    \"\"\"Information item's description\"\"\"\n    description: String\n    \"\"\"Whether the information item is displayed on the registration page\"\"\"\n    registerDisplay: Boolean!\n    \"\"\"Whether the information item is displayed on the profile page\"\"\"\n    informationDisplay: Boolean!\n}\n\ntype InfoItemResult {\n    code: Int\n    message: String\n    data: [InfoItemData]\n    count: Int\n}\n\ntype InfoItemData {\n    \"\"\"Information item's id\"\"\"\n    id: Int\n    \"\"\"Information item's type\"\"\"\n    type: String\n    \"\"\"Information item's ordering\"\"\"\n    order: Int\n    \"\"\"Information item's name\"\"\"\n    name: String\n    \"\"\"Information item's description\"\"\"\n    description: String\n    \"\"\"Whether the information item is displayed on the registration page\"\"\"\n    registerDisplay: Boolean\n    \"\"\"Whether the information item is displayed on the profile page\"\"\"\n    informationDisplay: Boolean\n}\n\ninput UpdateInfoItemInput {\n    \"\"\"Information item's id\"\"\"\n    id: Int\n    \"\"\"Information item's type\"\"\"\n    type: String\n    \"\"\"Information item's ordering\"\"\"\n    order: Int\n    \"\"\"Information item's name\"\"\"\n    name: String\n    \"\"\"Information item's description\"\"\"\n    description: String\n    \"\"\"Whether the information item is displayed on the registration page\"\"\"\n    registerDisplay: Boolean\n    \"\"\"Whether the information item is displayed on the profile page\"\"\"\n    informationDisplay: Boolean\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/info-item.types.graphql:\ntype Query {\n    \"\"\"Query all information items\"\"\"\n    findAllInfoItem(pageNumber: Int, pageSize: Int): InfoItemResult\n}\n\ntype Mutation {\n    \"\"\"Create a new information item\"\"\"\n    createInfoItem(infoItemInput: InfoItemInput): UserModuleCommonResult\n    \"\"\"Delete the information item of the specified ID\"\"\"\n    deleteInfoItem(infoItemId: Int!): UserModuleCommonResult\n    \"\"\"Update the item name, label, description, and type of the specified ID\"\"\"\n    updateInfoItem(updateInfoItemInput: UpdateInfoItemInput): UserModuleCommonResult\n}\n\ninput InfoItemInput {\n    \"\"\"Information item's ordering\"\"\"\n    order: Int!\n    \"\"\"Information item's type\"\"\"\n    type: String!\n    \"\"\"Information item's name\"\"\"\n    name: String!\n    \"\"\"Information item's description\"\"\"\n    description: String\n    \"\"\"Whether the information item is displayed on the registration page\"\"\"\n    registerDisplay: Boolean!\n    \"\"\"Whether the information item is displayed on the profile page\"\"\"\n    informationDisplay: Boolean!\n}\n\ntype InfoItemResult {\n    code: Int\n    message: String\n    data: [InfoItemData]\n    count: Int\n}\n\ntype InfoItemData {\n    \"\"\"Information item's id\"\"\"\n    id: Int\n    \"\"\"Information item's type\"\"\"\n    type: String\n    \"\"\"Information item's ordering\"\"\"\n    order: Int\n    \"\"\"Information item's name\"\"\"\n    name: String\n    \"\"\"Information item's description\"\"\"\n    description: String\n    \"\"\"Whether the information item is displayed on the registration page\"\"\"\n    registerDisplay: Boolean\n    \"\"\"Whether the information item is displayed on the profile page\"\"\"\n    informationDisplay: Boolean\n}\n\ninput UpdateInfoItemInput {\n    \"\"\"Information item's id\"\"\"\n    id: Int\n    \"\"\"Information item's type\"\"\"\n    type: String\n    \"\"\"Information item's ordering\"\"\"\n    order: Int\n    \"\"\"Information item's name\"\"\"\n    name: String\n    \"\"\"Information item's description\"\"\"\n    description: String\n    \"\"\"Whether the information item is displayed on the registration page\"\"\"\n    registerDisplay: Boolean\n    \"\"\"Whether the information item is displayed on the profile page\"\"\"\n    informationDisplay: Boolean\n}\n# https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/common.types.graphql:\n\"\"\"User module universal response body\"\"\"\ntype UserModuleCommonResult {\n    \"\"\"status code\"\"\"\n    code: Int\n    \"\"\"response message\"\"\"\n    message: String\n}\n\n\"\"\"JSON data\"\"\"\nscalar JSON",
+        "mergedPaths": [
+          "src/modules/user/graphqls/common.types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonResult"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 8
+      },
+      "validSchema": false
+    },
+    {
+      "name": "system-module.types.graphql",
+      "path": "src/modules/user/graphqls/system-module.types.graphql",
+      "sha": "f194586a8e3df4275c133ff4acf304e746face1d",
+      "url": "https://api.github.com/repositories/46969839/contents/src/modules/user/graphqls/system-module.types.graphql?ref=5d96b23c3afb041b626abb2028e8fdb636c5c1ca",
+      "git_url": "https://api.github.com/repositories/46969839/git/blobs/f194586a8e3df4275c133ff4acf304e746face1d",
+      "html_url": "https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/system-module.types.graphql",
+      "content": "type Query {\n    \"\"\"Find all system modules\"\"\"\n    findSystemModules(pageNumber: Int, pageSize: Int): SystemModulesResult\n}\n\ntype SystemModulesResult {\n    code: Int\n    message: String\n    data: [SystemModuleData]\n    count: Int\n}\n\ntype SystemModuleData {\n    id: Int\n    name: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    },
+    {
+      "name": "resource.types.graphql",
+      "path": "src/modules/user/graphqls/resource.types.graphql",
+      "sha": "66ac97aec86df5200aea631290a599ac515a6f9a",
+      "url": "https://api.github.com/repositories/46969839/contents/src/modules/user/graphqls/resource.types.graphql?ref=5d96b23c3afb041b626abb2028e8fdb636c5c1ca",
+      "git_url": "https://api.github.com/repositories/46969839/git/blobs/66ac97aec86df5200aea631290a599ac515a6f9a",
+      "html_url": "https://github.com/notadd/notadd/blob/5d96b23c3afb041b626abb2028e8fdb636c5c1ca/src/modules/user/graphqls/resource.types.graphql",
+      "content": "type Query {\n    \"\"\"Query The specifed system module's all resources and it's permissions\"\"\"\n    findResources(systemModuleId: Int!, pageNumber: Int, pageSize: Int): ResourcesResult\n}\n\ntype ResourcesResult {\n    code: Int\n    message: String\n    data: [ResourceData]\n    count: Int\n}\n\ntype ResourceData {\n    id: Int\n    name: String\n    identify: String\n    permissions: [PermissionData]\n}\n\ntype PermissionData {\n    id: Int\n    name: String\n    action: String\n    identify: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-11-27T08:57:22Z",
+    "updated_at": "2019-07-19T15:34:55Z",
+    "pushed_at": "2019-07-19T09:04:00Z",
+    "issues": 164,
+    "watchers": 118,
+    "fork_count": 319,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 279,
+    "pull_requests_open": 21,
+    "pull_requests_closed": 47,
+    "pull_requests_merged": 211,
+    "releases": 48,
+    "stargazers": 1991
+  }
+}

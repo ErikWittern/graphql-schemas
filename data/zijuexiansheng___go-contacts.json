@@ -1,0 +1,42 @@
+{
+  "repo_name": "go-contacts",
+  "repo_full_name": "zijuexiansheng/go-contacts",
+  "repo_owner": "zijuexiansheng",
+  "repo_description": "Contacts/Address Book Built in Go Programming Language",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gql/schema.graphql",
+      "sha": "04a7edac2a4a705477efe9ebbf929db05bb9a1ca",
+      "url": "https://api.github.com/repositories/182789596/contents/gql/schema.graphql?ref=5520b75a53e5325e92e4453ef1fc9d1109daba7a",
+      "git_url": "https://api.github.com/repositories/182789596/git/blobs/04a7edac2a4a705477efe9ebbf929db05bb9a1ca",
+      "html_url": "https://github.com/zijuexiansheng/go-contacts/blob/5520b75a53e5325e92e4453ef1fc9d1109daba7a/gql/schema.graphql",
+      "content": "type User {\n    uid: ID!\n    username: String!\n    email: String!\n    contacts(limit: Int = 25, offset: Int = 0): [Contact!]!\n}\n\ntype Contact {\n    cid: ID!\n    name: String!\n    phone: String!\n    address: String!\n    email: String!\n}\n\ninput NewUser {\n    username: String!\n    email: String!\n    password: String!\n}\n\ninput NewContact {\n    name: String!\n    phone: String!\n    address: String!\n    email: String!\n}\n\ninput ContactUpdate {\n    cid: ID!\n    name: String!\n    phone: String!\n    address: String!\n    email: String!\n}\n\ntype Mutation {\n    createUser(input: NewUser!): User!\n    addContacts(input: [NewContact!]!): [ID]! @isAuthenticated\n    deleteContacts(input: [ID!]!): [ID]! @isAuthenticated\n    updateContacts(input: [ContactUpdate!]!): [ID]! @isAuthenticated\n}\n\ntype Query {\n    user: User!\n}\n\ndirective @isAuthenticated on FIELD_DEFINITION\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-22T13:09:58Z",
+    "updated_at": "2019-04-22T14:55:51Z",
+    "pushed_at": "2019-04-22T14:55:50Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

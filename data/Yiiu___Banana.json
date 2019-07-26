@@ -1,0 +1,67 @@
+{
+  "repo_name": "Banana",
+  "repo_full_name": "yiiu/banana",
+  "repo_owner": "Yiiu",
+  "repo_description": ":banana:",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "server/graphql/query.graphql",
+      "sha": "e02dedf902440eb08529c550eb3f96ff0280c7e5",
+      "url": "https://api.github.com/repositories/145575173/contents/server/graphql/query.graphql?ref=2fab57a9db8915fc610b70cc93c12230eb5c1f6f",
+      "git_url": "https://api.github.com/repositories/145575173/git/blobs/e02dedf902440eb08529c550eb3f96ff0280c7e5",
+      "html_url": "https://github.com/Yiiu/Banana/blob/2fab57a9db8915fc610b70cc93c12230eb5c1f6f/server/graphql/query.graphql",
+      "content": "type Query {\n  article(id: ID!): Article\n  articles(page: Int, pageSize: Int): ArtilesQuery\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Yiiu/Banana/blob/2fab57a9db8915fc610b70cc93c12230eb5c1f6f/server/graphql/query.graphql:\ntype Query {\n  article(id: ID!): Article\n  articles(page: Int, pageSize: Int): ArtilesQuery\n}\n# https://github.com/Yiiu/Banana/blob/2fab57a9db8915fc610b70cc93c12230eb5c1f6f/server/graphql/Article/schema.graphql:\ntype Article {\n  id: ID!\n  html: String\n  markdown: String\n}\n\ntype ArtilesQuery {\n  count: Int\n  page: Int\n  pageSize: Int\n  data: [Article]\n}\n\ninput ArticleInput {\n  html: String!\n  markdown: String!\n}",
+        "mergedPaths": [
+          "server/graphql/Article/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Article",
+          "ArtilesQuery"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "server/graphql/Article/schema.graphql",
+      "sha": "3e8a0957bbb42108d8f8fbc1d0cc6fbd7af03f71",
+      "url": "https://api.github.com/repositories/145575173/contents/server/graphql/Article/schema.graphql?ref=2fab57a9db8915fc610b70cc93c12230eb5c1f6f",
+      "git_url": "https://api.github.com/repositories/145575173/git/blobs/3e8a0957bbb42108d8f8fbc1d0cc6fbd7af03f71",
+      "html_url": "https://github.com/Yiiu/Banana/blob/2fab57a9db8915fc610b70cc93c12230eb5c1f6f/server/graphql/Article/schema.graphql",
+      "content": "type Article {\n  id: ID!\n  html: String\n  markdown: String\n}\n\ntype ArtilesQuery {\n  count: Int\n  page: Int\n  pageSize: Int\n  data: [Article]\n}\n\ninput ArticleInput {\n  html: String!\n  markdown: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-21T14:26:12Z",
+    "updated_at": "2019-07-15T01:48:02Z",
+    "pushed_at": "2018-08-23T16:23:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

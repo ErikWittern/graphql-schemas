@@ -1,0 +1,39 @@
+{
+  "repo_name": "starter",
+  "repo_full_name": "srslafazan/starter",
+  "repo_owner": "srslafazan",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gateway/constructors/express/express-graphql/schema.graphql",
+      "sha": "d15467dfdf6749e44dd6b3957aeb115b3535000a",
+      "url": "https://api.github.com/repositories/146059409/contents/gateway/constructors/express/express-graphql/schema.graphql?ref=5036570d24b616351a5442ea35c279a47d64e768",
+      "git_url": "https://api.github.com/repositories/146059409/git/blobs/d15467dfdf6749e44dd6b3957aeb115b3535000a",
+      "html_url": "https://github.com/srslafazan/starter/blob/5036570d24b616351a5442ea35c279a47d64e768/gateway/constructors/express/express-graphql/schema.graphql",
+      "content": "type User {\n  id: ID!\n  firstName: String\n  lastName: String\n}\n\ntype Query {\n  hello: String\n  world: User\n  users: [User]\n  me: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-25T02:53:56Z",
+    "updated_at": "2018-11-07T06:58:39Z",
+    "pushed_at": "2018-11-07T06:58:38Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

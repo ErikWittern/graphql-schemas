@@ -1,0 +1,42 @@
+{
+  "repo_name": "prj3-graphql-server",
+  "repo_full_name": "kjonathante/prj3-graphql-server",
+  "repo_owner": "kjonathante",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "ab8e940a05f55fa1e237517d9ecbf855e243aff9",
+      "url": "https://api.github.com/repositories/152167451/contents/src/schema.graphql?ref=1844cfa22e9816a18a82cd2ff245159a960a9542",
+      "git_url": "https://api.github.com/repositories/152167451/git/blobs/ab8e940a05f55fa1e237517d9ecbf855e243aff9",
+      "html_url": "https://github.com/kjonathante/prj3-graphql-server/blob/1844cfa22e9816a18a82cd2ff245159a960a9542/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  books: [Book!]!\n}\n\ntype Mutation {\n  createBook(description: String!): Book!\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n}\n\ntype Subscription {\n  bookAdded: Book\n}\n\ntype User {\n  _id: ID!\n  email: String!\n  name: String!\n  books: [Book!]!\n}\n\ntype Book {\n  _id: ID!\n  description: String!\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-09T01:10:47Z",
+    "updated_at": "2018-10-11T06:25:06Z",
+    "pushed_at": "2018-10-11T06:25:04Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 6,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 6,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

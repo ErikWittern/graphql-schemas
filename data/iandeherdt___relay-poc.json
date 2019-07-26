@@ -1,0 +1,42 @@
+{
+  "repo_name": "relay-poc",
+  "repo_full_name": "iandeherdt/relay-poc",
+  "repo_owner": "iandeherdt",
+  "repo_description": "relay proof of concept",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "15f35980792570a5897f555b63c68d7d7cfb854d",
+      "url": "https://api.github.com/repositories/93490932/contents/data/schema.graphql?ref=e7f75d326dfa69cdd126d42d40c73875a701dc68",
+      "git_url": "https://api.github.com/repositories/93490932/git/blobs/15f35980792570a5897f555b63c68d7d7cfb854d",
+      "html_url": "https://github.com/iandeherdt/relay-poc/blob/e7f75d326dfa69cdd126d42d40c73875a701dc68/data/schema.graphql",
+      "content": "# The base element for a file\ntype Element implements Node {\n  # The ID of an object\n  id: ID!\n\n  # The number of the fact\n  number: String\n\n  # The facts related to the element\n  facts(after: String, first: Int, before: String, last: Int): FactConnection\n}\n\n# An infraction\ntype Fact implements Node {\n  # The ID of an object\n  id: ID!\n\n  # The article type of the infraction\n  articleType: String\n}\n\n# A connection to a list of items.\ntype FactConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [FactEdge]\n}\n\n# An edge in a connection.\ntype FactEdge {\n  # The item at the end of the edge\n  node: Fact\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Mutation {\n  updateFact(input: UpdateFactInput!): UpdateFactPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  facts(ids: [Int]): [Fact]\n  elements(ids: [Int]): [Element]\n}\n\ninput UpdateFactInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype UpdateFactPayload {\n  fact(ids: [Int]): [Fact]\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-06T07:47:29Z",
+    "updated_at": "2017-06-07T14:51:59Z",
+    "pushed_at": "2017-06-07T14:51:58Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "lambda-notes-back-end",
+  "repo_full_name": "ryanboris/lambda-notes-back-end",
+  "repo_owner": "ryanboris",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "3d95669f144685dfdb389ce33a42f2ca1e703d7d",
+      "url": "https://api.github.com/repositories/162528694/contents/schema.graphql?ref=65616bc973c88e3eefffffbc0b51b10a3389520c",
+      "git_url": "https://api.github.com/repositories/162528694/git/blobs/3d95669f144685dfdb389ce33a42f2ca1e703d7d",
+      "html_url": "https://github.com/ryanboris/lambda-notes-back-end/blob/65616bc973c88e3eefffffbc0b51b10a3389520c/schema.graphql",
+      "content": "type Query {\n  notes: [Note!]!\n  note(noteId: ID!): Note\n  notesByUser(userId: ID!): [Note!]!\n}\n\ntype Mutation {\n  createUser(name: String!): User\n  createNote(title: String!, textbody: String!, userId: ID!): Note\n}\n\ntype User {\n  id: ID!\n  name: String!\n  notes: [Note!]!\n}\n\ntype Note {\n  id: ID!\n  title: String!\n  textbody: String!\n  author: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-20T05:00:12Z",
+    "updated_at": "2018-12-20T20:56:25Z",
+    "pushed_at": "2018-12-20T20:56:23Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "api-aggregator",
+  "repo_full_name": "sowani/api-aggregator",
+  "repo_owner": "sowani",
+  "repo_description": "API aggregator using graphql and nodejs.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "ccc740176d10894c65bf72861ccdf38a8f54f32d",
+      "url": "https://api.github.com/repositories/135048256/contents/src/schema.graphql?ref=92bb10b20f2be0f61db1f8dcba0e76e0c1e2d74c",
+      "git_url": "https://api.github.com/repositories/135048256/git/blobs/ccc740176d10894c65bf72861ccdf38a8f54f32d",
+      "html_url": "https://github.com/sowani/api-aggregator/blob/92bb10b20f2be0f61db1f8dcba0e76e0c1e2d74c/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  feed: [Link!]!\n  link (id: ID!): Link\n}\n\ntype Mutation {\n  post (url: String!, description: String!): Link!\n  updateLink (id: ID!, url: String, description: String): Link\n  deleteLink (id: ID!): Link\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-27T13:21:07Z",
+    "updated_at": "2018-05-28T18:20:55Z",
+    "pushed_at": "2018-05-28T18:20:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

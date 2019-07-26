@@ -1,0 +1,42 @@
+{
+  "repo_name": "manifold-sample-graphql-app",
+  "repo_full_name": "manifold-systems/manifold-sample-graphql-app",
+  "repo_owner": "manifold-systems",
+  "repo_description": "A sample application demonstrating the GraphQL Manifold",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "movies.graphql",
+      "path": "src/main/resources/manifold/graphql/sample/schema/movies.graphql",
+      "sha": "52329097b3b1d355c43c0b5f5c947bff7223f99e",
+      "url": "https://api.github.com/repositories/184358921/contents/src/main/resources/manifold/graphql/sample/schema/movies.graphql?ref=fa88251350f6bb41b61e9639b9e70d75a16234c6",
+      "git_url": "https://api.github.com/repositories/184358921/git/blobs/52329097b3b1d355c43c0b5f5c947bff7223f99e",
+      "html_url": "https://github.com/manifold-systems/manifold-sample-graphql-app/blob/fa88251350f6bb41b61e9639b9e70d75a16234c6/src/main/resources/manifold/graphql/sample/schema/movies.graphql",
+      "content": "#\n# A very simple schema for movies\n#\n\nschema {\n  query: QueryRoot\n  mutation: MutationRoot\n}\n\ntype QueryRoot {\n  movie(id: ID!) : Movie\n  movies(title: String, genre: Genre = Action, releaseDate: Date) : [Movie!]\n  actors(title: String, genre: Genre) : [CastMember!]!\n  role(id: ID!) : Role\n  person(id: ID!) : Person\n  persons: [Person]!\n  animal(id: ID!) : Animal\n  review(id: ID!) : Review\n}\n\ntype MutationRoot {\n  createReview(movieId: ID!, review: ReviewInput!) : Review!\n}\n\ntype Movie {\n  id: ID!\n  title: String!\n  genre: [Genre!]!\n  releaseDate: Date!\n  cast: [Role!]!\n  starring: CastMember\n}\n\ntype Role {\n  id: ID!\n  actor: Actor!\n  name: String!\n  type: Type!\n}\n\ntype Person implements Actor {\n  id: ID!\n  name: String!\n  dateOfBirth: Date!\n  nationality: String\n  height: Float # meters\n}\n\ntype Animal implements Actor {\n  id: ID!\n  name: String!\n  nationality: String\n  kind: String\n}\n\n\ninterface Actor {\n  id: ID!\n  name: String!\n  nationality: String\n}\n\ntype Review {\n  id: ID!\n  movie: Movie!\n  stars: Int!\n  comment: String\n}\n\ninput ReviewInput {\n  stars: Int!\n  comment: String\n}\n\ninput ActorInput {\n  name: String!\n  nationality: String\n}\n\ninput MovieInput {\n  title: String!\n  genre: Genre!\n  releaseDate: Date\n}\n\nunion CastMember = Person | Animal\n\nscalar Date # Java LocalDate\n\nenum Type {\n  Main, Supporting, Antagonist, Tertiary, Flat\n}\n\nenum Genre {\n  Action, Comedy, Drama, Fantasy, Horror, Romance, SciFi, Western\n}\n\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-01T02:24:19Z",
+    "updated_at": "2019-07-19T19:01:58Z",
+    "pushed_at": "2019-07-19T19:01:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 8
+  }
+}

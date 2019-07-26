@@ -1,0 +1,42 @@
+{
+  "repo_name": "codyglot",
+  "repo_full_name": "nlepage/codyglot",
+  "repo_owner": "nlepage",
+  "repo_description": "Codyglot is a polyglot code execution tool.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "cd41356bf3fc9925614186e0beba2f1c5aee722e",
+      "url": "https://api.github.com/repositories/118678099/contents/graphql/schema.graphql?ref=429201227857f4349e7ecbf7610d61013b46f36f",
+      "git_url": "https://api.github.com/repositories/118678099/git/blobs/cd41356bf3fc9925614186e0beba2f1c5aee722e",
+      "html_url": "https://github.com/nlepage/codyglot/blob/429201227857f4349e7ecbf7610d61013b46f36f/graphql/schema.graphql",
+      "content": "input ExecutionInput {\n    stdin: String!\n}\n\ninput FileInput {\n    path: String!\n    content: String!\n}\n\ntype CommandResult {\n    status: Int!\n    stdout: String!\n    stderr: String!\n    duration: Int!\n}\n\ntype ExecuteResponse {\n    compilation: CommandResult\n    executions: [CommandResult]!\n}\n\ntype Query {\n    executeSnippet(language: String!, snippet: String!, executions: [ExecutionInput!]!): ExecuteResponse\n    executeSources(language: String!, sources: [FileInput!]!, executions: [ExecutionInput!]!): ExecuteResponse\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-23T22:23:34Z",
+    "updated_at": "2019-02-08T15:48:37Z",
+    "pushed_at": "2019-02-08T15:48:36Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

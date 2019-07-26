@@ -1,0 +1,42 @@
+{
+  "repo_name": "google-trends-graphql-api",
+  "repo_full_name": "matheuscorreia/google-trends-graphql-api",
+  "repo_owner": "matheuscorreia",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "8f2885ec66c8f1aa1aa1bc3ecbab85d97034b783",
+      "url": "https://api.github.com/repositories/135628549/contents/data/schema.graphql?ref=d29283010d749cd024004ac02756ea1a9bd17b8f",
+      "git_url": "https://api.github.com/repositories/135628549/git/blobs/8f2885ec66c8f1aa1aa1bc3ecbab85d97034b783",
+      "html_url": "https://github.com/matheuscorreia/google-trends-graphql-api/blob/d29283010d749cd024004ac02756ea1a9bd17b8f/data/schema.graphql",
+      "content": "\"\"\"\nShow data timeline info for term trends. For multiple terms, also shows average\n\"\"\"\ntype InterestOverTime {\n  timelineData: [TimelineDataPoint]\n}\n\n\"\"\"Root field for all queries\"\"\"\ntype Query {\n  interestOverTime(terms: [String]!): InterestOverTime\n}\n\n\"\"\"Data point on data timeline\"\"\"\ntype TimelineDataPoint {\n  \"\"\"Time of point represented in seconds\"\"\"\n  time: Int\n\n  \"\"\"Formatted time representing range from this data point to the next\"\"\"\n  formattedTime: String\n\n  \"\"\"Formatted time representing date of this data point\"\"\"\n  formattedAxisTime: String\n\n  \"\"\"Array of values containing y axis values for each term\"\"\"\n  value: [Int]\n\n  \"\"\"Array of booleans informing if data is projected or exists\"\"\"\n  hasData: [Boolean]\n\n  \"\"\"Array of values mathing `value` field but all formatted\"\"\"\n  formattedValue: [String]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-31T19:49:38Z",
+    "updated_at": "2019-05-28T22:40:19Z",
+    "pushed_at": "2018-06-02T01:03:05Z",
+    "issues": 2,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

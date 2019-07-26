@@ -1,0 +1,42 @@
+{
+  "repo_name": "ms-device-manager",
+  "repo_full_name": "nebulae-tpm/ms-device-manager",
+  "repo_owner": "nebulae-tpm",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "api/gateway/graphql/device-manager/schema.gql",
+      "sha": "006b21242b022336854c3d6801aba12619f03c6c",
+      "url": "https://api.github.com/repositories/145864917/contents/api/gateway/graphql/device-manager/schema.gql?ref=dc82cb55241bba7aaea845e688f05292d69afd68",
+      "git_url": "https://api.github.com/repositories/145864917/git/blobs/006b21242b022336854c3d6801aba12619f03c6c",
+      "html_url": "https://github.com/nebulae-tpm/ms-device-manager/blob/dc82cb55241bba7aaea845e688f05292d69afd68/api/gateway/graphql/device-manager/schema.gql",
+      "content": "\n\"key value object\"\ntype DeviceManagerKeyValue{\n  \"Item key\"\n  key: String\n  \"Item value\"\n  value: String\n}\n\n\"Configuration TAG\"\ntype DeviceManagerTag{\n  \"Tag name\"\n  name: String\n  \"Tag type\"\n  type: String\n  \"Tag attributes\"\n  attributes: [DeviceManagerKeyValue]\n}\n\ntype DeviceManagerCommandResponse{\n  \"Response code\"\n  code: Int\n  \"Response message\"\n  message: String\n}\n\ninput BasicInfoTag {\n  \"Tag name\"\n  name: String\n  \"Tag type\"\n  type: String\n}\n\n\"Tag's attribute\"\ninput TagAttribute {\n  \"attribute name\"\n  key: String\n  \"attribute value\"\n  value: String\n}\n\ntype Query {\n  # \"return Tags Array using paginator methods\"\n  getTags(page: Int!, count: Int!, filterText: String, sortColumn: String, sortOrder: String): [DeviceManagerTag]\n  \"get all Tag types\"\n  deviceManagerGetTagTypes: [String]\n  \"get the total tag count\"\n  deviceManagerGetTagCount: Int\n}\n\ntype Mutation{\n  \"Create or update new tag\"\n  persistBasicInfoTag(input: BasicInfoTag): DeviceManagerCommandResponse\n  \"edit basic Tag info\"\n  deviceManagerEditBasicTagInfo(tagName: String, input: BasicInfoTag): DeviceManagerCommandResponse\n  \"Delete a tag registry\"\n  deviceManagerDeleteTag(tagName: String):DeviceManagerCommandResponse\n  \"Add an attribute to Tag\"\n  deviceManagerAddAttributeToTag( tagName: String!, input: TagAttribute): DeviceManagerCommandResponse\n  \"Delete an attribute from a tag\"\n  deviceManagerDeleteTagAttribute(tagName: String!, tagAttributeName: String!): DeviceManagerCommandResponse\n  \"Edit a Tag attribute\"\n  deviceManagerEditTagAttribute(tagName: String!, tagAttributeName: String!, input: TagAttribute ): DeviceManagerCommandResponse\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-23T14:26:34Z",
+    "updated_at": "2019-04-03T18:53:33Z",
+    "pushed_at": "2019-04-03T18:53:32Z",
+    "issues": 0,
+    "watchers": 4,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

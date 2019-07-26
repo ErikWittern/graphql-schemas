@@ -1,0 +1,66 @@
+{
+  "repo_name": "library",
+  "repo_full_name": "spodin/library",
+  "repo_owner": "spodin",
+  "repo_description": "Some experiments with wiring up Vert.x, Guice and GraphQL together",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "root.graphql",
+      "path": "src/main/resources/graphql/root.graphql",
+      "sha": "1c80177aa35920a40c37a35d99701db7fb535719",
+      "url": "https://api.github.com/repositories/96772188/contents/src/main/resources/graphql/root.graphql?ref=947de7a26b1c638ea3ff6f2c6f25ef2791257137",
+      "git_url": "https://api.github.com/repositories/96772188/git/blobs/1c80177aa35920a40c37a35d99701db7fb535719",
+      "html_url": "https://github.com/spodin/library/blob/947de7a26b1c638ea3ff6f2c6f25ef2791257137/src/main/resources/graphql/root.graphql",
+      "content": "# Root types\n\ntype Query {\n\n    # Fetch books and authors\n    books: [Book!]\n}\n\ntype Mutation {\n\n    # Change book name by specified identifier\n    changeBookName(\n\n        # Book identifier\n        id: Int!,\n\n        # New book name\n        name: String!\n\n    ): Boolean\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/spodin/library/blob/947de7a26b1c638ea3ff6f2c6f25ef2791257137/src/main/resources/graphql/root.graphql:\n# Root types\n\ntype Query {\n\n    # Fetch books and authors\n    books: [Book!]\n}\n\ntype Mutation {\n\n    # Change book name by specified identifier\n    changeBookName(\n\n        # Book identifier\n        id: Int!,\n\n        # New book name\n        name: String!\n\n    ): Boolean\n}\n# https://github.com/spodin/library/blob/947de7a26b1c638ea3ff6f2c6f25ef2791257137/src/main/resources/graphql/domain.graphql:\n# Core domain types\n\ntype Book {\n    id: Int!\n    name: String!\n    author: Author!\n}\n\ntype Author {\n    id: Int!\n    name: String!\n}",
+        "mergedPaths": [
+          "src/main/resources/graphql/domain.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Book"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "domain.graphql",
+      "path": "src/main/resources/graphql/domain.graphql",
+      "sha": "92d653a04102968073b555a4ea07ca3f417a316c",
+      "url": "https://api.github.com/repositories/96772188/contents/src/main/resources/graphql/domain.graphql?ref=947de7a26b1c638ea3ff6f2c6f25ef2791257137",
+      "git_url": "https://api.github.com/repositories/96772188/git/blobs/92d653a04102968073b555a4ea07ca3f417a316c",
+      "html_url": "https://github.com/spodin/library/blob/947de7a26b1c638ea3ff6f2c6f25ef2791257137/src/main/resources/graphql/domain.graphql",
+      "content": "# Core domain types\n\ntype Book {\n    id: Int!\n    name: String!\n    author: Author!\n}\n\ntype Author {\n    id: Int!\n    name: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-07-10T11:56:01Z",
+    "updated_at": "2018-09-07T05:14:40Z",
+    "pushed_at": "2018-02-06T11:24:12Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

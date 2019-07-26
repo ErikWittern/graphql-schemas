@@ -1,0 +1,42 @@
+{
+  "repo_name": "prisma-todo-server",
+  "repo_full_name": "bcrumbs/prisma-todo-server",
+  "repo_owner": "bcrumbs",
+  "repo_description": "Graphql server, created with Prisma, provides demo todo app schema.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema/schema.graphql",
+      "sha": "74fbefd6daa685a16f46d5dced8ada5e114080d7",
+      "url": "https://api.github.com/repositories/142472895/contents/src/schema/schema.graphql?ref=ce166cd928936bdec44975db1e95789c8b5f2801",
+      "git_url": "https://api.github.com/repositories/142472895/git/blobs/74fbefd6daa685a16f46d5dced8ada5e114080d7",
+      "html_url": "https://github.com/bcrumbs/prisma-todo-server/blob/ce166cd928936bdec44975db1e95789c8b5f2801/src/schema/schema.graphql",
+      "content": "type Query {\n  me: User\n  tasks(searchString: String): [Task!]!\n  Task(id: ID!): Task\n}\n\ntype Mutation {\n  signup(email: String!, password: String!): AuthPayload!\n  login(email: String!, password: String!): AuthPayload!\n  createTask(text: String!): Task\n  updateTask(id: ID!, text: String, completed: Boolean): Task\n  deleteTask(id: ID!): Task\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n\n# The `User` type is a reduced version (\"mask\") of the `User` type from the data model (and database schema).\n# It does not expose the `createdAt`, `updatedAt` and `password` fields.\ntype User {\n  id: ID!\n  email: String!\n  name: String\n}\n\n\ntype Task {\n  id: ID!\n  text: String!\n  completed: Boolean!\n  author: User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-26T17:29:12Z",
+    "updated_at": "2019-01-24T11:30:51Z",
+    "pushed_at": "2018-08-06T13:56:41Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

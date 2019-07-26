@@ -1,0 +1,42 @@
+{
+  "repo_name": "next-apollo-auth-example",
+  "repo_full_name": "thealjey/next-apollo-auth-example",
+  "repo_owner": "thealjey",
+  "repo_description": "A simple authentication example with Next.js/Apollo/MongoDB using JWT.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.gql",
+      "path": "src/api/typeDefs/user.gql",
+      "sha": "1dd1c0623d2c8c8362c18138960f18f5f0d63869",
+      "url": "https://api.github.com/repositories/117511742/contents/src/api/typeDefs/user.gql?ref=8470a15704194e71caa18dacbefe0cd02de0b2a5",
+      "git_url": "https://api.github.com/repositories/117511742/git/blobs/1dd1c0623d2c8c8362c18138960f18f5f0d63869",
+      "html_url": "https://github.com/thealjey/next-apollo-auth-example/blob/8470a15704194e71caa18dacbefe0cd02de0b2a5/src/api/typeDefs/user.gql",
+      "content": "type Query {\n  # true if the user is authenticated\n  authenticated: Boolean!\n}\n\ntype Mutation {\n  # registers a new user in the system\n  createUser(name: String!, email: String!, password: String!): User\n  # signs a user in\n  signinUser(email: String!, password: String!, rememberMe: Boolean!): User\n}\n\ntype User {\n  # UUID\n  _id: ID!\n  # user \"display\" name\n  name: String!\n  # user email, also used as an identifiable username\n  email: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-15T07:27:41Z",
+    "updated_at": "2018-01-24T16:19:34Z",
+    "pushed_at": "2018-02-12T07:37:35Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

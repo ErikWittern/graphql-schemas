@@ -1,0 +1,42 @@
+{
+  "repo_name": "go-graphql-subscription-example",
+  "repo_full_name": "ccamel/go-graphql-subscription-example",
+  "repo_owner": "ccamel",
+  "repo_description": "☝️ go-graphql subscription over Kafka example ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "subscription-api.graphql",
+      "path": "static/graphql/schema/subscription-api.graphql",
+      "sha": "f4aac7a71c6a0b894cdba658d436886a077de3bd",
+      "url": "https://api.github.com/repositories/169989792/contents/static/graphql/schema/subscription-api.graphql?ref=8f7ce82574dd8afd63fa67f09592c1972611d0eb",
+      "git_url": "https://api.github.com/repositories/169989792/git/blobs/f4aac7a71c6a0b894cdba658d436886a077de3bd",
+      "html_url": "https://github.com/ccamel/go-graphql-subscription-example/blob/8f7ce82574dd8afd63fa67f09592c1972611d0eb/static/graphql/schema/subscription-api.graphql",
+      "content": "scalar JSONObject\nscalar Offset\n\nschema {\n  query: Query\n  subscription: Subscription\n}\n\ntype Query {\n  # List available topics.\n  topics: [String!]!\n}\n\ntype Subscription {\n  # Subscribe to events on the given topic.\n  event(\n    # Name of the topic to subscribe to.\n    on: String!,\n    # The offset id to consume from (a non-negative number), or:\n    # - `-1`: the most recent offset available for a partition (end)\n    # - `-2`: the least recent offset available for a partition (beginning)\n    #\n    # default: -2\n    at: Offset = \"-2\",\n    # Specifies a boolean expression allowing to filter events matching the predicate.\n    matching: String): JSONObject\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-10T14:58:45Z",
+    "updated_at": "2019-04-23T12:03:39Z",
+    "pushed_at": "2019-04-23T12:03:38Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "ReactQL",
+  "repo_full_name": "blakeb254/reactql",
+  "repo_owner": "BlakeB254",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "e7ac56272358e6d7f8e993204805f7b893b3f144",
+      "url": "https://api.github.com/repositories/185502022/contents/schema/schema.graphql?ref=b6a4d8c58661541777dc83deb68f76e25026d581",
+      "git_url": "https://api.github.com/repositories/185502022/git/blobs/e7ac56272358e6d7f8e993204805f7b893b3f144",
+      "html_url": "https://github.com/BlakeB254/ReactQL/blob/b6a4d8c58661541777dc83deb68f76e25026d581/schema/schema.graphql",
+      "content": "type Story {\n  id: String\n  title: String\n  url: String\n}\n\ntype HackerNews {\n  topStories: [Story]\n}\n\ntype Query {\n  hn: HackerNews\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-08T01:09:18Z",
+    "updated_at": "2019-05-08T01:09:49Z",
+    "pushed_at": "2019-05-08T01:09:33Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "movieql",
+  "repo_full_name": "nomoret/movieql",
+  "repo_owner": "nomoret",
+  "repo_description": "Movie API with Graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "scheme.graphql",
+      "path": "graphql/scheme.graphql",
+      "sha": "e2a8a862f27f61a80736554092701203afbd8aad",
+      "url": "https://api.github.com/repositories/173865158/contents/graphql/scheme.graphql?ref=59af856c31deee7699b2797112549974b38628c6",
+      "git_url": "https://api.github.com/repositories/173865158/git/blobs/e2a8a862f27f61a80736554092701203afbd8aad",
+      "html_url": "https://github.com/nomoret/movieql/blob/59af856c31deee7699b2797112549974b38628c6/graphql/scheme.graphql",
+      "content": "type Movie {\n    id: Int!\n    title: String!\n    rating: Float!\n    summary: String!\n    language: String!\n    medium_cover_image: String!\n}\n\ntype Query {\n    movies(limit:Int, rating:Float): [Movie]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-05T03:20:48Z",
+    "updated_at": "2019-07-16T07:58:19Z",
+    "pushed_at": "2019-07-16T07:58:25Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

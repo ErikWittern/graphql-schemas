@@ -1,0 +1,39 @@
+{
+  "repo_name": "helpe.rs",
+  "repo_full_name": "gregbrimble/helpe.rs",
+  "repo_owner": "GregBrimble",
+  "repo_description": "Personal productivity, using developer tools",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "worker/src/query.graphql",
+      "sha": "cda0487d33236d7e650eeba378cc8607c97249e2",
+      "url": "https://api.github.com/repositories/157277133/contents/worker/src/query.graphql?ref=1a97cf24064655d36b05e9933eac76b479737127",
+      "git_url": "https://api.github.com/repositories/157277133/git/blobs/cda0487d33236d7e650eeba378cc8607c97249e2",
+      "html_url": "https://github.com/GregBrimble/helpe.rs/blob/1a97cf24064655d36b05e9933eac76b479737127/worker/src/query.graphql",
+      "content": "type Query {\n    hello: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-12T21:09:40Z",
+    "updated_at": "2019-01-17T22:27:40Z",
+    "pushed_at": "2019-01-17T22:26:43Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

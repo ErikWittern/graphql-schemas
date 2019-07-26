@@ -1,0 +1,41 @@
+{
+  "repo_name": "xread-store",
+  "repo_full_name": "lotosbin/xread-store",
+  "repo_owner": "lotosbin",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "c04eb39e889fabb5bb3c2efe896443a3568d024d",
+      "url": "https://api.github.com/repositories/182497935/contents/server/schema.graphql?ref=2e3cdab71acb1d2109e1145795db399fb9506bd3",
+      "git_url": "https://api.github.com/repositories/182497935/git/blobs/c04eb39e889fabb5bb3c2efe896443a3568d024d",
+      "html_url": "https://github.com/lotosbin/xread-store/blob/2e3cdab71acb1d2109e1145795db399fb9506bd3/server/schema.graphql",
+      "content": "#schema {\n#    query: Query\n#    mutation: Mutation\n#    subscription:Subscription\n#}\n\ninterface Node {\n    id: ID!\n}\ntype PageInfo {\n    startCursor: String!,\n    endCursor: String!,\n    hasNextPage: Boolean!,\n    hasPreviousPage: Boolean!\n}\n\ntype Article implements Node {\n    id: ID!\n    title: String\n    summary: String\n    link: String\n    time: String\n    feed: Feed\n}\n\ntype ArticleConnection {\n    pageInfo: PageInfo!\n    edges: [ArticleEdge!]!\n}\ntype ArticleEdge  {\n    cursor: String!\n    node: Article!\n}\n\ntype Feed implements Node{\n    id:ID!\n    link:String!\n    title:String\n    articles(first:Int,after:String,last:Int,before:String):ArticleConnection\n}\ntype FeedConnection {\n    pageInfo: PageInfo!\n    edges: [FeedEdge!]!\n}\ntype FeedEdge  {\n    cursor: String!\n    node: Feed!\n}\n\ntype TemplateParam{\n    name:String!\n    values:[String!]!\n}\n\ntype Template implements Node{\n    id:ID!\n    link:String!\n    title:String\n    params:[TemplateParam!]!\n}\ntype TemplateConnection {\n    pageInfo: PageInfo!\n    edges: [TemplateEdge!]!\n}\ntype TemplateEdge  {\n    cursor: String!\n    node: Template!\n}\n# The \"Query\" type is the root of all GraphQL queries.\n# (A \"Mutation\" type will be covered later on.)\ntype Query {\n    node(id: ID!,type:String): Node\n    feeds(first:Int,after:String,last:Int,before:String,keyword:String):FeedConnection\n    templates(first:Int,after:String,last:Int,before:String):TemplateConnection\n}\ntype Mutation {\n    addFeed(link:String!,title:String):Feed\n    addTemplate(link:String!,title:String,params:String):Template\n}\ntype Subscription {\n    feedAdded:Feed\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-21T06:24:09Z",
+    "updated_at": "2019-05-07T11:40:53Z",
+    "pushed_at": "2019-05-07T11:40:52Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

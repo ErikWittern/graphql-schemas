@@ -1,0 +1,42 @@
+{
+  "repo_name": "ide-alpha",
+  "repo_full_name": "titan-suite/ide-alpha",
+  "repo_owner": "titan-suite",
+  "repo_description": "IDE for Titan Suite",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema/schema.graphql",
+      "sha": "be9a5dceb7b5e95c9278a6fe2fbedfa7bfe67472",
+      "url": "https://api.github.com/repositories/143329005/contents/server/src/schema/schema.graphql?ref=b1435ccf768947ef6e33457da7ae4eae1e5cd966",
+      "git_url": "https://api.github.com/repositories/143329005/git/blobs/be9a5dceb7b5e95c9278a6fe2fbedfa7bfe67472",
+      "html_url": "https://github.com/titan-suite/ide-alpha/blob/b1435ccf768947ef6e33457da7ae4eae1e5cd966/server/src/schema/schema.graphql",
+      "content": "type Data {\n  data: String\n}\ntype Query {\n  listAccounts(web3Address: String!): Data!\n}\ntype Mutation {\n  executeWeb3(web3Address: String!, command: String!): Data!\n  compileContract(contract: String!, web3Address: String!): Data!\n  unlockAccount(\n    web3Address: String!\n    mainAccount: String!\n    mainAccountPass: String!\n  ): Boolean!\n  deployContract(\n    contract: String\n    contractName: String\n    alreadyDeployed: Boolean!\n    abi: String\n    deployedContractAddress: String\n    web3Address: String!\n    mainAccount: String\n    mainAccountPass: String\n    gas: Int\n    contractArguments: String\n  ): Data!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-02T18:04:33Z",
+    "updated_at": "2019-05-31T09:06:14Z",
+    "pushed_at": "2018-09-04T04:44:40Z",
+    "issues": 1,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 4,
+    "stargazers": 10
+  }
+}

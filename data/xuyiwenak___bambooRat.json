@@ -1,0 +1,52 @@
+{
+  "repo_name": "bambooRat",
+  "repo_full_name": "xuyiwenak/bamboorat",
+  "repo_owner": "xuyiwenak",
+  "repo_description": "A microservice go project ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "modprojects/greeter/api/graphql/graphql/schema.graphql",
+      "sha": "cc6183a672bf6f0f7e2fa3c967a3410ba816816a",
+      "url": "https://api.github.com/repositories/173749847/contents/modprojects/greeter/api/graphql/graphql/schema.graphql?ref=d937405dd0c1fa7a775817a7f315753bd591be6e",
+      "git_url": "https://api.github.com/repositories/173749847/git/blobs/cc6183a672bf6f0f7e2fa3c967a3410ba816816a",
+      "html_url": "https://github.com/xuyiwenak/bambooRat/blob/d937405dd0c1fa7a775817a7f315753bd591be6e/modprojects/greeter/api/graphql/graphql/schema.graphql",
+      "content": "type HelloResponse {\n  msg: String!\n}\n\ntype Query {\n  hello(name: String! = \"World\"): HelloResponse\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "schema.graphql",
+      "path": "goprojects/src/examples/greeter/api/graphql/graphql/schema.graphql",
+      "sha": "cc6183a672bf6f0f7e2fa3c967a3410ba816816a",
+      "url": "https://api.github.com/repositories/173749847/contents/goprojects/src/examples/greeter/api/graphql/graphql/schema.graphql?ref=3b6a874d5f768ac72dff626b3343fe18622d8c16",
+      "git_url": "https://api.github.com/repositories/173749847/git/blobs/cc6183a672bf6f0f7e2fa3c967a3410ba816816a",
+      "html_url": "https://github.com/xuyiwenak/bambooRat/blob/3b6a874d5f768ac72dff626b3343fe18622d8c16/goprojects/src/examples/greeter/api/graphql/graphql/schema.graphql",
+      "content": "type HelloResponse {\n  msg: String!\n}\n\ntype Query {\n  hello(name: String! = \"World\"): HelloResponse\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-04T13:27:02Z",
+    "updated_at": "2019-07-19T10:34:42Z",
+    "pushed_at": "2019-07-19T10:34:39Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 2,
+    "stargazers": 4
+  }
+}

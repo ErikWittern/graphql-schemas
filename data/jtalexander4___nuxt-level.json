@@ -1,0 +1,41 @@
+{
+  "repo_name": "nuxt-level",
+  "repo_full_name": "jtalexander4/nuxt-level",
+  "repo_owner": "jtalexander4",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/plugins/graphql/config/generated/schema.graphql",
+      "sha": "e0b80275d4d82cefc3fba7525f40808f50a1450c",
+      "url": "https://api.github.com/repositories/146656189/contents/server/plugins/graphql/config/generated/schema.graphql?ref=1d4d6b693258cbda9e30ca69119aa68a87f02c1d",
+      "git_url": "https://api.github.com/repositories/146656189/git/blobs/e0b80275d4d82cefc3fba7525f40808f50a1450c",
+      "html_url": "https://github.com/jtalexander4/nuxt-level/blob/1d4d6b693258cbda9e30ca69119aa68a87f02c1d/server/plugins/graphql/config/generated/schema.graphql",
+      "content": "type Account {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  name: String!\n  account_type_id: Accounttype\n  parent_account_id: Account\n  accounts(sort: String, limit: Int, start: Int, where: JSON): [Account]\n  transactions(sort: String, limit: Int, start: Int, where: JSON): [Transaction]\n}\n\ntype Accounttype {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  name: String!\n  credit_positive: Boolean!\n  accounts(sort: String, limit: Int, start: Int, where: JSON): [Account]\n}\n\n\"\"\"\nThe `DateTime` scalar represents a date and time following the ISO 8601 standard\n\"\"\"\nscalar DateTime\n\n\"\"\"\nThe `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).\n\"\"\"\nscalar JSON\n\nunion Morph = Account | Accounttype | Transaction | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser\n\ntype Query {\n  account(id: ID!): Account\n  accounts(sort: String, limit: Int, start: Int, where: JSON): [Account]\n  accounttype(id: ID!): Accounttype\n  accounttypes(sort: String, limit: Int, start: Int, where: JSON): [Accounttype]\n  transaction(id: ID!): Transaction\n  transactions(sort: String, limit: Int, start: Int, where: JSON): [Transaction]\n  files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]\n  role(id: ID!): UsersPermissionsRole\n\n  \"\"\"\n  Retrieve all the existing roles. You can't apply filters on this query.\n  \"\"\"\n  roles(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsRole]\n  user(id: ID!): UsersPermissionsUser\n  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]\n}\n\ntype Transaction {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  account: Account\n  amount: String!\n  date_posted: DateTime!\n}\n\ntype UploadFile {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  name: String!\n  hash: String!\n  sha256: String\n  ext: String\n  mime: String!\n  size: String!\n  url: String!\n  provider: String!\n  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]\n}\n\ntype UsersPermissionsPermission {\n  id: ID!\n  type: String!\n  controller: String!\n  action: String!\n  enabled: Boolean!\n  policy: String\n  role: UsersPermissionsRole\n}\n\ntype UsersPermissionsRole {\n  id: ID!\n  name: String!\n  description: String\n  type: String\n  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]\n  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]\n}\n\ntype UsersPermissionsUser {\n  id: ID!\n  username: String!\n  email: String!\n  resetPasswordToken: String\n  confirmed: Boolean\n  blocked: Boolean\n  role: UsersPermissionsRole\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-29T20:40:25Z",
+    "updated_at": "2018-08-29T21:10:59Z",
+    "pushed_at": "2018-08-29T21:10:54Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

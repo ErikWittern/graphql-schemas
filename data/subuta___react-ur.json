@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-ur",
+  "repo_full_name": "subuta/react-ur",
+  "repo_owner": "subuta",
+  "repo_description": "React universal renderer.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "prisma.graphql",
+      "path": "example/complex/src/server/api/schema/generated/prisma.graphql",
+      "sha": "b8d729b64e1fb293288f7bb39c43c0b05019c1e1",
+      "url": "https://api.github.com/repositories/149222415/contents/example/complex/src/server/api/schema/generated/prisma.graphql?ref=a4e670744d85c73e94e1e5c07f7ac11821bf8929",
+      "git_url": "https://api.github.com/repositories/149222415/git/blobs/b8d729b64e1fb293288f7bb39c43c0b05019c1e1",
+      "html_url": "https://github.com/subuta/react-ur/blob/a4e670744d85c73e94e1e5c07f7ac11821bf8929/example/complex/src/server/api/schema/generated/prisma.graphql",
+      "content": "type AggregateTodo {\n  count: Int!\n}\n\ntype BatchPayload {\n  count: Long!\n}\n\nscalar DateTime\n\nscalar Long\n\ntype Mutation {\n  createTodo(data: TodoCreateInput!): Todo!\n  updateTodo(data: TodoUpdateInput!, where: TodoWhereUniqueInput!): Todo\n  updateManyTodoes(data: TodoUpdateInput!, where: TodoWhereInput): BatchPayload!\n  upsertTodo(where: TodoWhereUniqueInput!, create: TodoCreateInput!, update: TodoUpdateInput!): Todo!\n  deleteTodo(where: TodoWhereUniqueInput!): Todo\n  deleteManyTodoes(where: TodoWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  todo(where: TodoWhereUniqueInput!): Todo\n  todoes(where: TodoWhereInput, orderBy: TodoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Todo]!\n  todoesConnection(where: TodoWhereInput, orderBy: TodoOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): TodoConnection!\n  node(id: ID!): Node\n}\n\ntype Subscription {\n  todo(where: TodoSubscriptionWhereInput): TodoSubscriptionPayload\n}\n\ntype Todo {\n  id: ID!\n  title: String!\n  isDone: Boolean!\n  dueDate: DateTime\n}\n\ntype TodoConnection {\n  pageInfo: PageInfo!\n  edges: [TodoEdge]!\n  aggregate: AggregateTodo!\n}\n\ninput TodoCreateInput {\n  title: String!\n  isDone: Boolean!\n  dueDate: DateTime\n}\n\ntype TodoEdge {\n  node: Todo!\n  cursor: String!\n}\n\nenum TodoOrderByInput {\n  id_ASC\n  id_DESC\n  title_ASC\n  title_DESC\n  isDone_ASC\n  isDone_DESC\n  dueDate_ASC\n  dueDate_DESC\n  createdAt_ASC\n  createdAt_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n}\n\ntype TodoPreviousValues {\n  id: ID!\n  title: String!\n  isDone: Boolean!\n  dueDate: DateTime\n}\n\ntype TodoSubscriptionPayload {\n  mutation: MutationType!\n  node: Todo\n  updatedFields: [String!]\n  previousValues: TodoPreviousValues\n}\n\ninput TodoSubscriptionWhereInput {\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: TodoWhereInput\n  AND: [TodoSubscriptionWhereInput!]\n  OR: [TodoSubscriptionWhereInput!]\n  NOT: [TodoSubscriptionWhereInput!]\n}\n\ninput TodoUpdateInput {\n  title: String\n  isDone: Boolean\n  dueDate: DateTime\n}\n\ninput TodoWhereInput {\n  id: ID\n  id_not: ID\n  id_in: [ID!]\n  id_not_in: [ID!]\n  id_lt: ID\n  id_lte: ID\n  id_gt: ID\n  id_gte: ID\n  id_contains: ID\n  id_not_contains: ID\n  id_starts_with: ID\n  id_not_starts_with: ID\n  id_ends_with: ID\n  id_not_ends_with: ID\n  title: String\n  title_not: String\n  title_in: [String!]\n  title_not_in: [String!]\n  title_lt: String\n  title_lte: String\n  title_gt: String\n  title_gte: String\n  title_contains: String\n  title_not_contains: String\n  title_starts_with: String\n  title_not_starts_with: String\n  title_ends_with: String\n  title_not_ends_with: String\n  isDone: Boolean\n  isDone_not: Boolean\n  dueDate: DateTime\n  dueDate_not: DateTime\n  dueDate_in: [DateTime!]\n  dueDate_not_in: [DateTime!]\n  dueDate_lt: DateTime\n  dueDate_lte: DateTime\n  dueDate_gt: DateTime\n  dueDate_gte: DateTime\n  AND: [TodoWhereInput!]\n  OR: [TodoWhereInput!]\n  NOT: [TodoWhereInput!]\n}\n\ninput TodoWhereUniqueInput {\n  id: ID\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-18T03:18:30Z",
+    "updated_at": "2018-11-21T14:22:37Z",
+    "pushed_at": "2018-11-21T14:22:35Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

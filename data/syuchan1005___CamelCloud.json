@@ -1,0 +1,42 @@
+{
+  "repo_name": "CamelCloud",
+  "repo_full_name": "syuchan1005/camelcloud",
+  "repo_owner": "syuchan1005",
+  "repo_description": "SelfHosting Cloud Storage ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "Server/schema.graphql",
+      "sha": "ec24403799f67d3c4124c4dcc837c6173bb5d78a",
+      "url": "https://api.github.com/repositories/119980400/contents/Server/schema.graphql?ref=46885fbf8a48b00ee35833656771fe70786c4a86",
+      "git_url": "https://api.github.com/repositories/119980400/git/blobs/ec24403799f67d3c4124c4dcc837c6173bb5d78a",
+      "html_url": "https://github.com/syuchan1005/CamelCloud/blob/46885fbf8a48b00ee35833656771fe70786c4a86/Server/schema.graphql",
+      "content": "enum FileType {\r\n    FILE\r\n    DIRECTORY\r\n}\r\n\r\nenum FolderType {\r\n    NORMAL\r\n    TRASH\r\n    # THUMBNAIL\r\n}\r\n\r\nenum FileOperations {\r\n    MKDIR\r\n    RENAME\r\n    MOVE\r\n    REMOVE # Move to Trash\r\n    DELETE # Permanently delete\r\n}\r\n\r\ntype User {\r\n    userId: Int\r\n    username: String\r\n    password: String\r\n    dirName: String\r\n    twitterId: String\r\n    facebookId: String\r\n    instagramId: String\r\n    createdAt: String\r\n    updatedAt: String\r\n}\r\n\r\ntype File {\r\n    name: String!\r\n    type: FileType!\r\n    thumb: Boolean\r\n}\r\n\r\ninput InputUser {\r\n    oldPassword: String\r\n    newPassword: String\r\n    twitterId: Boolean = false\r\n    facebookId: Boolean = false\r\n    instagramId: Boolean = false\r\n}\r\n\r\ninput OperateFile {\r\n    op: FileOperations!\r\n    path: String!\r\n    sourceFolder: FolderType = NORMAL\r\n    source: String!\r\n    target: String\r\n}\r\n\r\ntype Query {\r\n    user: User\r\n    files(path: String = \"\", fileFilter: FileType, folderType: FolderType = NORMAL): [File!]!\r\n}\r\n\r\ntype Mutation {\r\n    updateUser(data: InputUser): User\r\n    operateFile(data: OperateFile, fileFilter: FileType): [File!]!\r\n    emptyTrash: [File!]!\r\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-02T12:42:57Z",
+    "updated_at": "2018-03-15T08:16:13Z",
+    "pushed_at": "2018-03-15T08:16:12Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

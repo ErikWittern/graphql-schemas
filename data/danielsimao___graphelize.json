@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphelize",
+  "repo_full_name": "danielsimao/graphelize",
+  "repo_owner": "danielsimao",
+  "repo_description": "GraphQL with Sequelize",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "daf80efc73e5775e1c1d40310ede0d5cabcc9723",
+      "url": "https://api.github.com/repositories/175606902/contents/server/src/schema.graphql?ref=4289929f3f60ab313b82d94e3a50a73f3131cbf4",
+      "git_url": "https://api.github.com/repositories/175606902/git/blobs/daf80efc73e5775e1c1d40310ede0d5cabcc9723",
+      "html_url": "https://github.com/danielsimao/graphelize/blob/4289929f3f60ab313b82d94e3a50a73f3131cbf4/server/src/schema.graphql",
+      "content": "scalar timestamp\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  username: String!\n  fullname: String!\n  email: String!\n  password: String!\n  repos: [Repo!]!\n  createdAt: timestamp!\n  updatedAt: timestamp!\n}\n\ntype Repo {\n  id: ID!\n  name: String!\n  url: String!\n  balance: Int!\n  userId: ID!\n  user: User!\n}\n\ntype Query {\n  repos: [Repo!]!\n  repo(id: ID!): Repo\n  user(id: ID!): User\n  users: [User!]!\n}\n\ntype Mutation {\n  createRepo(name: String!, url: String!, balance: Int!): Repo!\n  updateRepo(id: ID!, name: String!, url: String!, balance: Int!): [Int!]!\n  deleteRepo(id: ID!): Int!\n  signup(\n    username: String!\n    fullname: String!\n    email: String!\n    password: String!\n  ): AuthPayload\n  login(username: String!, password: String!): AuthPayload\n  updateUser(\n    id: ID!\n    username: String!\n    fullname: String!\n    email: String!\n    password: String!\n  ): [Int!]!\n  deleteUser(id: ID!): Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-14T11:16:49Z",
+    "updated_at": "2019-03-17T22:02:35Z",
+    "pushed_at": "2019-03-17T22:02:33Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

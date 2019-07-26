@@ -1,0 +1,42 @@
+{
+  "repo_name": "assessment",
+  "repo_full_name": "fakey-account/assessment",
+  "repo_owner": "Fakey-Account",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "server/schema/Query.graphql",
+      "sha": "7bba8a66c5494d2312ee3e4f1cdaca89a985aaca",
+      "url": "https://api.github.com/repositories/173652597/contents/server/schema/Query.graphql?ref=9b92a99a84a5170a67db0c801353301ade02016b",
+      "git_url": "https://api.github.com/repositories/173652597/git/blobs/7bba8a66c5494d2312ee3e4f1cdaca89a985aaca",
+      "html_url": "https://github.com/Fakey-Account/assessment/blob/9b92a99a84a5170a67db0c801353301ade02016b/server/schema/Query.graphql",
+      "content": "type Mutation {\n  _: Boolean\n}\n\ntype Query {\n  _: Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-04T01:28:36Z",
+    "updated_at": "2019-03-04T02:00:24Z",
+    "pushed_at": "2019-03-04T02:00:22Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

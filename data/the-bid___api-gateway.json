@@ -1,0 +1,39 @@
+{
+  "repo_name": "api-gateway",
+  "repo_full_name": "the-bid/api-gateway",
+  "repo_owner": "the-bid",
+  "repo_description": "The api gateway for all the microservices",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "gateway-schema.graphql",
+      "path": "src/schemas/gateway-schema.graphql",
+      "sha": "2571ad8ee8da8821b157ee738beb1e2808493978",
+      "url": "https://api.github.com/repositories/133432926/contents/src/schemas/gateway-schema.graphql?ref=01cc7d0e25bcfbf73deea37199598ce6b3106dc5",
+      "git_url": "https://api.github.com/repositories/133432926/git/blobs/2571ad8ee8da8821b157ee738beb1e2808493978",
+      "html_url": "https://github.com/the-bid/api-gateway/blob/01cc7d0e25bcfbf73deea37199598ce6b3106dc5/src/schemas/gateway-schema.graphql",
+      "content": "type Query {\n  health: Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-14T23:29:03Z",
+    "updated_at": "2019-04-26T22:09:18Z",
+    "pushed_at": "2019-04-26T22:09:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

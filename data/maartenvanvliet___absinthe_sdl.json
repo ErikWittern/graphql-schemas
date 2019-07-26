@@ -1,0 +1,42 @@
+{
+  "repo_name": "absinthe_sdl",
+  "repo_full_name": "maartenvanvliet/absinthe_sdl",
+  "repo_owner": "maartenvanvliet",
+  "repo_description": "Convert Absinthe Schemas to SDL syntax",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "test_large_ordered_schema.graphql",
+      "path": "test/fixtures/sdl/test_large_ordered_schema.graphql",
+      "sha": "2f069065e31ab60ac43736d3ac608ca8309b510d",
+      "url": "https://api.github.com/repositories/163880597/contents/test/fixtures/sdl/test_large_ordered_schema.graphql?ref=43ec767879be9fada2fa80dddad41c45db065aa0",
+      "git_url": "https://api.github.com/repositories/163880597/git/blobs/2f069065e31ab60ac43736d3ac608ca8309b510d",
+      "html_url": "https://github.com/maartenvanvliet/absinthe_sdl/blob/43ec767879be9fada2fa80dddad41c45db065aa0/test/fixtures/sdl/test_large_ordered_schema.graphql",
+      "content": "schema {\n  query: RootQueryType\n}\n\ntype RootQueryType {\n  field1: String\n  field10: String\n  field11: String\n  field12: String\n  field13: String\n  field14: String\n  field15: String\n  field16: String\n  field17: String\n  field18: String\n  field19: String\n  field2: String\n  field20: String\n  field21: String\n  field22: String\n  field23: String\n  field24: String\n  field25: String\n  field26: String\n  field27: String\n  field28: String\n  field29: String\n  field3: String\n  field30: String\n  field31: String\n  field32: String\n  field33: String\n  field4: String\n  field5: String\n  field6: String\n  field7: String\n  field8: String\n  field9: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-02T19:23:27Z",
+    "updated_at": "2019-07-18T15:09:35Z",
+    "pushed_at": "2019-07-18T17:25:00Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 31,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 21,
+    "pull_requests_merged": 9,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

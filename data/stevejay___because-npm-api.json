@@ -1,0 +1,42 @@
+{
+  "repo_name": "because-npm-api",
+  "repo_full_name": "stevejay/because-npm-api",
+  "repo_owner": "stevejay",
+  "repo_description": "Back-end for the www.becausenpm.com web app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/graphql-service/schema.gql",
+      "sha": "615d0c9d2633c2516802422afbf6612939607900",
+      "url": "https://api.github.com/repositories/159829679/contents/src/graphql-service/schema.gql?ref=83934166e84894e96657bad32b6f0b235a3ff607",
+      "git_url": "https://api.github.com/repositories/159829679/git/blobs/615d0c9d2633c2516802422afbf6612939607900",
+      "html_url": "https://github.com/stevejay/because-npm-api/blob/83934166e84894e96657bad32b6f0b235a3ff607/src/graphql-service/schema.gql",
+      "content": "type Node {\n  id: String!\n  description: String\n  link: String!\n  edgeCount: Int!\n  score: Float!\n}\n\ntype Edge {\n  id: String!\n  tailNodeId: String!\n  headNodeId: String!\n  score: Float!\n}\n\ntype EdgeComment {\n  id: String!\n  edgeId: String!\n  comment: String!\n  sourceLink: String!\n  sourceUserId: String!\n  timestampMs: String!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n}\n\ntype NodeAutocompleteResult {\n  nodes: [Node!]!\n}\n\ntype SearchNode {\n  node: Node!\n  cursor: String!\n}\n\ntype NodeSearchConnection {\n  edges: [SearchNode!]!\n  pageInfo: PageInfo!\n}\n\ntype SearchEdge {\n  node: Edge!\n  cursor: String!\n}\n\ntype EdgeSearchConnection {\n  edges: [SearchEdge!]!\n  pageInfo: PageInfo!\n}\n\ntype SearchEdgeComment {\n  node: EdgeComment!\n  cursor: String!\n}\n\ntype EdgeCommentSearchConnection {\n  edges: [SearchEdgeComment!]!\n  pageInfo: PageInfo!\n}\n\ntype Query {\n  node(id: String!): Node\n  autocompleteNodeSearch(term: String!, first: Int!): NodeAutocompleteResult\n  nodeSearch(term: String!, first: Int, after: String): NodeSearchConnection\n  edgeSearch(\n    tailNodeId: String!\n    first: Int\n    after: String\n  ): EdgeSearchConnection\n  edgeCommentSearch(\n    edgeId: String!\n    first: Int\n    after: String\n  ): EdgeCommentSearchConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-30T13:46:34Z",
+    "updated_at": "2019-07-16T18:40:05Z",
+    "pushed_at": "2018-12-10T23:58:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

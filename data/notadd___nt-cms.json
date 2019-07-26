@@ -1,0 +1,109 @@
+{
+  "repo_name": "nt-cms",
+  "repo_full_name": "notadd/nt-cms",
+  "repo_owner": "notadd",
+  "repo_description": "nest.js with CMS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "classify.types.graphql",
+      "path": "src/cms/graphqls/classify.types.graphql",
+      "sha": "4dc12b38c0074228fb134ee100b2fade3e10fc83",
+      "url": "https://api.github.com/repositories/171415209/contents/src/cms/graphqls/classify.types.graphql?ref=4082ff18ad573f709b97b521a9e35f86f8cc058c",
+      "git_url": "https://api.github.com/repositories/171415209/git/blobs/4dc12b38c0074228fb134ee100b2fade3e10fc83",
+      "html_url": "https://github.com/notadd/nt-cms/blob/4082ff18ad573f709b97b521a9e35f86f8cc058c/src/cms/graphqls/classify.types.graphql",
+      "content": "type Query {\n    getAllClassify(id: Int): AllClassifyResult\n    getOneClassify(value: String): OneClassifyResult\n    getParentClassify(id: Int): AllClassifyResult\n}\n\ntype Mutation {\n    addClassify(classify: AddClassifyInput): CommonResult\n    deleteClassify(id: Int): CommonResult\n    updateClassify(classify: UpdateClassifyInput): CommonResult\n    mobileArticles(oldId: Int,newId: Int): CommonResult\n}\n\ntype AllClassifyResult {\n    code: Int\n    message: String\n    data: JSON\n}\n\ntype OneClassifyResult {\n    code: Int\n    message: String\n    data: JSON\n}\n\ntype ClassifyData {\n    id: Int\n    label: String\n    value: String\n    onlyChildrenArt: Boolean\n    itemJson: JSON\n}\n\ntype CmsInfoItemData {\n    id: Int\n    name: String\n    explain: String\n    style: String\n    regular: String\n    info: String\n}\n\ntype CommonResult {\n    code: Int\n    message: String\n}\n\ninput AddClassifyInput {\n    label: String\n    value: String\n    parent: ParentClassify\n    onlyChildrenArt: Boolean\n    structure: String\n    itemJson: JSON\n}\n\ninput ParentClassify {\n    value: String\n}\n\ninput UpdateClassifyInput {\n    id: Int\n    label: String\n    value: String\n    onlyChildrenArt: Boolean\n    parent: ParentClassify\n    structure: String\n    itemJson: JSON\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/nt-cms/blob/4082ff18ad573f709b97b521a9e35f86f8cc058c/src/cms/graphqls/classify.types.graphql:\ntype Query {\n    getAllClassify(id: Int): AllClassifyResult\n    getOneClassify(value: String): OneClassifyResult\n    getParentClassify(id: Int): AllClassifyResult\n}\n\ntype Mutation {\n    addClassify(classify: AddClassifyInput): CommonResult\n    deleteClassify(id: Int): CommonResult\n    updateClassify(classify: UpdateClassifyInput): CommonResult\n    mobileArticles(oldId: Int,newId: Int): CommonResult\n}\n\ntype AllClassifyResult {\n    code: Int\n    message: String\n    data: JSON\n}\n\ntype OneClassifyResult {\n    code: Int\n    message: String\n    data: JSON\n}\n\ntype ClassifyData {\n    id: Int\n    label: String\n    value: String\n    onlyChildrenArt: Boolean\n    itemJson: JSON\n}\n\ntype CmsInfoItemData {\n    id: Int\n    name: String\n    explain: String\n    style: String\n    regular: String\n    info: String\n}\n\ntype CommonResult {\n    code: Int\n    message: String\n}\n\ninput AddClassifyInput {\n    label: String\n    value: String\n    parent: ParentClassify\n    onlyChildrenArt: Boolean\n    structure: String\n    itemJson: JSON\n}\n\ninput ParentClassify {\n    value: String\n}\n\ninput UpdateClassifyInput {\n    id: Int\n    label: String\n    value: String\n    onlyChildrenArt: Boolean\n    parent: ParentClassify\n    structure: String\n    itemJson: JSON\n}\n\n# https://github.com/notadd/nt-cms/blob/d4ad2c3dcfc7cf3f442d6eb599b7e9b5540db271/src/user/graphqls/common.types.graphql:\n\"User module universal response body\"\ntype UserModuleCommonResult {\n    \"status code\"\n    code: Int\n    \"response message\"\n    message: String\n}\n\n\"JSON data\"\nscalar JSON",
+        "mergedPaths": [
+          "src/user/graphqls/common.types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "JSON"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 8,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 12
+      },
+      "validSchema": false
+    },
+    {
+      "name": "common.types.graphql",
+      "path": "src/user/graphqls/common.types.graphql",
+      "sha": "32621cd432a43eab586aba45559abaadada5e145",
+      "url": "https://api.github.com/repositories/171415209/contents/src/user/graphqls/common.types.graphql?ref=d4ad2c3dcfc7cf3f442d6eb599b7e9b5540db271",
+      "git_url": "https://api.github.com/repositories/171415209/git/blobs/32621cd432a43eab586aba45559abaadada5e145",
+      "html_url": "https://github.com/notadd/nt-cms/blob/d4ad2c3dcfc7cf3f442d6eb599b7e9b5540db271/src/user/graphqls/common.types.graphql",
+      "content": "\"User module universal response body\"\ntype UserModuleCommonResult {\n    \"status code\"\n    code: Int\n    \"response message\"\n    message: String\n}\n\n\"JSON data\"\nscalar JSON",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "picture.types.graphql",
+      "path": "src/cms/graphqls/picture.types.graphql",
+      "sha": "bfe3e1472fb08865b778b53abeb93d4b9cb95db7",
+      "url": "https://api.github.com/repositories/171415209/contents/src/cms/graphqls/picture.types.graphql?ref=1d67939223f21f2663aa9b2770d6210997b363b6",
+      "git_url": "https://api.github.com/repositories/171415209/git/blobs/bfe3e1472fb08865b778b53abeb93d4b9cb95db7",
+      "html_url": "https://github.com/notadd/nt-cms/blob/1d67939223f21f2663aa9b2770d6210997b363b6/src/cms/graphqls/picture.types.graphql",
+      "content": "type Query {\n    findPicture(id: Int): findPictureResult\n}\n\ntype findPictureResult {\n    code: Int\n    message: String\n    data: Pictures\n}\n\ntype Pictures {\n    id: Int\n    title: String\n    name: String\n    Url: String\n    sequence: Int\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "role.types.graphql",
+      "path": "src/user/graphqls/role.types.graphql",
+      "sha": "05e36847aed0c9db600f22a7804fc8d39e64b342",
+      "url": "https://api.github.com/repositories/171415209/contents/src/user/graphqls/role.types.graphql?ref=d4ad2c3dcfc7cf3f442d6eb599b7e9b5540db271",
+      "git_url": "https://api.github.com/repositories/171415209/git/blobs/05e36847aed0c9db600f22a7804fc8d39e64b342",
+      "html_url": "https://github.com/notadd/nt-cms/blob/d4ad2c3dcfc7cf3f442d6eb599b7e9b5540db271/src/user/graphqls/role.types.graphql",
+      "content": "type Query {\n    \"Query all roles\"\n    findRoles: RolesResult\n}\n\ntype Mutation {\n    \"Create a role\"\n    createRole(name: String!): UserModuleCommonResult\n    \"Update the specified role's name\"\n    updateRole(id: Int!, name: String!): UserModuleCommonResult\n    \"Delete the specified role\"\n    deleteRole(id: Int!): UserModuleCommonResult\n}\n\ntype RolesResult {\n    code: Int\n    message: String\n    data: [Role]\n}\n\ntype Role {\n    id: Int\n    name: String\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/notadd/nt-cms/blob/d4ad2c3dcfc7cf3f442d6eb599b7e9b5540db271/src/user/graphqls/role.types.graphql:\ntype Query {\n    \"Query all roles\"\n    findRoles: RolesResult\n}\n\ntype Mutation {\n    \"Create a role\"\n    createRole(name: String!): UserModuleCommonResult\n    \"Update the specified role's name\"\n    updateRole(id: Int!, name: String!): UserModuleCommonResult\n    \"Delete the specified role\"\n    deleteRole(id: Int!): UserModuleCommonResult\n}\n\ntype RolesResult {\n    code: Int\n    message: String\n    data: [Role]\n}\n\ntype Role {\n    id: Int\n    name: String\n}\n\n# https://github.com/notadd/nt-cms/blob/d4ad2c3dcfc7cf3f442d6eb599b7e9b5540db271/src/user/graphqls/common.types.graphql:\n\"User module universal response body\"\ntype UserModuleCommonResult {\n    \"status code\"\n    code: Int\n    \"response message\"\n    message: String\n}\n\n\"JSON data\"\nscalar JSON",
+        "mergedPaths": [
+          "src/user/graphqls/common.types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "UserModuleCommonResult"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-19T06:04:25Z",
+    "updated_at": "2019-07-11T18:39:19Z",
+    "pushed_at": "2019-07-04T06:54:46Z",
+    "issues": 0,
+    "watchers": 7,
+    "fork_count": 7,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 29,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 4,
+    "pull_requests_merged": 24,
+    "releases": 0,
+    "stargazers": 20
+  }
+}

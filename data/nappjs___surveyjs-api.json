@@ -1,0 +1,58 @@
+{
+  "repo_name": "surveyjs-api",
+  "repo_full_name": "nappjs/surveyjs-api",
+  "repo_owner": "nappjs",
+  "repo_description": "GraphQL api for surveyjs",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "stats.graphql",
+      "path": "graphql/stats.graphql",
+      "sha": "c4186047ddfa678e4a414d552b8a2c931db88e49",
+      "url": "https://api.github.com/repositories/120416830/contents/graphql/stats.graphql?ref=e96623c7ecd3e6cf6e7f562f80c2dc6f4e948999",
+      "git_url": "https://api.github.com/repositories/120416830/git/blobs/c4186047ddfa678e4a414d552b8a2c931db88e49",
+      "html_url": "https://github.com/nappjs/surveyjs-api/blob/e96623c7ecd3e6cf6e7f562f80c2dc6f4e948999/graphql/stats.graphql",
+      "content": "type SurveyStats {\n  answers(tags: [String!]): SurveyAnswerStats!\n}\n\ntype SurveyAnswerStatsMetric {\n  key: String!\n  min: Float!\n  max: Float!\n  average: Float!\n}\n\ntype SurveyAnswerStatsOccurency {\n  key: String!\n  value: String!\n  type: String!\n  count: Float!\n}\n\ntype SurveyAnswerStats {\n  count: Int!\n  metrics: [SurveyAnswerStatsMetric!]\n  occurencies: [SurveyAnswerStatsOccurency!]\n}\n\ntype Query {\n  surveyStats(survey: String!): SurveyStats\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    },
+    {
+      "name": "survey.graphql",
+      "path": "graphql/survey.graphql",
+      "sha": "558303eb34e0b68937f3034463936d9d6b82c540",
+      "url": "https://api.github.com/repositories/120416830/contents/graphql/survey.graphql?ref=e96623c7ecd3e6cf6e7f562f80c2dc6f4e948999",
+      "git_url": "https://api.github.com/repositories/120416830/git/blobs/558303eb34e0b68937f3034463936d9d6b82c540",
+      "html_url": "https://github.com/nappjs/surveyjs-api/blob/e96623c7ecd3e6cf6e7f562f80c2dc6f4e948999/graphql/survey.graphql",
+      "content": "type SurveyByUID {\n  uid: String!\n  name: String\n  content: String\n  propertyGroups: [SurveyPropertyGroupByUID!]!\n}\n\ntype SurveyPropertyGroupByUID {\n  code: String\n  name: String\n  properties: [SurveyPropertyByUID!]!\n}\n\ntype SurveyPropertyByUID {\n  code: String\n  name: String\n}\n\ntype SurveyAnswerByUID {\n  uid: String!\n  content: String\n  sent: String\n  survey: SurveyByUID\n}\n\ntype Query {\n  surveyByUID(uid: String!): SurveyByUID\n  surveyAnswerByUID(uid: String!): SurveyAnswerByUID\n}\n\ninput UpdateSurveyByUIDInput {\n  content: String\n}\n\ninput UpdateSurveyAnswerByUIDInput {\n  content: String\n  sent: String\n}\n\ntype Mutation {\n  updateSurveyByUID(uid: String!, input: UpdateSurveyByUIDInput): SurveyByUID\n  updateSurveyAnswerByUID(\n    uid: String!\n    input: UpdateSurveyAnswerByUIDInput\n  ): SurveyAnswerByUID\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-06T07:19:06Z",
+    "updated_at": "2018-02-09T05:38:40Z",
+    "pushed_at": "2018-03-08T20:38:47Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "vue-graphql-example",
+  "repo_full_name": "nataliatepluhina/vue-graphql-example",
+  "repo_owner": "NataliaTepluhina",
+  "repo_description": "Demo application with Apollo Server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "apollo-server/schema.graphql",
+      "sha": "e35cced6c643d914b17b4f6dc7543f10e5f29e04",
+      "url": "https://api.github.com/repositories/140932668/contents/apollo-server/schema.graphql?ref=de32e7330f0cccfa84abffae9f3ffabc718727db",
+      "git_url": "https://api.github.com/repositories/140932668/git/blobs/e35cced6c643d914b17b4f6dc7543f10e5f29e04",
+      "html_url": "https://github.com/NataliaTepluhina/vue-graphql-example/blob/de32e7330f0cccfa84abffae9f3ffabc718727db/apollo-server/schema.graphql",
+      "content": "# Included scalars\nscalar JSON\nscalar Uploadr\n\n# Vue team member\ntype VueHero {\n  id: ID!\n  name: String!\n  image: String\n  github: String\n  twitter: String\n}\n\ninput HeroInput {\n  name: String!\n  image: String\n  github: String\n  twitter: String\n}\n\ntype Query {\n  allHeroes: [VueHero]\n  getHero(name: String!): VueHero!\n}\n\ntype Mutation {\n  addHero(hero: HeroInput!): VueHero!\n  deleteHero(name: String!): Boolean\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-14T09:13:55Z",
+    "updated_at": "2019-07-16T07:03:22Z",
+    "pushed_at": "2019-07-08T03:36:30Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 21
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "surfboard",
+  "repo_full_name": "7hci/surfboard",
+  "repo_owner": "7hci",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "server/graphql/schema.gql",
+      "sha": "16ede55c7e4455937b0480e4a4b255441efdba7c",
+      "url": "https://api.github.com/repositories/87839695/contents/server/graphql/schema.gql?ref=fbeefbc3569502e95a559e87e5e7b7c2241659b3",
+      "git_url": "https://api.github.com/repositories/87839695/git/blobs/16ede55c7e4455937b0480e4a4b255441efdba7c",
+      "html_url": "https://github.com/7hci/surfboard/blob/fbeefbc3569502e95a559e87e5e7b7c2241659b3/server/graphql/schema.gql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n}\n\nscalar JSON\n\ntype Query {\n    # Get all new hires being onboarded\n    newHires: [NewHire]\n\n    # Get a single new hire by id\n    newHire (id: ID!): NewHire\n\n    # Get settings\n    settings: Settings\n}\n\ntype Mutation {\n    # Add a new hire\n    newHire (formData: JSON!): NewHire\n\n    # Send contract to new hire\n    sendContract (formData: JSON!, id: ID!): Boolean\n\n    # Accept contract signed by new hire\n    acceptContract (id: ID!): Boolean\n\n    # Fills out contract for previewing\n    previewContract (formData: JSON!, id: ID!): NewHire\n\n    # Signs the contract and submits to 7HCI for approval\n    submitContract (id: ID!): Boolean\n\n    # Uploads image file of signature\n    uploadSignature (file: Upload!, id: ID!): Boolean\n\n    # Skip onboarding step for new hire\n    skipStep (id: ID!, step: Int!): Boolean\n\n    # Complete new hire process\n    completeHire (id: ID!): Boolean\n}\n\ntype NewHire {\n    id: ID!\n\n    firstName: String\n\n    lastName: String\n\n    # New Hire's private e-mail\n    email: String\n\n    # Override for generated company e-mail address\n    override: String\n\n    # Is the New Hire a U.S. resident?\n    isResident: String\n\n    # Step in the onboarding process the New Hire is on\n    step: Int\n\n    # Google Drive ID for New Hire's contract document\n    contractId: String\n\n    # Google Drive ID for HR folder for New Hire\n    folderId: String\n\n    # OAuth credentials used to complete onboarding tasks\n    credentials: JSON\n}\n\n# Input for file uploads -- used by apollo-upload-server\ninput Upload {\n    name: String!\n    type: String!\n    size: Int!\n    path: String!\n}\n\ntype Settings {\n    # List of company personnel\n    personnel: [Personnel!]!\n\n    # Settings specific to ClickTime\n    clicktime: ClickTimeSettings\n\n    # Settings specific to the timesheet reporter\n    timesheetReporter: TimesheetReporterSettings\n}\n\ntype ClickTimeSettings {\n    # API key\n    key: String\n\n    # UID used to fetch report via API\n    uid: String\n\n    # Report ID\n    reportId: String\n\n    # Username associated with the API key\n    username: String\n}\n\ntype TimesheetReporterSettings {\n    # A list of timesheet reports to be sent\n    queue: [TimesheetReport]\n\n    # Whether automatic reporting is enabled\n    enabled: Boolean\n\n    # Whether to notify personnel when the reports are sent out\n    notifyPersonnel: Boolean\n\n    # Message to be sent along with the report\n    message: Message\n}\n\ntype TimesheetReport {\n    # Who to send the report to\n    recipients: [String!]!\n\n    # Who to copy on the report e-mail\n    cc: [String!]!\n\n    # Description for the report\n    description: String\n\n    # Which projects are included in the report\n    projectsToInclude: [String!]!\n}\n\ntype Message {\n    body: MessageBody\n\n    # Name of the reporter's sender\n    sender: String\n\n    # Signature to attach to the message\n    signature: String\n}\n\ntype MessageBody {\n    # Message sent with the timesheet report\n    report: String\n\n    # Message sent with notification to personnel\n    notify: String\n}\n\ntype Personnel {\n    # First and last name\n    name: String\n\n    # Company e-mail address\n    email: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-10T17:42:58Z",
+    "updated_at": "2018-04-12T20:08:32Z",
+    "pushed_at": "2017-11-09T19:19:39Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 20,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 20,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

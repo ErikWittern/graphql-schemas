@@ -1,0 +1,55 @@
+{
+  "repo_name": "vesper-jwt-auth",
+  "repo_full_name": "constlab/vesper-jwt-auth",
+  "repo_owner": "constlab",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Token.gql",
+      "path": "src/schema/Token.gql",
+      "sha": "aa3b4c6e8e38eabb55d7b719b009a2cd7bc13a2b",
+      "url": "https://api.github.com/repositories/144581810/contents/src/schema/Token.gql?ref=4623712a093f1e1e66c5de784f7a58d598b2d998",
+      "git_url": "https://api.github.com/repositories/144581810/git/blobs/aa3b4c6e8e38eabb55d7b719b009a2cd7bc13a2b",
+      "html_url": "https://github.com/constlab/vesper-jwt-auth/blob/4623712a093f1e1e66c5de784f7a58d598b2d998/src/schema/Token.gql",
+      "content": "type Token {\n\tid: ID!\n\tclient: String!\n\tcreatedAt: String!\n}\n\ntype Query {\n\ttokens: [Token!]\n}\n\ntype Mutation {\n\ttokenDelete(id: ID!): Boolean\n\ttokensDelete(ids: [ID!]!): Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    },
+    {
+      "name": "Post.gql",
+      "path": "sample/post/schema/Post.gql",
+      "sha": "4752e6342d226b2644b0ec0dc213d1b2bb5865c3",
+      "url": "https://api.github.com/repositories/144581810/contents/sample/post/schema/Post.gql?ref=46b062d66ea6847fc291d3e217867c84279f2161",
+      "git_url": "https://api.github.com/repositories/144581810/git/blobs/4752e6342d226b2644b0ec0dc213d1b2bb5865c3",
+      "html_url": "https://github.com/constlab/vesper-jwt-auth/blob/46b062d66ea6847fc291d3e217867c84279f2161/sample/post/schema/Post.gql",
+      "content": "type Post {\n\tid: ID\n\ttitle: String\n}\n\ntype Query {\n\tpost(id: ID): Post\n\tposts: [Post]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-13T13:13:16Z",
+    "updated_at": "2019-05-06T10:20:32Z",
+    "pushed_at": "2019-05-06T10:20:36Z",
+    "issues": 2,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "learn-sso",
+  "repo_full_name": "imgovind/learn-sso",
+  "repo_owner": "imgovind",
+  "repo_description": "For the purpose of learning SSO implemented using OpenID Connect and OAuth2.0",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "47448342c16fcf5b663923cb6d9ef4b38d3871a2",
+      "url": "https://api.github.com/repositories/153886796/contents/src/schema.graphql?ref=a9e908916f7ca967b2f04c57ecb074bd79949e40",
+      "git_url": "https://api.github.com/repositories/153886796/git/blobs/47448342c16fcf5b663923cb6d9ef4b38d3871a2",
+      "html_url": "https://github.com/imgovind/learn-sso/blob/a9e908916f7ca967b2f04c57ecb074bd79949e40/src/schema.graphql",
+      "content": "#############################\n# SSO\n#############################\nscalar Date\nscalar Time\nscalar DateTime\nscalar JSON\n\n#############################\n# SSO\n#############################\ntype JWTToken {\n  iss: String\n  exp: Int\n  aud: String\n  username: String\n  iat: Int\n}\n\ntype UserPermission {\n  id: ID!\n  name: String!\n}\n\ntype UserRole {\n  id: ID!\n  name: String!\n  permissions: [UserPermission]\n}\n\ntype UserType {\n  id: ID!\n  name: String!\n}\n\ntype User {\n  firstName: String!\n  middleName: String\n  lastName: String!\n  dob: Date\n  type: UserType!\n  role: UserRole!\n  createdAt: Date\n  updatedAt: Date\n}\n\ntype Query {\n  ssoLogin(username: String, password: String): String\n  ssoLogout: String\n  ssoIsAuthenticated: JWTToken\n}\n\ntype Mutation {\n  ssoSignup(username: String, password: String): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-20T08:48:48Z",
+    "updated_at": "2018-10-23T09:45:47Z",
+    "pushed_at": "2018-10-23T09:45:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

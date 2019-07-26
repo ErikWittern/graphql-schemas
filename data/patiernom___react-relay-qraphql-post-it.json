@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-relay-qraphql-post-it",
+  "repo_full_name": "patiernom/react-relay-qraphql-post-it",
+  "repo_owner": "patiernom",
+  "repo_description": "Post-it Dashbord Powered by Relay Fullstack",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "a94095574ed4844acc8e2422fe249f0ba668cb24",
+      "url": "https://api.github.com/repositories/114684204/contents/server/data/schema.graphql?ref=079a42187699232ffc65564cbb32cc6dd628fde1",
+      "git_url": "https://api.github.com/repositories/114684204/git/blobs/a94095574ed4844acc8e2422fe249f0ba668cb24",
+      "html_url": "https://github.com/patiernom/react-relay-qraphql-post-it/blob/079a42187699232ffc65564cbb32cc6dd628fde1/server/data/schema.graphql",
+      "content": "input AddEntryInput {\n  userId: ID!\n  text: String!\n  clientMutationId: String\n}\n\ntype AddEntryPayload {\n  entryEdge: EntryEdge\n  viewer: User\n  clientMutationId: String\n}\n\n# Entries\ntype Entry implements Node {\n  # The ID of an object\n  id: ID!\n\n  # User of the Entry\n  userId: ID\n\n  # text of the Entry\n  text: String\n\n  # timestamp of the Entry\n  timestamp: Float\n}\n\n# A connection to a list of items.\ntype EntryConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [EntryEdge]\n}\n\n# An edge in a connection.\ntype EntryEdge {\n  # The item at the end of the edge\n  node: Entry\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput ModifyEntryInput {\n  id: ID!\n  text: String!\n  clientMutationId: String\n}\n\ntype ModifyEntryPayload {\n  entryEdge: EntryEdge\n  viewer: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  addEntry(input: AddEntryInput!): AddEntryPayload\n  modifyEntry(input: ModifyEntryInput!): ModifyEntryPayload\n  removeEntry(input: RemoveEntryInput!): RemoveEntryPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer(id: ID!): User\n}\n\ninput RemoveEntryInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype RemoveEntryPayload {\n  viewer: User\n  clientMutationId: String\n}\n\n# A person who uses our app\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Entries that I have\n  entries(after: String, first: Int, before: String, last: Int): EntryConnection\n\n  # Users's username\n  username: String\n\n  # Users's first name\n  firstName: String\n\n  # Users's last name\n  lastName: String\n\n  # User's email\n  email: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-18T20:22:33Z",
+    "updated_at": "2017-12-18T21:10:01Z",
+    "pushed_at": "2017-12-20T17:51:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

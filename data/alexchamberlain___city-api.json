@@ -1,0 +1,41 @@
+{
+  "repo_name": "city-api",
+  "repo_full_name": "alexchamberlain/city-api",
+  "repo_owner": "alexchamberlain",
+  "repo_description": "Example GraphQL server written in Python",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "cities.graphql",
+      "path": "cities/cities.graphql",
+      "sha": "53046bae4d92eb37d3110ae159bf5fadc680c198",
+      "url": "https://api.github.com/repositories/135825794/contents/cities/cities.graphql?ref=f29c41c08dc7c130f5a66c1ca2c1a1d2b87f3755",
+      "git_url": "https://api.github.com/repositories/135825794/git/blobs/53046bae4d92eb37d3110ae159bf5fadc680c198",
+      "html_url": "https://github.com/alexchamberlain/city-api/blob/f29c41c08dc7c130f5a66c1ca2c1a1d2b87f3755/cities/cities.graphql",
+      "content": "type Country {\n    iso: String!\n    name: String!\n\n    cities: [City!]!\n}\n\ntype City {\n    geonameID: Int!\n    name: String!\n    latitude: Float!\n    longitude: Float!\n    population: Int!\n\n    country: Country!\n}\n\ntype Query {\n    country(iso: String!): Country!\n    city(name: String, geonameID: Int): City!    \n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-02T14:44:39Z",
+    "updated_at": "2019-04-18T04:54:28Z",
+    "pushed_at": "2018-06-08T18:38:42Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 3
+  }
+}

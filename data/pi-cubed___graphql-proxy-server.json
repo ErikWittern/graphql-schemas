@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-proxy-server",
+  "repo_full_name": "pi-cubed/graphql-proxy-server",
+  "repo_owner": "pi-cubed",
+  "repo_description": "Add proxy abilities to GraphQL servers",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "types.graphql",
+      "path": "test/types.graphql",
+      "sha": "abff1b76459a48717dd095c97e01f755529f7229",
+      "url": "https://api.github.com/repositories/135944081/contents/test/types.graphql?ref=839899dc0a855bf2b71e0b06d8a83498f62abfdc",
+      "git_url": "https://api.github.com/repositories/135944081/git/blobs/abff1b76459a48717dd095c97e01f755529f7229",
+      "html_url": "https://github.com/pi-cubed/graphql-proxy-server/blob/839899dc0a855bf2b71e0b06d8a83498f62abfdc/test/types.graphql",
+      "content": "type Query {\n    custom: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-03T22:01:57Z",
+    "updated_at": "2018-06-26T00:02:50Z",
+    "pushed_at": "2018-06-26T00:02:49Z",
+    "issues": 5,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

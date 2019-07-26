@@ -1,0 +1,42 @@
+{
+  "repo_name": "fire-emblem-graphql-server",
+  "repo_full_name": "ajhyndman/fire-emblem-graphql-server",
+  "repo_owner": "ajhyndman",
+  "repo_description": "Fire Emblem Heroes data in a modern API!",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "e942f810842ebdc719419ad4e5522577ef327856",
+      "url": "https://api.github.com/repositories/168803683/contents/src/schema.graphql?ref=9f0b5b9aa68a5e4517df3bf41c8d3ec3253c6d2c",
+      "git_url": "https://api.github.com/repositories/168803683/git/blobs/e942f810842ebdc719419ad4e5522577ef327856",
+      "html_url": "https://github.com/ajhyndman/fire-emblem-graphql-server/blob/9f0b5b9aa68a5e4517df3bf41c8d3ec3253c6d2c/src/schema.graphql",
+      "content": "type Query {\n    allHeroes: [Hero!]!\n}\n\nscalar Date\n\n\"\"\"\nA hero present in the [Fire Emblem: Heroes](https://fire-emblem-heroes.com/) game.\n\n---\n\nData about this hero is pulled from the [Fire Emblem: Heroes Wiki](https://feheroes.gamepedia.com/).\n\"\"\"\ntype Hero {\n    \"The hero's stats at level one, by rarity!\"\n    baseStats: HeroBaseStats!\n\n    \"\"\"\n    Growth rates per stat for a hero (out of 100).\n\n    See also: [Stat growth - Fire Emblem Heroes Wiki](https://feheroes.gamepedia.com/Stat_growth)\n    \"\"\"\n    growthRates: HeroStats!\n\n    \"The canonical, unique name of the hero\"\n    name: String!\n\n    \"A short form of the hero's name\"\n    shortName: String!\n\n    \"The hero's title.  e.g. 'Marquess of Ostia'\"\n    title: String!\n\n    \"The movement type of the hero\"\n    moveType: MoveType!\n\n    \"The weapon type that the hero can wield\"\n    weaponType: WeaponType!\n\n    origin: String!\n    poolDate: Date\n    releaseDate: Date\n    rewardRarities: [Rarity!]!\n    skills: [HeroSkill!]!\n    summonRarities: [Rarity!]!\n}\n\ntype HeroBaseStats {\n    ONE_STAR: HeroStats\n    TWO_STAR: HeroStats\n    THREE_STAR: HeroStats\n    FOUR_STAR: HeroStats\n    FIVE_STAR: HeroStats!\n}\n\ntype HeroSkill {\n    defaultRarity: Rarity\n    skill: Skill!\n    skillPosition: Int!\n    unlockRarity: Rarity!\n}\n\ntype HeroStats {\n    HP: Int!\n    ATK: Int!\n    SPD: Int!\n    DEF: Int!\n    RES: Int!\n}\n\nenum MoveType {\n    ARMORED\n    CAVALRY\n    FLYING\n    INFANTRY\n}\n\nenum Rarity {\n    ONE_STAR\n    TWO_STAR\n    THREE_STAR\n    FOUR_STAR\n    FIVE_STAR\n}\n\ntype Skill {\n    effect: String!\n    exclusive: Boolean!\n    might: Int\n    name: String!\n    sp: String!\n}\n\nenum WeaponType {\n    BLUE_BEAST\n    BLUE_BOW\n    BLUE_BREATH\n    BLUE_DAGGER\n    BLUE_LANCE\n    BLUE_TOME\n    COLORLESS_BEAST\n    COLORLESS_BOW\n    COLORLESS_BREATH\n    COLORLESS_DAGGER\n    COLORLESS_STAFF\n    GREEN_AXE\n    GREEN_BEAST\n    GREEN_BOW\n    GREEN_BREATH\n    GREEN_DAGGER\n    GREEN_TOME\n    RED_BEAST\n    RED_BOW\n    RED_BREATH\n    RED_DAGGER\n    RED_SWORD\n    RED_TOME\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-02T06:49:14Z",
+    "updated_at": "2019-05-03T21:14:17Z",
+    "pushed_at": "2019-04-30T03:13:43Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "tesseras",
+  "repo_full_name": "brendanball/tesseras",
+  "repo_owner": "BrendanBall",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "server/src/graphql/schema/schema.gql",
+      "sha": "42894aefadc12cc3aff7136eb98488bcc93efcaf",
+      "url": "https://api.github.com/repositories/151141865/contents/server/src/graphql/schema/schema.gql?ref=0830fb337b203b091b399c23e5372b8020d869ab",
+      "git_url": "https://api.github.com/repositories/151141865/git/blobs/42894aefadc12cc3aff7136eb98488bcc93efcaf",
+      "html_url": "https://github.com/BrendanBall/tesseras/blob/0830fb337b203b091b399c23e5372b8020d869ab/server/src/graphql/schema/schema.gql",
+      "content": "type Query {\n    tickets: [Ticket!]!\n    users: [User!]!\n    tags: [Tag!]!\n}\n\ntype Mutation {\n    createTicket(input: TicketInput!): Ticket\n    updateTicket(id: ID!, input: TicketInput!): Ticket\n    createUser(input: UserInput!): User\n    updateUser(id: ID!, input: UserInput!): User\n    createTag(input: TagInput!): Tag\n    updateTag(id: ID!, input: TagInput!): Tag\n}\n\nscalar DateTime\n\ntype Ticket {\n    id: ID!\n    title: String\n    description: String\n    createdAt: DateTime!\n    modifiedAt: DateTime\n    createdBy: User!\n    assignedTo: User\n    tags: [Tag!]!\n}\n\ninput TicketInput {\n    title: String!\n    description: String!\n    createdByUserId: ID!\n    tags: [TagInput!]\n}\n\ntype Tag {\n    id: ID!\n    name: String!\n    description: String\n}\n\ninput TagInput {\n    id: ID\n    name: String\n    description: String\n}\n\ntype User {\n    id: ID!\n    username: String\n    name: String\n}\n\ninput UserInput {\n    username: String\n    name: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-01T18:55:17Z",
+    "updated_at": "2018-10-01T19:25:16Z",
+    "pushed_at": "2018-10-01T19:25:14Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

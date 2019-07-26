@@ -1,0 +1,41 @@
+{
+  "repo_name": "ts-sql-plugin",
+  "repo_full_name": "xialvjun/ts-sql-plugin",
+  "repo_owner": "xialvjun",
+  "repo_description": "TypeScript Language Service Plugin for SQL with a tagged template strings SQL builder.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "test_ts_sql_plugin/schema.gql",
+      "sha": "b0086aa322bec720f032313e0620d3a4ba7b6a26",
+      "url": "https://api.github.com/repositories/186672832/contents/test_ts_sql_plugin/schema.gql?ref=06fed975b269fea78b1279a83b3f02c0e7a5788b",
+      "git_url": "https://api.github.com/repositories/186672832/git/blobs/b0086aa322bec720f032313e0620d3a4ba7b6a26",
+      "html_url": "https://github.com/xialvjun/ts-sql-plugin/blob/06fed975b269fea78b1279a83b3f02c0e7a5788b/test_ts_sql_plugin/schema.gql",
+      "content": "scalar Date\nscalar Json\n\nenum Publisher {\n  COLUMBIA_UNIVERSITY_PRESS\n  NANJING_UNIVERSITY_PRESS\n  XXX_PRESS\n}\n\ntype Book {\n  id: ID!\n  title: String!\n  publisher: Publisher!\n  author: Person!\n  meta: Json\n  published_at: Date!\n}\n\ntype Person {\n  id: ID!\n  name: String!\n  books(title_like: String, publisher: Publisher): [Book!]!\n}\n\ntype Query {\n  books(author_id: ID, title_like: String, publisher: Publisher, reverse: Boolean): [Book!]!\n  persons(name_like: String): [Person!]!\n}\n\ntype Mutation {\n  add_person(name: String!): Person!\n  add_book(title: String!, publisher: Publisher!, author_id: ID!, published_at: Date!, meta: Json): Book!\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-14T17:51:44Z",
+    "updated_at": "2019-06-25T14:47:20Z",
+    "pushed_at": "2019-05-27T03:28:35Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

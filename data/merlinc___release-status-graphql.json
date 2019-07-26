@@ -1,0 +1,42 @@
+{
+  "repo_name": "release-status-graphql",
+  "repo_full_name": "merlinc/release-status-graphql",
+  "repo_owner": "merlinc",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typedefs.graphql",
+      "path": "src/graphql/typedefs.graphql",
+      "sha": "606701880f0e13354789a4b90ebabaf98e5b4742",
+      "url": "https://api.github.com/repositories/171564897/contents/src/graphql/typedefs.graphql?ref=626cf0d5d5deb3cb5047f0a9694847bb550a47a1",
+      "git_url": "https://api.github.com/repositories/171564897/git/blobs/606701880f0e13354789a4b90ebabaf98e5b4742",
+      "html_url": "https://github.com/merlinc/release-status-graphql/blob/626cf0d5d5deb3cb5047f0a9694847bb550a47a1/src/graphql/typedefs.graphql",
+      "content": "scalar Date\n\n# FIXME Deprecated?\nenum PromotionEnvironment {\n  ci\n  staging\n  production\n}\n\nenum TicketStatus {\n  develop\n  review\n  ready\n  complete\n  open\n  closed\n}\n\nenum BuildResult {\n  success\n  pending\n  failure\n}\n\ntype Build {\n  id: ID!\n  result: BuildResult\n}\n\ntype Merge {\n  mergeId: ID!\n  #  buildId: ID!\n  #  releaseId: String\n}\n\ntype ShortRelease {\n  releaseId: ID!\n}\n\ntype Ticket {\n  id: ID!\n  title: String\n  status: String\n  link: String # URL\n  merges: [Merge]\n  #     \"\"\"\n  #     merges: {\n  #         \"23\": {releaseId: 23},\n  #         \"11\": {releaseId: 16}\n  #     },\n  #     \"\"\"\n  #  promotions: [Promotion]\n  #  releases: [Int]\n  #  releaseIndexes: [Int]\n  #  updates: [ShortRelease]\n}\n\ntype Promotion {\n  # id: ID!\n  buildId: Int\n  env: String # PromotionEnvironment\n  rough: Boolean # FIXME - \"status vs rough?\n  status: BuildResult\n  timestamp: Date\n  url: String\n}\n\ntype Release {\n  id: ID!\n  ids: [Int]\n  date: Date\n  builds: [Build]\n  #          updates: [Update]\n}\n\ntype Commit {\n  sha: String!\n  message: String!\n  date: Date!\n  url: String\n  commits: [GitObject]\n  promotions: [Promotion]\n  #  tickets: [Ticket]\n}\n\ntype GitObject {\n  sha: String!\n  author: GitUser\n  committer: GitUser\n  message: String\n}\n\ntype GitUser {\n  date: Date\n  name: String\n  email: String\n}\n\ntype Status {\n  project: String! # project\n  commits: [Commit]\n  tickets: [Ticket]\n}\n\n# FIXME - What is this\nenum GitTypes {\n  github\n  gitlab\n}\n\ntype GitConfig {\n  baseUrl: String\n  commitUrl: String\n  compareUrl: String\n  type: GitTypes\n}\n\ntype Config {\n  org: String\n  project: String! # project\n  type: String\n  git: GitConfig\n  promotions: [String]\n}\n\n# the schema allows the following query:\ntype Query {\n  status(org: String, project: String): Status\n  config(org: String, project: String): Config\n  list: [Config]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-19T23:10:58Z",
+    "updated_at": "2019-05-17T23:13:57Z",
+    "pushed_at": "2019-05-18T10:14:06Z",
+    "issues": 13,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 14,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 13,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

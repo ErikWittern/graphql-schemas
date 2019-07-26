@@ -1,0 +1,42 @@
+{
+  "repo_name": "twitter-clone",
+  "repo_full_name": "eliasjohansson/twitter-clone",
+  "repo_owner": "eliasjohansson",
+  "repo_description": "(WIP) Made to learn about GraphQL & Apollo - Node & React",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.graphql",
+      "path": "server/src/schemas/user.graphql",
+      "sha": "7ac30a38ed8f7f2b88d0872206916f5cdd655bec",
+      "url": "https://api.github.com/repositories/136839827/contents/server/src/schemas/user.graphql?ref=d0c9212e63ce5aa7e27f253b1127afd593e32293",
+      "git_url": "https://api.github.com/repositories/136839827/git/blobs/7ac30a38ed8f7f2b88d0872206916f5cdd655bec",
+      "html_url": "https://github.com/eliasjohansson/twitter-clone/blob/d0c9212e63ce5aa7e27f253b1127afd593e32293/server/src/schemas/user.graphql",
+      "content": "type User {\n  _id: ID!\n  email: String!\n  username: String!\n  screenName: String!\n  password: String!\n\n  profileBanner: String\n  profileImage: String\n  description: String\n  location: String\n\n  verified: Boolean!\n  private: Boolean!\n\n  stats: UserStats!\n\n  relation: UserRelation\n}\n\ntype UserStats {\n  followersCount: Int!\n  followingCount: Int!\n  tweetsCount: Int!\n  favoritesCount: Int!\n}\n\ntype UserRelation {\n  following: Boolean!\n  followingMe: Boolean!\n}\n\ntype Query {\n  getUsers: [User!]\n  getUser(_id: ID, username: String): User\n}\n\ntype Mutation {\n  updateUser(\n    username: String\n    screenName: String\n    profileBanner: String\n    profileImage: String\n    description: String\n    location: String\n  ): User!\n  deleteUser: User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-10T19:47:07Z",
+    "updated_at": "2019-03-21T17:08:56Z",
+    "pushed_at": "2018-11-15T17:21:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

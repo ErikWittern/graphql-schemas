@@ -1,0 +1,78 @@
+{
+  "repo_name": "hl-vesper",
+  "repo_full_name": "hulago/hl-vesper",
+  "repo_owner": "Hulago",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "post.controller.graphql",
+      "path": "src/schema/controller/post.controller.graphql",
+      "sha": "bcc1789d1354eb19322f7b2eca0576f42e85810f",
+      "url": "https://api.github.com/repositories/142984184/contents/src/schema/controller/post.controller.graphql?ref=d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c",
+      "git_url": "https://api.github.com/repositories/142984184/git/blobs/bcc1789d1354eb19322f7b2eca0576f42e85810f",
+      "html_url": "https://github.com/Hulago/hl-vesper/blob/d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c/src/schema/controller/post.controller.graphql",
+      "content": "type Query {\n  posts: [Post]\n  post(id: Int): Post\n}\n\ntype Mutation {\n  postSave(id: Int, title: String, text: String): Post\n  postDelete(id: Int): Boolean\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Hulago/hl-vesper/blob/d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c/src/schema/controller/post.controller.graphql:\ntype Query {\n  posts: [Post]\n  post(id: Int): Post\n}\n\ntype Mutation {\n  postSave(id: Int, title: String, text: String): Post\n  postDelete(id: Int): Boolean\n}\n\n# https://github.com/Hulago/hl-vesper/blob/d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c/src/schema/model/post.model.graphql:\ntype Post {\n  id: Int\n  title: String\n  text: String\n  categories: [Category]\n}\n\n# https://github.com/Hulago/hl-vesper/blob/d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c/src/schema/model/category.model.graphql:\ntype Category {\n  id: Int\n  name: String\n  posts: [Post]\n}\n",
+        "mergedPaths": [
+          "src/schema/model/post.model.graphql",
+          "src/schema/model/category.model.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Post",
+          "Category"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": true,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "category.model.graphql",
+      "path": "src/schema/model/category.model.graphql",
+      "sha": "52b02174e40181e086282e1f06b4b00bc9d437f3",
+      "url": "https://api.github.com/repositories/142984184/contents/src/schema/model/category.model.graphql?ref=d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c",
+      "git_url": "https://api.github.com/repositories/142984184/git/blobs/52b02174e40181e086282e1f06b4b00bc9d437f3",
+      "html_url": "https://github.com/Hulago/hl-vesper/blob/d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c/src/schema/model/category.model.graphql",
+      "content": "type Category {\n  id: Int\n  name: String\n  posts: [Post]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "post.model.graphql",
+      "path": "src/schema/model/post.model.graphql",
+      "sha": "ad8074b1a3b4a7000fd2bb27593cd43581c7116e",
+      "url": "https://api.github.com/repositories/142984184/contents/src/schema/model/post.model.graphql?ref=d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c",
+      "git_url": "https://api.github.com/repositories/142984184/git/blobs/ad8074b1a3b4a7000fd2bb27593cd43581c7116e",
+      "html_url": "https://github.com/Hulago/hl-vesper/blob/d070b0ab2642a8fa07c6aeebfb3f9825d79ee92c/src/schema/model/post.model.graphql",
+      "content": "type Post {\n  id: Int\n  title: String\n  text: String\n  categories: [Category]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-31T08:18:24Z",
+    "updated_at": "2018-07-31T08:22:58Z",
+    "pushed_at": "2018-07-31T08:22:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

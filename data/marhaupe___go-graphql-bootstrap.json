@@ -1,0 +1,39 @@
+{
+  "repo_name": "go-graphql-bootstrap",
+  "repo_full_name": "marhaupe/go-graphql-bootstrap",
+  "repo_owner": "marhaupe",
+  "repo_description": "Small bootstrap to quickly set up a running Go GraphQL server powered by 99designs/gqlgen",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "35e65bc7a9358c798e61ad4b6edb2d32618f30be",
+      "url": "https://api.github.com/repositories/171947179/contents/server/schema.graphql?ref=5d31e6b097ba82dfe22d645ff526dd29a402c20c",
+      "git_url": "https://api.github.com/repositories/171947179/git/blobs/35e65bc7a9358c798e61ad4b6edb2d32618f30be",
+      "html_url": "https://github.com/marhaupe/go-graphql-bootstrap/blob/5d31e6b097ba82dfe22d645ff526dd29a402c20c/server/schema.graphql",
+      "content": "type Query {\n  Test(arg: String): String\n}\n\ntype Mutation {\n  Test(arg: String): String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-21T21:20:30Z",
+    "updated_at": "2019-04-03T20:27:18Z",
+    "pushed_at": "2019-04-03T20:27:17Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

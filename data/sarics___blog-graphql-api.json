@@ -1,0 +1,41 @@
+{
+  "repo_name": "blog-graphql-api",
+  "repo_full_name": "sarics/blog-graphql-api",
+  "repo_owner": "sarics",
+  "repo_description": "Simple graphql API for a blogging app with users, posts & comments.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "afe21e4fa652865573a727ee37ddb8375d2f6dfe",
+      "url": "https://api.github.com/repositories/159021706/contents/src/schema.graphql?ref=f4fa4a8b7e8f3f97a6cb2d031c43b0fa7d08bc63",
+      "git_url": "https://api.github.com/repositories/159021706/git/blobs/afe21e4fa652865573a727ee37ddb8375d2f6dfe",
+      "html_url": "https://github.com/sarics/blog-graphql-api/blob/f4fa4a8b7e8f3f97a6cb2d031c43b0fa7d08bc63/src/schema.graphql",
+      "content": "scalar Date\n\ntype User {\n  id: ID!\n  name: String!\n  email: String\n  createdAt: Date!\n  updatedAt: Date!\n\n  posts(first: Int, skip: Int, orderBy: PostsOrderByInput): [Post!]!\n  comments(first: Int, skip: Int, orderBy: CommentsOrderByInput): [Comment!]!\n}\n\nenum UserOrderByField {\n  name\n  createdAt\n  updatedAt\n}\n\ntype Post {\n  id: ID!\n  title: String!\n  body: String!\n  published: Boolean!\n  createdAt: Date!\n  updatedAt: Date!\n\n  author: User!\n  comments(first: Int, skip: Int, orderBy: CommentsOrderByInput): [Comment!]!\n}\n\nenum PostOrderByField {\n  title\n  body\n  createdAt\n  updatedAt\n}\n\ntype Comment {\n  id: ID!\n  text: String!\n  createdAt: Date!\n  updatedAt: Date!\n\n  author: User!\n  post: Post!\n}\n\nenum CommentOrderByField {\n  text\n  createdAt\n  updatedAt\n}\n\ntype Query {\n  me: User!\n\n  users(\n    search: String\n    first: Int\n    skip: Int\n    after: ID\n    orderBy: UsersOrderByInput\n  ): [User!]!\n  user(id: ID!): User!\n\n  posts(\n    search: String\n    first: Int\n    skip: Int\n    after: ID\n    orderBy: PostsOrderByInput\n  ): [Post!]!\n  post(id: ID!): Post!\n\n  comments(\n    search: String\n    first: Int\n    skip: Int\n    after: ID\n    orderBy: CommentsOrderByInput\n  ): [Comment!]!\n  comment(id: ID!): Comment!\n}\n\nenum OrderByOrder {\n  ASC\n  DESC\n}\n\ninput UsersOrderByInput {\n  field: UserOrderByField!\n  order: OrderByOrder!\n}\n\ninput PostsOrderByInput {\n  field: PostOrderByField!\n  order: OrderByOrder!\n}\n\ninput CommentsOrderByInput {\n  field: CommentOrderByField!\n  order: OrderByOrder!\n}\n\ntype Mutation {\n  login(data: LoginInput!): AuthPayload!\n\n  createUser(data: CreateUserInput!): AuthPayload!\n  updateUser(data: UpdateUserInput!): User!\n  deleteUser: User!\n\n  createPost(data: CreatePostInput!): Post!\n  updatePost(id: ID!, data: UpdatePostInput!): Post!\n  deletePost(id: ID!): Post!\n\n  createComment(data: CreateCommentInput!): Comment!\n  updateComment(id: ID!, data: UpdateCommentInput!): Comment!\n  deleteComment(id: ID!): Comment!\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n\ninput LoginInput {\n  email: String!\n  password: String!\n}\n\ninput CreateUserInput {\n  name: String!\n  email: String!\n  password: String!\n}\ninput UpdateUserInput {\n  name: String\n  email: String\n}\n\ninput CreatePostInput {\n  title: String!\n  body: String!\n  published: Boolean!\n}\ninput UpdatePostInput {\n  title: String\n  body: String\n  published: Boolean\n}\n\ninput CreateCommentInput {\n  text: String!\n  postId: ID!\n}\ninput UpdateCommentInput {\n  text: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-25T10:49:03Z",
+    "updated_at": "2019-02-24T09:52:53Z",
+    "pushed_at": "2018-11-27T16:55:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

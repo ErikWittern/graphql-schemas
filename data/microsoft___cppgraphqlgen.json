@@ -1,0 +1,46 @@
+{
+  "repo_name": "cppgraphqlgen",
+  "repo_full_name": "microsoft/cppgraphqlgen",
+  "repo_owner": "microsoft",
+  "repo_description": "C++ GraphQL schema service generator",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.today.graphql",
+      "path": "samples/today/schema.today.graphql",
+      "sha": "2954c17051227de8f6c7d86e07e4162c823c0871",
+      "url": "https://api.github.com/repositories/142608516/contents/samples/today/schema.today.graphql?ref=3fc28382abba4448baae3298c43563e7256abb0a",
+      "git_url": "https://api.github.com/repositories/142608516/git/blobs/2954c17051227de8f6c7d86e07e4162c823c0871",
+      "html_url": "https://github.com/microsoft/cppgraphqlgen/blob/3fc28382abba4448baae3298c43563e7256abb0a/samples/today/schema.today.graphql",
+      "content": "# Copyright (c) Microsoft Corporation. All rights reserved.\n# Licensed under the MIT License.\n\nschema {\n    query: Query\n    mutation: Mutation\n    subscription: Subscription\n}\n\nscalar ItemCursor\n\n\"Root Query type\"\ntype Query {\n\t\"\"\"[Object Identification](https://facebook.github.io/relay/docs/en/graphql-server-specification.html#object-identification)\"\"\"\n    node(id: ID!) : Node\n\n\t\"\"\"Appointments [Connection](https://facebook.github.io/relay/docs/en/graphql-server-specification.html#connections)\"\"\"\n    appointments(first: Int, after: ItemCursor, last: Int, before: ItemCursor): AppointmentConnection!\n\t\"\"\"Tasks [Connection](https://facebook.github.io/relay/docs/en/graphql-server-specification.html#connections)\"\"\"\n    tasks(first: Int, after: ItemCursor, last: Int, before: ItemCursor): TaskConnection!\n\t\"\"\"Folder unread counts [Connection](https://facebook.github.io/relay/docs/en/graphql-server-specification.html#connections)\"\"\"\n    unreadCounts(first: Int, after: ItemCursor, last: Int, before: ItemCursor): FolderConnection!\n\n    appointmentsById(ids: [ID!]! = [\"ZmFrZUFwcG9pbnRtZW50SWQ=\"]) : [Appointment]!\n    tasksById(ids: [ID!]!): [Task]!\n    unreadCountsById(ids: [ID!]!): [Folder]!\n\n    nested: NestedType!\n\n    unimplemented: String!\n}\n\n\"Node interface for Relay support\"\ninterface Node {\n    id: ID!\n}\n\ntype PageInfo {\n    hasNextPage: Boolean!\n    hasPreviousPage: Boolean!\n}\n\ntype AppointmentEdge {\n    node: Appointment\n    cursor: ItemCursor!\n}\n\ntype AppointmentConnection {\n    pageInfo: PageInfo!\n    edges: [AppointmentEdge]\n}\n\ntype TaskEdge {\n    node: Task\n    cursor: ItemCursor!\n}\n\ntype TaskConnection {\n    pageInfo: PageInfo!\n    edges: [TaskEdge]\n}\n\ntype FolderEdge {\n    node: Folder\n    cursor: ItemCursor!\n}\n\ntype FolderConnection {\n    pageInfo: PageInfo!\n    edges: [FolderEdge]\n}\n\ninput CompleteTaskInput {\n    id: ID!\n    isComplete: Boolean = true\n    clientMutationId: String\n}\n\ntype CompleteTaskPayload {\n    task: Task\n    clientMutationId: String\n}\n\ntype Mutation {\n    completeTask(input: CompleteTaskInput!) : CompleteTaskPayload!\n}\n\ntype Subscription {\n    nextAppointmentChange : Appointment @deprecated(reason:\"\"\"Need to deprecate a [field](https://facebook.github.io/graphql/June2018/#sec-Deprecation)\"\"\")\n\tnodeChange(id: ID!): Node!\n}\n\ndirective @subscriptionTag(field: String) on SUBSCRIPTION\n\nscalar DateTime\n\nenum TaskState {\n    New\n    Started\n    Complete\n\tUnassigned @deprecated(reason:\"\"\"Need to deprecate an [enum value](https://facebook.github.io/graphql/June2018/#sec-Deprecation)\"\"\")\n}\n\ntype Appointment implements Node {\n    id: ID!\n    when: DateTime\n    subject: String\n    isNow: Boolean!\n}\n\ntype Task implements Node {\n    id: ID!\n    title: String\n    isComplete: Boolean!\n}\n\ntype Folder implements Node {\n    id: ID!\n    name: String\n    unreadCount: Int!\n}\n\nunion UnionType = Appointment | Task | Folder\n\ndirective @queryTag(query: String!) on QUERY\ndirective @fieldTag(field: String!) on FIELD\ndirective @fragmentDefinitionTag(fragmentDefinition: String!) on FRAGMENT_DEFINITION\ndirective @fragmentSpreadTag(fragmentSpread: String!) on FRAGMENT_SPREAD\ndirective @inlineFragmentTag(inlineFragment: String!) on INLINE_FRAGMENT\n\n\"Infinitely nestable type which can be used with nested fragments to test directive handling\"\ntype NestedType {\n    \"Depth of the nested element\"\n    depth: Int!\n    \"Link to the next level\"\n    nested: NestedType!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 28
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-27T17:59:34Z",
+    "updated_at": "2019-07-19T15:38:20Z",
+    "pushed_at": "2019-05-16T17:21:59Z",
+    "issues": 21,
+    "watchers": 14,
+    "fork_count": 13,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 38,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 36,
+    "releases": 21,
+    "stargazers": 68
+  }
+}

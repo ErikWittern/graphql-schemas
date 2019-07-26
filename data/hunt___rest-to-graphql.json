@@ -1,0 +1,42 @@
+{
+  "repo_name": "rest-to-graphql",
+  "repo_full_name": "hunt/rest-to-graphql",
+  "repo_owner": "hunt",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "graphql-example/schema.gql",
+      "sha": "e5b447c8a0485b453444b1c02267c0c4a9f819e2",
+      "url": "https://api.github.com/repositories/108852638/contents/graphql-example/schema.gql?ref=8d556049d2d03c35d7243ff7eb7728029dce5c30",
+      "git_url": "https://api.github.com/repositories/108852638/git/blobs/e5b447c8a0485b453444b1c02267c0c4a9f819e2",
+      "html_url": "https://github.com/hunt/rest-to-graphql/blob/8d556049d2d03c35d7243ff7eb7728029dce5c30/graphql-example/schema.gql",
+      "content": "enum HeightUnit {\n  CM\n  FOOT\n}\ntype Group {\n  id: ID!\n  name: String\n  location: String\n  since: String\n}\n\n# Idol information\ntype Idol {\n  id: ID! # the ! means that every author object _must_ have an id\n  # Member in team\n  team: String\n  picture: String\n  # Name in roman characters\n  romaji: String\n  # Name in local\n  name: String\n  birthdate: String\n  birthplace: String\n  age: Int\n  bloodType: String\n  height(unit: HeightUnit): Float\n  agency: String\n  generation: String\n  group: Group\n}\n\ntype Query {\n  # Retrieve for idols information\n  idols(limit: Int): [Idol]\n  # Retrieve for groups information\n  groups: [Group]\n}\n\ntype Mutation {\n  addIdol(name: String, team: String): Idol\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-30T13:10:42Z",
+    "updated_at": "2017-11-24T13:29:34Z",
+    "pushed_at": "2017-10-30T13:14:52Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 11
+  }
+}

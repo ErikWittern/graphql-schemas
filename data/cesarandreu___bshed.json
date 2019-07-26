@@ -1,0 +1,41 @@
+{
+  "repo_name": "bshed",
+  "repo_full_name": "cesarandreu/bshed",
+  "repo_owner": "cesarandreu",
+  "repo_description": "bikeshedding app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "old/server/data/schema.graphql",
+      "sha": "aa0d71c8b8d93deeecf8797a2bbad179baa7358b",
+      "url": "https://api.github.com/repositories/28021119/contents/old/server/data/schema.graphql?ref=214466db8d82834708d6cbb4519b3be30a9a20fd",
+      "git_url": "https://api.github.com/repositories/28021119/git/blobs/aa0d71c8b8d93deeecf8797a2bbad179baa7358b",
+      "html_url": "https://github.com/cesarandreu/bshed/blob/214466db8d82834708d6cbb4519b3be30a9a20fd/old/server/data/schema.graphql",
+      "content": "type Bike {\n  ratio: Float\n  width: Int\n  height: Int\n  rating: Int\n  score: Int!\n  fullUrl: String!\n  thumbnailUrl: String!\n}\n\ntype Bikeshed implements Node {\n  id: ID!\n  description: String\n  status: status\n  creator: User\n  voteCount: Int!\n  hasVoted: Boolean!\n  bikes: [Bike]\n}\n\ntype BikeshedConnection {\n  pageInfo: PageInfo!\n  edges: [BikeshedEdge]\n}\n\ntype BikeshedEdge {\n  node: Bikeshed\n  cursor: String!\n}\n\ninput CreateBikeshedInput {\n  description: String!\n  clientMutationId: String!\n}\n\ntype CreateBikeshedPayload {\n  bikeshedEdge: BikeshedEdge\n  viewer: User\n  clientMutationId: String!\n}\n\ntype Mutation {\n  createBikeshed(input: CreateBikeshedInput!): CreateBikeshedPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  viewer: User\n  node(id: ID!): Node\n}\n\nenum status {\n  PROCESSING\n  QUEUED\n  ERROR\n  READY\n}\n\ntype User implements Node {\n  id: ID!\n  name: String\n  registeredAt: String\n  isRegistered: Boolean\n  bikesheds(before: String, after: String, first: Int, last: Int): BikeshedConnection\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2014-12-15T04:49:21Z",
+    "updated_at": "2019-02-05T16:00:11Z",
+    "pushed_at": "2016-05-24T06:39:13Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 7,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 7,
+    "releases": 0,
+    "stargazers": 8
+  }
+}

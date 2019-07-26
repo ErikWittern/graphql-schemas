@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql",
+  "repo_full_name": "cassiohalmeida/graphql",
+  "repo_owner": "cassiohalmeida",
+  "repo_description": "POC to see how GraphQL works",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "0ed97bffbaaa43da6fed6c78c666d6061782f3ad",
+      "url": "https://api.github.com/repositories/164450261/contents/src/schema.graphql?ref=bb76c10a1ac52bb4419c62508aefc983b71e5a91",
+      "git_url": "https://api.github.com/repositories/164450261/git/blobs/0ed97bffbaaa43da6fed6c78c666d6061782f3ad",
+      "html_url": "https://github.com/cassiohalmeida/graphql/blob/bb76c10a1ac52bb4419c62508aefc983b71e5a91/src/schema.graphql",
+      "content": "type User {\n  id: ID!\n  name: String!\n  email: String!\n  age: Int\n}\n\ntype Query {\n  users: [User!]!\n  user(id: ID!): User!\n}\n\ntype Mutation {    \n    createUser(id: ID!, name: String!, email: String!, age: Int): User!    \n    updateUser(id: ID!, name: String, email: String, age: Int): User!    \n    deleteUser(id: ID!): User!    \n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-07T15:11:41Z",
+    "updated_at": "2019-01-07T18:32:10Z",
+    "pushed_at": "2019-01-07T18:32:09Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

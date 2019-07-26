@@ -1,0 +1,42 @@
+{
+  "repo_name": "splice",
+  "repo_full_name": "ibrahimbutt/splice",
+  "repo_owner": "ibrahimbutt",
+  "repo_description": "A kanban application inspired by GitHub Projects. Made with React and GraphQL.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "2835796d21413045197173a056efa9eb942ea50e",
+      "url": "https://api.github.com/repositories/160340010/contents/server/src/schema.graphql?ref=eb38012c2a1863e636a9341d857f0d02b45059a3",
+      "git_url": "https://api.github.com/repositories/160340010/git/blobs/2835796d21413045197173a056efa9eb942ea50e",
+      "html_url": "https://github.com/ibrahimbutt/splice/blob/eb38012c2a1863e636a9341d857f0d02b45059a3/server/src/schema.graphql",
+      "content": "type Query {\n  allBoards: [Board]!\n  boardById(_id: ID!): Board!\n  boardByName(name: String!): Board!\n  boardColumns(boardId: ID!): [Column]!\n  columnById(_id: ID!): Column!\n}\n\ntype Mutation {\n  createBoard(name: String!): Board!\n  deleteBoard(_id: ID!): Boolean!\n  updateBoard(_id: ID!, name: String): Board!\n  createColumn(boardId: ID!, name: String!, index: Int!): Column!\n  deleteColumn(_id: ID!): Boolean!\n  updateColumn(_id: ID!, boardId: ID, name: String, index: Int): Column!\n  createCard(columnId: ID!, text: String!, tags: String, index: Int!): Card!\n  deleteCard(_id: ID!): Boolean!\n  updateCard(\n    _id: ID!\n    columnId: ID\n    text: String\n    tags: String\n    index: Int\n  ): Card!\n}\n\ntype Board {\n  _id: ID!\n  name: String!\n  columns: [Column]!\n}\n\ntype Column {\n  _id: ID!\n  boardId: ID!\n  name: String!\n  index: Int!\n  cards: [Card]!\n}\n\ntype Card {\n  _id: ID!\n  columnId: ID!\n  text: String!\n  index: Int!\n  tags: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-04T10:28:15Z",
+    "updated_at": "2019-05-03T20:10:48Z",
+    "pushed_at": "2018-12-28T17:31:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

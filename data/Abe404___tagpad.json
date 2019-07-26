@@ -1,0 +1,42 @@
+{
+  "repo_name": "tagpad",
+  "repo_full_name": "abe404/tagpad",
+  "repo_owner": "Abe404",
+  "repo_description": "bookmarking and note taking application",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "b5d2125718b1e8c52a61e84f13b20b6d7d65ffa8",
+      "url": "https://api.github.com/repositories/57441644/contents/data/schema.graphql?ref=136013dfc2b70075667de9292ba5d68f8ebe15ec",
+      "git_url": "https://api.github.com/repositories/57441644/git/blobs/b5d2125718b1e8c52a61e84f13b20b6d7d65ffa8",
+      "html_url": "https://github.com/Abe404/tagpad/blob/136013dfc2b70075667de9292ba5d68f8ebe15ec/data/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ninput AddItemInput {\n  title: String!\n  content: String!\n  tags: String!\n  clientMutationId: String!\n}\n\ntype AddItemPayload {\n  itemEdge: ItemEdge\n  itemsList: ItemsList\n  clientMutationId: String!\n}\n\ninput DeleteItemInput {\n  itemToDeleteId: String!\n  clientMutationId: String!\n}\n\ntype DeleteItemPayload {\n  itemsList: ItemsList\n  clientMutationId: String!\n}\n\ntype Item {\n  title: String\n  content: String\n  tags: String\n  id: ID!\n}\n\ntype ItemConnection {\n  pageInfo: PageInfo!\n  edges: [ItemEdge]\n}\n\ntype ItemEdge {\n  node: Item\n  cursor: String!\n}\n\ntype ItemsList {\n  id: ID!\n  items(title: String = \"\", after: String, first: Int, before: String, last: Int): ItemConnection\n}\n\ntype Mutation {\n  addItem(input: AddItemInput!): AddItemPayload\n  updateItem(input: UpdateItemInput!): UpdateItemPayload\n  deleteItem(input: DeleteItemInput!): DeleteItemPayload\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  item(id: String): Item\n  itemsList(title: String): ItemsList\n}\n\ninput UpdateItemInput {\n  id: String!\n  title: String!\n  content: String!\n  tags: String!\n  clientMutationId: String!\n}\n\ntype UpdateItemPayload {\n  item: Item\n  clientMutationId: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-04-30T12:50:28Z",
+    "updated_at": "2016-11-05T11:40:13Z",
+    "pushed_at": "2016-11-12T19:30:54Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

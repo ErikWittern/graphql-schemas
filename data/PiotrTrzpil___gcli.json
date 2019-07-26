@@ -1,0 +1,42 @@
+{
+  "repo_name": "gcli",
+  "repo_full_name": "piotrtrzpil/gcli",
+  "repo_owner": "PiotrTrzpil",
+  "repo_description": "Command line interface for any GraphQL server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "test-schema.graphql",
+      "path": "src/test-schema.graphql",
+      "sha": "64032275a1202c369ed67a3110d78f88acf501df",
+      "url": "https://api.github.com/repositories/140202277/contents/src/test-schema.graphql?ref=88a6082669ac3d3351d222341d5827919d9b7b1f",
+      "git_url": "https://api.github.com/repositories/140202277/git/blobs/64032275a1202c369ed67a3110d78f88acf501df",
+      "html_url": "https://github.com/PiotrTrzpil/gcli/blob/88a6082669ac3d3351d222341d5827919d9b7b1f/src/test-schema.graphql",
+      "content": "schema {\n    query: Query\n}\n\ntype Query {\n    nested: SomeType\n}\n\ntype SomeType {\n    field: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-08T20:59:59Z",
+    "updated_at": "2018-10-30T09:28:04Z",
+    "pushed_at": "2018-10-30T09:28:03Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

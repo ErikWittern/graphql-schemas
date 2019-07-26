@@ -1,0 +1,42 @@
+{
+  "repo_name": "report-a-cybercrime",
+  "repo_full_name": "cds-snc/report-a-cybercrime",
+  "repo_owner": "cds-snc",
+  "repo_description": "Report a cybercrime / Signaler les crimes informatiques.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/schema.graphql",
+      "sha": "a8889357dcb3ac0db1f7bb26cfbbf9a22bb16ed5",
+      "url": "https://api.github.com/repositories/154510676/contents/api/schema.graphql?ref=9810975a26c872b6d7b0310835e95663afbce2b4",
+      "git_url": "https://api.github.com/repositories/154510676/git/blobs/a8889357dcb3ac0db1f7bb26cfbbf9a22bb16ed5",
+      "html_url": "https://github.com/cds-snc/report-a-cybercrime/blob/9810975a26c872b6d7b0310835e95663afbce2b4/api/schema.graphql",
+      "content": "type DailyTotal {\n  date: String\n  total: Int\n}\n\n\"\"\"\nThe DateTime scalar type represents date time strings complying to ISO-8601.\n\"\"\"\nscalar DateTime\n\ntype identifierFlaggingsSummary {\n  identifier: String\n  summaryTotal: Int\n  summary: [DailyTotal]\n}\n\ntype Mutation {\n  \"\"\"Uploads an image.\"\"\"\n  uploadImage(\n    \"\"\"Image file.\"\"\"\n    image: Upload\n  ): Boolean\n\n  \"\"\"Flag an identifier\"\"\"\n  flagIdentifier(\n    \"\"\"the suspects identifier (phone no, url or email)\"\"\"\n    identifier: String\n  ): identifierFlaggingsSummary\n}\n\ntype Query {\n  \"\"\"Stats about report collection\"\"\"\n  stats: Stats\n}\n\ntype Stats {\n  \"\"\"The total number of reports submitted.\"\"\"\n  reportCount: Int\n\n  \"\"\"Daily totals for the identifier specified\"\"\"\n  identifierFlaggingsWithin(\n    \"\"\"the suspects identifier\"\"\"\n    identifier: String\n  ): identifierFlaggingsSummary\n\n  \"\"\"Daily totals for the identifier specified\"\"\"\n  flaggingsWithin(\n    \"\"\"a phone number, email address or URL\"\"\"\n    identifier: String!\n\n    \"\"\"An ISO8601(YYYY-MM-DD) formatted date string\"\"\"\n    startDate: DateTime!\n\n    \"\"\"An ISO8601(YYYY-MM-DD) formatted date string\"\"\"\n    endDate: DateTime!\n  ): identifierFlaggingsSummary\n}\n\n\"\"\"The `Upload` scalar type represents a file upload.\"\"\"\nscalar Upload\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-24T13:58:23Z",
+    "updated_at": "2019-07-19T13:29:54Z",
+    "pushed_at": "2019-07-19T19:28:24Z",
+    "issues": 105,
+    "watchers": 13,
+    "fork_count": 6,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 377,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 43,
+    "pull_requests_merged": 331,
+    "releases": 4,
+    "stargazers": 14
+  }
+}

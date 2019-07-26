@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-tests",
+  "repo_full_name": "gluchtenberg/graphql-tests",
+  "repo_owner": "GLuchtenberg",
+  "repo_description": "First test using graphql with NodeJS ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "74bd23111cda347c53bd4af254b1f32b1661e253",
+      "url": "https://api.github.com/repositories/154749060/contents/data/schema.graphql?ref=38525a993ef8a77166bdeba6d228883a7d78293e",
+      "git_url": "https://api.github.com/repositories/154749060/git/blobs/74bd23111cda347c53bd4af254b1f32b1661e253",
+      "html_url": "https://github.com/GLuchtenberg/graphql-tests/blob/38525a993ef8a77166bdeba6d228883a7d78293e/data/schema.graphql",
+      "content": "type Mutation {\n  UserChangePassword(input: UserChangePasswordInput!): UserChangePasswordPayload\n  UserLoginWithEmail(input: UserLoginWithEmailInput!): UserLoginWithEmailPayload\n  UserRegisterWithEmail(input: UserRegisterWithEmailInput!): UserRegisterWithEmailPayload\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfoExtended {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\n\"\"\"The root of all... queries\"\"\"\ntype Query {\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n  me: User\n  user(id: ID!): User\n  users(after: String, first: Int, before: String, last: Int, search: String): UserConnection\n}\n\ntype Subscription {\n  UserAdded: UserAddedPayload\n}\n\n\"\"\"User data\"\"\"\ntype User implements Node {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  _id: String\n  name: String\n  email: String\n  active: Boolean\n}\n\ntype UserAddedPayload {\n  userEdge: UserEdge\n}\n\ninput UserChangePasswordInput {\n  oldPassword: String!\n\n  \"\"\"user new password\"\"\"\n  password: String!\n  clientMutationId: String\n}\n\ntype UserChangePasswordPayload {\n  error: String\n  me: User\n  clientMutationId: String\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype UserConnection {\n  \"\"\"Number of items in this connection\"\"\"\n  count: Int!\n\n  \"\"\"\n  A count of the total number of objects in this connection, ignoring pagination.\n    This allows a client to fetch the first five objects by passing \"5\" as the\n    argument to \"first\", then fetch the total count so it could display \"5 of 83\",\n    for example.\n  \"\"\"\n  totalCount: Int!\n\n  \"\"\"Offset from start\"\"\"\n  startCursorOffset: Int!\n\n  \"\"\"Offset till end\"\"\"\n  endCursorOffset: Int!\n\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfoExtended!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [UserEdge]!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype UserEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: User!\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ninput UserLoginWithEmailInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype UserLoginWithEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n\ninput UserRegisterWithEmailInput {\n  name: String!\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype UserRegisterWithEmailPayload {\n  token: String\n  error: String\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 15
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-25T23:15:55Z",
+    "updated_at": "2019-03-18T16:26:20Z",
+    "pushed_at": "2018-11-11T19:10:10Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

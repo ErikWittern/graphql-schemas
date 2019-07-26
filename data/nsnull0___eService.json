@@ -1,0 +1,42 @@
+{
+  "repo_name": "eService",
+  "repo_full_name": "nsnull0/eservice",
+  "repo_owner": "nsnull0",
+  "repo_description": "NodeJS eMbok",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "_Query.gql",
+      "path": "packages/@nodejs-express/service/graphql/schemas/_Query.gql",
+      "sha": "9994b2acc24d1fc518d2726684070bf5698c40e3",
+      "url": "https://api.github.com/repositories/107294904/contents/packages/@nodejs-express/service/graphql/schemas/_Query.gql?ref=e953c315a55e5576224b5a9f7299ce348ec5f337",
+      "git_url": "https://api.github.com/repositories/107294904/git/blobs/9994b2acc24d1fc518d2726684070bf5698c40e3",
+      "html_url": "https://github.com/nsnull0/eService/blob/e953c315a55e5576224b5a9f7299ce348ec5f337/packages/@nodejs-express/service/graphql/schemas/_Query.gql",
+      "content": "enum ServiceName {\n  auth\n  transaction\n  merchant\n  purchaseVerification\n}\ntype Query {\n  checkServices(serviceName: [ServiceName]): [String]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-17T16:22:29Z",
+    "updated_at": "2018-04-10T18:35:44Z",
+    "pushed_at": "2018-04-10T18:35:41Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

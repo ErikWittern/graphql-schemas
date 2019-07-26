@@ -1,0 +1,42 @@
+{
+  "repo_name": "satou",
+  "repo_full_name": "if1live/satou",
+  "repo_owner": "if1live",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "api.gql",
+      "path": "server/api.gql",
+      "sha": "862c65195983d9689974303701fc130008a97499",
+      "url": "https://api.github.com/repositories/155141576/contents/server/api.gql?ref=d59cee969017a33193dd18f7594a1a3fd607e151",
+      "git_url": "https://api.github.com/repositories/155141576/git/blobs/862c65195983d9689974303701fc130008a97499",
+      "html_url": "https://github.com/if1live/satou/blob/d59cee969017a33193dd18f7594a1a3fd607e151/server/api.gql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: Viewer\n  search(first: Int, after: String, last: Int, before: String): PlayListItemConnection!\n}\n\ntype Mutation {\n  playAudio(input: PlayAudioInput): PlayAudioPayload\n  stopAudio(input: StopAudioInput): StopAudioPayload\n  reloadVideo(input: ReloadVideoInput): ReloadVideoPayload\n  shuffle(input: ShuffleInput!): ShufflePayload!\n}\n\nscalar Date\n\ninterface Node {\n  id: ID!\n}\n\ntype Viewer {\n  playlist: PlayList\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ninput PlayAudioInput {\n  clientMutationId: ID!\n  videoId: String!\n}\n\ntype PlayAudioPayload {\n  clientMutationId: ID!\n  ok: Boolean\n}\n\ninput StopAudioInput {\n  clientMutationId: ID!\n}\n\ntype StopAudioPayload {\n  clientMutationId: ID!\n}\n\n# ytdl-core, videoInfo\ntype Video implements Node {\n  id: ID!\n  iv_load_policy: String\n  iv_allow_in_place_switch: String\n  iv_endscreen_url: String\n  iv_invideo_url: String\n  iv3_module: String\n  rmktEnabled: String\n  uid: String\n  vid: String\n  focEnabled: String\n  baseUrl: String\n  storyboard_spec: String\n  serialized_ad_ux_config: String\n  player_error_log_fraction: String\n  sffb: String\n  ldpj: String\n  videostats_playback_base_url: String\n  innertube_context_client_version: String\n  player_response: String\n  t: String\n  fade_in_start_milliseconds: String!\n  timestamp: String!\n  ad3_module: String!\n  relative_loudness: String!\n  allow_below_the_player_companion: String!\n  eventid: String!\n  token: String!\n  atc: String!\n  title: String!\n  cr: String!\n  apply_fade_on_midrolls: String!\n  cl: String!\n  fexp: [String]!\n  apiary_host: String!\n  fade_in_duration_milliseconds: String!\n  fflags: String!\n  ssl: String!\n  pltype: String!\n  media: VideoMedia!\n  author: VideoAuthor!\n  enabled_engage_types: String!\n  hl: String!\n  is_listed: String!\n  gut_tag: String!\n  apiary_host_firstparty: String!\n  enablecsi: String!\n  csn: String!\n  status: String!\n  afv_ad_tag: String!\n  idpj: String!\n  sfw_player_response: String!\n  account_playback_token: String!\n  encoded_ad_safety_reason: String!\n  tag_for_children_directed: String!\n  no_get_video_log: String!\n  ppv_remarketing_url: String!\n  # fmt_list: string[][];\n  ad_slots: String!\n  fade_out_duration_milliseconds: String!\n  instream_long: String!\n  allow_html5_ads: String!\n  core_dbp: String!\n  ad_device: String!\n  view_count: String!\n  itct: String!\n  root_ve_type: String!\n  excluded_ads: String!\n  aftv: String!\n  loeid: String!\n  cver: String!\n  shortform: String!\n  dclk: String!\n  csi_page_type: String!\n  ismb: String!\n  gpt_migration: String!\n  loudness: String!\n  ad_tag: String!\n  of: String!\n  probe_url: String!\n  vm: String!\n  afv_ad_tag_restricted_to_instream: String!\n  gapi_hint_params: String!\n  cid: String!\n  c: String!\n  oid: String!\n  ptchn: String!\n  as_launched_in_country: String!\n  avg_rating: String!\n  fade_out_start_milliseconds: String!\n  length_seconds: String!\n  midroll_prefetch_size: String!\n  allow_ratings: String!\n  thumbnail_url: String!\n  iurlsd: String!\n  iurlmq: String!\n  iurlhq: String!\n  iurlmaxres: String!\n  ad_preroll: String!\n  tmi: String!\n  keywords: [String]!\n  trueview: String!\n  host_language: String!\n  innertube_api_key: String!\n  show_content_thumbnail: String!\n  afv_instream_max: String!\n  innertube_api_version: String!\n  mpvid: String!\n  allow_embed: String!\n  ucid: String!\n  plid: String!\n  midroll_freqcap: String!\n  ad_logging_flag: String!\n  ptk: String!\n  vmap: String!\n  watermark: [String]!\n  video_id: String!\n  dbp: String!\n  ad_flags: String!\n  html5player: String!\n  dashmpd: String\n  dashmpd2: String\n  hlsvp: String\n  # formats: videoFormat[];\n  published: Int\n  description: String!\n  # related_videos: relatedVideo[]\n  video_url: String!\n  no_embed_allowed: Boolean\n  age_restricted: Boolean\n}\n\ntype VideoMedia {\n  image: String\n  category: String!\n  category_url: String!\n  game: String\n  game_url: String\n  year: Int\n  song: String\n  artist: String\n  artist_url: String\n  writers: String\n  licensed_by: String\n}\n\ntype VideoAuthor {\n  id: String!\n  name: String!\n  avatar: String!\n  verified: Boolean!\n  user: String!\n  channel_url: String!\n  user_url: String!\n}\n\ninput ReloadVideoInput {\n  clientMutationId: ID!\n  videoId: String\n}\n\ntype ReloadVideoPayload {\n  clientMutationId: ID!\n  video: Video\n}\n\ntype PlayList {\n  random: PlayListItem\n}\n\ntype PlayListItem implements Node {\n  id: ID!\n  videoId: String!\n  video: Video\n}\n\ntype PlayListItemConnection {\n  edges: [PlayListItemEdge!]!\n  pageInfo: PageInfo!\n}\n\ntype PlayListItemEdge {\n  cursor: String!\n  node: PlayListItem!\n}\n\ninput ShuffleInput {\n  clientMutationId: ID!\n}\n\ntype ShufflePayload {\n  clientMutationId: ID!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 22
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-29T02:44:15Z",
+    "updated_at": "2018-11-02T15:04:43Z",
+    "pushed_at": "2018-11-01T16:54:48Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

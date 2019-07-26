@@ -1,0 +1,42 @@
+{
+  "repo_name": "cars-web",
+  "repo_full_name": "geeoz/cars-web",
+  "repo_owner": "geeoz",
+  "repo_description": "Cars Web Client provides user interface for portal usage.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "2ff4f6f55fb292587a86a134168ec5baf84eaa8f",
+      "url": "https://api.github.com/repositories/158389702/contents/server/schema.graphql?ref=886c3b8c39fd0d7038f032aca2b81b2c8d7bc412",
+      "git_url": "https://api.github.com/repositories/158389702/git/blobs/2ff4f6f55fb292587a86a134168ec5baf84eaa8f",
+      "html_url": "https://github.com/geeoz/cars-web/blob/886c3b8c39fd0d7038f032aca2b81b2c8d7bc412/server/schema.graphql",
+      "content": "type CurrencyExchangeRates {\n    timestamp: Int!\n    date: String!\n    currency: String!\n    fee: Float!\n    rates: [CurrencyExchangeRate!]\n}\n \ntype CurrencyExchangeRate {\n    currency: String!\n    rate: Float!\n}\n \ntype Query {\n    currencyExchangeRates: CurrencyExchangeRates!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-20T12:57:00Z",
+    "updated_at": "2018-11-20T12:58:11Z",
+    "pushed_at": "2018-11-20T12:58:09Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

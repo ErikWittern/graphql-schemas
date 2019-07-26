@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-yoga-sample",
+  "repo_full_name": "marknjunge/graphql-yoga-sample",
+  "repo_owner": "MarkNjunge",
+  "repo_description": "A sample GraphQL Server built using graphql-yoga.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "types.graphql",
+      "path": "src/types.graphql",
+      "sha": "cddec87f6c47d298461bc6b936a0b78a77d689f8",
+      "url": "https://api.github.com/repositories/132182791/contents/src/types.graphql?ref=ec3a1414886d2724319293e4d6f0288f915d262d",
+      "git_url": "https://api.github.com/repositories/132182791/git/blobs/cddec87f6c47d298461bc6b936a0b78a77d689f8",
+      "html_url": "https://github.com/MarkNjunge/graphql-yoga-sample/blob/ec3a1414886d2724319293e4d6f0288f915d262d/src/types.graphql",
+      "content": "# Details on the number of greetings given\ntype HelloCount {\n  # The total number of people that have been greeted\n  total: Int!\n  # The greeting\n  greeting: String!\n}\n\ntype Query {\n  # Greets a user\n  hello(name: String): String! # User's name\n  # Returns data from a header\n  header(headerName: String!): String\n}\n\ntype Mutation {\n  # Changes the value of the number of greetings\n  changeCount(value: Int = 0): Boolean\n}\n\ntype Subscription {\n  helloSub: HelloCount!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-04T19:51:01Z",
+    "updated_at": "2018-07-06T17:22:03Z",
+    "pushed_at": "2018-07-06T17:22:02Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

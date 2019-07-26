@@ -1,0 +1,42 @@
+{
+  "repo_name": "gamechars-server",
+  "repo_full_name": "fusion44/gamechars-server",
+  "repo_owner": "fusion44",
+  "repo_description": "A simple graphql server written in golang",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "gamecharacters.gql",
+      "path": "data/gamecharacters.gql",
+      "sha": "e33db95ca46f40e83057bc793a967821f83d4e94",
+      "url": "https://api.github.com/repositories/111837690/contents/data/gamecharacters.gql?ref=b76e04804bf0ad69505a174fae973deb13ac2898",
+      "git_url": "https://api.github.com/repositories/111837690/git/blobs/e33db95ca46f40e83057bc793a967821f83d4e94",
+      "html_url": "https://github.com/fusion44/gamechars-server/blob/b76e04804bf0ad69505a174fae973deb13ac2898/data/gamecharacters.gql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\n# The query type, represents all of the entry points into our object graph\ntype Query {\n  gameCharacters: [GameCharacter]\n  gameCharacter(id: ID!): GameCharacter\n}\n\n# The mutation type, represents all updates we can make to our data\ntype Mutation {\n  # Characters\n  addCharacter(char: GameCharacterInput!): GameCharacter\n  removeCharacter(id: ID!): Result\n}\n\n# A user that is signed in\ntype User {\n  id: ID!\n  userName: String!\n  email: String!\n  token: String!\n}\n\ntype Result {\n  op: String!\n  count: Int!\n}\n\n# A character a game\ninterface GameCharacter {\n  # The ID of the character\n  id: ID!\n  # The name of the character\n  name: String!\n  # The game this character appeared in first\n  debutGame: String!\n  # The release date of the game\n  releaseYear: Int!\n  # URL to an image of the character\n  img: String!\n  # A longer description of the character\n  desc: String!\n  # A link to an article of the character\n  wiki: String!\n  # Defines whether this character is publicly accessible\n  public: Boolean!\n  # The owning user\n  owner: String!\n}\n\ninput GameCharacterInput {\n  # The name of the character\n  name: String!\n  # The game this character appeared in first\n  debutGame: String!\n  # The release date of the game\n  releaseYear: Int!\n  # URL to an image of the character\n  img: String!\n  # A longer description of the character\n  desc: String!\n  # A link to an article of the character\n  wiki: String!\n  # Defines whether this character is publicly accessible\n  public: Boolean!\n  # The owning user\n  owner: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-23T17:56:55Z",
+    "updated_at": "2017-11-24T17:43:29Z",
+    "pushed_at": "2017-11-26T16:36:04Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

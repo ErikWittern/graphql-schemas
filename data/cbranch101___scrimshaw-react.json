@@ -1,0 +1,55 @@
+{
+  "repo_name": "scrimshaw-react",
+  "repo_full_name": "cbranch101/scrimshaw-react",
+  "repo_owner": "cbranch101",
+  "repo_description": "A framework that streamlines the process of getting GraphQL data into React components",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "aa6ae0cdde243d7e8e1a3cd736d9158579acc519",
+      "url": "https://api.github.com/repositories/112101077/contents/schema.graphql?ref=57ba9f59e7f830e55bbc9e3f9e80228045470b6b",
+      "git_url": "https://api.github.com/repositories/112101077/git/blobs/aa6ae0cdde243d7e8e1a3cd736d9158579acc519",
+      "html_url": "https://github.com/cbranch101/scrimshaw-react/blob/57ba9f59e7f830e55bbc9e3f9e80228045470b6b/schema.graphql",
+      "content": "input AddWidgetInput {\n  cost: Int!\n  name: String!\n  clientMutationId: String\n}\n\ntype AddWidgetPayload {\n  widgetEdge: WidgetEdge\n}\n\ntype Company {\n  id: String!\n  name: String!\n  averageCost: Int!\n  widgetList(first: Int, before: String, after: String, last: Int, offset: Int): WidgetConnection\n}\n\ntype Mutation {\n  addWidget(input: AddWidgetInput): AddWidgetPayload\n  updateWidget(input: UpdateWidgetInput): Widget\n}\n\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID): Node\n  viewer: Viewer\n}\n\ninput UpdateWidgetInput {\n  cost: Int\n  name: String\n  id: ID!\n  clientMutationId: String!\n}\n\ntype User {\n  name: String!\n}\n\ntype Viewer {\n  user: User\n  company: Company\n}\n\ntype Widget implements Node {\n  id: ID!\n  name: String!\n  cost: Int!\n  clientMutationId: String\n}\n\ntype WidgetConnection {\n  totalResults: Int!\n  pageInfo: PageInfo!\n  edges: [WidgetEdge]\n}\n\ntype WidgetEdge {\n  node: Widget\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 13
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/demo/schema.graphql",
+      "sha": "aa6ae0cdde243d7e8e1a3cd736d9158579acc519",
+      "url": "https://api.github.com/repositories/112101077/contents/src/demo/schema.graphql?ref=57ba9f59e7f830e55bbc9e3f9e80228045470b6b",
+      "git_url": "https://api.github.com/repositories/112101077/git/blobs/aa6ae0cdde243d7e8e1a3cd736d9158579acc519",
+      "html_url": "https://github.com/cbranch101/scrimshaw-react/blob/57ba9f59e7f830e55bbc9e3f9e80228045470b6b/src/demo/schema.graphql",
+      "content": "input AddWidgetInput {\n  cost: Int!\n  name: String!\n  clientMutationId: String\n}\n\ntype AddWidgetPayload {\n  widgetEdge: WidgetEdge\n}\n\ntype Company {\n  id: String!\n  name: String!\n  averageCost: Int!\n  widgetList(first: Int, before: String, after: String, last: Int, offset: Int): WidgetConnection\n}\n\ntype Mutation {\n  addWidget(input: AddWidgetInput): AddWidgetPayload\n  updateWidget(input: UpdateWidgetInput): Widget\n}\n\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID): Node\n  viewer: Viewer\n}\n\ninput UpdateWidgetInput {\n  cost: Int\n  name: String\n  id: ID!\n  clientMutationId: String!\n}\n\ntype User {\n  name: String!\n}\n\ntype Viewer {\n  user: User\n  company: Company\n}\n\ntype Widget implements Node {\n  id: ID!\n  name: String!\n  cost: Int!\n  clientMutationId: String\n}\n\ntype WidgetConnection {\n  totalResults: Int!\n  pageInfo: PageInfo!\n  edges: [WidgetEdge]\n}\n\ntype WidgetEdge {\n  node: Widget\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-26T17:08:54Z",
+    "updated_at": "2018-01-15T19:14:14Z",
+    "pushed_at": "2018-01-16T00:07:38Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 2,
+    "stargazers": 0
+  }
+}

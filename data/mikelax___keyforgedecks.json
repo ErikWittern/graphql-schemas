@@ -1,0 +1,42 @@
+{
+  "repo_name": "keyforgedecks",
+  "repo_full_name": "mikelax/keyforgedecks",
+  "repo_owner": "mikelax",
+  "repo_description": "Simple app to collect stats on registered decks and display on website",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/schema.graphql",
+      "sha": "495855302c37b0038dbb0c2e77313842df7192c9",
+      "url": "https://api.github.com/repositories/158434935/contents/api/schema.graphql?ref=3e334df510c3bff07d4c5fa4151562bcc6e4c63d",
+      "git_url": "https://api.github.com/repositories/158434935/git/blobs/495855302c37b0038dbb0c2e77313842df7192c9",
+      "html_url": "https://github.com/mikelax/keyforgedecks/blob/3e334df510c3bff07d4c5fa4151562bcc6e4c63d/api/schema.graphql",
+      "content": "type KeyforgeDecksRegisteredCounts {\n  timestamp: Int!\n  date: String!\n  count: Int!\n}\n\ninput KeyforgeDecksRegisteredCountsFilterInput {\n  date: String!\n}\n\ntype Query {\n  getRegisteredDecksCount(\n    date: String!\n    timestamp: Int!\n  ): KeyforgeDecksRegisteredCounts\n  listRegisteredDecksCounts(\n    filter: KeyforgeDecksRegisteredCountsFilterInput\n  ): [KeyforgeDecksRegisteredCounts]\n}\n\ninput TableIntFilterInput {\n  ne: Int\n  eq: Int\n  le: Int\n  lt: Int\n  ge: Int\n  gt: Int\n  contains: Int\n  notContains: Int\n  between: [Int]\n}\n\ninput TableStringFilterInput {\n  ne: String\n  eq: String\n  le: String\n  lt: String\n  ge: String\n  gt: String\n  contains: String\n  notContains: String\n  between: [String]\n  beginsWith: String\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-20T18:35:27Z",
+    "updated_at": "2018-11-21T04:12:48Z",
+    "pushed_at": "2018-11-21T04:03:42Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "social-stock",
+  "repo_full_name": "savatia/social-stock",
+  "repo_owner": "savatia",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "frontend/schema.graphql",
+      "sha": "63af8376b349a1dd0a30c28fec6cce7a0b46d99a",
+      "url": "https://api.github.com/repositories/100511102/contents/frontend/schema.graphql?ref=67c5122f16610c07e798a92d379ad31bac111915",
+      "git_url": "https://api.github.com/repositories/100511102/git/blobs/63af8376b349a1dd0a30c28fec6cce7a0b46d99a",
+      "html_url": "https://github.com/savatia/social-stock/blob/67c5122f16610c07e798a92d379ad31bac111915/frontend/schema.graphql",
+      "content": "type CompanyNode implements Node {\n  # The ID of the object.\n  id: ID!\n  name: String!\n  symbol: String!\n  marketCap: Int\n  country: String\n  year: Int\n  subSector: SubSectorNode!\n  searchTerms: String\n  published: Boolean!\n  stockSet(before: String, after: String, first: Int, last: Int, date: String): StockNodeConnection\n  sentimentSet(before: String, after: String, first: Int, last: Int, date: String, company: ID): SentimentNodeConnection\n  stocks(before: String, after: String, first: Int, last: Int, date: String): StockNodeConnection\n  sentiments(before: String, after: String, first: Int, last: Int, date: String, company: ID): SentimentNodeConnection\n}\n\ntype CompanyNodeConnection {\n  pageInfo: PageInfo!\n  edges: [CompanyNodeEdge]!\n}\n\ntype CompanyNodeEdge {\n  # The item at the end of the edge\n  node: CompanyNode\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# The `DateTime` scalar type represents a DateTime\n# value as specified by\n# [iso8601](https://en.wikipedia.org/wiki/ISO_8601).\nscalar DateTime\n\n# An object with an ID\ninterface Node {\n  # The ID of the object.\n  id: ID!\n}\n\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  company(id: Int, symbol: String): CompanyNode\n  companies(before: String, after: String, first: Int, last: Int, published: Boolean, country: String, country_Icontains: String, country_Istartswith: String, symbol: String, symbol_Icontains: String, symbol_Istartswith: String, name: String, name_Icontains: String, name_Istartswith: String): CompanyNodeConnection\n\n  # The ID of the object\n  subSector(id: ID!): SubSectorNode\n  subSectors(before: String, after: String, first: Int, last: Int, name: String, name_Icontains: String, name_Istartswith: String): SubSectorNodeConnection\n  sentiment(symbol: String, date: String): SentimentNode\n  viewer: Viewer\n  tweets(date: String, symbol: String): [Tweet]\n}\n\ntype SentimentNode implements Node {\n  # The ID of the object.\n  id: ID!\n  company: CompanyNode!\n  date: DateTime!\n  tweetSentiment: Float!\n  tweetVolume: Int!\n  retweetVolume: Int!\n  retweetSentiment: Float!\n  favoriteSentiment: Float!\n  favoriteVolume: Int!\n}\n\ntype SentimentNodeConnection {\n  pageInfo: PageInfo!\n  edges: [SentimentNodeEdge]!\n}\n\ntype SentimentNodeEdge {\n  # The item at the end of the edge\n  node: SentimentNode\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype StockNode implements Node {\n  # The ID of the object.\n  id: ID!\n  company: CompanyNode!\n  date: DateTime!\n  open: Float!\n  high: Float!\n  low: Float!\n  close: Float!\n  adjClose: Float!\n  prediction: Float\n  volume: Int!\n}\n\ntype StockNodeConnection {\n  pageInfo: PageInfo!\n  edges: [StockNodeEdge]!\n}\n\ntype StockNodeEdge {\n  # The item at the end of the edge\n  node: StockNode\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype SubSectorNode implements Node {\n  # The ID of the object.\n  id: ID!\n  name: String!\n  companySet(before: String, after: String, first: Int, last: Int, published: Boolean, country: String, country_Icontains: String, country_Istartswith: String, symbol: String, symbol_Icontains: String, symbol_Istartswith: String, name: String, name_Icontains: String, name_Istartswith: String): CompanyNodeConnection\n}\n\ntype SubSectorNodeConnection {\n  pageInfo: PageInfo!\n  edges: [SubSectorNodeEdge]!\n}\n\ntype SubSectorNodeEdge {\n  # The item at the end of the edge\n  node: SubSectorNode\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Tweet {\n  id: String\n  text: String\n  date: String\n  fullname: String\n  replies: Int\n  likes: Int\n  retweets: Int\n  url: String\n  user: String\n  sentiment: String\n}\n\ntype Viewer {\n  company(id: Int, symbol: String): CompanyNode\n  companies(before: String, after: String, first: Int, last: Int, published: Boolean, country: String, country_Icontains: String, country_Istartswith: String, symbol: String, symbol_Icontains: String, symbol_Istartswith: String, name: String, name_Icontains: String, name_Istartswith: String): CompanyNodeConnection\n\n  # The ID of the object\n  subSector(id: ID!): SubSectorNode\n  subSectors(before: String, after: String, first: Int, last: Int, name: String, name_Icontains: String, name_Istartswith: String): SubSectorNodeConnection\n  sentiment(symbol: String, date: String): SentimentNode\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": true,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-16T16:38:55Z",
+    "updated_at": "2018-08-13T10:54:24Z",
+    "pushed_at": "2018-08-13T10:53:20Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

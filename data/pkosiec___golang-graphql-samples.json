@@ -1,0 +1,42 @@
+{
+  "repo_name": "golang-graphql-samples",
+  "repo_full_name": "pkosiec/golang-graphql-samples",
+  "repo_owner": "pkosiec",
+  "repo_description": "Samples for using GraphQL in Go",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "gqlgen/gqlschema/schema.graphql",
+      "sha": "af8f2b5097afb67fe9f837f10a6d02802a89da26",
+      "url": "https://api.github.com/repositories/132668182/contents/gqlgen/gqlschema/schema.graphql?ref=db07bd5ad55f1984fe94869459cc946f2c336a15",
+      "git_url": "https://api.github.com/repositories/132668182/git/blobs/af8f2b5097afb67fe9f837f10a6d02802a89da26",
+      "html_url": "https://github.com/pkosiec/golang-graphql-samples/blob/db07bd5ad55f1984fe94869459cc946f2c336a15/gqlgen/gqlschema/schema.graphql",
+      "content": "type Artist {\n  id: ID!\n  name: String!\n  songs: [Song!]!\n}\n\ntype Song {\n  id: ID!\n  title: String!\n  duration: Float!\n}\n\ntype Query {\n  artist(id: ID!): Artist\n  artists: [Artist!]!\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-08T21:39:52Z",
+    "updated_at": "2019-01-19T12:15:08Z",
+    "pushed_at": "2018-05-13T11:08:24Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

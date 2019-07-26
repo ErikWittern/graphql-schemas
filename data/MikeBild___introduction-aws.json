@@ -1,0 +1,42 @@
+{
+  "repo_name": "introduction-aws",
+  "repo_full_name": "mikebild/introduction-aws",
+  "repo_owner": "MikeBild",
+  "repo_description": "Hands-On introduction to Serverless using AWS-Cloud-Services via JavaScript/TypeScript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "examples/cms/packages/cms-storybook/graphql/schema.graphql",
+      "sha": "0328ac7230c5f98ed9b93c14059117591a28ee14",
+      "url": "https://api.github.com/repositories/162881303/contents/examples/cms/packages/cms-storybook/graphql/schema.graphql?ref=b82c246e1f4e930f1f78ca41227b298ec5dac624",
+      "git_url": "https://api.github.com/repositories/162881303/git/blobs/0328ac7230c5f98ed9b93c14059117591a28ee14",
+      "html_url": "https://github.com/MikeBild/introduction-aws/blob/b82c246e1f4e930f1f78ca41227b298ec5dac624/examples/cms/packages/cms-storybook/graphql/schema.graphql",
+      "content": "type Item {\n  id: ID!\n  value: String\n}\n\ntype Query {\n  items: [Item]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-23T10:25:07Z",
+    "updated_at": "2019-06-18T09:20:32Z",
+    "pushed_at": "2019-07-14T08:16:23Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 12,
+    "pull_requests_open": 6,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 4,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

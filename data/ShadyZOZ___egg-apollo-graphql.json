@@ -1,0 +1,103 @@
+{
+  "repo_name": "egg-apollo-graphql",
+  "repo_full_name": "shadyzoz/egg-apollo-graphql",
+  "repo_owner": "ShadyZOZ",
+  "repo_description": "a egg-graphql replacement",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "test/fixtures/apps/apollo-graphql-test-2/app/graphql/query.graphql",
+      "sha": "40832c5932bbec68ea5a826a69d85bce07e431c3",
+      "url": "https://api.github.com/repositories/165641625/contents/test/fixtures/apps/apollo-graphql-test-2/app/graphql/query.graphql?ref=55024eeb950f801886651fc8f5dfdb5d404837f6",
+      "git_url": "https://api.github.com/repositories/165641625/git/blobs/40832c5932bbec68ea5a826a69d85bce07e431c3",
+      "html_url": "https://github.com/ShadyZOZ/egg-apollo-graphql/blob/55024eeb950f801886651fc8f5dfdb5d404837f6/test/fixtures/apps/apollo-graphql-test-2/app/graphql/query.graphql",
+      "content": "type Query {\n    test(name: String): Test\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ShadyZOZ/egg-apollo-graphql/blob/55024eeb950f801886651fc8f5dfdb5d404837f6/test/fixtures/apps/apollo-graphql-test-2/app/graphql/query.graphql:\ntype Query {\n    test(name: String): Test\n}\n\n# https://github.com/ShadyZOZ/egg-apollo-graphql/blob/55024eeb950f801886651fc8f5dfdb5d404837f6/test/fixtures/apps/apollo-graphql-test-2/app/graphql/test/test.graphql:\ntype Test {\n    hello: String\n}\n",
+        "mergedPaths": [
+          "test/fixtures/apps/apollo-graphql-test-2/app/graphql/test/test.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Test"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "test.graphql",
+      "path": "test/fixtures/apps/apollo-graphql-test-2/app/graphql/test/test.graphql",
+      "sha": "085fef2f0f6ba6fbc14194aef3286a9ceb6fb2ec",
+      "url": "https://api.github.com/repositories/165641625/contents/test/fixtures/apps/apollo-graphql-test-2/app/graphql/test/test.graphql?ref=55024eeb950f801886651fc8f5dfdb5d404837f6",
+      "git_url": "https://api.github.com/repositories/165641625/git/blobs/085fef2f0f6ba6fbc14194aef3286a9ceb6fb2ec",
+      "html_url": "https://github.com/ShadyZOZ/egg-apollo-graphql/blob/55024eeb950f801886651fc8f5dfdb5d404837f6/test/fixtures/apps/apollo-graphql-test-2/app/graphql/test/test.graphql",
+      "content": "type Test {\n    hello: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "query.graphql",
+      "path": "test/fixtures/apps/apollo-graphql-test/app/graphql/query.graphql",
+      "sha": "40832c5932bbec68ea5a826a69d85bce07e431c3",
+      "url": "https://api.github.com/repositories/165641625/contents/test/fixtures/apps/apollo-graphql-test/app/graphql/query.graphql?ref=55024eeb950f801886651fc8f5dfdb5d404837f6",
+      "git_url": "https://api.github.com/repositories/165641625/git/blobs/40832c5932bbec68ea5a826a69d85bce07e431c3",
+      "html_url": "https://github.com/ShadyZOZ/egg-apollo-graphql/blob/55024eeb950f801886651fc8f5dfdb5d404837f6/test/fixtures/apps/apollo-graphql-test/app/graphql/query.graphql",
+      "content": "type Query {\n    test(name: String): Test\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ShadyZOZ/egg-apollo-graphql/blob/55024eeb950f801886651fc8f5dfdb5d404837f6/test/fixtures/apps/apollo-graphql-test/app/graphql/query.graphql:\ntype Query {\n    test(name: String): Test\n}\n\n# https://github.com/ShadyZOZ/egg-apollo-graphql/blob/55024eeb950f801886651fc8f5dfdb5d404837f6/test/fixtures/apps/apollo-graphql-test/app/graphql/test/test.graphql:\ntype Test {\n    hello: String\n}\n",
+        "mergedPaths": [
+          "test/fixtures/apps/apollo-graphql-test/app/graphql/test/test.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Test"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "test.graphql",
+      "path": "test/fixtures/apps/apollo-graphql-test/app/graphql/test/test.graphql",
+      "sha": "085fef2f0f6ba6fbc14194aef3286a9ceb6fb2ec",
+      "url": "https://api.github.com/repositories/165641625/contents/test/fixtures/apps/apollo-graphql-test/app/graphql/test/test.graphql?ref=55024eeb950f801886651fc8f5dfdb5d404837f6",
+      "git_url": "https://api.github.com/repositories/165641625/git/blobs/085fef2f0f6ba6fbc14194aef3286a9ceb6fb2ec",
+      "html_url": "https://github.com/ShadyZOZ/egg-apollo-graphql/blob/55024eeb950f801886651fc8f5dfdb5d404837f6/test/fixtures/apps/apollo-graphql-test/app/graphql/test/test.graphql",
+      "content": "type Test {\n    hello: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-14T10:26:02Z",
+    "updated_at": "2019-01-14T10:37:19Z",
+    "pushed_at": "2019-01-14T10:37:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

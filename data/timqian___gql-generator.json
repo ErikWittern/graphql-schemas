@@ -1,0 +1,46 @@
+{
+  "repo_name": "gql-generator",
+  "repo_full_name": "timqian/gql-generator",
+  "repo_owner": "timqian",
+  "repo_description": "Generate queries from graphql schema, used for writing api test.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "sampleTypeDef.graphql",
+      "path": "example/sampleTypeDef.graphql",
+      "sha": "51279d151c858ef4b0001439ca7d709a4a51e956",
+      "url": "https://api.github.com/repositories/126788501/contents/example/sampleTypeDef.graphql?ref=b2b5e7510fdf960624cafb499b7d95bc6b989626",
+      "git_url": "https://api.github.com/repositories/126788501/git/blobs/51279d151c858ef4b0001439ca7d709a4a51e956",
+      "html_url": "https://github.com/timqian/gql-generator/blob/b2b5e7510fdf960624cafb499b7d95bc6b989626/example/sampleTypeDef.graphql",
+      "content": "type Query {\n    user(id: Int!): User!\n    members: [Member!] @deprecated(reason: \"Test a deprecated query\")\n}\n\ntype Mutation {\n    signup(\n        email: String!\n        username: String!\n        password: String!\n    ): UserToken!\n\n    signin(\n        email: String!\n        password: String!\n    ): String!\n\n    setConfig(\n        prefs: PrefsInput\n    ): Config!\n\n    sendMessage(\n        message: String!\n    ): String! @deprecated(reason: \"Test a deprecated mutation\")\n}\n\ninput PrefsInput {\n    language: String!\n}\n\ntype Config {\n    language: String!\n    level(domain: String!): Int!\n    lastSeen(domain: String!): Int!\n    theme(domain: String!): Int!\n}\n\ntype Subscription {\n    UserUpdated(UserId: Int!): User\n}\n\ntype UserToken {\n    token: String!\n    user: User!\n}\n\ntype User {\n    id: Int!\n    username: String!\n    email: String!\n    createdAt: String!\n    context: Context!\n    details: UserDetails!\n    address: String! @deprecated(reason: \"Test a deprecated field\")\n}\n\nunion UserDetails = Guest | Member\n\ntype Guest {\n    region(language: String): String!\n}\n\ntype Member {\n    address: String!\n}\n\ntype Context {\n    user: User! # Circular ref\n    domain: String!\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-26T07:12:31Z",
+    "updated_at": "2019-07-11T01:37:15Z",
+    "pushed_at": "2019-07-04T02:00:15Z",
+    "issues": 16,
+    "watchers": 10,
+    "fork_count": 20,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 7,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 94
+  }
+}

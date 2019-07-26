@@ -1,0 +1,42 @@
+{
+  "repo_name": "www.Xshooting.com.vender",
+  "repo_full_name": "golangltd/www.xshooting.com.vender",
+  "repo_owner": "Golangltd",
+  "repo_description": "www.Xshooting.com.vender",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "vendor/src/github.com/micro/examples/greeter/api/graphql/graphql/schema.graphql",
+      "sha": "cc6183a672bf6f0f7e2fa3c967a3410ba816816a",
+      "url": "https://api.github.com/repositories/155500361/contents/vendor/src/github.com/micro/examples/greeter/api/graphql/graphql/schema.graphql?ref=dd0c3e6a693b85d0a301354e7aafe0d582014dcb",
+      "git_url": "https://api.github.com/repositories/155500361/git/blobs/cc6183a672bf6f0f7e2fa3c967a3410ba816816a",
+      "html_url": "https://github.com/Golangltd/www.Xshooting.com.vender/blob/dd0c3e6a693b85d0a301354e7aafe0d582014dcb/vendor/src/github.com/micro/examples/greeter/api/graphql/graphql/schema.graphql",
+      "content": "type HelloResponse {\n  msg: String!\n}\n\ntype Query {\n  hello(name: String! = \"World\"): HelloResponse\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-31T04:48:34Z",
+    "updated_at": "2018-11-10T08:56:07Z",
+    "pushed_at": "2018-11-10T08:56:04Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

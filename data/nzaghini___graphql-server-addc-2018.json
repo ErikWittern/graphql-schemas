@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-server-addc-2018",
+  "repo_full_name": "nzaghini/graphql-server-addc-2018",
+  "repo_owner": "nzaghini",
+  "repo_description": "Introduction to React Native and GraphQL for App Development - ADDC 2018 Workshop",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Movie.graphql",
+      "path": "src/schemas/Movie.graphql",
+      "sha": "c98fbad389bff4a5aaddcaa5229faa10175ca93e",
+      "url": "https://api.github.com/repositories/138081251/contents/src/schemas/Movie.graphql?ref=c0dc14edad652eb06f644cc7baf1d0806938b11b",
+      "git_url": "https://api.github.com/repositories/138081251/git/blobs/c98fbad389bff4a5aaddcaa5229faa10175ca93e",
+      "html_url": "https://github.com/nzaghini/graphql-server-addc-2018/blob/c0dc14edad652eb06f644cc7baf1d0806938b11b/src/schemas/Movie.graphql",
+      "content": "type Director {\n  id: ID!\n  firstName: String!\n  lastName: String!\n  movies: [Movie!]\n}\n\ntype Movie {\n  id: ID!\n  title: String!\n  year: String!\n  director: Director!\n}\n\ntype Query {\n  directors: [Director!]\n  movies: [Movie!]\n  directorOf(movieId: ID!): Director\n  moviesBy(directorId: ID!): [Movie!]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-20T20:14:49Z",
+    "updated_at": "2019-04-24T00:05:38Z",
+    "pushed_at": "2018-10-24T14:43:22Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

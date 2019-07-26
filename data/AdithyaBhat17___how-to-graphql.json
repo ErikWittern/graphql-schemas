@@ -1,0 +1,39 @@
+{
+  "repo_name": "how-to-graphql",
+  "repo_full_name": "adithyabhat17/how-to-graphql",
+  "repo_owner": "AdithyaBhat17",
+  "repo_description": "Demo applications built while learning GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql-server/src/schema.graphql",
+      "sha": "207aed3549f7166444d2147bb959a512f9e9de76",
+      "url": "https://api.github.com/repositories/162907360/contents/graphql-server/src/schema.graphql?ref=fae2973b3b7ae1d255b7195e1f3d1662999b8536",
+      "git_url": "https://api.github.com/repositories/162907360/git/blobs/207aed3549f7166444d2147bb959a512f9e9de76",
+      "html_url": "https://github.com/AdithyaBhat17/how-to-graphql/blob/fae2973b3b7ae1d255b7195e1f3d1662999b8536/graphql-server/src/schema.graphql",
+      "content": "type User {\n    id: ID!\n    name: String!\n    email: String!\n    age: Int \n}\n\ntype Query{\n    users: [User!]!\n    user(id: ID!): User\n}\n\ntype Mutation {\n    createUser(id: ID!, name: String!, email: String!, age: Int): User!\n    updateUser(id: ID!, name: String!, email: String!, age: Int): User!\n    deleteUser(id: ID!): User!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-23T16:35:58Z",
+    "updated_at": "2019-02-16T15:46:48Z",
+    "pushed_at": "2019-02-16T15:46:47Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-releasy",
+  "repo_full_name": "releasy/react-releasy",
+  "repo_owner": "releasy",
+  "repo_description": "Relay with zero-configuration. SSR, caching, testing and more.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "tests/data/schema.graphql",
+      "sha": "d3f4f88976cf80a7fa4c0844e605659684e90507",
+      "url": "https://api.github.com/repositories/120955279/contents/tests/data/schema.graphql?ref=94e30608822e05408511ecc5ca133ac63e3c7967",
+      "git_url": "https://api.github.com/repositories/120955279/git/blobs/d3f4f88976cf80a7fa4c0844e605659684e90507",
+      "html_url": "https://github.com/releasy/react-releasy/blob/94e30608822e05408511ecc5ca133ac63e3c7967/tests/data/schema.graphql",
+      "content": "input ChangeNameInput {\n  name: String!\n  clientMutationId: String\n}\n\ntype ChangeNamePayload {\n  error: String\n  me: User\n  clientMutationId: String\n}\n\ntype Mutation {\n  ChangeName(input: ChangeNameInput!): ChangeNamePayload\n}\n\n\"\"\"The root of all... queries\"\"\"\ntype Query {\n  me: User\n}\n\n\"\"\"User data\"\"\"\ntype User {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-09T21:02:03Z",
+    "updated_at": "2019-06-18T19:25:45Z",
+    "pushed_at": "2018-11-02T11:16:19Z",
+    "issues": 9,
+    "watchers": 10,
+    "fork_count": 7,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 18,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 16,
+    "releases": 4,
+    "stargazers": 92
+  }
+}

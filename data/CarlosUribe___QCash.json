@@ -1,0 +1,58 @@
+{
+  "repo_name": "QCash",
+  "repo_full_name": "carlosuribe/qcash",
+  "repo_owner": "CarlosUribe",
+  "repo_description": "SBCHack",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "aafdde366616615d8eec2ea351ddb40ecad9bf8f",
+      "url": "https://api.github.com/repositories/119130035/contents/schema.graphql?ref=3418233918132e9b0e9f46b8cc6dcf3879ff9e38",
+      "git_url": "https://api.github.com/repositories/119130035/git/blobs/aafdde366616615d8eec2ea351ddb40ecad9bf8f",
+      "html_url": "https://github.com/CarlosUribe/QCash/blob/3418233918132e9b0e9f46b8cc6dcf3879ff9e38/schema.graphql",
+      "content": "type Mutation {\n  createUser(name: String!): User!\n  changeBalance(senderId: String!, recieverId: String!, amount: Int!): Int!\n}\n\ntype Query {\n  hello(name: String): User!\n}\n\ntype User {\n  name: String\n  id: String\n  balance: Int\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    },
+    {
+      "name": "schema.graphql",
+      "path": "chain/src/schema.graphql",
+      "sha": "b6759f34613b33c21d07228a6050c7e880cfa6e1",
+      "url": "https://api.github.com/repositories/119130035/contents/chain/src/schema.graphql?ref=3418233918132e9b0e9f46b8cc6dcf3879ff9e38",
+      "git_url": "https://api.github.com/repositories/119130035/git/blobs/b6759f34613b33c21d07228a6050c7e880cfa6e1",
+      "html_url": "https://github.com/CarlosUribe/QCash/blob/3418233918132e9b0e9f46b8cc6dcf3879ff9e38/chain/src/schema.graphql",
+      "content": "type User {\n  name: String\n  id: String\n  balance: Int\n}\n\ntype Transaction {\n  amount: Int\n  date: String\n}\n\ntype Query {\n  getAnomalies(id: String!): [Transaction]\n}\n\ntype Mutation {\n  createUser(name: String!): User!\n  changeBalance(\n    senderId: String!,\n    recieverId: String!,\n    amount: Int!\n  ): Int!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-27T03:48:52Z",
+    "updated_at": "2018-01-28T01:56:03Z",
+    "pushed_at": "2018-01-28T17:28:33Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

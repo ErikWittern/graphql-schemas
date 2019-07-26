@@ -1,0 +1,42 @@
+{
+  "repo_name": "NAGA-TS",
+  "repo_full_name": "gongzhaohui/naga-ts",
+  "repo_owner": "gongzhaohui",
+  "repo_description": "A Nestjs Angular Graphql Arangodb starter TypeScript project。",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.types.graphql",
+      "path": "src/server/modules/user/user.types.graphql",
+      "sha": "aafae0327be01cc1e16355a6c882e9a3380d936b",
+      "url": "https://api.github.com/repositories/145104741/contents/src/server/modules/user/user.types.graphql?ref=c860c60abdce8a2de06adb18a3e1547c79a40f91",
+      "git_url": "https://api.github.com/repositories/145104741/git/blobs/aafae0327be01cc1e16355a6c882e9a3380d936b",
+      "html_url": "https://github.com/gongzhaohui/NAGA-TS/blob/c860c60abdce8a2de06adb18a3e1547c79a40f91/src/server/modules/user/user.types.graphql",
+      "content": "type Query {\n  getUsers: [User]\n  user(_key: String!): User\n}\n\ntype Mutation {\n  createUser(body: UserInput): User\n  signin(name: String!, password: String!): AuthPayload\n  signup(body: UserInput): AuthPayload\n}\n\ntype Subscription {\n  userCreated: User\n}\n\ntype User {\n  _key: String\n  name: String\n  birthed: String\n  title: String\n  gender: String\n  email: String\n  roles: [String]\n  salt: String\n  hashedPassword: String\n}\n\ninput UserInput {\n  _key: String\n  name: String\n  birthed: String\n  title: String\n  gender: String\n  email: String\n  roles: String\n  password:String\n}\ntype AuthPayload {\n  token: String\n  user: User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-17T10:03:04Z",
+    "updated_at": "2019-05-23T21:10:19Z",
+    "pushed_at": "2018-11-29T13:22:29Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

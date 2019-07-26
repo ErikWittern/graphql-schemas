@@ -1,0 +1,176 @@
+{
+  "repo_name": "gabliam",
+  "repo_full_name": "gabliam/gabliam",
+  "repo_owner": "gabliam",
+  "repo_description": "Gabliam framework",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "getPageOfHeroes.gql",
+      "path": "packages/web/graphql-express/__tests__/fixtures/controllers/schemas/getPageOfHeroes.gql",
+      "sha": "0199d44e6842729f85583afe4b722ee7a92f938a",
+      "url": "https://api.github.com/repositories/105742287/contents/packages/web/graphql-express/__tests__/fixtures/controllers/schemas/getPageOfHeroes.gql?ref=c232a57f739340bc018c41e08640616b02166953",
+      "git_url": "https://api.github.com/repositories/105742287/git/blobs/0199d44e6842729f85583afe4b722ee7a92f938a",
+      "html_url": "https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-express/__tests__/fixtures/controllers/schemas/getPageOfHeroes.gql",
+      "content": "type Query {\n  getPageOfHeroes(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String): HeroPage\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-express/__tests__/fixtures/controllers/schemas/getPageOfHeroes.gql:\ntype Query {\n  getPageOfHeroes(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String): HeroPage\n}\n\n# https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-express/__tests__/fixtures/controllers/schemas/hero.gql:\ntype Hero {\n  id: Int!\n\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ninput HeroInput {\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ntype HeroPage {\n  items: [Hero]\n  totalCount: Int\n}\n\ntype Mutation {\n  submitHero(heroInput: HeroInput!): Hero\n}\n",
+        "mergedPaths": [
+          "packages/web/graphql-express/__tests__/fixtures/controllers/schemas/hero.gql"
+        ],
+        "typesDefinedByMerge": [
+          "HeroPage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "hero.gql",
+      "path": "packages/web/graphql-express/__tests__/fixtures/controllers/schemas/hero.gql",
+      "sha": "4e16aab106bf2ec8a94e8aea59fd0e69998e25ec",
+      "url": "https://api.github.com/repositories/105742287/contents/packages/web/graphql-express/__tests__/fixtures/controllers/schemas/hero.gql?ref=c232a57f739340bc018c41e08640616b02166953",
+      "git_url": "https://api.github.com/repositories/105742287/git/blobs/4e16aab106bf2ec8a94e8aea59fd0e69998e25ec",
+      "html_url": "https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-express/__tests__/fixtures/controllers/schemas/hero.gql",
+      "content": "type Hero {\n  id: Int!\n\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ninput HeroInput {\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ntype HeroPage {\n  items: [Hero]\n  totalCount: Int\n}\n\ntype Mutation {\n  submitHero(heroInput: HeroInput!): Hero\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 4
+    },
+    {
+      "name": "getPageOfHeroes.gql",
+      "path": "packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/getPageOfHeroes.gql",
+      "sha": "0199d44e6842729f85583afe4b722ee7a92f938a",
+      "url": "https://api.github.com/repositories/105742287/contents/packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/getPageOfHeroes.gql?ref=c232a57f739340bc018c41e08640616b02166953",
+      "git_url": "https://api.github.com/repositories/105742287/git/blobs/0199d44e6842729f85583afe4b722ee7a92f938a",
+      "html_url": "https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/getPageOfHeroes.gql",
+      "content": "type Query {\n  getPageOfHeroes(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String): HeroPage\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/getPageOfHeroes.gql:\ntype Query {\n  getPageOfHeroes(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String): HeroPage\n}\n\n# https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/hero.gql:\ntype Hero {\n  id: Int!\n\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ninput HeroInput {\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ntype HeroPage {\n  items: [Hero]\n  totalCount: Int\n}\n\ntype Mutation {\n  submitHero(heroInput: HeroInput!): Hero\n}\n",
+        "mergedPaths": [
+          "packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/hero.gql"
+        ],
+        "typesDefinedByMerge": [
+          "HeroPage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "hero.gql",
+      "path": "packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/hero.gql",
+      "sha": "4e16aab106bf2ec8a94e8aea59fd0e69998e25ec",
+      "url": "https://api.github.com/repositories/105742287/contents/packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/hero.gql?ref=c232a57f739340bc018c41e08640616b02166953",
+      "git_url": "https://api.github.com/repositories/105742287/git/blobs/4e16aab106bf2ec8a94e8aea59fd0e69998e25ec",
+      "html_url": "https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-koa/__tests__/fixtures/controllers/schemas/hero.gql",
+      "content": "type Hero {\n  id: Int!\n\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ninput HeroInput {\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ntype HeroPage {\n  items: [Hero]\n  totalCount: Int\n}\n\ntype Mutation {\n  submitHero(heroInput: HeroInput!): Hero\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "schema.gql",
+      "path": "examples/graphql/src/controllers/hero/schema.gql",
+      "sha": "517f4e159a0644703b9e5502742621d8817d33cd",
+      "url": "https://api.github.com/repositories/105742287/contents/examples/graphql/src/controllers/hero/schema.gql?ref=c232a57f739340bc018c41e08640616b02166953",
+      "git_url": "https://api.github.com/repositories/105742287/git/blobs/517f4e159a0644703b9e5502742621d8817d33cd",
+      "html_url": "https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/examples/graphql/src/controllers/hero/schema.gql",
+      "content": "type Query {\n  heroes: [Hero]\n  getPageOfHeroes(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String): HeroPage\n}\n\ntype Mutation {\n  submitHero(heroInput: HeroInput!): Hero\n}\n\ntype Subscription {\n  heroAdded: Hero\n}\n\n# schema {\n#   query: Query\n#   mutation: Mutation\n# }\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/examples/graphql/src/controllers/hero/schema.gql:\ntype Query {\n  heroes: [Hero]\n  getPageOfHeroes(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String): HeroPage\n}\n\ntype Mutation {\n  submitHero(heroInput: HeroInput!): Hero\n}\n\ntype Subscription {\n  heroAdded: Hero\n}\n\n# schema {\n#   query: Query\n#   mutation: Mutation\n# }\n\n# https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/examples/graphql/src/controllers/hero/hero.gql:\ntype Hero {\n  id: Int!\n\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ninput HeroInput {\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ntype HeroPage {\n  items: [Hero]\n  totalCount: Int\n}\n",
+        "mergedPaths": [
+          "examples/graphql/src/controllers/hero/hero.gql"
+        ],
+        "typesDefinedByMerge": [
+          "Hero",
+          "HeroPage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "hero.gql",
+      "path": "examples/graphql/src/controllers/hero/hero.gql",
+      "sha": "902ef5c8e43afb059fd41c853d6b4a845588f280",
+      "url": "https://api.github.com/repositories/105742287/contents/examples/graphql/src/controllers/hero/hero.gql?ref=c232a57f739340bc018c41e08640616b02166953",
+      "git_url": "https://api.github.com/repositories/105742287/git/blobs/902ef5c8e43afb059fd41c853d6b4a845588f280",
+      "html_url": "https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/examples/graphql/src/controllers/hero/hero.gql",
+      "content": "type Hero {\n  id: Int!\n\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ninput HeroInput {\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ntype HeroPage {\n  items: [Hero]\n  totalCount: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 3
+    },
+    {
+      "name": "hero.gql",
+      "path": "packages/web/graphql-core/__tests__/fixtures/schemas/hero.gql",
+      "sha": "3a9d8e7f44ede430f387f639edf125f671af5b8d",
+      "url": "https://api.github.com/repositories/105742287/contents/packages/web/graphql-core/__tests__/fixtures/schemas/hero.gql?ref=c232a57f739340bc018c41e08640616b02166953",
+      "git_url": "https://api.github.com/repositories/105742287/git/blobs/3a9d8e7f44ede430f387f639edf125f671af5b8d",
+      "html_url": "https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-core/__tests__/fixtures/schemas/hero.gql",
+      "content": "type Hero {\n  id: Int!\n\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ninput HeroInput {\n  name: String!\n\n  power: String!\n\n  amountPeopleSaved: Int!\n}\n\ntype HeroPage {\n  items: [Hero]\n  totalCount: Int\n}\n\ntype Query {\n  heroes: [Hero]\n  getPageOfHeroes(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String): HeroPage\n}\n\ntype Mutation {\n  submitHero(heroInput: HeroInput!): Hero\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    },
+    {
+      "name": "photo.gql",
+      "path": "packages/web/graphql-core/__tests__/fixtures/schemas/photo.gql",
+      "sha": "d3722158a6467a832aec41809726f6452501d1e2",
+      "url": "https://api.github.com/repositories/105742287/contents/packages/web/graphql-core/__tests__/fixtures/schemas/photo.gql?ref=c232a57f739340bc018c41e08640616b02166953",
+      "git_url": "https://api.github.com/repositories/105742287/git/blobs/d3722158a6467a832aec41809726f6452501d1e2",
+      "html_url": "https://github.com/gabliam/gabliam/blob/c232a57f739340bc018c41e08640616b02166953/packages/web/graphql-core/__tests__/fixtures/schemas/photo.gql",
+      "content": "type Photo {\n  id: Int!\n\n  name: String!\n\n  description: String!\n\n  fileName: String!\n\n  views: Int!\n\n  isPublished: Boolean!\n}\n\ninput PhotoInput {\n  name: String!\n\n  description: String!\n\n  fileName: String!\n\n  views: Int!\n\n  isPublished: Boolean!\n}\n\ntype PhotoPage {\n  items: [Photo]\n  totalCount: Int\n}\n\ntype Query {\n  photos: [Photo]\n  getPageOfPhotos(page: Int, perPage: Int, sortField: String, sortOrder: String, filter: String): PhotoPage\n}\n\ntype Mutation {\n  submitPhoto(photoInput: PhotoInput!): Photo\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-04T07:31:29Z",
+    "updated_at": "2019-05-24T04:12:12Z",
+    "pushed_at": "2019-07-11T20:42:23Z",
+    "issues": 0,
+    "watchers": 5,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 8,
+    "stargazers": 4
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "myrelay-fullstack",
+  "repo_full_name": "sachgits/myrelay-fullstack",
+  "repo_owner": "sachgits",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/data/schema.graphql",
+      "sha": "0c38917ce9566273fab79229b86c19645a832999",
+      "url": "https://api.github.com/repositories/91442913/contents/server/data/schema.graphql?ref=dda8531d4703b6bb67944fcc43b4c76c84677af0",
+      "git_url": "https://api.github.com/repositories/91442913/git/blobs/0c38917ce9566273fab79229b86c19645a832999",
+      "html_url": "https://github.com/sachgits/myrelay-fullstack/blob/dda8531d4703b6bb67944fcc43b4c76c84677af0/server/data/schema.graphql",
+      "content": "schema {\n  query: Query\n}\n\ntype Feature implements Node {\n  id: ID!\n  name: String\n  description: String\n  url: String\n}\n\ntype FeatureConnection {\n  pageInfo: PageInfo!\n  edges: [FeatureEdge]\n}\n\ntype FeatureEdge {\n  node: Feature\n  cursor: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n}\n\ntype User implements Node {\n  id: ID!\n  features(after: String, first: Int, before: String, last: Int): FeatureConnection\n  username: String\n  website: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-16T09:53:33Z",
+    "updated_at": "2017-05-16T10:00:07Z",
+    "pushed_at": "2017-05-16T10:00:03Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

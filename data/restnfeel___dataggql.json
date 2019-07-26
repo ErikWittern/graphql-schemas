@@ -1,0 +1,42 @@
+{
+  "repo_name": "dataggql",
+  "repo_full_name": "restnfeel/dataggql",
+  "repo_owner": "restnfeel",
+  "repo_description": "graphql exam",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "0f1c2a6ece2ed3a2ec2a14274d656494dd484776",
+      "url": "https://api.github.com/repositories/163473309/contents/graphql/schema.graphql?ref=e6220d940e2bb1466582f6d2173d5d260e98f61d",
+      "git_url": "https://api.github.com/repositories/163473309/git/blobs/0f1c2a6ece2ed3a2ec2a14274d656494dd484776",
+      "html_url": "https://github.com/restnfeel/dataggql/blob/e6220d940e2bb1466582f6d2173d5d260e98f61d/graphql/schema.graphql",
+      "content": "type BusStation {\n  STATION_ID: String!\n  STATION_NM_INFO: String!\n  SIGUN_NM: String!\n  SIGUN_CD: String!\n  STATION_MANAGE_NO: String\n  STATION_DIV_NM: String\n  JURISD_INST_NM: String\n  ENG_STATION_NM_INFO: String\n  LOCPLC_LOC: String\n  WGS84_LOGT: String\n  WGS84_LAT: String\n}\n\ntype Query {\n  stations: [BusStation]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-29T03:45:33Z",
+    "updated_at": "2018-12-29T13:15:00Z",
+    "pushed_at": "2018-12-29T13:14:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

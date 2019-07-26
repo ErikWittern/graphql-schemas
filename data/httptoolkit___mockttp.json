@@ -1,0 +1,42 @@
+{
+  "repo_name": "mockttp",
+  "repo_full_name": "httptoolkit/mockttp",
+  "repo_owner": "httptoolkit",
+  "repo_description": "Powerful friendly HTTP mock server & proxy for integration tests",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/standalone/schema.gql",
+      "sha": "58fa9384b26ed0c40f23d6b37de95d95d779cc17",
+      "url": "https://api.github.com/repositories/71247996/contents/src/standalone/schema.gql?ref=c31b4133bce88af5effe7971825d1d8890211b58",
+      "git_url": "https://api.github.com/repositories/71247996/git/blobs/58fa9384b26ed0c40f23d6b37de95d95d779cc17",
+      "html_url": "https://github.com/httptoolkit/mockttp/blob/c31b4133bce88af5effe7971825d1d8890211b58/src/standalone/schema.gql",
+      "content": "type Query {\n    mockedEndpoints: [MockedEndpoint!]!\n    mockedEndpoint(id: ID!): MockedEndpoint\n}\n\ntype Mutation {\n    addRule(input: MockRule!): MockedEndpoint!\n    reset: Boolean!\n}\n\ntype Subscription {\n    requestReceived: Request!\n    responseCompleted: Response!\n    requestAborted: Request!\n    failedTlsRequest: TlsRequest!\n}\n\ntype MockedEndpoint {\n    id: ID!\n    seenRequests: [Request!]!\n}\n\ninput MockRule {\n    matchers: [RequestMatcher!]!\n    handler: RequestHandler!\n    completionChecker: RuleCompletionChecker\n}\n\ntype TlsRequest {\n    failureCause: String!\n    hostname: String\n    remoteIpAddress: String!\n}\n\ntype Request {\n    id: ID!\n\n    protocol: String!\n    httpVersion: String!\n    method: String!\n    url: String!\n    path: String!\n    hostname: String!\n\n    headers: Json!\n    body: Buffer!\n    timingEvents: Json!\n}\n\ntype Response {\n    id: ID!\n\n    statusCode: Int!\n    statusMessage: String!\n\n    headers: Json!\n    body: Buffer!\n    timingEvents: Json!\n}\n\nscalar Any\nscalar Json\nscalar Buffer\nscalar RequestMatcher\nscalar RequestHandler\nscalar RuleCompletionChecker",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-18T12:53:41Z",
+    "updated_at": "2019-07-19T17:11:49Z",
+    "pushed_at": "2019-07-19T17:18:30Z",
+    "issues": 10,
+    "watchers": 5,
+    "fork_count": 20,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 18,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 14,
+    "releases": 0,
+    "stargazers": 129
+  }
+}

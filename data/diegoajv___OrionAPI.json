@@ -1,0 +1,42 @@
+{
+  "repo_name": "OrionAPI",
+  "repo_full_name": "diegoajv/orionapi",
+  "repo_owner": "diegoajv",
+  "repo_description": ":tv: A API for video streaming. ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/schema.graphql",
+      "sha": "3bd48e7a07e81691c3196f1d1c37121f0d61f0c0",
+      "url": "https://api.github.com/repositories/177905513/contents/app/schema.graphql?ref=d78d0a0f5e137588a2a26b9b64f971509773fcf6",
+      "git_url": "https://api.github.com/repositories/177905513/git/blobs/3bd48e7a07e81691c3196f1d1c37121f0d61f0c0",
+      "html_url": "https://github.com/diegoajv/OrionAPI/blob/d78d0a0f5e137588a2a26b9b64f971509773fcf6/app/schema.graphql",
+      "content": "# Type definition\n\ntype Auth {\n    token: String\n    message: String\n}\n\ntype User {\n    _id: ID\n    first_name: String\n    last_name: String\n    username: String\n    profile_biography: String\n    profile_image_url: String\n    email: String\n    is_active: Boolean\n}\n\n# Input Fields\n\ninput UserCreateInput {\n    first_name: String!\n    last_name: String!\n    username: String!\n    profile_biography: String\n    profile_image_url: String\n    email: String!\n    password: String!\n}\n\n# Queries\n\ntype Query {\n    User(id: ID!): User\n    Users:[User]\n}\n\n# Mutations \n\ntype Mutation {\n    signup(data: UserCreateInput!): Auth\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-27T02:41:51Z",
+    "updated_at": "2019-04-06T03:32:59Z",
+    "pushed_at": "2019-03-29T03:51:13Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

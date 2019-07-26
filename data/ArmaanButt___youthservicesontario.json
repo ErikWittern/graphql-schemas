@@ -1,0 +1,42 @@
+{
+  "repo_name": "youthservicesontario",
+  "repo_full_name": "armaanbutt/youthservicesontario",
+  "repo_owner": "ArmaanButt",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "providers_schema.graphql",
+      "path": "server/providers/providers_schema.graphql",
+      "sha": "87c267956140e6fb17485c4636cb11dd6b43c30f",
+      "url": "https://api.github.com/repositories/163927382/contents/server/providers/providers_schema.graphql?ref=bbbdb764032dca7bb4db5d8a5ce0313e4823332a",
+      "git_url": "https://api.github.com/repositories/163927382/git/blobs/87c267956140e6fb17485c4636cb11dd6b43c30f",
+      "html_url": "https://github.com/ArmaanButt/youthservicesontario/blob/bbbdb764032dca7bb4db5d8a5ce0313e4823332a/server/providers/providers_schema.graphql",
+      "content": "type Provider {\n  name: String\n  description: String\n  address1: String\n  address2: String\n  languageofrecord: String\n  city: String\n  province: String\n  postal_code: String\n  website: String\n}\n\ntype Query {\n  getProviders(first: Int, language: String): [Provider]\n  getNearestProviders(\n    lat: Float\n    long: Float\n    radius: Int\n    first: Int\n    language: String\n  ): [Provider]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-03T05:30:38Z",
+    "updated_at": "2019-01-07T04:16:23Z",
+    "pushed_at": "2019-01-07T04:16:22Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

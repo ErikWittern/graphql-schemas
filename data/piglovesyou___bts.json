@@ -1,0 +1,42 @@
+{
+  "repo_name": "bts",
+  "repo_full_name": "piglovesyou/bts",
+  "repo_owner": "piglovesyou",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema.graphql",
+      "sha": "e4249accd062b82e02824307c0f7128f86fdcf55",
+      "url": "https://api.github.com/repositories/172177401/contents/src/data/schema.graphql?ref=9576ad14344eb7b88267d0022d20bbee49d785e9",
+      "git_url": "https://api.github.com/repositories/172177401/git/blobs/e4249accd062b82e02824307c0f7128f86fdcf55",
+      "html_url": "https://github.com/piglovesyou/bts/blob/9576ad14344eb7b88267d0022d20bbee49d785e9/src/data/schema.graphql",
+      "content": "# GraphQL cannot handle long - normal timestamp will go failed.\n# In that case, use Timestamp.\nscalar Timestamp\n\ntype NetworkStatus {\n  isConnected: Boolean!\n}\n\n# A user stored in the local database\ntype DatabaseUser {\n  id: String\n  name: String\n  icon: String\n}\n\ntype ReactJSNewsItem {\n  # The news item's title\n  title: String!\n\n  # A direct link URL to this news item on reactjsnews.com\n  link: String!\n\n  # The name of the news item's author\n  author: String!\n\n  # The date this news item was published\n  pubDate: String!\n\n  # News article in HTML format\n  content: String!\n}\n\ntype Project {\n  id: String!\n  title: String!\n  description: String!\n  updatedAt: String!\n  createdAt: String!\n}\n\ntype Issue {\n  id: String!\n  title: String!\n  description: String!\n  project: Project!\n  updatedAt: String!\n  createdAt: String!\n}\n\ntype Query {\n  networkStatus: NetworkStatus!\n  reactjsGetAllNews: [ReactJSNewsItem!]!\n  databaseGetAllUsers: [DatabaseUser]\n  projects: [Project!]!\n  issues: [Issue!]!\n  databaseGetUser(\n    id: String!\n  ): DatabaseUser\n}\n\ntype Mutation {\n  createNewProject(title: String!, description: String!): Project!\n\n  updateNetworkStatus(isConnected: Boolean): NetworkStatus!\n\n  createIssue(title: String!, description: String!, project: String!): Issue!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-23T05:55:09Z",
+    "updated_at": "2019-02-23T13:36:15Z",
+    "pushed_at": "2019-02-23T13:36:11Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

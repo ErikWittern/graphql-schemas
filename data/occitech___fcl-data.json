@@ -1,0 +1,55 @@
+{
+  "repo_name": "fcl-data",
+  "repo_full_name": "occitech/fcl-data",
+  "repo_owner": "occitech",
+  "repo_description": "Prototype your next eCommerce experiences using modern web technologies.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/server/modules/store-information/schema.gql",
+      "sha": "f2e33123d183f61150fdca72b38f3fe2f8ba5183",
+      "url": "https://api.github.com/repositories/133488663/contents/src/server/modules/store-information/schema.gql?ref=a32ac1c0b3877e11971710ddace5b666e1860bdd",
+      "git_url": "https://api.github.com/repositories/133488663/git/blobs/f2e33123d183f61150fdca72b38f3fe2f8ba5183",
+      "html_url": "https://github.com/occitech/fcl-data/blob/a32ac1c0b3877e11971710ddace5b666e1860bdd/src/server/modules/store-information/schema.gql",
+      "content": "type Query {\n  \"General information about this store\"\n  store: StoreInformation\n}\n\n\"General information about a store\"\ntype StoreInformation {\n  \"Store name\"\n  name: String!\n  \"Support phone number\"\n  phone: String\n  \"Store owner\"\n  owner: StoreOwner\n}\n\n\"\"\"\nThe Owner of a store, with contact and personal\ninformation to make the store more human\n\"\"\"\ntype StoreOwner {\n  gender: Gender\n  displayName: String!\n  email: String!\n  picture(size: ImageSize = medium): String!\n}\n\nenum Gender {\n  FEMALE\n  MALE\n  NONBINARY\n}\n\nenum ImageSize {\n  large\n  medium\n  thumbnail\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.gql",
+      "path": "src/server/modules/data-tourisme/schema.gql",
+      "sha": "b17253fc28eadd2b8d74460462e68c922e7451c8",
+      "url": "https://api.github.com/repositories/133488663/contents/src/server/modules/data-tourisme/schema.gql?ref=a32ac1c0b3877e11971710ddace5b666e1860bdd",
+      "git_url": "https://api.github.com/repositories/133488663/git/blobs/b17253fc28eadd2b8d74460462e68c922e7451c8",
+      "html_url": "https://github.com/occitech/fcl-data/blob/a32ac1c0b3877e11971710ddace5b666e1860bdd/src/server/modules/data-tourisme/schema.gql",
+      "content": "type Query {\n  \"All the cultural sites from data tourisme plateform\"\n  data: DataTourisme\n}\n\n\"General information about the differents sites that you can visit\"\ntype DataTourisme {\n  \"Data name\"\n  name: String!\n  \"Get all the sites\"\n  sites: [Site]!\n  \"Get an unique site\"\n  site(id: ID!): Site\n}\n\n\"General information about a specific site\"\ntype Site {\n  \"Site id\"\n  id: ID!\n  \"Site name\"\n  name: String\n  \"Site description\"\n  description: String\n  \"Site types\"\n  type: [String]!\n  \"Site language\"\n  language: [String]\n  \"Site location\"\n  location: Location\n  \"site picture representation\"\n  picture: String\n  \"site has picture representation\"\n  hasRepresentation: Boolean\n}\n\n\"Classic geoLocation format\"\ntype Location {\n  latitude: Float\n  longitude: Float\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-15T08:56:16Z",
+    "updated_at": "2018-10-17T06:17:20Z",
+    "pushed_at": "2018-07-25T12:24:00Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 10,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-postgres-server",
+  "repo_full_name": "nutboltu/graphql-postgres-server",
+  "repo_owner": "nutboltu",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "ProjectSchemas.graphql",
+      "path": "src/features/Projects/ProjectSchemas.graphql",
+      "sha": "2889b5dd15542578affa640636bc2808ce2f245d",
+      "url": "https://api.github.com/repositories/181305704/contents/src/features/Projects/ProjectSchemas.graphql?ref=4975b6bc35df0fae6438834a79c59017749c1f99",
+      "git_url": "https://api.github.com/repositories/181305704/git/blobs/2889b5dd15542578affa640636bc2808ce2f245d",
+      "html_url": "https://github.com/nutboltu/graphql-postgres-server/blob/4975b6bc35df0fae6438834a79c59017749c1f99/src/features/Projects/ProjectSchemas.graphql",
+      "content": "type Mutation {\n  addProject(name: String): addProjectResponse\n  updateProject(id: String, name: String): addProjectResponse\n  removeProject(id: String): addProjectResponse\n}\n\ntype addProjectResponse {\n  id: String\n}\n\ntype Query {\n  findProjectById(id: String): Project\n  findAllProjects(offset: Int!, limit: Int!): [Project]\n}\n\ntype Project {\n  id: String\n  name: String\n  createdAt: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-14T12:29:22Z",
+    "updated_at": "2019-04-15T07:10:06Z",
+    "pushed_at": "2019-04-15T07:10:04Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

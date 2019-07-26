@@ -1,0 +1,43 @@
+{
+  "repo_name": "so-graphql-it-is",
+  "repo_full_name": "snikit/so-graphql-it-is",
+  "repo_owner": "snikit",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "0d6b5a679d58b40cec2c8509f0130fd08efe6b8a",
+      "url": "https://api.github.com/repositories/110580269/contents/schema.graphql?ref=15f100ba0dde6da1f3f88def51dd7b56dd484594",
+      "git_url": "https://api.github.com/repositories/110580269/git/blobs/0d6b5a679d58b40cec2c8509f0130fd08efe6b8a",
+      "html_url": "https://github.com/snikit/so-graphql-it-is/blob/15f100ba0dde6da1f3f88def51dd7b56dd484594/schema.graphql",
+      "content": "type Tweet {\n    id: ID!\n    # The tweet text. No more than 140 characters!\n    body: String\n    # When the tweet was published\n    date: Date\n    # Who published the tweet\n    Author: User\n    # Views, retweets, likes, etc\n    Stats: Stat\n}\n\ntype User {\n    id: ID!\n    username: String\n    first_name: String\n    last_name: String\n    full_name: String\n    name: String @deprecated\n    avatar_url: Url\n}\n\ntype Stat {\n    views: Int\n    likes: Int\n    retweets: Int\n    responses: Int\n}\n\ntype Notification {\n    id: ID\n    date: Date\n    type: String\n}\n\ntype Meta {\n    count: Int\n}\n\nscalar Url\nscalar Date\n\ntype Query {\n    Tweet(id: ID!): Tweet\n    Tweets(limit: Int, sortField: String, sortOrder: String): [Tweet]\n    TweetsMeta: Meta\n    User: User\n    Notifications(limit: Int): [Notification]\n    NotificationsMeta: Meta\n}\n\ntype Mutation {\n    createTweet(body: String): Tweet\n    deleteTweet(id: ID!): Tweet\n    markTweetRead(id: ID!): Boolean\n}",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-13T17:38:00Z",
+    "updated_at": "2018-01-22T18:49:05Z",
+    "pushed_at": "2018-01-22T18:53:46Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

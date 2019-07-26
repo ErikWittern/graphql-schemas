@@ -1,0 +1,39 @@
+{
+  "repo_name": "nasa",
+  "repo_full_name": "redcom/nasa",
+  "repo_owner": "redcom",
+  "repo_description": "Nasa Project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "f7199da4a9a16cd79e27de890f1cfc991447f5e5",
+      "url": "https://api.github.com/repositories/120742067/contents/src/schema.graphql?ref=a9c67aed77d6d9f37972f157c83e91bd7e21676b",
+      "git_url": "https://api.github.com/repositories/120742067/git/blobs/f7199da4a9a16cd79e27de890f1cfc991447f5e5",
+      "html_url": "https://github.com/redcom/nasa/blob/a9c67aed77d6d9f37972f157c83e91bd7e21676b/src/schema.graphql",
+      "content": "type Comment implements Node {\n  # The ID of an object\n  id: ID!\n  story: Story!\n  parent: Comment\n  author: User!\n  comments: [Comment]\n  text: String\n  pointsCount: Int!\n  createdAt: String!\n  updatedAt: String!\n}\n\ninput CreateStoryInput {\n  title: String\n  text: String\n  clientMutationId: String\n}\n\ntype CreateStoryPayload {\n  story: Story\n  clientMutationId: String\n}\n\ntype Mutation {\n  # Authenticate user by using JWT token.\n  signIn(input: SignInInput!): SignInPayload\n\n  # Clear authentication cookie.\n  signOut(input: SignOutInput!): SignOutPayload\n\n  # Create a new story.\n  createStory(input: CreateStoryInput!): CreateStoryPayload\n  updateStory(input: UpdateStoryInput!): UpdateStoryPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype Query {\n  me: User\n  story(slug: String!): Story\n  stories: [Story]\n}\n\ninput SignInInput {\n  token: String!\n  clientMutationId: String\n}\n\ntype SignInPayload {\n  me: User\n  clientMutationId: String\n}\n\ninput SignOutInput {\n  clientMutationId: String\n}\n\ntype SignOutPayload {\n  clientMutationId: String\n}\n\ntype Story implements Node {\n  # The ID of an object\n  id: ID!\n  author: User!\n  slug: String!\n  title: String!\n  text: String!\n  isURL: Boolean!\n  comments: [Comment]\n  pointsCount: Int!\n  commentsCount: Int!\n  createdAt: String!\n  updatedAt: String!\n}\n\ninput UpdateStoryInput {\n  id: ID!\n  title: String\n  text: String\n  clientMutationId: String\n}\n\ntype UpdateStoryPayload {\n  story: Story\n  clientMutationId: String\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  displayName: String\n  photoURL: String\n  email: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-08T09:46:33Z",
+    "updated_at": "2018-02-08T09:53:09Z",
+    "pushed_at": "2018-02-28T11:11:40Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

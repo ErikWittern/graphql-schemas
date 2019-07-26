@@ -1,0 +1,42 @@
+{
+  "repo_name": "GraphQL-Server",
+  "repo_full_name": "elmolicious/graphql-server",
+  "repo_owner": "elmolicious",
+  "repo_description": "An example GraphQL Server for demo purposes",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schemas/schema.graphql",
+      "sha": "f6a24fd88d139c80c23dbbc4266ce137c0f6ceb3",
+      "url": "https://api.github.com/repositories/86164672/contents/schemas/schema.graphql?ref=6dc2bc13a3726cd4318413acffea39c8dc29a21b",
+      "git_url": "https://api.github.com/repositories/86164672/git/blobs/f6a24fd88d139c80c23dbbc4266ce137c0f6ceb3",
+      "html_url": "https://github.com/elmolicious/GraphQL-Server/blob/6dc2bc13a3726cd4318413acffea39c8dc29a21b/schemas/schema.graphql",
+      "content": "type User {\n\temail: ID!\n\tfirstName: String!\n\tlastName: String!\n\taccountIds: [Int]!\n}\n\ntype Account {\n\tid: ID!\n\tname: String!\n\tcountry: Country!\n\tusers: [User!]\n}\n\ninput UserInput {\n\temail: ID!\n\tfirst_name: String!\n\tlast_name: String!\n\taccountIds: [Int]!\n}\n\nenum Country {\n\tGERMANY\n\tUSA\n}\n\ntype Query {\n\tgetUser(id: ID!): User\n\tgetAllUsers: [User]\n\n\tgetUserBatch(user_ids: [ID!]!): [User]\n\n\tgetAccount(id: ID!): Account\n\tgetAllAccounts: [Account]\n}\n\ntype Mutation {\n\tcreateUser(input: UserInput!): User\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-25T14:50:02Z",
+    "updated_at": "2017-03-25T14:55:08Z",
+    "pushed_at": "2017-04-04T19:43:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

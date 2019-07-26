@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-go-tools",
+  "repo_full_name": "jensneuse/graphql-go-tools",
+  "repo_owner": "jensneuse",
+  "repo_description": "graphql golang go parser lexer linter proxy",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "dac263419eafe1d03dd347aeb4700ca9d463d9b5",
+      "url": "https://api.github.com/repositories/156971837/contents/schema.graphql?ref=120b8c59328d5d2d8f3a0475564ed2d938b1bd08",
+      "git_url": "https://api.github.com/repositories/156971837/git/blobs/dac263419eafe1d03dd347aeb4700ca9d463d9b5",
+      "html_url": "https://github.com/jensneuse/graphql-go-tools/blob/120b8c59328d5d2d8f3a0475564ed2d938b1bd08/schema.graphql",
+      "content": "directive @addArgumentFromContext(\n    name: String!\n    contextKey: String!\n) on FIELD_DEFINITION\n\nscalar String\n\nschema {\n    query: Query\n}\n\ntype Query {\n    documents: [Document] @addArgumentFromContext(name: \"user\",contextKey: \"user\")\n}\n\ntype Document {\n    owner: String\n    sensitiveInformation: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-10T10:46:56Z",
+    "updated_at": "2019-07-05T18:06:01Z",
+    "pushed_at": "2019-07-17T17:38:24Z",
+    "issues": 31,
+    "watchers": 4,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 54,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 52,
+    "releases": 14,
+    "stargazers": 29
+  }
+}

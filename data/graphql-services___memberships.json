@@ -1,0 +1,41 @@
+{
+  "repo_name": "memberships",
+  "repo_full_name": "graphql-services/memberships",
+  "repo_owner": "graphql-services",
+  "repo_description": "Membership service for managing crown access with GraphQL API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "24dd7bf426fb6fefbfd468197a5a08f104c9044c",
+      "url": "https://api.github.com/repositories/183431988/contents/schema.graphql?ref=32d586ecaf24fdb32afe4acc9f777d37f03d9a35",
+      "git_url": "https://api.github.com/repositories/183431988/git/blobs/24dd7bf426fb6fefbfd468197a5a08f104c9044c",
+      "html_url": "https://github.com/graphql-services/memberships/blob/32d586ecaf24fdb32afe4acc9f777d37f03d9a35/schema.graphql",
+      "content": "scalar Time\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Member {\n  id: ID!\n  email: String!\n\n  # optional information fetched from member provider\n  given_name: String\n  family_name: String\n  middle_name: String\n\n  memberships: [Membership!]!\n}\n\ntype Membership {\n  id: ID!\n  # id of related entity (eg. workspace, team, project etc.)\n  entityID: ID!\n  # type of related entity (eg. \"Workspace\", \"Team\", \"Project\" etc.)\n  # optional, serves also for filtering purposes\n  entity: String\n  # custom role for given membership (eg. admin, guest, developer etc.)\n  # optional, serves also for filtering purposes\n  # this value can be any given string\n  role: String\n\n  member: Member!\n}\n\ntype Query {\n  member(id: ID!): Member\n  members(q: String): [Member!]!\n  membership(id: ID!): Membership\n  memberships(\n    memberID: ID\n    entityID: ID\n    entity: String\n    role: String\n  ): [Membership!]!\n}\n\ninput MembershipInvitationInput {\n  email: String!\n  entityID: ID!\n  entity: String\n  role: String\n}\n\ninput MembershipInput {\n  memberID: ID!\n  entityID: ID!\n  entity: String\n  role: String\n}\n\ntype Mutation {\n  inviteMember(input: MembershipInvitationInput): Membership!\n  # create membership for specific member\n  createMembership(input: MembershipInput!): Membership!\n  # delete membership with given ID\n  deleteMembership(id: ID!): Membership!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-25T12:41:12Z",
+    "updated_at": "2019-05-03T21:13:25Z",
+    "pushed_at": "2019-04-29T17:21:55Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

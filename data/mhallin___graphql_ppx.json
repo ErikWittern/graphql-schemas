@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql_ppx",
+  "repo_full_name": "mhallin/graphql_ppx",
+  "repo_owner": "mhallin",
+  "repo_description": "GraphQL PPX rewriter for Bucklescript/ReasonML",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "schema.gql",
+      "sha": "cd3e9ae0fdfe2201584602efbc27e97203483ffe",
+      "url": "https://api.github.com/repositories/100104727/contents/schema.gql?ref=885ffd5f670edcaba3699e0b92cde64e87f31899",
+      "git_url": "https://api.github.com/repositories/100104727/git/blobs/cd3e9ae0fdfe2201584602efbc27e97203483ffe",
+      "html_url": "https://github.com/mhallin/graphql_ppx/blob/885ffd5f670edcaba3699e0b92cde64e87f31899/schema.gql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n\ninterface User {\n  id: ID!\n}\n\ninterface Name {\n  name: String!\n}\n\ninterface Anonymous {\n  anonymousId: Int!\n}\n\ntype AdminUser implements User & Name {\n  id: ID!\n  name: String!\n}\n\ntype AnonymousUser implements User & Anonymous {\n  id: ID!\n  anonymousId: Int!\n}\n\ntype OtherUser implements User {\n  id: ID!\n}\n\ntype Query {\n  stringField: String!\n  variousScalars: VariousScalars!\n  lists: Lists!\n  users: [User!]!\n\n  scalarsInput(arg: VariousScalarsInput!): String!\n  listsInput(arg: ListsInput!): String!\n  recursiveInput(arg: RecursiveInput!): String!\n  nonrecursiveInput(arg: NonrecursiveInput!): String!\n  enumInput(arg: SampleField!): String!\n  argNamedQuery(query: Int!): Int!\n  customScalarField(\n    argOptional: CustomScalar\n    argRequired: CustomScalar!\n  ): CustomScalarObject!\n\n  dogOrHuman: DogOrHuman!\n\n  nestedObject: NestedObject!\n}\n\ntype Mutation {\n  mutationWithError: MutationWithErrorResult!\n}\n\ntype Subscription {\n  simpleSubscription: DogOrHuman!\n}\n\ntype MutationWithErrorResult {\n  value: SampleResult\n  errors: [SampleError!]\n}\n\ntype SampleResult {\n  stringField: String!\n}\n\ntype SampleError {\n  field: SampleField!\n  message: String!\n}\n\nenum SampleField {\n  FIRST\n  SECOND\n  THIRD\n}\n\ntype VariousScalars {\n  nullableString: String\n  string: String!\n  nullableInt: Int\n  int: Int!\n  nullableFloat: Float\n  float: Float!\n  nullableBoolean: Boolean\n  boolean: Boolean!\n  nullableID: ID\n  id: ID!\n}\n\ntype Lists {\n  nullableOfNullable: [String]\n  nullableOfNonNullable: [String!]\n  nonNullableOfNullable: [String]!\n  nonNullableOfNonNullable: [String!]!\n}\n\ninput VariousScalarsInput {\n  nullableString: String\n  string: String!\n  nullableInt: Int\n  int: Int!\n  nullableFloat: Float\n  float: Float!\n  nullableBoolean: Boolean\n  boolean: Boolean!\n  nullableID: ID\n  id: ID!\n}\n\ninput ListsInput {\n  nullableOfNullable: [String]\n  nullableOfNonNullable: [String!]\n  nonNullableOfNullable: [String]!\n  nonNullableOfNonNullable: [String!]!\n}\n\ninput NonrecursiveInput {\n  field: String\n  enum: SampleField\n}\n\ninput RecursiveInput {\n  otherField: String\n  inner: RecursiveInput\n  enum: SampleField\n}\n\ntype Dog {\n  name: String!\n  barkVolume: Float!\n}\n\ntype Human {\n  name: String!\n}\n\nunion DogOrHuman = Dog | Human\n\ntype NestedObject {\n  inner: NestedObject\n\n  field: String!\n}\n\ntype WithArgField {\n  argField(arg1: String, arg2: Int): NestedObject\n}\n\nscalar CustomScalar\n\ntype CustomScalarObject {\n  nullable: CustomScalar\n  nonNullable: CustomScalar!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 27
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-08-12T10:16:21Z",
+    "updated_at": "2019-07-18T12:42:32Z",
+    "pushed_at": "2019-07-12T04:01:58Z",
+    "issues": 64,
+    "watchers": 22,
+    "fork_count": 37,
+    "has_wiki_enabled": true,
+    "license": "bsd-3-clause",
+    "pull_requests": 22,
+    "pull_requests_open": 7,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 14,
+    "releases": 10,
+    "stargazers": 289
+  }
+}

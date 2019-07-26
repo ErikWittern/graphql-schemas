@@ -1,0 +1,77 @@
+{
+  "repo_name": "pizzas-graphql-webpack",
+  "repo_full_name": "jacruzca/pizzas-graphql-webpack",
+  "repo_owner": "jacruzca",
+  "repo_description": "Pizzas demo of GraphQL and Webpack",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Query.graphql",
+      "path": "src/schemas/Query.graphql",
+      "sha": "c76428bc3311448a3baa33c1e03ec5d88371acfe",
+      "url": "https://api.github.com/repositories/106061894/contents/src/schemas/Query.graphql?ref=4209d69754eb6e8526dc1dfb864baeed878b2c55",
+      "git_url": "https://api.github.com/repositories/106061894/git/blobs/c76428bc3311448a3baa33c1e03ec5d88371acfe",
+      "html_url": "https://github.com/jacruzca/pizzas-graphql-webpack/blob/4209d69754eb6e8526dc1dfb864baeed878b2c55/src/schemas/Query.graphql",
+      "content": "type Query {\n    pizzas (name: [String]): [Pizza]\n    ingredients: [Ingredient]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jacruzca/pizzas-graphql-webpack/blob/4209d69754eb6e8526dc1dfb864baeed878b2c55/src/schemas/Query.graphql:\ntype Query {\n    pizzas (name: [String]): [Pizza]\n    ingredients: [Ingredient]\n}\n# https://github.com/jacruzca/pizzas-graphql-webpack/blob/4209d69754eb6e8526dc1dfb864baeed878b2c55/src/schemas/Pizza.graphql:\ntype Pizza {\n    id: Int!\n    name: String!\n    origin: String\n    ingredients: [Ingredient]\n}\n\ninput PizzaInput {\n    name: String!\n    origin: String\n    ingredientIds: [Int]\n}\n# https://github.com/jacruzca/pizzas-graphql-webpack/blob/4209d69754eb6e8526dc1dfb864baeed878b2c55/src/schemas/Ingredient.graphql:\ntype Ingredient {\n    id: Int!\n    name: String!\n    calories: String\n}",
+        "mergedPaths": [
+          "src/schemas/Pizza.graphql",
+          "src/schemas/Ingredient.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Pizza",
+          "Ingredient"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Pizza.graphql",
+      "path": "src/schemas/Pizza.graphql",
+      "sha": "dcf2b9ebcd0317443b50e7967b4ad31db95e743f",
+      "url": "https://api.github.com/repositories/106061894/contents/src/schemas/Pizza.graphql?ref=4209d69754eb6e8526dc1dfb864baeed878b2c55",
+      "git_url": "https://api.github.com/repositories/106061894/git/blobs/dcf2b9ebcd0317443b50e7967b4ad31db95e743f",
+      "html_url": "https://github.com/jacruzca/pizzas-graphql-webpack/blob/4209d69754eb6e8526dc1dfb864baeed878b2c55/src/schemas/Pizza.graphql",
+      "content": "type Pizza {\n    id: Int!\n    name: String!\n    origin: String\n    ingredients: [Ingredient]\n}\n\ninput PizzaInput {\n    name: String!\n    origin: String\n    ingredientIds: [Int]\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "Ingredient.graphql",
+      "path": "src/schemas/Ingredient.graphql",
+      "sha": "029861883e8cf5896d0e5a6d8478288c6770938d",
+      "url": "https://api.github.com/repositories/106061894/contents/src/schemas/Ingredient.graphql?ref=4209d69754eb6e8526dc1dfb864baeed878b2c55",
+      "git_url": "https://api.github.com/repositories/106061894/git/blobs/029861883e8cf5896d0e5a6d8478288c6770938d",
+      "html_url": "https://github.com/jacruzca/pizzas-graphql-webpack/blob/4209d69754eb6e8526dc1dfb864baeed878b2c55/src/schemas/Ingredient.graphql",
+      "content": "type Ingredient {\n    id: Int!\n    name: String!\n    calories: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-07T00:51:57Z",
+    "updated_at": "2017-10-07T01:29:24Z",
+    "pushed_at": "2017-10-07T01:29:23Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "auth",
+  "repo_full_name": "cloudhrm/auth",
+  "repo_owner": "cloudhrm",
+  "repo_description": "Authentification api",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "2fc736743b3f80991b9702c060eb2f0b43710807",
+      "url": "https://api.github.com/repositories/181028506/contents/src/schema.graphql?ref=28aef500502d679ebc337bb565b26f64ea87099c",
+      "git_url": "https://api.github.com/repositories/181028506/git/blobs/2fc736743b3f80991b9702c060eb2f0b43710807",
+      "html_url": "https://github.com/cloudhrm/auth/blob/28aef500502d679ebc337bb565b26f64ea87099c/src/schema.graphql",
+      "content": "type Query {\n  mycompany: [Company!]!\n  me: User!\n  key(id: ID!): String!\n  info: String!\n}\n\ntype Mutation {\n  signup(email: String!, password: String!, name: String!): AuthPayload\n  login(email: String!, password: String!): AuthPayload\n  createCompany(name: String!, homepage: String): Company\n  rotateKey: ID\n}\n\ntype AuthPayload {\n  token: String\n  user: User\n}\n\ntype User {\n  id: ID!\n  name: String!\n  email: String!\n  company: Company\n  groups: [Group!]!\n}\n\ntype KeyPair {\n  id: ID!\n  public: String!\n}\n\ntype Company {\n  id: ID!\n  name: String!\n  homepage: String\n  owner: User!\n  groups: [Group!]!\n}\n\ntype Group {\n  id: ID!\n  name: String!\n  company: Company!\n  users: [User!]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-12T14:51:39Z",
+    "updated_at": "2019-07-13T14:53:31Z",
+    "pushed_at": "2019-07-13T14:53:41Z",
+    "issues": 7,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

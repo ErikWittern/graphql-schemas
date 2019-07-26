@@ -1,0 +1,42 @@
+{
+  "repo_name": "gma-village",
+  "repo_full_name": "floodfx/gma-village",
+  "repo_owner": "floodfx",
+  "repo_description": "Code for Gma Village Projects",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/src/schema.graphql",
+      "sha": "bdf986c5e74f0fccf129b34420f3efe3ada993db",
+      "url": "https://api.github.com/repositories/72548852/contents/graphql/src/schema.graphql?ref=21171c8b0a8940042117a7810ea33bcf29383b15",
+      "git_url": "https://api.github.com/repositories/72548852/git/blobs/bdf986c5e74f0fccf129b34420f3efe3ada993db",
+      "html_url": "https://github.com/floodfx/gma-village/blob/21171c8b0a8940042117a7810ea33bcf29383b15/graphql/src/schema.graphql",
+      "content": "interface User {\n  id: ID!\n  first_name: String!\n  last_name: String\n  phone: String!\n  kind: String\n  active: Boolean!\n  ak_access_token: String,\n  ak_user_id: String,\n  ak_token_refresh_interval_sec: String,\n  last_login_timestamp: Int\n  created_on_timestamp: Int!\n  member_since_timestamp: Int!,\n  profilePhotoUrl: String\n}\n\ntype Admin implements User {\n  id: ID!\n  first_name: String!\n  last_name: String\n  phone: String!\n  kind: String\n  active: Boolean!\n  ak_access_token: String,\n  ak_user_id: String,\n  ak_token_refresh_interval_sec: String,\n  last_login_timestamp: Int\n  created_on_timestamp: Int!\n  member_since_timestamp: Int!\n  roles: [Role!]!\n  profilePhotoUrl: String\n}\n\ntype Gma implements User {\n  id: ID!\n  first_name: String!\n  last_name: String\n  phone: String!\n  kind: String\n  active: Boolean!\n  ak_access_token: String,\n  ak_user_id: String,\n  ak_token_refresh_interval_sec: String,\n  last_login_timestamp: Int\n  created_on_timestamp: Int!\n  member_since_timestamp: Int!\n  availabilities: [Availability!]\n  otherAvailability: String\n  careAges: [CareAge!]\n  careExperiences: [CareExperience!]\n  otherCareExperience: String\n  careLocations: [CareLocation!]\n  careTrainings: [CareTraining!]\n  otherCareTraining: String\n  city: City!\n  demeanors: [Demeanor!]\n  otherDemeanor: String\n  neighborhood: Neighborhood!\n  otherNeighborhood: String\n  isAvailableOutsideNeighborhood: Boolean!\n  whyCareForKidsText: String!\n  additionalInformationText: String!\n  profilePhotoUrl: String\n}\n\ntype Parent implements User {\n  id: ID!\n  first_name: String!\n  last_name: String\n  phone: String!\n  kind: String\n  active: Boolean!\n  ak_access_token: String,\n  ak_user_id: String,\n  ak_token_refresh_interval_sec: String,\n  last_login_timestamp: Int\n  created_on_timestamp: Int!\n  member_since_timestamp: Int!\n  profilePhotoUrl: String\n  neighborhood: Neighborhood!\n  otherNeighborhood: String\n  kids: [Kid!]!\n}\n\ntype Kid {\n  first_name: String!\n  birthday: Int!  \n}\n\ntype UserListResult {\n  list: [User!]\n  nextToken: String\n}\n\ntype AKInit {\n  appId: ID!\n  version: String!\n  csrf: String!\n}\n\ntype AKAuth {\n  csrfNonce: String!\n  authCode: String!\n}\n\ntype AKPhone {\n  country_prefix: String!\n  number: String!\n  national_number: String!\n}\n\nenum Availability {\n  EARLY_MORNING,\n  DAYTIME,\n  EVENING,\n  OVERNIGHT,\n  WEEKEND,\n  OTHER\n}\n\nenum CareAge {\n  ZERO_TO_SIX_MONTHS,\n  SIX_MONTHS_TO_TWO_YEARS,\n  TWO_YEARS_TO_FIVE_YEARS,\n  FIVE_YEARS_PLUS\n}\n\nenum CareExperience {\n  RAISED_KIDS,\n  CARED_FOR_GRANDKIDS,\n  WORKED_BABYSITTING,\n  WORKED_CHILDCARE_CENTER,\n  WORKED_SCHOOL,\n  OTHER\n}\n\nenum CareLocation {\n  CHILDS_HOME,\n  PROVIDERS_HOME\n}\n\nenum CareTraining {\n  HEALTH_AND_SAFETY,\n  CPR_AND_FIRST_AID,\n  PREVENTATIVE_HEALTH,\n  CHILDCENTERED_ART,\n  OTHER\n}\n\nenum City {\n  OAKLAND\n}\n\nenum Demeanor {\n  PATIENT,\n  OUTGOING,\n  CALM,\n  FUNNY,\n  RELIABLE,\n  SERIOUS,\n  ENERGETIC,\n  QUIET,\n  PLAYFUL,\n  LOUD,\n  OTHER\n}\n\nenum Neighborhood {\n  WEST_OAKLAND,\n  EAST_OAKLAND,\n  CENTRAL_OAKLAND,\n  BERKELEY,\n  EMERYVILLE,\n  PIEDMONT,\n  ALBANY,\n  ALAMEDA,\n  CASTRO_VALLEY,\n  NORTH_OAKLAND,\n  OTHER\n}\n\nenum Role {\n  ADMIN\n}\n\ntype Query {\n  accountKitInit: AKInit!\n  admins(active: Boolean, limit: Int, nextToken: String): UserListResult\n  admin(id: ID!): Admin\n  currentUser: User\n  gma(id: ID!): Gma\n  gmas(active: Boolean, limit: Int, nextToken: String): UserListResult\n  parents(active: Boolean, limit: Int, nextToken: String): UserListResult\n  parent(id: ID!): Parent\n}\n\ninput AdminInput {\n  id: ID\n  kind: String!\n  first_name: String!\n  last_name: String!\n  phone: String!\n  active: Boolean!\n  roles: [Role!]!\n  profilePhotoUrl: String\n  ak_access_token: String\n  ak_user_id: String\n  ak_token_refresh_interval_sec: String\n  last_login_timestamp: Int\n  created_on_timestamp: Int\n  member_since_timestamp: Int\n}\n\ninput GmaInput {\n  id: ID\n  kind: String!\n  first_name: String!\n  last_name: String!\n  phone: String!\n  active: Boolean!\n  availabilities: [Availability!]\n  otherAvailability: String\n  careAges: [CareAge!]\n  careExperiences: [CareExperience!]\n  otherCareExperience: String\n  careLocations: [CareLocation!]\n  careTrainings: [CareTraining!]\n  otherCareTraining: String\n  city: City!\n  demeanors: [Demeanor!]\n  otherDemeanor: String\n  neighborhood: Neighborhood!\n  otherNeighborhood: String\n  isAvailableOutsideNeighborhood: Boolean!\n  whyCareForKidsText: String!\n  additionalInformationText: String!\n  profilePhotoUrl: String\n  ak_access_token: String\n  ak_user_id: String\n  ak_token_refresh_interval_sec: String\n  last_login_timestamp: Int\n  created_on_timestamp: Int\n  member_since_timestamp: Int\n}\n\ninput ParentInput {\n  id: ID\n  kind: String!\n  first_name: String!\n  last_name: String!\n  phone: String!\n  active: Boolean!\n  profilePhotoUrl: String\n  neighborhood: Neighborhood!\n  otherNeighborhood: String\n  kids: [KidInput!]!\n  ak_access_token: String\n  ak_user_id: String\n  ak_token_refresh_interval_sec: String\n  last_login_timestamp: Int\n  created_on_timestamp: Int\n  member_since_timestamp: Int\n}\n\ninput CareNeedInput {\n  parentId: ID!\n  careLocations: [CareLocation!]\n  startDateTimeOfNeed: String!\n  endDateTimeOfNeed: String!\n  neighborhood: Neighborhood!\n  otherNeighborhood: String\n  kids: [KidInput!]!\n  gmas: [GmaIdPlusPhone!]! \n}\n\ninput GmaIdPlusPhone {\n  id: ID!\n  phone: String!  \n}\n\ninput KidInput {\n  first_name: String!\n  birthday: Int!  \n}\n\ntype Error {\n  id: Int!\n  message: String!\n}\n\ntype UserResponse {\n  user: User,\n  errors: [Error]\n}\n\ntype Mutation {\n  saveAdmin(input: AdminInput!): Admin\n  saveGma(input: GmaInput!): Gma\n  saveParent(input: ParentInput!): Parent\n  saveCareNeed(input: CareNeedInput!): ID\n  accountKitAuth(csrfNonce: String!, authCode: String!): UserResponse\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 12,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 29
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-11-01T15:21:59Z",
+    "updated_at": "2017-09-02T02:19:58Z",
+    "pushed_at": "2017-12-27T03:30:29Z",
+    "issues": 40,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

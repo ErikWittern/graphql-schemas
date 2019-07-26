@@ -1,0 +1,39 @@
+{
+  "repo_name": "api",
+  "repo_full_name": "suspicious-otter/api",
+  "repo_owner": "suspicious-otter",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/schema.graphql",
+      "sha": "881921b211429c4ba0f0cd72459b68e2d2f8d441",
+      "url": "https://api.github.com/repositories/116076702/contents/api/schema.graphql?ref=d6ad9dc654a31d6b92f7687981e6a0b737a71bd3",
+      "git_url": "https://api.github.com/repositories/116076702/git/blobs/881921b211429c4ba0f0cd72459b68e2d2f8d441",
+      "html_url": "https://github.com/suspicious-otter/api/blob/d6ad9dc654a31d6b92f7687981e6a0b737a71bd3/api/schema.graphql",
+      "content": "type Query {\n  hello: String!\n}\n\nschema {\n  query: Query\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-03T01:38:31Z",
+    "updated_at": "2018-01-05T03:31:48Z",
+    "pushed_at": "2018-01-07T07:02:56Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

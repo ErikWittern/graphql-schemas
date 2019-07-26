@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-test-drimsim",
+  "repo_full_name": "jefo/graphql-test-drimsim",
+  "repo_owner": "jefo",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "types.graphql",
+      "path": "graphql/src/types.graphql",
+      "sha": "0ce1f7dd4eb85fa66b85bfac0890c3d15137c198",
+      "url": "https://api.github.com/repositories/153616973/contents/graphql/src/types.graphql?ref=a56915a1b6961b4f02fd06b6523a54b06d2b81d3",
+      "git_url": "https://api.github.com/repositories/153616973/git/blobs/0ce1f7dd4eb85fa66b85bfac0890c3d15137c198",
+      "html_url": "https://github.com/jefo/graphql-test-drimsim/blob/a56915a1b6961b4f02fd06b6523a54b06d2b81d3/graphql/src/types.graphql",
+      "content": "type Knowledge {\n    language: String\n    frameworks: [String]\n}\n\ntype User {\n    id: ID!\n    name: String!\n    full_name: String\n    age: Int\n    city: String\n    tag: String\n    url: String\n    knowledge: [Knowledge]\n}\n\ntype Query {\n    user(id: Int!): User!\n    allUsers: [User!]!\n    totalUsers: Int!\n}\n\ntype Mutation {\n    updateUserCity (\n        userID: ID!,\n        city: String!\n    ): User\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-18T12:02:43Z",
+    "updated_at": "2018-10-18T12:14:08Z",
+    "pushed_at": "2018-10-18T12:14:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

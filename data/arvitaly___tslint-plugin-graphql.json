@@ -1,0 +1,42 @@
+{
+  "repo_name": "tslint-plugin-graphql",
+  "repo_full_name": "arvitaly/tslint-plugin-graphql",
+  "repo_owner": "arvitaly",
+  "repo_description": "Check your GraphQL query strings against a schema.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "test/schema.graphql",
+      "sha": "e4233c7f8a64d182b1742bc0db2cd9b4c58f5095",
+      "url": "https://api.github.com/repositories/76258984/contents/test/schema.graphql?ref=a7ffce2e5b4f9e9554670b4f5b51d29e237dddca",
+      "git_url": "https://api.github.com/repositories/76258984/git/blobs/e4233c7f8a64d182b1742bc0db2cd9b4c58f5095",
+      "html_url": "https://github.com/arvitaly/tslint-plugin-graphql/blob/a7ffce2e5b4f9e9554670b4f5b51d29e237dddca/test/schema.graphql",
+      "content": "schema {\n  query: RootQuery\n  mutation: RootMutation\n}\n\ntype RootMutation {\n  createComment(input: CreateCommentInput): CreateCommentPayload\n}\n\ninput CreateCommentInput {\n  stuff: String\n}\n\ntype CreateCommentPayload {\n  story: Story\n}\n\ntype CreateEventPayload {\n  viewer: User\n  user: User\n}\n\ntype User {\n  events: [String]\n}\n\ntype RootQuery {\n  number: Int\n  allFilms: AllFilmsObj\n  sum(a: Int, b: Int): Int\n  greetings: Greetings\n}\n\ntype AllFilmsObj {\n  films: [Film]\n}\n\ntype Film {\n  title: String\n  director: String\n  releaseDate: String\n}\n\ntype Greetings {\n  hello: String\n}\n\ntype Story {\n  id: ID\n  comments: [Comment]\n}\n\ntype Comment {\n  text: String\n}\n\ntype PublicUser {\n  fullName: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-12-12T13:31:46Z",
+    "updated_at": "2019-06-17T14:51:54Z",
+    "pushed_at": "2017-12-19T09:33:05Z",
+    "issues": 8,
+    "watchers": 1,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 17
+  }
+}

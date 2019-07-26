@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-hemera",
+  "repo_full_name": "hemerajs/graphql-hemera",
+  "repo_owner": "hemerajs",
+  "repo_description": "Skeleton (or boilerplate) with Hemera & GraphQL",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "c28d64c198f158951b637716248fb6a3b26482af",
+      "url": "https://api.github.com/repositories/79743023/contents/src/graphql/schema.graphql?ref=ba1ffe722611c6175400157b92e2845313c51025",
+      "git_url": "https://api.github.com/repositories/79743023/git/blobs/c28d64c198f158951b637716248fb6a3b26482af",
+      "html_url": "https://github.com/hemerajs/graphql-hemera/blob/ba1ffe722611c6175400157b92e2845313c51025/src/graphql/schema.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n  name: String!\n}\ninput UserInput {\n  email: String\n  name: String\n}\ntype Query {\n  getUserById(id: ID!): User\n  getUserByEmail(email: String!): User\n}\ntype Mutation {\n  createUser(input: UserInput): User\n}\ntype Subscription {\n  userAdded: User\n}\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-22T20:19:46Z",
+    "updated_at": "2019-07-15T13:16:53Z",
+    "pushed_at": "2019-03-05T20:54:43Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

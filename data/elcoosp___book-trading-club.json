@@ -1,0 +1,41 @@
+{
+  "repo_name": "book-trading-club",
+  "repo_full_name": "elcoosp/book-trading-club",
+  "repo_owner": "elcoosp",
+  "repo_description": "freeCodeCamp challenge book trading club",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "26e2dd8f3b95e1f2686a3c4be7ce51b116577ee6",
+      "url": "https://api.github.com/repositories/127766987/contents/server/schema.graphql?ref=6517ae96c58637b27ab14b97670995198ec042f5",
+      "git_url": "https://api.github.com/repositories/127766987/git/blobs/26e2dd8f3b95e1f2686a3c4be7ce51b116577ee6",
+      "html_url": "https://github.com/elcoosp/book-trading-club/blob/6517ae96c58637b27ab14b97670995198ec042f5/server/schema.graphql",
+      "content": "type Book {\n  _id: ID!\n  title: String!\n  author: String!\n  owner: User!\n}\n\ntype User {\n  _id: ID!\n  pseudo: String!\n  books: [Book!]!\n  password: String\n  fullName: String\n  city: String\n  state: String\n  requestedTrades: [Trade!]!\n  waitingTrades: [Trade!]!\n}\n\ntype Trade {\n  _id: ID!\n  book: Book!\n  requester: User!\n  accepted: Boolean\n}\n\ntype JwtPayload {\n  token: String!\n}\n\ntype Query {\n  books(id: String): [Book!]!\n  user: User\n  trades: User\n}\n\ntype Mutation {\n  addBook(title: String!, author: String!): Book!\n  addUser(pseudo: String!, password: String!): User\n  updateUser(\n    pseudo: String\n    password: String\n    fullName: String\n    city: String\n    state: String\n  ): User!\n  requestTrade(book: String!): Trade!\n  acceptTrade(trade: String!): Trade!\n  login(pseudo: String!, password: String!): JwtPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-02T14:25:14Z",
+    "updated_at": "2018-11-02T09:16:00Z",
+    "pushed_at": "2019-07-05T03:05:24Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

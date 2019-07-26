@@ -1,0 +1,41 @@
+{
+  "repo_name": "mtc2018-web",
+  "repo_full_name": "mercari/mtc2018-web",
+  "repo_owner": "mercari",
+  "repo_description": "Mercari Tech Conf 2018",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "530701acc70096f1f5b94112603f3f66a3be9276",
+      "url": "https://api.github.com/repositories/142427342/contents/schema.graphql?ref=ba953157028da9a11cb71bd444e2d2460bf3babb",
+      "git_url": "https://api.github.com/repositories/142427342/git/blobs/530701acc70096f1f5b94112603f3f66a3be9276",
+      "html_url": "https://github.com/mercari/mtc2018-web/blob/ba953157028da9a11cb71bd444e2d2460bf3babb/schema.graphql",
+      "content": "# GraphQL schema example\n#\n# https://gqlgen.com/getting-started/\n\ntype Query {\n  node(id: ID!): Node\n  nodes(ids: [ID!]!): [Node]!\n\n  \"\"\"\n  セッション一覧を取得します。\n  \"\"\"\n  sessionList(\n    first: Int\n    after: String\n    req: SessionListInput\n  ): SessionConnection!\n\n  \"\"\"\n  セッションを取得します。\n  \"\"\"\n  session(sessionId: Int!): Session\n\n  \"\"\"\n  展示一覧を取得します。\n  \"\"\"\n  exhibisionList(\n    first: Int\n    after: String\n    req: ExhibitionListInput\n  ): ExhibitionConnection!\n\n  \"\"\"\n  お知らせ一覧を取得します\n  \"\"\"\n  newsList(first: Int, after: String): NewsConnection!\n}\n\ntype Mutation {\n  \"\"\"\n  セッションに対していいね！することができます。\n  ログイン周りのシステムはないので、リクエストにUUIDを付与してください。\n  \"\"\"\n  createLike(input: CreateLikeInput!): CreateLikePayload\n}\n\ntype Subscription {\n  \"\"\"\n  セッションに対するいいね！をイベントとして取得します。\n  一定期間中にいいね！された数を返します。\n  \"\"\"\n  likeAdded(sessionId: Int!): LikeEvent!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  startCursor: String\n  endCursor: String\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n}\n\ntype SessionConnection {\n  pageInfo: PageInfo!\n  edges: [SessionEdge!]!\n  nodes: [Session!]!\n}\n\ntype SessionEdge {\n  cursor: String\n  node: Session!\n}\n\ninput SessionListInput {\n  tmp: String\n}\n\n\"\"\"\nセッション1つに関する情報。\n\"\"\"\ntype Session implements Node {\n  id: ID!\n  sessionId: Int!\n  type: String!\n  place: String!\n  title: String!\n  titleJa: String!\n  startTime: String!\n  endTime: String!\n  outline: String!\n  outlineJa: String!\n  lang: String!\n  tags: [String!]!\n  slides: [Slide!]!\n  movies: [Movie!]!\n\n  liked: Int!\n  speakers: [Speaker!]!\n}\n\ntype Slide {\n  id: ID!\n  slideId: Int!\n  lang: String!\n  url: String!\n  session: Session!\n  speakers: [Speaker!]!\n}\n\ntype Movie {\n  id: ID!\n  movieId: Int!\n  url: String!\n  session: Session!\n  speakers: [Speaker!]!\n}\n\n\"\"\"\nスピーカー1人に関する情報。\n\"\"\"\ntype Speaker implements Node {\n  id: ID!\n  speakerId: String!\n  name: String!\n  nameJa: String!\n  company: String!\n  position: String!\n  positionJa: String!\n  profile: String!\n  profileJa: String!\n  iconUrl: String!\n  twitterId: String!\n  githubId: String!\n\n  sessions: [Session!]\n  slides: [Slide!]!\n  movies: [Movie!]!\n}\n\ntype ExhibitionConnection {\n  pageInfo: PageInfo!\n  edges: [ExhibitionEdge!]!\n  nodes: [Exhibition!]!\n}\n\ntype ExhibitionEdge {\n  cursor: String\n  node: Exhibition!\n}\n\ninput ExhibitionListInput {\n  tmp: String\n}\n\n\"\"\"\n展示1つに関する情報。\n\"\"\"\ntype Exhibition implements Node {\n  id: ID!\n  exhibitionId: Int!\n  place: String!\n  title: String!\n  titleJa: String!\n  description: String!\n  descriptionJa: String!\n}\n\n\"\"\"\nセッションに対していいね！する時の引数です。\nuuidはいいね！した人のUUIDです。\n\"\"\"\ninput CreateLikeInput {\n  clientMutationId: String\n  \"\"\"\n  いいねした人のUUID。\n  適当にブラウザのセッションでユニークなIDをつっこんでください。\n  \"\"\"\n  uuid: String!\n  \"\"\"\n  いいねするSessionのID。\n  \"\"\"\n  sessionId: Int!\n}\n\ntype CreateLikePayload {\n  clientMutationId: String\n  like: Like!\n}\n\n\"\"\"\nセッションに対していいね！した情報です。\n\"\"\"\ntype Like implements Node {\n  id: ID!\n  session: Session!\n}\n\ntype LikeEvent {\n  sessionId: Int!\n  likes: Int!\n}\n\ntype NewsConnection {\n  pageInfo: PageInfo!\n  edges: [NewsEdge!]!\n  nodes: [News!]!\n}\n\ntype NewsEdge {\n  cursor: String\n  node: News!\n}\n\n\"\"\"\nお知らせです。\n\"\"\"\ntype News implements Node {\n  id: ID!\n  newsId: String!\n  date: String!\n  message: String!\n  messageJa: String!\n  link: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 19,
+      "containsCycle": true,
+      "numDefinitions": 23
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-26T10:43:16Z",
+    "updated_at": "2019-07-16T03:20:58Z",
+    "pushed_at": "2018-12-09T06:02:15Z",
+    "issues": 2,
+    "watchers": 6,
+    "fork_count": 6,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 248,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 9,
+    "pull_requests_merged": 238,
+    "releases": 0,
+    "stargazers": 69
+  }
+}

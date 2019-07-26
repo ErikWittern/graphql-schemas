@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql-example",
+  "repo_full_name": "dmytrys/graphql-example",
+  "repo_owner": "DmytryS",
+  "repo_description": "GraphQL example project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "news.graphql",
+      "path": "src/graphql/schemas/news.graphql",
+      "sha": "a7878e257f157d0d1c962dacacbf2177006616b9",
+      "url": "https://api.github.com/repositories/185007045/contents/src/graphql/schemas/news.graphql?ref=168acafb7175656e80359c2696b8e12278fdda37",
+      "git_url": "https://api.github.com/repositories/185007045/git/blobs/a7878e257f157d0d1c962dacacbf2177006616b9",
+      "html_url": "https://github.com/DmytryS/graphql-example/blob/168acafb7175656e80359c2696b8e12278fdda37/src/graphql/schemas/news.graphql",
+      "content": "type News {\n  _id: ID!\n  name: String!\n  text: String!\n}\n\ntype NewsId {\n  _id: ID!\n}\n\ntype Query {\n  getNews(_id: ID!): News!\n  getAllNews: [News]!\n}\n\ntype Mutation {\n  createNews(name: String!, text: String!): News!\n  updateNews(_id: ID!, name: String, text: String!): News!\n  deleteNews(_id: ID!): NewsId!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/graphql/schemas/user.graphql",
+      "sha": "6d645bd4f530c77869361e840dde09c50462c2fd",
+      "url": "https://api.github.com/repositories/185007045/contents/src/graphql/schemas/user.graphql?ref=168acafb7175656e80359c2696b8e12278fdda37",
+      "git_url": "https://api.github.com/repositories/185007045/git/blobs/6d645bd4f530c77869361e840dde09c50462c2fd",
+      "html_url": "https://github.com/DmytryS/graphql-example/blob/168acafb7175656e80359c2696b8e12278fdda37/src/graphql/schemas/user.graphql",
+      "content": "enum Role {\n  ADMIN\n  USER\n}\n\ntype User {\n  _id: ID!\n  username: String!\n  email: String!\n  role: Role!\n}\n\ninput CreatingUser {\n  username: String!\n  email: String!\n  password: String!\n  role: String!\n}\n\ninput UpdatingUser {\n  id: ID!\n  username: String\n  email: String\n  role: String\n}\n\ninput DeletingUser {\n  id: ID!\n}\n\ntype Query {\n  getMe: User!\n  user(id: ID!): User!\n  users: [User!]\n}\n\ntype Mutation {\n  createUser(input: CreatingUser!): User!\n  updateUser(input: UpdatingUser!): User!\n  deleteUser(input: DeletingUser!): ID!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-05T09:06:06Z",
+    "updated_at": "2019-07-17T19:58:57Z",
+    "pushed_at": "2019-07-17T19:58:54Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

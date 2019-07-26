@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-demo",
+  "repo_full_name": "plantain-00/graphql-demo",
+  "repo_owner": "plantain-00",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "data.gql",
+      "path": "src/generated/data.gql",
+      "sha": "ab1470b181c710f7b6eae39ce6f501acb33c31d7",
+      "url": "https://api.github.com/repositories/156299608/contents/src/generated/data.gql?ref=fa3d37cfeeaba639dbb6c821679f97ed379c0be0",
+      "git_url": "https://api.github.com/repositories/156299608/git/blobs/ab1470b181c710f7b6eae39ce6f501acb33c31d7",
+      "html_url": "https://github.com/plantain-00/graphql-demo/blob/fa3d37cfeeaba639dbb6c821679f97ed379c0be0/src/generated/data.gql",
+      "content": "scalar JSON\n\ntype Blog {\n  id: Int!\n  content: String!\n  posts(id: Int!): [Post]!\n  meta: JSON!\n}\n\ntype Post {\n  id: Int!\n  content: String!\n}\n\ninput Pagination {\n  take: Int!\n  skip: Int!\n}\n\ntype Query {\n  blogs(pagination: Pagination!): BlogsResult!\n  blog(id: Int!): BlogResult!\n}\n\ntype Mutation {\n  createBlog(content: String!): CreateBlogResult!\n}\n\ntype BlogsResult {\n  result: [Blog]!\n}\n\ntype BlogResult {\n  result: Blog\n}\n\ntype CreateBlogResult {\n  result: Blog!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-05T23:55:33Z",
+    "updated_at": "2019-07-12T23:36:39Z",
+    "pushed_at": "2019-07-12T23:36:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

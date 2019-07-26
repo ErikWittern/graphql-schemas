@@ -1,0 +1,42 @@
+{
+  "repo_name": "jLog",
+  "repo_full_name": "swellander/jlog",
+  "repo_owner": "swellander",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "2525c3bd5ab4d18958ca7258884b7145feb8fae8",
+      "url": "https://api.github.com/repositories/168368243/contents/server/src/schema.graphql?ref=a29c4cb8be4995c59530a0f9d268b70013b1d02a",
+      "git_url": "https://api.github.com/repositories/168368243/git/blobs/2525c3bd5ab4d18958ca7258884b7145feb8fae8",
+      "html_url": "https://github.com/swellander/jLog/blob/a29c4cb8be4995c59530a0f9d268b70013b1d02a/server/src/schema.graphql",
+      "content": "type Query {\n  algos: [Algo]\n}\n\ntype Algo {\n  difficulty: String!\n  source: String!\n  type: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-30T15:43:14Z",
+    "updated_at": "2019-02-09T00:13:12Z",
+    "pushed_at": "2019-02-09T00:13:10Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

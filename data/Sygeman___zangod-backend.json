@@ -1,0 +1,68 @@
+{
+  "repo_name": "zangod-backend",
+  "repo_full_name": "sygeman/zangod-backend",
+  "repo_owner": "Sygeman",
+  "repo_description": "Awesome Chat",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "auth.types.graphql",
+      "path": "src/auth/auth.types.graphql",
+      "sha": "2ac9187199e9b8bf7a2293f7134e5a8504952b07",
+      "url": "https://api.github.com/repositories/145888513/contents/src/auth/auth.types.graphql?ref=731603c87672a6aced51bfdcf805656af72abb01",
+      "git_url": "https://api.github.com/repositories/145888513/git/blobs/2ac9187199e9b8bf7a2293f7134e5a8504952b07",
+      "html_url": "https://github.com/Sygeman/zangod-backend/blob/731603c87672a6aced51bfdcf805656af72abb01/src/auth/auth.types.graphql",
+      "content": "type Query {\n  login(email: String!, password: String!): AuthData\n  refresh(refreshToken: String!): AuthData\n}\n\ntype AuthData {\n  refreshToken: String\n  accessToken: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    },
+    {
+      "name": "users.types.graphql",
+      "path": "src/users/users.types.graphql",
+      "sha": "fa98a0b063307cb64a4a6203b4478a1884d96ab0",
+      "url": "https://api.github.com/repositories/145888513/contents/src/users/users.types.graphql?ref=cc1543778626a8caae662666fcd6d4547df2cc0f",
+      "git_url": "https://api.github.com/repositories/145888513/git/blobs/fa98a0b063307cb64a4a6203b4478a1884d96ab0",
+      "html_url": "https://github.com/Sygeman/zangod-backend/blob/cc1543778626a8caae662666fcd6d4547df2cc0f/src/users/users.types.graphql",
+      "content": "type Query {\n  user(id: ID): User\n}\n\ntype Mutation {\n  createUser(name: String!, email: String!, password: String!): User\n}\n\ntype Subscription {\n  newMessage: String\n}\n\ntype User {\n  id: ID\n  name: String\n  email: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "chats.types.graphql",
+      "path": "src/chats/chats.types.graphql",
+      "sha": "370c4bd913ab6235ed418ec500183a657302d436",
+      "url": "https://api.github.com/repositories/145888513/contents/src/chats/chats.types.graphql?ref=83e9f36135bac1168d95217a0a6891d204f21fdb",
+      "git_url": "https://api.github.com/repositories/145888513/git/blobs/370c4bd913ab6235ed418ec500183a657302d436",
+      "html_url": "https://github.com/Sygeman/zangod-backend/blob/83e9f36135bac1168d95217a0a6891d204f21fdb/src/chats/chats.types.graphql",
+      "content": "type Query {\n  chat(id: ID!): Chat\n  chatMessages(chatId: ID!, skip: Int): [Message]\n}\n\ntype Mutation {\n  createMessage(chatId: ID!, text: String!): Boolean\n}\n\ntype Subscription {\n  newChatMessage(chatId: ID!): Message\n}\n\ntype Chat {\n  id: ID\n  title: String\n}\n\ntype Message {\n  id: ID\n  text: String\n  userId: ID\n  chatId: ID\n  createdAt: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-23T17:49:19Z",
+    "updated_at": "2019-05-19T11:00:11Z",
+    "pushed_at": "2018-09-01T15:39:44Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

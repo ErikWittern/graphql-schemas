@@ -1,0 +1,42 @@
+{
+  "repo_name": "foobar",
+  "repo_full_name": "alejo4373/foobar",
+  "repo_owner": "alejo4373",
+  "repo_description": "Full-Stack Web React App for finding bars that will be showing a sport event of your interest. Backend on AWS",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "AWS/AppSync/schema.graphql",
+      "sha": "0409b5916752dc6f37889671b83ca84765a064ea",
+      "url": "https://api.github.com/repositories/131206254/contents/AWS/AppSync/schema.graphql?ref=7c82f93a2df5d3d322816c6bdaa93b63d1123e33",
+      "git_url": "https://api.github.com/repositories/131206254/git/blobs/0409b5916752dc6f37889671b83ca84765a064ea",
+      "html_url": "https://github.com/alejo4373/foobar/blob/7c82f93a2df5d3d322816c6bdaa93b63d1123e33/AWS/AppSync/schema.graphql",
+      "content": "﻿type PaginatedEvents {\n  events: [Event!]\n  nextToken: String\n}\n\ntype PaginatedEstablishments {\n  establishments: [Establishment!]\n  nextToken: String\n}\n\ntype EstablishmentSearchResults {\n  hits: [Establishment!]\n}\n\ntype EventSearchResults {\n  hits: [Event!]\n}\n\ntype Location {\n\tlat: String!\n\tlon: String!\n}\n\ninput LocationInput {\n\tlat: String!\n\tlon: String!\n}\n\ntype Event {\n  id: ID\n  atEstablishmentId: String!\n  awayTeam: String!\n  awayTeamBadge: String\n  homeTeam: String!\n  homeTeamBadge: String\n  leagueId: String!\n  sportsDbId: String\n  startTime: String!\n  coverCharge: Boolean!\n  description: String\n}\n\ntype Establishment {\n  id: ID!\n  managerUsername: String! \n  googlePlaceId: String!\n  googlePhotoReference: String\n  name: String\n  displayName: String\n  address: String\n  phone: String\n  location: Location\n}\n\ntype Mutation {\n  putEvent(\n    id: ID,\n    atEstablishmentId: String!\n    awayTeam: String!,\n    awayTeamBadge: String\n    homeTeam: String!,\n    homeTeamBadge: String\n    leagueId: String!,\n    sportsDbId: String, \n    startTime: String!,\n    coverCharge: Boolean!\n    description: String\n  ): Event\n\n  putEstablishment(\n    googlePlaceId: String!\n    name: String!\n    displayName: String!\n    address: String!\n    phone: String,\n    location: LocationInput!\n   ): Establishment\n}\n\ntype Query {\n  getEvents(limit: Int, nextToken: String, atEstablishmentId: String!): PaginatedEvents!\n  getEstablishmentsUserManages(limit: Int, nextToken: String): PaginatedEstablishments!\n  getEstablishmentById(id: String!): Establishment!\n  getEstablishmentsInBounds(limit: Int, topLeft: LocationInput!, bottomRight: LocationInput!): EstablishmentSearchResults!\n  searchEstablishments(name: String!): EstablishmentSearchResults!\n  searchEvents(pattern: String!): EventSearchResults!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-26T20:18:52Z",
+    "updated_at": "2019-02-05T18:53:55Z",
+    "pushed_at": "2019-02-17T14:02:27Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

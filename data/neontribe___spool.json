@@ -1,0 +1,42 @@
+{
+  "repo_name": "spool",
+  "repo_full_name": "neontribe/spool",
+  "repo_owner": "neontribe",
+  "repo_description": "my-daybook (SPOOL project) [UNMAINTAINED]",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "config/schema.graphql",
+      "sha": "10bffc25469c3bfb917e504c084f907a1cd41480",
+      "url": "https://api.github.com/repositories/47406829/contents/config/schema.graphql?ref=e7408ae0a9dd98aec07c49d83bdf1f11016ba559",
+      "git_url": "https://api.github.com/repositories/47406829/git/blobs/10bffc25469c3bfb917e504c084f907a1cd41480",
+      "html_url": "https://github.com/neontribe/spool/blob/e7408ae0a9dd98aec07c49d83bdf1f11016ba559/config/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutations\n}\n\ntype Consumer implements Node {\n  # The ID of an object\n  id: ID!\n  topics: [Topic]\n  access(range: DateRangeInput): DataAccess\n}\n\ninput CreateEntryInput {\n  entry: EntryInput\n  tags: [Int]\n  clientMutationId: String\n}\n\ntype CreateEntryPayload {\n  creator: Creator\n  entryEdge: EntryEdge\n  clientMutationId: String\n}\n\ntype Creator implements Node {\n  # The ID of an object\n  id: ID!\n  topics: [Topic]\n  entries(random: Boolean, filter: EntryFilterArgs, after: String, first: Int, before: String, last: Int): EntryConnection\n  happyCount: Int\n  sadCount: Int\n  serviceUsers: [ServiceUser]\n}\n\ntype CreatorActivity {\n  active: Int\n  stale: Int\n}\n\ntype CreatorSentiment {\n  happy: Int\n  sad: Int\n}\n\ntype DataAccess {\n  sentiment: CreatorSentiment\n  topics(range: DateRangeInput): [TopicCount]\n  activity: CreatorActivity\n  entries(topics: [String], after: String, first: Int, before: String, last: Int): EntryConnection\n}\n\ninput DateRangeInput {\n  from: String!\n  to: String!\n}\n\ninput DeleteEntryInput {\n  entryId: String\n  clientMutationId: String\n}\n\ntype DeleteEntryPayload {\n  creator: Creator\n  deletedEntryId: String\n  clientMutationId: String\n}\n\ntype Entry implements Node {\n  # The ID of an object\n  id: ID!\n  owner: EntryOwner\n  authorName: String\n  tags: String\n  media: Media\n  sentiment: Sentiment\n  topics: [Topic]\n  views: Int\n  created: String\n  updated: String\n}\n\n# A connection to a list of items.\ntype EntryConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [EntryEdge]\n}\n\n# An edge in a connection.\ntype EntryEdge {\n  # The item at the end of the edge\n  node: Entry\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput EntryFilterArgs {\n  sentiment: [String]\n  topics: [String]\n  media: MediaFilterType\n}\n\ninput EntryInput {\n  media: MediaInput\n  sentiment: String\n  topics: [String]\n}\n\ntype EntryOwner {\n  age: Int\n  residency: String\n  services: [Service]\n}\n\ninput HideIntroductionInput {\n  clientMutationId: String\n}\n\ntype HideIntroductionPayload {\n  user: User\n  clientMutationId: String\n}\n\ntype Media {\n  text: String\n  video: String\n  videoThumbnail: String\n  image: String\n  imageThumbnail: String\n}\n\ninput MediaFilterType {\n  video: Boolean\n  image: Boolean\n  text: Boolean\n}\n\ninput MediaInput {\n  text: String\n  video: String\n  videoThumbnail: String\n  image: String\n  imageThumbnail: String\n}\n\ntype Meta {\n  regions: [Region]\n  roles: [Role]\n  residences: [Residence]\n}\n\ntype Mutations {\n  createEntry(input: CreateEntryInput!): CreateEntryPayload\n  updateUser(input: UpdateUserInput!): UpdateUserPayload\n  deleteEntry(input: DeleteEntryInput!): DeleteEntryPayload\n  updatePrivacy(input: UpdatePrivacyInput!): UpdatePrivacyPayload\n  hideIntroduction(input: HideIntroductionInput!): HideIntroductionPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ninput PrivacyInput {\n  sharing: Boolean\n}\n\ntype Profile implements Node {\n  # The ID of an object\n  id: ID!\n  name: String\n  age: Int\n  nickname: String\n  services: [Service]\n  residence: Residence\n  isSupporter: Boolean\n  isSharing: Boolean\n  isIntroduced: Boolean\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  creator: Creator\n  consumer: Consumer\n  user: User\n  meta: Meta\n}\n\ntype Region {\n  type: String\n  services: [Service]\n}\n\ntype Residence {\n  type: String\n  name: String\n}\n\ntype Role {\n  type: String\n  name: String\n  secret: String\n}\n\ntype Sentiment {\n  type: String\n}\n\ntype Service {\n  type: String\n  name: String\n}\n\ntype ServiceUser {\n  nickname: String\n  userId: Int!\n}\n\ntype Topic {\n  type: String\n  name: String\n}\n\ntype TopicCount {\n  topic: Topic\n  entryCount: Int\n  creatorCount: Int\n}\n\ninput UpdatePrivacyInput {\n  privacy: PrivacyInput\n  clientMutationId: String\n}\n\ntype UpdatePrivacyPayload {\n  user: User\n  clientMutationId: String\n}\n\ninput UpdateUserInput {\n  user: UserInput\n  clientMutationId: String\n}\n\ntype UpdateUserPayload {\n  user: User\n  clientMutationId: String\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  role: String\n  region: String\n  profile: Profile\n}\n\ninput UserInput {\n  region: String!\n  name: String!\n  nickname: String\n  age: Int\n  residence: String!\n  services: [String]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 29,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 43
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-12-04T13:52:44Z",
+    "updated_at": "2018-09-02T09:26:35Z",
+    "pushed_at": "2018-08-05T00:07:40Z",
+    "issues": 109,
+    "watchers": 9,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 500,
+    "pull_requests_open": 14,
+    "pull_requests_closed": 310,
+    "pull_requests_merged": 176,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

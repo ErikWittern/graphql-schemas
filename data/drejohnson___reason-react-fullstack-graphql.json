@@ -1,0 +1,39 @@
+{
+  "repo_name": "reason-react-fullstack-graphql",
+  "repo_full_name": "drejohnson/reason-react-fullstack-graphql",
+  "repo_owner": "drejohnson",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema.graphql",
+      "sha": "c6382c95eafe2659f4fb3bf1b1be6b3f3af00c03",
+      "url": "https://api.github.com/repositories/125919811/contents/server/src/schema.graphql?ref=d1c5821020f9d7fc343d6da6be5c85abb008f679",
+      "git_url": "https://api.github.com/repositories/125919811/git/blobs/c6382c95eafe2659f4fb3bf1b1be6b3f3af00c03",
+      "html_url": "https://github.com/drejohnson/reason-react-fullstack-graphql/blob/d1c5821020f9d7fc343d6da6be5c85abb008f679/server/src/schema.graphql",
+      "content": "type Query {\n  hello(name: String!): String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-19T21:01:15Z",
+    "updated_at": "2018-09-15T22:52:07Z",
+    "pushed_at": "2018-08-29T19:55:46Z",
+    "issues": 1,
+    "watchers": 4,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 9
+  }
+}

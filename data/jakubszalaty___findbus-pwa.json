@@ -1,0 +1,42 @@
+{
+  "repo_name": "findbus-pwa",
+  "repo_full_name": "jakubszalaty/findbus-pwa",
+  "repo_owner": "jakubszalaty",
+  "repo_description": "GraphQL Proxy for Zditm API with Angular 5 PWA",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "087d81dffa40c8834341f0f1955851c7656ca56b",
+      "url": "https://api.github.com/repositories/121882870/contents/src/schema.graphql?ref=9a6e87ec125f881dfe7b43a2d4dcace0689354db",
+      "git_url": "https://api.github.com/repositories/121882870/git/blobs/087d81dffa40c8834341f0f1955851c7656ca56b",
+      "html_url": "https://github.com/jakubszalaty/findbus-pwa/blob/9a6e87ec125f881dfe7b43a2d4dcace0689354db/src/schema.graphql",
+      "content": "type Geometry {\n    type: String\n    coordinates: [[Float]]\n}\n\ntype Feature {\n    type: String\n    geometry: Geometry\n}\n\ntype RouteCords {\n    type: String\n    features: [Feature]\n}\n\n\"Contains all information about specific vehicle\"\ntype Vehicle {\n    gmvid: Int\n    id: Int\n    line: String\n    squad: String\n    lineType: String\n    vehicleId: String\n    route: String\n    routeCords: RouteCords\n    from: String\n    to: String\n    lat: String\n    lnt: String\n    speed: String\n    timeString: String\n    timeNumber: Int\n    icon: String\n}\n\n\"Input for search verhicles\"\ninput VehiclesWhereInput {\n    gmvid: Int\n    id: Int\n    line: String\n    squad: String\n    lineType: String\n    vehicleId: String\n    route: String\n    from: String\n    to: String\n    lat: String\n    lnt: String\n    speed: String\n    timeString: String\n    timeNumber: Int\n    icon: String\n}\n\ninput VehicleWhereInput {\n    id: Int!\n}\n\ntype Departure {\n    line: String\n    direction: String\n    arrival: String\n    onStop: Boolean\n    isApprox: Boolean\n}\ntype Stop {\n    id: Int\n    lat: String\n    lnt: String\n    name: String\n    groupId: Int\n    columnId: Int\n}\n\n\n\"Input for search stops\"\ninput StopsWhereInput {\n    id: Int\n    name: String\n    groupId: Int\n    columnId: Int\n}\n\ninput StopWhereInput {\n    id: Int!\n}\n\ntype StopWithDepartures {\n    id: Int\n    lat: String\n    lnt: String\n    name: String\n    groupId: Int\n    columnId: Int\n    departures: [Departure]\n}\n\ninput StopsWithDeparturesWhereInput {\n    id: Int\n    name: String\n    groupId: Int\n}\n\ntype Query {\n    \"Return active vehicles\"\n    vehicles(where: VehiclesWhereInput): [Vehicle]\n    vehicle(where: VehicleWhereInput!): Vehicle\n    stops(where: StopsWhereInput): [Stop]\n    stopsWithDepartures(where: StopsWithDeparturesWhereInput!): [StopWithDepartures]\n    stop(where: StopWhereInput!): Stop\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 13
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-17T18:53:52Z",
+    "updated_at": "2019-03-17T20:17:20Z",
+    "pushed_at": "2019-03-17T20:17:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

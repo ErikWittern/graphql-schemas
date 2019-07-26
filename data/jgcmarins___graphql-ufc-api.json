@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-ufc-api",
+  "repo_full_name": "jgcmarins/graphql-ufc-api",
+  "repo_owner": "jgcmarins",
+  "repo_description": "GraphQL server for UFC's public API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "8c7d78730de2ebb90233dbe0c6830521b736498b",
+      "url": "https://api.github.com/repositories/92799820/contents/data/schema.graphql?ref=3ef423b630bf3f225be83b75dd1063cbf3e3f57f",
+      "git_url": "https://api.github.com/repositories/92799820/git/blobs/8c7d78730de2ebb90233dbe0c6830521b736498b",
+      "html_url": "https://github.com/jgcmarins/graphql-ufc-api/blob/3ef423b630bf3f225be83b75dd1063cbf3e3f57f/data/schema.graphql",
+      "content": "type Fighter {\n  # The ID of an object\n  id: ID!\n  _id: Int\n  profileImage: String\n  firstName: String\n  lastName: String\n  nickname: String\n  weightClass: String\n  wins: Int\n  losses: Int\n  draws: Int\n  beltThumbnail: String\n  link: String\n}\n\ntype Query {\n  allFighters: [Fighter]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-30T05:03:40Z",
+    "updated_at": "2019-03-22T11:09:10Z",
+    "pushed_at": "2019-05-28T03:59:22Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 19
+  }
+}

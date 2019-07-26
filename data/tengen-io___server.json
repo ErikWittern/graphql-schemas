@@ -1,0 +1,42 @@
+{
+  "repo_name": "server",
+  "repo_full_name": "tengen-io/server",
+  "repo_owner": "tengen-io",
+  "repo_description": ":white_circle: Server implementation of the board game Go",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "e08bf6cec27ee2adba78df51b392d2f4e31d9765",
+      "url": "https://api.github.com/repositories/164186760/contents/schema.graphql?ref=39d1e4e10196ee22c0cf348cdd75602f139542c8",
+      "git_url": "https://api.github.com/repositories/164186760/git/blobs/e08bf6cec27ee2adba78df51b392d2f4e31d9765",
+      "html_url": "https://github.com/tengen-io/server/blob/39d1e4e10196ee22c0cf348cdd75602f139542c8/schema.graphql",
+      "content": "# Types\ndirective @hasAuth on FIELD_DEFINITION\n\nscalar Timestamp\n\nenum GameType {\n    STANDARD\n}\n\nenum GameState {\n    NEGOTIATION\n    IN_PROGRESS\n    FINISHED\n}\n\nenum GameUserEdgeType {\n    OWNER\n    PLAYER\n}\n\nenum Event {\n    CREATE\n    UPDATE\n    DELETE\n}\n\ninterface Node {\n    id: ID!\n    createdAt: Timestamp!\n    updatedAt: Timestamp\n}\n\ntype Identity implements Node {\n    id: ID!\n    email: String!\n    user: User!\n    createdAt: Timestamp!\n    updatedAt: Timestamp\n}\n\ntype User implements Node {\n    id: ID!\n    name: String!\n    createdAt: Timestamp!\n    updatedAt: Timestamp\n}\n\ntype Game implements Node {\n    id: ID!\n    type: GameType!\n    state: GameState!\n    boardSize: Int!\n    createdAt: Timestamp!\n    updatedAt: Timestamp\n    users: [GameUserEdge!]\n}\n\ntype MatchmakingRequest implements Node {\n    id: ID!\n    queue: String!\n    user: User\n    rank: Int!\n    delta: Int!\n    createdAt: Timestamp!\n    updatedAt: Timestamp\n}\n\n# Relationships\ntype GameUserEdge {\n    index: Int!\n    user: User!\n    type: GameUserEdgeType!\n}\n\ninput CreateMatchmakingRequestInput {\n    delta: Int!\n}\n\ntype CreateMatchmakingRequestPayload {\n    request: MatchmakingRequest\n}\n\ntype MatchmakingRequestCompletionPayload {\n    game: Game!\n}\n\ntype Query {\n    game(id: ID): Game\n    games(ids: [ID!], states: [GameState!]): [Game]\n    user(id: ID, name: String): User\n    users(ids: [ID!], names: [String!]): [User]\n    viewer: Identity @hasAuth\n    matchmakingRequests: [MatchmakingRequest!]\n}\n\ntype Mutation {\n    createMatchmakingRequest(input: CreateMatchmakingRequestInput!): CreateMatchmakingRequestPayload! @hasAuth\n}\n\ntype Subscription {\n    matchmakingRequestCompletions: MatchmakingRequestCompletionPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-05T05:58:35Z",
+    "updated_at": "2019-03-30T02:53:01Z",
+    "pushed_at": "2019-03-30T02:52:59Z",
+    "issues": 35,
+    "watchers": 4,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 20,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 17,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

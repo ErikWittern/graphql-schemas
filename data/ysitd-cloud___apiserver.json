@@ -1,0 +1,80 @@
+{
+  "repo_name": "apiserver",
+  "repo_full_name": "ysitd-cloud/apiserver",
+  "repo_owner": "ysitd-cloud",
+  "repo_description": "Public API Server for YSITD Cloud",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "src/app/graphql/resolver/query.graphql",
+      "sha": "eb07219569151a1b7b245c4c4932782de39425d8",
+      "url": "https://api.github.com/repositories/114069406/contents/src/app/graphql/resolver/query.graphql?ref=0dc389a3025ad9bc9324e5aeb0a26ac02b21b757",
+      "git_url": "https://api.github.com/repositories/114069406/git/blobs/eb07219569151a1b7b245c4c4932782de39425d8",
+      "html_url": "https://github.com/ysitd-cloud/apiserver/blob/0dc389a3025ad9bc9324e5aeb0a26ac02b21b757/src/app/graphql/resolver/query.graphql",
+      "content": "type Query {\n    ping: String!\n    user(username: String!): User\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ysitd-cloud/apiserver/blob/0dc389a3025ad9bc9324e5aeb0a26ac02b21b757/src/app/graphql/resolver/query.graphql:\ntype Query {\n    ping: String!\n    user(username: String!): User\n}\n# https://github.com/ysitd-cloud/apiserver/blob/0dc389a3025ad9bc9324e5aeb0a26ac02b21b757/src/app/account/user.graphql:\ntype User {\n    username: String!\n    displayName: String!\n    email: String!\n    avatarUrl: String\n    apps: [App!]\n}\n# https://github.com/ysitd-cloud/apiserver/blob/0dc389a3025ad9bc9324e5aeb0a26ac02b21b757/src/app/deployer/app.graphql:\ntype App {\n    id: String!\n    owner: String!\n    name: String!\n    deployment: AppDeployment!\n    environment: [AppEnvironemntParameter!]\n    network: AppNetwork!\n}\n\ntype AppDeployment {\n    image: String!\n    tag: String!\n}\n\ntype AppEnvironemntParameter {\n    key: String!\n    value: String!\n}\n\ntype AppNetwork {\n    domain: String!\n}",
+        "mergedPaths": [
+          "src/app/account/user.graphql",
+          "src/app/deployer/app.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "App"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 6,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/app/account/user.graphql",
+      "sha": "905f898474e4d1d63370a0dabdae6bf7b1dd1b3c",
+      "url": "https://api.github.com/repositories/114069406/contents/src/app/account/user.graphql?ref=0dc389a3025ad9bc9324e5aeb0a26ac02b21b757",
+      "git_url": "https://api.github.com/repositories/114069406/git/blobs/905f898474e4d1d63370a0dabdae6bf7b1dd1b3c",
+      "html_url": "https://github.com/ysitd-cloud/apiserver/blob/0dc389a3025ad9bc9324e5aeb0a26ac02b21b757/src/app/account/user.graphql",
+      "content": "type User {\n    username: String!\n    displayName: String!\n    email: String!\n    avatarUrl: String\n    apps: [App!]\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "app.graphql",
+      "path": "src/app/deployer/app.graphql",
+      "sha": "2d06d6a59062282b1545aa06b5d53a6cd1f1b560",
+      "url": "https://api.github.com/repositories/114069406/contents/src/app/deployer/app.graphql?ref=0dc389a3025ad9bc9324e5aeb0a26ac02b21b757",
+      "git_url": "https://api.github.com/repositories/114069406/git/blobs/2d06d6a59062282b1545aa06b5d53a6cd1f1b560",
+      "html_url": "https://github.com/ysitd-cloud/apiserver/blob/0dc389a3025ad9bc9324e5aeb0a26ac02b21b757/src/app/deployer/app.graphql",
+      "content": "type App {\n    id: String!\n    owner: String!\n    name: String!\n    deployment: AppDeployment!\n    environment: [AppEnvironemntParameter!]\n    network: AppNetwork!\n}\n\ntype AppDeployment {\n    image: String!\n    tag: String!\n}\n\ntype AppEnvironemntParameter {\n    key: String!\n    value: String!\n}\n\ntype AppNetwork {\n    domain: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-13T03:31:06Z",
+    "updated_at": "2018-01-12T13:46:40Z",
+    "pushed_at": "2018-02-01T18:35:36Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 1,
+    "stargazers": 0
+  }
+}

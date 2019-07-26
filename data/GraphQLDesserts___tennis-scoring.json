@@ -1,0 +1,42 @@
+{
+  "repo_name": "tennis-scoring",
+  "repo_full_name": "graphqldesserts/tennis-scoring",
+  "repo_owner": "GraphQLDesserts",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "prototype/src/schema.graphql",
+      "sha": "fadfa4b40bf06e18757fc85e8f335a291ed67071",
+      "url": "https://api.github.com/repositories/156208964/contents/prototype/src/schema.graphql?ref=1bd852917073b980f6af361704723f7c8f091394",
+      "git_url": "https://api.github.com/repositories/156208964/git/blobs/fadfa4b40bf06e18757fc85e8f335a291ed67071",
+      "html_url": "https://github.com/GraphQLDesserts/tennis-scoring/blob/1bd852917073b980f6af361704723f7c8f091394/prototype/src/schema.graphql",
+      "content": "type Query {\n  currentMatch: Match\n}\n\nenum Side {\n  SIDE_A\n  SIDE_B\n}\n\ntype Match {\n  winner: Side\n  currentGame: Game\n  stats: [SideStats]\n}\n\ntype Game {\n  servingSide: Side!\n  pointsWon: [GamePointsWon!]!\n}\n\ntype GamePointsWon {\n  count: Int!\n  side: Side!\n}\n\ntype SideStats {\n  side: Side\n  players: [PlayerStats]\n}\n\ntype PlayerStats {\n  breakpoints: PlayerStatsBreakpoints\n  aces: PlayerStatsAces\n  doubleFaults: PlayerStatsDoubleFaults\n}\n\ntype PlayerStatsBreakpoints {\n  totalCount: Int\n  wonCount: Int\n}\n\ntype PlayerStatsAces {\n  count: Int\n}\n\ntype PlayerStatsDoubleFaults {\n  count: Int\n}\n\nunion MatchStats = PlayerStats",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-05T11:43:14Z",
+    "updated_at": "2018-12-03T12:02:22Z",
+    "pushed_at": "2018-12-03T12:02:21Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "bsd-3-clause",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

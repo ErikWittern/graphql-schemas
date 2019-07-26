@@ -1,0 +1,41 @@
+{
+  "repo_name": "hackweek-graphql",
+  "repo_full_name": "albertoblaz/hackweek-graphql",
+  "repo_owner": "albertoblaz",
+  "repo_description": "React demo app wrapped in Electron that connects to a GraphQL backend built in JavaScript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "eac1a5bd62c9411967831163d6bdaea3ef9b5627",
+      "url": "https://api.github.com/repositories/111405704/contents/data/schema.graphql?ref=d23de94e37e0b09c167000c9321a6594b0dac92b",
+      "git_url": "https://api.github.com/repositories/111405704/git/blobs/eac1a5bd62c9411967831163d6bdaea3ef9b5627",
+      "html_url": "https://github.com/albertoblaz/hackweek-graphql/blob/d23de94e37e0b09c167000c9321a6594b0dac92b/data/schema.graphql",
+      "content": "type Author {\n  id: Int!\n  firstName: String\n  lastName: String\n  posts: [Post]!\n}\n\ntype Post {\n  id: Int!\n  title: String\n  text: String\n  views: Int\n  author: Author!\n}\n\n# union SearchResult = Author | Post\ntype Query {\n  author(id: Int, firstName: String, lastName: String): Author\n  post(id: Int): Post\n  posts: [Post]\n  me: Author\n  #   search(text: String!): [SearchResult]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-20T12:08:27Z",
+    "updated_at": "2017-12-01T13:12:29Z",
+    "pushed_at": "2018-01-15T19:19:39Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

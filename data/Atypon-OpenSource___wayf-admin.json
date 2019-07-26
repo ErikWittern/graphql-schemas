@@ -1,0 +1,41 @@
+{
+  "repo_name": "wayf-admin",
+  "repo_full_name": "atypon-opensource/wayf-admin",
+  "repo_owner": "Atypon-OpenSource",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/data/schema.graphql",
+      "sha": "4b2fbc8ac49b5c2d6462ef4578ccb64ccf1810d2",
+      "url": "https://api.github.com/repositories/88644789/contents/src/data/schema.graphql?ref=641ebfdf8d4889aa4030f7190a3ad6cd35b8bad2",
+      "git_url": "https://api.github.com/repositories/88644789/git/blobs/4b2fbc8ac49b5c2d6462ef4578ccb64ccf1810d2",
+      "html_url": "https://github.com/Atypon-OpenSource/wayf-admin/blob/641ebfdf8d4889aa4030f7190a3ad6cd35b8bad2/src/data/schema.graphql",
+      "content": "input AdminLoginInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype AdminLoginPayload {\n  token: AuthorizationTokenType\n  clientMutationId: String\n}\n\ntype AuthorizationTokenType {\n  type: String\n  value: String\n  validUntil: Date\n}\n\ninput CreatePublisherInput {\n  publisherName: String!\n  publisherCode: String!\n  registrationId: Int\n  contactFirstName: String!\n  contactLastName: String!\n  contactPhoneNumber: String!\n  contactEmail: String!\n  clientMutationId: String\n}\n\ntype CreatePublisherPayload {\n  publisher: PublisherType\n  clientMutationId: String\n}\n\ninput CreatePublisherRegistrationInput {\n  publisherName: String!\n  contactFirstName: String!\n  contactLastName: String!\n  contactPhoneNumber: String!\n  contactEmail: String!\n  clientMutationId: String\n}\n\ntype CreatePublisherRegistrationPayload {\n  publisherRegistration: PublisherRegistrationType\n  clientMutationId: String\n}\n\ninput CreateUserInput {\n  firstName: String!\n  lastName: String!\n  phoneNumber: String!\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype CreateUserPayload {\n  user: UserType\n  clientMutationId: String\n}\n\n# Date custom scalar type\nscalar Date\n\ninput DeleteUserInput {\n  userId: Int!\n  clientMutationId: String\n}\n\ntype DeleteUserPayload {\n  viewer: viewer\n  clientMutationId: String\n}\n\ninput DenyPublisherRegistrationInput {\n  publisherRegistrationId: Int!\n  clientMutationId: String\n}\n\ntype DenyPublisherRegistrationPayload {\n  publisherRegistration: PublisherRegistrationType\n  clientMutationId: String\n}\n\ntype DeviceAccessType {\n  localId: String\n  device: DeviceType\n  identityProvider: IdentityProviderType\n  publisher: PublisherType\n  type: DeviceAccessTypeEnum\n  createdDate: Date\n  modifiedDate: Date\n}\n\nenum DeviceAccessTypeEnum {\n  REMOVE_IDP\n  READ_IDP_HISTORY\n  ADD_IDP\n}\n\ntype DeviceInfoType {\n  userAgent: String\n}\n\ntype DeviceType {\n  globalId: String\n  status: String\n  info: DeviceInfoType\n  history: [IdentityProviderUsageType]\n  activity: [DeviceAccessType]\n  createdDate: Date\n  modifiedDate: Date\n}\n\ninput ForgetIdpInput {\n  idpId: Int!\n  clientMutationId: String\n}\n\ntype ForgetIdpPayload {\n  viewer: viewer\n  clientMutationId: String\n}\n\ntype IdentityProviderType {\n  id: Int\n  type: IdentityProviderTypeEnum\n  name: String\n  createdDate: Date\n  modifiedDate: Date\n}\n\nenum IdentityProviderTypeEnum {\n  SAML\n  OAUTH\n  OPEN_ATHENS\n}\n\ntype IdentityProviderUsageType {\n  lastActiveDate: Date\n  frequency: Float\n  idp: IdentityProviderType\n}\n\ntype Mutation {\n  forgetIdp(input: ForgetIdpInput!): ForgetIdpPayload\n  createPublisherRegistration(input: CreatePublisherRegistrationInput!): CreatePublisherRegistrationPayload\n  createPublisher(input: CreatePublisherInput!): CreatePublisherPayload\n  denyPublisherRegistration(input: DenyPublisherRegistrationInput!): DenyPublisherRegistrationPayload\n  adminLogin(input: AdminLoginInput!): AdminLoginPayload\n  createUser(input: CreateUserInput!): CreateUserPayload\n  deleteUser(input: DeleteUserInput!): DeleteUserPayload\n  resetUserPassword(input: ResetUserPasswordInput!): ResetUserPasswordPayload\n}\n\ntype PublisherRegistrationType {\n  id: Int\n  status: String\n  publisherName: String\n  contact: UserType\n  applicationDate: Date\n  approvalDate: Date\n  createdDate: Date\n  modifiedDate: Date\n}\n\ntype PublisherType {\n  id: String\n  status: String\n  code: String\n  name: String\n  contact: UserType\n  registration: PublisherRegistrationType\n  widgetLocation: String\n  token: AuthorizationTokenType\n  createdDate: Date\n  modifiedDate: Date\n}\n\ntype Query {\n  viewer: viewer\n  publisherRegistration: PublisherRegistrationType\n}\n\ninput ResetUserPasswordInput {\n  userId: Int!\n  password: String!\n  clientMutationId: String\n}\n\ntype ResetUserPasswordPayload {\n  viewer: viewer\n  clientMutationId: String\n}\n\ntype UserType {\n  id: Int\n  firstName: String\n  lastName: String\n  email: String\n  phoneNumber: String\n  createdDate: Date\n  modifiedDate: Date\n}\n\ntype viewer {\n  viewerId: String\n  me: UserType\n  adminUsers: [UserType]\n  device(globalId: String): DeviceType\n  identityProvider(id: Int): IdentityProviderType\n  publisher(id: String): PublisherType\n  history(globalId: String): [IdentityProviderUsageType]\n  latestActivity(globalId: String): DeviceAccessType\n  pendingPublisherRegistrations: [PublisherRegistrationType]\n  approvedPublisherRegistrations: [PublisherRegistrationType]\n  deniedPublisherRegistrations: [PublisherRegistrationType]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 20,
+      "containsCycle": true,
+      "numDefinitions": 31
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-18T16:05:11Z",
+    "updated_at": "2019-01-10T10:27:58Z",
+    "pushed_at": "2017-09-14T16:17:13Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 11,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "spidey",
+  "repo_full_name": "tinrab/spidey",
+  "repo_owner": "tinrab",
+  "repo_description": "A Microservices and GraphQL based online store",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/graph/schema.graphql",
+      "sha": "fb3189a9cdcf8ca1b85c81bb2a350b031fe675ae",
+      "url": "https://api.github.com/repositories/134818684/contents/graphql/graph/schema.graphql?ref=675e222116bfb2f7f4dc6f9d1e5791712399f6b2",
+      "git_url": "https://api.github.com/repositories/134818684/git/blobs/fb3189a9cdcf8ca1b85c81bb2a350b031fe675ae",
+      "html_url": "https://github.com/tinrab/spidey/blob/675e222116bfb2f7f4dc6f9d1e5791712399f6b2/graphql/graph/schema.graphql",
+      "content": "scalar Time\n\ntype Account {\n  id: String!\n  name: String!\n  orders: [Order!]!\n}\n\ntype Product {\n  id: String!\n  name: String!\n  description: String!\n  price: Float!\n}\n\ntype Order {\n  id: String!\n  createdAt: Time!\n  totalPrice: Float!\n  products: [OrderedProduct!]!\n}\n\ntype OrderedProduct {\n  id: String!\n  name: String!\n  description: String!\n  price: Float!\n  quantity: Int!\n}\n\ninput PaginationInput {\n  skip: Int\n  take: Int\n}\n\ninput AccountInput {\n  name: String!\n}\n\ninput ProductInput {\n  name: String!\n  description: String!\n  price: Float!\n}\n\ninput OrderProductInput {\n  id: String!\n  quantity: Int!\n}\n\ninput OrderInput {\n  accountId: String!\n  products: [OrderProductInput!]!\n}\n\ntype Mutation {\n  createAccount(account: AccountInput!): Account\n  createProduct(product: ProductInput!): Product\n  createOrder(order: OrderInput!): Order\n}\n\ntype Query {\n  accounts(pagination: PaginationInput, id: String): [Account!]!\n  products(pagination: PaginationInput, query: String, id: String): [Product!]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-25T07:18:55Z",
+    "updated_at": "2019-07-15T16:51:39Z",
+    "pushed_at": "2018-09-09T10:40:44Z",
+    "issues": 6,
+    "watchers": 11,
+    "fork_count": 25,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 217
+  }
+}

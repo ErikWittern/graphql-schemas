@@ -1,0 +1,42 @@
+{
+  "repo_name": "internal-tools",
+  "repo_full_name": "thrasher-redhat/internal-tools",
+  "repo_owner": "thrasher-redhat",
+  "repo_description": "Initial testing and research for some internal tools",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "pkg/api/schema.graphql",
+      "sha": "748fb7f8fc58adc9553e1dc26d47baaabd13170c",
+      "url": "https://api.github.com/repositories/125103279/contents/pkg/api/schema.graphql?ref=0d2f305fd8954e133b6cba173c19e9c4332d7bc4",
+      "git_url": "https://api.github.com/repositories/125103279/git/blobs/748fb7f8fc58adc9553e1dc26d47baaabd13170c",
+      "html_url": "https://github.com/thrasher-redhat/internal-tools/blob/0d2f305fd8954e133b6cba173c19e9c4332d7bc4/pkg/api/schema.graphql",
+      "content": "schema {\n    query: Query\n}\n\n# Query represents the entry points into the schema\ntype Query {\n    # Returns the list of bugs for a given datestamp (defaults to latest date).\n    bugs(datestamp: String = \"_latest\", components: [String!]): [Bug]!\n    # Returns a snapshot of the database for a given datestamp (defaults to latest date).\n    snapshot(datestamp: String = \"_latest\"): Snapshot\n    # Returns the dates and rollups associated with a given release.\n    release(name: String!, components: [String!]): Release\n    # Returns a list of rollups over the past 3 sprints (9 weeks).\n    rollups(components: [String!]): [Rollup]!\n    # Returns a list of all releases (with associated dates and rollups).\n    releases(components: [String!]): [Release]!\n}\n\ntype Bug {\n    # The bugzilla ID.\n    id: Int!\n    # The date that this bug was recorded (YYYY-MM-DD).\n    datestamp: String!\n    # The component that the bug belongs to.\n    component: String!\n    # The bug status.  NEW, ASSIGNED, POST, or ON_DEV.\n    status: String!\n    # The title of the bug.\n    summary: String!\n    # The release associated with the bug.  No release is '---'.\n    targetRelease: String!\n    # The email of the person that the bug is assigned to.\n    assignedTo: String!\n    # A score determined from the bug's priority and visibility.\n    pmScore: Int!\n    # A list of keywords associated with the bug.\n    keywords: [String!]!\n    # If the bug has one or more customer cases associated with it.\n    customerCase: Boolean!\n    # The number of days since this bug was first tracked.\n    age: Int!\n}\n\ntype Rollup {\n    # The date of the rollup\n    datestamp: String!\n    # The totals for all bugs in the query.\n    all: Breakdown!\n    # The totals for all bugs in the query with blocker keywords.\n    blockers: Breakdown!\n    # The totals for all bugs in the query with one or more customer cases attached.\n    customerCases: Breakdown!\n}\n\ntype Breakdown {\n    # The total number of bugs in the given query.\n    total: Int!\n    # The number of bug ids that are in the given query and were not in the previous date's query.\n    new: Int!\n    # The number of bug ids that were in the previous date's query and are not in the current query.\n    closed: Int!\n}\n\n# Snapshot provides all the data needed for the client's front page.\ntype Snapshot {\n    # The date that the snapshot is for (YYYY-MM-DD).  Generally the latest date in the database.\n    datestamp: String!\n    # The list of all bugs for the given date.\n    bugs: [Bug]\n    # A rollup to track various bug totals for the given date.\n    rollup: Rollup!\n}\n\n# A release provides the name and dates associated with a release, as well as rollups for each day in the release for graphing purposes.\ntype Release {\n    name: String!\n    # The first day of the release.\n    start: String!\n    # The General Availability date.\n    ga: String!\n    # The date after which no new features are added.\n    featureComplete: String!\n    # The date after which no new code is accepted.\n    codeFreeze: String!\n    # Rollups for each day between start (default earliest) and GA (default latest)\n    rollups: [Rollup]!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-13T19:24:12Z",
+    "updated_at": "2018-05-23T20:03:37Z",
+    "pushed_at": "2018-06-05T21:59:27Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 13,
+    "pull_requests_open": 2,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 10,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

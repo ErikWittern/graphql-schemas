@@ -1,0 +1,42 @@
+{
+  "repo_name": "server",
+  "repo_full_name": "rewardnow/server",
+  "repo_owner": "rewardnow",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/graphql/Tag/schema.gql",
+      "sha": "744e9adb3d180a4fa99dcca6d018915c19de7bbd",
+      "url": "https://api.github.com/repositories/148570479/contents/src/graphql/Tag/schema.gql?ref=8852b3c949a2f20f25126a1c0a58c1eb02deaac2",
+      "git_url": "https://api.github.com/repositories/148570479/git/blobs/744e9adb3d180a4fa99dcca6d018915c19de7bbd",
+      "html_url": "https://github.com/rewardnow/server/blob/8852b3c949a2f20f25126a1c0a58c1eb02deaac2/src/graphql/Tag/schema.gql",
+      "content": "type Tag {\n  id: ID!\n  name: String!\n  description: String!\n}\n\ntype Query {\n  tags: [Tag!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-13T02:29:41Z",
+    "updated_at": "2019-03-31T20:52:02Z",
+    "pushed_at": "2019-03-31T20:52:00Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 5,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 5,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

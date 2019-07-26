@@ -1,0 +1,42 @@
+{
+  "repo_name": "locatepi",
+  "repo_full_name": "duvholt/locatepi",
+  "repo_owner": "duvholt",
+  "repo_description": "Health check solution for devices without static IPs ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "frontend/schema.graphql",
+      "sha": "740d077b34e542a2f4b7a928d06df535c770f20a",
+      "url": "https://api.github.com/repositories/108675911/contents/frontend/schema.graphql?ref=1a5cd356658face0d27769c509479489555f84e3",
+      "git_url": "https://api.github.com/repositories/108675911/git/blobs/740d077b34e542a2f4b7a928d06df535c770f20a",
+      "html_url": "https://github.com/duvholt/locatepi/blob/1a5cd356658face0d27769c509479489555f84e3/frontend/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: MyMutations\n}\n\ntype CreatePing {\n  ok: Boolean\n}\n\n# The `DateTime` scalar type represents a DateTime\n# value as specified by\n# [iso8601](https://en.wikipedia.org/wiki/ISO_8601).\nscalar DateTime\n\ntype MyMutations {\n  createPing(serverName: String, apiKey: String, localIp: String): CreatePing\n}\n\n# An object with an ID\ninterface Node {\n  # The ID of the object.\n  id: ID!\n}\n\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Ping implements Node {\n  # The ID of the object.\n  id: ID!\n  server: Server!\n  ip: String!\n  localIp: String\n  time: DateTime!\n}\n\ntype Query {\n  servers(before: String, after: String, first: Int, last: Int): ServerConnection\n}\n\ntype Server implements Node {\n  # The ID of the object.\n  id: ID!\n  name: String!\n  ping: Ping\n}\n\ntype ServerConnection {\n  pageInfo: PageInfo!\n  edges: [ServerEdge]!\n}\n\ntype ServerEdge {\n  # The item at the end of the edge\n  node: Server\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-10-28T18:58:50Z",
+    "updated_at": "2018-03-21T20:48:03Z",
+    "pushed_at": "2018-03-21T20:48:02Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

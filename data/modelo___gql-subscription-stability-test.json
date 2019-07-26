@@ -1,0 +1,42 @@
+{
+  "repo_name": "gql-subscription-stability-test",
+  "repo_full_name": "modelo/gql-subscription-stability-test",
+  "repo_owner": "modelo",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "typeDefs.graphql",
+      "sha": "66393a3013658f223434fa8019eb21df938d753c",
+      "url": "https://api.github.com/repositories/155480604/contents/typeDefs.graphql?ref=0e6f9b907264fe0d6bd106a7584335dbdbd2d6ab",
+      "git_url": "https://api.github.com/repositories/155480604/git/blobs/66393a3013658f223434fa8019eb21df938d753c",
+      "html_url": "https://github.com/modelo/gql-subscription-stability-test/blob/0e6f9b907264fe0d6bd106a7584335dbdbd2d6ab/typeDefs.graphql",
+      "content": "type Query {\n    testQuery: String\n}\n\ntype Subscription {\n  testSub: String\n}\n\nschema {\n  query: Query\n#   mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-31T01:34:46Z",
+    "updated_at": "2018-11-03T10:04:18Z",
+    "pushed_at": "2018-11-03T10:04:17Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

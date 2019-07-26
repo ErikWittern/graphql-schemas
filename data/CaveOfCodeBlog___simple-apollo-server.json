@@ -1,0 +1,76 @@
+{
+  "repo_name": "simple-apollo-server",
+  "repo_full_name": "caveofcodeblog/simple-apollo-server",
+  "repo_owner": "CaveOfCodeBlog",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "data/schema/query.graphql",
+      "sha": "011356939d28c37ce2c8fd033cf234828768eca9",
+      "url": "https://api.github.com/repositories/75015714/contents/data/schema/query.graphql?ref=7227f850b6ef64d62d681c510c5f807a76539133",
+      "git_url": "https://api.github.com/repositories/75015714/git/blobs/011356939d28c37ce2c8fd033cf234828768eca9",
+      "html_url": "https://github.com/CaveOfCodeBlog/simple-apollo-server/blob/7227f850b6ef64d62d681c510c5f807a76539133/data/schema/query.graphql",
+      "content": "type Query {\n  getUser(id: String!): User\n  testString: String\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/CaveOfCodeBlog/simple-apollo-server/blob/7227f850b6ef64d62d681c510c5f807a76539133/data/schema/query.graphql:\ntype Query {\n  getUser(id: String!): User\n  testString: String\n}\n\n# https://github.com/CaveOfCodeBlog/simple-apollo-server/blob/7227f850b6ef64d62d681c510c5f807a76539133/data/schema/user.graphql:\ntype User {\n  _id: String\n  displayName: String\n  email: String\n  firstName: String\n  lastName: String\n  birthday: String\n  cars: [ Car ]\n}\n\ninput InputUser {\n  displayName: String!\n  email: String!\n  firstName: String!\n  lastName: String!\n  birthday: String!\n}\n\n# https://github.com/CaveOfCodeBlog/simple-apollo-server/blob/7227f850b6ef64d62d681c510c5f807a76539133/data/schema/car.graphql:\ntype Car {\n  _id: String\n  model: String\n  registrationNo: String\n  owner: User\n}\n\ninput InputCar {\n  model: String!\n  registrationNo: String!\n  owner: String!\n}\n",
+        "mergedPaths": [
+          "data/schema/user.graphql",
+          "data/schema/car.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User",
+          "Car"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "car.graphql",
+      "path": "data/schema/car.graphql",
+      "sha": "56fcc97935dc66677a1cf91bed52ef5d7df57c9b",
+      "url": "https://api.github.com/repositories/75015714/contents/data/schema/car.graphql?ref=7227f850b6ef64d62d681c510c5f807a76539133",
+      "git_url": "https://api.github.com/repositories/75015714/git/blobs/56fcc97935dc66677a1cf91bed52ef5d7df57c9b",
+      "html_url": "https://github.com/CaveOfCodeBlog/simple-apollo-server/blob/7227f850b6ef64d62d681c510c5f807a76539133/data/schema/car.graphql",
+      "content": "type Car {\n  _id: String\n  model: String\n  registrationNo: String\n  owner: User\n}\n\ninput InputCar {\n  model: String!\n  registrationNo: String!\n  owner: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "user.graphql",
+      "path": "data/schema/user.graphql",
+      "sha": "7c236644c2a6aeef0374155bcb7d4088e46a726e",
+      "url": "https://api.github.com/repositories/75015714/contents/data/schema/user.graphql?ref=7227f850b6ef64d62d681c510c5f807a76539133",
+      "git_url": "https://api.github.com/repositories/75015714/git/blobs/7c236644c2a6aeef0374155bcb7d4088e46a726e",
+      "html_url": "https://github.com/CaveOfCodeBlog/simple-apollo-server/blob/7227f850b6ef64d62d681c510c5f807a76539133/data/schema/user.graphql",
+      "content": "type User {\n  _id: String\n  displayName: String\n  email: String\n  firstName: String\n  lastName: String\n  birthday: String\n  cars: [ Car ]\n}\n\ninput InputUser {\n  displayName: String!\n  email: String!\n  firstName: String!\n  lastName: String!\n  birthday: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-11-28T21:26:24Z",
+    "updated_at": "2019-06-05T03:45:22Z",
+    "pushed_at": "2016-11-29T14:02:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 7
+  }
+}

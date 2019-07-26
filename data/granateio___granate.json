@@ -1,0 +1,42 @@
+{
+  "repo_name": "granate",
+  "repo_full_name": "granateio/granate",
+  "repo_owner": "granateio",
+  "repo_description": "Code generator for graphql",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "todo.graphql",
+      "path": "example/todo.graphql",
+      "sha": "6fe4e25ff8849c5c64e4731b21190a91bed7994a",
+      "url": "https://api.github.com/repositories/91390561/contents/example/todo.graphql?ref=e1aa29dcfbd5310bbc0d4bac2148a3e9cc0b7aa0",
+      "git_url": "https://api.github.com/repositories/91390561/git/blobs/6fe4e25ff8849c5c64e4731b21190a91bed7994a",
+      "html_url": "https://github.com/granateio/granate/blob/e1aa29dcfbd5310bbc0d4bac2148a3e9cc0b7aa0/example/todo.graphql",
+      "content": "# This is an exmaple schema file used to test the code generator. The content\n# of this file is meant to reflect the current state/capabilities of the code\n# generator, so if a definition is missing from this file, it's probably not\n# supported yet.\n\n# A user in the system\ntype User {\n    id: ID\n    name: String\n    todos: [Todo]\n}\n\n# A todo\ntype Todo {\n    id: ID\n    title: String\n    description: String\n    status: TodoStatus\n}\n\n# Describes the status of a Todo\nenum TodoStatus {\n    COMPLETED\n    ACTIVE\n    IGNORED\n    PAUSED\n}\n\n# Root query\ntype Query {\n    # Get the current loged in user\n    # Returns null if no user is loged in\n    viewer: User\n}\n\n# Root mutation\ntype Mutation {\n    # Create todos for a user\n    createTodos(user: ID!, todos: [TodoInput]!): [Todo]\n    # Change the todo status for a todo\n    changeTodoStatus(\n        # The ID of the user\n        todo: ID!,\n        # The new status of the todo\n        status: TodoStatus!): Todo\n}\n\n# Input used when creating todos\ninput TodoInput {\n    # Tile of the new todo\n    title: String!\n    # Description of the new todo\n    # This is optional\n    description: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-05-15T22:31:05Z",
+    "updated_at": "2019-06-06T23:05:59Z",
+    "pushed_at": "2018-07-20T11:24:33Z",
+    "issues": 18,
+    "watchers": 4,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 6,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 3,
+    "releases": 0,
+    "stargazers": 17
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-event-store-changelog",
+  "repo_full_name": "graphql-services/graphql-event-store-changelog",
+  "repo_owner": "graphql-services",
+  "repo_description": "Aggregator service collecting change log of GraphQL EventStore",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "7eb167c630c756ef03298137182b830cfcd0c359",
+      "url": "https://api.github.com/repositories/167298431/contents/schema.graphql?ref=acf1cc671dbd5377e8e0f0809573406c33c82b8b",
+      "git_url": "https://api.github.com/repositories/167298431/git/blobs/7eb167c630c756ef03298137182b830cfcd0c359",
+      "html_url": "https://github.com/graphql-services/graphql-event-store-changelog/blob/acf1cc671dbd5377e8e0f0809573406c33c82b8b/schema.graphql",
+      "content": "scalar Time\n\nschema {\n  query: Query\n}\n\nenum EventStoreChangeLogType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ntype EventStoreChangeLog {\n  # ChangeLog identifier\n  id: ID!\n  # Changed entity\n  entity: String!\n  # Changed entity ID\n  entityID: String!\n  # Author of this change\n  principalID: String\n  # Type indicating create/update/delete change type\n  type: EventStoreChangeLogType!\n  # Column separated list of changed columns\n  columns: [String!]!\n}\n\ntype Query {\n  changelog(\n    principalID: String\n    entity: String\n    entityID: String\n    type: EventStoreChangeLogType\n    columns: [String!]\n    limit: Int\n  ): [EventStoreChangeLog!]!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-24T03:44:21Z",
+    "updated_at": "2019-01-25T02:19:17Z",
+    "pushed_at": "2019-02-05T21:11:19Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "ms-management-report",
+  "repo_full_name": "nebulae-tpi/ms-management-report",
+  "repo_owner": "nebulae-tpi",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "api/emi-gateway/graphql/management-report/schema.gql",
+      "sha": "d7581282581413e356f9393bf2dadde27750aa89",
+      "url": "https://api.github.com/repositories/184282222/contents/api/emi-gateway/graphql/management-report/schema.gql?ref=c739c6ffa20f5709da57c473efb75a8afb2c58f8",
+      "git_url": "https://api.github.com/repositories/184282222/git/blobs/d7581282581413e356f9393bf2dadde27750aa89",
+      "html_url": "https://github.com/nebulae-tpi/ms-management-report/blob/c739c6ffa20f5709da57c473efb75a8afb2c58f8/api/emi-gateway/graphql/management-report/schema.gql",
+      "content": "\"Hello world sample, please remove\"\ntype HelloWorldManagementReport{\n  \"text\"\n  sn: String!  \n}\n\ntype Query {\n  \"Hello world sample, please remove\"\n  getHelloWorldFromManagementReport: HelloWorldManagementReport\n}\n\ntype Subscription {\n  \"Hello world sample, please remove\"\n  ManagementReportHelloWorldSubscription: HelloWorldManagementReport  \n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-30T14:56:52Z",
+    "updated_at": "2019-07-12T16:34:46Z",
+    "pushed_at": "2019-07-12T16:34:45Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

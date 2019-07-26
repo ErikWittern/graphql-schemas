@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql_api_sample",
+  "repo_full_name": "hiroyky/graphql_api_sample",
+  "repo_owner": "hiroyky",
+  "repo_description": "Node.js GraphQL API sample",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "f05d745e50c9ec70f369212e35e47528b2aa4fc2",
+      "url": "https://api.github.com/repositories/163102817/contents/schema.graphql?ref=e95544af77c06d4c0ada731b0e68b3ba50001a0a",
+      "git_url": "https://api.github.com/repositories/163102817/git/blobs/f05d745e50c9ec70f369212e35e47528b2aa4fc2",
+      "html_url": "https://github.com/hiroyky/graphql_api_sample/blob/e95544af77c06d4c0ada731b0e68b3ba50001a0a/schema.graphql",
+      "content": "schema {\n  query: GraphQLSampleQueries\n  mutation: GraphQLSampleMutations\n}\n\n\"\"\"性別\"\"\"\nenum Gender {\n  \"\"\"男性\"\"\"\n  male\n\n  \"\"\"女性\"\"\"\n  female\n\n  \"\"\"その他\"\"\"\n  other\n}\n\ntype GraphQLSampleMutations {\n  createUser(user: UserInputArgument!): User\n  updateUser(user: UserUpdateArgument!): User\n}\n\ntype GraphQLSampleQueries {\n  user(id: ID): User\n  users(id: ID, limit: Int, offset: Int = 0, name: String, gender: Gender, rank: MemberRank): UserConnection\n  maker(id: ID): Maker\n  makers(id: ID, limit: Int, offset: Int = 0, name: String): MakerConnection\n  product(id: ID): Product\n  products(id: ID, limit: Int, offset: Int = 0, name: String, modelNumber: String, price: RangeInt): ProductConnection\n  order(id: ID): Order\n  orders(id: ID, limit: Int, offset: Int = 0, orderDate: RangeInt): OrderConnection\n}\n\n\"\"\"製造業者\"\"\"\ntype Maker {\n  id: ID\n  name: String\n  products: ProductConnection\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype MakerConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [MakerEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype MakerEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Maker\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\n\"\"\"会員ランク\"\"\"\nenum MemberRank {\n  \"\"\"一般会員\"\"\"\n  general\n\n  \"\"\"ゴールド会員\"\"\"\n  gold\n\n  \"\"\"プラチナ会員\"\"\"\n  platinum\n}\n\n\"\"\"受注情報\"\"\"\ntype Order {\n  id: ID\n\n  \"\"\"受注日時(UNIX TIME)\"\"\"\n  orderDate: Int\n\n  \"\"\"注文したユーザ\"\"\"\n  user: User\n\n  \"\"\"注文に含まれた商品\"\"\"\n  products(limit: Int, offset: Int = 0): ProductConnection\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype OrderConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [OrderEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype OrderEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Order\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\n\"\"\"商品\"\"\"\ntype Product {\n  id: ID\n\n  \"\"\"商品名\"\"\"\n  name: String\n\n  \"\"\"型番\"\"\"\n  modelNumber: String\n\n  \"\"\"販売価格\"\"\"\n  price: Int\n  maker: Maker\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype ProductConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [ProductEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype ProductEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: Product\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ninput RangeInt {\n  min: Int\n  max: Int\n}\n\n\"\"\"お客様の情報\"\"\"\ntype User {\n  id: ID\n  name: String\n\n  \"\"\"性別\"\"\"\n  gender: Gender\n\n  \"\"\"会員ランク\"\"\"\n  rank: MemberRank\n  orders: OrderConnection\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype UserConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [UserEdge]\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype UserEdge {\n  \"\"\"The item at the end of the edge\"\"\"\n  node: User\n\n  \"\"\"A cursor for use in pagination\"\"\"\n  cursor: String!\n}\n\ninput UserInputArgument {\n  name: String!\n  gender: String!\n  rank: String\n}\n\ninput UserUpdateArgument {\n  id: ID!\n  name: String\n  gender: String\n  rank: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 15,
+      "containsCycle": true,
+      "numDefinitions": 21
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-25T18:09:50Z",
+    "updated_at": "2019-06-23T04:03:05Z",
+    "pushed_at": "2018-12-28T09:20:59Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "repo_name": "fullstack-app",
+  "repo_full_name": "shakdaniel/fullstack-app",
+  "repo_owner": "shakdaniel",
+  "repo_description": "Full-stack GraphQL with Apollo, Meteor & React",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "Resolutions.graphql",
+      "path": "imports/api/resolutions/Resolutions.graphql",
+      "sha": "a16ae59ccda7b0bd463a6ca6d6c5fbbb8cbfbca7",
+      "url": "https://api.github.com/repositories/128205646/contents/imports/api/resolutions/Resolutions.graphql?ref=0afab1954c14d9e511bfd61182d2a86d2c8b75c1",
+      "git_url": "https://api.github.com/repositories/128205646/git/blobs/a16ae59ccda7b0bd463a6ca6d6c5fbbb8cbfbca7",
+      "html_url": "https://github.com/shakdaniel/fullstack-app/blob/0afab1954c14d9e511bfd61182d2a86d2c8b75c1/imports/api/resolutions/Resolutions.graphql",
+      "content": "type Resolution {\n  _id: String!\n  name: String!\n  goals: [Goal]\n}\n\ntype Query {\n  resolutions: [Resolution]\n}\n\ntype Mutation {\n  createResolution(name: String!): Resolution\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/shakdaniel/fullstack-app/blob/0afab1954c14d9e511bfd61182d2a86d2c8b75c1/imports/api/resolutions/Resolutions.graphql:\ntype Resolution {\n  _id: String!\n  name: String!\n  goals: [Goal]\n}\n\ntype Query {\n  resolutions: [Resolution]\n}\n\ntype Mutation {\n  createResolution(name: String!): Resolution\n}\n# https://github.com/shakdaniel/fullstack-app/blob/0afab1954c14d9e511bfd61182d2a86d2c8b75c1/imports/api/goals/Goal.graphql:\ntype Goal {\n  _id: String\n  name: String\n  completed: Boolean \n}\n\nextend type Mutation {\n  createGoal(name: String!, resolutionId: String!): Goal\n}",
+        "mergedPaths": [
+          "imports/api/goals/Goal.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Goal"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 5
+      },
+      "validSchema": false
+    },
+    {
+      "name": "Goal.graphql",
+      "path": "imports/api/goals/Goal.graphql",
+      "sha": "6748d6ee9168e8ce13068cadb4f289d680915717",
+      "url": "https://api.github.com/repositories/128205646/contents/imports/api/goals/Goal.graphql?ref=0afab1954c14d9e511bfd61182d2a86d2c8b75c1",
+      "git_url": "https://api.github.com/repositories/128205646/git/blobs/6748d6ee9168e8ce13068cadb4f289d680915717",
+      "html_url": "https://github.com/shakdaniel/fullstack-app/blob/0afab1954c14d9e511bfd61182d2a86d2c8b75c1/imports/api/goals/Goal.graphql",
+      "content": "type Goal {\n  _id: String\n  name: String\n  completed: Boolean \n}\n\nextend type Mutation {\n  createGoal(name: String!, resolutionId: String!): Goal\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-05T12:50:36Z",
+    "updated_at": "2018-04-23T16:59:25Z",
+    "pushed_at": "2018-04-23T16:59:24Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

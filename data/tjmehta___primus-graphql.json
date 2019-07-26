@@ -1,0 +1,42 @@
+{
+  "repo_name": "primus-graphql",
+  "repo_full_name": "tjmehta/primus-graphql",
+  "repo_owner": "tjmehta",
+  "repo_description": "A flexible GraphQL client and server library that can be used to power realtime applications.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "graphql-schema.graphql",
+      "path": "__browser_tests__/fixtures/graphql-schema.graphql",
+      "sha": "39ff06e0803fffe97edc6cb015926bbf53349820",
+      "url": "https://api.github.com/repositories/59327210/contents/__browser_tests__/fixtures/graphql-schema.graphql?ref=a8d2e2c14f8e1e9640ac4301f4e2b6dd56006411",
+      "git_url": "https://api.github.com/repositories/59327210/git/blobs/39ff06e0803fffe97edc6cb015926bbf53349820",
+      "html_url": "https://github.com/tjmehta/primus-graphql/blob/a8d2e2c14f8e1e9640ac4301f4e2b6dd56006411/__browser_tests__/fixtures/graphql-schema.graphql",
+      "content": "input CreateUserInput {\n  name: String!\n  clientMutationId: String\n}\n\ntype CreateUserPayload {\n  user: User\n  clientMutationId: String\n}\n\ninput InvalidSubscriptionInput {\n  id: String!\n}\n\ntype InvalidSubscriptionOutput {\n  user: User\n}\n\n\"\"\"Root query\"\"\"\ntype Mutation {\n  createUser(input: CreateUserInput!): CreateUserPayload\n  updateUser(input: UpdateUserInput!): UpdateUserPayload\n}\n\n\"\"\"Root query\"\"\"\ntype Query {\n  user(id: String): User\n}\n\ninput subscribeThrowsInput {\n  id: String!\n  clientSubscriptionId: String\n}\n\ntype subscribeThrowsPayload {\n  user: User\n  clientSubscriptionId: String\n}\n\n\"\"\"Root subscription\"\"\"\ntype Subscription {\n  userChanges(input: UserChangesInput!): UserChangesPayload\n  userChangesPromise(input: UserChangesPromiseInput!): UserChangesPromisePayload\n  invalidSubscription(input: InvalidSubscriptionInput): InvalidSubscriptionOutput\n  subscribeThrows(input: subscribeThrowsInput!): subscribeThrowsPayload\n}\n\ninput UpdateUserInput {\n  id: String!\n  name: String\n  clientMutationId: String\n}\n\ntype UpdateUserPayload {\n  user: User\n  clientMutationId: String\n}\n\n\"\"\"user\"\"\"\ntype User {\n  \"\"\"The ID of an object\"\"\"\n  id: ID!\n  name: String\n  idAndName: String\n}\n\ninput UserChangesInput {\n  id: String!\n  clientSubscriptionId: String\n}\n\ntype UserChangesPayload {\n  user: User\n  clientSubscriptionId: String\n}\n\ninput UserChangesPromiseInput {\n  id: String!\n  clientSubscriptionId: String\n}\n\ntype UserChangesPromisePayload {\n  user: User\n  clientSubscriptionId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 10,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-05-20T21:22:26Z",
+    "updated_at": "2019-07-15T11:37:37Z",
+    "pushed_at": "2019-07-18T22:47:55Z",
+    "issues": 12,
+    "watchers": 3,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 45,
+    "pull_requests_open": 14,
+    "pull_requests_closed": 3,
+    "pull_requests_merged": 28,
+    "releases": 0,
+    "stargazers": 169
+  }
+}

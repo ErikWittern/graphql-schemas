@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-example",
+  "repo_full_name": "wecraftapps/graphql-example",
+  "repo_owner": "wecraftapps",
+  "repo_description": "Implementation of a graphQL server using Koa and Knex",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schemas.graphql",
+      "path": "src/server/db/graphql/schemas.graphql",
+      "sha": "a7ace113de7589a6ed86b061d1942b326f169d6f",
+      "url": "https://api.github.com/repositories/123564100/contents/src/server/db/graphql/schemas.graphql?ref=f9d1f786290024f372a452f403acbc45e13e3c41",
+      "git_url": "https://api.github.com/repositories/123564100/git/blobs/a7ace113de7589a6ed86b061d1942b326f169d6f",
+      "html_url": "https://github.com/wecraftapps/graphql-example/blob/f9d1f786290024f372a452f403acbc45e13e3c41/src/server/db/graphql/schemas.graphql",
+      "content": "\"\"\"\nDéfinition des types de données\n\"\"\"\n\ntype Author {\n  author_id: ID\n  first_name: String\n  last_name: String\n}\n\ntype Comment {\n  comment_id: ID\n  content: String\n  author: Author\n}\n\ntype Movie {\n  movie_id: ID\n  name: String\n  genre: String\n  rating: Int\n  explicit: Boolean\n  comments: [Comment]\n}\n\n\"\"\"\nDéfinition des prototypes des GET\n\"\"\"\n\ntype Query {\n  authors(author_id: ID, first_name: String, last_name: String): [Author]\n  comments(comment_id: ID, author: ID): [Comment]\n  movies(movie_id: ID, name: String, genre: String, rating: Int, explicit: Boolean): [Movie]\n}\n\n\"\"\"\nDéfinition des prototypes des POST, UPDATE, DELETE\n\"\"\"\n\ntype Mutation {\n  addMovie(movie_id: ID, name: String, genre: String, rating: Int, explicit: Boolean, comments: [ID]): Movie\n  updateMovie(movie_id: ID!, name: String, genre: String, rating: Int, explicit: Boolean, comments: [ID]): Movie\n  deleteMovie(movie_id: ID!): Movie\n\n  addComment(comment_id: ID, content: String, author: ID!): Comment\n  updateComment(comment_id: ID!, content: String, author: ID!): Comment\n  deleteComment(comment_id: ID!): Comment\n\n  addAuthor(author_id: ID, first_name: String, last_name: String): Author\n  updateAuthor(author_id: ID!, first_name: String, last_name: String): Author\n  deleteAuthor(author_id: ID!): Author\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-02T10:11:48Z",
+    "updated_at": "2019-06-17T16:04:25Z",
+    "pushed_at": "2018-03-23T10:10:40Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

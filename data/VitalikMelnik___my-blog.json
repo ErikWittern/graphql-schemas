@@ -1,0 +1,39 @@
+{
+  "repo_name": "my-blog",
+  "repo_full_name": "vitalikmelnik/my-blog",
+  "repo_owner": "VitalikMelnik",
+  "repo_description": "raccoon && unicorn",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/schema.gql",
+      "sha": "5f7a9d875f4c95c377728a08778c0cbd05654553",
+      "url": "https://api.github.com/repositories/162818462/contents/src/schema.gql?ref=eb6038b4c0b7601c1352a43b90207a83c247cce6",
+      "git_url": "https://api.github.com/repositories/162818462/git/blobs/5f7a9d875f4c95c377728a08778c0cbd05654553",
+      "html_url": "https://github.com/VitalikMelnik/my-blog/blob/eb6038b4c0b7601c1352a43b90207a83c247cce6/src/schema.gql",
+      "content": "type Query {\n  hi: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-22T14:37:28Z",
+    "updated_at": "2018-12-22T17:08:53Z",
+    "pushed_at": "2018-12-22T17:08:52Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

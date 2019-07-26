@@ -1,0 +1,42 @@
+{
+  "repo_name": "ember-cli-mirage-graphql",
+  "repo_full_name": "kloeckner-i/ember-cli-mirage-graphql",
+  "repo_owner": "kloeckner-i",
+  "repo_description": "A library for mocking GraphQL with Ember CLI Mirage",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "tests/dummy/app/gql/schema.graphql",
+      "sha": "1a6d23f29d9722eb607f6003a3f17e01bdc590ea",
+      "url": "https://api.github.com/repositories/132108676/contents/tests/dummy/app/gql/schema.graphql?ref=1f55f8362e5f19b4df7494fb9b1ba144523626eb",
+      "git_url": "https://api.github.com/repositories/132108676/git/blobs/1a6d23f29d9722eb607f6003a3f17e01bdc590ea",
+      "html_url": "https://github.com/kloeckner-i/ember-cli-mirage-graphql/blob/1f55f8362e5f19b4df7494fb9b1ba144523626eb/tests/dummy/app/gql/schema.graphql",
+      "content": "type Address {\n  id: ID!\n  line1: String!\n  line2: String\n  city: String!\n  state: String!\n  zip: String!\n}\n\ntype Customer implements Node {\n  id: ID!\n  name: String!\n  orders(after: String, before: String, first: Int, last: Int): OrderConnection\n}\n\ntype LineItem {\n  name: String!\n  quantity: Int!\n}\n\ntype LineItemConnection {\n  edges: [LineItemEdge]\n  pageInfo: PageInfo!\n}\n\ntype LineItemEdge {\n  cursor: String!\n  node: LineItem\n}\n\ntype Mutation {\n  updatePerson(id: ID!, personAttributes: PersonAttributes!): Person\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype Order implements Node {\n  id: ID!\n  lineItems(after: String, before: String, first: Int, last: Int): LineItemConnection\n  number: Int!\n  total: Float\n}\n\ntype OrderCategory {\n  id: ID!\n  name: String!\n}\n\ntype OrderEdge {\n  cursor: String!\n  node: Order\n}\n\ntype OrderConnection {\n  categories: [OrderCategory]\n  edges: [OrderEdge]\n  pageInfo: PageInfo!\n}\n\ntype PageInfo {\n  endCursor: String\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n}\n\ntype Pet {\n  id: ID!\n  age: Int!\n  name: String!\n  type: String!\n  weight: Float!\n}\n\ntype Person {\n  id: ID!\n  address: Address!\n  age: Int!\n  firstName: String!\n  lastName: String!\n  pets: [Pet]\n}\n\ninput PersonAttributes {\n  firstName: String\n  lastName: String\n  age: Int\n}\n\ntype Query {\n  node(id: ID!): Node\n\n  numPeople: Int\n\n  person(id: ID!): Person\n\n  people(firstName: String, lastName: String, pageSize: Int): [Person]\n\n  peopleSameAgeAsDogYears: [Person]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 14,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-04T08:02:01Z",
+    "updated_at": "2019-07-10T08:21:55Z",
+    "pushed_at": "2019-07-10T08:22:03Z",
+    "issues": 14,
+    "watchers": 9,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 8,
+    "releases": 5,
+    "stargazers": 15
+  }
+}

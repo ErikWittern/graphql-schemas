@@ -1,0 +1,42 @@
+{
+  "repo_name": "zoas-store-api-graphql",
+  "repo_full_name": "jeovazero/zoas-store-api-graphql",
+  "repo_owner": "jeovazero",
+  "repo_description": "A GraphQL API for a fictitious ecommerce (Zoas Store)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "flaskr/graphqlr/schema.graphql",
+      "sha": "4c863b581ae104cc48e1f79c5ded9cd243826766",
+      "url": "https://api.github.com/repositories/182352869/contents/flaskr/graphqlr/schema.graphql?ref=3a359026f5b66124360488e7af88005a50f62aa2",
+      "git_url": "https://api.github.com/repositories/182352869/git/blobs/4c863b581ae104cc48e1f79c5ded9cd243826766",
+      "html_url": "https://github.com/jeovazero/zoas-store-api-graphql/blob/3a359026f5b66124360488e7af88005a50f62aa2/flaskr/graphqlr/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutations\n}\n\ntype Address {\n  city: String\n  country: String\n  zipcode: String\n  street: String\n  number: String\n  district: String\n}\n\ninput AddressInput {\n  city: String!\n  country: String!\n  zipcode: String!\n  street: String!\n  number: String!\n  district: String!\n}\n\ninput CreateCartInput {\n  clientMutationId: String\n}\n\ntype CreateCartPayload {\n  confirmation: String\n  clientMutationId: String\n}\n\ninput CreditCardInput {\n  cardNumber: String!\n  expirationDate: String!\n  cvv: String!\n}\n\ninput DeleteCartInput {\n  clientMutationId: String\n}\n\ntype DeleteCartPayload {\n  confirmation: String\n  clientMutationId: String\n}\n\ntype Mutations {\n  createCart(input: CreateCartInput!): CreateCartPayload\n  deleteCart(input: DeleteCartInput!): DeleteCartPayload\n  putProductToCart(input: PutProductToCartInput!): PutProductToCartPayload\n  removeProductOfCart(input: RemoveProductOfCartInput!): RemoveProductOfCartPayload\n  payCart(input: PayCartInput!): PayCartPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ninput PayCartInput {\n  fullName: String!\n  address: AddressInput!\n  creditCard: CreditCardInput!\n  clientMutationId: String\n}\n\ntype PayCartPayload {\n  payload: PurchaseResult\n  clientMutationId: String\n}\n\ntype Photo {\n  url: String!\n}\n\ntype PhotoProductCart {\n  url: String\n}\n\ntype Product implements Node {\n  id: ID!\n  title: String!\n  price: Float!\n  description: String!\n  avaliable: Int!\n  avaliability: Boolean!\n  photos: [Photo]\n}\n\ntype ProductCart implements Node {\n  id: ID!\n  productId: Int\n  title: String\n  description: String\n  price: Float\n  quantity: Int\n  photos: [PhotoProductCart]\n}\n\ntype ProductConnection {\n  pageInfo: PageInfo!\n  edges: [ProductEdge]!\n}\n\ntype ProductEdge {\n  node: Product\n  cursor: String!\n}\n\ntype PurchaseResult {\n  customer: String\n  address: Address\n  totalPaid: Float\n  productsPaid: [ProductCart]\n}\n\ninput PutProductToCartInput {\n  id: ID!\n  quantity: Int!\n  clientMutationId: String\n}\n\ntype PutProductToCartPayload {\n  payload: [ProductCart]\n  clientMutationId: String\n}\n\ntype Query {\n  cart: [ProductCart]\n  product(id: ID!): Product\n  products(before: String, after: String, first: Int, last: Int): ProductConnection\n  node(id: ID!): Node\n}\n\ninput RemoveProductOfCartInput {\n  id: ID!\n  clientMutationId: String\n}\n\ntype RemoveProductOfCartPayload {\n  payload: [ProductCart]\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 25
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-20T03:01:22Z",
+    "updated_at": "2019-06-25T21:38:17Z",
+    "pushed_at": "2019-06-17T23:32:56Z",
+    "issues": 11,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 9,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

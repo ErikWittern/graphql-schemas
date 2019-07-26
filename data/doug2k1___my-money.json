@@ -1,0 +1,41 @@
+{
+  "repo_name": "my-money",
+  "repo_full_name": "doug2k1/my-money",
+  "repo_owner": "doug2k1",
+  "repo_description": "Investments dashboard app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schema.graphql",
+      "sha": "b237debaa376029050991b104745712203184784",
+      "url": "https://api.github.com/repositories/123811277/contents/src/graphql/schema.graphql?ref=7f94e5bbc07f30636f4bfcd3e9e337154698741a",
+      "git_url": "https://api.github.com/repositories/123811277/git/blobs/b237debaa376029050991b104745712203184784",
+      "html_url": "https://github.com/doug2k1/my-money/blob/7f94e5bbc07f30636f4bfcd3e9e337154698741a/src/graphql/schema.graphql",
+      "content": "scalar Date\n\ntype Query {\n  brokers(limit: Int): [Broker]\n  broker(id: ID!): Broker\n  investments(limit: Int): [Investment]\n  investment(id: ID!): Investment\n}\n\ntype Broker {\n  id: ID!\n  name: String!\n  investments: [Investment]\n}\n\ntype Investment {\n  id: ID!\n  name: String!\n  broker: Broker\n  balanceUpdates(limit: Int, order: [[String]]): [BalanceUpdate]\n  transactions: [Transaction]\n}\n\ntype BalanceUpdate {\n  id: ID!\n  amount: Float!\n  date: Date!\n}\n\ntype Transaction {\n  id: ID!\n  amount: Float!\n  date: Date!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-04T17:21:11Z",
+    "updated_at": "2019-05-03T23:56:40Z",
+    "pushed_at": "2019-05-01T23:16:46Z",
+    "issues": 1,
+    "watchers": 3,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 17
+  }
+}

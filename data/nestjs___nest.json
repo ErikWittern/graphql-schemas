@@ -1,0 +1,91 @@
+{
+  "repo_name": "nest",
+  "repo_full_name": "nestjs/nest",
+  "repo_owner": "nestjs",
+  "repo_description": "A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications on top of TypeScript & JavaScript (ES6, ES7, ES8) 🚀",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "cats.types.graphql",
+      "path": "integration/graphql/src/cats/cats.types.graphql",
+      "sha": "f9f9dafc37d96bd6fe09591b0dec234ecda12fa6",
+      "url": "https://api.github.com/repositories/80945428/contents/integration/graphql/src/cats/cats.types.graphql?ref=5e6694cb8ba71cc62221a1eaebaeed10e1e938ac",
+      "git_url": "https://api.github.com/repositories/80945428/git/blobs/f9f9dafc37d96bd6fe09591b0dec234ecda12fa6",
+      "html_url": "https://github.com/nestjs/nest/blob/5e6694cb8ba71cc62221a1eaebaeed10e1e938ac/integration/graphql/src/cats/cats.types.graphql",
+      "content": "type Query {\n  getCats: [Cat]\n  cat(id: ID!): Cat\n}\n\ntype Mutation {\n  createCat(name: String): Cat\n}\n\ntype Subscription {\n  catCreated: Cat\n}\n\ntype Cat {\n  id: Int\n  name: String\n  age: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    },
+    {
+      "name": "cats.graphql",
+      "path": "sample/12-graphql-apollo/src/cats/cats.graphql",
+      "sha": "8b01551e5749201944280984acdbffa4f119f8f5",
+      "url": "https://api.github.com/repositories/80945428/contents/sample/12-graphql-apollo/src/cats/cats.graphql?ref=137e8fd408b918db09fb97b9ba4b10e1986cc0a7",
+      "git_url": "https://api.github.com/repositories/80945428/git/blobs/8b01551e5749201944280984acdbffa4f119f8f5",
+      "html_url": "https://github.com/nestjs/nest/blob/137e8fd408b918db09fb97b9ba4b10e1986cc0a7/sample/12-graphql-apollo/src/cats/cats.graphql",
+      "content": "type Query {\n  getCats: [Cat]\n  cat(id: ID!): Cat\n}\n\ntype Mutation {\n  createCat(createCatInput: CreateCatInput): Cat\n}\n\ntype Subscription {\n  catCreated: Cat\n}\n\ntype Cat {\n  id: Int\n  name: String\n  age: Int\n}\n\ninput CreateCatInput {\n  name: String\n  age: Int\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "prisma-types.graphql",
+      "path": "sample/22-graphql-prisma/src/prisma/prisma-types.graphql",
+      "sha": "612303b7051d68ffa1877d34f2119cec94604596",
+      "url": "https://api.github.com/repositories/80945428/contents/sample/22-graphql-prisma/src/prisma/prisma-types.graphql?ref=b1f7096432ef95e4827befbc12d5a1e716b06a1c",
+      "git_url": "https://api.github.com/repositories/80945428/git/blobs/612303b7051d68ffa1877d34f2119cec94604596",
+      "html_url": "https://github.com/nestjs/nest/blob/b1f7096432ef95e4827befbc12d5a1e716b06a1c/sample/22-graphql-prisma/src/prisma/prisma-types.graphql",
+      "content": "# source: https://eu1.prisma.sh/public-agatepuma-476/my-app/dev\n# timestamp: Mon Sep 10 2018 16:22:13 GMT+0200 (Mitteleuropäische Sommerzeit)\n\ntype AggregatePost {\n  count: Int!\n}\n\ntype BatchPayload {\n  \"\"\"The number of nodes that have been affected by the Batch operation.\"\"\"\n  count: Long!\n}\n\n\"\"\"\nThe `Long` scalar type represents non-fractional signed whole numeric values.\nLong can represent values between -(2^63) and 2^63 - 1.\n\"\"\"\nscalar Long\n\ntype Mutation {\n  createPost(data: PostCreateInput!): Post!\n  updatePost(data: PostUpdateInput!, where: PostWhereUniqueInput!): Post\n  deletePost(where: PostWhereUniqueInput!): Post\n  upsertPost(where: PostWhereUniqueInput!, create: PostCreateInput!, update: PostUpdateInput!): Post!\n  updateManyPosts(data: PostUpdateInput!, where: PostWhereInput): BatchPayload!\n  deleteManyPosts(where: PostWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\n\"\"\"An object with an ID\"\"\"\ninterface Node {\n  \"\"\"The id of the object.\"\"\"\n  id: ID!\n}\n\n\"\"\"Information about pagination in a connection.\"\"\"\ntype PageInfo {\n  \"\"\"When paginating forwards, are there more items?\"\"\"\n  hasNextPage: Boolean!\n\n  \"\"\"When paginating backwards, are there more items?\"\"\"\n  hasPreviousPage: Boolean!\n\n  \"\"\"When paginating backwards, the cursor to continue.\"\"\"\n  startCursor: String\n\n  \"\"\"When paginating forwards, the cursor to continue.\"\"\"\n  endCursor: String\n}\n\ntype Post implements Node {\n  id: ID!\n  isPublished: Boolean!\n  title: String!\n  text: String!\n}\n\n\"\"\"A connection to a list of items.\"\"\"\ntype PostConnection {\n  \"\"\"Information to aid in pagination.\"\"\"\n  pageInfo: PageInfo!\n\n  \"\"\"A list of edges.\"\"\"\n  edges: [PostEdge]!\n  aggregate: AggregatePost!\n}\n\ninput PostCreateInput {\n  isPublished: Boolean\n  title: String!\n  text: String!\n}\n\n\"\"\"An edge in a connection.\"\"\"\ntype PostEdge {\n  \"\"\"The item at the end of the edge.\"\"\"\n  node: Post!\n\n  \"\"\"A cursor for use in pagination.\"\"\"\n  cursor: String!\n}\n\nenum PostOrderByInput {\n  id_ASC\n  id_DESC\n  isPublished_ASC\n  isPublished_DESC\n  title_ASC\n  title_DESC\n  text_ASC\n  text_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n  createdAt_ASC\n  createdAt_DESC\n}\n\ntype PostPreviousValues {\n  id: ID!\n  isPublished: Boolean!\n  title: String!\n  text: String!\n}\n\ntype PostSubscriptionPayload {\n  mutation: MutationType!\n  node: Post\n  updatedFields: [String!]\n  previousValues: PostPreviousValues\n}\n\ninput PostSubscriptionWhereInput {\n  \"\"\"Logical AND on all given filters.\"\"\"\n  AND: [PostSubscriptionWhereInput!]\n\n  \"\"\"Logical OR on all given filters.\"\"\"\n  OR: [PostSubscriptionWhereInput!]\n\n  \"\"\"Logical NOT on all given filters combined by AND.\"\"\"\n  NOT: [PostSubscriptionWhereInput!]\n\n  \"\"\"\n  The subscription event gets dispatched when it's listed in mutation_in\n  \"\"\"\n  mutation_in: [MutationType!]\n\n  \"\"\"\n  The subscription event gets only dispatched when one of the updated fields names is included in this list\n  \"\"\"\n  updatedFields_contains: String\n\n  \"\"\"\n  The subscription event gets only dispatched when all of the field names included in this list have been updated\n  \"\"\"\n  updatedFields_contains_every: [String!]\n\n  \"\"\"\n  The subscription event gets only dispatched when some of the field names included in this list have been updated\n  \"\"\"\n  updatedFields_contains_some: [String!]\n  node: PostWhereInput\n}\n\ninput PostUpdateInput {\n  isPublished: Boolean\n  title: String\n  text: String\n}\n\ninput PostWhereInput {\n  \"\"\"Logical AND on all given filters.\"\"\"\n  AND: [PostWhereInput!]\n\n  \"\"\"Logical OR on all given filters.\"\"\"\n  OR: [PostWhereInput!]\n\n  \"\"\"Logical NOT on all given filters combined by AND.\"\"\"\n  NOT: [PostWhereInput!]\n  id: ID\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  id_not: ID\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  id_in: [ID!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  id_not_in: [ID!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  id_lt: ID\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  id_lte: ID\n\n  \"\"\"All values greater than the given value.\"\"\"\n  id_gt: ID\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  id_gte: ID\n\n  \"\"\"All values containing the given string.\"\"\"\n  id_contains: ID\n\n  \"\"\"All values not containing the given string.\"\"\"\n  id_not_contains: ID\n\n  \"\"\"All values starting with the given string.\"\"\"\n  id_starts_with: ID\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  id_not_starts_with: ID\n\n  \"\"\"All values ending with the given string.\"\"\"\n  id_ends_with: ID\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  id_not_ends_with: ID\n  isPublished: Boolean\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  isPublished_not: Boolean\n  title: String\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  title_not: String\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  title_in: [String!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  title_not_in: [String!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  title_lt: String\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  title_lte: String\n\n  \"\"\"All values greater than the given value.\"\"\"\n  title_gt: String\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  title_gte: String\n\n  \"\"\"All values containing the given string.\"\"\"\n  title_contains: String\n\n  \"\"\"All values not containing the given string.\"\"\"\n  title_not_contains: String\n\n  \"\"\"All values starting with the given string.\"\"\"\n  title_starts_with: String\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  title_not_starts_with: String\n\n  \"\"\"All values ending with the given string.\"\"\"\n  title_ends_with: String\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  title_not_ends_with: String\n  text: String\n\n  \"\"\"All values that are not equal to given value.\"\"\"\n  text_not: String\n\n  \"\"\"All values that are contained in given list.\"\"\"\n  text_in: [String!]\n\n  \"\"\"All values that are not contained in given list.\"\"\"\n  text_not_in: [String!]\n\n  \"\"\"All values less than the given value.\"\"\"\n  text_lt: String\n\n  \"\"\"All values less than or equal the given value.\"\"\"\n  text_lte: String\n\n  \"\"\"All values greater than the given value.\"\"\"\n  text_gt: String\n\n  \"\"\"All values greater than or equal the given value.\"\"\"\n  text_gte: String\n\n  \"\"\"All values containing the given string.\"\"\"\n  text_contains: String\n\n  \"\"\"All values not containing the given string.\"\"\"\n  text_not_contains: String\n\n  \"\"\"All values starting with the given string.\"\"\"\n  text_starts_with: String\n\n  \"\"\"All values not starting with the given string.\"\"\"\n  text_not_starts_with: String\n\n  \"\"\"All values ending with the given string.\"\"\"\n  text_ends_with: String\n\n  \"\"\"All values not ending with the given string.\"\"\"\n  text_not_ends_with: String\n}\n\ninput PostWhereUniqueInput {\n  id: ID\n}\n\ntype Query {\n  posts(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Post]!\n  post(where: PostWhereUniqueInput!): Post\n  postsConnection(where: PostWhereInput, orderBy: PostOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): PostConnection!\n\n  \"\"\"Fetches an object given its ID\"\"\"\n  node(\n    \"\"\"The ID of an object\"\"\"\n    id: ID!\n  ): Node\n}\n\ntype Subscription {\n  post(where: PostSubscriptionWhereInput): PostSubscriptionPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 20
+    },
+    {
+      "name": "schema.gql",
+      "path": "sample/23-type-graphql/schema.gql",
+      "sha": "7a261742c47853bd15f37e4d9746b0c311730b60",
+      "url": "https://api.github.com/repositories/80945428/contents/sample/23-type-graphql/schema.gql?ref=dd1be8d44864c76b8706ad931bb87476f1348ae2",
+      "git_url": "https://api.github.com/repositories/80945428/git/blobs/7a261742c47853bd15f37e4d9746b0c311730b60",
+      "html_url": "https://github.com/nestjs/nest/blob/dd1be8d44864c76b8706ad931bb87476f1348ae2/sample/23-type-graphql/schema.gql",
+      "content": "# -----------------------------------------------\n# !!! THIS FILE WAS GENERATED BY TYPE-GRAPHQL !!!\n# !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!\n# -----------------------------------------------\n\n# Date custom scalar type\nscalar Date\n\ntype Mutation {\n  addRecipe(newRecipeData: NewRecipeInput!): Recipe!\n  removeRecipe(id: String!): Boolean!\n}\n\ninput NewRecipeInput {\n  title: String!\n  description: String\n  ingredients: [String!]!\n}\n\ntype Query {\n  recipe(id: String!): Recipe!\n  recipes(skip: Int = 0, take: Int = 25): [Recipe!]!\n}\n\ntype Recipe {\n  id: ID!\n  title: String!\n  description: String\n  creationDate: Date!\n  ingredients: [String!]!\n}\n\ntype Subscription {\n  recipeAdded: Recipe!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    },
+    {
+      "name": "schema.gql",
+      "path": "integration/typegraphql/schema.gql",
+      "sha": "5257a02a5a1bacc5ba85a32eb7f88b0485792784",
+      "url": "https://api.github.com/repositories/80945428/contents/integration/typegraphql/schema.gql?ref=dd1be8d44864c76b8706ad931bb87476f1348ae2",
+      "git_url": "https://api.github.com/repositories/80945428/git/blobs/5257a02a5a1bacc5ba85a32eb7f88b0485792784",
+      "html_url": "https://github.com/nestjs/nest/blob/dd1be8d44864c76b8706ad931bb87476f1348ae2/integration/typegraphql/schema.gql",
+      "content": "# -----------------------------------------------\n# !!! THIS FILE WAS GENERATED BY TYPE-GRAPHQL !!!\n# !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!\n# -----------------------------------------------\n\n\"\"\"Date custom scalar type\"\"\"\nscalar Date\n\ntype Mutation {\n  addRecipe(newRecipeData: NewRecipeInput!): Recipe!\n  removeRecipe(id: String!): Boolean!\n}\n\ninput NewRecipeInput {\n  title: String!\n  description: String\n  ingredients: [String!]!\n}\n\ntype Query {\n  recipe(id: String!): Recipe!\n  recipes(skip: Int = 0, take: Int = 25): [Recipe!]!\n}\n\ntype Recipe {\n  id: ID!\n  title: String!\n  description: String\n  creationDate: Date!\n  ingredients: [String!]!\n}\n\ntype Subscription {\n  recipeAdded: Recipe!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-04T20:12:52Z",
+    "updated_at": "2019-07-19T22:00:26Z",
+    "pushed_at": "2019-07-19T18:05:26Z",
+    "issues": 1720,
+    "watchers": 508,
+    "fork_count": 1254,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 825,
+    "pull_requests_open": 18,
+    "pull_requests_closed": 157,
+    "pull_requests_merged": 650,
+    "releases": 40,
+    "stargazers": 17841
+  }
+}

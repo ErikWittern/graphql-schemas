@@ -1,0 +1,42 @@
+{
+  "repo_name": "go-graphqlparser",
+  "repo_full_name": "bucketd/go-graphqlparser",
+  "repo_owner": "bucketd",
+  "repo_description": "A native Go GraphQL parser.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "lab/codegen/schema.graphql",
+      "sha": "953219927b4a0c849f9c4ec2cd7655a96d9d57a2",
+      "url": "https://api.github.com/repositories/125714615/contents/lab/codegen/schema.graphql?ref=07b90223df939aff886b9fed185c6cb3815f63cb",
+      "git_url": "https://api.github.com/repositories/125714615/git/blobs/953219927b4a0c849f9c4ec2cd7655a96d9d57a2",
+      "html_url": "https://github.com/bucketd/go-graphqlparser/blob/07b90223df939aff886b9fed185c6cb3815f63cb/lab/codegen/schema.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n}\n\nenum Gender {\n    MALE\n    FEMALE\n}\n\nunion SearchResult = Human | Droid\n\ntype Query {\n    character(id: ID!): Character\n    search(input: String!): [SearchResult!]!\n}\n\ntype Mutation {\n    createDroid(droid: DroidInput!): Droid\n}\n\ninterface Character {\n    id: ID!\n    name: String!\n    jobTitle: String\n    bestFriend(gender: Gender!): Character\n}\n\ninput DroidInput {\n    name: String!\n    jobTitle: String\n    maleBestFriendID: ID\n    femaleBestFriendID: ID\n    primaryFunction: String!\n}\n\ntype Droid implements Character {\n    id: ID!\n    name: String!\n    jobTitle: String\n    bestFriend(gender: Gender!): Character\n    primaryFunction: String!\n}\n\ntype Human implements Character {\n    id: ID!\n    name: String!\n    jobTitle: String\n    bestFriend(gender: Gender!): Character\n    credits: Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-18T10:41:31Z",
+    "updated_at": "2019-07-11T06:51:09Z",
+    "pushed_at": "2019-06-24T21:00:26Z",
+    "issues": 0,
+    "watchers": 5,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 18
+  }
+}

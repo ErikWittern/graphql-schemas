@@ -1,0 +1,39 @@
+{
+  "repo_name": "web-site",
+  "repo_full_name": "manapaho/web-site",
+  "repo_owner": "manapaho",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "b6bee338d722219f368e38016108200be0e747db",
+      "url": "https://api.github.com/repositories/44703640/contents/data/schema.graphql?ref=75c50fb112c50a8d901c1706f60beb8144db1da1",
+      "git_url": "https://api.github.com/repositories/44703640/git/blobs/b6bee338d722219f368e38016108200be0e747db",
+      "html_url": "https://github.com/manapaho/web-site/blob/75c50fb112c50a8d901c1706f60beb8144db1da1/data/schema.graphql",
+      "content": "interface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  node(id: ID!): Node\n  viewer: User\n}\n\ntype User implements Node {\n  id: ID!\n  widgets(before: String, after: String, first: Int, last: Int): WidgetConnection\n}\n\ntype Widget implements Node {\n  id: ID!\n  name: String\n}\n\ntype WidgetConnection {\n  pageInfo: PageInfo!\n  edges: [WidgetEdge]\n}\n\ntype WidgetEdge {\n  node: Widget\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2015-10-21T20:54:36Z",
+    "updated_at": "2015-10-21T21:08:28Z",
+    "pushed_at": "2015-10-21T21:08:27Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

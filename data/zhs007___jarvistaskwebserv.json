@@ -1,0 +1,66 @@
+{
+  "repo_name": "jarvistaskwebserv",
+  "repo_full_name": "zhs007/jarvistaskwebserv",
+  "repo_owner": "zhs007",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/query/schema.graphql",
+      "sha": "98b7f2befe40af742da3ed690613a29c6eebd6d2",
+      "url": "https://api.github.com/repositories/135805064/contents/app/graphql/query/schema.graphql?ref=e3e463107960506868fbf5ef0efa29281761e44f",
+      "git_url": "https://api.github.com/repositories/135805064/git/blobs/98b7f2befe40af742da3ed690613a29c6eebd6d2",
+      "html_url": "https://github.com/zhs007/jarvistaskwebserv/blob/e3e463107960506868fbf5ef0efa29281761e44f/app/graphql/query/schema.graphql",
+      "content": "type Query {\n    nodes: [NodeInfo]\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/zhs007/jarvistaskwebserv/blob/e3e463107960506868fbf5ef0efa29281761e44f/app/graphql/query/schema.graphql:\ntype Query {\n    nodes: [NodeInfo]\n}\n# https://github.com/zhs007/jarvistaskwebserv/blob/e3e463107960506868fbf5ef0efa29281761e44f/app/graphql/netcore/schema.graphql:\ntype NodeInfo {\n    nameid: String!\n    nodeAddr: String!\n    clientNums: Int!\n    connectNums: Int!\n}",
+        "mergedPaths": [
+          "app/graphql/netcore/schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "NodeInfo"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 2,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "app/graphql/netcore/schema.graphql",
+      "sha": "efe008361ad90695669467b11d6212cfa2004ff3",
+      "url": "https://api.github.com/repositories/135805064/contents/app/graphql/netcore/schema.graphql?ref=e3e463107960506868fbf5ef0efa29281761e44f",
+      "git_url": "https://api.github.com/repositories/135805064/git/blobs/efe008361ad90695669467b11d6212cfa2004ff3",
+      "html_url": "https://github.com/zhs007/jarvistaskwebserv/blob/e3e463107960506868fbf5ef0efa29281761e44f/app/graphql/netcore/schema.graphql",
+      "content": "type NodeInfo {\n    nameid: String!\n    nodeAddr: String!\n    clientNums: Int!\n    connectNums: Int!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-02T09:33:24Z",
+    "updated_at": "2018-06-04T08:50:34Z",
+    "pushed_at": "2018-06-04T08:50:33Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

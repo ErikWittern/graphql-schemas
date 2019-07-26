@@ -1,0 +1,39 @@
+{
+  "repo_name": "reactql",
+  "repo_full_name": "claytongroth/reactql",
+  "repo_owner": "claytongroth",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema/schema.graphql",
+      "sha": "e7ac56272358e6d7f8e993204805f7b893b3f144",
+      "url": "https://api.github.com/repositories/187237456/contents/schema/schema.graphql?ref=0321c6729aeb360312ee620c72cb7332bf569fe3",
+      "git_url": "https://api.github.com/repositories/187237456/git/blobs/e7ac56272358e6d7f8e993204805f7b893b3f144",
+      "html_url": "https://github.com/claytongroth/reactql/blob/0321c6729aeb360312ee620c72cb7332bf569fe3/schema/schema.graphql",
+      "content": "type Story {\n  id: String\n  title: String\n  url: String\n}\n\ntype HackerNews {\n  topStories: [Story]\n}\n\ntype Query {\n  hn: HackerNews\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-17T15:09:30Z",
+    "updated_at": "2019-05-17T15:10:55Z",
+    "pushed_at": "2019-05-17T15:10:36Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

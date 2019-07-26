@@ -1,0 +1,106 @@
+{
+  "repo_name": "CareerTalk-Web",
+  "repo_full_name": "creativesolutionlabs/careertalk-web",
+  "repo_owner": "CreativeSolutionLabs",
+  "repo_description": "Web version of CareerTalk",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "getFair.graphql",
+      "path": "graphql/src/api/getFair/getFair.graphql",
+      "sha": "a99e97aaeea78552872a363629641c185412c52c",
+      "url": "https://api.github.com/repositories/174747561/contents/graphql/src/api/getFair/getFair.graphql?ref=2664c64cf21bbf6bcd0cf652c5c974283a2e8339",
+      "git_url": "https://api.github.com/repositories/174747561/git/blobs/a99e97aaeea78552872a363629641c185412c52c",
+      "html_url": "https://github.com/CreativeSolutionLabs/CareerTalk-Web/blob/2664c64cf21bbf6bcd0cf652c5c974283a2e8339/graphql/src/api/getFair/getFair.graphql",
+      "content": "type Query {\n  getFair: [Fair!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/CreativeSolutionLabs/CareerTalk-Web/blob/2664c64cf21bbf6bcd0cf652c5c974283a2e8339/graphql/src/api/getFair/getFair.graphql:\ntype Query {\n  getFair: [Fair!]!\n}\n\n# https://github.com/CreativeSolutionLabs/CareerTalk-Web/blob/8458f4984f9697616b1de5e002ea4802ce067bfd/graphql/src/api/models.graphql:\ntype Fair {\n  address: String!\n  city: String!\n  date: String!\n  description: String!\n  end_time: String!\n  id: String!\n  location: String!\n  map_url: String!\n  name: String!\n  num_of_employers: Int!\n  organization_id: Int!\n  start_time: String!\n  zipcode: String!\n}\n\ntype Employer {\n  company_url: String!\n  description: String\n  found_year: String\n  hq_city: String\n  id: String!\n  logo_url: String\n  name: String!\n}\n",
+        "mergedPaths": [
+          "graphql/src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Fair"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "models.graphql",
+      "path": "graphql/src/api/models.graphql",
+      "sha": "810cda9f40ab54c944085337c62732dbb21c6486",
+      "url": "https://api.github.com/repositories/174747561/contents/graphql/src/api/models.graphql?ref=8458f4984f9697616b1de5e002ea4802ce067bfd",
+      "git_url": "https://api.github.com/repositories/174747561/git/blobs/810cda9f40ab54c944085337c62732dbb21c6486",
+      "html_url": "https://github.com/CreativeSolutionLabs/CareerTalk-Web/blob/8458f4984f9697616b1de5e002ea4802ce067bfd/graphql/src/api/models.graphql",
+      "content": "type Fair {\n  address: String!\n  city: String!\n  date: String!\n  description: String!\n  end_time: String!\n  id: String!\n  location: String!\n  map_url: String!\n  name: String!\n  num_of_employers: Int!\n  organization_id: Int!\n  start_time: String!\n  zipcode: String!\n}\n\ntype Employer {\n  company_url: String!\n  description: String\n  found_year: String\n  hq_city: String\n  id: String!\n  logo_url: String\n  name: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "sayHello.graphql",
+      "path": "graphql/src/api/sayHello/sayHello.graphql",
+      "sha": "851197b891591ed65c87506d02ad7d2e9cf55575",
+      "url": "https://api.github.com/repositories/174747561/contents/graphql/src/api/sayHello/sayHello.graphql?ref=2664c64cf21bbf6bcd0cf652c5c974283a2e8339",
+      "git_url": "https://api.github.com/repositories/174747561/git/blobs/851197b891591ed65c87506d02ad7d2e9cf55575",
+      "html_url": "https://github.com/CreativeSolutionLabs/CareerTalk-Web/blob/2664c64cf21bbf6bcd0cf652c5c974283a2e8339/graphql/src/api/sayHello/sayHello.graphql",
+      "content": "type Query {\n  sayHello: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "getEmployerList.graphql",
+      "path": "graphql/src/api/getEmployerList/getEmployerList.graphql",
+      "sha": "3347143bfac98f13366bb46d1be4d3ec5e85f09c",
+      "url": "https://api.github.com/repositories/174747561/contents/graphql/src/api/getEmployerList/getEmployerList.graphql?ref=17dbee58e57fccb4f0a1f874683163c68960618d",
+      "git_url": "https://api.github.com/repositories/174747561/git/blobs/3347143bfac98f13366bb46d1be4d3ec5e85f09c",
+      "html_url": "https://github.com/CreativeSolutionLabs/CareerTalk-Web/blob/17dbee58e57fccb4f0a1f874683163c68960618d/graphql/src/api/getEmployerList/getEmployerList.graphql",
+      "content": "type EmployerListResponse {\n  careerfair_id: Int!\n  degree_requirements: [String!]!\n  hiring_majors: [String!]!\n  hiring_types: [String!]!\n  tables: [Int]!\n  visa_support: String!\n  isLiked: Boolean\n  isNote: Boolean\n  likeCount: Int\n  employer: Employer!\n}\n\ntype Query {\n  getEmployerList(fairId: String, isUser: Boolean): [EmployerListResponse!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/CreativeSolutionLabs/CareerTalk-Web/blob/17dbee58e57fccb4f0a1f874683163c68960618d/graphql/src/api/getEmployerList/getEmployerList.graphql:\ntype EmployerListResponse {\n  careerfair_id: Int!\n  degree_requirements: [String!]!\n  hiring_majors: [String!]!\n  hiring_types: [String!]!\n  tables: [Int]!\n  visa_support: String!\n  isLiked: Boolean\n  isNote: Boolean\n  likeCount: Int\n  employer: Employer!\n}\n\ntype Query {\n  getEmployerList(fairId: String, isUser: Boolean): [EmployerListResponse!]!\n}\n\n# https://github.com/CreativeSolutionLabs/CareerTalk-Web/blob/8458f4984f9697616b1de5e002ea4802ce067bfd/graphql/src/api/models.graphql:\ntype Fair {\n  address: String!\n  city: String!\n  date: String!\n  description: String!\n  end_time: String!\n  id: String!\n  location: String!\n  map_url: String!\n  name: String!\n  num_of_employers: Int!\n  organization_id: Int!\n  start_time: String!\n  zipcode: String!\n}\n\ntype Employer {\n  company_url: String!\n  description: String\n  found_year: String\n  hq_city: String\n  id: String!\n  logo_url: String\n  name: String!\n}\n",
+        "mergedPaths": [
+          "graphql/src/api/models.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Employer"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-09T21:21:37Z",
+    "updated_at": "2019-07-19T02:36:14Z",
+    "pushed_at": "2019-07-19T02:36:12Z",
+    "issues": 16,
+    "watchers": 0,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 79,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 79,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

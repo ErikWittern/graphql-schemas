@@ -1,0 +1,46 @@
+{
+  "repo_name": "curso-basico-graphql",
+  "repo_full_name": "platzi/curso-basico-graphql",
+  "repo_owner": "platzi",
+  "repo_description": "Curso Básico de GraphQL ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "lib/schema.graphql",
+      "sha": "ad506d0491c563e9aaf68089b53f159a52149f3d",
+      "url": "https://api.github.com/repositories/180175359/contents/lib/schema.graphql?ref=4a08ba65f36ba63e020dc7d7b42d24025fc71bd3",
+      "git_url": "https://api.github.com/repositories/180175359/git/blobs/ad506d0491c563e9aaf68089b53f159a52149f3d",
+      "html_url": "https://github.com/platzi/curso-basico-graphql/blob/4a08ba65f36ba63e020dc7d7b42d24025fc71bd3/lib/schema.graphql",
+      "content": "\"Valida los tipos de nivel\"\nenum Level {\n  principiante\n  intermedio\n  avanzado\n}\n\nunion GlobalSearch = Course | Student | Monitor\n\ntype Course {\n  _id: ID!\n  title: String!\n  teacher: String\n  description: String!\n  topic: String @deprecated\n  people: [Student]\n  level: Level\n}\n\ninterface Person {\n  _id: ID!\n  name: String!\n  email: String!\n}\n\ntype Student implements Person {\n  _id: ID!\n  name: String!\n  email: String!\n  avatar: String\n}\n\ntype Monitor implements Person {\n  _id: ID!\n  name: String!\n  email: String!\n  phone: String\n}\n\ntype Query {\n  \"Devuelve todos cursos\"\n  getCourses: [Course]\n  \"Devuelve un curso\"\n  getCourse(id: ID!): Course\n  \"Devuelve todos estudiantes\"\n  getPeople: [Person]\n  \"Devuelve un estudiante\"\n  getPerson(id: ID!): Person\n  \"Ejecuta una busqueda global\"\n  searchItems(keyword: String!) : [GlobalSearch]\n}\n\ninput CourseInput {\n  title: String!\n  teacher: String\n  description: String!\n  topic: String\n  level: Level\n}\n\ninput CourseEditInput {\n  title: String\n  teacher: String\n  description: String\n  topic: String\n  level: Level\n}\n\ninput PersonInput {\n  name: String!\n  email: String!\n  phone: String\n  avatar: String\n}\n\ninput PersonEditInput {\n  name: String\n  email: String\n  phone: String\n  avatar: String\n}\n\ntype Mutation {\n  \"Crea un curso\"\n  createCourse(input: CourseInput!): Course\n  \"Edita un curso\"\n  editCourse(_id: ID!, input: CourseEditInput): Course\n  \"Crea una persona\"\n  createPerson(input: PersonInput!): Person\n  \"Edita una persona\"\n  editPerson(_id: ID!, input: PersonEditInput): Person\n  \"Agrega una persona a un curso\"\n  addPeople(courseID: ID!, personID: ID!): Course\n  \"Elimina un curso\"\n  deleteCourse(_id: ID!): Boolean\n  \"Elimina un estudiante\"\n  deleteStudent(_id: ID!): Boolean\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-08T15:10:58Z",
+    "updated_at": "2019-05-08T02:36:25Z",
+    "pushed_at": "2019-04-17T15:07:59Z",
+    "issues": 0,
+    "watchers": 9,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

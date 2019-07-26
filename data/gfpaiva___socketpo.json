@@ -1,0 +1,80 @@
+{
+  "repo_name": "socketpo",
+  "repo_full_name": "gfpaiva/socketpo",
+  "repo_owner": "gfpaiva",
+  "repo_description": ":video_game: JokenPo (Rock, Paper, Scissors) game",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "graphql/schema.graphql",
+      "sha": "e157c191f5c8149467fcf09ffc0153e9c3cf17c0",
+      "url": "https://api.github.com/repositories/78148448/contents/graphql/schema.graphql?ref=06b0ee083747ad859c3b7095fead5ad26b414399",
+      "git_url": "https://api.github.com/repositories/78148448/git/blobs/e157c191f5c8149467fcf09ffc0153e9c3cf17c0",
+      "html_url": "https://github.com/gfpaiva/socketpo/blob/06b0ee083747ad859c3b7095fead5ad26b414399/graphql/schema.graphql",
+      "content": "# import * from './resources/game/game.schema.graphql'\n# import * from './resources/subscription/subscription.schema.graphql'\n\ntype Query {\n\tGames: [ Game ]\n\tGameByHash(hash: String!): Game\n\tGameById(id: ID!): Game\n}\n\ntype Mutation {\n\tcreateGame(name: String!, player: PlayerInput): Game\n\tjoinGame(hash: String!, player: PlayerInput!): Game\n\tready(hash: String!, player: PlayerInput!): Game\n\tplay(hash: String!, player: PlayerInput!, play: Int!): Game\n}\n\ntype Subscription {\n\tgameSubscription(hash: String!): GameSub\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/gfpaiva/socketpo/blob/06b0ee083747ad859c3b7095fead5ad26b414399/graphql/schema.graphql:\n# import * from './resources/game/game.schema.graphql'\n# import * from './resources/subscription/subscription.schema.graphql'\n\ntype Query {\n\tGames: [ Game ]\n\tGameByHash(hash: String!): Game\n\tGameById(id: ID!): Game\n}\n\ntype Mutation {\n\tcreateGame(name: String!, player: PlayerInput): Game\n\tjoinGame(hash: String!, player: PlayerInput!): Game\n\tready(hash: String!, player: PlayerInput!): Game\n\tplay(hash: String!, player: PlayerInput!, play: Int!): Game\n}\n\ntype Subscription {\n\tgameSubscription(hash: String!): GameSub\n}\n\n# https://github.com/gfpaiva/socketpo/blob/06b0ee083747ad859c3b7095fead5ad26b414399/graphql/resources/game/game.schema.graphql:\ntype Game {\n\tid: ID\n\tname: String\n\thash: String\n\tstatus: Int\n\tplayers: [ Player ]\n\tresults: Result\n\tcreatedAt: String\n}\n\ntype Player {\n\tid: ID\n\tname: String\n\tavatar: Int\n\tready: Boolean\n\troundsWin: Int\n\tcreator: Boolean\n}\n\ntype Result {\n\tmessage: String\n\tmatchWinner: Player\n\trounds: [ Round ]\n}\n\ntype Round {\n\tplays: [ Play ]\n\tisDraw: Boolean\n\tfinished: Boolean\n\twinner: Player\n}\n\ntype Play {\n\tplayer: Player\n\tplay: Int\n}\n\ninput PlayerInput {\n\tid: ID\n\tname: String\n\tavatar: Int\n}\n\n# https://github.com/gfpaiva/socketpo/blob/06b0ee083747ad859c3b7095fead5ad26b414399/graphql/resources/subscription/subscription.schema.graphql:\ntype GameSub {\n\tgame: Game\n\thash: String\n\tplayer: String\n\tmessage: String\n}\n",
+        "mergedPaths": [
+          "graphql/resources/game/game.schema.graphql",
+          "graphql/resources/subscription/subscription.schema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Game",
+          "GameSub"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 9,
+        "containsCycle": false,
+        "polynomialLevel": 3,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "game.schema.graphql",
+      "path": "graphql/resources/game/game.schema.graphql",
+      "sha": "f9b1e1afaf17198d4480f26ec8e90ac9b6d8df42",
+      "url": "https://api.github.com/repositories/78148448/contents/graphql/resources/game/game.schema.graphql?ref=06b0ee083747ad859c3b7095fead5ad26b414399",
+      "git_url": "https://api.github.com/repositories/78148448/git/blobs/f9b1e1afaf17198d4480f26ec8e90ac9b6d8df42",
+      "html_url": "https://github.com/gfpaiva/socketpo/blob/06b0ee083747ad859c3b7095fead5ad26b414399/graphql/resources/game/game.schema.graphql",
+      "content": "type Game {\n\tid: ID\n\tname: String\n\thash: String\n\tstatus: Int\n\tplayers: [ Player ]\n\tresults: Result\n\tcreatedAt: String\n}\n\ntype Player {\n\tid: ID\n\tname: String\n\tavatar: Int\n\tready: Boolean\n\troundsWin: Int\n\tcreator: Boolean\n}\n\ntype Result {\n\tmessage: String\n\tmatchWinner: Player\n\trounds: [ Round ]\n}\n\ntype Round {\n\tplays: [ Play ]\n\tisDraw: Boolean\n\tfinished: Boolean\n\twinner: Player\n}\n\ntype Play {\n\tplayer: Player\n\tplay: Int\n}\n\ninput PlayerInput {\n\tid: ID\n\tname: String\n\tavatar: Int\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 6
+    },
+    {
+      "name": "subscription.schema.graphql",
+      "path": "graphql/resources/subscription/subscription.schema.graphql",
+      "sha": "1b82cfbec111d082c095afd0a72b8ce9fe554229",
+      "url": "https://api.github.com/repositories/78148448/contents/graphql/resources/subscription/subscription.schema.graphql?ref=06b0ee083747ad859c3b7095fead5ad26b414399",
+      "git_url": "https://api.github.com/repositories/78148448/git/blobs/1b82cfbec111d082c095afd0a72b8ce9fe554229",
+      "html_url": "https://github.com/gfpaiva/socketpo/blob/06b0ee083747ad859c3b7095fead5ad26b414399/graphql/resources/subscription/subscription.schema.graphql",
+      "content": "type GameSub {\n\tgame: Game\n\thash: String\n\tplayer: String\n\tmessage: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-01-05T21:08:54Z",
+    "updated_at": "2019-06-05T01:06:22Z",
+    "pushed_at": "2019-06-05T01:06:21Z",
+    "issues": 7,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 9,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 9,
+    "releases": 1,
+    "stargazers": 4
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "whosmysanta",
+  "repo_full_name": "whosmysanta/whosmysanta",
+  "repo_owner": "whosmysanta",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/whosmysanta-app/data/schema.graphql",
+      "sha": "dd6e91d88c18e8f70794f3e9ecd01aa7ae6afff9",
+      "url": "https://api.github.com/repositories/71990626/contents/packages/whosmysanta-app/data/schema.graphql?ref=c30c058b282df3ed72e50f331d376b99a95fe96d",
+      "git_url": "https://api.github.com/repositories/71990626/git/blobs/dd6e91d88c18e8f70794f3e9ecd01aa7ae6afff9",
+      "html_url": "https://github.com/whosmysanta/whosmysanta/blob/c30c058b282df3ed72e50f331d376b99a95fe96d/packages/whosmysanta-app/data/schema.graphql",
+      "content": "schema {\n  query: Root\n  mutation: Mutations\n}\n\ntype App {\n  groups: [Group]\n  id: String\n  group(id: String): Group\n}\n\ninput CreateGroupInput {\n  id: String\n  title: String!\n  description: String!\n  friends: [FriendInput]\n  clientMutationId: String\n}\n\ntype CreateGroupPayload {\n  app: App\n  clientMutationId: String\n}\n\ntype Friend {\n  id: String\n  name: String\n  email: String\n  wish: String\n  hash: String\n}\n\ninput FriendInput {\n  id: String\n  name: String\n  email: String\n}\n\ntype Group {\n  id: String\n  title: String\n  description: String\n  friends: [Friend]\n  friend(hash: String): Friend\n}\n\ntype Mutations {\n  createGroup(input: CreateGroupInput!): CreateGroupPayload\n  updateFriend(input: UpdateFriendInput!): UpdateFriendPayload\n}\n\ntype Root {\n  app: App\n}\n\ninput UpdateFriendInput {\n  id: String\n  groupId: String!\n  email: String!\n  wish: String\n  clientMutationId: String\n}\n\ntype UpdateFriendPayload {\n  app: App\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 11
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-10-26T10:03:02Z",
+    "updated_at": "2017-03-06T18:58:23Z",
+    "pushed_at": "2017-05-23T18:56:15Z",
+    "issues": 10,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 11,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 9,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

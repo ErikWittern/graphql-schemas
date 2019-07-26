@@ -1,0 +1,66 @@
+{
+  "repo_name": "go-graphql-api-boilerplate",
+  "repo_full_name": "mattdamon108/go-graphql-api-boilerplate",
+  "repo_owner": "mattdamon108",
+  "repo_description": "A Boilerplate of GraphQL API built in Go + graphql-go + gorm",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "schema/Query/query.graphql",
+      "sha": "c4b0a07559ee63cf35d605ad3a15c92b62a882eb",
+      "url": "https://api.github.com/repositories/182431907/contents/schema/Query/query.graphql?ref=ae8ccda52546a3d251619647dfd7d1e16e510574",
+      "git_url": "https://api.github.com/repositories/182431907/git/blobs/c4b0a07559ee63cf35d605ad3a15c92b62a882eb",
+      "html_url": "https://github.com/mattdamon108/go-graphql-api-boilerplate/blob/ae8ccda52546a3d251619647dfd7d1e16e510574/schema/Query/query.graphql",
+      "content": "type Query {\n  getMyProfile: GetMyProfileResponse!\n}\ntype GetMyProfileResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/mattdamon108/go-graphql-api-boilerplate/blob/ae8ccda52546a3d251619647dfd7d1e16e510574/schema/Query/query.graphql:\ntype Query {\n  getMyProfile: GetMyProfileResponse!\n}\ntype GetMyProfileResponse {\n  ok: Boolean!\n  error: String\n  user: User\n}\n\n# https://github.com/mattdamon108/go-graphql-api-boilerplate/blob/ae8ccda52546a3d251619647dfd7d1e16e510574/schema/shared.graphql:\ntype User {\n  id: ID!\n  email: String!\n  password: String!\n  firstName: String!\n  lastName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String!\n}\n",
+        "mergedPaths": [
+          "schema/shared.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 3,
+        "containsCycle": false,
+        "polynomialLevel": 0,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "shared.graphql",
+      "path": "schema/shared.graphql",
+      "sha": "779ff70f304d2971762f17f06429a0cf0880fed7",
+      "url": "https://api.github.com/repositories/182431907/contents/schema/shared.graphql?ref=ae8ccda52546a3d251619647dfd7d1e16e510574",
+      "git_url": "https://api.github.com/repositories/182431907/git/blobs/779ff70f304d2971762f17f06429a0cf0880fed7",
+      "html_url": "https://github.com/mattdamon108/go-graphql-api-boilerplate/blob/ae8ccda52546a3d251619647dfd7d1e16e510574/schema/shared.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n  password: String!\n  firstName: String!\n  lastName: String!\n  bio: String\n  avatar: String\n  createdAt: String!\n  updatedAt: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-20T16:57:49Z",
+    "updated_at": "2019-07-05T03:20:56Z",
+    "pushed_at": "2019-05-27T15:03:43Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 8,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 8,
+    "releases": 0,
+    "stargazers": 39
+  }
+}

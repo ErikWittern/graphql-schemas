@@ -1,0 +1,41 @@
+{
+  "repo_name": "react-boston-2018-lunar-launch",
+  "repo_full_name": "mjfaga/react-boston-2018-lunar-launch",
+  "repo_owner": "mjfaga",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "mocks/schema.graphql",
+      "sha": "b4e8e4d9a943db99d8feb67225b8141933c9588f",
+      "url": "https://api.github.com/repositories/149054114/contents/mocks/schema.graphql?ref=36644ba984c99ed9b9948f1cc7fa9f8809241893",
+      "git_url": "https://api.github.com/repositories/149054114/git/blobs/b4e8e4d9a943db99d8feb67225b8141933c9588f",
+      "html_url": "https://github.com/mjfaga/react-boston-2018-lunar-launch/blob/36644ba984c99ed9b9948f1cc7fa9f8809241893/mocks/schema.graphql",
+      "content": "type Query {\n  users: [User]\n  user(id: ID!): User\n}\n\ntype Mutation {\n  addFavoriteFood(\n    userId: ID!\n    name: String!\n    eatingFrequency: EatingFrequency!\n  ): FavoriteFoodItem\n}\n\ntype User {\n  id: ID!\n  name: String!\n  favoriteFoods: [FavoriteFoodItem]\n}\n\ntype FavoriteFoodItem {\n  id: ID!\n  foodItem: FoodItem!\n  user: User!\n  eatingFrequency: EatingFrequency!\n}\n\ntype FoodItem {\n  id: ID!\n  name: String!\n}\n\nenum EatingFrequency {\n  DAILY\n  WEEKLY\n  MONTHLY\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-17T01:47:15Z",
+    "updated_at": "2019-07-17T07:57:51Z",
+    "pushed_at": "2019-07-03T15:50:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 5,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

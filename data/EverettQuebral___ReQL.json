@@ -1,0 +1,113 @@
+{
+  "repo_name": "ReQL",
+  "repo_full_name": "everettquebral/reql",
+  "repo_owner": "EverettQuebral",
+  "repo_description": "React GraphQL Universal Application",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "images.graphql",
+      "path": "common/schemas/images.graphql",
+      "sha": "b20791277a72d58f62395ba4e8b4087ec475d406",
+      "url": "https://api.github.com/repositories/138127722/contents/common/schemas/images.graphql?ref=341cf93acebb4a36761f6826119cf461f155bb0b",
+      "git_url": "https://api.github.com/repositories/138127722/git/blobs/b20791277a72d58f62395ba4e8b4087ec475d406",
+      "html_url": "https://github.com/EverettQuebral/ReQL/blob/341cf93acebb4a36761f6826119cf461f155bb0b/common/schemas/images.graphql",
+      "content": "type Images {\n    url: String!\n    title: String!\n    original: String!\n    description: String!\n}\n\ntype Query {\n    astroImages: [Images]\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 2
+    },
+    {
+      "name": "subscription.graphql",
+      "path": "common/schemas/subscription.graphql",
+      "sha": "d3b5a7a9d3692b6c94c480dbb5d83159c9aea944",
+      "url": "https://api.github.com/repositories/138127722/contents/common/schemas/subscription.graphql?ref=0676418dc677539648ce9f02f03491b7ee1b79c8",
+      "git_url": "https://api.github.com/repositories/138127722/git/blobs/d3b5a7a9d3692b6c94c480dbb5d83159c9aea944",
+      "html_url": "https://github.com/EverettQuebral/ReQL/blob/0676418dc677539648ce9f02f03491b7ee1b79c8/common/schemas/subscription.graphql",
+      "content": "type Message {\n  id: String,\n  author: String,\n  message: String\n}\n\ntype Subscription {\n  messageAdded(channel:String!) : Message\n}\n\ntype Query {\n  messages: [Message]\n}\n\ntype Mutation {\n  sendMessage(channel:String!, author: String, message:String): Message\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    },
+    {
+      "name": "astro.graphql",
+      "path": "common/schemas/astro.graphql",
+      "sha": "ecadb7d3862f843569f5110e280134b77ea65e94",
+      "url": "https://api.github.com/repositories/138127722/contents/common/schemas/astro.graphql?ref=61cf6b5d557c08a44cb0ff47e654e8f0992d7086",
+      "git_url": "https://api.github.com/repositories/138127722/git/blobs/ecadb7d3862f843569f5110e280134b77ea65e94",
+      "html_url": "https://github.com/EverettQuebral/ReQL/blob/61cf6b5d557c08a44cb0ff47e654e8f0992d7086/common/schemas/astro.graphql",
+      "content": "type AstroImage {\n  id: ID!\n  imageUrl: String!\n  title: String!\n  subtitle: String!\n  description: String!\n  fullsizeUrl: String!\n}\n\ntype Query {\n  getAstroImages: [AstroImage]\n}\n\ntype Mutation {\n  share(id: String, socialMedia: String!): StatusMessage\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/EverettQuebral/ReQL/blob/61cf6b5d557c08a44cb0ff47e654e8f0992d7086/common/schemas/astro.graphql:\ntype AstroImage {\n  id: ID!\n  imageUrl: String!\n  title: String!\n  subtitle: String!\n  description: String!\n  fullsizeUrl: String!\n}\n\ntype Query {\n  getAstroImages: [AstroImage]\n}\n\ntype Mutation {\n  share(id: String, socialMedia: String!): StatusMessage\n}\n\n# https://github.com/EverettQuebral/ReQL/blob/592b3117f39596a2b633c22c522aca2681fa0f82/common/schemas/statusmessage.graphql:\ntype StatusMessage {\n    status_code: Int!\n    message: String!\n    description: String!\n}",
+        "mergedPaths": [
+          "common/schemas/statusmessage.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "StatusMessage"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "statusmessage.graphql",
+      "path": "common/schemas/statusmessage.graphql",
+      "sha": "97a8bce2aa9c6a67b14994c4e9292deba8a9e54e",
+      "url": "https://api.github.com/repositories/138127722/contents/common/schemas/statusmessage.graphql?ref=592b3117f39596a2b633c22c522aca2681fa0f82",
+      "git_url": "https://api.github.com/repositories/138127722/git/blobs/97a8bce2aa9c6a67b14994c4e9292deba8a9e54e",
+      "html_url": "https://github.com/EverettQuebral/ReQL/blob/592b3117f39596a2b633c22c522aca2681fa0f82/common/schemas/statusmessage.graphql",
+      "content": "type StatusMessage {\n    status_code: Int!\n    message: String!\n    description: String!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "config.graphql",
+      "path": "common/schemas/config.graphql",
+      "sha": "747c47dc2bb5e785fc86eebbc333e26b889218bd",
+      "url": "https://api.github.com/repositories/138127722/contents/common/schemas/config.graphql?ref=5d75c448a3d1aae4db3a1c6ad199f610b05b7928",
+      "git_url": "https://api.github.com/repositories/138127722/git/blobs/747c47dc2bb5e785fc86eebbc333e26b889218bd",
+      "html_url": "https://github.com/EverettQuebral/ReQL/blob/5d75c448a3d1aae4db3a1c6ad199f610b05b7928/common/schemas/config.graphql",
+      "content": "type Props {\n  className: String\n  id: String\n  src: String\n  color: String\n}\n\ntype Attributes {\n  text: String\n}\n\ntype Children {\n  type: String\n  children: [Children]\n  content: String\n  props: Props\n  componentId: String\n}\n\ntype Config {\n  type: String!\n  componentId: String\n  props: Props\n  content: String\n  children: [Children]\n}\n\ntype Query {\n  getConfig: Config\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-21T06:18:45Z",
+    "updated_at": "2018-10-31T20:25:56Z",
+    "pushed_at": "2018-10-31T20:25:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

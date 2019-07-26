@@ -1,0 +1,39 @@
+{
+  "repo_name": "demo1-relay-client",
+  "repo_full_name": "jonstokes/demo1-relay-client",
+  "repo_owner": "jonstokes",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "cff660ac7f04835af8973738c67d6a8445bf5e1c",
+      "url": "https://api.github.com/repositories/112538027/contents/src/schema.graphql?ref=e6671bb9d99fe470ceaf170c0112d4426d31b1dd",
+      "git_url": "https://api.github.com/repositories/112538027/git/blobs/cff660ac7f04835af8973738c67d6a8445bf5e1c",
+      "html_url": "https://github.com/jonstokes/demo1-relay-client/blob/e6671bb9d99fe470ceaf170c0112d4426d31b1dd/src/schema.graphql",
+      "content": "type Comment implements Node {\n  # The ID of an object\n  id: ID!\n  story: Story!\n  parent: Comment!\n  author: User!\n  comments: [Comment]\n  text: String\n  pointsCount: Int!\n  createdAt: String!\n  updatedAt: String!\n}\n\ninput CreateCommentInput {\n  storyId: ID!\n  parentId: ID\n  text: String\n  clientMutationId: String\n}\n\ntype CreateCommentPayload {\n  story: Comment\n  clientMutationId: String\n}\n\ninput CreateStoryInput {\n  title: String\n  text: String\n  url: String\n  clientMutationId: String\n}\n\ntype CreateStoryPayload {\n  story: Story\n  clientMutationId: String\n}\n\ntype Email {\n  email: String!\n  verified: Boolean!\n}\n\ntype Mutation {\n  createStory(input: CreateStoryInput!): CreateStoryPayload\n  updateStory(input: UpdateStoryInput!): UpdateStoryPayload\n  createComment(input: CreateCommentInput!): CreateCommentPayload\n  updateComment(input: UpdateCommentInput!): UpdateCommentPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n\n  # Fetches objects given their IDs\n  nodes(\n    # The IDs of objects\n    ids: [ID!]!\n  ): [Node]!\n  me: User\n  stories(after: String, first: Int): StoryConnection\n}\n\ntype Story implements Node {\n  # The ID of an object\n  id: ID!\n  author: User!\n  title: String!\n  url: String\n  text: String\n  comments: [Comment]\n  pointsCount: Int!\n  commentsCount: Int!\n  createdAt: String!\n  updatedAt: String!\n}\n\n# A connection to a list of items.\ntype StoryConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [StoryEdge]\n  totalCount: Int!\n}\n\n# An edge in a connection.\ntype StoryEdge {\n  # The item at the end of the edge\n  node: Story\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput UpdateCommentInput {\n  id: ID!\n  text: ID\n  clientMutationId: String\n}\n\ntype UpdateCommentPayload {\n  story: Comment\n  clientMutationId: String\n}\n\ninput UpdateStoryInput {\n  id: ID!\n  title: String\n  text: String\n  url: String\n  clientMutationId: String\n}\n\ntype UpdateStoryPayload {\n  story: Story\n  clientMutationId: String\n}\n\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  displayName: String\n  imageUrl: String\n  emails: [Email]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-29T23:05:22Z",
+    "updated_at": "2017-11-29T23:06:12Z",
+    "pushed_at": "2017-11-29T23:05:57Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

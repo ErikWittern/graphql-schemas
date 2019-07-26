@@ -1,0 +1,42 @@
+{
+  "repo_name": "fsturingchallenge",
+  "repo_full_name": "jose-suero/fsturingchallenge",
+  "repo_owner": "jose-suero",
+  "repo_description": "Full Stack Turing Challenge",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "api/graphql/schema.gql",
+      "sha": "8f2f9288a23a2b9f587a1ac29a70d10c8f3b9d04",
+      "url": "https://api.github.com/repositories/173600489/contents/api/graphql/schema.gql?ref=48e045d0dd011470c0cd1d23f46ae7dae31ecc0c",
+      "git_url": "https://api.github.com/repositories/173600489/git/blobs/8f2f9288a23a2b9f587a1ac29a70d10c8f3b9d04",
+      "html_url": "https://github.com/jose-suero/fsturingchallenge/blob/48e045d0dd011470c0cd1d23f46ae7dae31ecc0c/api/graphql/schema.gql",
+      "content": "schema {\n    query: Queries,\n    mutation: Mutations\n}\n\nscalar Date\n\n###Departments\n\"\"\"\nA single department in the system\n\"\"\"\ntype Department {\n    \"\"\"\n    The department identification Code\n    \"\"\"\n    department_id: ID!\n    \"\"\"\n    The department name\n    \"\"\"\n    name: String!\n    \"\"\"\n    The department description\n    \"\"\"\n    description: String\n    \"\"\"\"\n    The categories for this department\n    \"\"\"\n    categories: [Category!]!\n}\n\n\"\"\"\nDepartment information for create a new department.\n\"\"\"\ninput AddDepartmentInput {\n    name: String!\n    description: String\n}\n\n\"\"\"\nDepartment information to update a department.\n\"\"\"\ninput UpdateDepartmentInput {\n    department_id: ID!\n    name: String!\n    description: String\n}\n\n## Categories\ntype Category {\n    category_id: ID!\n    name: String!\n    description: String\n    department_id: String\n}\n\ninput AddCategoryInput {\n    department_id: String!\n    name: String!\n    description: String\n}\n\ninput UpdateCategoryInput {\n    category_id: ID!\n    name: String!\n    description: String\n}\n\n## Products\ntype Product {\n    product_id: ID!\n    name: String!\n    description: String!\n    price: Float!\n    discounted_price: Float!\n    image: String\n    image_2: String\n    thumbnail: String\n    display: Int!\n    categories: [Category!]!\n}\n\n## Product Categories\ninput ProductCategoryInput {\n    product_id: ID!,\n    category_id: ID!\n}\n\n## Attributes\ntype Attribute {\n    attribute_id: ID!\n    name: String!\n    values: [AttributeValue!]!\n}\n\ntype AttributeValue {\n    attribute_value_id: ID!\n    attribute_id: String\n    value: String\n}\n\ninput AddAttributeInput {\n    name: String!\n}\n\ninput UpdateAttributeInput {\n    attribute_id: ID!\n    name: String!\n}\n\ninput AddValueToAttributeInput {\n    attribute_id: ID!\n    value: String!\n}\n\ninput UpdateAttributeValueInput {\n    attribute_value_id: ID!\n    value: String!\n}\n\n## Queries\ntype Queries {\n    Departments: [Department!]!\n    Department(department_id: ID!): Department\n\n    Categories: [Category!]!\n    CategoriesByDepartment(department_id: ID!): [Category!]!\n    Category(category_id: ID!): Category\n\n    Products(offset: Int, limit: Int): [Product!]!\n    Product(product_id: ID!): Product\n    ProductsByCategory(category_id: String!): [Product!]!\n    ProductsByDepartment(department_id: String!, offset: Int, limit: Int): [Product!]!\n\n    Attributes: [Attribute!]!\n    Attribute(attribute_id: ID!): Attribute\n}\n\n## Mutations\n\ntype Mutations {\n    addDepartment(newDepartmentInfo: AddDepartmentInput!): Department\n    updateDepartment(departmentInfo: UpdateDepartmentInput!): Department\n    deleteDepartment(department_id: ID!): Boolean\n\n    addCategory(newCategoryInfo: AddCategoryInput!): Category\n    updateCategory(categoryInfo: UpdateCategoryInput!): Category\n    deleteCategory(category_id: ID!): Category\n\n    assignCategoryToProduct(productCategoryInput: ProductCategoryInput!): Category\n    removeCategoryFromProduct(productCategoryInput: ProductCategoryInput!): Category\n\n    addAttribute(addAttributeInput: AddAttributeInput!): Attribute\n    deleteAttribute(attribute_id: ID!): Attribute\n    updateAttribute(updateAttributeInput: UpdateAttributeInput): Attribute\n\n    addValueToAttribute(addValueToAttributeInput: AddValueToAttributeInput): AttributeValue\n    deleteValueFromAttribute(attribute_value_id: ID!): AttributeValue\n    updateAttributeValue(updateAttributeValueInput: UpdateAttributeValueInput): AttributeValue\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-03T16:33:08Z",
+    "updated_at": "2019-03-20T01:57:55Z",
+    "pushed_at": "2019-03-19T23:54:12Z",
+    "issues": 1,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

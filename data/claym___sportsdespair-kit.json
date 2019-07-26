@@ -1,0 +1,39 @@
+{
+  "repo_name": "sportsdespair-kit",
+  "repo_full_name": "claym/sportsdespair-kit",
+  "repo_owner": "claym",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "packages/server/src/api/rootSchema.graphql",
+      "sha": "71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "url": "https://api.github.com/repositories/136050681/contents/packages/server/src/api/rootSchema.graphql?ref=8ede0f22d91c3c4153fe4f5ffe4e7f1817003966",
+      "git_url": "https://api.github.com/repositories/136050681/git/blobs/71d955166272d95c1dbaed57f8ad6b73eeebc2e1",
+      "html_url": "https://github.com/claym/sportsdespair-kit/blob/8ede0f22d91c3c4153fe4f5ffe4e7f1817003966/packages/server/src/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-04T16:08:01Z",
+    "updated_at": "2018-12-31T16:27:29Z",
+    "pushed_at": "2018-07-01T13:47:57Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

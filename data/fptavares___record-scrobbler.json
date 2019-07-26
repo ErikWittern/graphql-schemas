@@ -1,0 +1,42 @@
+{
+  "repo_name": "record-scrobbler",
+  "repo_full_name": "fptavares/record-scrobbler",
+  "repo_owner": "fptavares",
+  "repo_description": "Discogs Record Scrobbler",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "web-api/schema.graphql",
+      "sha": "f4d30ca9fbff82146b3455a2f70736b6e47710a0",
+      "url": "https://api.github.com/repositories/104471802/contents/web-api/schema.graphql?ref=2319410cf2748119ade78c34204ed5f0c48c39a5",
+      "git_url": "https://api.github.com/repositories/104471802/git/blobs/f4d30ca9fbff82146b3455a2f70736b6e47710a0",
+      "html_url": "https://github.com/fptavares/record-scrobbler/blob/2319410cf2748119ade78c34204ed5f0c48c39a5/web-api/schema.graphql",
+      "content": "input AddToPlaylistInput {\n  albumId: ID!\n  clientMutationId: String\n}\n\ntype AddToPlaylistPayload {\n  album: Album\n  viewer: Viewer\n  clientMutationId: String\n}\n\ntype Album implements Node {\n  # The ID of an object\n  id: ID!\n  releaseId: Int\n  title: String\n  artist: String\n  year: Int\n  thumb: String\n  rating: Int\n  notes: String\n  dateAdded: String\n  folderId: Int\n  inPlaylist: Int\n  tracks: [Track]\n}\n\n# A connection to a list of items.\ntype AlbumConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [AlbumEdge]\n}\n\n# An edge in a connection.\ntype AlbumEdge {\n  # The item at the end of the edge\n  node: Album\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ninput AuthenticateDiscogsInput {\n  oauthVerifier: String!\n  clientMutationId: String\n}\n\ntype AuthenticateDiscogsPayload {\n  viewer: Viewer\n  token: String\n  clientMutationId: String\n}\n\ninput AuthenticateLastfmInput {\n  oauthToken: String!\n  clientMutationId: String\n}\n\ntype AuthenticateLastfmPayload {\n  viewer: Viewer\n  token: String\n  clientMutationId: String\n}\n\ninput DiscogsRequestTokenInput {\n  callbackUrl: String!\n  clientMutationId: String\n}\n\ntype DiscogsRequestTokenPayload {\n  token: String\n  discogsAuthorizeUrl: String\n  clientMutationId: String\n}\n\ntype DiscogsUser implements Node {\n  # The ID of an object\n  id: ID!\n  username: String\n  name: String\n  numCollection: Int\n  avatarURL: String\n  folders: [Folder]\n}\n\ntype Folder {\n  id: Int\n  name: String\n  count: Int\n}\n\ninput GetLastfmAuthenticationUrlInput {\n  callbackUrl: String!\n  clientMutationId: String\n}\n\ntype GetLastfmAuthenticationUrlPayload {\n  authenticationUrl: String\n  clientMutationId: String\n}\n\ntype LastfmUser implements Node {\n  # The ID of an object\n  id: ID!\n  username: String\n  name: String\n  avatarURL: String\n  lastScrobble: String\n}\n\ntype Mutation {\n  getDiscogsRequestToken(input: DiscogsRequestTokenInput!): DiscogsRequestTokenPayload\n  authenticateDiscogs(input: AuthenticateDiscogsInput!): AuthenticateDiscogsPayload\n  getLastfmAuthenticationUrl(input: GetLastfmAuthenticationUrlInput!): GetLastfmAuthenticationUrlPayload\n  authenticateLastfm(input: AuthenticateLastfmInput!): AuthenticateLastfmPayload\n  addToPlaylist(input: AddToPlaylistInput!): AddToPlaylistPayload\n  removeFromPlaylist(input: RemoveFromPlaylistInput!): RemoveFromPlaylistPayload\n  scrobble(input: ScrobbleInput!): ScrobblePayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\ntype Playlist implements Node {\n  # The ID of an object\n  id: ID!\n  numItems: Int\n  items: [Album]\n}\n\ntype Query {\n  viewer: Viewer\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ninput RemoveFromPlaylistInput {\n  albumId: ID!\n  clientMutationId: String\n}\n\ntype RemoveFromPlaylistPayload {\n  album: Album\n  viewer: Viewer\n  clientMutationId: String\n}\n\ninput ScrobbleInput {\n  clientMutationId: String\n}\n\ntype ScrobblePayload {\n  accepted: Int\n  ignored: Int\n  playlist: Playlist\n  scrobbledAlbums: [Album]\n  clientMutationId: String\n}\n\ntype SubTrack {\n  position: String\n  title: String\n  duration: String\n  type: String\n}\n\ntype Track {\n  subTracks: [SubTrack]\n}\n\ntype Viewer {\n  # The ID of an object\n  id: ID!\n  username: String\n  lastfmUsername: String\n  discogsUser: DiscogsUser\n  lastfmUser: LastfmUser\n  collection(search: String, after: String, first: Int): AlbumConnection\n  playlist: Playlist\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 20,
+      "containsCycle": false,
+      "polynomialLevel": 3,
+      "numDefinitions": 28
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-22T12:26:37Z",
+    "updated_at": "2018-02-03T21:29:41Z",
+    "pushed_at": "2018-02-28T20:31:23Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

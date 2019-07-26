@@ -1,0 +1,42 @@
+{
+  "repo_name": "ts-graphql-sequelize",
+  "repo_full_name": "taozhi8833998/ts-graphql-sequelize",
+  "repo_owner": "taozhi8833998",
+  "repo_description": "api boilerplate using graphql, sequelize  and typescript",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "user.graphql",
+      "path": "src/schemas/user.graphql",
+      "sha": "df3f523731127ebdbf68e275b355e536d38bdb57",
+      "url": "https://api.github.com/repositories/168341237/contents/src/schemas/user.graphql?ref=b2fdef0b04905471b6524e78cae5ed67a4f7db83",
+      "git_url": "https://api.github.com/repositories/168341237/git/blobs/df3f523731127ebdbf68e275b355e536d38bdb57",
+      "html_url": "https://github.com/taozhi8833998/ts-graphql-sequelize/blob/b2fdef0b04905471b6524e78cae5ed67a4f7db83/src/schemas/user.graphql",
+      "content": "type User {\n  id: ID!\n  name: String!\n  password: String!\n  email: String!\n  phone: String!\n}\n\ntype Token {\n  token: String!\n  name: String!\n}\n\ntype Query {\n  user(id: ID!): User,\n  userByName(name: String!): User\n  userInfo: User!\n}\n\ntype Mutation {\n  signUp(\n    name: String!\n    password: String!\n    email: String!\n    phone: String!\n  ): Token!\n  signIn(name: String!, password: String!): Token!\n  signOut: Boolean\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-30T12:43:12Z",
+    "updated_at": "2019-06-11T01:37:03Z",
+    "pushed_at": "2019-07-13T01:13:37Z",
+    "issues": 2,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

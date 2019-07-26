@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-api-starter",
+  "repo_full_name": "bdatdo0601/graphql-api-starter",
+  "repo_owner": "bdatdo0601",
+  "repo_description": "A Base framework to create a GraphQL API with Fastify",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "src/graphql/typeDefs/rootSchema.graphql",
+      "sha": "a529ab862e7a76ab334eb947bd54bf5ccfcc0614",
+      "url": "https://api.github.com/repositories/136673049/contents/src/graphql/typeDefs/rootSchema.graphql?ref=36ce67d9d88418caca3d9d1bc93eeeea8140aa84",
+      "git_url": "https://api.github.com/repositories/136673049/git/blobs/a529ab862e7a76ab334eb947bd54bf5ccfcc0614",
+      "html_url": "https://github.com/bdatdo0601/graphql-api-starter/blob/36ce67d9d88418caca3d9d1bc93eeeea8140aa84/src/graphql/typeDefs/rootSchema.graphql",
+      "content": "type Query {\n    hello: String!\n}\n\nschema {\n    query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-08T22:56:05Z",
+    "updated_at": "2018-08-03T11:37:11Z",
+    "pushed_at": "2018-06-09T00:58:37Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "repo_name": "graphql-pets",
+  "repo_full_name": "zulhilmizainuddin/graphql-pets",
+  "repo_owner": "zulhilmizainuddin",
+  "repo_description": "GraphQL example project using Node.js, TypeScript, Express, Apollo, SQLite and Docker",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "collectiveSchema.graphql",
+      "path": "schemas/collectiveSchema.graphql",
+      "sha": "bacb9bf8beb52c095d5decff67403376eb9b6222",
+      "url": "https://api.github.com/repositories/140711135/contents/schemas/collectiveSchema.graphql?ref=6498a4be3c2e91e16a4295fc4dfbf44022ab648e",
+      "git_url": "https://api.github.com/repositories/140711135/git/blobs/bacb9bf8beb52c095d5decff67403376eb9b6222",
+      "html_url": "https://github.com/zulhilmizainuddin/graphql-pets/blob/6498a4be3c2e91e16a4295fc4dfbf44022ab648e/schemas/collectiveSchema.graphql",
+      "content": "# import ownerSchema from './ownerSchema.graphql';\n# import petSchema from './petSchema.graphql';\n\ntype Query {\n    \"List of pet owners\"\n    owners: [Owner]!\n\n    \"List of pets by owner\"\n    pets(\"The email address of the owner\" email: String!): [Pet]!\n\n    \"Owner and pets details\"\n    owner(\"The email address of the owner\" email: String!): OwnerPets\n}\n\ntype Mutation {\n    \"Add an owner\"\n    addOwner(\"The name of the owner\" name: String!,\n             \"The address of the owner\" address: String!,\n             \"The phone number of the owner\" phone: String!,\n             \"The email address of the owner\" email: String!): Boolean!\n\n    \"Add a pet\"\n    addPet(\"The email address of the owner\" email: String!,\n           \"The pet to be added\" pet: AddPet!): Boolean!\n\n    \"Edit a pet\"\n    editPet(\"The email address of the owner\" email: String!,\n            \"The pet to be edited\" pet: EditPet!): Boolean!\n}\n\nschema {\n    query: Query,\n    mutation: Mutation\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/zulhilmizainuddin/graphql-pets/blob/6498a4be3c2e91e16a4295fc4dfbf44022ab648e/schemas/collectiveSchema.graphql:\n# import ownerSchema from './ownerSchema.graphql';\n# import petSchema from './petSchema.graphql';\n\ntype Query {\n    \"List of pet owners\"\n    owners: [Owner]!\n\n    \"List of pets by owner\"\n    pets(\"The email address of the owner\" email: String!): [Pet]!\n\n    \"Owner and pets details\"\n    owner(\"The email address of the owner\" email: String!): OwnerPets\n}\n\ntype Mutation {\n    \"Add an owner\"\n    addOwner(\"The name of the owner\" name: String!,\n             \"The address of the owner\" address: String!,\n             \"The phone number of the owner\" phone: String!,\n             \"The email address of the owner\" email: String!): Boolean!\n\n    \"Add a pet\"\n    addPet(\"The email address of the owner\" email: String!,\n           \"The pet to be added\" pet: AddPet!): Boolean!\n\n    \"Edit a pet\"\n    editPet(\"The email address of the owner\" email: String!,\n            \"The pet to be edited\" pet: EditPet!): Boolean!\n}\n\nschema {\n    query: Query,\n    mutation: Mutation\n}\n# https://github.com/zulhilmizainuddin/graphql-pets/blob/6498a4be3c2e91e16a4295fc4dfbf44022ab648e/schemas/ownerSchema.graphql:\n# import petSchema from './petSchema.graphql';\n\ntype Owner {\n    \"The id of the owner\"\n    id: Int!\n    \"The name of the owner\"\n    name: String!\n    \"The address of the owner\"\n    address: String!\n    \"The phone number of the owner\"\n    phone: String!\n    \"The email address of the owner\"\n    email: String!\n}\n\ntype OwnerPets {\n    \"The id of the owner\"\n    id: Int!\n    \"The name of the owner\"\n    name: String!\n    \"The address of the owner\"\n    address: String!\n    \"The phone number of the owner\"\n    phone: String!\n    \"The email address of the owner\"\n    email: String!\n    \"The pets that belongs to the owner\"\n    pets: [Pet]!\n}\n# https://github.com/zulhilmizainuddin/graphql-pets/blob/7e26c89128f5a6a830c5ea427474b8ba7d19d59f/schemas/petSchema.graphql:\nenum Breed {\n    Baboon\n    Mandrill\n    Meerkat\n    Warthog\n}\n\nenum Colour {\n    Brown\n    Gray\n    Red\n    Yellow\n}\n\ninput AddPet {\n    \"The name of the pet\"\n    name: String!\n    \"The colour of the pet\"\n    colour: Colour!\n    \"The age of the pet\"\n    age: Int!\n    \"The breed of the pet\"\n    breed: Breed!\n}\n\ninput EditPet {\n    \"The id of the pet\"\n    id: Int!\n    \"The name of the pet\"\n    name: String\n    \"The colour of the pet\"\n    colour: Colour\n    \"The age of the pet\"\n    age: Int\n    \"The breed of the pet\"\n    breed: Breed\n}\n\ntype Pet {\n    \"The id of the pet\"\n    id: Int!\n    \"The id of the owner that owns the pet\"\n    ownerid: Int!\n    \"The name of the pet\"\n    name: String!\n    \"The colour of the pet\"\n    colour: Colour!\n    \"The age of the pet\"\n    age: Int!\n    \"The breed of the pet\"\n    breed: Breed!\n}",
+        "mergedPaths": [
+          "schemas/ownerSchema.graphql",
+          "schemas/petSchema.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Owner",
+          "OwnerPets",
+          "Pet"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 10
+      },
+      "validSchema": false
+    },
+    {
+      "name": "ownerSchema.graphql",
+      "path": "schemas/ownerSchema.graphql",
+      "sha": "41f21ef6d2f7f3b62d60a34f34642e5f91d51576",
+      "url": "https://api.github.com/repositories/140711135/contents/schemas/ownerSchema.graphql?ref=6498a4be3c2e91e16a4295fc4dfbf44022ab648e",
+      "git_url": "https://api.github.com/repositories/140711135/git/blobs/41f21ef6d2f7f3b62d60a34f34642e5f91d51576",
+      "html_url": "https://github.com/zulhilmizainuddin/graphql-pets/blob/6498a4be3c2e91e16a4295fc4dfbf44022ab648e/schemas/ownerSchema.graphql",
+      "content": "# import petSchema from './petSchema.graphql';\n\ntype Owner {\n    \"The id of the owner\"\n    id: Int!\n    \"The name of the owner\"\n    name: String!\n    \"The address of the owner\"\n    address: String!\n    \"The phone number of the owner\"\n    phone: String!\n    \"The email address of the owner\"\n    email: String!\n}\n\ntype OwnerPets {\n    \"The id of the owner\"\n    id: Int!\n    \"The name of the owner\"\n    name: String!\n    \"The address of the owner\"\n    address: String!\n    \"The phone number of the owner\"\n    phone: String!\n    \"The email address of the owner\"\n    email: String!\n    \"The pets that belongs to the owner\"\n    pets: [Pet]!\n}",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 2
+    },
+    {
+      "name": "petSchema.graphql",
+      "path": "schemas/petSchema.graphql",
+      "sha": "178ab5debad0c8433145e8012498f8417059dd43",
+      "url": "https://api.github.com/repositories/140711135/contents/schemas/petSchema.graphql?ref=7e26c89128f5a6a830c5ea427474b8ba7d19d59f",
+      "git_url": "https://api.github.com/repositories/140711135/git/blobs/178ab5debad0c8433145e8012498f8417059dd43",
+      "html_url": "https://github.com/zulhilmizainuddin/graphql-pets/blob/7e26c89128f5a6a830c5ea427474b8ba7d19d59f/schemas/petSchema.graphql",
+      "content": "enum Breed {\n    Baboon\n    Mandrill\n    Meerkat\n    Warthog\n}\n\nenum Colour {\n    Brown\n    Gray\n    Red\n    Yellow\n}\n\ninput AddPet {\n    \"The name of the pet\"\n    name: String!\n    \"The colour of the pet\"\n    colour: Colour!\n    \"The age of the pet\"\n    age: Int!\n    \"The breed of the pet\"\n    breed: Breed!\n}\n\ninput EditPet {\n    \"The id of the pet\"\n    id: Int!\n    \"The name of the pet\"\n    name: String\n    \"The colour of the pet\"\n    colour: Colour\n    \"The age of the pet\"\n    age: Int\n    \"The breed of the pet\"\n    breed: Breed\n}\n\ntype Pet {\n    \"The id of the pet\"\n    id: Int!\n    \"The id of the owner that owns the pet\"\n    ownerid: Int!\n    \"The name of the pet\"\n    name: String!\n    \"The colour of the pet\"\n    colour: Colour!\n    \"The age of the pet\"\n    age: Int!\n    \"The breed of the pet\"\n    breed: Breed!\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-12T12:35:53Z",
+    "updated_at": "2018-07-15T10:59:15Z",
+    "pushed_at": "2018-07-15T10:59:14Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

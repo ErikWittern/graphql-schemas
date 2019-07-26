@@ -1,0 +1,42 @@
+{
+  "repo_name": "GraphQL-Core",
+  "repo_full_name": "aurlaw/graphql-core",
+  "repo_owner": "aurlaw",
+  "repo_description": ".NET Core Graph QL and React",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "services/GraphQL.Api/schema/schema.graphql",
+      "sha": "6f4e8df0aff4a4f5503a0eda10692450cf7edc5a",
+      "url": "https://api.github.com/repositories/175249790/contents/services/GraphQL.Api/schema/schema.graphql?ref=968090bd241facf4b38a47d9bd47d9b15c0de497",
+      "git_url": "https://api.github.com/repositories/175249790/git/blobs/6f4e8df0aff4a4f5503a0eda10692450cf7edc5a",
+      "html_url": "https://github.com/aurlaw/GraphQL-Core/blob/968090bd241facf4b38a47d9bd47d9b15c0de497/services/GraphQL.Api/schema/schema.graphql",
+      "content": "# source: http://localhost:50000/graphql/\n# timestamp: Tue Sep 11 2018 23:42:20 GMT-0400 (EDT)\n\nschema {\n  query: NHLStatsQuery\n  mutation: PlayerStatMutation\n}\n\n\"\"\"\nThe `Date` scalar type represents a year, month and day in accordance with the\n[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.\n\"\"\"\nscalar Date\n\n\"\"\"\nThe `DateTime` scalar type represents a date and time. `DateTime` expects\ntimestamps to be formatted in accordance with the\n[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.\n\"\"\"\nscalar DateTime\n\n\"\"\"\nThe `DateTimeOffset` scalar type represents a date, time and offset from UTC.\n`DateTimeOffset` expects timestamps to be formatted in accordance with the\n[ISO-8601](https://en.wikipedia.org/wiki/ISO_8601) standard.\n\"\"\"\nscalar DateTimeOffset\n\nscalar Decimal\n\ntype LeagueType {\n  abbreviation: String!\n  id: Int!\n  name: String!\n}\n\n\"\"\"\nThe `Milliseconds` scalar type represents a period of time represented as the total number of milliseconds.\n\"\"\"\nscalar Milliseconds\n\ntype NHLStatsQuery {\n  leagues: [LeagueType]\n  player(id: Int = null): PlayerType\n  players: [PlayerType]\n  randomPlayer: PlayerType\n  seasons: [SeasonType]\n  teams: [TeamType]\n}\n\ninput PlayerInput {\n  name: String!\n  birthPlace: String = null\n  height: String = null\n  weightLbs: Int = null\n  birthDate: Date = null\n}\n\ntype PlayerStatMutation {\n  createPlayer(player: PlayerInput!, skaterStats: [SkaterStatisticInput] = null): PlayerType\n  deletePlayer(playerId: Int!): StatusResultType\n}\n\ntype PlayerType {\n  birthDate: String\n  birthPlace: String!\n  height: String!\n  id: Int!\n  name: String\n\n  \"\"\"Player's skater stats\"\"\"\n  skaterSeasonStats(limit: Int = null, offset: Int = null, sort: Boolean = null): [SkaterStatisticType]\n  weightLbs: Int!\n}\n\ntype SeasonType {\n  id: Int!\n  name: String!\n}\n\n\"\"\"\nThe `Seconds` scalar type represents a period of time represented as the total number of seconds.\n\"\"\"\nscalar Seconds\n\ninput SkaterStatisticInput {\n  seasonId: Int = null\n  leagueId: Int = null\n  teamId: Int = null\n  gamesPlayed: Int = null\n  goals: Int = null\n  assists: Int = null\n  points: Int = null\n  plusMinus: Int = null\n}\n\ntype SkaterStatisticType {\n  assists: Int!\n  goals: Int!\n  gp: Int!\n  id: Int!\n  league: String!\n  plusMinus: Int\n  points: Int!\n  season: String!\n  seasonId: Int!\n  team: String!\n}\n\ntype StatusResultType {\n  id: Int!\n  message: String!\n  statusType: StatusType\n}\n\nenum StatusType {\n  NONE\n  DELETED\n  ERROR\n}\n\ntype TeamType {\n  abbreviation: String!\n  id: Int!\n  name: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 18
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-12T16:05:02Z",
+    "updated_at": "2019-03-19T01:07:50Z",
+    "pushed_at": "2019-03-13T01:16:17Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

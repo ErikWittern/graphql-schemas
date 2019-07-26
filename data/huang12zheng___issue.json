@@ -1,0 +1,42 @@
+{
+  "repo_name": "issue",
+  "repo_full_name": "huang12zheng/issue",
+  "repo_owner": "huang12zheng",
+  "repo_description": "issue",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "prisma.graphql",
+      "path": "src/generated/schema/prisma.graphql",
+      "sha": "488155a623c08333668b6e18b053a697800b56c0",
+      "url": "https://api.github.com/repositories/171016900/contents/src/generated/schema/prisma.graphql?ref=be1a263337745839286f4419a9e6f48b203e6978",
+      "git_url": "https://api.github.com/repositories/171016900/git/blobs/488155a623c08333668b6e18b053a697800b56c0",
+      "html_url": "https://github.com/huang12zheng/issue/blob/be1a263337745839286f4419a9e6f48b203e6978/src/generated/schema/prisma.graphql",
+      "content": "type AggregateQueryHash {\n  count: Int!\n}\n\ntype AggregateUser {\n  count: Int!\n}\n\ntype BatchPayload {\n  count: Long!\n}\n\nscalar Long\n\ntype Mutation {\n  createQueryHash(data: QueryHashCreateInput!): QueryHash!\n  updateManyQueryHashes(data: QueryHashUpdateManyMutationInput!, where: QueryHashWhereInput): BatchPayload!\n  deleteManyQueryHashes(where: QueryHashWhereInput): BatchPayload!\n  createUser(data: UserCreateInput!): User!\n  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!\n  deleteManyUsers(where: UserWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  queryHashes(where: QueryHashWhereInput, orderBy: QueryHashOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [QueryHash]!\n  queryHashesConnection(where: QueryHashWhereInput, orderBy: QueryHashOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): QueryHashConnection!\n  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!\n  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!\n  node(id: ID!): Node\n}\n\ntype QueryHash {\n  _id: ID!\n  query: String\n}\n\ntype QueryHashConnection {\n  pageInfo: PageInfo!\n  edges: [QueryHashEdge]!\n  aggregate: AggregateQueryHash!\n}\n\ninput QueryHashCreateInput {\n  _id: ID!\n  query: String\n}\n\ntype QueryHashEdge {\n  node: QueryHash!\n  cursor: String!\n}\n\nenum QueryHashOrderByInput {\n  _id_ASC\n  _id_DESC\n  query_ASC\n  query_DESC\n  id_ASC\n  id_DESC\n  createdAt_ASC\n  createdAt_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n}\n\ntype QueryHashPreviousValues {\n  _id: ID!\n  query: String\n}\n\ntype QueryHashSubscriptionPayload {\n  mutation: MutationType!\n  node: QueryHash\n  updatedFields: [String!]\n  previousValues: QueryHashPreviousValues\n}\n\ninput QueryHashSubscriptionWhereInput {\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: QueryHashWhereInput\n  AND: [QueryHashSubscriptionWhereInput!]\n  OR: [QueryHashSubscriptionWhereInput!]\n  NOT: [QueryHashSubscriptionWhereInput!]\n}\n\ninput QueryHashUpdateManyMutationInput {\n  _id: ID\n  query: String\n}\n\ninput QueryHashWhereInput {\n  _id: ID\n  _id_not: ID\n  _id_in: [ID!]\n  _id_not_in: [ID!]\n  _id_lt: ID\n  _id_lte: ID\n  _id_gt: ID\n  _id_gte: ID\n  _id_contains: ID\n  _id_not_contains: ID\n  _id_starts_with: ID\n  _id_not_starts_with: ID\n  _id_ends_with: ID\n  _id_not_ends_with: ID\n  query: String\n  query_not: String\n  query_in: [String!]\n  query_not_in: [String!]\n  query_lt: String\n  query_lte: String\n  query_gt: String\n  query_gte: String\n  query_contains: String\n  query_not_contains: String\n  query_starts_with: String\n  query_not_starts_with: String\n  query_ends_with: String\n  query_not_ends_with: String\n  AND: [QueryHashWhereInput!]\n  OR: [QueryHashWhereInput!]\n  NOT: [QueryHashWhereInput!]\n}\n\ntype Subscription {\n  queryHash(where: QueryHashSubscriptionWhereInput): QueryHashSubscriptionPayload\n  user(where: UserSubscriptionWhereInput): UserSubscriptionPayload\n}\n\ntype User {\n  _id: ID!\n  info: String\n  mobile: String\n  password: String\n  userName: String\n}\n\ntype UserConnection {\n  pageInfo: PageInfo!\n  edges: [UserEdge]!\n  aggregate: AggregateUser!\n}\n\ninput UserCreateInput {\n  _id: ID!\n  info: String\n  mobile: String\n  password: String\n  userName: String\n}\n\ntype UserEdge {\n  node: User!\n  cursor: String!\n}\n\nenum UserOrderByInput {\n  _id_ASC\n  _id_DESC\n  info_ASC\n  info_DESC\n  mobile_ASC\n  mobile_DESC\n  password_ASC\n  password_DESC\n  userName_ASC\n  userName_DESC\n  id_ASC\n  id_DESC\n  createdAt_ASC\n  createdAt_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n}\n\ntype UserPreviousValues {\n  _id: ID!\n  info: String\n  mobile: String\n  password: String\n  userName: String\n}\n\ntype UserSubscriptionPayload {\n  mutation: MutationType!\n  node: User\n  updatedFields: [String!]\n  previousValues: UserPreviousValues\n}\n\ninput UserSubscriptionWhereInput {\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: UserWhereInput\n  AND: [UserSubscriptionWhereInput!]\n  OR: [UserSubscriptionWhereInput!]\n  NOT: [UserSubscriptionWhereInput!]\n}\n\ninput UserUpdateManyMutationInput {\n  _id: ID\n  info: String\n  mobile: String\n  password: String\n  userName: String\n}\n\ninput UserWhereInput {\n  _id: ID\n  _id_not: ID\n  _id_in: [ID!]\n  _id_not_in: [ID!]\n  _id_lt: ID\n  _id_lte: ID\n  _id_gt: ID\n  _id_gte: ID\n  _id_contains: ID\n  _id_not_contains: ID\n  _id_starts_with: ID\n  _id_not_starts_with: ID\n  _id_ends_with: ID\n  _id_not_ends_with: ID\n  info: String\n  info_not: String\n  info_in: [String!]\n  info_not_in: [String!]\n  info_lt: String\n  info_lte: String\n  info_gt: String\n  info_gte: String\n  info_contains: String\n  info_not_contains: String\n  info_starts_with: String\n  info_not_starts_with: String\n  info_ends_with: String\n  info_not_ends_with: String\n  mobile: String\n  mobile_not: String\n  mobile_in: [String!]\n  mobile_not_in: [String!]\n  mobile_lt: String\n  mobile_lte: String\n  mobile_gt: String\n  mobile_gte: String\n  mobile_contains: String\n  mobile_not_contains: String\n  mobile_starts_with: String\n  mobile_not_starts_with: String\n  mobile_ends_with: String\n  mobile_not_ends_with: String\n  password: String\n  password_not: String\n  password_in: [String!]\n  password_not_in: [String!]\n  password_lt: String\n  password_lte: String\n  password_gt: String\n  password_gte: String\n  password_contains: String\n  password_not_contains: String\n  password_starts_with: String\n  password_not_starts_with: String\n  password_ends_with: String\n  password_not_ends_with: String\n  userName: String\n  userName_not: String\n  userName_in: [String!]\n  userName_not_in: [String!]\n  userName_lt: String\n  userName_lte: String\n  userName_gt: String\n  userName_gte: String\n  userName_contains: String\n  userName_not_contains: String\n  userName_starts_with: String\n  userName_not_starts_with: String\n  userName_ends_with: String\n  userName_not_ends_with: String\n  AND: [UserWhereInput!]\n  OR: [UserWhereInput!]\n  NOT: [UserWhereInput!]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 17,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 30
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-16T15:11:13Z",
+    "updated_at": "2019-02-16T15:17:29Z",
+    "pushed_at": "2019-02-16T15:17:27Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

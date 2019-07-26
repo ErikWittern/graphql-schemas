@@ -1,0 +1,42 @@
+{
+  "repo_name": "chatapper",
+  "repo_full_name": "yuriy-yarosh/chatapper",
+  "repo_owner": "yuriy-yarosh",
+  "repo_description": "Demo Chat App for PostgreSQL Kyiv User Group #1 meetup",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "api/schema.graphql",
+      "sha": "e3221ccad1b7f2e4948d6fcd18d128015172d728",
+      "url": "https://api.github.com/repositories/181222192/contents/api/schema.graphql?ref=bb63e631f9b65ae6d1d661bf7dac7b34056e5df4",
+      "git_url": "https://api.github.com/repositories/181222192/git/blobs/e3221ccad1b7f2e4948d6fcd18d128015172d728",
+      "html_url": "https://github.com/yuriy-yarosh/chatapper/blob/bb63e631f9b65ae6d1d661bf7dac7b34056e5df4/api/schema.graphql",
+      "content": "schema {\n    query: Query\n    mutation: Mutation\n    subscription: Subscription\n}\n\nscalar Date\n\n# ROOM\n\nenum Role {\n    USER,\n    REPORTER\n}\n\ntype Participant {\n    nickname: String!\n    role: Role!\n\n    joinedAt: Date!\n}\n\ntype Room {\n    name: String\n\n    participants(after: String, number: Int = 50): [Participant!]!\n    totalMessages: Int!\n\n    recent: RecentMessages\n\n    reportsDailySummary(at: Date = null, days: Int! = 1): [ReportSummary!]!\n    reportsWeeklySummary(week: Int = null, weeks: Int! = 1): [ReportSummary!]!\n    reportsMonthlySummary(month: Int = null, months: Int! = 1): [ReportSummary!]!\n}\n\ntype JoinedRooms {\n  # Alphabetical order\n  rooms(after: String, number: Int = 50): [Room!]!\n}\n\ntype AvailableRooms {\n  # Alphabetical order\n  rooms(after: String, number: Int = 50): [Room!]!\n}\n\ntype ReportSummary {\n    numberOfReports: Int!\n    weekNumber: Int!\n    monthNumber: Int!\n    start: Date!\n    end: Date!\n}\n\n# MESSAGE\n\ninput NewMessage {\n    text: String\n}\n\ntype Message {\n    nuumber: Int!\n    room: String!\n    nickname: String!\n\n    author: User\n    text: String\n    createdAt: Date\n    updatedAt: Date\n    reported: Boolean\n}\n\ntype RecentMessages {\n    messages(after: Date = nul, number: Int = 50): [Message]!\n}\n\ninput UpdateMessage {\n    ID: Int!\n    roomID: Int!\n    authorID: Int!\n\n    updatedText: String\n}\n\ntype UpdatedMessage {\n    number: Int!\n    room: String!\n    nickname: String!\n\n    updatedText: String\n    updatedAt: Date\n}\n\ntype UpdatedMessages {\n    messages(after: Date = nul, number: Int! = 50): UpdatedMessage!\n    notifiedAt: Date!\n}\n\n# USER\n\ninput NewUser {\n    nickname: String\n}\n\ntype User {\n    nickname: String\n    createdAt: String\n\n    totalMessages: Int!\n    joinedRooms: Int!\n}\n\n# SCHEMA\n\ntype Query {\n    nicknameAvailable(nickname: String!): Boolean!\n    joined: JoinedRooms!\n    available: AvailableRooms!\n\n    timezoneOffset(timezone: String): Int!\n    recentMessages(room: String!): RecentMessages!\n}\n\ntype Mutation {\n    signIn(newUser: NewUser!): JoinedRooms!\n    signUp(newUser: NewUser!): AvailableRooms!\n\n    join(room: String!): Room!\n    leave(room: String!): AvailableRooms!\n\n    report(room: String!, nickname: String!, number: Int!): Boolean!\n\n    addRoom(name: String!): Room!\n    deleteRoom(name: String!): Room!\n\n    newMessage(room: String!, message: NewMessage): RecentMessages!\n    updateMessage(message: UpdateMessage): RecentMessages!\n}\n\ntype Subscription {\n    newMessages(room: String!): RecentMessages!\n    updatedMessages(room: String!): UpdatedMessages!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 13,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 19
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-13T19:58:33Z",
+    "updated_at": "2019-04-17T10:32:34Z",
+    "pushed_at": "2019-04-16T15:20:11Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "repo_name": "octocracy",
+  "repo_full_name": "capaj/octocracy",
+  "repo_owner": "capaj",
+  "repo_description": "a more open way to handle contributions on github projects",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "ec0434a3e4e77220295f34cee0b8fedbe29c1bb7",
+      "url": "https://api.github.com/repositories/111967539/contents/src/schema.graphql?ref=79a53aee68d7f9e306dd0c054bc63e0ff2c93196",
+      "git_url": "https://api.github.com/repositories/111967539/git/blobs/ec0434a3e4e77220295f34cee0b8fedbe29c1bb7",
+      "html_url": "https://github.com/capaj/octocracy/blob/79a53aee68d7f9e306dd0c054bc63e0ff2c93196/src/schema.graphql",
+      "content": "type Query {\n  time: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-25T01:26:45Z",
+    "updated_at": "2017-11-25T01:44:30Z",
+    "pushed_at": "2017-11-25T02:17:07Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

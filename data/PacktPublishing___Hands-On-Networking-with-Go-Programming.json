@@ -1,0 +1,57 @@
+{
+  "repo_name": "Hands-On-Networking-with-Go-Programming",
+  "repo_full_name": "packtpublishing/hands-on-networking-with-go-programming",
+  "repo_owner": "PacktPublishing",
+  "repo_description": " Hands-On Networking with Go Programming by Packt Publishing",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "chapter_3_applications/graphdata/schema.graphql",
+      "sha": "4ecfd56e2f23fa1a58fd5464e52c10def74029d3",
+      "url": "https://api.github.com/repositories/173247503/contents/chapter_3_applications/graphdata/schema.graphql?ref=8f1983675c6d27a52ac08013b6c346f6ef35157c",
+      "git_url": "https://api.github.com/repositories/173247503/git/blobs/4ecfd56e2f23fa1a58fd5464e52c10def74029d3",
+      "html_url": "https://github.com/PacktPublishing/Hands-On-Networking-with-Go-Programming/blob/8f1983675c6d27a52ac08013b6c346f6ef35157c/chapter_3_applications/graphdata/schema.graphql",
+      "content": "type Node {\n  id: ID!\n  parent: Node\n  children: [Node!]\n}\n\ntype Query {\n  list(skip: Int, take: Int): [Node!]!\n  get(id: ID!): Node\n}\n\ninput NewNode {\n  id: ID!\n  parent: ID\n}\n\ninput NewEdge {\n  parent: ID!\n  child: ID!\n}\n\ntype Mutation {\n  createNode(node: NewNode!): ID!\n  createEdge(edge: NewEdge!): ID!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": true,
+      "numDefinitions": 5
+    },
+    {
+      "name": "schema.graphql",
+      "path": "chapter_3_applications/graphql/schema/schema.graphql",
+      "sha": "e34cb8f5b02d7a91915afbc0aa4f04e0fd530166",
+      "url": "https://api.github.com/repositories/173247503/contents/chapter_3_applications/graphql/schema/schema.graphql?ref=8f1983675c6d27a52ac08013b6c346f6ef35157c",
+      "git_url": "https://api.github.com/repositories/173247503/git/blobs/e34cb8f5b02d7a91915afbc0aa4f04e0fd530166",
+      "html_url": "https://github.com/PacktPublishing/Hands-On-Networking-with-Go-Programming/blob/8f1983675c6d27a52ac08013b6c346f6ef35157c/chapter_3_applications/graphql/schema/schema.graphql",
+      "content": "# Basic types\ntype Order {\n  id: ID!\n  items: [Item!]!\n  company: Company!\n}\n\ntype Item {\n  id: ID!\n  desc: String!\n  price: Int!\n}\n\ntype Company {\n  id: ID!\n  name: String!\n\tvatNumber: String!\n\taddress: Address!\n}\n\ntype Address {\n  address1: String!\n\taddress2: String!\n\taddress3: String!\n\taddress4: String!\n\tpostcode: String!\n\tcountry: String!\n}\n\n# Define the queries.\ntype Query {\n  orders(companyId: ID!, ids: [ID!]): [Order!]!\n  company(id: ID!): Company!\n  companies(ids: [ID!]!): [Company!]!\n}\n\n# Define input types for mutations.\ninput NewCompanyAddress {\n  address1: String!\n\taddress2: String!\n\taddress3: String!\n\taddress4: String!\n\tpostcode: String!\n\tcountry: String!\n}\n\ninput NewCompany {\n  name: String!\n\tvatNumber: String!\n\taddress: NewCompanyAddress!\n}\n\ninput NewOrder {\n  items: [ID!]!\n}\n\n# Define mutations.\ntype Mutation {\n  createCompany(company: NewCompany!): Company!\n  createOrder(companyId: ID!, order: NewOrder!): Order!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-01T06:28:40Z",
+    "updated_at": "2019-07-05T17:06:31Z",
+    "pushed_at": "2019-06-30T19:36:10Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 5
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "ammobin-api",
+  "repo_full_name": "ammobindotca/ammobin-api",
+  "repo_owner": "ammobinDOTca",
+  "repo_description": "api for  https://ammobin.ca",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "graphql.gql",
+      "path": "graphql.gql",
+      "sha": "f26b474b6c431af22bef12031a146e18a62e0572",
+      "url": "https://api.github.com/repositories/95395249/contents/graphql.gql?ref=c511112a68688ebf63df2ca137f041955d15ef4b",
+      "git_url": "https://api.github.com/repositories/95395249/git/blobs/f26b474b6c431af22bef12031a146e18a62e0572",
+      "html_url": "https://github.com/ammobinDOTca/ammobin-api/blob/c511112a68688ebf63df2ca137f041955d15ef4b/graphql.gql",
+      "content": "# types of ammo.\nenum ItemType {\n  ammo # collection the following\n  centerfire\n  rimfire\n  shotgun\n\n  reloading # collection of the following\n  powder\n  shot\n  case\n  primer\n}\n# provinces  (and territories) of canada\nenum Province {\n  AB\n  BC\n  MB\n  NB\n  NL\n  NS\n  NT\n  NU\n  ON\n  PE\n  QC\n  SK\n  YT\n}\n# colunm sort order\nenum SortOrder {\n  ASC\n  DES\n}\n# column to sort on\nenum SortField {\n  name\n  link\n  minPrice\n  minUnitCost\n}\n\ntype ItemListing {\n  img: String\n  price: Float!\n  name: String!\n  link: String!\n  vendor: String!\n  provinces: [Province] #[Province!]!\n  subType: String #!\n  brand: String!\n  count: Float\n  unitCost: Float\n  itemType: ItemType!\n}\ntype ItemGroup {\n  name: String!\n  brand: String!\n  subType: String #!\n  itemType: ItemType!\n  minPrice: Float!\n  maxPrice: Float!\n  minUnitCost: Float\n  maxUnitCost: Float\n  img: String\n  vendors: [ItemListing!]!\n}\ntype ItemListings {\n  page: Int!\n  pages: Int!\n  pageSize: Int!\n  items: [ItemGroup!]!\n}\ntype Vendor {\n  name: String!\n  provinces: [Province!]!\n  location: String!\n  logo: String!\n  link: String!\n  background: Boolean\n  hasReloadingItems: Boolean\n}\ntype BestPrice {\n  unitCost: Float!\n  calibre: String!\n  type: ItemType!\n}\n# The \"Query\" type is the root of all GraphQL queries.\n# (A \"Mutation\" type will be covered later on.)\ntype Query {\n  vendors(province: Province): [Vendor]\n  bestPrices(type: ItemType, calibres: [String!]): [BestPrice]\n  itemsListings(\n    page: Int\n    pageSize: Int\n    itemType: ItemType\n    subType: String\n    province: Province\n    vendor: String\n    sortOrder: SortOrder\n    sortField: SortField\n    query: String\n  ): ItemListings\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 10
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-26T01:04:37Z",
+    "updated_at": "2019-07-18T04:32:34Z",
+    "pushed_at": "2019-07-18T22:03:41Z",
+    "issues": 22,
+    "watchers": 1,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 133,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 14,
+    "pull_requests_merged": 118,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

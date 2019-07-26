@@ -1,0 +1,82 @@
+{
+  "repo_name": "lewis-store-api",
+  "repo_full_name": "faculewis/lewis-store-api",
+  "repo_owner": "Faculewis",
+  "repo_description": "Turing's challenge",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schemas/department/schema.graphql",
+      "sha": "83407bf5c39ec07909643376790dfd968f204527",
+      "url": "https://api.github.com/repositories/179292456/contents/src/graphql/schemas/department/schema.graphql?ref=de14b3ad9bce80cfff1daf2a6757cc1f4b8c9643",
+      "git_url": "https://api.github.com/repositories/179292456/git/blobs/83407bf5c39ec07909643376790dfd968f204527",
+      "html_url": "https://github.com/Faculewis/lewis-store-api/blob/de14b3ad9bce80cfff1daf2a6757cc1f4b8c9643/src/graphql/schemas/department/schema.graphql",
+      "content": "type Department {\n  department_id: Int\n  name: String\n  description: String\n}\n\ntype Query {\n  departments: [Department]\n  department(id: Int): Department\n}\n\ntype Mutation {\n  addDepartment(name: String!, description: String): Department\n  updateDepartment(department_id: Int!, name: String!, description: String): Department\n  deleteDepartment(department_id: Int): QueryResult\n}",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/Faculewis/lewis-store-api/blob/de14b3ad9bce80cfff1daf2a6757cc1f4b8c9643/src/graphql/schemas/department/schema.graphql:\ntype Department {\n  department_id: Int\n  name: String\n  description: String\n}\n\ntype Query {\n  departments: [Department]\n  department(id: Int): Department\n}\n\ntype Mutation {\n  addDepartment(name: String!, description: String): Department\n  updateDepartment(department_id: Int!, name: String!, description: String): Department\n  deleteDepartment(department_id: Int): QueryResult\n}\n# https://github.com/Faculewis/lewis-store-api/blob/de14b3ad9bce80cfff1daf2a6757cc1f4b8c9643/src/graphql/schemas/global.graphql:\ntype QueryResult {\n  error: Boolean\n  success: Boolean\n  message: String\n}",
+        "mergedPaths": [
+          "src/graphql/schemas/global.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "QueryResult"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 4,
+        "containsCycle": false,
+        "polynomialLevel": 1,
+        "numDefinitions": 4
+      },
+      "validSchema": false
+    },
+    {
+      "name": "global.graphql",
+      "path": "src/graphql/schemas/global.graphql",
+      "sha": "77a17233baccd144d15df19426ccb28523a8898b",
+      "url": "https://api.github.com/repositories/179292456/contents/src/graphql/schemas/global.graphql?ref=de14b3ad9bce80cfff1daf2a6757cc1f4b8c9643",
+      "git_url": "https://api.github.com/repositories/179292456/git/blobs/77a17233baccd144d15df19426ccb28523a8898b",
+      "html_url": "https://github.com/Faculewis/lewis-store-api/blob/de14b3ad9bce80cfff1daf2a6757cc1f4b8c9643/src/graphql/schemas/global.graphql",
+      "content": "type QueryResult {\n  error: Boolean\n  success: Boolean\n  message: String\n}",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/schemas/product/schema.graphql",
+      "sha": "9c71fba1fb69bf8307dc56e7c5eafaeb052bd606",
+      "url": "https://api.github.com/repositories/179292456/contents/src/graphql/schemas/product/schema.graphql?ref=de14b3ad9bce80cfff1daf2a6757cc1f4b8c9643",
+      "git_url": "https://api.github.com/repositories/179292456/git/blobs/9c71fba1fb69bf8307dc56e7c5eafaeb052bd606",
+      "html_url": "https://github.com/Faculewis/lewis-store-api/blob/de14b3ad9bce80cfff1daf2a6757cc1f4b8c9643/src/graphql/schemas/product/schema.graphql",
+      "content": "type Product {\n  product_id: Int\n  name: String\n  description: String\n  price: Float\n  discounted_price: Float\n  image: String\n  image_2: String\n  thumbnail: String\n  display: Int\n}\n\ntype Query {\n  product(product_id: Int!): Product\n  countProductsInCategory (category_id: Int!): Int\n  categoryProducts (\n    category_id: Int!,\n    startItem: Int!,\n    productsPerPage: Int!,\n    descriptionLength: Int\n  ): [Product]\n  countProductsOnDepartment (department_id: Int!): Int\n  departmentProducts (\n    department_id: Int!,\n    startItem: Int!,\n    productsPerPage: Int!,\n    descriptionLength: Int\n  ): [Product],\n  countProductsOnCatalog: Int\n  productsOnCatalog: [Product]\n  countCatalogSearch(text: String!, inAllWords: Boolean): Int\n  catalogSearch(\n    text: String!,\n    inAllWords: Boolean,\n    descriptionLength: Int,\n    productsPerPage: Int!,\n    startItem: Int!\n  ): [Product]\n}\n\ntype Mutation {\n  addProduct(name: String): Product\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-03T13:08:57Z",
+    "updated_at": "2019-04-03T13:09:04Z",
+    "pushed_at": "2019-04-03T13:09:02Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

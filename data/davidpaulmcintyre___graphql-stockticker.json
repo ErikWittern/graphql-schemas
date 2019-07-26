@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-stockticker",
+  "repo_full_name": "davidpaulmcintyre/graphql-stockticker",
+  "repo_owner": "davidpaulmcintyre",
+  "repo_description": "Demo stock ticker for GraphQL hackathon",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "275ed2eb0b42d40df5b5d26b3414612cc3a1bea4",
+      "url": "https://api.github.com/repositories/81614826/contents/server/schema.graphql?ref=a8dab65055c585682d3201cc8ab1e1a93fef453c",
+      "git_url": "https://api.github.com/repositories/81614826/git/blobs/275ed2eb0b42d40df5b5d26b3414612cc3a1bea4",
+      "html_url": "https://github.com/davidpaulmcintyre/graphql-stockticker/blob/a8dab65055c585682d3201cc8ab1e1a93fef453c/server/schema.graphql",
+      "content": "schema {\n  query: QueryRoot\n  mutation: MutationRoot\n}\n\ntype Author {\n  id: String\n  name: String\n  image: String\n  books: [Book]\n}\n\ntype Book {\n  id: String\n  title: String\n  image: String\n  authorId: String\n  description: String\n  author: Author\n}\n\ninput BookInput {\n  id: String\n  title: String\n  image: String\n  description: String\n  authorId: String\n}\n\ntype MutationRoot {\n  addBook(book: BookInput): Book\n}\n\ntype QueryRoot {\n  viewer: Viewer\n  authors: [Author]\n  books: [Book]\n  bookByID(id: String): Book\n  bookSearch(keyword: String): [Book]\n  secret: String\n}\n\ntype Viewer {\n  authors: [Author]\n  books: [Book]\n  bookByID(id: String): Book\n  bookSearch(keyword: String): [Book]\n  secret: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": true,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-10T23:01:26Z",
+    "updated_at": "2017-02-10T23:02:06Z",
+    "pushed_at": "2017-02-11T13:09:33Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "innonic-academy-graphql-example",
+  "repo_full_name": "gergogy/innonic-academy-graphql-example",
+  "repo_owner": "gergogy",
+  "repo_description": "GraphQL application demo",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "a7a377ded6cc2cfd897b0904990bc5c255075180",
+      "url": "https://api.github.com/repositories/120668573/contents/schema.graphql?ref=ac551f4d767990d085ee986999d0d25810f1ce84",
+      "git_url": "https://api.github.com/repositories/120668573/git/blobs/a7a377ded6cc2cfd897b0904990bc5c255075180",
+      "html_url": "https://github.com/gergogy/innonic-academy-graphql-example/blob/ac551f4d767990d085ee986999d0d25810f1ce84/schema.graphql",
+      "content": "\"\"\"\nSort directions\n\"\"\"\nenum SortDir {\n  ASC\n  DESC\n}\n\n\"\"\"\nPrivacy levels\n\"\"\"\nenum PastePrivacy {\n  PUBLIC_ANON\n  UNLISTED_ANON\n  PRIVATE_USER\n  PUBLIC_USER\n}\n\"\"\"\nString, ISO format\n\"\"\"\nscalar Date\n\n\"\"\"\nDetailed paste return type (lists)\n\"\"\"\ntype PastebinPasteDetailed {\n  id: ID!\n  date: Date\n  title: String\n  privacy: PastePrivacy\n  hits: Int\n  url: String!\n  content: String\n}\n\n\"\"\"\nSelf descriptive\n\"\"\"\ntype Author {\n  name: String\n  books: [Book]\n}\n\n\"\"\"\nSelf descriptive\n\"\"\"\ntype Book {\n  id: Int\n  title(lang: String): String\n  isbn: String\n  authors(sortDir: SortDir): [Author]\n}\n\n\"\"\"\nString, starts with http(s)://\n\"\"\"\nscalar Url\n\n\"\"\"\nString, it contains '@'\n\"\"\"\nscalar Email\n\n\"\"\"\nPossible user levels\n\"\"\"\nenum UserType {\n  FREE\n  PRO\n}\n\n\"\"\"\nIt describe a PasteBin user\n\"\"\"\ntype UserInfo {\n  username: String!\n  avatar: Url\n  website: Url\n  email: Email\n  location: String\n  type: UserType\n}\n\n\"\"\"\nRoot Query type\n\"\"\"\ntype Query {\n  hello: String\n  author(id: ID!): Author\n  book(id: ID!): Book\n  paste(id: ID!): String\n  listUserPastes(limit: Int = 3): [PastebinPasteDetailed]!\n  listTrendingPastes(count: Int = 5): [PastebinPasteDetailed]\n  pastebinUserInfo: UserInfo\n  toTimestamp(date: String): Date\n}\n\n\"\"\"\nInput declaration for createpaste method\n\"\"\"\ninput CreatePasteInput {\n  title: String\n  content: String!\n  format: PastebinSyntaxHighlight\n  privacy: PastePrivacy = PUBLIC\n}\n\n\"\"\"\nRoot mutation \n\"\"\"\ntype Mutation {\n  createPaste(input: CreatePasteInput): String\n  deletePaste(id: String!): String\n}\n\n\"\"\"\nPastebin supported syntaxies\n\"\"\"\nenum PastebinSyntaxHighlight {\n  SYNTAX_4CS\n  SYNTAX_6502_ACME_Cross_Assembler\n  SYNTAX_6502_Kick_Assembler\n  SYNTAX_6502_TASM_64TASS\n  SYNTAX_ABAP\n  SYNTAX_ActionScript\n  SYNTAX_ActionScript_3\n  SYNTAX_Ada\n  SYNTAX_AIMMS\n  SYNTAX_ALGOL_68\n  SYNTAX_Apache_Log\n  SYNTAX_AppleScript\n  SYNTAX_APT_Sources\n  SYNTAX_ARM\n  SYNTAX_ASM_NASM\n  SYNTAX_ASP\n  SYNTAX_Asymptote\n  SYNTAX_autoconf\n  SYNTAX_Autohotkey\n  SYNTAX_AutoIt\n  SYNTAX_Avisynth\n  SYNTAX_Awk\n  SYNTAX_BASCOM_AVR\n  SYNTAX_Bash\n  SYNTAX_Basic4GL\n  SYNTAX_Batch\n  SYNTAX_BibTeX\n  SYNTAX_Blitz_Basic\n  SYNTAX_Blitz3D\n  SYNTAX_BlitzMax\n  SYNTAX_BNF\n  SYNTAX_BOO\n  SYNTAX_BrainFuck\n  SYNTAX_C\n  SYNTAX_C_WinAPI\n  SYNTAX_C_for_Macs\n  SYNTAX_C_Intermediate_Language\n  SYNTAX_C_sharp\n  SYNTAX_CPP\n  SYNTAX_CPP_WinAPI\n  SYNTAX_CPP_QT\n  SYNTAX_C_Loadrunner\n  SYNTAX_CAD_DCL\n  SYNTAX_CAD_Lisp\n  SYNTAX_Ceylon\n  SYNTAX_CFDG\n  SYNTAX_ChaiScript\n  SYNTAX_Chapel\n  SYNTAX_Clojure\n  SYNTAX_Clone_C\n  SYNTAX_Clone_CPP\n  SYNTAX_CMake\n  SYNTAX_COBOL\n  SYNTAX_CoffeeScript\n  SYNTAX_ColdFusion\n  SYNTAX_CSS\n  SYNTAX_Cuesheet\n  SYNTAX_D\n  SYNTAX_Dart\n  SYNTAX_DCL\n  SYNTAX_DCPU_16\n  SYNTAX_DCS\n  SYNTAX_Delphi\n  SYNTAX_Delphi_Prism_Oxygene\n  SYNTAX_Diff\n  SYNTAX_DIV\n  SYNTAX_DOT\n  SYNTAX_E\n  SYNTAX_Easytrieve\n  SYNTAX_ECMAScript\n  SYNTAX_Eiffel\n  SYNTAX_Email\n  SYNTAX_EPC\n  SYNTAX_Erlang\n  SYNTAX_Euphoria\n  SYNTAX_F#\n  SYNTAX_Falcon\n  SYNTAX_Filemaker\n  SYNTAX_FO_Language\n  SYNTAX_Formula_One\n  SYNTAX_Fortran\n  SYNTAX_FreeBasic\n  SYNTAX_FreeSWITCH\n  SYNTAX_GAMBAS\n  SYNTAX_Game_Maker\n  SYNTAX_GDB\n  SYNTAX_Genero\n  SYNTAX_Genie\n  SYNTAX_GetText\n  SYNTAX_Go\n  SYNTAX_Groovy\n  SYNTAX_GwBasic\n  SYNTAX_Haskell\n  SYNTAX_Haxe\n  SYNTAX_HicEst\n  SYNTAX_HQ9_Plus\n  SYNTAX_HTML\n  SYNTAX_HTML_5\n  SYNTAX_Icon\n  SYNTAX_IDL\n  SYNTAX_INI_file\n  SYNTAX_Inno_Script\n  SYNTAX_INTERCAL\n  SYNTAX_IO\n  SYNTAX_ISPF_Panel_Definition\n  SYNTAX_J\n  SYNTAX_Java\n  SYNTAX_Java_5\n  SYNTAX_JavaScript\n  SYNTAX_JCL\n  SYNTAX_jQuery\n  SYNTAX_JSON\n  SYNTAX_Julia\n  SYNTAX_KiXtart\n  SYNTAX_Kotlin\n  SYNTAX_Latex\n  SYNTAX_LDIF\n  SYNTAX_Liberty_BASIC\n  SYNTAX_Linden_Scripting\n  SYNTAX_Lisp\n  SYNTAX_LLVM\n  SYNTAX_Loco_Basic\n  SYNTAX_Logtalk\n  SYNTAX_LOL_Code\n  SYNTAX_Lotus_Formulas\n  SYNTAX_Lotus_Script\n  SYNTAX_LScript\n  SYNTAX_Lua\n  SYNTAX_M68000_Assembler\n  SYNTAX_MagikSF\n  SYNTAX_Make\n  SYNTAX_MapBasic\n  SYNTAX_Markdown\n  SYNTAX_MatLab\n  SYNTAX_mIRC\n  SYNTAX_MIX_Assembler\n  SYNTAX_Modula_2\n  SYNTAX_Modula_3\n  SYNTAX_Motorola_68000_HiSoft_Dev\n  SYNTAX_MPASM\n  SYNTAX_MXML\n  SYNTAX_MySQL\n  SYNTAX_Nagios\n  SYNTAX_NetRexx\n  SYNTAX_newLISP\n  SYNTAX_Nginx\n  SYNTAX_Nimrod\n  SYNTAX_None\n  SYNTAX_NullSoft_Installer\n  SYNTAX_Oberon_2\n  SYNTAX_Objeck_Programming_Langua\n  SYNTAX_Objective_C\n  SYNTAX_OCalm_Brief\n  SYNTAX_OCaml\n  SYNTAX_Octave\n  SYNTAX_Open_Object_Rexx\n  SYNTAX_OpenBSD_PACKET_FILTER\n  SYNTAX_OpenGL_Shading\n  SYNTAX_Openoffice_BASIC\n  SYNTAX_Oracle_11\n  SYNTAX_Oracle_8\n  SYNTAX_Oz\n  SYNTAX_ParaSail\n  SYNTAX_PARI_GP\n  SYNTAX_Pascal\n  SYNTAX_Pawn\n  SYNTAX_PCRE\n  SYNTAX_Per\n  SYNTAX_Perl\n  SYNTAX_Perl_6\n  SYNTAX_PHP\n  SYNTAX_PHP_Brief\n  SYNTAX_Pic_16\n  SYNTAX_Pike\n  SYNTAX_Pixel_Bender\n  SYNTAX_PL_I\n  SYNTAX_PL_SQL\n  SYNTAX_PostgreSQL\n  SYNTAX_PostScript\n  SYNTAX_POV_Ray\n  SYNTAX_PowerBuilder\n  SYNTAX_PowerShell\n  SYNTAX_ProFTPd\n  SYNTAX_Progress\n  SYNTAX_Prolog\n  SYNTAX_Properties\n  SYNTAX_ProvideX\n  SYNTAX_Puppet\n  SYNTAX_PureBasic\n  SYNTAX_PyCon\n  SYNTAX_Python\n  SYNTAX_Python_for_S60\n  SYNTAX_q_kdb_plus\n  SYNTAX_QBasic\n  SYNTAX_QML\n  SYNTAX_R\n  SYNTAX_Racket\n  SYNTAX_Rails\n  SYNTAX_RBScript\n  SYNTAX_REBOL\n  SYNTAX_REG\n  SYNTAX_Rexx\n  SYNTAX_Robots\n  SYNTAX_RPM_Spec\n  SYNTAX_Ruby\n  SYNTAX_Ruby_Gnuplot\n  SYNTAX_Rust\n  SYNTAX_SAS\n  SYNTAX_Scala\n  SYNTAX_Scheme\n  SYNTAX_Scilab\n  SYNTAX_SCL\n  SYNTAX_SdlBasic\n  SYNTAX_Smalltalk\n  SYNTAX_Smarty\n  SYNTAX_SPARK\n  SYNTAX_SPARQL\n  SYNTAX_SQF\n  SYNTAX_SQL\n  SYNTAX_StandardML\n  SYNTAX_StoneScript\n  SYNTAX_SuperCollider\n  SYNTAX_Swift\n  SYNTAX_SystemVerilog\n  SYNTAX_T_SQL\n  SYNTAX_TCL\n  SYNTAX_Tera_Term\n  SYNTAX_thinBasic\n  SYNTAX_TypoScript\n  SYNTAX_Unicon\n  SYNTAX_UnrealScript\n  SYNTAX_UPC\n  SYNTAX_Urbi\n  SYNTAX_Vala\n  SYNTAX_VB_NET\n  SYNTAX_VBScript\n  SYNTAX_Vedit\n  SYNTAX_VeriLog\n  SYNTAX_VHDL\n  SYNTAX_VIM\n  SYNTAX_Visual_Pro_Log\n  SYNTAX_VisualBasic\n  SYNTAX_VisualFoxPro\n  SYNTAX_WhiteSpace\n  SYNTAX_WHOIS\n  SYNTAX_Winbatch\n  SYNTAX_XBasic\n  SYNTAX_XML\n  SYNTAX_Xorg_Config\n  SYNTAX_XPP\n  SYNTAX_YAML\n  SYNTAX_Z80_Assembler\n  SYNTAX_ZXBasic\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": true,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-02-07T20:37:09Z",
+    "updated_at": "2018-02-11T16:50:48Z",
+    "pushed_at": "2018-02-13T21:20:02Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

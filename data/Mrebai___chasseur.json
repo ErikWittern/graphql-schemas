@@ -1,0 +1,39 @@
+{
+  "repo_name": "chasseur",
+  "repo_full_name": "mrebai/chasseur",
+  "repo_owner": "Mrebai",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "User.graphql",
+      "path": "imports/api/users/User.graphql",
+      "sha": "5933335878d65452b93e50a9ff8d1e2becd42993",
+      "url": "https://api.github.com/repositories/140875039/contents/imports/api/users/User.graphql?ref=46ca4aae5127027a145e52458b09a5ebfefda459",
+      "git_url": "https://api.github.com/repositories/140875039/git/blobs/5933335878d65452b93e50a9ff8d1e2becd42993",
+      "html_url": "https://github.com/Mrebai/chasseur/blob/46ca4aae5127027a145e52458b09a5ebfefda459/imports/api/users/User.graphql",
+      "content": "type User {\n  _id: String\n  email: String\n  userName: String\n\n}\n\n type Query {\n  user: User\n\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-13T17:27:00Z",
+    "updated_at": "2018-08-31T04:24:59Z",
+    "pushed_at": "2018-09-01T22:45:04Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

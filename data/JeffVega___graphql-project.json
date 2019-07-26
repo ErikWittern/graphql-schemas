@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-project",
+  "repo_full_name": "jeffvega/graphql-project",
+  "repo_owner": "JeffVega",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "cfbafe548ade6a066f99fe973f11731bc9a98e34",
+      "url": "https://api.github.com/repositories/157034685/contents/server/schema.graphql?ref=9a813cc4234642ae7f6b4066af62d614bc035f62",
+      "git_url": "https://api.github.com/repositories/157034685/git/blobs/cfbafe548ade6a066f99fe973f11731bc9a98e34",
+      "html_url": "https://github.com/JeffVega/graphql-project/blob/9a813cc4234642ae7f6b4066af62d614bc035f62/server/schema.graphql",
+      "content": "type Query {\n    greeting: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-11T00:40:21Z",
+    "updated_at": "2018-11-11T00:53:58Z",
+    "pushed_at": "2018-11-11T00:53:56Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

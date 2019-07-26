@@ -1,0 +1,39 @@
+{
+  "repo_name": "GraphQL",
+  "repo_full_name": "tg970/graphql",
+  "repo_owner": "tg970",
+  "repo_description": "Hacker News clone to demonstrate GraphQL, Node server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "2580ef05df256c88bd3d743a235d797947786bd7",
+      "url": "https://api.github.com/repositories/134757874/contents/src/schema.graphql?ref=3f17c178899cdfe947c7cfa259a2d1757b967244",
+      "git_url": "https://api.github.com/repositories/134757874/git/blobs/2580ef05df256c88bd3d743a235d797947786bd7",
+      "html_url": "https://github.com/tg970/GraphQL/blob/3f17c178899cdfe947c7cfa259a2d1757b967244/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  feed: [Link!]!\n}\n\ntype Mutation {\n  post(url: String!, description: String!): Link!\n}\n\ntype Link {\n  id: ID!\n  description: String!\n  url: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-24T19:07:03Z",
+    "updated_at": "2019-02-09T18:40:54Z",
+    "pushed_at": "2019-02-09T18:40:53Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

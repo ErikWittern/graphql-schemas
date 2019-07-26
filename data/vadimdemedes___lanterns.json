@@ -1,0 +1,39 @@
+{
+  "repo_name": "lanterns",
+  "repo_full_name": "vadimdemedes/lanterns",
+  "repo_owner": "vadimdemedes",
+  "repo_description": "⛩Write Markdown and get a GraphQL API for querying them for free",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "24eeea23554939b00d3a32a80a0fdd43b972b79f",
+      "url": "https://api.github.com/repositories/123718143/contents/schema.graphql?ref=874a08583ffcacd5a4894adbb4a35c3e79051b4e",
+      "git_url": "https://api.github.com/repositories/123718143/git/blobs/24eeea23554939b00d3a32a80a0fdd43b972b79f",
+      "html_url": "https://github.com/vadimdemedes/lanterns/blob/874a08583ffcacd5a4894adbb4a35c3e79051b4e/schema.graphql",
+      "content": "scalar Date\nscalar JSON\n\ntype Document {\n\t# Title extracted from frontmatter's `title`\n\ttitle: String!\n\t# Title converted to a slug\n\tslug: String!\n\t# Category extracted from frontmatter's `category`\n\tcategory: String\n\t# All frontmatter fields\n\tfrontmatter: JSON!\n\t# Document body without frontmatter\n\tbody: String!\n\t# Date when a document was created\n\tcreatedAt: Date!\n}\n\ntype Query {\n\tdocuments(skip: Int, limit: Int, category: String): [Document!]!\n\tdocument(slug: String!): Document\n\tcategories: [String!]\n}\n\nschema {\n\tquery: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-03T18:06:34Z",
+    "updated_at": "2019-07-15T10:56:29Z",
+    "pushed_at": "2018-03-11T12:00:54Z",
+    "issues": 0,
+    "watchers": 5,
+    "fork_count": 9,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 313
+  }
+}

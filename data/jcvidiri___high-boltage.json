@@ -1,0 +1,70 @@
+{
+  "repo_name": "high-boltage",
+  "repo_full_name": "jcvidiri/high-boltage",
+  "repo_owner": "jcvidiri",
+  "repo_description": "renewable energy purchase certification system based on blockchain technology",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "server/src/graphql/types/query.graphql",
+      "sha": "9f22c29b05990aff6b4581b48761b057c1914509",
+      "url": "https://api.github.com/repositories/109065094/contents/server/src/graphql/types/query.graphql?ref=bba361e96447b1f10630066584c124a0f014b8d2",
+      "git_url": "https://api.github.com/repositories/109065094/git/blobs/9f22c29b05990aff6b4581b48761b057c1914509",
+      "html_url": "https://github.com/jcvidiri/high-boltage/blob/bba361e96447b1f10630066584c124a0f014b8d2/server/src/graphql/types/query.graphql",
+      "content": "type Query {\n  peers: [String!]\n  balance(address: String): String\n  allBalances: [Balance]\n  address: Address\n  block(hash: String!): Block\n  blockchain: [Block]\n  flowPool: [Flow]\n  contractPool: [RawContract]\n  status: String\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/jcvidiri/high-boltage/blob/bba361e96447b1f10630066584c124a0f014b8d2/server/src/graphql/types/query.graphql:\ntype Query {\n  peers: [String!]\n  balance(address: String): String\n  allBalances: [Balance]\n  address: Address\n  block(hash: String!): Block\n  blockchain: [Block]\n  flowPool: [Flow]\n  contractPool: [RawContract]\n  status: String\n}\n\n# https://github.com/jcvidiri/high-boltage/blob/93d24bfe9bae0f59f007dff8a3af74a82d95f1bb/server/src/graphql/types/types.graphql:\ntype Block {\n  index: String\n  hash: String\n  previousHash: String\n  timestamp: String\n  contracts: [Contract]\n  difficulty: Int\n  minterBalance: Float\n  minterAddress: String\n}\n\ntype Flow {\n  id: String\n  timestamp: String\n  generator: String\n  amount: Float\n  claimId: String\n  signature: String\n  cammesaSignature: String\n}\n\ntype Contract {\n  id: String\n  claimId: String\n  claimant: String\n  timestamp: String\n  expDate: String\n  amount: Float\n  price: Float\n  measurements: [Flow]\n  signature: String\n}\n\ntype RawContract {\n  timestamp: String\n  claimant: String\n  amount: Float\n  price: Float\n  expDate: String\n  claimId: String\n  measurements: [Flow]\n  signature: String\n}\n\ntype Balance {\n  balance: Int\n  minterAddress: String\n}\n\ntype Address {\n  private: String\n  public: String\n}\n",
+        "mergedPaths": [
+          "server/src/graphql/types/types.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "Block",
+          "Flow",
+          "RawContract",
+          "Balance",
+          "Address"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 7,
+        "containsCycle": false,
+        "polynomialLevel": 3,
+        "numDefinitions": 7
+      },
+      "validSchema": false
+    },
+    {
+      "name": "types.graphql",
+      "path": "server/src/graphql/types/types.graphql",
+      "sha": "d5e66e851af7d8f40243b9e4c88f6455354b76e8",
+      "url": "https://api.github.com/repositories/109065094/contents/server/src/graphql/types/types.graphql?ref=93d24bfe9bae0f59f007dff8a3af74a82d95f1bb",
+      "git_url": "https://api.github.com/repositories/109065094/git/blobs/d5e66e851af7d8f40243b9e4c88f6455354b76e8",
+      "html_url": "https://github.com/jcvidiri/high-boltage/blob/93d24bfe9bae0f59f007dff8a3af74a82d95f1bb/server/src/graphql/types/types.graphql",
+      "content": "type Block {\n  index: String\n  hash: String\n  previousHash: String\n  timestamp: String\n  contracts: [Contract]\n  difficulty: Int\n  minterBalance: Float\n  minterAddress: String\n}\n\ntype Flow {\n  id: String\n  timestamp: String\n  generator: String\n  amount: Float\n  claimId: String\n  signature: String\n  cammesaSignature: String\n}\n\ntype Contract {\n  id: String\n  claimId: String\n  claimant: String\n  timestamp: String\n  expDate: String\n  amount: Float\n  price: Float\n  measurements: [Flow]\n  signature: String\n}\n\ntype RawContract {\n  timestamp: String\n  claimant: String\n  amount: Float\n  price: Float\n  expDate: String\n  claimId: String\n  measurements: [Flow]\n  signature: String\n}\n\ntype Balance {\n  balance: Int\n  minterAddress: String\n}\n\ntype Address {\n  private: String\n  public: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-01T00:00:05Z",
+    "updated_at": "2019-03-06T15:32:37Z",
+    "pushed_at": "2019-03-07T15:32:49Z",
+    "issues": 23,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 22,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 22,
+    "releases": 3,
+    "stargazers": 0
+  }
+}

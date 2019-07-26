@@ -1,0 +1,58 @@
+{
+  "repo_name": "graphql",
+  "repo_full_name": "t3n/graphql",
+  "repo_owner": "t3n",
+  "repo_description": "Flow Package to add graphql APIs to Neos and Flow that also supports some advanced features ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.root.graphql",
+      "path": "Resources/Private/GraphQL/schema.root.graphql",
+      "sha": "7fef913881a0ae80098530e6b03c3d188483d6c3",
+      "url": "https://api.github.com/repositories/159184163/contents/Resources/Private/GraphQL/schema.root.graphql?ref=fc41c92dc82581d934d8de5c7975d0c4a8ced3ed",
+      "git_url": "https://api.github.com/repositories/159184163/git/blobs/7fef913881a0ae80098530e6b03c3d188483d6c3",
+      "html_url": "https://github.com/t3n/graphql/blob/fc41c92dc82581d934d8de5c7975d0c4a8ced3ed/Resources/Private/GraphQL/schema.root.graphql",
+      "content": "directive @cached(\n    maxAge: Int! = 0\n    tags: [String!] = []\n) on FIELD_DEFINITION\n\ndirective @auth(\n    required: String\n) on OBJECT | FIELD_DEFINITION\n\ndirective @cost(\n    complexity: Int\n    multipliers: [String!] = []\n) on OBJECT | FIELD_DEFINITION\n\ntype Query {\n    ping: String\n}\n\ntype Mutation {\n    ping: String\n}\n\nschema {\n    query: Query\n    mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 6
+    },
+    {
+      "name": "schema.graphql",
+      "path": "Tests/Functional/Directive/Fixtures/schema.graphql",
+      "sha": "97daf57c4de631a72c68835d496bdfb8ad6854d5",
+      "url": "https://api.github.com/repositories/159184163/contents/Tests/Functional/Directive/Fixtures/schema.graphql?ref=529a652c432eeb425a5e5f7d25d1813a4189c944",
+      "git_url": "https://api.github.com/repositories/159184163/git/blobs/97daf57c4de631a72c68835d496bdfb8ad6854d5",
+      "html_url": "https://github.com/t3n/graphql/blob/529a652c432eeb425a5e5f7d25d1813a4189c944/Tests/Functional/Directive/Fixtures/schema.graphql",
+      "content": "directive @auth(\n    required: String\n) on OBJECT | FIELD_DEFINITION\n\ndirective @cached(\n    maxAge: Int! = 0\n    tags: [String!] = []\n) on FIELD_DEFINITION\n\ndirective @cost(\n    complexity: Int\n    multipliers: [String!] = []\n) on OBJECT | FIELD_DEFINITION\n\ntype CheapType {\n    value1: String\n}\n\ntype ExpensiveType @cost(complexity: 5) {\n    value1: String\n    value2: String @cost(complexity: 3)\n    value3: String\n}\n\ntype Query {\n    secureValue1: String! @auth(required: \"UnknownRole\")\n    secureValue2: String! @auth(required: \"Neos.Flow:Everybody\")\n    cachedValue: String! @cached(maxAge: 100, tags: [\"my-test-tag\"])\n\n    cheapTypes(limit: Int!): [CheapType!]! @cost(multipliers: [\"limit\"])\n    expensiveTypes(limit: Int!): [ExpensiveType!]! @cost(multipliers: [\"limit\"])\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-26T14:41:06Z",
+    "updated_at": "2019-07-15T11:40:12Z",
+    "pushed_at": "2019-07-16T09:36:28Z",
+    "issues": 0,
+    "watchers": 6,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 17,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 15,
+    "releases": 5,
+    "stargazers": 6
+  }
+}

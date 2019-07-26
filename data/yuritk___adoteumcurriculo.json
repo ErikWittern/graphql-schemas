@@ -1,0 +1,42 @@
+{
+  "repo_name": "adoteumcurriculo",
+  "repo_full_name": "yuritk/adoteumcurriculo",
+  "repo_owner": "yuritk",
+  "repo_description": "Project based on react-native, relay modern and GraphQL.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "ed60282f02047089482bc3f2788f2d63cbbbbc98",
+      "url": "https://api.github.com/repositories/116992407/contents/data/schema.graphql?ref=ff3cf337af27d288fe882c5e0df49bcd04def4cb",
+      "git_url": "https://api.github.com/repositories/116992407/git/blobs/ed60282f02047089482bc3f2788f2d63cbbbbc98",
+      "html_url": "https://github.com/yuritk/adoteumcurriculo/blob/ff3cf337af27d288fe882c5e0df49bcd04def4cb/data/schema.graphql",
+      "content": "type Job {  id: ID!\n  _id: String\n  user: String\n  active: Boolean\n  title: String\n  role: String\n  salary: Float\n  benefits: String\n  description: String\n  workload: String\n  localization: String\n  addinfo: String\n  contract: String\n  areas: [String]\n  subareas: [String]\n}\n\ntype JobConnection {\n  pageInfo: PageInfo!\n\n  edges: [JobEdge]\n  count: Int\n}\n\ntype JobEdge {\n  node: Job\n\n  cursor: String!\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n\n  hasPreviousPage: Boolean!\n\n  startCursor: String\n\n  endCursor: String\n}\n\ntype Query {\n  node(\n    id: ID!\n  ): Node\n  job(id: String!): Job\n  allJobs(after: String, first: Int, before: String, last: Int, search: String): JobConnection\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-10T18:01:17Z",
+    "updated_at": "2018-05-22T11:33:57Z",
+    "pushed_at": "2018-01-25T04:53:40Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 4
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "graphql-event-store-notifications",
+  "repo_full_name": "graphql-services/graphql-event-store-notifications",
+  "repo_owner": "graphql-services",
+  "repo_description": "Service for handling notification aggregations from EventStore ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "177fcf263646e6949a3cae7389016ddc3ee70e2e",
+      "url": "https://api.github.com/repositories/162485260/contents/schema.graphql?ref=5de980489a2d1d49cb73825dd2493427a46cb75c",
+      "git_url": "https://api.github.com/repositories/162485260/git/blobs/177fcf263646e6949a3cae7389016ddc3ee70e2e",
+      "html_url": "https://github.com/graphql-services/graphql-event-store-notifications/blob/5de980489a2d1d49cb73825dd2493427a46cb75c/schema.graphql",
+      "content": "scalar Time\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n\ntype EventStoreNotification {\n  id: ID!\n  message: String!\n  seen: Boolean!\n  principal: String\n  channel: String\n  reference: String\n  referenceID: String\n  date: Time!\n}\n\ntype Query {\n  notifications(\n    principal: String\n    channel: String\n    reference: String\n    referenceID: String\n    seen: Boolean\n    limit: Int\n  ): [EventStoreNotification!]!\n  notification(id: ID!): EventStoreNotification\n}\n\ninput EventStoreNotificationInput {\n  message: String!\n  principal: String\n  channel: String\n  reference: String\n  referenceID: String\n  date: Time!\n}\n\ntype Mutation {\n  createNotification(\n    input: EventStoreNotificationInput!\n  ): EventStoreNotification!\n  seenNotification(id: ID!): EventStoreNotification\n  seenNotifications(\n    principal: String!\n    channel: String!\n    reference: String\n    referenceID: String\n    date: Time!\n  ): Boolean!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-19T20:06:19Z",
+    "updated_at": "2019-01-10T20:12:58Z",
+    "pushed_at": "2019-02-05T21:11:34Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

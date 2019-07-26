@@ -1,0 +1,42 @@
+{
+  "repo_name": "kuzzle-plugin-graphql",
+  "repo_full_name": "kuzzleio/kuzzle-plugin-graphql",
+  "repo_owner": "kuzzleio",
+  "repo_description": "A GraphQL endpoint in your Kuzzle server",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "lib/schema.gql",
+      "sha": "e09da814bbd09f23143830207c39b20fdbfec3e9",
+      "url": "https://api.github.com/repositories/175667289/contents/lib/schema.gql?ref=5b20727bcc5218f93dacdf360a073ea92a71cd88",
+      "git_url": "https://api.github.com/repositories/175667289/git/blobs/e09da814bbd09f23143830207c39b20fdbfec3e9",
+      "html_url": "https://github.com/kuzzleio/kuzzle-plugin-graphql/blob/5b20727bcc5218f93dacdf360a073ea92a71cd88/lib/schema.gql",
+      "content": "type Driver {\n  name: String!\n  license: String!\n  age: Int\n}\n\ntype Query {\n  # drivers(): [Driver]\n  driver(name: String!): Driver\n}\n\nschema {\n  query: Query\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-14T17:16:57Z",
+    "updated_at": "2019-05-24T12:51:13Z",
+    "pushed_at": "2019-03-14T17:21:14Z",
+    "issues": 0,
+    "watchers": 7,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

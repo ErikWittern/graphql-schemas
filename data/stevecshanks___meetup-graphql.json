@@ -1,0 +1,41 @@
+{
+  "repo_name": "meetup-graphql",
+  "repo_full_name": "stevecshanks/meetup-graphql",
+  "repo_owner": "stevecshanks",
+  "repo_description": "Learning GraphQL by creating an API for a Meetup.com clone",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "bad39812ad74e95d0d1a0df4b4842f6d666037db",
+      "url": "https://api.github.com/repositories/150858606/contents/schema.graphql?ref=3c1f16b0895ef3739a261cdce52ff9a1c24b0282",
+      "git_url": "https://api.github.com/repositories/150858606/git/blobs/bad39812ad74e95d0d1a0df4b4842f6d666037db",
+      "html_url": "https://github.com/stevecshanks/meetup-graphql/blob/3c1f16b0895ef3739a261cdce52ff9a1c24b0282/schema.graphql",
+      "content": "schema {\n  query: Query\n  mutation: Mutation\n}\n\ntype Query {\n  meetups(first: Int, after: String): MeetupConnection\n  people(first: Int, after: String, interestedIn: String): PersonConnection\n  node(id: ID!): Node\n}\n\ntype Mutation {\n  \"Register an attendee for a meetup\"\n  attendMeetup(input: AttendMeetupInput): AttendMeetupPayload\n}\n\ninterface Node {\n  id: ID!\n}\n\ninterface Edge {\n  cursor: String!\n  node: Node!\n}\n\ninterface Connection {\n  edges: [Edge]!\n  pageInfo: PageInfo!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n}\n\ntype MeetupConnection implements Connection {\n  edges: [MeetupEdge]!\n  pageInfo: PageInfo!\n}\n\ntype MeetupEdge implements Edge {\n  cursor: String!\n  node: Meetup!\n}\n\ntype Meetup implements Node {\n  id: ID!\n  name: String!\n  location: Address!\n  start: String!\n  organiser: Person!\n  presenter: Person!\n  attendees: PersonConnection!\n}\n\ntype Address {\n  companyName: String!\n  address: String!\n  city: String!\n  postcode: String!\n}\n\ntype PersonConnection implements Connection {\n  edges: [PersonEdge]!\n  pageInfo: PageInfo!\n}\n\ntype PersonEdge implements Edge {\n  cursor: String!\n  node: Person!\n}\n\ntype Person implements Node {\n  id: ID!\n  name: String!\n  companyName: String\n  interests: [String]!\n  meetupsAttending: MeetupConnection!\n}\n\ninput AttendMeetupInput {\n  meetupId: ID!\n  attendeeId: ID!\n  clientMutationId: String\n}\n\ntype AttendMeetupPayload {\n  meetup: Meetup\n  attendee: Person\n  clientMutationId: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": true,
+      "numDefinitions": 16
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-29T11:41:55Z",
+    "updated_at": "2019-06-21T12:52:18Z",
+    "pushed_at": "2019-06-21T16:57:16Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

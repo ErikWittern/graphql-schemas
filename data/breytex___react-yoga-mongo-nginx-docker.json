@@ -1,0 +1,42 @@
+{
+  "repo_name": "react-yoga-mongo-nginx-docker",
+  "repo_full_name": "breytex/react-yoga-mongo-nginx-docker",
+  "repo_owner": "breytex",
+  "repo_description": "Starter boilerplate for a fullstack react + apollo + yoga + mongodb + nginx stack built on docker",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "backend/src/graphql/schema.graphql",
+      "sha": "97b875ca81cb010a1de8411f001f90e008b1147a",
+      "url": "https://api.github.com/repositories/156266788/contents/backend/src/graphql/schema.graphql?ref=520dbc7f146e70d1e23b92bd473ff75950846a94",
+      "git_url": "https://api.github.com/repositories/156266788/git/blobs/97b875ca81cb010a1de8411f001f90e008b1147a",
+      "html_url": "https://github.com/breytex/react-yoga-mongo-nginx-docker/blob/520dbc7f146e70d1e23b92bd473ff75950846a94/backend/src/graphql/schema.graphql",
+      "content": "type Query {\n  posts: [Post!]!\n}\n\ntype Mutation {\n  createPost(title: String!, desc: String!, author: String!): Boolean!\n}\n\n# Schema Types\ntype Post {\n  id: String!\n  title: String!\n  desc: String!\n  author: String!\n  createdOn: String!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-11-05T18:53:28Z",
+    "updated_at": "2018-11-08T14:47:28Z",
+    "pushed_at": "2018-11-08T14:47:27Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": false,
+    "license": "apache-2.0",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

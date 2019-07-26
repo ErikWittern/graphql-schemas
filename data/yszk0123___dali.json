@@ -1,0 +1,41 @@
+{
+  "repo_name": "dali",
+  "repo_full_name": "yszk0123/dali",
+  "repo_owner": "yszk0123",
+  "repo_description": "Daily report app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "data/schema.graphql",
+      "sha": "bb6b683b9e4a340447ace75ed7d28ed86518ee30",
+      "url": "https://api.github.com/repositories/93318754/contents/data/schema.graphql?ref=9e486037f2008495367ecbf02e9341c9b25a7a53",
+      "git_url": "https://api.github.com/repositories/93318754/git/blobs/bb6b683b9e4a340447ace75ed7d28ed86518ee30",
+      "html_url": "https://github.com/yszk0123/dali/blob/9e486037f2008495367ecbf02e9341c9b25a7a53/data/schema.graphql",
+      "content": "type Action {\n  id: ID!\n  owner: User!\n  title: String!\n  description: String\n  done: Boolean!\n  task: Task\n  period: Period\n}\n\ninput ActionOrder {\n  field: ActionOrderField!\n  direction: OrderDirection!\n}\n\nenum ActionOrderField {\n  TITLE\n  PRIORITY\n  CREATED_AT\n  UPDATED_AT\n}\n\nenum Authority {\n  OWNER\n  EDITABLE\n  READONLY\n}\n\nscalar Date\n\nscalar DateOnly\n\ntype Group {\n  id: ID!\n  title: String!\n  owner: User!\n  projects(projectId: ID, done: Boolean, limit: ListLimit, offset: ListOffset, orderBy: TaskOrder): [Project]\n}\n\ninput GroupOrder {\n  field: GroupOrderField!\n  direction: OrderDirection!\n}\n\nenum GroupOrderField {\n  TITLE\n  CREATED_AT\n  UPDATED_AT\n}\n\n# The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).\nscalar JSON\n\n# An Int representing how many items to fetch in a List\nscalar ListLimit\n\n# An Int representing from which item index to start fetching a List\nscalar ListOffset\n\n# A String representing desired order based on a field supports formats like: \"name\", \"reverse:name\"\nscalar ListOrder\n\n# A JSON object conforming to the shape specified in http://docs.sequelizejs.com/en/latest/docs/querying/\nscalar ListWhere\n\ntype Member {\n  id: ID!\n  authority: Authority!\n}\n\ntype MoveActionToPeriodPayload {\n  action: Action\n  sourcePeriod: Period\n  targetPeriod: Period\n}\n\ntype MoveActionToTaskPayload {\n  action: Action\n  sourceTask: Task\n  targetTask: Task\n}\n\ntype Mutation {\n  createAction(title: String!, description: String, done: Boolean, taskId: ID, periodId: ID): Action\n  updateAction(actionId: ID!, title: String, description: String, done: Boolean, taskId: ID, periodId: ID): Action\n  removeAction(actionId: ID!): RemoveActionPayload\n  setTaskToAction(taskId: ID!, actionId: ID!): Action\n  setPeriodToAction(periodId: ID!, actionId: ID!): Action\n  setOrCreatePeriodToAction(date: DateOnly!, position: Int, actionId: ID!): Action\n  createGroup(title: String!, done: Boolean, groupId: ID): Group\n  updateGroup(groupId: ID, title: String!, done: Boolean): Group\n  removeGroup(groupId: ID!): RemoveGroupPayload\n  addProjectToGroup(projectId: ID!, groupId: ID!): Group\n  createPeriod(description: String, date: DateOnly!, position: Int): Period\n  updatePeriod(periodId: ID!, description: String, date: DateOnly, position: Int): Period\n  moveActionToPeriod(actionId: ID!, periodId: ID!): MoveActionToPeriodPayload\n  removePeriod(periodId: ID!): RemovePeriodPayload\n  createProject(title: String!, done: Boolean, groupId: ID): Project\n  updateProject(projectId: ID!, title: String, done: Boolean, groupId: ID): Project\n  removeProject(projectId: ID!): RemoveProjectPayload\n  addTaskToProject(taskId: ID!, projectId: ID!): Project\n  setGroupToProject(groupId: ID!, projectId: ID!): Project\n  createTask(title: String, description: String, done: Boolean, projectId: ID): Task\n  updateTask(taskId: ID!, title: String, description: String, done: Boolean, projectId: ID): Task\n  removeTask(taskId: ID!): RemoveTaskPayload\n  moveActionToTask(actionId: ID!, taskId: ID!): MoveActionToTaskPayload\n  setProjectToTask(taskId: ID!, projectId: ID!): Task\n  signup(email: String!, password: String!, nickname: String!, firstName: String, lastName: String): User\n  login(email: String!, password: String!): User\n  logout: User\n}\n\nenum OrderDirection {\n  ASC\n  DESC\n}\n\ntype Period {\n  id: ID!\n  owner: User!\n  description: String\n  date: DateOnly!\n  position: Int\n  actions: [Action]\n}\n\ninput PeriodOrder {\n  field: PeriodOrderField!\n  direction: OrderDirection!\n}\n\nenum PeriodOrderField {\n  DATE\n  POSITION\n}\n\ntype Project {\n  id: ID!\n  title: String!\n  description: String\n  done: Boolean!\n  owner: User!\n  group: Group\n  visibility: ProjectVisibility!\n  members: [Member]\n  tasks(projectId: ID, done: Boolean, limit: ListLimit, offset: ListOffset, orderBy: TaskOrder): [Task]\n}\n\ninput ProjectOrder {\n  field: ProjectOrderField!\n  direction: OrderDirection!\n}\n\nenum ProjectOrderField {\n  TITLE\n  CREATED_AT\n  UPDATED_AT\n}\n\nenum ProjectVisibility {\n  PRIVATE\n  MEMBER\n  PUBLIC\n}\n\ntype Query {\n  action(id: ID!): Action\n  actions(done: Boolean, used: Boolean, taskId: ID, periodId: ID, limit: ListLimit, offset: ListOffset, orderBy: ActionOrder): [Action]\n  group(id: ID): Group\n  groups(id: ID, limit: ListLimit, offset: ListOffset, orderBy: ProjectOrder): [Group]\n  members(limit: ListLimit, offset: ListOffset, order: ListOrder): [Member]\n  periods(date: DateOnly, after: DateOnly, before: DateOnly, limit: ListLimit, offset: ListOffset, order: PeriodOrder): [Period]\n  projects(groupId: ID, done: Boolean, limit: ListLimit, offset: ListOffset, orderBy: ProjectOrder): [Project]\n  tasks(groupId: ID, projectId: ID, done: Boolean, limit: ListLimit, offset: ListOffset, orderBy: TaskOrder): [Task]\n  currentUser: User\n}\n\ntype RemoveActionPayload {\n  removedActionId: ID\n}\n\ntype RemoveGroupPayload {\n  removedGroupId: ID!\n}\n\ntype RemovePeriodPayload {\n  removedPeriodId: ID\n}\n\ntype RemoveProjectPayload {\n  removedProjectId: ID!\n}\n\ntype RemoveTaskPayload {\n  removedTaskId: ID\n}\n\ntype Task {\n  id: ID!\n  owner: User!\n  title: String!\n  description: String\n  done: Boolean!\n  project: Project\n  actions(used: Boolean, done: Boolean): [Action]\n  assignee: User\n}\n\ninput TaskOrder {\n  field: TaskOrderField!\n  direction: OrderDirection!\n}\n\nenum TaskOrderField {\n  TITLE\n  CREATED_AT\n  UPDATED_AT\n}\n\ntype User {\n  id: ID!\n  email: String!\n  password: String!\n  nickname: String!\n  firstName: String\n  lastName: String\n  projects: [Project]\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 16,
+      "containsCycle": true,
+      "numDefinitions": 36
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-06-04T14:26:19Z",
+    "updated_at": "2018-08-04T00:46:11Z",
+    "pushed_at": "2018-08-04T00:46:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "message-blocker",
+  "repo_full_name": "patiernom/message-blocker",
+  "repo_owner": "patiernom",
+  "repo_description": "Fastify API Backend + React-Relay-GraphQL Isomorphic App",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "WebApp/server/data/schema.graphql",
+      "sha": "e68df2f3ab9767568a3d7d218d92aa118b15e611",
+      "url": "https://api.github.com/repositories/116293352/contents/WebApp/server/data/schema.graphql?ref=2ea5bea0ac8fc5bed383cfdb5e9013c836bfa65d",
+      "git_url": "https://api.github.com/repositories/116293352/git/blobs/e68df2f3ab9767568a3d7d218d92aa118b15e611",
+      "html_url": "https://github.com/patiernom/message-blocker/blob/2ea5bea0ac8fc5bed383cfdb5e9013c836bfa65d/WebApp/server/data/schema.graphql",
+      "content": "type Mutation {\n  changeStatusTicket(input: StatusTicketInput!): StatusTicketPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\ntype Payload {\n  source: String\n  message: String\n  reportType: String\n}\n\ntype Query {\n  tickets: [Ticket]\n  ticket(id: ID!): Ticket\n\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n}\n\ninput StatusTicketInput {\n  id: ID!\n  status: String!\n  clientMutationId: String\n}\n\ntype StatusTicketPayload {\n  ticket: Ticket\n  clientMutationId: String\n}\n\ntype Ticket implements Node {\n  # The ID of an object\n  id: ID!\n  realId: String\n  source: String\n  state: String\n  payload: Payload\n  created: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-04T18:25:39Z",
+    "updated_at": "2018-02-15T10:20:30Z",
+    "pushed_at": "2018-01-15T09:30:26Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

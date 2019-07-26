@@ -1,0 +1,41 @@
+{
+  "repo_name": "whistleblower-server",
+  "repo_full_name": "nikabuligini/whistleblower-server",
+  "repo_owner": "NikaBuligini",
+  "repo_description": "Monitoring system for your applications and servers",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "app/graph/schema.graphql",
+      "sha": "b634cdae8200d028d8b86b3779463ce41c51870d",
+      "url": "https://api.github.com/repositories/72721407/contents/app/graph/schema.graphql?ref=113d3a01b9cc0b9a9a8f81d6bccda077b07009a7",
+      "git_url": "https://api.github.com/repositories/72721407/git/blobs/b634cdae8200d028d8b86b3779463ce41c51870d",
+      "html_url": "https://github.com/NikaBuligini/whistleblower-server/blob/113d3a01b9cc0b9a9a8f81d6bccda077b07009a7/app/graph/schema.graphql",
+      "content": "input AuthenticationInput {\n  email: String!\n  password: String!\n  clientMutationId: String\n}\n\ntype AuthenticationPayload {\n  viewer: User\n  clientMutationId: String\n}\n\ninput ChangeServiceStatusInput {\n  serviceId: String!\n  status: Boolean!\n  clientMutationId: String\n}\n\ntype ChangeServiceStatusPayload {\n  service: Service!\n  viewer: User!\n  clientMutationId: String\n}\n\ninput CreatePermissionInput {\n  projectId: String!\n  userId: String!\n  clientMutationId: String\n}\n\ntype CreatePermissionPayload {\n  userEdge: UserEdge!\n  project: Project!\n  viewer: User!\n  clientMutationId: String\n}\n\ninput CreateProjectInput {\n  name: String!\n  clientMutationId: String\n}\n\ntype CreateProjectPayload {\n  projectEdge: ProjectEdge!\n  viewer: User!\n  clientMutationId: String\n}\n\ninput CreateServiceInput {\n  projectId: String!\n  name: String!\n  type: String!\n  clientMutationId: String\n}\n\ntype CreateServicePayload {\n  serviceEdge: ServiceEdge!\n  viewer: User!\n  clientMutationId: String\n}\n\ninput DeletePermissionInput {\n  projectId: String!\n  userId: String!\n  clientMutationId: String\n}\n\ntype DeletePermissionPayload {\n  deletedPermissionId: String\n  project: Project!\n  viewer: User!\n  clientMutationId: String\n}\n\ntype Mutation {\n  # Authenticate user using email and password\n  authenticate(input: AuthenticationInput!): AuthenticationPayload\n\n  # Create new project\n  createProject(input: CreateProjectInput!): CreateProjectPayload\n\n  # Create new service for project\n  createService(input: CreateServiceInput!): CreateServicePayload\n\n  # Change status of service\n  changeServiceStatus(input: ChangeServiceStatusInput!): ChangeServiceStatusPayload\n\n  # Create access permission for project\n  createPermission(input: CreatePermissionInput!): CreatePermissionPayload\n\n  # Remove access permission for project\n  deletePermission(input: DeletePermissionInput!): DeletePermissionPayload\n}\n\n# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# Payload for service\ntype Payload {\n  id: ID!\n  data: String\n  created_at: String\n}\n\n# A project\ntype Project implements Node {\n  # The ID of an object\n  id: ID!\n  name: String\n  uuid: String\n\n  # Services for project\n  services(after: String, first: Int, before: String, last: Int): ServiceConnection\n\n  # Users who have access to project\n  users(after: String, first: Int, before: String, last: Int): UserConnection\n  created_at: String\n  updated_at: String\n}\n\n# A connection to a list of items.\ntype ProjectConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [ProjectEdge]\n\n  # Total count of projects\n  totalCount: Int\n}\n\n# An edge in a connection.\ntype ProjectEdge {\n  # The item at the end of the edge\n  node: Project\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n\n  # Get all users\n  users: [User]\n\n  # Get single user by id\n  user(\n    # User id\n    id: String!\n  ): User\n  projects(id: String, name: String, userId: String): [Project]\n  services(id: String!): [Service]\n  viewer: User\n}\n\n# A service\ntype Service implements Node {\n  # The ID of an object\n  id: ID!\n  name: String\n  type: String\n  status: String\n  timeout: Int\n  isActive: Boolean\n  uuid: String\n  payload: [Payload]\n  created_at: String\n  updated_at: String\n}\n\n# A connection to a list of items.\ntype ServiceConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [ServiceEdge]\n}\n\n# An edge in a connection.\ntype ServiceEdge {\n  # The item at the end of the edge\n  node: Service\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\n# A user\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n  fullname: String\n  email: String\n  roles: [String]\n  last_login: String\n  created_at: String\n  updated_at: String\n\n  # Visible projects for user\n  projects(after: String, first: Int, before: String, last: Int): ProjectConnection\n\n  # List of projects for administrator\n  allProjects(after: String, first: Int, before: String, last: Int): ProjectConnection\n\n  # Single project\n  project(name: String!): Project\n\n  # List of users for administrator\n  allUsers: [User]\n}\n\n# A connection to a list of items.\ntype UserConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [UserEdge]\n}\n\n# An edge in a connection.\ntype UserEdge {\n  # The item at the end of the edge\n  node: User\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 19,
+      "containsCycle": true,
+      "numDefinitions": 26
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-11-03T07:53:20Z",
+    "updated_at": "2017-07-18T15:36:39Z",
+    "pushed_at": "2017-05-21T12:00:39Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

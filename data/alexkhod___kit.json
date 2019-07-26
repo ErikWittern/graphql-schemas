@@ -1,0 +1,42 @@
+{
+  "repo_name": "kit",
+  "repo_full_name": "alexkhod/kit",
+  "repo_owner": "alexkhod",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "rootSchema.graphql",
+      "path": "packages/server/src/api/rootSchema.graphql",
+      "sha": "5533e213a6dda6a70da6ada3b08d06133ce6f07f",
+      "url": "https://api.github.com/repositories/141169325/contents/packages/server/src/api/rootSchema.graphql?ref=2a3383549f0d383a56596d02f738e0b3990ab1b2",
+      "git_url": "https://api.github.com/repositories/141169325/git/blobs/5533e213a6dda6a70da6ada3b08d06133ce6f07f",
+      "html_url": "https://github.com/alexkhod/kit/blob/2a3383549f0d383a56596d02f738e0b3990ab1b2/packages/server/src/api/rootSchema.graphql",
+      "content": "type FieldError {\n  field: String!\n  message: String!\n}\n\ntype PageInfo {\n  totalCount: Int\n  hasNextPage: Boolean\n}\n\ntype BatchPayload {\n  count: Int\n  errors: [FieldError!]\n}\n\ninput OrderByInput {\n  column: String\n  order: String\n}\n\ntype Query {\n  dummy: Int\n}\n\ntype Mutation {\n  dummy: Int\n}\n\ntype Subscription {\n  dummy: Int\n}\n\nschema {\n  query: Query\n  mutation: Mutation\n  subscription: Subscription\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-07-16T17:12:09Z",
+    "updated_at": "2018-08-21T22:17:55Z",
+    "pushed_at": "2018-08-21T22:17:51Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

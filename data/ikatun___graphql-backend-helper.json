@@ -1,0 +1,41 @@
+{
+  "repo_name": "graphql-backend-helper",
+  "repo_full_name": "ikatun/graphql-backend-helper",
+  "repo_owner": "ikatun",
+  "repo_description": "An example graphql project to help with greenfielding a typescript-graphql project",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "graphql.graphql",
+      "path": "graphql.graphql",
+      "sha": "f849a2e1769914787dd623d67502a6ba66260cee",
+      "url": "https://api.github.com/repositories/177876092/contents/graphql.graphql?ref=c2667658d22228a223390a3cb1f58baaa64f4d33",
+      "git_url": "https://api.github.com/repositories/177876092/git/blobs/f849a2e1769914787dd623d67502a6ba66260cee",
+      "html_url": "https://github.com/ikatun/graphql-backend-helper/blob/c2667658d22228a223390a3cb1f58baaa64f4d33/graphql.graphql",
+      "content": "\"\"\"\nThe javascript `Date` as string. Type represents date and time as the ISO Date string.\n\"\"\"\nscalar DateTime\n\n\"\"\"ID scalar type\"\"\"\nscalar EntityId\n\ntype File {\n  id: EntityId!\n  contentBase64: String!\n  post: Post\n  user: User\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  url: String!\n  thumbUrl: String!\n}\n\ninput FileCreateInput {\n  contentBase64: String!\n  post: PostNestedInput\n  user: UserNestedInput\n}\n\ninput FileEditInput {\n  id: EntityId!\n  contentBase64: String\n  post: PostNestedInput\n  user: UserNestedInput\n}\n\ninput FileNestedInput {\n  id: EntityId\n  contentBase64: String\n  post: PostNestedInput\n  user: UserNestedInput\n}\n\ninput FileSearchInput {\n  id: EntityId\n  contentBase64: String\n  post: ReferenceSearchInput\n  user: ReferenceSearchInput\n}\n\ninput FileSearchOrderInput {\n  id: OrderEnum\n  contentBase64: OrderEnum\n  post: OrderEnum\n  user: OrderEnum\n}\n\ntype LoginResponse {\n  token: String!\n  user: User!\n}\n\ntype Mutation {\n  emailRegister(input: UserCreateInput!): LoginResponse!\n  emailLogin(password: String!, email: String!): LoginResponse!\n  logout: Boolean!\n  facebookLogin(facebookAccessToken: String!): String!\n  googleLogin(googleAccessToken: String!): String!\n  createFile(input: FileCreateInput!): File!\n  updateFile(input: FileEditInput!): File!\n  deleteFiles(ids: [ID!]!): Boolean!\n  createPost(input: PostCreateInput!): Post!\n  updatePost(input: PostEditInput!): Post!\n  deletePosts(ids: [ID!]!): Boolean!\n  forgotPassword(email: String!): Boolean!\n  resetPassword(newPassword: String!, forgotPasswordCode: String!): LoginResponse!\n  changePassword(newPassword: String!, oldPassword: String!): Boolean!\n  createUser(input: UserCreateInput!): User!\n  updateUser(input: UserEditInput!): User!\n  deleteUsers(ids: [ID!]!): Boolean!\n}\n\nenum OrderEnum {\n  DESC\n  ASC\n}\n\ntype PaginatedFileResponse {\n  items: [File!]!\n  total: Int!\n  hasMore: Boolean!\n  nextPage: Int!\n}\n\ntype PaginatedPostResponse {\n  items: [Post!]!\n  total: Int!\n  hasMore: Boolean!\n  nextPage: Int!\n}\n\ntype PaginatedUserResponse {\n  items: [User!]!\n  total: Int!\n  hasMore: Boolean!\n  nextPage: Int!\n}\n\ntype Post {\n  id: EntityId!\n  content: String!\n  title: String!\n  author: User!\n  images: [File!]!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n}\n\ninput PostCreateInput {\n  content: String!\n  title: String!\n}\n\ninput PostEditInput {\n  id: EntityId!\n  content: String\n  title: String\n}\n\ninput PostNestedInput {\n  id: EntityId\n  content: String\n  title: String\n}\n\ninput PostSearchInput {\n  id: EntityId\n  content: String\n  title: String\n  author: ReferenceSearchInput\n}\n\ninput PostSearchOrderInput {\n  id: OrderEnum\n  content: OrderEnum\n  title: OrderEnum\n  author: OrderEnum\n}\n\ntype Query {\n  file(id: EntityId!): File!\n  searchFiles(order: [FileSearchOrderInput!], take: Int, skip: Int, search: FileSearchInput): PaginatedFileResponse!\n  files: [File!]!\n  post(id: EntityId!): Post!\n  searchPosts(order: [PostSearchOrderInput!], take: Int, skip: Int, search: PostSearchInput): PaginatedPostResponse!\n  posts: [Post!]!\n  user(id: EntityId!): User!\n  searchUsers(order: [UserSearchOrderInput!], take: Int, skip: Int, search: UserSearchInput): PaginatedUserResponse!\n  users: [User!]!\n}\n\ninput ReferenceSearchInput {\n  id: EntityId\n}\n\ntype User {\n  id: EntityId!\n  email: String\n  firstName: String!\n  lastName: String!\n  posts: [Post!]!\n  profileImage: File\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  fullName: String!\n}\n\ninput UserCreateInput {\n  email: String\n  password: String!\n  firstName: String!\n  lastName: String!\n  profileImage: FileNestedInput\n}\n\ninput UserEditInput {\n  id: EntityId!\n  email: String\n  password: String\n  firstName: String\n  lastName: String\n  profileImage: FileNestedInput\n}\n\ninput UserNestedInput {\n  id: EntityId\n  email: String\n  password: String\n  firstName: String\n  lastName: String\n  profileImage: FileNestedInput\n}\n\ninput UserSearchInput {\n  id: EntityId\n  email: String\n  password: String\n  firstName: String\n  lastName: String\n  profileImage: ReferenceSearchInput\n}\n\ninput UserSearchOrderInput {\n  id: OrderEnum\n  email: OrderEnum\n  password: OrderEnum\n  firstName: OrderEnum\n  lastName: OrderEnum\n  profileImage: OrderEnum\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 9,
+      "containsCycle": true,
+      "numDefinitions": 28
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-26T22:09:45Z",
+    "updated_at": "2019-04-10T19:30:17Z",
+    "pushed_at": "2019-04-10T19:30:16Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "apache-2.0",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

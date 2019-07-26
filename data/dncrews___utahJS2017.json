@@ -1,0 +1,45 @@
+{
+  "repo_name": "utahJS2017",
+  "repo_full_name": "dncrews/utahjs2017",
+  "repo_owner": "dncrews",
+  "repo_description": "Sample GraphQL setup for our presentation",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "idl.graphql",
+      "path": "GraphQL/idl.graphql",
+      "sha": "a6b89bfd4bcf3ec105b0aee2a49642248d4aa33d",
+      "url": "https://api.github.com/repositories/103714757/contents/GraphQL/idl.graphql?ref=958c8145a12b83f3287fb324cb6015aa194f023f",
+      "git_url": "https://api.github.com/repositories/103714757/git/blobs/a6b89bfd4bcf3ec105b0aee2a49642248d4aa33d",
+      "html_url": "https://github.com/dncrews/utahJS2017/blob/958c8145a12b83f3287fb324cb6015aa194f023f/GraphQL/idl.graphql",
+      "content": "\ntype Address {\n  street1: String!\n  street2: String\n  city: String!\n  state: String!\n  postalCode: String!\n  country: String!\n  timezone: String!\n  geolocation: Geolocation!\n}\n\ntype Contact {\n  givenName: String!\n  familyName: String!\n  fullName: String!\n  email: String!\n  phone: String!\n  address: Address\n}\n\ntype Customer implements Person {\n  id: ID!\n  contact: Contact!\n  sites: [ Site ]\n  salesRep: Employee\n  salesPerson: Employee @deprecated(reason: \"Please use salesRep instead.\")\n}\n\ntype Employee implements Person {\n  badgeId: String!\n  contact: Contact!\n  customers(state:String): [ Customer ]\n}\n\ntype Geolocation {\n  latitude: Float!\n  longitude: Float!\n}\n\ninterface Person {\n  contact: Contact!\n}\n\ntype Query {\n  customer(id: ID!): Customer\n}\n\ntype Site {\n  id: ID!\n  address: Address\n}\n",
+      "containsQueryType": true,
+      "typesUndefined": [],
+      "directivesUndefined": [
+        "deprecated"
+      ],
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-09-16T01:20:17Z",
+    "updated_at": "2017-09-16T01:22:48Z",
+    "pushed_at": "2017-09-16T22:01:01Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

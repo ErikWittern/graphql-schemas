@@ -1,0 +1,41 @@
+{
+  "repo_name": "typeorm-graphql-middleware",
+  "repo_full_name": "stagnationlab/typeorm-graphql-middleware",
+  "repo_owner": "stagnationlab",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "examples/basic/src/typings/server/schema.gql",
+      "sha": "3d0a24399f69b0bb6d3438f48f714d909916f375",
+      "url": "https://api.github.com/repositories/117710649/contents/examples/basic/src/typings/server/schema.gql?ref=c6baf6e0cd21473a3ed8bbb205d92e69cda66075",
+      "git_url": "https://api.github.com/repositories/117710649/git/blobs/3d0a24399f69b0bb6d3438f48f714d909916f375",
+      "html_url": "https://github.com/stagnationlab/typeorm-graphql-middleware/blob/c6baf6e0cd21473a3ed8bbb205d92e69cda66075/examples/basic/src/typings/server/schema.gql",
+      "content": "type User {\n\tid: ID!\n\tname: String!\n\tposts: [Post]!\n}\n\ntype Post {\n\tid: ID!\n\tname: String!\n\tuser: User!\n}\n\ninput AddUserInput {\n\tname: String!\n\tposts: [ID]\n}\n\ntype Query {\n\tuserList: [User]\n}\n\ntype Mutation {\n\taddUser(input: AddUserInput): User!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-01-16T16:36:57Z",
+    "updated_at": "2019-06-19T16:09:42Z",
+    "pushed_at": "2019-06-19T16:09:48Z",
+    "issues": 0,
+    "watchers": 9,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

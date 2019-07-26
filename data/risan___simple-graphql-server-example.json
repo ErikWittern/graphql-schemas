@@ -1,0 +1,39 @@
+{
+  "repo_name": "simple-graphql-server-example",
+  "repo_full_name": "risan/simple-graphql-server-example",
+  "repo_owner": "risan",
+  "repo_description": "💎 A simple GraphQL server example with in-memory data.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "d5fcc709170ecdf7fc7693d22bd04b5f37a61d51",
+      "url": "https://api.github.com/repositories/128680614/contents/src/schema.graphql?ref=a3c28995270f8d0ce376594b299d9742c33b9aef",
+      "git_url": "https://api.github.com/repositories/128680614/git/blobs/d5fcc709170ecdf7fc7693d22bd04b5f37a61d51",
+      "html_url": "https://github.com/risan/simple-graphql-server-example/blob/a3c28995270f8d0ce376594b299d9742c33b9aef/src/schema.graphql",
+      "content": "type Query {\n  info: String!\n  posts: [Post!]!\n}\n\ntype Mutation {\n  createPost(url: String!, description: String!): Post!\n  updatePost(id: ID!, url: String!, description: String!): Post\n  deletePost(id: ID!): Post\n}\n\ntype Post {\n  id: ID!\n  url: String!\n  description: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-04-08T20:46:44Z",
+    "updated_at": "2018-06-12T05:02:23Z",
+    "pushed_at": "2018-04-09T04:19:32Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

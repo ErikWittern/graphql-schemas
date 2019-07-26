@@ -1,0 +1,39 @@
+{
+  "repo_name": "graphql-realtime-chat",
+  "repo_full_name": "tinrab/graphql-realtime-chat",
+  "repo_owner": "tinrab",
+  "repo_description": "Real-time Chat with GraphQL Subscriptions in Go",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/schema.graphql",
+      "sha": "e5a5223f3d6600e44f0a988b1d54f9d38386a72e",
+      "url": "https://api.github.com/repositories/136722377/contents/server/schema.graphql?ref=d9f2173a4b4b25d81306ac4c74db03af978a4771",
+      "git_url": "https://api.github.com/repositories/136722377/git/blobs/e5a5223f3d6600e44f0a988b1d54f9d38386a72e",
+      "html_url": "https://github.com/tinrab/graphql-realtime-chat/blob/d9f2173a4b4b25d81306ac4c74db03af978a4771/server/schema.graphql",
+      "content": "scalar Time\n\ntype Message {\n  id: String!\n  user: String!\n  createdAt: Time!\n  text: String!\n}\n\ntype Mutation {\n  postMessage(user: String!, text: String!): Message\n}\n\ntype Query {\n  messages: [Message!]!\n  users: [String!]!\n}\n\ntype Subscription {\n  messagePosted(user: String!): Message!\n  userJoined(user: String!): String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-09T12:43:30Z",
+    "updated_at": "2019-07-19T07:07:18Z",
+    "pushed_at": "2018-07-28T07:54:58Z",
+    "issues": 2,
+    "watchers": 4,
+    "fork_count": 9,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 68
+  }
+}

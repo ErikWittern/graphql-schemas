@@ -1,0 +1,42 @@
+{
+  "repo_name": "sofa-king-restful",
+  "repo_full_name": "michaeloutwest/sofa-king-restful",
+  "repo_owner": "michaeloutwest",
+  "repo_description": "Working example of dynamic sofa wrapper around basic graphQL endpoint in express.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "schema.gql",
+      "sha": "5cda2127fd7726f0984ad78880069e28d8cd4b6b",
+      "url": "https://api.github.com/repositories/177685949/contents/schema.gql?ref=97840d8e39f09ccea2ccbcf57cfa4875e3a8e362",
+      "git_url": "https://api.github.com/repositories/177685949/git/blobs/5cda2127fd7726f0984ad78880069e28d8cd4b6b",
+      "html_url": "https://github.com/michaeloutwest/sofa-king-restful/blob/97840d8e39f09ccea2ccbcf57cfa4875e3a8e362/schema.gql",
+      "content": "type Message {\n    id: ID!\n    text: String!\n}\n\ntype Query {\n    message(id: ID!): Message\n    messages: [Message!]\n}\n\ntype Mutation {\n    writeMessage(text: String!): Message\n}\n\nschema {\n    query: Query\n    mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-26T00:30:40Z",
+    "updated_at": "2019-03-26T00:38:44Z",
+    "pushed_at": "2019-03-26T00:38:43Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

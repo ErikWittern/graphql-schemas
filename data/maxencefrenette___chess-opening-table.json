@@ -1,0 +1,42 @@
+{
+  "repo_name": "chess-opening-table",
+  "repo_full_name": "maxencefrenette/chess-opening-table",
+  "repo_owner": "maxencefrenette",
+  "repo_description": "A computer-generated chess opening table",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/api/schema.graphql",
+      "sha": "0f7ed1981aa50006706547b25a4f3231f187c9af",
+      "url": "https://api.github.com/repositories/112899393/contents/packages/api/schema.graphql?ref=c5ea770ef350e92ac1f88860bb954cd5238987f1",
+      "git_url": "https://api.github.com/repositories/112899393/git/blobs/0f7ed1981aa50006706547b25a4f3231f187c9af",
+      "html_url": "https://github.com/maxencefrenette/chess-opening-table/blob/c5ea770ef350e92ac1f88860bb954cd5238987f1/packages/api/schema.graphql",
+      "content": "type Position {\n    fen: String\n    whiteWin: Float\n    blackWin: Float\n    children: Int\n}\n\ntype Query {\n    getPosition(fen: String): Position\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-12-03T04:17:53Z",
+    "updated_at": "2017-12-04T05:57:53Z",
+    "pushed_at": "2017-12-21T15:43:53Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 2
+  }
+}

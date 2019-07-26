@@ -1,0 +1,95 @@
+{
+  "repo_name": "moleculer-graphql-server",
+  "repo_full_name": "ltv/moleculer-graphql-server",
+  "repo_owner": "ltv",
+  "repo_description": "[WIP] GraphQL server for Moleculer",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.gql",
+      "path": "src/lib/mixins/__tests__/graphql/schema.gql",
+      "sha": "b1fd1d65f3e3dab3d6876fcd5ff1410c1b4464c8",
+      "url": "https://api.github.com/repositories/179488738/contents/src/lib/mixins/__tests__/graphql/schema.gql?ref=8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a",
+      "git_url": "https://api.github.com/repositories/179488738/git/blobs/b1fd1d65f3e3dab3d6876fcd5ff1410c1b4464c8",
+      "html_url": "https://github.com/ltv/moleculer-graphql-server/blob/8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a/src/lib/mixins/__tests__/graphql/schema.gql",
+      "content": "#import './types/test.gql'\n#import './types/user.gql'\n#import './types/cus-res.gql'\n\ntype Query {\n  hello: TestObj\n  defaultResolver: String!\n  provideOnlyType: String!\n  customType: String!\n  allCusRes: [CustomResponse!]!\n}\n\ninput AddInput {\n  num1: Int!\n  num2: Int!\n}\n\ntype Mutation {\n  createHelloWithNewName: TestObj\n  createUser(id: Int!, name: String!): User!\n  addFromOtherService(input: AddInput!): Int!\n  addCusRes: CustomResponse!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/ltv/moleculer-graphql-server/blob/8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a/src/lib/mixins/__tests__/graphql/schema.gql:\n#import './types/test.gql'\n#import './types/user.gql'\n#import './types/cus-res.gql'\n\ntype Query {\n  hello: TestObj\n  defaultResolver: String!\n  provideOnlyType: String!\n  customType: String!\n  allCusRes: [CustomResponse!]!\n}\n\ninput AddInput {\n  num1: Int!\n  num2: Int!\n}\n\ntype Mutation {\n  createHelloWithNewName: TestObj\n  createUser(id: Int!, name: String!): User!\n  addFromOtherService(input: AddInput!): Int!\n  addCusRes: CustomResponse!\n}\n\n# https://github.com/ltv/moleculer-graphql-server/blob/8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a/src/lib/mixins/__tests__/graphql/types/test.gql:\ntype TestObj {\n  name: String!\n}\n\n# https://github.com/ltv/moleculer-graphql-server/blob/8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a/src/lib/mixins/__tests__/graphql/types/cus-res.gql:\n#import './user.gql'\n\ntype CustomResponse {\n  users: [User!]\n}\n\n# https://github.com/ltv/moleculer-graphql-server/blob/8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a/src/lib/mixins/__tests__/graphql/types/user.gql:\ntype User {\n  id: Int!\n  name: String!\n  email: String\n}\n",
+        "mergedPaths": [
+          "src/lib/mixins/__tests__/graphql/types/test.gql",
+          "src/lib/mixins/__tests__/graphql/types/cus-res.gql",
+          "src/lib/mixins/__tests__/graphql/types/user.gql"
+        ],
+        "typesDefinedByMerge": [
+          "TestObj",
+          "CustomResponse",
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": false,
+        "numObjectTypes": 5,
+        "containsCycle": false,
+        "polynomialLevel": 2,
+        "numDefinitions": 6
+      },
+      "validSchema": false
+    },
+    {
+      "name": "test.gql",
+      "path": "src/lib/mixins/__tests__/graphql/types/test.gql",
+      "sha": "2baf7a10b17ab4b8f9578993b5ca3d145f718bb2",
+      "url": "https://api.github.com/repositories/179488738/contents/src/lib/mixins/__tests__/graphql/types/test.gql?ref=8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a",
+      "git_url": "https://api.github.com/repositories/179488738/git/blobs/2baf7a10b17ab4b8f9578993b5ca3d145f718bb2",
+      "html_url": "https://github.com/ltv/moleculer-graphql-server/blob/8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a/src/lib/mixins/__tests__/graphql/types/test.gql",
+      "content": "type TestObj {\n  name: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numDefinitions": 1
+    },
+    {
+      "name": "user.gql",
+      "path": "src/lib/mixins/__tests__/graphql/types/user.gql",
+      "sha": "57c470fb0096eb3fe26c39e405a52fc10df6783d",
+      "url": "https://api.github.com/repositories/179488738/contents/src/lib/mixins/__tests__/graphql/types/user.gql?ref=8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a",
+      "git_url": "https://api.github.com/repositories/179488738/git/blobs/57c470fb0096eb3fe26c39e405a52fc10df6783d",
+      "html_url": "https://github.com/ltv/moleculer-graphql-server/blob/8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a/src/lib/mixins/__tests__/graphql/types/user.gql",
+      "content": "type User {\n  id: Int!\n  name: String!\n  email: String\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "cus-res.gql",
+      "path": "src/lib/mixins/__tests__/graphql/types/cus-res.gql",
+      "sha": "3fe22e5cb6612d4b441491caf76282c68a79fe53",
+      "url": "https://api.github.com/repositories/179488738/contents/src/lib/mixins/__tests__/graphql/types/cus-res.gql?ref=8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a",
+      "git_url": "https://api.github.com/repositories/179488738/git/blobs/3fe22e5cb6612d4b441491caf76282c68a79fe53",
+      "html_url": "https://github.com/ltv/moleculer-graphql-server/blob/8ba7d75013fe02ee9fb4ad2296a104ee5066ce6a/src/lib/mixins/__tests__/graphql/types/cus-res.gql",
+      "content": "#import './user.gql'\n\ntype CustomResponse {\n  users: [User!]\n}\n",
+      "containsQueryType": false,
+      "validSchema": false,
+      "numDefinitions": 1
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-04T11:59:51Z",
+    "updated_at": "2019-04-12T10:50:43Z",
+    "pushed_at": "2019-07-11T10:13:57Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 3,
+    "pull_requests_open": 3,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

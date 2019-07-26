@@ -1,0 +1,42 @@
+{
+  "repo_name": "remotedev-server",
+  "repo_full_name": "blockchainfoundrylabs/remotedev-server",
+  "repo_owner": "BlockchainFoundryLabs",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema_def.graphql",
+      "path": "lib/api/schema_def.graphql",
+      "sha": "241d2abffbe46e754f4a76ddc98b758f5ea356e4",
+      "url": "https://api.github.com/repositories/153661549/contents/lib/api/schema_def.graphql?ref=46eaa80ddfc468eeb492f10a29b87b0777310d26",
+      "git_url": "https://api.github.com/repositories/153661549/git/blobs/241d2abffbe46e754f4a76ddc98b758f5ea356e4",
+      "html_url": "https://github.com/BlockchainFoundryLabs/remotedev-server/blob/46eaa80ddfc468eeb492f10a29b87b0777310d26/lib/api/schema_def.graphql",
+      "content": "# A list of options for the type of the report\nenum ReportType {\n    STATE\n    ACTION\n    STATES\n    ACTIONS\n}\n\ntype Report {\n  # Report ID\n  id: ID!\n  # Type of the report, can be: STATE, ACTION, STATES, ACTIONS\n  type: ReportType,\n  # Briefly what happened\n  title: String,\n  # Details supplied by the user\n  description: String,\n  # The last dispatched action before the report was sent\n  action: String,\n  # Stringified actions or the state or both, which should be loaded the application to reproduce the exact behavior\n  payload: String,\n  # Stringified preloaded state object. Could be the initial state of the app or committed state (after dispatching COMMIT action or reaching maxAge)\n  preloadedState: String,\n  # Screenshot url or blob as a string\n  screenshot: String,\n  # User Agent String\n  userAgent: String,\n  # Application version to group the reports and versioning\n  version: String,\n  # Used to identify the user who sent the report\n  userId: String,\n  # More detailed data about the user, usually it's a stringified object\n  user: String,\n  # Everything else you want to send\n  meta: String,\n  # Error message which invoked sending the report\n  exception: String,\n  # Id to identify the store in case there are multiple stores\n  instanceId: String,\n  # Timestamp when the report was added\n  added: String\n  # Id to identify the application (from apps table)\n  appId: ID\n}\n # Explore GraphQL query schema\ntype Query {\n  # List all reports\n  reports: [Report]\n  # Get a report by ID\n  report(\n    # Report ID\n    id: ID!\n  ): Report\n}\n\nschema {\n  query: Query\n  #mutation: Mutation\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-18T17:26:08Z",
+    "updated_at": "2018-10-27T00:05:11Z",
+    "pushed_at": "2018-10-18T17:46:55Z",
+    "issues": 0,
+    "watchers": 3,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

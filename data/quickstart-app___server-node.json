@@ -1,0 +1,42 @@
+{
+  "repo_name": "server-node",
+  "repo_full_name": "quickstart-app/server-node",
+  "repo_owner": "quickstart-app",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/graphql/helloworld/schema.graphql",
+      "sha": "ed6a3de9f2f62dd8c9af10d576b57b7c4ca48948",
+      "url": "https://api.github.com/repositories/125592068/contents/src/graphql/helloworld/schema.graphql?ref=2dd5f4b752c5af97ed3fe7c94390aa652747017c",
+      "git_url": "https://api.github.com/repositories/125592068/git/blobs/ed6a3de9f2f62dd8c9af10d576b57b7c4ca48948",
+      "html_url": "https://github.com/quickstart-app/server-node/blob/2dd5f4b752c5af97ed3fe7c94390aa652747017c/src/graphql/helloworld/schema.graphql",
+      "content": "type Message {\n    message: String\n}\n\ntype Query {\n    Hello(name: String = \"World\"): Message\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-03-17T03:06:30Z",
+    "updated_at": "2018-03-28T16:59:54Z",
+    "pushed_at": "2018-03-28T16:59:53Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "OurBlog",
+  "repo_full_name": "cs-554-group8/ourblog",
+  "repo_owner": "cs-554-group8",
+  "repo_description": "Added gitignore and license. Final Project for cs-554",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "code/server/graphql/schema.graphql",
+      "sha": "9e005c877f0a7f34761c72389def3582aa89324b",
+      "url": "https://api.github.com/repositories/175693309/contents/code/server/graphql/schema.graphql?ref=cad570e08a2d70b80fd059def4ad0a030c17ec38",
+      "git_url": "https://api.github.com/repositories/175693309/git/blobs/9e005c877f0a7f34761c72389def3582aa89324b",
+      "html_url": "https://github.com/cs-554-group8/OurBlog/blob/cad570e08a2d70b80fd059def4ad0a030c17ec38/code/server/graphql/schema.graphql",
+      "content": "scalar DateTime\n\ntype Query {\n  me: User\n  getUser(id: ID, email: String): User\n  allUsers: [User!]!\n  getBlog(id: ID, title: String): Blog\n  allBlogs: [Blog!]!\n  filterBlogsByString(searchString: String): [Blog!]!\n  filterBlogsByLikes(minLikes: Int): [Blog!]!\n  elasticSearch(searchString: String): [ESData]\n  getComment(id: ID!): Comment\n  allComments: [Comment!]!\n  filterCommentsByString(searchString: String): [Comment!]!\n  filterCommentsByLikes(minLikes: Int): [Comment!]!\n  getTag(id: ID, tag: String): Tag\n  allTags: [Tag!]!\n}\n\ntype Mutation {\n  signup(name: String!, password: String!, email: String!): AuthPayload\n  login(password: String!, email: String!): AuthPayload\n  postBlog(title: String!, article: String!): Blog!\n  postComment(content: String!, blogId: ID!): Comment!\n  postTag(tag: String!, blogId: ID!): Tag!\n  updateUser(email: String, name: String, password: String, newEmail: String, phone: String, address: String, interest: String): User\n  updateBlog(id: ID, title: String, newTitle: String, article: String, likes: Int): Blog\n  updateComment(id: ID!, content: String, likes: Int): Comment\n  likeBlog(id: ID, title: String): Blog\n  likeComment(id: ID!): Comment\n  addBlogToTagById(blogId: ID!, tagId: ID!): Tag\n  addBlogToTagByTitle(title: String!, tag: String!): Tag\n  deleteUser(id: ID, email: String): User\n  deleteBlog(id: ID, title: String): Blog\n  deleteComment(id: ID!): Comment\n  deleteTag(id: ID, tag: String): Tag\n}\n\ntype ESData {\n  id: ID\n  title: String\n  text: String\n}\n\ntype AuthPayload {\n  token: String!\n  user: User!\n}\n\ntype User {\n  id: ID!\n  createdAt: DateTime!\n  name: String!\n  password: String!\n  email: String!\n  phone: String\n  address: String\n  interest: String\n  blogs: [Blog!]!\n  comments: [Comment!]!\n}\n\ntype Blog {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  title: String! \n  article: String!\n  likes: Int\n  postedBy: User\n  comments: [Comment!]!\n  relatedTag: Tag\n}\n\ntype Comment {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  content: String!\n  likes: Int\n  postedBy: User\n  forBlog: Blog\n}\n\ntype Tag {\n  id: ID!\n  tag: String!\n  blogs: [Blog!]!\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-03-14T20:19:03Z",
+    "updated_at": "2019-05-14T18:48:23Z",
+    "pushed_at": "2019-05-14T18:48:25Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 37,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 2,
+    "pull_requests_merged": 35,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

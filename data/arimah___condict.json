@@ -1,0 +1,42 @@
+{
+  "repo_name": "condict",
+  "repo_full_name": "arimah/condict",
+  "repo_owner": "arimah",
+  "repo_description": "Dictionary software for constructed languages.",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/src/schema/root/schema.graphql",
+      "sha": "12bc32a72c46d112f488d7dab547de11afff827a",
+      "url": "https://api.github.com/repositories/166855935/contents/server/src/schema/root/schema.graphql?ref=45f991cbd73dd5b23617045b800e58ff18c35e32",
+      "git_url": "https://api.github.com/repositories/166855935/git/blobs/12bc32a72c46d112f488d7dab547de11afff827a",
+      "html_url": "https://github.com/arimah/condict/blob/45f991cbd73dd5b23617045b800e58ff18c35e32/server/src/schema/root/schema.graphql",
+      "content": "# The root schema contains various essential types and definitions.\n\nschema {\n  query: Query\n  mutation: Mutation\n}\n\n\"The root query type.\"\ntype Query\n\n\"The root mutation type.\"\ntype Mutation\n\n\"Contains metadata about a paginated collection.\"\ntype ConnectionMeta {\n  \"The 0-based page number. This value is always greater than or equal to 0.\"\n  page: Int!\n\n  \"The total number of items per page. This value is always at least 1.\"\n  perPage: Int!\n\n  \"\"\"\n  The total number of items in the paginated collection. This value is always\n  greater than or equal to 0.\n  \"\"\"\n  totalCount: Int!\n\n  \"Determines whether there are more items in the collection.\"\n  hasNext: Boolean!\n\n  \"\"\"\n  Determines whether there are items on earlier pages. This value is true if\n  and only if \\`page\\` is greater than zero.\n  \"\"\"\n  hasPrev: Boolean!\n}\n\n\"Input type for pagination parameters.\"\ninput PageParams {\n  \"The 0-based page number. This value cannot be less than 0.\"\n  page: Int!\n\n  \"\"\"\n  The total number of items per page. This value cannot be less than 1. Each\n  field defines its own upper limit.\n  \"\"\"\n  perPage: Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-01-21T17:49:40Z",
+    "updated_at": "2019-07-12T17:09:07Z",
+    "pushed_at": "2019-07-12T17:09:06Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 2,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 6
+  }
+}

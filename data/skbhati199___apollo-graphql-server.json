@@ -1,0 +1,39 @@
+{
+  "repo_name": "apollo-graphql-server",
+  "repo_full_name": "skbhati199/apollo-graphql-server",
+  "repo_owner": "skbhati199",
+  "repo_description": "apollo-graphql-server api",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "393a35ffcc041e5063570b77468c523107861a8a",
+      "url": "https://api.github.com/repositories/171830228/contents/schema.graphql?ref=2f26eb6b2e7ef002e065cf538faebdba68858fe1",
+      "git_url": "https://api.github.com/repositories/171830228/git/blobs/393a35ffcc041e5063570b77468c523107861a8a",
+      "html_url": "https://github.com/skbhati199/apollo-graphql-server/blob/2f26eb6b2e7ef002e065cf538faebdba68858fe1/schema.graphql",
+      "content": "type Query  {\n   greeting:String\n   students:[Student]\n   studentById(id:ID!):Student \n   size:Float\n}\ntype College {\n   id:ID!\n   name:String\n   location:String\n   rating:Float\n}\ntype Student {\n   id:ID!\n   firstName:String\n   lastName:String\n   fullName:String\n   college:College\n   password:String\n   collegeId:String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-02-21T08:22:09Z",
+    "updated_at": "2019-02-21T08:50:43Z",
+    "pushed_at": "2019-02-21T08:50:41Z",
+    "issues": 0,
+    "watchers": 0,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

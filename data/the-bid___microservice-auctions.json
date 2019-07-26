@@ -1,0 +1,42 @@
+{
+  "repo_name": "microservice-auctions",
+  "repo_full_name": "the-bid/microservice-auctions",
+  "repo_owner": "the-bid",
+  "repo_description": "The auctions microservice",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "prisma.graphql",
+      "path": "src/generated/prisma.graphql",
+      "sha": "7cd6c41fe7ef76f4da988033fb796d2e467eee5a",
+      "url": "https://api.github.com/repositories/133432738/contents/src/generated/prisma.graphql?ref=1b4afcef37258116238051625742831639e3d1ad",
+      "git_url": "https://api.github.com/repositories/133432738/git/blobs/7cd6c41fe7ef76f4da988033fb796d2e467eee5a",
+      "html_url": "https://github.com/the-bid/microservice-auctions/blob/1b4afcef37258116238051625742831639e3d1ad/src/generated/prisma.graphql",
+      "content": "type AggregateAuction {\n  count: Int!\n}\n\ntype Auction {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  name: String!\n  ownerId: String!\n  playerIds: [String!]!\n}\n\ntype AuctionConnection {\n  pageInfo: PageInfo!\n  edges: [AuctionEdge]!\n  aggregate: AggregateAuction!\n}\n\ninput AuctionCreateInput {\n  id: ID\n  name: String!\n  ownerId: String!\n  playerIds: AuctionCreateplayerIdsInput\n}\n\ninput AuctionCreateplayerIdsInput {\n  set: [String!]\n}\n\ntype AuctionEdge {\n  node: Auction!\n  cursor: String!\n}\n\nenum AuctionOrderByInput {\n  id_ASC\n  id_DESC\n  createdAt_ASC\n  createdAt_DESC\n  updatedAt_ASC\n  updatedAt_DESC\n  name_ASC\n  name_DESC\n  ownerId_ASC\n  ownerId_DESC\n}\n\ntype AuctionPreviousValues {\n  id: ID!\n  createdAt: DateTime!\n  updatedAt: DateTime!\n  name: String!\n  ownerId: String!\n  playerIds: [String!]!\n}\n\ntype AuctionSubscriptionPayload {\n  mutation: MutationType!\n  node: Auction\n  updatedFields: [String!]\n  previousValues: AuctionPreviousValues\n}\n\ninput AuctionSubscriptionWhereInput {\n  mutation_in: [MutationType!]\n  updatedFields_contains: String\n  updatedFields_contains_every: [String!]\n  updatedFields_contains_some: [String!]\n  node: AuctionWhereInput\n  AND: [AuctionSubscriptionWhereInput!]\n  OR: [AuctionSubscriptionWhereInput!]\n  NOT: [AuctionSubscriptionWhereInput!]\n}\n\ninput AuctionUpdateInput {\n  name: String\n  ownerId: String\n  playerIds: AuctionUpdateplayerIdsInput\n}\n\ninput AuctionUpdateManyMutationInput {\n  name: String\n  ownerId: String\n  playerIds: AuctionUpdateplayerIdsInput\n}\n\ninput AuctionUpdateplayerIdsInput {\n  set: [String!]\n}\n\ninput AuctionWhereInput {\n  id: ID\n  id_not: ID\n  id_in: [ID!]\n  id_not_in: [ID!]\n  id_lt: ID\n  id_lte: ID\n  id_gt: ID\n  id_gte: ID\n  id_contains: ID\n  id_not_contains: ID\n  id_starts_with: ID\n  id_not_starts_with: ID\n  id_ends_with: ID\n  id_not_ends_with: ID\n  createdAt: DateTime\n  createdAt_not: DateTime\n  createdAt_in: [DateTime!]\n  createdAt_not_in: [DateTime!]\n  createdAt_lt: DateTime\n  createdAt_lte: DateTime\n  createdAt_gt: DateTime\n  createdAt_gte: DateTime\n  updatedAt: DateTime\n  updatedAt_not: DateTime\n  updatedAt_in: [DateTime!]\n  updatedAt_not_in: [DateTime!]\n  updatedAt_lt: DateTime\n  updatedAt_lte: DateTime\n  updatedAt_gt: DateTime\n  updatedAt_gte: DateTime\n  name: String\n  name_not: String\n  name_in: [String!]\n  name_not_in: [String!]\n  name_lt: String\n  name_lte: String\n  name_gt: String\n  name_gte: String\n  name_contains: String\n  name_not_contains: String\n  name_starts_with: String\n  name_not_starts_with: String\n  name_ends_with: String\n  name_not_ends_with: String\n  ownerId: String\n  ownerId_not: String\n  ownerId_in: [String!]\n  ownerId_not_in: [String!]\n  ownerId_lt: String\n  ownerId_lte: String\n  ownerId_gt: String\n  ownerId_gte: String\n  ownerId_contains: String\n  ownerId_not_contains: String\n  ownerId_starts_with: String\n  ownerId_not_starts_with: String\n  ownerId_ends_with: String\n  ownerId_not_ends_with: String\n  AND: [AuctionWhereInput!]\n  OR: [AuctionWhereInput!]\n  NOT: [AuctionWhereInput!]\n}\n\ninput AuctionWhereUniqueInput {\n  id: ID\n  name: String\n}\n\ntype BatchPayload {\n  count: Long!\n}\n\nscalar DateTime\n\nscalar Long\n\ntype Mutation {\n  createAuction(data: AuctionCreateInput!): Auction!\n  updateAuction(data: AuctionUpdateInput!, where: AuctionWhereUniqueInput!): Auction\n  updateManyAuctions(data: AuctionUpdateManyMutationInput!, where: AuctionWhereInput): BatchPayload!\n  upsertAuction(where: AuctionWhereUniqueInput!, create: AuctionCreateInput!, update: AuctionUpdateInput!): Auction!\n  deleteAuction(where: AuctionWhereUniqueInput!): Auction\n  deleteManyAuctions(where: AuctionWhereInput): BatchPayload!\n}\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n\ninterface Node {\n  id: ID!\n}\n\ntype PageInfo {\n  hasNextPage: Boolean!\n  hasPreviousPage: Boolean!\n  startCursor: String\n  endCursor: String\n}\n\ntype Query {\n  auction(where: AuctionWhereUniqueInput!): Auction\n  auctions(where: AuctionWhereInput, orderBy: AuctionOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Auction]!\n  auctionsConnection(where: AuctionWhereInput, orderBy: AuctionOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): AuctionConnection!\n  node(id: ID!): Node\n}\n\ntype Subscription {\n  auction(where: AuctionSubscriptionWhereInput): AuctionSubscriptionPayload\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 24
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-05-14T23:25:56Z",
+    "updated_at": "2019-04-26T15:18:56Z",
+    "pushed_at": "2019-04-26T15:18:54Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

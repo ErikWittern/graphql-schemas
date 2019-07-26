@@ -1,0 +1,42 @@
+{
+  "repo_name": "filament",
+  "repo_full_name": "psychollama/filament",
+  "repo_owner": "PsychoLlama",
+  "repo_description": ":bulb:GraphQL server for Philips Hue",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "4375057ff34dac3c3d68c1d004103a5ff75d3ac6",
+      "url": "https://api.github.com/repositories/89809343/contents/src/schema.graphql?ref=c8990c1c5d15369186ac870fd5378b71fc248b60",
+      "git_url": "https://api.github.com/repositories/89809343/git/blobs/4375057ff34dac3c3d68c1d004103a5ff75d3ac6",
+      "html_url": "https://github.com/PsychoLlama/filament/blob/c8990c1c5d15369186ac870fd5378b71fc248b60/src/schema.graphql",
+      "content": "# The type of light hardware being used.\nenum LightGroupType {\n  LightSource\n  LightGroup\n  Luminaire\n  Room\n}\n\n# The room class of a Room light group.\nenum RoomClass {\n  LivingRoom\n  Kitchen\n  Dining\n  Bedroom\n  KidsBedroom\n  Bathroom\n  Nursery\n  Recreation\n  Office\n  Gym\n  Hallway\n  Toilet\n  FrontDoor\n  Garage\n  Terrace\n  Garden\n  Driveway\n  Carport\n  Other\n}\n\n# An arbitrary collection of lights.\ntype LightGroup {\n  type: LightGroupType\n  recycle: Boolean\n  lights: [Light]\n  anyOn: Boolean\n  allOn: Boolean\n  class: String\n  name: String\n  id: ID\n  # 6-digit CSS color code. Changes when the group color is set all at once.\n  # Changing the color of one light won't affect it.\n  color: String\n}\n\n# A hue-compatible wireless bulb.\ntype Light {\n  manufacturer: String\n  reachable: Boolean\n  version: String\n  model: String\n  # 6-digit CSS hex code.\n  color: String\n  name: String\n  type: String\n  on: Boolean\n  # A bridge-dependent ID used to interface with the light.\n  # May change if you register with a different bridge\n  # or restore it to factory defaults.\n  id: ID\n  # Identifies the light across multiple Hue bridges.\n  uniqueId: ID\n}\n\ntype Scene {\n  # Lights affected by the scene.\n  lights: [Light]\n  # Human friendly scene title.\n  name: String\n  # False if the scene can be deleted. Otherwise, it's in use\n  # by a schedule or sensor.\n  locked: Boolean\n  owner: String\n  picture: String\n  recycle: Boolean\n  lastUpdated: String\n  version: Int\n  id: ID\n}\n\nenum HttpMethod {\n  DELETE\n  POST\n  PUT\n}\n\ntype ScheduleCommand {\n  method: HttpMethod\n  address: String\n  # The JSON-stringified request body.\n  body: String\n}\n\nenum ScheduleStatus {\n  enabled\n  disabled\n}\n\ntype Schedule {\n  command: ScheduleCommand\n  status: ScheduleStatus\n  description: String\n  localTime: String\n  recycle: Boolean\n  created: String\n  name: String\n  time: String\n  id: ID\n}\n\ntype Query {\n  group(id: ID!): LightGroup\n  groups: [LightGroup]\n  light(id: ID!): Light\n  lights: [Light]\n  scene(id: ID!): Scene\n  scenes: [Scene]\n  schedules: [Schedule]\n  schedule(id: ID!): Schedule\n}\n\ninput LightState {\n  transition: Int\n  color: String\n  on: Boolean\n}\n\ninput LightAttributes {\n  name: String\n}\n\ninput LightGroupAttributes {\n  name: String\n  class: RoomClass\n  lights: [ID!]\n}\n\ntype Mutation {\n  setGroupState(id: ID!, state: LightState!): LightGroup\n  setLightState(id: ID!, state: LightState!): Light\n  setLightAttributes(id: ID!, attributes: LightAttributes!): Light\n  setGroupAttributes(id: ID!, attributes: LightGroupAttributes!): LightGroup\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-04-29T19:58:10Z",
+    "updated_at": "2019-07-15T01:25:21Z",
+    "pushed_at": "2019-07-19T00:03:07Z",
+    "issues": 0,
+    "watchers": 2,
+    "fork_count": 2,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 58,
+    "pull_requests_open": 8,
+    "pull_requests_closed": 10,
+    "pull_requests_merged": 40,
+    "releases": 0,
+    "stargazers": 11
+  }
+}

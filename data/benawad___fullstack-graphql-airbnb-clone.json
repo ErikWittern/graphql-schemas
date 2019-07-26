@@ -1,0 +1,124 @@
+{
+  "repo_name": "fullstack-graphql-airbnb-clone",
+  "repo_full_name": "benawad/fullstack-graphql-airbnb-clone",
+  "repo_owner": "benawad",
+  "repo_description": "A Fullstack GraphQL Airbnb Clone with React and React Native",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/message/find/schema.graphql",
+      "sha": "a56b695cbb312aefdc8175b5c4eb0c3d94e92109",
+      "url": "https://api.github.com/repositories/136923813/contents/packages/server/src/modules/message/find/schema.graphql?ref=fcd2475fb732fd2e487d5b6fc917f804e631103d",
+      "git_url": "https://api.github.com/repositories/136923813/git/blobs/a56b695cbb312aefdc8175b5c4eb0c3d94e92109",
+      "html_url": "https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/message/find/schema.graphql",
+      "content": "type Message {\n  text: String!\n  user: User!\n  listingId: String!\n}\n\ntype Query {\n  messages(listingId: String!): [Message!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/message/find/schema.graphql:\ntype Message {\n  text: String!\n  user: User!\n  listingId: String!\n}\n\ntype Query {\n  messages(listingId: String!): [Message!]!\n}\n\n# https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: ID!\n  email: String!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "User.graphql",
+      "path": "packages/server/src/modules/user/shared/User.graphql",
+      "sha": "ab5f3f3ef90bcc0d84c785b1fa0c4a2abb354f5b",
+      "url": "https://api.github.com/repositories/136923813/contents/packages/server/src/modules/user/shared/User.graphql?ref=fcd2475fb732fd2e487d5b6fc917f804e631103d",
+      "git_url": "https://api.github.com/repositories/136923813/git/blobs/ab5f3f3ef90bcc0d84c785b1fa0c4a2abb354f5b",
+      "html_url": "https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/user/shared/User.graphql",
+      "content": "type User {\n  id: ID!\n  email: String!\n}\n",
+      "containsQueryType": false,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 1
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/user/me/schema.graphql",
+      "sha": "34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "url": "https://api.github.com/repositories/136923813/contents/packages/server/src/modules/user/me/schema.graphql?ref=fcd2475fb732fd2e487d5b6fc917f804e631103d",
+      "git_url": "https://api.github.com/repositories/136923813/git/blobs/34b5d8d770274f1954fd489f616a10963b7ef2e0",
+      "html_url": "https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/user/me/schema.graphql",
+      "content": "type Query {\n  me: User\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/user/me/schema.graphql:\ntype Query {\n  me: User\n}\n\n# https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: ID!\n  email: String!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 2
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/listing/find/schema.graphql",
+      "sha": "ff02dca6bc04f98f32b23d3842921f41b347b55d",
+      "url": "https://api.github.com/repositories/136923813/contents/packages/server/src/modules/listing/find/schema.graphql?ref=fcd2475fb732fd2e487d5b6fc917f804e631103d",
+      "git_url": "https://api.github.com/repositories/136923813/git/blobs/ff02dca6bc04f98f32b23d3842921f41b347b55d",
+      "html_url": "https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/listing/find/schema.graphql",
+      "content": "type Listing {\n  id: ID!\n  name: String!\n  category: String!\n  description: String!\n  price: Int!\n  beds: Int!\n  guests: Int!\n  latitude: Float!\n  longitude: Float!\n  amenities: [String!]!\n  pictureUrl: String\n  owner: User!\n}\n\ntype Query {\n  findListings: [Listing!]!\n}\n",
+      "containsQueryType": true,
+      "merged": {
+        "mergedContent": "# https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/listing/find/schema.graphql:\ntype Listing {\n  id: ID!\n  name: String!\n  category: String!\n  description: String!\n  price: Int!\n  beds: Int!\n  guests: Int!\n  latitude: Float!\n  longitude: Float!\n  amenities: [String!]!\n  pictureUrl: String\n  owner: User!\n}\n\ntype Query {\n  findListings: [Listing!]!\n}\n\n# https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/fcd2475fb732fd2e487d5b6fc917f804e631103d/packages/server/src/modules/user/shared/User.graphql:\ntype User {\n  id: ID!\n  email: String!\n}\n",
+        "mergedPaths": [
+          "packages/server/src/modules/user/shared/User.graphql"
+        ],
+        "typesDefinedByMerge": [
+          "User"
+        ],
+        "directivesDefinedByMerge": [],
+        "validSchema": true,
+        "contentDuplicate": true,
+        "numDefinitions": 3
+      },
+      "validSchema": false
+    },
+    {
+      "name": "schema.graphql",
+      "path": "packages/server/src/modules/date/schema.graphql",
+      "sha": "d493b1e3d69aeb4ca667dd95506be3c0221bd027",
+      "url": "https://api.github.com/repositories/136923813/contents/packages/server/src/modules/date/schema.graphql?ref=97c0093e3e017ed054ef8e41321cb254a81c7952",
+      "git_url": "https://api.github.com/repositories/136923813/git/blobs/d493b1e3d69aeb4ca667dd95506be3c0221bd027",
+      "html_url": "https://github.com/benawad/fullstack-graphql-airbnb-clone/blob/97c0093e3e017ed054ef8e41321cb254a81c7952/packages/server/src/modules/date/schema.graphql",
+      "content": "scalar MyDateTime\n\ntype Query {\n  currentDate: MyDateTime!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-06-11T12:33:46Z",
+    "updated_at": "2019-07-17T18:27:37Z",
+    "pushed_at": "2019-02-12T13:59:17Z",
+    "issues": 23,
+    "watchers": 35,
+    "fork_count": 153,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 4,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 2,
+    "releases": 0,
+    "stargazers": 533
+  }
+}

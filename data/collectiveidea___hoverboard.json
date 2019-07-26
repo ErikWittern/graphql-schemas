@@ -1,0 +1,42 @@
+{
+  "repo_name": "hoverboard",
+  "repo_full_name": "collectiveidea/hoverboard",
+  "repo_owner": "collectiveidea",
+  "repo_description": "An opinionated react + relay + graphql boilerplate (isomorphic, passportjs, postgresql, express, etc.)",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "server/config/schema.graphql",
+      "sha": "4e472507b4d760c52fd0580e1b9eb3c3750eb5a4",
+      "url": "https://api.github.com/repositories/84615697/contents/server/config/schema.graphql?ref=114f547c6c6d2efd8b600307378cf489049f6878",
+      "git_url": "https://api.github.com/repositories/84615697/git/blobs/4e472507b4d760c52fd0580e1b9eb3c3750eb5a4",
+      "html_url": "https://github.com/collectiveidea/hoverboard/blob/114f547c6c6d2efd8b600307378cf489049f6878/server/config/schema.graphql",
+      "content": "# An object with an ID\ninterface Node {\n  # The id of the object.\n  id: ID!\n}\n\n# Information about pagination in a connection.\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# A post.\ntype Post implements Node {\n  # The ID of an object\n  id: ID!\n\n  # Title of the post\n  title: String\n\n  # Body of the post\n  body: String\n\n  # ID of the post's user\n  userId: String\n}\n\n# A connection to a list of items.\ntype PostConnection {\n  # Information to aid in pagination.\n  pageInfo: PageInfo!\n\n  # A list of edges.\n  edges: [PostEdge]\n}\n\n# An edge in a connection.\ntype PostEdge {\n  # The item at the end of the edge\n  node: Post\n\n  # A cursor for use in pagination\n  cursor: String!\n}\n\ntype Query {\n  # Fetches an object given its ID\n  node(\n    # The ID of an object\n    id: ID!\n  ): Node\n  viewer: User\n}\n\n# A person who uses our app\ntype User implements Node {\n  # The ID of an object\n  id: ID!\n\n  # A post of mine.\n  post(id: String!): Post\n\n  # Posts that I have\n  posts(after: String, first: Int, before: String, last: Int): PostConnection\n\n  # Users's email\n  email: String\n\n  # Users's name\n  name: String\n\n  # Users's role\n  role: String\n\n  # User's website\n  website: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 6,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 7
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-03-11T01:47:22Z",
+    "updated_at": "2019-02-13T15:15:13Z",
+    "pushed_at": "2017-05-25T01:53:10Z",
+    "issues": 0,
+    "watchers": 15,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

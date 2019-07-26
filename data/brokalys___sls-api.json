@@ -1,0 +1,42 @@
+{
+  "repo_name": "sls-api",
+  "repo_full_name": "brokalys/sls-api",
+  "repo_owner": "brokalys",
+  "repo_description": "Serverless API for Brokalys data",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "query.graphql",
+      "path": "src/schema/query.graphql",
+      "sha": "1f8327fdc0b05e6ac1a3da747d011deefada42a1",
+      "url": "https://api.github.com/repositories/162918863/contents/src/schema/query.graphql?ref=da5cbf0f194e4e2b76244767248cd20f98a65c8d",
+      "git_url": "https://api.github.com/repositories/162918863/git/blobs/1f8327fdc0b05e6ac1a3da747d011deefada42a1",
+      "html_url": "https://github.com/brokalys/sls-api/blob/da5cbf0f194e4e2b76244767248cd20f98a65c8d/src/schema/query.graphql",
+      "content": "scalar Date\n\ntype Query {\n  getRegions(\n    category: Category\n    type: Type\n    start_date: Date!\n    end_date: Date!\n  ): [RegionStats!]\n\n  getRegion(\n    name: String!\n    category: Category\n    type: Type\n    start_date: Date!\n    end_date: Date!\n  ): RegionStats!\n\n  getMapData(\n    category: Category!\n    type: Type!\n    start_date: Date!\n    end_date: Date!\n  ): MapData!\n\n  getChartData(\n    category: Category!\n    type: Type\n    date: Date!\n  ): ChartData!\n\n  getTableData(\n    category: Category!\n  ): [TableData!]\n}\n\nenum Category {\n  APARTMENT\n  HOUSE\n}\n\nenum Type {\n  SELL\n  RENT\n}\n\ntype RegionStats {\n  name: String!\n  price: RegionPriceStats\n  price_per_sqm: RegionPriceStats\n}\n\ntype RegionPriceStats {\n  count: Int!\n  min: Float\n  max: Float\n  mean: Float\n  median: Float\n  mode: Float\n  standardDev: Float\n}\n\ntype MapData {\n  type: String!\n  features: [MapDataFeatures!]\n}\n\ntype MapDataFeatures {\n  type: String!\n  properties: MapDataFeatureProperties!\n  geometry: MapDataFeatureGeometry!\n}\n\ntype MapDataFeatureProperties {\n  name: String!\n  color: String\n  histogram: MapHistogram\n}\n\ntype MapHistogram {\n  values: [Int]!\n  bins: Int!\n  bin_width: Float!\n  bin_limits: [Float]!\n}\n\ntype MapDataFeatureGeometry {\n  type: String!\n  coordinates: [[[Float!]]]\n}\n\ntype ChartData {\n  count: Int!\n  price_per_sqm: Float!\n}\n\ntype TableData {\n  name: String!\n  price_per_sqm: SellRent\n  price_per_sqm_change: SellRent\n  btl_ratio: Float\n  btl_ratio_change: Float\n}\n\ntype SellRent {\n  sell: Float\n  rent: Float\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 11,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 14
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-23T19:38:03Z",
+    "updated_at": "2019-04-22T09:51:20Z",
+    "pushed_at": "2019-04-22T09:51:18Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "repo_name": "sparked-server",
+  "repo_full_name": "sparkeduab/sparked-server",
+  "repo_owner": "SparkEdUAB",
+  "repo_description": "a GraphQL server for SparkEd ",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "topic.graphql",
+      "path": "src/typdefs/topic.graphql",
+      "sha": "7041553a5b7a2bd645b4873a9aa56293de2ee77d",
+      "url": "https://api.github.com/repositories/185807060/contents/src/typdefs/topic.graphql?ref=6bb2201ea8466887515330d3bbb9aa6b665e2b43",
+      "git_url": "https://api.github.com/repositories/185807060/git/blobs/7041553a5b7a2bd645b4873a9aa56293de2ee77d",
+      "html_url": "https://github.com/SparkEdUAB/sparked-server/blob/6bb2201ea8466887515330d3bbb9aa6b665e2b43/src/typdefs/topic.graphql",
+      "content": "scalar Date\ntype Query {\n  getTopics: [Topic]\n}\ntype Mutation {\n  addTopic(\n    name: String!\n    unitId: String!\n    createdBy: String\n    createdAt: Date\n  ): Topic\n}\ntype Topic {\n  _id: String\n  name: String\n  unitId: String\n  createdAt: Date\n  createdBy: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 3,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 4
+    },
+    {
+      "name": "user.graphql",
+      "path": "src/typdefs/user.graphql",
+      "sha": "b5f80f15a097dcf3dc7553ba42e683184755eb1a",
+      "url": "https://api.github.com/repositories/185807060/contents/src/typdefs/user.graphql?ref=161322690713270cd3aad7d18a84e4c6d4a81398",
+      "git_url": "https://api.github.com/repositories/185807060/git/blobs/b5f80f15a097dcf3dc7553ba42e683184755eb1a",
+      "html_url": "https://github.com/SparkEdUAB/sparked-server/blob/161322690713270cd3aad7d18a84e4c6d4a81398/src/typdefs/user.graphql",
+      "content": "type Query {\n  allUsers: [User]\n  getUser: User\n  me: User\n}\ntype Mutation {\n  register(email: String!, password: String!): User!\n  login(email: String!, password: String!): String!\n}\ntype User {\n  _id: String\n  email: String\n  username: String\n  password: String\n  createdAt: String\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": true,
+      "numDefinitions": 3
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-05-09T13:43:24Z",
+    "updated_at": "2019-07-19T18:19:19Z",
+    "pushed_at": "2019-07-19T18:19:16Z",
+    "issues": 23,
+    "watchers": 3,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 85,
+    "pull_requests_open": 8,
+    "pull_requests_closed": 10,
+    "pull_requests_merged": 67,
+    "releases": 0,
+    "stargazers": 1
+  }
+}

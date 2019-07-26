@@ -1,0 +1,42 @@
+{
+  "repo_name": "morning-cd-8bit",
+  "repo_full_name": "zhammer/morning-cd-8bit",
+  "repo_owner": "zhammer",
+  "repo_description": "8bit version of morning cd",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "cypress/plugins/schema.graphql",
+      "sha": "d6569e6295f128e19b0c899d953813c3faa51d89",
+      "url": "https://api.github.com/repositories/183513383/contents/cypress/plugins/schema.graphql?ref=40937a2e00cb56dbf043d0a29c35366fd61a464e",
+      "git_url": "https://api.github.com/repositories/183513383/git/blobs/d6569e6295f128e19b0c899d953813c3faa51d89",
+      "html_url": "https://github.com/zhammer/morning-cd-8bit/blob/40937a2e00cb56dbf043d0a29c35366fd61a464e/cypress/plugins/schema.graphql",
+      "content": "# The `Date` scalar type represents a Date\n# value as specified by\n# [iso8601](https://en.wikipedia.org/wiki/ISO_8601).\nscalar Date\n\n# The `DateTime` scalar type represents a DateTime\n# value as specified by\n# [iso8601](https://en.wikipedia.org/wiki/ISO_8601).\nscalar DateTime\n\n# A listen submitted by a user to morning cd.\ntype Listen {\n  id: ID!\n  song: Song\n  listenerName: String\n  listenTimeUtc: DateTime\n  note: String\n  ianaTimezone: String\n}\n\n# A collection of listens from morning cd with relay cursor-pagination.\ntype ListenConnection {\n  pageInfo: PageInfo!\n  edges: [ListenEdge]!\n}\n\ntype ListenEdge {\n  # The item at the end of the edge\n  node: Listen\n  cursor: DateTime\n}\n\n# Input for submitting a listen to morning cd.\ninput ListenInput {\n  songId: String!\n  songProvider: MusicProvider\n  listenerName: String!\n  note: String\n  ianaTimezone: String!\n}\n\n# An enumeration.\nenum MusicProvider {\n  SPOTIFY\n}\n\n# Root mutation type for morning cd.\ntype Mutation {\n  submitListen(input: ListenInput!): Listen\n}\n\ntype PageInfo {\n  # When paginating forwards, are there more items?\n  hasNextPage: Boolean!\n  # When paginating backwards, are there more items?\n  hasPreviousPage: Boolean!\n  # When paginating backwards, the cursor to continue.\n  startCursor: String\n  # When paginating forwards, the cursor to continue.\n  endCursor: String\n}\n\n# Root query type for morning cd.\ntype Query {\n  listen(id: ID!): Listen\n  allListens(before: DateTime, after: DateTime, first: Int, last: Int): ListenConnection\n  sunlightWindow(ianaTimezone: String!, onDate: Date!): SunlightWindow\n}\n\n# A song from a given music provider.\ntype Song {\n  id: ID!\n  name: String\n  songProvider: MusicProvider\n  artistName: String\n  albumName: String\n  imageLargeUrl: String\n  imageMediumUrl: String\n  imageSmallUrl: String\n}\n\n# The sunrise and sunset utc times for a location on a given date.\ntype SunlightWindow {\n  sunriseUtc: DateTime!\n  sunsetUtc: DateTime!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": false,
+      "polynomialLevel": 1,
+      "numDefinitions": 12
+    }
+  ],
+  "metrics": {
+    "created_at": "2019-04-25T21:38:04Z",
+    "updated_at": "2019-07-11T20:18:48Z",
+    "pushed_at": "2019-07-11T20:18:56Z",
+    "issues": 4,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 35,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 1,
+    "pull_requests_merged": 34,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

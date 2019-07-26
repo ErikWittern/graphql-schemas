@@ -1,0 +1,41 @@
+{
+  "repo_name": "picshare",
+  "repo_full_name": "iuriioapps/picshare",
+  "repo_owner": "iuriioapps",
+  "repo_description": "Vue + GraphQL test app",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "typeDefs.graphql",
+      "sha": "9560f026b0124135950e582044399c0b61fba68f",
+      "url": "https://api.github.com/repositories/163326446/contents/typeDefs.graphql?ref=a4dcf7b7424ed93b51dd27631633bcd8300f549f",
+      "git_url": "https://api.github.com/repositories/163326446/git/blobs/9560f026b0124135950e582044399c0b61fba68f",
+      "html_url": "https://github.com/iuriioapps/picshare/blob/a4dcf7b7424ed93b51dd27631633bcd8300f549f/typeDefs.graphql",
+      "content": "type User {\n    id: ID!\n    username: String!\n    email: String!\n    password: String!\n    avatar: String\n    joinDate: String\n    favorites: [Post]\n}\n\ntype Post {\n    id: ID!\n    title: String!\n    imageUrl: String!\n    categories: [String]!\n    description: String!\n    createdDate: String\n    likes: Int\n    createdBy: User!\n    messages: [Message]\n}\n\ntype PostsPage {\n    posts: [Post]\n    hasMore: Boolean\n}\n\ntype Message {\n    id: ID!\n    messageBody: String!\n    messageDate: String\n    messageUser: User!\n}\n\ntype LikesFaves {\n    likes: Int\n    favorites: [Post]\n}\n\ntype Token {\n    token: String!\n}\n\ntype Query {\n    getCurrentUser: User\n    getPosts: [Post]\n    getPost(id: ID!): Post!\n    searchPosts(term: String): [Post]\n    getUserPosts: [Post]\n    infiniteScrollPosts(pageNum: Int!, pageSize: Int!): PostsPage\n}\n\ntype Mutation {\n    signupUser(\n        username: String!,\n        email: String!,\n        password: String!): Token\n\n    signinUser(\n        username: String!,\n        password: String!): Token\n\n    addPost(\n        title: String!,\n        imageUrl: String!,\n        categories: [String]!,\n        description: String!,\n        creatorId: ID!): Post!\n\n    addPostMessage(\n        messageBody: String!,\n        postId: ID!): Message!\n\n    likePost(postId: ID!): LikesFaves!\n    unlikePost(postId: ID!): LikesFaves!\n\n    updateUserPost(\n        postId: ID!\n        title: String!\n        description: String!\n        imageUrl: String!\n        categories: [String]!\n    ): Post!\n\n    deleteUserPost(postId: ID!): Post!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 8,
+      "containsCycle": true,
+      "numDefinitions": 8
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-27T18:48:25Z",
+    "updated_at": "2019-01-04T18:12:32Z",
+    "pushed_at": "2019-01-04T18:12:30Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

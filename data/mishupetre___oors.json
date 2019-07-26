@@ -1,0 +1,42 @@
+{
+  "repo_name": "oors",
+  "repo_full_name": "mishupetre/oors",
+  "repo_owner": "mishupetre",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "typeDefs.graphql",
+      "path": "packages/oors-graphql/src/graphql/typeDefs.graphql",
+      "sha": "a46d479db235c978d50c26fd35cca60f0c18dcf8",
+      "url": "https://api.github.com/repositories/109146349/contents/packages/oors-graphql/src/graphql/typeDefs.graphql?ref=1d50f4f73d08211d130d5203170f1aa759ff99ba",
+      "git_url": "https://api.github.com/repositories/109146349/git/blobs/a46d479db235c978d50c26fd35cca60f0c18dcf8",
+      "html_url": "https://github.com/mishupetre/oors/blob/1d50f4f73d08211d130d5203170f1aa759ff99ba/packages/oors-graphql/src/graphql/typeDefs.graphql",
+      "content": "type Query {\n  hello: String\n}\n\ntype Mutation {\n  ping: String\n}\n\nscalar DateTime\n\nscalar JSON\n\nenum MutationType {\n  CREATED\n  UPDATED\n  DELETED\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 5
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-11-01T15:07:53Z",
+    "updated_at": "2017-11-01T15:07:54Z",
+    "pushed_at": "2017-10-30T15:14:09Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "repo_name": "WorkTimeSurvey-backend",
+  "repo_full_name": "goodjoblife/worktimesurvey-backend",
+  "repo_owner": "goodjoblife",
+  "repo_description": "GoodJob 後端 API 服務",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "d5ab82f174ec4aa5b85f0af7ac3940eac5a24fba",
+      "url": "https://api.github.com/repositories/62027999/contents/schema.graphql?ref=62faceda0f8ff4ce8179cb2c9061c31af2b70119",
+      "git_url": "https://api.github.com/repositories/62027999/git/blobs/d5ab82f174ec4aa5b85f0af7ac3940eac5a24fba",
+      "html_url": "https://github.com/goodjoblife/WorkTimeSurvey-backend/blob/62faceda0f8ff4ce8179cb2c9061c31af2b70119/schema.graphql",
+      "content": "type Archive {\n  is_archived: Boolean!\n  reason: String!\n}\n\ntype Company {\n  name: String!\n\n  \"\"\"取得資料本身\"\"\"\n  salary_work_times: [SalaryWorkTime!]!\n  work_experiences(start: Int, limit: Int): [WorkExperience]!\n  interview_experiences(start: Int, limit: Int): [InterviewExperience]\n\n  \"\"\"取得統計資訊\"\"\"\n  salary_work_time_statistics: SalaryWorkTimeStatistics!\n  work_experience_statistics: WorkExperienceStatistics!\n  interview_experience_statistics: InterviewExperienceStatistics!\n}\n\nscalar Date\n\nenum EmailStatus {\n  UNVERIFIED\n  SENT_VERIFICATION_LINK\n  VERIFIED\n}\n\nenum EmploymentType {\n  full_time\n  part_time\n  intern\n  temporary\n  contract\n  dispatched_labor\n}\n\ninterface Experience {\n  id: ID!\n  type: ExperienceType!\n  company: Company!\n  job_title: JobTitle!\n  region: String!\n  experience_in_year: Int\n  education: String\n  salary: Salary\n  title: String\n  sections: [Section]!\n  created_at: Date!\n  reply_count: Int!\n  report_count: Int!\n  like_count: Int!\n  status: PublishStatus!\n  archive: Archive!\n}\n\nenum ExperienceType {\n  work\n  interview\n  intern\n}\n\nenum Gender {\n  female\n  male\n  other\n}\n\ntype InterviewExperience implements Experience {\n  id: ID!\n  type: ExperienceType!\n  company: Company!\n  job_title: JobTitle!\n  region: String!\n  experience_in_year: Int\n  education: String\n  salary: Salary\n  title: String\n  sections: [Section]!\n  created_at: Date!\n  reply_count: Int!\n  report_count: Int!\n  like_count: Int!\n  status: PublishStatus!\n  archive: Archive!\n\n  \"\"\"interview experience specific fields\"\"\"\n  interview_time: YearMonth!\n  interview_result: String!\n  overall_rating: Int!\n  interview_qas: [InterviewQuestion]\n  interview_sensitive_questions: [String]\n}\n\ntype InterviewExperienceStatistics {\n  count: Int!\n  overall_rating: Float!\n}\n\ntype InterviewQuestion {\n  question: String\n  answer: String\n}\n\ntype JobTitle {\n  name: String!\n\n  \"\"\"取得資料本身\"\"\"\n  salary_work_times: [SalaryWorkTime!]!\n  work_experiences(start: Int, limit: Int): [WorkExperience]!\n  interview_experiences(start: Int, limit: Int): [InterviewExperience]\n\n  \"\"\"取得統計資訊\"\"\"\n  salary_work_time_statistics: SalaryWorkTimeStatistics!\n  work_experience_statistics: WorkExperienceStatistics!\n  interview_experience_statistics: InterviewExperienceStatistics!\n}\n\ntype Mutation {\n  placeholder: Boolean\n}\n\nenum Order {\n  DESCENDING\n  ASCENDING\n}\n\n\"\"\"發布狀態\"\"\"\nenum PublishStatus {\n  published\n  hidden\n}\n\ntype Query {\n  placeholder: Boolean\n  salary_work_time_count: Int!\n  work_experience_count: Int!\n  interview_experience_count: Int!\n  company_keywords(limit: Int = 5): [String!]!\n  search_companies(query: String!): [Company!]!\n  company(name: String!): Company\n\n  \"\"\"取得單篇經驗分享\"\"\"\n  experience(id: ID!): Experience\n  job_title_keywords(limit: Int = 5): [String!]!\n  search_job_titles(query: String!): [JobTitle!]!\n  job_title(name: String!): JobTitle\n  me: User!\n\n  \"\"\"取得薪資工時列表 （未下關鍵字搜尋的情況），只有從最新排到最舊\"\"\"\n  salary_work_times: [SalaryWorkTime]!\n}\n\ntype Reply {\n  id: ID!\n  content: String!\n  like_count: Int!\n  report_count: Int!\n  floor: Int!\n  created_at: Date!\n  status: PublishStatus!\n\n  \"\"\"相對應的 experience (resolve if published)\"\"\"\n  experience: Experience\n\n  \"\"\"使用者是否按贊 (null 代表未傳入驗證資訊)\"\"\"\n  liked: Boolean\n}\n\ntype Salary {\n  type: SalaryType\n  amount: Int\n}\n\nenum SalaryType {\n  year\n  month\n  day\n  hour\n}\n\ntype SalaryWorkTime {\n  id: ID\n  company: Company!\n  job_title: JobTitle!\n  day_promised_work_time: Float\n  day_real_work_time: Float\n  employment_type: EmploymentType\n  experience_in_year: Int\n  overtime_frequency: Int\n  salary: Salary\n  sector: String\n  week_work_time: Float\n  created_at: Date!\n  data_time: YearMonth!\n  estimated_hourly_wage: Float\n}\n\ntype SalaryWorkTimeStatistics {\n  count: Int!\n  average_week_work_time: Float!\n  average_estimated_hourly_wage: Float!\n  has_compensatory_dayoff_count: YesNoOrUnknownCount\n  has_overtime_salary_count: YesNoOrUnknownCount\n  is_overtime_salary_legal_count: YesNoOrUnknownCount\n}\n\nenum SearchBy {\n  COMPANY\n  JOB_TITLE\n}\n\ntype Section {\n  subtitle: String\n  content: String\n}\n\nenum SortBy {\n  CREATED_AT\n  WEEK_WORK_TIME\n  ESTIMATED_HOURLY_WAGE\n}\n\ntype User {\n  _id: ID!\n  name: String!\n  facebook_id: String\n  email: String\n  email_status: EmailStatus\n  created_at: Date!\n\n  \"\"\"The user's experiences\"\"\"\n  experiences(start: Int = 0, limit: Int = 20): [Experience!]!\n  experience_count: Int!\n\n  \"\"\"The user's replies\"\"\"\n  replies(start: Int = 0, limit: Int = 20): [Reply!]!\n  reply_count: Int!\n\n  \"\"\"The user's salary_work_time\"\"\"\n  salary_work_times: [SalaryWorkTime!]!\n  salary_work_time_count: Int!\n}\n\ntype WorkExperience implements Experience {\n  id: ID!\n  type: ExperienceType!\n  company: Company!\n  job_title: JobTitle!\n  region: String!\n  experience_in_year: Int\n  education: String\n  salary: Salary\n  title: String\n  sections: [Section]!\n  created_at: Date!\n  reply_count: Int!\n  report_count: Int!\n  like_count: Int!\n  status: PublishStatus!\n  archive: Archive!\n\n  \"\"\"work experience specific fields\"\"\"\n  data_time: YearMonth\n  week_work_time: Int\n  recommend_to_others: String\n}\n\ntype WorkExperienceStatistics {\n  count: Int!\n  recommend_to_others: YesNoOrUnknownCount!\n}\n\ntype YearMonth {\n  year: Int!\n  month: Int!\n}\n\nenum YesNoOrUnknown {\n  yes\n  no\n  unknown\n}\n\ntype YesNoOrUnknownCount {\n  yes: Int!\n  no: Int!\n  unknown: Int!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 18,
+      "containsCycle": true,
+      "numDefinitions": 30
+    }
+  ],
+  "metrics": {
+    "created_at": "2016-06-27T05:35:16Z",
+    "updated_at": "2019-07-16T03:31:20Z",
+    "pushed_at": "2019-07-16T03:31:19Z",
+    "issues": 206,
+    "watchers": 7,
+    "fork_count": 7,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 398,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 19,
+    "pull_requests_merged": 378,
+    "releases": 30,
+    "stargazers": 19
+  }
+}

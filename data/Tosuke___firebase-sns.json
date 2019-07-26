@@ -1,0 +1,42 @@
+{
+  "repo_name": "firebase-sns",
+  "repo_full_name": "tosuke/firebase-sns",
+  "repo_owner": "Tosuke",
+  "repo_description": "wip",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "schema.graphql",
+      "sha": "fbd5a63cbdbf5b450e28288a5cd379e7aaec1c79",
+      "url": "https://api.github.com/repositories/145968126/contents/schema.graphql?ref=f9dfa0f05896decdc4099ea949d891f696ac513f",
+      "git_url": "https://api.github.com/repositories/145968126/git/blobs/fbd5a63cbdbf5b450e28288a5cd379e7aaec1c79",
+      "html_url": "https://github.com/Tosuke/firebase-sns/blob/f9dfa0f05896decdc4099ea949d891f696ac513f/schema.graphql",
+      "content": "input CreatePostInput {\n  content: String!\n}\n\ntype CreatePostResponse {\n  \"\"\"A created post\"\"\"\n  post: Post!\n}\n\n\"\"\"\nA date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the\n`date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO\n8601 standard for representation of dates and times using the Gregorian calendar.\n\"\"\"\nscalar DateTime\n\n\"\"\"The mutation root\"\"\"\ntype Mutation {\n  createPost(post: CreatePostInput): CreatePostResponse\n}\n\n\"\"\"A post made on the Fediverse\"\"\"\ntype Post {\n  id: ID!\n  createdAt: DateTime!\n  content: String\n}\n\n\"\"\"The query root\"\"\"\ntype Query {\n  post(id: ID!): Post\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 4,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 6
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-08-24T08:57:26Z",
+    "updated_at": "2018-09-08T15:19:33Z",
+    "pushed_at": "2019-02-05T07:30:25Z",
+    "issues": 0,
+    "watchers": 1,
+    "fork_count": 0,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 1,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

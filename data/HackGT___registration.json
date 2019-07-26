@@ -1,0 +1,42 @@
+{
+  "repo_name": "registration",
+  "repo_full_name": "hackgt/registration",
+  "repo_owner": "HackGT",
+  "repo_description": "Powerful and extensible registration system for hackathons and other large events",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "api.graphql",
+      "path": "api.graphql",
+      "sha": "e582f152904d705b438cc5e75689c307c0c730c4",
+      "url": "https://api.github.com/repositories/81046965/contents/api.graphql?ref=5d1a029f426523943f6fab553f1bbf92ae30e695",
+      "git_url": "https://api.github.com/repositories/81046965/git/blobs/e582f152904d705b438cc5e75689c307c0c730c4",
+      "html_url": "https://github.com/HackGT/registration/blob/5d1a029f426523943f6fab553f1bbf92ae30e695/api.graphql",
+      "content": "schema {\n  query: Query\n}\n\n# The root query type\ntype Query {\n  # Retrieve user through a user ID or through the token passed to\n  # Query. Leave id empty if you'd like to view the currently logged in\n  # user.\n  user(id: ID): User\n  # All the users in the database, useful for polling for new user information.\n  # This is paginated, n is the number of results, and last_id is the last ID\n  # seen from the latest page retrieved, if you want the first page leave this out.\n  users(pagination_token: ID, n: Int!, filter: UserFilter, ids: [String]): [User!]!\n  # Search for users by name and email\n  search_user(search: String!, use_regex: Boolean = false, offset: Int!, n: Int!, filter: UserFilter): SearchResult!\n  # Simplified search_user that can be forwarded correctly from checkin2\n  search_user_simple(search: String!, use_regex: Boolean = false, offset: Int!, n: Int!, filter: UserFilter): [User!]!\n  # All possible application question branches\n  application_branches: [String!]!\n  # All possible confirmation question branches\n  confirmation_branches: [String!]!\n  # All possible question branches from all types!\n  question_branches: [String!]!\n  # All possible question names, or names of question in a branch\n  question_names(branch: String): [String!]\n}\n\n# A search result containing the results and associated data\ntype SearchResult {\n  # The offset passed to the search\n  offset: Int!\n  # The number of users returned by this query (limited by n)\n  count: Int!\n  # The total number of users that match this query (but not necessarily returned)\n  total: Int!\n  # The array of matching users\n  users: [User!]!\n}\n\n# Registration info about the user\ntype User {\n  # User ID, valid across the entire system\n  id: ID!\n\n  # User's full name\n  name: String!\n  # User's email\n  email: String!\n  # If the user's email is a verified email\n  email_verified: Boolean!\n  # Login method(s) this user uses (merged by email address)\n  login_methods: [String!]!\n\n  # If the user has admin privileges\n  admin: Boolean!\n\n  # If the user has applied to the event\n  applied: Boolean!\n  # If the user has been accepted to the event\n  accepted: Boolean!\n  # If the user has been accepted and notified of his or her acceptance\n  accepted_and_notified: Boolean!\n  # If the user has submitted a confirmation\n  confirmed: Boolean!\n  # A users assigned confirmation branch\n  confirmationBranch: String\n\n  # A users application phase answers\n  # null if user has not filled out this phase\n  application: Branch\n\n  # A users confirmation phase answers\n  # null if user has not filled out this phase\n  confirmation: Branch\n\n  # Get the answer to one of the questions asked of this user.\n  question(name: String!): FormItem\n\n  # Get the answer to multiple questions asked of this user, userful\n  # when the set of questions you want to receive is set by the user.\n  questions(names: [String!]!): [FormItem!]!\n\n  # What team, if any, is the user a part of?\n  team: Team\n\n  # ID used for pagination\n  pagination_token: ID!\n}\n\n# Filter users by this criterea.\n# A value means to filter by that value, no value\n# means that filter will be ignored.\ninput UserFilter {\n  # If the user has applied to the event\n  applied: Boolean\n  # If the user has been accepted to the event\n  accepted: Boolean\n  # If the user has indicated that he or she is attending\n  confirmed: Boolean\n  # The type of application a user filled out (e.g. Mentor, Participant)\n  application_branch: String\n  # The type of confirmation a user filled out (e.g. Needs Reimbursement)\n  confirmation_branch: String\n}\n\n# A filled out form (application / confirmation form)\ntype Branch {\n  # What type of application did the user fill out (mentor, participant, etc.)\n  # when going through the form?\n  type: String!\n  # A key-value list of questions and answers from the confirmation application\n  data: [FormItem!]!\n  # Start of application as some RFC's date string\n  start_time: String\n  # Submit time of application as some RFC's date string\n  submit_time: String\n}\n\n# Application teams\ntype Team {\n  # ID of the Team\n  id: ID!\n  # Name of the Team\n  name: String!\n}\n\n# Entries to various forms (application, confirmation, etc.)\ntype FormItem {\n  # Name (basically the ID) of the question / form item\n  name: String!\n  # Label of form item\n  label: String!\n  # Type of form item (textbox, checkbox, phone no.)\n  type: String!\n  # Value (if just one string)\n  value: String\n  # Values (if many selections are applicable, like checkbox)\n  values: [String!]\n  # File if type contains a file\n  file: File\n}\n\n# Uploaded file\ntype File {\n  # The original name of the uploaded file\n  original_name: String!\n  # The file's encoding\n  encoding: String!\n  # The file's mimetype\n  mimetype: String!\n  # The path to the file in S3\n  path: String!\n  # The size of the file in bytes\n  size: Int!\n  # The formatted size of the file in human-readable units\n  size_formatted: String!\n}\n\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 7,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2017-02-06T04:14:49Z",
+    "updated_at": "2019-07-13T02:34:42Z",
+    "pushed_at": "2019-07-19T18:25:50Z",
+    "issues": 115,
+    "watchers": 7,
+    "fork_count": 4,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 154,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 10,
+    "pull_requests_merged": 144,
+    "releases": 0,
+    "stargazers": 19
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "repo_name": "seronet-graphql-test-server",
+  "repo_full_name": "clemensbasler/seronet-graphql-test-server",
+  "repo_owner": "ClemensBasler",
+  "repo_description": null,
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "DataSheet.graphql",
+      "path": "schema/DataSheet.graphql",
+      "sha": "1734eb9d6490eae90b7ef427b0558f906ff8d30d",
+      "url": "https://api.github.com/repositories/152280060/contents/schema/DataSheet.graphql?ref=6572ff83c8c80159358cf92b99609644a58e2b82",
+      "git_url": "https://api.github.com/repositories/152280060/git/blobs/1734eb9d6490eae90b7ef427b0558f906ff8d30d",
+      "html_url": "https://github.com/ClemensBasler/seronet-graphql-test-server/blob/6572ff83c8c80159358cf92b99609644a58e2b82/schema/DataSheet.graphql",
+      "content": "scalar JSON\nscalar DateTime\n\ntype Query {\n  \"\"\"\n  Find datasheet of a single component\n  \"\"\"\n  getDatasheet(\n    componentId: ID!\n    lang: SupportedLanguage\n  ): DatasheetPayload\n\n  \"\"\"\n  A list of available languages supported by SeRoNet\n  \"\"\"\n  supportedLanguages: [SupportedLangPayload]\n\n  \"\"\"\n  Shows information about this graphql server.\n  This is useful for debugging when using multiple graphql servers.\n  \"\"\"\n  info: String!\n}\n\ntype SupportedLangPayload {\n  code: String!\n  name: String!\n}\n\nenum SupportedLanguage {\n  en\n  de\n}\n\ntype DatasheetPayload {\n  componentId: ID!\n  createdAt: DateTime!\n  sections:[DatasheetSection]\n}\n\ntype DatasheetSection {\n  name: String!\n  mdicon: String!\n  fields: [DatasheetSectionFiled]\n}\n\ntype DatasheetSectionFiled {\n  name: String\n  value: JSON\n  type: FieldTypeEnum\n}\n\nenum FieldTypeEnum {\n  URL\n  SIMPLE\n  LOGO\n  IMAGE\n  QUANTITY\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 5,
+      "containsCycle": false,
+      "polynomialLevel": 2,
+      "numDefinitions": 9
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-10-09T15:57:40Z",
+    "updated_at": "2019-01-08T08:35:21Z",
+    "pushed_at": "2018-10-23T09:03:53Z",
+    "issues": 1,
+    "watchers": 2,
+    "fork_count": 0,
+    "has_wiki_enabled": false,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

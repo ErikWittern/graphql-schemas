@@ -1,0 +1,42 @@
+{
+  "repo_name": "wordpress-graphql",
+  "repo_full_name": "cygnusb2b/wordpress-graphql",
+  "repo_owner": "cygnusb2b",
+  "repo_description": "A GraphQL wrapper for the Wordpress REST API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "index.graphql",
+      "path": "src/graphql/definitions/index.graphql",
+      "sha": "f2df434d17ff335b80661010b522f539484f4434",
+      "url": "https://api.github.com/repositories/150779123/contents/src/graphql/definitions/index.graphql?ref=953476026f8fd9422286b100bbb4bd09f77eb3b6",
+      "git_url": "https://api.github.com/repositories/150779123/git/blobs/f2df434d17ff335b80661010b522f539484f4434",
+      "html_url": "https://github.com/cygnusb2b/wordpress-graphql/blob/953476026f8fd9422286b100bbb4bd09f77eb3b6/src/graphql/definitions/index.graphql",
+      "content": "# import *, *.Query from 'post.graphql'\n\nscalar Date\n\ntype Query {\n  ping: String!\n}\n",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 1,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-09-28T18:20:39Z",
+    "updated_at": "2018-09-28T18:21:23Z",
+    "pushed_at": "2018-09-28T18:21:07Z",
+    "issues": 0,
+    "watchers": 5,
+    "fork_count": 1,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 0,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 0,
+    "releases": 0,
+    "stargazers": 0
+  }
+}

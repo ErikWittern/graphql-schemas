@@ -1,0 +1,42 @@
+{
+  "repo_name": "omdb-graphql-wrapper",
+  "repo_full_name": "xxczaki/omdb-graphql-wrapper",
+  "repo_owner": "xxczaki",
+  "repo_description": ":rocket: GraphQL wrapper for the OMDb API",
+  "repo_private": false,
+  "repo_fork": false,
+  "schemas": [
+    {
+      "name": "schema.graphql",
+      "path": "src/schema.graphql",
+      "sha": "78211adc6cece0c8288e84dd882d3fb0b61cdb62",
+      "url": "https://api.github.com/repositories/160869907/contents/src/schema.graphql?ref=9b603e7c1e836be9db82b4e68403b589b39e27a7",
+      "git_url": "https://api.github.com/repositories/160869907/git/blobs/78211adc6cece0c8288e84dd882d3fb0b61cdb62",
+      "html_url": "https://github.com/xxczaki/omdb-graphql-wrapper/blob/9b603e7c1e836be9db82b4e68403b589b39e27a7/src/schema.graphql",
+      "content": "type Query {\n  ByTitle(title: String!): Fields\n  ByID(id: String!): Fields\n}\n\ntype Fields {\n  Title: String\n  Year: String\n  Rated: String\n  Released: String\n  Runtime: String\n  Genre: String\n  Director: String\n  Writer: String\n  Actors: String\n  Plot: String\n  Language: String\n  Country: String\n  Awards: String\n  Poster: String\n  Metascore: String\n  imdbRating: String\n  imdbVotes: String\n  Type: String\n  DVD: String\n  BoxOffice: String\n  Production: String\n  Website: String\n  Response: String\n}",
+      "containsQueryType": true,
+      "validSchema": true,
+      "contentDuplicate": false,
+      "numObjectTypes": 2,
+      "containsCycle": false,
+      "polynomialLevel": 0,
+      "numDefinitions": 2
+    }
+  ],
+  "metrics": {
+    "created_at": "2018-12-07T20:01:26Z",
+    "updated_at": "2019-05-25T16:50:11Z",
+    "pushed_at": "2019-05-25T16:50:09Z",
+    "issues": 1,
+    "watchers": 1,
+    "fork_count": 3,
+    "has_wiki_enabled": true,
+    "license": "mit",
+    "pull_requests": 1,
+    "pull_requests_open": 0,
+    "pull_requests_closed": 0,
+    "pull_requests_merged": 1,
+    "releases": 0,
+    "stargazers": 44
+  }
+}
