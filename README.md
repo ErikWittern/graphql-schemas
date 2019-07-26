@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/199070243.svg)](https://zenodo.org/badge/latestdoi/199070243)
+
 # GraphQL Schemas
 
 GraphQL schema definitions mined from GitHub. This data is described and analyzed in the 2019 ICSOC paper "An Empirical Study of GraphQL Schemas".
